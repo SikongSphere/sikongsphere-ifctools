@@ -1,0 +1,30 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [CoordinationView_V2.0]'),'2;1');
+FILE_NAME('/Users/wangbohong/Desktop/blank.ifc','2022-08-10T18:43:58+08:00',(''),(''),'APSTEX - IFC Java Toolbox','23.0.11.19 - Exporter 23.0.11.19 - \X2\59077528\X0\ UI 23.0.11.19','');
+FILE_SCHEMA(('IFC2X3'));
+ENDSEC;
+
+DATA;
+#1= IFCPERSON($,'unknown','user',$,$,$,$,$);
+#2= IFCORGANIZATION($,'ifctoolsproject.com',$,$,$);
+#3= IFCPERSONANDORGANIZATION(#1,#2,$);
+#4= IFCAPPLICATION(#2,'1.0','ifctoolsproject.com','ifctoolsproject.com');
+#5= IFCOWNERHISTORY(#3,#4,$,.ADDED.,$,$,$,1660128237);
+#6= IFCCARTESIANPOINT((0.0,0.0,0.0));
+#7= IFCAXIS2PLACEMENT3D(#6,$,$);
+#8= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,1.0E-5,#7,$);
+#9= IFCSIUNIT(*,.LENGTHUNIT.,$,.METRE.);
+#10= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
+#11= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
+#12= IFCUNITASSIGNMENT((#9,#10,#11));
+#13= IFCPROJECT('2cYUBSBOPCzu_HAZrdO7uv',#5,'Default Project','Description of Default Project',$,$,$,(#8),#12);
+#14= IFCLOCALPLACEMENT($,#7);
+#15= IFCBUILDING('3IYN6tUFX08OcG5tfaIhj9',#5,'Default Building','Description',$,#14,$,$,.ELEMENT.,$,$,$);
+#16= IFCBUILDINGSTOREY('0mVcx4QCXDXfeFIlDNG9zS',#5,'Default Building Storey','Description',$,#14,$,$,.ELEMENT.,$);
+#17= IFCRELAGGREGATES('2jdJS6RpjBqu_1r_Xo$5up',#5,$,$,#13,(#15));
+#18= IFCRELAGGREGATES('2UAsEFYFbBd89c7mlTOPUZ',#5,$,$,#15,(#16));
+ENDSEC;
+
+END-ISO-10303-21;
+
