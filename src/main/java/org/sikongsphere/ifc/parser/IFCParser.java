@@ -300,6 +300,10 @@ public class IFCParser extends Parser {
     }
 
     public static class HeaderContext extends ParserRuleContext {
+        public ExprFuncParamsContext fileDescription;
+        public ExprFuncParamsContext fileName;
+        public ExprFuncParamsContext fileSchema;
+
         public TerminalNode T_HEADER() {
             return getToken(IFCParser.T_HEADER, 0);
         }
@@ -388,7 +392,7 @@ public class IFCParser extends Parser {
                 switch (getInterpreter().adaptivePredict(_input, 0, _ctx)) {
                     case 1: {
                         setState(46);
-                        exprFuncParams();
+                        ((HeaderContext) _localctx).fileDescription = exprFuncParams();
                     }
                         break;
                 }
@@ -405,7 +409,7 @@ public class IFCParser extends Parser {
                 switch (getInterpreter().adaptivePredict(_input, 1, _ctx)) {
                     case 1: {
                         setState(53);
-                        exprFuncParams();
+                        ((HeaderContext) _localctx).fileName = exprFuncParams();
                     }
                         break;
                 }
@@ -422,7 +426,7 @@ public class IFCParser extends Parser {
                 switch (getInterpreter().adaptivePredict(_input, 2, _ctx)) {
                     case 1: {
                         setState(60);
-                        exprFuncParams();
+                        ((HeaderContext) _localctx).fileSchema = exprFuncParams();
                     }
                         break;
                 }

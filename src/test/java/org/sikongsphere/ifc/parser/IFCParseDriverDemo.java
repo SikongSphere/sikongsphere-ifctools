@@ -13,6 +13,8 @@ package org.sikongsphere.ifc.parser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.sikongsphere.ifc.model.IfcModel;
+import org.sikongsphere.ifc.model.IfcNode;
 
 import java.io.IOException;
 
@@ -24,6 +26,9 @@ public class IFCParseDriverDemo {
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
+        IfcModel model = new IfcModel();
+        IfcVisitorImpl ifcVisitorImpl = new IfcVisitorImpl(model);
+        IfcNode node = ifcVisitorImpl.visit(ifcmodel);
         System.out.println(ifcmodel.getText());
     }
 }

@@ -20,9 +20,9 @@ ifcmodel :
 
 header :
        T_HEADER T_SEMICOLON
-       T_FILE_DESCRIPTION T_OPEN_P exprFuncParams? T_CLOSE_P T_SEMICOLON
-       T_FILE_NAME T_OPEN_P exprFuncParams? T_CLOSE_P T_SEMICOLON
-       T_FILE_SCHEMA T_OPEN_P exprFuncParams? T_CLOSE_P T_SEMICOLON
+       T_FILE_DESCRIPTION T_OPEN_P fileDescription=exprFuncParams? T_CLOSE_P T_SEMICOLON
+       T_FILE_NAME T_OPEN_P fileName=exprFuncParams? T_CLOSE_P T_SEMICOLON
+       T_FILE_SCHEMA T_OPEN_P fileSchema=exprFuncParams? T_CLOSE_P T_SEMICOLON
        T_ENDSEC T_SEMICOLON
      ;
 
@@ -72,7 +72,7 @@ exprFuncParams :
 
 funcParam :
      | expr (T_COMMA expr)*
-     |  T_MUL
+     | T_MUL
      | T_DOLLAR
      ;
 
