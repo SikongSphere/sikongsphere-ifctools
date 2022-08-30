@@ -10,10 +10,77 @@
 */
 package org.sikongsphere.ifc.model.body;
 
+import org.sikongsphere.ifc.model.basic.IfcIdentifier;
+import org.sikongsphere.ifc.model.basic.IfcLabel;
+import org.sikongsphere.ifc.model.basic.LIST;
+import org.sikongsphere.ifc.model.basic.SET;
+
 /**
  * This class is used to encapsulate person information
  *
  * @author zaiyuan
  * @date 2022-08-13 11:44:00
  */
-public class IfcPerson extends IfcBodyTemplate {}
+public class IfcPerson extends IfcBodyTemplate {
+    private IfcIdentifier id;
+    private IfcLabel familyName;
+    private IfcLabel givenName;
+    private LIST<IfcLabel> middleName;
+    private LIST<IfcLabel> prefixTitles;
+    private LIST<IfcLabel> suffixTitles;
+    private LIST<IfcActorRole> roles;
+    private LIST<IfcAddress> addresses;
+
+    /**
+     * Inverse
+     */
+    private SET<IfcPersonAndOrganization> engagedIn;
+
+    public IfcIdentifier getId() {
+        return id;
+    }
+
+    public void setId(IfcIdentifier id) {
+        this.id = id;
+    }
+
+    public IfcLabel getFamilyName() {
+        return familyName;
+    }
+
+    public void setFamilyName(IfcLabel familyName) {
+        this.familyName = familyName;
+    }
+
+    public IfcLabel getGivenName() {
+        return givenName;
+    }
+
+    public void setGivenName(IfcLabel givenName) {
+        this.givenName = givenName;
+    }
+
+    public LIST<IfcLabel> getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(LIST<IfcLabel> middleName) {
+        this.middleName = middleName;
+    }
+
+    public LIST<IfcLabel> getPrefixTitles() {
+        return prefixTitles;
+    }
+
+    public void setPrefixTitles(LIST<IfcLabel> prefixTitles) {
+        this.prefixTitles = prefixTitles;
+    }
+
+    public LIST<IfcLabel> getSuffixTitles() {
+        return suffixTitles;
+    }
+
+    public void setSuffixTitles(LIST<IfcLabel> suffixTitles) {
+        this.suffixTitles = suffixTitles;
+    }
+}
