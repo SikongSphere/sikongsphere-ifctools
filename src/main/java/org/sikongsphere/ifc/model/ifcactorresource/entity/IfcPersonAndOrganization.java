@@ -22,7 +22,47 @@ import org.sikongsphere.ifc.model.ifcactorresource.entity.IfcPerson;
  * @date 2022-08-28 18:30:00
  */
 public class IfcPersonAndOrganization extends IfcBodyTemplate {
+
+    /**
+     * @
+     */
     private IfcPerson thePerson;
-    // TODO IfcOrganization
+    private IfcOrganization theOrganization;
     private LIST<IfcActorRole> roles;
+
+    public IfcPersonAndOrganization() {}
+
+    public IfcPersonAndOrganization(
+        IfcPerson thePerson,
+        IfcOrganization theOrganization,
+        LIST<IfcActorRole> roles
+    ) {
+        this.thePerson = thePerson;
+        this.theOrganization = theOrganization;
+        this.roles = roles;
+    }
+
+    public IfcPerson getThePerson() {
+        return thePerson;
+    }
+
+    public void setThePerson(IfcPerson thePerson) {
+        this.thePerson = thePerson;
+    }
+
+    public IfcOrganization getTheOrganization() {
+        return theOrganization;
+    }
+
+    public void setTheOrganization(IfcOrganization theOrganization) {
+        this.theOrganization = theOrganization;
+    }
+
+    public LIST<IfcActorRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(LIST<IfcActorRole> roles) {
+        this.roles = roles;
+    }
 }
