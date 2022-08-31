@@ -10,7 +10,7 @@ triggers:
   pr:
     branches:
       include:
-        - master
+        - develop
 stages:
   - name: compile
     displayName: 编译
