@@ -8,19 +8,20 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model;
+package org.sikongsphere.ifc.model.basic;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.sikongsphere.ifc.model.IfcLeafNode;
 
 /**
- *  This abstract class is mainly used to encapsulate many non-leaf nodes, which contain
- *  many specific architectural entities
+ * This class is used to encapsulate Integer information
  *
  * @author zaiyuan
- * @date 2022-08-11 18:30:00
+ * @date 2022-08-31 18:30:00
  */
-public abstract class IfcNonLeafNode extends IfcNode {
-    public int stepNumber;
-    public List<IfcNode> elements = new ArrayList<>();
+public class INTEGER extends IfcLeafNode {
+    public Integer value = 0;
+
+    public INTEGER(Integer value) {
+        this.value = value;
+    }
 }
