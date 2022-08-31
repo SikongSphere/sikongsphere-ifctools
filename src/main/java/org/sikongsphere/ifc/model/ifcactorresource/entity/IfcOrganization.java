@@ -1,4 +1,4 @@
-package org.sikongsphere.ifc.model.body;
+package org.sikongsphere.ifc.model.ifcactorresource.entity;
 
 import org.sikongsphere.ifc.model.basic.*;
 

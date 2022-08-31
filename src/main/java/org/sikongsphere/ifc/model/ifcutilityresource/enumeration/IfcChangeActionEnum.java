@@ -8,39 +8,44 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.enumeration;
+package org.sikongsphere.ifc.model.ifcutilityresource.enumeration;
 
 /**
  * Enumeration identifying the state or accessibility of the object (e.g., read/write, locked, etc.).
  *
  * @author Wang Bohong
- * @date 2022/08/29 15:14
+ * @date 2022/08/29 15:20
  */
+public enum IfcChangeActionEnum {
 
-public enum IfcStateEnum {
     /**
-     * Object is in a Read-Write state.
+     * Default state
      * @author Wang Bohong
      */
-    READWRITE,
+    NOCHANGE,
     /**
-     * Object is in a Read-Write state.
+     * Modification to the object has been made.
      * @author Wang Bohong
      */
-    READONLY,
+    MODIFIED,
     /**
-     * Object is in a Locked state.
+     * The object has been added by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
      * @author Wang Bohong
      */
-    LOCKED,
+    ADDED,
     /**
-     * Object is in a Read-Write-Locked state.
+     * The object has been deleted by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
      * @author Wang Bohong
      */
-    READWRITELOCKED,
+    DELETED,
     /**
-     * Object is in a Read-Write-Locked state.
+     * The object has been added and modified.
      * @author Wang Bohong
      */
-    READONLYLOCKED
+    MODIFIEDADDED,
+    /**
+     * The object has been modified and deleted.
+     * @author Wang Bohong
+     */
+    MODIFIEDDELETED
 }

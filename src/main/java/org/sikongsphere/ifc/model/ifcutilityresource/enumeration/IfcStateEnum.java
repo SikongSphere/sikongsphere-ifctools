@@ -8,28 +8,39 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.enumeration;
+package org.sikongsphere.ifc.model.ifcutilityresource.enumeration;
 
 /**
- * Enumeration that provides an indication, whether the spatial structure element or proxy represents
+ * Enumeration identifying the state or accessibility of the object (e.g., read/write, locked, etc.).
  *
  * @author Wang Bohong
- * @date 2022/8/29 15:35
+ * @date 2022/08/29 15:14
  */
-public enum IfcElementCompositionEnum {
+
+public enum IfcStateEnum {
     /**
-     * a group or aggregation of similar elements
+     * Object is in a Read-Write state.
      * @author Wang Bohong
      */
-    COMPLEX,
+    READWRITE,
     /**
-     * a (undivided) element itself
+     * Object is in a Read-Write state.
      * @author Wang Bohong
      */
-    ELEMENT,
+    READONLY,
     /**
-     * a subelement or part
+     * Object is in a Locked state.
      * @author Wang Bohong
      */
-    PARTIAL
+    LOCKED,
+    /**
+     * Object is in a Read-Write-Locked state.
+     * @author Wang Bohong
+     */
+    READWRITELOCKED,
+    /**
+     * Object is in a Read-Write-Locked state.
+     * @author Wang Bohong
+     */
+    READONLYLOCKED
 }

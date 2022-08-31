@@ -8,20 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.body;
-
-import org.sikongsphere.ifc.model.basic.IfcLabel;
-import org.sikongsphere.ifc.model.basic.IfcText;
-import org.sikongsphere.ifc.model.enumeration.IfcRoleEnum;
+package org.sikongsphere.ifc.model.ifcactorresource.enumeration;
 
 /**
- * This class is used to encapsulate actor role information
+ * This enumeration is used to tag different address
  *
  * @author zaiyuan
  * @date 2022-08-28 18:30:00
  */
-public class IfcActorRole extends IfcBodyTemplate {
-    private IfcRoleEnum role;
-    private IfcLabel userDefinedRole;
-    private IfcText description;
+public enum IfcAddressTypeEnum {
+    OFFICE,
+    SITE,
+    HOME,
+    DISTRIBUTIONPOINT,
+    USERDEFINED
 }

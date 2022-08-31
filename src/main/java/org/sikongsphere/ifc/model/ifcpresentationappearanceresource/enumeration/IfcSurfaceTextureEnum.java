@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.enumeration;
+package org.sikongsphere.ifc.model.ifcpresentationappearanceresource.enumeration;
 
 /**
  * The IfcSurfaceTextureEnum defines the range of different types of image or pixel maps available.

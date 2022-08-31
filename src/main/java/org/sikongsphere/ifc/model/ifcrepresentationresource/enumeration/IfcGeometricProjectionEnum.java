@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.enumeration;
+package org.sikongsphere.ifc.model.ifcrepresentationresource.enumeration;
 
 /**
  * The IfcGeometricProjectionEnum defines the various representation types that can be semantically distinguished.
