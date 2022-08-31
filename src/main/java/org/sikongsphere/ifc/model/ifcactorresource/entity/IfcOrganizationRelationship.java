@@ -1,8 +1,9 @@
-package org.sikongsphere.ifc.model.body;
+package org.sikongsphere.ifc.model.ifcactorresource.entity;
 
 import org.sikongsphere.ifc.model.basic.IfcLabel;
 import org.sikongsphere.ifc.model.basic.IfcText;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.ifcactorresource.entity.IfcOrganization;
 
 /**
  * This class is used to encapsulate organization relationship information

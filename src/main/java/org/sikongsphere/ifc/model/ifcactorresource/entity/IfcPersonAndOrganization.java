@@ -8,9 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.body;
+package org.sikongsphere.ifc.model.ifcactorresource.entity;
 
 import org.sikongsphere.ifc.model.basic.LIST;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.ifcactorresource.entity.IfcActorRole;
+import org.sikongsphere.ifc.model.ifcactorresource.entity.IfcPerson;
 
 /**
  * This class is used to encapsulate actor person and organization information

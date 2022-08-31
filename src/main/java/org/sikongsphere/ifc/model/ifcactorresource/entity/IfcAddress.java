@@ -8,11 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.body;
+package org.sikongsphere.ifc.model.ifcactorresource.entity;
 
 import org.sikongsphere.ifc.model.basic.IfcLabel;
 import org.sikongsphere.ifc.model.basic.IfcText;
-import org.sikongsphere.ifc.model.enumeration.IfcAddressTypeEnum;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.ifcactorresource.enumeration.IfcAddressTypeEnum;
 
 /**
  * This class is used to encapsulate address information

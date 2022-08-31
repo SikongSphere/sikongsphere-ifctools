@@ -8,12 +8,13 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.body;
+package org.sikongsphere.ifc.model.ifcactorresource.entity;
 
 import org.sikongsphere.ifc.model.basic.IfcIdentifier;
 import org.sikongsphere.ifc.model.basic.IfcLabel;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * This class is used to encapsulate person information

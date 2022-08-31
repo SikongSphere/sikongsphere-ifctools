@@ -8,44 +8,53 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.enumeration;
+package org.sikongsphere.ifc.model.ifckernel.enumeration;
 
 /**
- * Enumeration identifying the state or accessibility of the object (e.g., read/write, locked, etc.).
+ * This enumeration defines the applicable object categories
  *
  * @author Wang Bohong
- * @date 2022/08/29 15:20
+ * @date 2022/8/29 15:33
  */
-public enum IfcChangeActionEnum {
-
+public enum IfcObjectTypeEnum {
     /**
-     * Default state
+     * IfcProduct or its subclasses.
      * @author Wang Bohong
      */
-    NOCHANGE,
+    PRODUCT,
     /**
-     * Modification to the object has been made.
+     * IfcProcess or its subclasses.
      * @author Wang Bohong
      */
-    MODIFIED,
+    PROCESS,
     /**
-     * The object has been added by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
+     * IfcControl or its subclasses.
      * @author Wang Bohong
      */
-    ADDED,
+    CONTROL,
     /**
-     * The object has been deleted by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
+     * IfcResource or its subclasses.
      * @author Wang Bohong
      */
-    DELETED,
+    RESOURCE,
     /**
-     * The object has been added and modified.
+     * IfcActor or its subclasses.
      * @author Wang Bohong
      */
-    MODIFIEDADDED,
+    ACTOR,
     /**
-     * The object has been modified and deleted.
+     * IfcGroup or its subclasses.
      * @author Wang Bohong
      */
-    MODIFIEDDELETED
+    GROUP,
+    /**
+     * IfcProject or its subclasses.
+     * @author Wang Bohong
+     */
+    PROJECT,
+    /**
+     * Other entities.
+     * @author Wang Bohong
+     */
+    NOTDEFINED
 }
