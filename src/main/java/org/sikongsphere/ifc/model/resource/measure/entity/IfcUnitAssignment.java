@@ -10,17 +10,30 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcUnitEnum;
 import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
 
+import java.util.Set;
+
 /**
- * This class is used to encapsulate named unit information
- *
- * @author zaiyuan
- * @date 2022-08-31 18:30:00
+ * This class contains a set of units which may be assigned.
+ * @author Wang Bohong
+ * @date 2022/9/1 13:10
  */
-public abstract class IfcNamedUnit extends IfcNonLeafNode implements IfcUnit {
-    protected IfcDimensionalExponents dimensions;
-    protected IfcUnitEnum unitType;
+public class IfcUnitAssignment {
+
+    private Set<IfcUnit> units;
+
+    public IfcUnitAssignment() {}
+
+    public IfcUnitAssignment(Set<IfcUnit> units) {
+        this.units = units;
+    }
+
+    public Set<IfcUnit> getUnits() {
+        return units;
+    }
+
+    public void setUnits(Set<IfcUnit> units) {
+        this.units = units;
+    }
 }

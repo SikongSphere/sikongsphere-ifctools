@@ -8,17 +8,13 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.entity;
-
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcCurrencyEnum;
-import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
+package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 /**
- * This class is used to encapsulate monetary unit information
+ * a instance of the class is a representation item that has the additional meaning
+ * of having geometric position or orientation or both.
  *
- * @author zaiyuan
- * @date 2022-08-31 18:30:00
+ * @author Wang Bohong
+ * @date 2022/9/1 15:48
  */
-public class IfcMonetaryUnit implements IfcUnit {
-    private IfcCurrencyEnum currency;
-}
+public class IfcGeometricRepresentationItem extends IfcRepresentationItem {}

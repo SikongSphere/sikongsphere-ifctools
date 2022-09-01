@@ -8,17 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.entity;
-
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcCurrencyEnum;
-import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
+package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 /**
- * This class is used to encapsulate monetary unit information
+ * An point is a location in some real Cartesian coordinate space Rm, for m = 1, 2 or 3.
  *
- * @author zaiyuan
- * @date 2022-08-31 18:30:00
+ * @author Wang Bohong
+ * @date 2022/9/1 15:52
  */
-public class IfcMonetaryUnit implements IfcUnit {
-    private IfcCurrencyEnum currency;
-}
+public class IfcPoint extends IfcGeometricRepresentationItem {}
