@@ -8,18 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
+package org.sikongsphere.ifc.model.resource.measure.entity;
 
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
-import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcUnitEnum;
 
 /**
- * IfcObject
+ * This class is used to encapsulate named unit information
  *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022-08-31 18:30:00
  */
-public abstract class IfcObject extends IfcObjectDefinition {
-    private IfcLabel objectType;
-    private SET<IfcRelDefines> isDefinedBy;
+public abstract class IfcNamedUnit extends IfcNonLeafNode {
+    protected IfcDimensionalExponents dimensions;
+    protected IfcUnitEnum unitType;
 }

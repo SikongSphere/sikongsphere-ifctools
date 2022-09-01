@@ -8,18 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
+package org.sikongsphere.ifc.model.resource.utility.definedtype;
 
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
-import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
- * IfcObject
+ * This class is for globally id
  *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022/8/31 21:24
  */
-public abstract class IfcObject extends IfcObjectDefinition {
-    private IfcLabel objectType;
-    private SET<IfcRelDefines> isDefinedBy;
+public class IfcGloballyUniqueId extends STRING {
+    public IfcGloballyUniqueId(String value) {
+        super(value);
+    }
 }

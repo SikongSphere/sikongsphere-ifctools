@@ -8,23 +8,21 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
+package org.sikongsphere.ifc.model.resource.actor.entity;
 
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcText;
-import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
-import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.resource.actor.enumeration.IfcRoleEnum;
 
 /**
- * IfcRoot
+ * This class is used to encapsulate actor role information
  *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022-08-28 18:30:00
  */
-public abstract class IfcRoot extends IfcNonLeafNode {
-    private IfcGloballyUniqueId globalId;
-    private IfcOwnerHistory ownerHistory;
-    private IfcLabel name;
+public class IfcActorRole extends IfcBodyTemplate {
+    private IfcRoleEnum role;
+    private IfcLabel userDefinedRole;
     private IfcText description;
 }

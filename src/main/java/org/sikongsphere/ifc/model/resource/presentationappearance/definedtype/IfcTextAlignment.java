@@ -8,18 +8,19 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
+package org.sikongsphere.ifc.model.resource.presentationappearance.definedtype;
 
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
-import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
- * IfcObject
+ * IfcTextAlignment
+ * 	SELF IN ['left', 'right', 'center', 'justify']
  *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022/9/1 08:15
  */
-public abstract class IfcObject extends IfcObjectDefinition {
-    private IfcLabel objectType;
-    private SET<IfcRelDefines> isDefinedBy;
+public class IfcTextAlignment extends STRING {
+    public IfcTextAlignment(String value) {
+        super(value);
+    }
 }

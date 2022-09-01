@@ -8,18 +8,29 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
-
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
-import org.sikongsphere.ifc.model.basic.SET;
+package org.sikongsphere.ifc.model.resource.measure.defined_type;
 
 /**
- * IfcObject
+ * IfcTimeStamp
  *
- * @author zaiyuan
+ * @author Wang Bohong
  * @date 2022/8/31 21:15
  */
-public abstract class IfcObject extends IfcObjectDefinition {
-    private IfcLabel objectType;
-    private SET<IfcRelDefines> isDefinedBy;
+public class IfcTimeStamp {
+
+    private Integer timestamp;
+
+    public IfcTimeStamp(Integer timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public IfcTimeStamp() {}
+
+    public Integer getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Integer timestamp) {
+        this.timestamp = timestamp;
+    }
 }

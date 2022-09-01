@@ -8,23 +8,25 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
+package org.sikongsphere.ifc.model.resource.actor.entity;
 
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcText;
-import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
-import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
+import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.resource.actor.enumeration.IfcAddressTypeEnum;
 
 /**
- * IfcRoot
+ * This class is used to encapsulate address information
  *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022-08-13 11:44:00
  */
-public abstract class IfcRoot extends IfcNonLeafNode {
-    private IfcGloballyUniqueId globalId;
-    private IfcOwnerHistory ownerHistory;
-    private IfcLabel name;
+public class IfcAddress extends IfcBodyTemplate {
+    private IfcAddressTypeEnum purpose;
     private IfcText description;
+    private IfcLabel userDefinedPurpose;
+
+    private SET<IfcPerson> ofPerson;
+    private SET<IfcOrganization> ofOrganization;
 }
