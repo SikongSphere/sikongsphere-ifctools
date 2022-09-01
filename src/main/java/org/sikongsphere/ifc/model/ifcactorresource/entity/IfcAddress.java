@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.ifcactorresource.entity;
 
 import org.sikongsphere.ifc.model.basic.IfcLabel;
 import org.sikongsphere.ifc.model.basic.IfcText;
+import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.ifcactorresource.enumeration.IfcAddressTypeEnum;
 
@@ -25,5 +26,7 @@ public class IfcAddress extends IfcBodyTemplate {
     private IfcAddressTypeEnum purpose;
     private IfcText description;
     private IfcLabel userDefinedPurpose;
-    // TODO inverse
+
+    private SET<IfcPerson> ofPerson;
+    private SET<IfcOrganization> ofOrganization;
 }
