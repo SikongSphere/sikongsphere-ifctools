@@ -8,17 +8,16 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.entity;
+package org.sikongsphere.ifc.model.resource.measure.defined_type;
 
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcCurrencyEnum;
-import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
+import org.sikongsphere.ifc.model.basic.LOGICAL;
 
 /**
- * This class is used to encapsulate monetary unit information
- *
- * @author zaiyuan
- * @date 2022-08-31 18:30:00
+ * @author Wang Bohong
+ * @date 2022/9/1 16:09
  */
-public class IfcMonetaryUnit implements IfcUnit {
-    private IfcCurrencyEnum currency;
+public class IfcLogical extends LOGICAL {
+    public IfcLogical(boolean value) {
+        super(value);
+    }
 }

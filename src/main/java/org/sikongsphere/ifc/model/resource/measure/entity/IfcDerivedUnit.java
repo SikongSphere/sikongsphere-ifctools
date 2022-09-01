@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnum;
+import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
 
 /**
  * This class is used to encapsulate derived unit information
@@ -21,7 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnu
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
-public class IfcDerivedUnit extends IfcNonLeafNode {
+public class IfcDerivedUnit extends IfcNonLeafNode implements IfcUnit {
     private SET<IfcDerivedUnitElement> elements;
     private IfcDerivedUnitEnum unitType;
     private IfcLabel userDefinedType;

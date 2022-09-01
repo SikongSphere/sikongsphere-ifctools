@@ -8,17 +8,14 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.entity;
-
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcCurrencyEnum;
-import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
+package org.sikongsphere.ifc.model.resource.measure.select_types;
 
 /**
- * This class is used to encapsulate monetary unit information
+ * Definition from ISO/CD 10303-41:1992:
+ * A unit is a physical quantity, with a value of one,
+ * which is used as a standard in terms of which other quantities are expressed.
  *
- * @author zaiyuan
- * @date 2022-08-31 18:30:00
+ * @author Wang Bohong
+ * @date 2022/9/1 13:14
  */
-public class IfcMonetaryUnit implements IfcUnit {
-    private IfcCurrencyEnum currency;
-}
+public interface IfcUnit {}
