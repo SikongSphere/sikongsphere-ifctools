@@ -3,12 +3,10 @@ name: pr-pipeline
 displayName: PRPipeline
 triggers:
   trigger: auto
-  push:
+  pr:
     branches:
       prefix:
         - ''
-  pr:
-    branches:
       include:
         - develop
 stages:
