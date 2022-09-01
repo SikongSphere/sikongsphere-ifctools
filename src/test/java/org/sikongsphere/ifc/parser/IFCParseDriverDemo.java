@@ -14,21 +14,20 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.sikongsphere.ifc.model.IfcModel;
-import org.sikongsphere.ifc.model.IfcNode;
 
 import java.io.IOException;
 
 public class IFCParseDriverDemo {
     public static void main(String[] args) throws IOException {
         CharStream stream = CharStreams.fromFileName(
-            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc"
+            "src\\test\\resources\\blank.ifc"
         );
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
         IfcModel model = new IfcModel();
         IfcVisitorImpl ifcVisitorImpl = new IfcVisitorImpl(model);
-        IfcNode node = ifcVisitorImpl.visit(ifcmodel);
+        ifcVisitorImpl.visit(ifcmodel);
         System.out.println(ifcmodel.getText());
     }
 }
