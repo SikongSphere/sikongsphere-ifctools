@@ -5,9 +5,7 @@ triggers:
   trigger: auto
   pr:
     branches:
-      prefix:
-        - ''
-      include:
+      precise:
         - develop
 stages:
   - name: compile
