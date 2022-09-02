@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
 
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
+
 /**
  * The IfcLocalPlacement defines the relative placement of a product
  * in relation to the placement of another product or the absolute placement
@@ -18,4 +20,31 @@ package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
  * @author stan
  * @date 2022/09/01 22:55
  */
-public class IfcLocalPlacement extends IfcObjectPlacement {}
+public class IfcLocalPlacement extends IfcObjectPlacement {
+    private IfcObjectPlacement placementRelTo;
+    private IfcAxis2Placement relativePlacement;
+
+    public IfcLocalPlacement() {
+    }
+
+    public IfcLocalPlacement(IfcObjectPlacement placementRelTo, IfcAxis2Placement relativePlacement) {
+        this.placementRelTo = placementRelTo;
+        this.relativePlacement = relativePlacement;
+    }
+
+    public IfcObjectPlacement getPlacementRelTo() {
+        return placementRelTo;
+    }
+
+    public void setPlacementRelTo(IfcObjectPlacement placementRelTo) {
+        this.placementRelTo = placementRelTo;
+    }
+
+    public IfcAxis2Placement getRelativePlacement() {
+        return relativePlacement;
+    }
+
+    public void setRelativePlacement(IfcAxis2Placement relativePlacement) {
+        this.relativePlacement = relativePlacement;
+    }
+}

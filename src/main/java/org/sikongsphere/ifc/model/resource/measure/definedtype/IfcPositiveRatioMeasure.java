@@ -18,4 +18,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:44
  */
-public class IfcPositiveRatioMeasure extends IfcNonLeafNode {}
+public class IfcPositiveRatioMeasure {
+    private IfcRatioMeasure positiveRatioMeasure;
+
+    public IfcPositiveRatioMeasure() {
+    }
+
+    public IfcPositiveRatioMeasure(IfcRatioMeasure positiveRatioMeasure) {
+        this.positiveRatioMeasure = positiveRatioMeasure;
+    }
+
+    public IfcRatioMeasure getPositiveRatioMeasure() {
+        return positiveRatioMeasure;
+    }
+
+    public void setPositiveRatioMeasure(IfcRatioMeasure positiveRatioMeasure) {
+        this.positiveRatioMeasure = positiveRatioMeasure;
+    }
+}

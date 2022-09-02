@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
+
 /**
  * The building storey has an elevation and typically represents a (nearly) horizontal aggregation
  * of spaces that are vertically bound.
@@ -17,4 +19,21 @@ package org.sikongsphere.ifc.model.core.productextension.entities;
  * @author stan
  * @date 2022/09/01 23:06
  */
-public class IfcBuildingStorey extends IfcSpatialStructureElement {}
+public class IfcBuildingStorey extends IfcSpatialStructureElement {
+    private IfcLengthMeasure elevation;
+
+    public IfcBuildingStorey() {
+    }
+
+    public IfcBuildingStorey(IfcLengthMeasure elevation) {
+        this.elevation = elevation;
+    }
+
+    public IfcLengthMeasure getElevation() {
+        return elevation;
+    }
+
+    public void setElevation(IfcLengthMeasure elevation) {
+        this.elevation = elevation;
+    }
+}

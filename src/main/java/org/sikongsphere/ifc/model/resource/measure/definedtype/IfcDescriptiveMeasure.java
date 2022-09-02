@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
  * A descriptive measure is a human interpretable definition of a quantifiable value.
@@ -18,4 +18,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:46
  */
-public class IfcDescriptiveMeasure extends IfcNonLeafNode {}
+public class IfcDescriptiveMeasure {
+    private STRING descriptiveMeasure;
+
+    public IfcDescriptiveMeasure() {
+    }
+
+    public IfcDescriptiveMeasure(STRING descriptiveMeasure) {
+        this.descriptiveMeasure = descriptiveMeasure;
+    }
+
+    public STRING getDescriptiveMeasure() {
+        return descriptiveMeasure;
+    }
+
+    public void setDescriptiveMeasure(STRING descriptiveMeasure) {
+        this.descriptiveMeasure = descriptiveMeasure;
+    }
+}

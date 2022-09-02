@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.presentation.entity.IfcPreDefinedItem;
 
 /**
@@ -19,4 +20,11 @@ import org.sikongsphere.ifc.model.resource.presentation.entity.IfcPreDefinedItem
  * @author stan
  * @date 2022/09/01 23:36
  */
-public class IfcPreDefinedCurveFont extends IfcPreDefinedItem {}
+public abstract class IfcPreDefinedCurveFont extends IfcPreDefinedItem {
+    public IfcPreDefinedCurveFont() {
+    }
+
+    public IfcPreDefinedCurveFont(IfcLabel name) {
+        super(name);
+    }
+}

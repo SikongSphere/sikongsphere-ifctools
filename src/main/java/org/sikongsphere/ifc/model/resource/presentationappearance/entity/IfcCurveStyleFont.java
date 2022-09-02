@@ -10,7 +10,8 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
  * A curve style font combines several curve style font pattern entities
@@ -20,4 +21,31 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/10 23:37
  */
-public class IfcCurveStyleFont extends IfcNonLeafNode {}
+public class IfcCurveStyleFont {
+    private IfcLabel name;
+    private SET<IfcCurveStyleFontPattern> patternList;
+
+    public IfcCurveStyleFont() {
+    }
+
+    public IfcCurveStyleFont(IfcLabel name, SET<IfcCurveStyleFontPattern> patternList) {
+        this.name = name;
+        this.patternList = patternList;
+    }
+
+    public IfcLabel getName() {
+        return name;
+    }
+
+    public void setName(IfcLabel name) {
+        this.name = name;
+    }
+
+    public SET<IfcCurveStyleFontPattern> getPatternList() {
+        return patternList;
+    }
+
+    public void setPatternList(SET<IfcCurveStyleFontPattern> patternList) {
+        this.patternList = patternList;
+    }
+}

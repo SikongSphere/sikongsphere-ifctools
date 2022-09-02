@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveLengthMeasure;
 
 /**
  *  A curve style font pattern is a pair of visible
@@ -19,4 +21,31 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:39
  */
-public class IfcCurveStyleFontPattern extends IfcNonLeafNode {}
+public class IfcCurveStyleFontPattern {
+    private IfcLengthMeasure visibleSegmentLength;
+    private IfcPositiveLengthMeasure invisiblesegmentLength;
+
+    public IfcCurveStyleFontPattern() {
+    }
+
+    public IfcCurveStyleFontPattern(IfcLengthMeasure visibleSegmentLength, IfcPositiveLengthMeasure invisiblesegmentLength) {
+        this.visibleSegmentLength = visibleSegmentLength;
+        this.invisiblesegmentLength = invisiblesegmentLength;
+    }
+
+    public IfcLengthMeasure getVisibleSegmentLength() {
+        return visibleSegmentLength;
+    }
+
+    public void setVisibleSegmentLength(IfcLengthMeasure visibleSegmentLength) {
+        this.visibleSegmentLength = visibleSegmentLength;
+    }
+
+    public IfcPositiveLengthMeasure getInvisiblesegmentLength() {
+        return invisiblesegmentLength;
+    }
+
+    public void setInvisiblesegmentLength(IfcPositiveLengthMeasure invisiblesegmentLength) {
+        this.invisiblesegmentLength = invisiblesegmentLength;
+    }
+}

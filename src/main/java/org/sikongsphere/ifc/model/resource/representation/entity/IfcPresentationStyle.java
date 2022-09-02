@@ -10,9 +10,15 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
-public abstract class IfcPresentationStyle extends IfcNonLeafNode {
+/**
+ *An abstract generalisation of style table for presentation information
+ *  assigned to geometric representation items.
+ *
+ * @author stan
+ * @date 2022/09/02 22:53
+ */
+public abstract class IfcPresentationStyle {
     private IfcLabel name;
 }

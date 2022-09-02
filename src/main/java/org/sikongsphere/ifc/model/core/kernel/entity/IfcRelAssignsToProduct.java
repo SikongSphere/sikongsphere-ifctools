@@ -8,4 +8,20 @@ package org.sikongsphere.ifc.model.core.kernel.entity;
  * @date 2022/09/02 13:33
  */
 public class IfcRelAssignsToProduct extends IfcRelAssigns{
+    private IfcProduct relatingProduct;
+
+    public IfcRelAssignsToProduct() {
+    }
+
+    public IfcRelAssignsToProduct(IfcProduct relatingProduct) {
+        this.relatingProduct = relatingProduct;
+    }
+
+    public IfcProduct getRelatingProduct() {
+        return relatingProduct;
+    }
+
+    public void setRelatingProduct(IfcProduct relatingProduct) {
+        this.relatingProduct = relatingProduct;
+    }
 }

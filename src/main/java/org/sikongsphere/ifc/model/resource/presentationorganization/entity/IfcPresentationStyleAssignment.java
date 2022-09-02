@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.resource.presentationorganization.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
 
 /**
  * The presentation style assignment is a set of styles which are assigned to styled items
@@ -19,4 +21,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/14 23:26
  */
-public class IfcPresentationStyleAssignment extends IfcNonLeafNode {}
+public class IfcPresentationStyleAssignment {
+    private SET<IfcPresentationStyleSelect> styles;
+
+    public IfcPresentationStyleAssignment() {
+    }
+
+    public IfcPresentationStyleAssignment(SET<IfcPresentationStyleSelect> styles) {
+        this.styles = styles;
+    }
+
+    public SET<IfcPresentationStyleSelect> getStyles() {
+        return styles;
+    }
+
+    public void setStyles(SET<IfcPresentationStyleSelect> styles) {
+        this.styles = styles;
+    }
+}
