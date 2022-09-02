@@ -17,4 +17,6 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/01 21:34
  */
-public class IfcAxis2Placement3D extends IfcPlacement {}
+public class IfcAxis2Placement3D extends IfcPlacement {
+
+}

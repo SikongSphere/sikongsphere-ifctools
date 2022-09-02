@@ -18,4 +18,20 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/02 00:00
  */
-public class IfcDimensionCount extends IfcNonLeafNode {}
+public class IfcDimensionCount {
+    private Integer dimensionCount;
+
+    public IfcDimensionCount(Integer dimensionCount) {
+        this.dimensionCount = dimensionCount;
+    }
+
+    public IfcDimensionCount() {}
+
+    public Integer getDimensionCount() {
+        return dimensionCount;
+    }
+
+    public void setDimensionCount(Integer dimensionCount) {
+        this.dimensionCount = dimensionCount;
+    }
+}
