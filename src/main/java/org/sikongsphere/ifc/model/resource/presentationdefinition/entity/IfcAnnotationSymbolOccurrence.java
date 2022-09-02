@@ -8,22 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.defined_type;
-
-import org.sikongsphere.ifc.model.basic.STRING;
+package org.sikongsphere.ifc.model.resource.presentationdefinition.entity;
 
 /**
- * This class is used to encapsulate text information
+ * An annotation symbol occurrence is a symbol with a style assignment.
  *
- * @author zaiyuan
- * @date 2022-08-28 18:30:00
+ * @author Wang Bohong
+ * @date 2022/9/2 11:40
  */
-public class IfcText extends STRING {
-    /**
-     * Construction Function
-     * @param value
-     */
-    public IfcText(String value) {
-        super(value);
-    }
-}
+public class IfcAnnotationSymbolOccurrence extends IfcAnnotationOccurrence {}

@@ -11,7 +11,7 @@
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 import org.sikongsphere.ifc.model.basic.LIST;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLengthMeasure;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
 /**
  * A point defined by its coordinates in a two or
@@ -31,9 +31,7 @@ public class IfcCartesianPoint extends IfcPoint {
     public IfcCartesianPoint(LIST<IfcLengthMeasure> coordinates) throws Exception {
         this.coordinates = coordinates;
         if (coordinates.size() > 3) {
-            throw new Exception(
-                "The amount of coordinates is between 1 and 3"
-            );
+            throw new Exception("The amount of coordinates is between 1 and 3");
         }
     }
 
@@ -44,9 +42,7 @@ public class IfcCartesianPoint extends IfcPoint {
     public void setCoordinates(LIST<IfcLengthMeasure> coordinates) throws Exception {
         this.coordinates = coordinates;
         if (coordinates.size() > 3) {
-            throw new Exception(
-                "The amount of coordinates is between 1 and 3"
-            );
+            throw new Exception("The amount of coordinates is between 1 and 3");
         }
     }
 }

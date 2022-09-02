@@ -8,14 +8,14 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.select_types;
+package org.sikongsphere.ifc.model.resource.measure.definedtype;
+
+import org.sikongsphere.ifc.model.IfcNonLeafNode;
 
 /**
- * Definition from ISO/CD 10303-41:1992:
- * A unit is a physical quantity, with a value of one,
- * which is used as a standard in terms of which other quantities are expressed.
+ * A positive ratio measure is a ratio measure that is greater than zero.
  *
- * @author Wang Bohong
- * @date 2022/9/1 13:14
+ * @author stan
+ * @date 2022/09/01 23:44
  */
-public interface IfcUnit {}
+public class IfcPositiveRatioMeasure extends IfcNonLeafNode {}

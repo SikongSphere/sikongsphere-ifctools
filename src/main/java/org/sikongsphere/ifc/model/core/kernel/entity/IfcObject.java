@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 
 /**

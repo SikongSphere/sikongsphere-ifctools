@@ -11,9 +11,9 @@
 package org.sikongsphere.ifc.model.resource.actor.entity;
 
 import org.sikongsphere.ifc.model.basic.*;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcIdentifier;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcText;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 
 /**
  * This class is used to encapsulate organization information

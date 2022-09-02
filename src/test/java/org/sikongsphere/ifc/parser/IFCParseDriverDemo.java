@@ -19,9 +19,7 @@ import java.io.IOException;
 
 public class IFCParseDriverDemo {
     public static void main(String[] args) throws IOException {
-        CharStream stream = CharStreams.fromFileName(
-            "src\\test\\resources\\blank.ifc"
-        );
+        CharStream stream = CharStreams.fromFileName("src\\test\\resources\\blank.ifc");
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();

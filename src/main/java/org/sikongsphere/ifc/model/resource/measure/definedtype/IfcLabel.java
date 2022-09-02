@@ -8,16 +8,23 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.defined_type;
+package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
-import org.sikongsphere.ifc.model.basic.LOGICAL;
+import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
- * @author Wang Bohong
- * @date 2022/9/1 16:09
+ * This class is used to encapsulate Label information
+ *
+ * @author zaiyuan
+ * @date 2022-08-28 18:30:00
  */
-public class IfcLogical extends LOGICAL {
-    public IfcLogical(boolean value) {
+public class IfcLabel extends STRING {
+
+    /**
+     * Construction Function
+     * @param value
+     */
+    public IfcLabel(String value) {
         super(value);
     }
 }

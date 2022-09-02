@@ -8,29 +8,14 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.defined_type;
+package org.sikongsphere.ifc.model.resource.measure.definedtype;
+
+import org.sikongsphere.ifc.model.IfcNonLeafNode;
 
 /**
- * IfcTimeStamp
+ * Dimensionless measure to express ratio values ranging from 0.0 to 1.0
  *
- * @author Wang Bohong
- * @date 2022/8/31 21:15
+ * @author stan
+ * @date 2022/09/01 23:47
  */
-public class IfcTimeStamp {
-
-    private Integer timestamp;
-
-    public IfcTimeStamp(Integer timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public IfcTimeStamp() {}
-
-    public Integer getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-    }
-}
+public class IfcNormalisedRatioMeasure extends IfcNonLeafNode {}

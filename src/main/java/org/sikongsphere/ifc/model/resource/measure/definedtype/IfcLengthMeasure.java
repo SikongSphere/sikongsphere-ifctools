@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.defined_type;
+package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
 /**
  * A length measure is the value of a distance.

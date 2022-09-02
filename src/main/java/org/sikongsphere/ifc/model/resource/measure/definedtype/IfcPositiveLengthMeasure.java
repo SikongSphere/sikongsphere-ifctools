@@ -8,23 +8,14 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.defined_type;
+package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
-import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.IfcNonLeafNode;
 
 /**
- * This class is used to encapsulate Label information
+ * A positive length measure is a length measure that is greater than zero.
  *
- * @author zaiyuan
- * @date 2022-08-28 18:30:00
+ * @author stan
+ * @date 2022/09/01 23:40
  */
-public class IfcLabel extends STRING {
-
-    /**
-     * Construction Function
-     * @param value
-     */
-    public IfcLabel(String value) {
-        super(value);
-    }
-}
+public class IfcPositiveLengthMeasure extends IfcNonLeafNode {}

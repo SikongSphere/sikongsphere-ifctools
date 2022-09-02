@@ -8,22 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.defined_type;
-
-import org.sikongsphere.ifc.model.basic.STRING;
+package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 /**
- * This class is used to encapsulate identifier information
+ * IfcTextStyleSelect
  *
  * @author zaiyuan
- * @date 2022-08-28 18:30:00
+ * @date 2022/9/2 19:15
  */
-public class IfcIdentifier extends STRING {
-    /**
-     * Construction Function
-     * @param value
-     */
-    public IfcIdentifier(String value) {
-        super(value);
-    }
-}
+public interface IfcTextStyleSelect {}
