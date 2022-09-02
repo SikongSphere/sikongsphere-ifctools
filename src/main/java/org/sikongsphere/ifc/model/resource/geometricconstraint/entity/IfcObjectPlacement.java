@@ -11,6 +11,9 @@
 package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
+import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
  * Abstract supertype for the special types defining the object coordinate system.
@@ -19,4 +22,31 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 22:18
  */
-public class IfcObjectPlacement extends IfcNonLeafNode {}
+public class IfcObjectPlacement {
+
+    private SET<IfcPresentationLayerAssignment> layerAssignments;
+    private SET<IfcStyledItem> styledByItem;
+
+    public IfcObjectPlacement(SET<IfcPresentationLayerAssignment> layerAssignments, SET<IfcStyledItem> styledByItem) {
+        this.layerAssignments = layerAssignments;
+        this.styledByItem = styledByItem;
+    }
+
+    public IfcObjectPlacement() {}
+
+    public SET<IfcPresentationLayerAssignment> getLayerAssignments() {
+        return layerAssignments;
+    }
+
+    public void setLayerAssignments(SET<IfcPresentationLayerAssignment> layerAssignments) {
+        this.layerAssignments = layerAssignments;
+    }
+
+    public SET<IfcStyledItem> getStyledByItem() {
+        return styledByItem;
+    }
+
+    public void setStyledByItem(SET<IfcStyledItem> styledByItem) {
+        this.styledByItem = styledByItem;
+    }
+}

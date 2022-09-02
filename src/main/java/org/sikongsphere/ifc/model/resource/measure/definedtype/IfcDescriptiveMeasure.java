@@ -18,4 +18,4 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:46
  */
-public class IfcDescriptiveMeasure extends IfcNonLeafNode {}
+public class IfcDescriptiveMeasure {}
