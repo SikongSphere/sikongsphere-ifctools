@@ -1,3 +1,13 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.model.basic.SET;
@@ -17,10 +27,13 @@ public class IfcFillAreaStyleTiles extends IfcGeometricRepresentationItem {
     private SET<IfcFillAreaStyleTileShapeSelect> tiles;
     private IfcPositiveRatioMeasure tilingScale;
 
-    public IfcFillAreaStyleTiles() {
-    }
+    public IfcFillAreaStyleTiles() {}
 
-    public IfcFillAreaStyleTiles(IfcOneDirectionRepeatFactor tilingPattern, SET<IfcFillAreaStyleTileShapeSelect> tiles, IfcPositiveRatioMeasure tilingScale) {
+    public IfcFillAreaStyleTiles(
+        IfcOneDirectionRepeatFactor tilingPattern,
+        SET<IfcFillAreaStyleTileShapeSelect> tiles,
+        IfcPositiveRatioMeasure tilingScale
+    ) {
         this.tilingPattern = tilingPattern;
         this.tiles = tiles;
         this.tilingScale = tilingScale;

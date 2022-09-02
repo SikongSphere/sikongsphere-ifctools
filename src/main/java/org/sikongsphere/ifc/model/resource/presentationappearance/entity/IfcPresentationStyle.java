@@ -22,8 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 public class IfcPresentationStyle extends IfcNonLeafNode {
     private IfcLabel name;
 
-    public IfcPresentationStyle() {
-    }
+    public IfcPresentationStyle() {}
 
     public IfcPresentationStyle(IfcLabel name) {
         this.name = name;

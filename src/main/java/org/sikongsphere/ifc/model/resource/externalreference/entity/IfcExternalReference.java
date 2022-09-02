@@ -23,8 +23,7 @@ public class IfcExternalReference {
     private IfcIdentifier itemReference;
     private IfcLabel name;
 
-    public IfcExternalReference() {
-    }
+    public IfcExternalReference() {}
 
     // ToDO WR1 One of the attributes of IfcExternalReference should have a value assigned.
     public IfcExternalReference(IfcLabel location, IfcIdentifier itemReference, IfcLabel name) {

@@ -8,12 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
+package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
+
+import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.representation.selecttype.IfcColour;
 
 /**
- * The text style select allows for the selection of styles to be assigned to an annotated text
+ * IfcTextStyleForDefinedFont
  *
  * @author zaiyuan
- * @date 2022/9/2 08:15
+ * @date 2022/9/2 19:15
  */
-public interface IfcTextStyleSelect {}
+public class IfcTextStyleForDefinedFont extends IfcNonLeafNode implements IfcCharacterStyleSelect {
+    private IfcColour colour;
+    private IfcColour backgroundColour;
+}

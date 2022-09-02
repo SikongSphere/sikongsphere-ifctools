@@ -31,9 +31,7 @@ public class IfcCartesianPoint extends IfcPoint {
     public IfcCartesianPoint(LIST<IfcLengthMeasure> coordinates) throws Exception {
         this.coordinates = coordinates;
         if (coordinates.size() > 3) {
-            throw new Exception(
-                "The amount of coordinates is between 1 and 3"
-            );
+            throw new Exception("The amount of coordinates is between 1 and 3");
         }
     }
 
@@ -44,9 +42,7 @@ public class IfcCartesianPoint extends IfcPoint {
     public void setCoordinates(LIST<IfcLengthMeasure> coordinates) throws Exception {
         this.coordinates = coordinates;
         if (coordinates.size() > 3) {
-            throw new Exception(
-                "The amount of coordinates is between 1 and 3"
-            );
+            throw new Exception("The amount of coordinates is between 1 and 3");
         }
     }
 }
