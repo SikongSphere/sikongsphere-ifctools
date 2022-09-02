@@ -12,7 +12,7 @@ import org.sikongsphere.ifc.model.IfcModel
 object ParseDriver {
 
   def main(args: Array[String]): Unit = {
-    val stream = CharStreams.fromFileName("F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc")
+    val stream = CharStreams.fromFileName("src\\test\\resources\\blank.ifc")
     val ifcLexer = new IFCLexer(stream)
     val ifcParser = new IFCParser(new CommonTokenStream(ifcLexer))
     val ifcmodel = ifcParser.ifcmodel
