@@ -11,10 +11,10 @@
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnum;
-import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 
 /**
  * This class is used to encapsulate derived unit information

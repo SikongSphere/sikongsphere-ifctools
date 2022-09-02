@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
-import org.sikongsphere.ifc.model.resource.measure.select_types.IfcUnit;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 
 import java.util.Set;
 

@@ -11,7 +11,7 @@
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 public abstract class IfcPresentationStyle extends IfcNonLeafNode {
     private IfcLabel name;

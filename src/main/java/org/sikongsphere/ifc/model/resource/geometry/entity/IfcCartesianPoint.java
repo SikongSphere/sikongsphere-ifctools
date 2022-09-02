@@ -11,7 +11,7 @@
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 import org.sikongsphere.ifc.model.basic.LIST;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLengthMeasure;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
 /**
  * A point defined by its coordinates in a two or
