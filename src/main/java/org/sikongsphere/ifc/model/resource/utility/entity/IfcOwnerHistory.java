@@ -11,7 +11,7 @@
 package org.sikongsphere.ifc.model.resource.utility.entity;
 
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcPersonAndOrganization;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcTimeStamp;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcStateEnum;
 

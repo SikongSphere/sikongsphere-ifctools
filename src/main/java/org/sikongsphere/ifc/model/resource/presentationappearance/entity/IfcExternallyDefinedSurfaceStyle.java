@@ -11,8 +11,8 @@
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.model.resource.externalreference.entity.IfcExternalReference;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcIdentifier;
-import org.sikongsphere.ifc.model.resource.measure.defined_type.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
  * Definition of a surface style through referencing an external source.

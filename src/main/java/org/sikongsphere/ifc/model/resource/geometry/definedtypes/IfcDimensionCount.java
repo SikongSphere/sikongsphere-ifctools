@@ -1,4 +1,4 @@
-package org.sikongsphere.ifc.model.resource.geometry.defined_types;
+package org.sikongsphere.ifc.model.resource.geometry.definedtypes;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 
