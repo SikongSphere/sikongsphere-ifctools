@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.geometry.definedtypes;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.INTEGER;
 
 /**
  * A dimension count is a positive integer used to define the coordinate space dimensionality.
@@ -19,19 +20,20 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @date 2022/09/02 00:00
  */
 public class IfcDimensionCount {
-    private Integer dimensionCount;
+    private INTEGER dimensionCount;
 
-    public IfcDimensionCount(Integer dimensionCount) {
+    public IfcDimensionCount() {
+    }
+
+    public IfcDimensionCount(INTEGER dimensionCount) {
         this.dimensionCount = dimensionCount;
     }
 
-    public IfcDimensionCount() {}
-
-    public Integer getDimensionCount() {
+    public INTEGER getDimensionCount() {
         return dimensionCount;
     }
 
-    public void setDimensionCount(Integer dimensionCount) {
+    public void setDimensionCount(INTEGER dimensionCount) {
         this.dimensionCount = dimensionCount;
     }
 }

@@ -18,4 +18,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/02 00:02
  */
-public class IfcPlaneAngleMeasure extends IfcNonLeafNode {}
+public class IfcPlaneAngleMeasure {
+    private Boolean planeAngleMeasure;//todo -> REAL
+
+    public IfcPlaneAngleMeasure() {
+    }
+
+    public IfcPlaneAngleMeasure(Boolean planeAngleMeasure) {
+        this.planeAngleMeasure = planeAngleMeasure;
+    }
+
+    public Boolean getPlaneAngleMeasure() {
+        return planeAngleMeasure;
+    }
+
+    public void setPlaneAngleMeasure(Boolean planeAngleMeasure) {
+        this.planeAngleMeasure = planeAngleMeasure;
+    }
+}

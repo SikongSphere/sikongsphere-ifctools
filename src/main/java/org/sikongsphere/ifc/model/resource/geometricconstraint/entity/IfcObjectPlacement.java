@@ -12,8 +12,7 @@ package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.SET;
-import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
-import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcStyledItem;
+import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 
 /**
  * Abstract supertype for the special types defining the object coordinate system.
@@ -22,31 +21,31 @@ import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcSt
  * @author stan
  * @date 2022/09/01 22:18
  */
-public class IfcObjectPlacement {
+public abstract class IfcObjectPlacement {
+    private SET<IfcProduct> placesObject;
+    private SET<IfcLocalPlacement> referencedByPlacements;
 
-    private SET<IfcPresentationLayerAssignment> layerAssignments;
-    private SET<IfcStyledItem> styledByItem;
-
-    public IfcObjectPlacement(SET<IfcPresentationLayerAssignment> layerAssignments, SET<IfcStyledItem> styledByItem) {
-        this.layerAssignments = layerAssignments;
-        this.styledByItem = styledByItem;
+    public IfcObjectPlacement() {
     }
 
-    public IfcObjectPlacement() {}
-
-    public SET<IfcPresentationLayerAssignment> getLayerAssignments() {
-        return layerAssignments;
+    public IfcObjectPlacement(SET<IfcProduct> placesObject, SET<IfcLocalPlacement> referencedByPlacements) {
+        this.placesObject = placesObject;
+        this.referencedByPlacements = referencedByPlacements;
     }
 
-    public void setLayerAssignments(SET<IfcPresentationLayerAssignment> layerAssignments) {
-        this.layerAssignments = layerAssignments;
+    public SET<IfcProduct> getPlacesObject() {
+        return placesObject;
     }
 
-    public SET<IfcStyledItem> getStyledByItem() {
-        return styledByItem;
+    public void setPlacesObject(SET<IfcProduct> placesObject) {
+        this.placesObject = placesObject;
     }
 
-    public void setStyledByItem(SET<IfcStyledItem> styledByItem) {
-        this.styledByItem = styledByItem;
+    public SET<IfcLocalPlacement> getReferencedByPlacements() {
+        return referencedByPlacements;
+    }
+
+    public void setReferencedByPlacements(SET<IfcLocalPlacement> referencedByPlacements) {
+        this.referencedByPlacements = referencedByPlacements;
     }
 }

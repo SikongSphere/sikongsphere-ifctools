@@ -10,8 +10,7 @@
 */
 package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
 
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcAxis2Placement3D;
-import org.sikongsphere.ifc.model.resource.geometry.selecttypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
 
 /**
  * The IfcLocalPlacement defines the relative placement of a product
@@ -25,12 +24,13 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
     private IfcObjectPlacement placementRelTo;
     private IfcAxis2Placement relativePlacement;
 
+    public IfcLocalPlacement() {
+    }
+
     public IfcLocalPlacement(IfcObjectPlacement placementRelTo, IfcAxis2Placement relativePlacement) {
         this.placementRelTo = placementRelTo;
         this.relativePlacement = relativePlacement;
     }
-
-    public IfcLocalPlacement() {}
 
     public IfcObjectPlacement getPlacementRelTo() {
         return placementRelTo;

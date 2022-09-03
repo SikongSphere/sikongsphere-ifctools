@@ -18,4 +18,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:45
  */
-public class IfcRatioMeasure extends IfcNonLeafNode {}
+public class IfcRatioMeasure {
+    private Boolean ratioMeasure;//todo -> REAL
+
+    public IfcRatioMeasure() {
+    }
+
+    public IfcRatioMeasure(Boolean ratioMeasure) {
+        this.ratioMeasure = ratioMeasure;
+    }
+
+    public Boolean getRatioMeasure() {
+        return ratioMeasure;
+    }
+
+    public void setRatioMeasure(Boolean ratioMeasure) {
+        this.ratioMeasure = ratioMeasure;
+    }
+}

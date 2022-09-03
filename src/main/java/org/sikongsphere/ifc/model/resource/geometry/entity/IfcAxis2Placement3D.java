@@ -18,5 +18,30 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @date 2022/09/01 21:34
  */
 public class IfcAxis2Placement3D extends IfcPlacement {
+    private IfcDirection axis;
+    private IfcDirection refDirection;
 
+    public IfcAxis2Placement3D() {
+    }
+
+    public IfcAxis2Placement3D(IfcDirection axis, IfcDirection refDirection) {
+        this.axis = axis;
+        this.refDirection = refDirection;
+    }
+
+    public IfcDirection getAxis() {
+        return axis;
+    }
+
+    public void setAxis(IfcDirection axis) {
+        this.axis = axis;
+    }
+
+    public IfcDirection getRefDirection() {
+        return refDirection;
+    }
+
+    public void setRefDirection(IfcDirection refDirection) {
+        this.refDirection = refDirection;
+    }
 }

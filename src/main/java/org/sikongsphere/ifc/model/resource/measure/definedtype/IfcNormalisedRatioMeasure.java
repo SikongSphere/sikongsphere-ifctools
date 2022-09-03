@@ -18,4 +18,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:47
  */
-public class IfcNormalisedRatioMeasure extends IfcNonLeafNode {}
+public class IfcNormalisedRatioMeasure extends IfcNonLeafNode {
+    private IfcRatioMeasure normalisedRatioMeasure;
+
+    public IfcNormalisedRatioMeasure() {
+    }
+
+    public IfcNormalisedRatioMeasure(IfcRatioMeasure normalisedRatioMeasure) {
+        this.normalisedRatioMeasure = normalisedRatioMeasure;
+    }
+
+    public IfcRatioMeasure getNormalisedRatioMeasure() {
+        return normalisedRatioMeasure;
+    }
+
+    public void setNormalisedRatioMeasure(IfcRatioMeasure normalisedRatioMeasure) {
+        this.normalisedRatioMeasure = normalisedRatioMeasure;
+    }
+}

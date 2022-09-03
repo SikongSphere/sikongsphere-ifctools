@@ -11,6 +11,9 @@
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveRatioMeasure;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcCurveStyleFontSelect;
 
 /**
  * A curve style font and scaling is a curve style font and a scalar factor for that font,
@@ -19,4 +22,41 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:42
  */
-public class IfcCurveStyleFontAndScaling extends IfcNonLeafNode {}
+public class IfcCurveStyleFontAndScaling {
+    private IfcLabel name;
+    private IfcCurveStyleFontSelect curveFont;
+    private IfcPositiveRatioMeasure curveFontScaling;
+
+    public IfcCurveStyleFontAndScaling() {
+    }
+
+    public IfcCurveStyleFontAndScaling(IfcLabel name, IfcCurveStyleFontSelect curveFont, IfcPositiveRatioMeasure curveFontScaling) {
+        this.name = name;
+        this.curveFont = curveFont;
+        this.curveFontScaling = curveFontScaling;
+    }
+
+    public IfcLabel getName() {
+        return name;
+    }
+
+    public void setName(IfcLabel name) {
+        this.name = name;
+    }
+
+    public IfcCurveStyleFontSelect getCurveFont() {
+        return curveFont;
+    }
+
+    public void setCurveFont(IfcCurveStyleFontSelect curveFont) {
+        this.curveFont = curveFont;
+    }
+
+    public IfcPositiveRatioMeasure getCurveFontScaling() {
+        return curveFontScaling;
+    }
+
+    public void setCurveFontScaling(IfcPositiveRatioMeasure curveFontScaling) {
+        this.curveFontScaling = curveFontScaling;
+    }
+}

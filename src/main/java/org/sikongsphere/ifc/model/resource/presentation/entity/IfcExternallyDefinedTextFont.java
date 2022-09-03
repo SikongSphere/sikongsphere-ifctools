@@ -11,6 +11,9 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @date 2022/09/02 13:15
  */
 public class IfcExternallyDefinedTextFont extends IfcExternalReference {
+    public IfcExternallyDefinedTextFont() {
+    }
+
     public IfcExternallyDefinedTextFont(IfcLabel location, IfcIdentifier itemReference, IfcLabel name) {
         super(location, itemReference, name);
     }

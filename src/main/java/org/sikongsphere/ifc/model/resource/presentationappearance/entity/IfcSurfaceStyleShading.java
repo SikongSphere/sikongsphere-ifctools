@@ -1,6 +1,7 @@
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.presentation.entity.IfcColourRgb;
 
 /**
  * The surface style rendering allows the realistic visualization of surfaces
@@ -9,5 +10,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/02 13:17
  */
-public class IfcSurfaceStyleShading extends IfcNonLeafNode {
+public class IfcSurfaceStyleShading {
+    private IfcColourRgb surfaceColour;
+
+    public IfcSurfaceStyleShading() {
+    }
+
+    public IfcSurfaceStyleShading(IfcColourRgb surfaceColour) {
+        this.surfaceColour = surfaceColour;
+    }
+
+    public IfcColourRgb getSurfaceColour() {
+        return surfaceColour;
+    }
+
+    public void setSurfaceColour(IfcColourRgb surfaceColour) {
+        this.surfaceColour = surfaceColour;
+    }
 }

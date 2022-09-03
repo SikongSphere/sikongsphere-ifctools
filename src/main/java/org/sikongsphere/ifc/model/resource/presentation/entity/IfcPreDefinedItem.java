@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.presentation.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
  * A pre defined item is a qualified name given to a style, font, etc.,
@@ -20,4 +21,21 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:34
  */
-public class IfcPreDefinedItem extends IfcNonLeafNode {}
+public abstract class IfcPreDefinedItem {
+    private IfcLabel name;
+
+    public IfcPreDefinedItem() {
+    }
+
+    public IfcPreDefinedItem(IfcLabel name) {
+        this.name = name;
+    }
+
+    public IfcLabel getName() {
+        return name;
+    }
+
+    public void setName(IfcLabel name) {
+        this.name = name;
+    }
+}

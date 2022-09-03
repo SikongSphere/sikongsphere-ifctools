@@ -17,4 +17,21 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/01 22:01
  */
-public class IfcPlacement extends IfcGeometricRepresentationItem {}
+public abstract class IfcPlacement extends IfcGeometricRepresentationItem {
+    private IfcCartesianPoint location;
+
+    public IfcPlacement() {
+    }
+
+    public IfcPlacement(IfcCartesianPoint location) {
+        this.location = location;
+    }
+
+    public IfcCartesianPoint getLocation() {
+        return location;
+    }
+
+    public void setLocation(IfcCartesianPoint location) {
+        this.location = location;
+    }
+}
