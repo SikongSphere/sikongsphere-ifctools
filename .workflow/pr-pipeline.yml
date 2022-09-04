@@ -20,6 +20,7 @@ stages:
         mavenVersion: 3.3.9
         commands:
           - mvn -B clean package -Dmaven.test.skip=true
+          - mvn spotless:check
         artifacts:
           - name: BUILD_ARTIFACT
             path:
