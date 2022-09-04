@@ -16,6 +16,7 @@ import java.util.ServiceLoader;
 import org.sikongsphere.ifc.infra.spi.impl.HelloServiceImpl1;
 import sun.misc.Service;
 
+@SuppressWarnings("restriction")
 public class App {
     public static void main(String[] args) throws NoSuchMethodException {
         Constructor<HelloServiceImpl1> constructors = HelloServiceImpl1.class.getConstructor();

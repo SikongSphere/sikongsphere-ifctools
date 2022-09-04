@@ -2,7 +2,8 @@ package org.sikongsphere.ifc.parser
 
 import org.antlr.v4.runtime.tree.TerminalNode
 import org.sikongsphere.ifc.model.basic.STRING
-import org.sikongsphere.ifc.model.body.{IfcBody, IfcBodyTemplate, IfcPerson}
+import org.sikongsphere.ifc.model.body.{IfcBody, IfcBodyTemplate}
+import org.sikongsphere.ifc.model.resource.actor.entity.IfcPerson
 import org.sikongsphere.ifc.model.header.{IfcFileDescription, IfcFileName, IfcFileSchema, IfcHeader}
 import org.sikongsphere.ifc.model.{IfcModel, IfcNode, IfcNodeList}
 import org.sikongsphere.ifc.parser.IFCParser._
