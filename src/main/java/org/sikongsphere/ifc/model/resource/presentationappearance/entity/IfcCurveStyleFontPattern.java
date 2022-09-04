@@ -25,10 +25,12 @@ public class IfcCurveStyleFontPattern {
     private IfcLengthMeasure visibleSegmentLength;
     private IfcPositiveLengthMeasure invisiblesegmentLength;
 
-    public IfcCurveStyleFontPattern() {
-    }
+    public IfcCurveStyleFontPattern() {}
 
-    public IfcCurveStyleFontPattern(IfcLengthMeasure visibleSegmentLength, IfcPositiveLengthMeasure invisiblesegmentLength) {
+    public IfcCurveStyleFontPattern(
+        IfcLengthMeasure visibleSegmentLength,
+        IfcPositiveLengthMeasure invisiblesegmentLength
+    ) {
         this.visibleSegmentLength = visibleSegmentLength;
         this.invisiblesegmentLength = invisiblesegmentLength;
     }

@@ -21,8 +21,7 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
 public class IfcPositiveLengthMeasure {
     private IfcLengthMeasure positiveLengthMeasure;
 
-    public IfcPositiveLengthMeasure() {
-    }
+    public IfcPositiveLengthMeasure() {}
 
     public IfcPositiveLengthMeasure(IfcLengthMeasure positiveLengthMeasure) {
         this.positiveLengthMeasure = positiveLengthMeasure;

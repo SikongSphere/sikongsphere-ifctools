@@ -24,16 +24,21 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement
  */
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
     private IfcDimensionCount coordinateSpaceDimension;
-    private Boolean precision;//todo -> REAL
+    private Boolean precision;// todo -> REAL
     private IfcAxis2Placement worldCoordinateSystem;
     private IfcDirection trueNorth;
 
     private SET<IfcGeometricRepresentationSubContext> hasSubContexts;
 
-    public IfcGeometricRepresentationContext() {
-    }
+    public IfcGeometricRepresentationContext() {}
 
-    public IfcGeometricRepresentationContext(IfcDimensionCount coordinateSpaceDimension, Boolean precision, IfcAxis2Placement worldCoordinateSystem, IfcDirection trueNorth, SET<IfcGeometricRepresentationSubContext> hasSubContexts) {
+    public IfcGeometricRepresentationContext(
+        IfcDimensionCount coordinateSpaceDimension,
+        Boolean precision,
+        IfcAxis2Placement worldCoordinateSystem,
+        IfcDirection trueNorth,
+        SET<IfcGeometricRepresentationSubContext> hasSubContexts
+    ) {
         this.coordinateSpaceDimension = coordinateSpaceDimension;
         this.precision = precision;
         this.worldCoordinateSystem = worldCoordinateSystem;

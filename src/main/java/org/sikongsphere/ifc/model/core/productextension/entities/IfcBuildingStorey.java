@@ -22,8 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 public class IfcBuildingStorey extends IfcSpatialStructureElement {
     private IfcLengthMeasure elevation;
 
-    public IfcBuildingStorey() {
-    }
+    public IfcBuildingStorey() {}
 
     public IfcBuildingStorey(IfcLengthMeasure elevation) {
         this.elevation = elevation;

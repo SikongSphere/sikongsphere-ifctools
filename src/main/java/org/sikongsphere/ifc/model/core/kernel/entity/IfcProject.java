@@ -30,10 +30,14 @@ public class IfcProject extends IfcObject {
     private SET<IfcRepresentationContext> representationContexts;
     private IfcUnitAssignment unitsInContext;
 
-    public IfcProject() {
-    }
+    public IfcProject() {}
 
-    public IfcProject(IfcLabel longName, IfcLabel phase, SET<IfcRepresentationContext> representationContexts, IfcUnitAssignment unitsInContext) {
+    public IfcProject(
+        IfcLabel longName,
+        IfcLabel phase,
+        SET<IfcRepresentationContext> representationContexts,
+        IfcUnitAssignment unitsInContext
+    ) {
         this.longName = longName;
         this.phase = phase;
         this.representationContexts = representationContexts;

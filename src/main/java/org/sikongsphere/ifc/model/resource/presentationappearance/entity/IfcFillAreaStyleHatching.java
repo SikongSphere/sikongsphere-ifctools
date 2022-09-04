@@ -29,10 +29,15 @@ public class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem {
     private IfcCartesianPoint patternStart;
     private IfcPlaneAngleMeasure hatchLineAngle;
 
-    public IfcFillAreaStyleHatching() {
-    }
+    public IfcFillAreaStyleHatching() {}
 
-    public IfcFillAreaStyleHatching(IfcCurveStyle hatchLineAppearance, IfcHatchLineDistanceSelect startOfNextHatchLine, IfcCartesianPoint pointOfReferenceHatchLine, IfcCartesianPoint patternStart, IfcPlaneAngleMeasure hatchLineAngle) {
+    public IfcFillAreaStyleHatching(
+        IfcCurveStyle hatchLineAppearance,
+        IfcHatchLineDistanceSelect startOfNextHatchLine,
+        IfcCartesianPoint pointOfReferenceHatchLine,
+        IfcCartesianPoint patternStart,
+        IfcPlaneAngleMeasure hatchLineAngle
+    ) {
         this.hatchLineAppearance = hatchLineAppearance;
         this.startOfNextHatchLine = startOfNextHatchLine;
         this.pointOfReferenceHatchLine = pointOfReferenceHatchLine;

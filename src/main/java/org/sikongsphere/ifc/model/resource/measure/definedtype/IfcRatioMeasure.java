@@ -19,10 +19,9 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @date 2022/09/01 23:45
  */
 public class IfcRatioMeasure {
-    private Boolean ratioMeasure;//todo -> REAL
+    private Boolean ratioMeasure;// todo -> REAL
 
-    public IfcRatioMeasure() {
-    }
+    public IfcRatioMeasure() {}
 
     public IfcRatioMeasure(Boolean ratioMeasure) {
         this.ratioMeasure = ratioMeasure;

@@ -30,10 +30,14 @@ public class IfcPresentationLayerAssignment {
     private SET<IfcLayeredItem> assignedItems;
     private IfcIdentifier identifier;
 
-    public IfcPresentationLayerAssignment() {
-    }
+    public IfcPresentationLayerAssignment() {}
 
-    public IfcPresentationLayerAssignment(IfcLabel name, IfcText description, SET<IfcLayeredItem> assignedItems, IfcIdentifier identifier) {
+    public IfcPresentationLayerAssignment(
+        IfcLabel name,
+        IfcText description,
+        SET<IfcLayeredItem> assignedItems,
+        IfcIdentifier identifier
+    ) {
         this.name = name;
         this.description = description;
         this.assignedItems = assignedItems;

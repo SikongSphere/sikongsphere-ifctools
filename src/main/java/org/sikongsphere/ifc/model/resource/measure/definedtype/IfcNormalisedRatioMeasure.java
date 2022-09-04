@@ -21,8 +21,7 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
 public class IfcNormalisedRatioMeasure extends IfcNonLeafNode {
     private IfcRatioMeasure normalisedRatioMeasure;
 
-    public IfcNormalisedRatioMeasure() {
-    }
+    public IfcNormalisedRatioMeasure() {}
 
     public IfcNormalisedRatioMeasure(IfcRatioMeasure normalisedRatioMeasure) {
         this.normalisedRatioMeasure = normalisedRatioMeasure;

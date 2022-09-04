@@ -24,10 +24,12 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
     private IfcObjectPlacement placementRelTo;
     private IfcAxis2Placement relativePlacement;
 
-    public IfcLocalPlacement() {
-    }
+    public IfcLocalPlacement() {}
 
-    public IfcLocalPlacement(IfcObjectPlacement placementRelTo, IfcAxis2Placement relativePlacement) {
+    public IfcLocalPlacement(
+        IfcObjectPlacement placementRelTo,
+        IfcAxis2Placement relativePlacement
+    ) {
         this.placementRelTo = placementRelTo;
         this.relativePlacement = relativePlacement;
     }

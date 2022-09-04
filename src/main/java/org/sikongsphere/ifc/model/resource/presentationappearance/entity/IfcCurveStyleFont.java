@@ -25,8 +25,7 @@ public class IfcCurveStyleFont {
     private IfcLabel name;
     private SET<IfcCurveStyleFontPattern> patternList;
 
-    public IfcCurveStyleFont() {
-    }
+    public IfcCurveStyleFont() {}
 
     public IfcCurveStyleFont(IfcLabel name, SET<IfcCurveStyleFontPattern> patternList) {
         this.name = name;

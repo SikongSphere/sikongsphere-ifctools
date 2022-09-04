@@ -22,8 +22,7 @@ import org.sikongsphere.ifc.model.basic.INTEGER;
 public class IfcDimensionCount {
     private INTEGER dimensionCount;
 
-    public IfcDimensionCount() {
-    }
+    public IfcDimensionCount() {}
 
     public IfcDimensionCount(INTEGER dimensionCount) {
         this.dimensionCount = dimensionCount;

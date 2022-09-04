@@ -29,10 +29,13 @@ public class IfcProduct extends IfcObject {
 
     private SET<IfcRelAssignsToProduct> referencedBy;
 
-    public IfcProduct() {
-    }
+    public IfcProduct() {}
 
-    public IfcProduct(IfcObjectPlacement objectPlacement, IfcProductRepresentation representation, SET<IfcRelAssignsToProduct> referencedBy) {
+    public IfcProduct(
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        SET<IfcRelAssignsToProduct> referencedBy
+    ) {
         this.objectPlacement = objectPlacement;
         this.representation = representation;
         this.referencedBy = referencedBy;

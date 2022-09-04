@@ -21,8 +21,7 @@ import org.sikongsphere.ifc.model.resource.presentation.entity.IfcPreDefinedItem
  * @date 2022/09/01 23:36
  */
 public abstract class IfcPreDefinedCurveFont extends IfcPreDefinedItem {
-    public IfcPreDefinedCurveFont() {
-    }
+    public IfcPreDefinedCurveFont() {}
 
     public IfcPreDefinedCurveFont(IfcLabel name) {
         super(name);
