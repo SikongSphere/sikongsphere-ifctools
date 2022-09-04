@@ -25,10 +25,12 @@ public abstract class IfcObjectPlacement {
     private SET<IfcProduct> placesObject;
     private SET<IfcLocalPlacement> referencedByPlacements;
 
-    public IfcObjectPlacement() {
-    }
+    public IfcObjectPlacement() {}
 
-    public IfcObjectPlacement(SET<IfcProduct> placesObject, SET<IfcLocalPlacement> referencedByPlacements) {
+    public IfcObjectPlacement(
+        SET<IfcProduct> placesObject,
+        SET<IfcLocalPlacement> referencedByPlacements
+    ) {
         this.placesObject = placesObject;
         this.referencedByPlacements = referencedByPlacements;
     }

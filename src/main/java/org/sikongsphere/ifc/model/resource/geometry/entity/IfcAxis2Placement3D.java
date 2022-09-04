@@ -21,8 +21,7 @@ public class IfcAxis2Placement3D extends IfcPlacement {
     private IfcDirection axis;
     private IfcDirection refDirection;
 
-    public IfcAxis2Placement3D() {
-    }
+    public IfcAxis2Placement3D() {}
 
     public IfcAxis2Placement3D(IfcDirection axis, IfcDirection refDirection) {
         this.axis = axis;

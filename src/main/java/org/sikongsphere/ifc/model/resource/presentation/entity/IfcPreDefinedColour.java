@@ -19,6 +19,5 @@ package org.sikongsphere.ifc.model.resource.presentation.entity;
  * @date 2022/09/01 23:50
  */
 public abstract class IfcPreDefinedColour extends IfcPreDefinedItem {
-    public IfcPreDefinedColour() {
-    }
+    public IfcPreDefinedColour() {}
 }

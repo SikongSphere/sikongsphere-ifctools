@@ -23,8 +23,7 @@ import org.sikongsphere.ifc.model.resource.geometry.entity.IfcVector;
 public class IfcOneDirectionRepeatFactor extends IfcGeometricRepresentationItem {
     private IfcVector repeatFactor;
 
-    public IfcOneDirectionRepeatFactor() {
-    }
+    public IfcOneDirectionRepeatFactor() {}
 
     public IfcOneDirectionRepeatFactor(IfcVector repeatFactor) {
         this.repeatFactor = repeatFactor;

@@ -14,6 +14,9 @@
         <maven.compiler.target>8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <scala.version>2.12.7</scala.version>
+        <scalafmt.version>2.0.1</scalafmt.version>
+        <scala-plugin.version>2.9.1</scala-plugin.version>
+        <spotless-maven-plugin.version>2.22.5</spotless-maven-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -51,7 +54,7 @@
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
-                <version>1.20.0</version>
+                <version>${spotless-maven-plugin.version}</version>
                 <configuration>
                     <java>
                         <eclipse>
@@ -61,12 +64,23 @@
                             <file>/conventions/license-header</file>
                         </licenseHeader>
                     </java>
+                    <scala>
+                        <scalafmt>
+                            <version>${scalafmt.version}</version>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <file>conventions/.scalafmt.conf</file>
+                        </scalafmt>
+                        <licenseHeader>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <file>conventions/license-header</file>
+                        </licenseHeader>
+                    </scala>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>${scala-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>

@@ -23,8 +23,7 @@ public class IfcVector extends IfcGeometricRepresentationItem {
     private IfcDirection orientation;
     private IfcLengthMeasure magnitude;
 
-    public IfcVector() {
-    }
+    public IfcVector() {}
 
     public IfcVector(IfcDirection orientation, IfcLengthMeasure magnitude) {
         this.orientation = orientation;

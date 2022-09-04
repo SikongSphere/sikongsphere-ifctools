@@ -26,10 +26,13 @@ public class IfcStyledItem extends IfcRepresentationItem {
     private SET<IfcPresentationStyleAssignment> styles;
     private IfcLabel name;
 
-    public IfcStyledItem() {
-    }
+    public IfcStyledItem() {}
 
-    public IfcStyledItem(IfcRepresentationItem item, SET<IfcPresentationStyleAssignment> styles, IfcLabel name) {
+    public IfcStyledItem(
+        IfcRepresentationItem item,
+        SET<IfcPresentationStyleAssignment> styles,
+        IfcLabel name
+    ) {
         this.item = item;
         this.styles = styles;
         this.name = name;

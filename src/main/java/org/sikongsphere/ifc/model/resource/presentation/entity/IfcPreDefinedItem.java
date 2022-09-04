@@ -24,8 +24,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 public abstract class IfcPreDefinedItem {
     private IfcLabel name;
 
-    public IfcPreDefinedItem() {
-    }
+    public IfcPreDefinedItem() {}
 
     public IfcPreDefinedItem(IfcLabel name) {
         this.name = name;

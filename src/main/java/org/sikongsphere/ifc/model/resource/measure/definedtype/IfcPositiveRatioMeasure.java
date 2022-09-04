@@ -21,8 +21,7 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
 public class IfcPositiveRatioMeasure {
     private IfcRatioMeasure positiveRatioMeasure;
 
-    public IfcPositiveRatioMeasure() {
-    }
+    public IfcPositiveRatioMeasure() {}
 
     public IfcPositiveRatioMeasure(IfcRatioMeasure positiveRatioMeasure) {
         this.positiveRatioMeasure = positiveRatioMeasure;

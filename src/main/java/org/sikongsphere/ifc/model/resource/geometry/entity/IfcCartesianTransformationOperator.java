@@ -1,3 +1,13 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 /**
@@ -7,16 +17,20 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/02 13:24
  */
-public abstract class IfcCartesianTransformationOperator extends IfcGeometricRepresentationItem{
+public abstract class IfcCartesianTransformationOperator extends IfcGeometricRepresentationItem {
     private IfcDirection axis1;
     private IfcDirection axis2;
     private IfcCartesianPoint localOrigin;
-    private Boolean scale;//todo -> REAL
+    private Boolean scale;// todo -> REAL
 
-    public IfcCartesianTransformationOperator() {
-    }
+    public IfcCartesianTransformationOperator() {}
 
-    public IfcCartesianTransformationOperator(IfcDirection axis1, IfcDirection axis2, IfcCartesianPoint localOrigin, Boolean scale) {
+    public IfcCartesianTransformationOperator(
+        IfcDirection axis1,
+        IfcDirection axis2,
+        IfcCartesianPoint localOrigin,
+        Boolean scale
+    ) {
         this.axis1 = axis1;
         this.axis2 = axis2;
         this.localOrigin = localOrigin;

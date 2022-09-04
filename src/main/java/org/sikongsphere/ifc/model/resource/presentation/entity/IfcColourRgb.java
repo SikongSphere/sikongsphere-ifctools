@@ -1,3 +1,13 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.model.resource.presentation.entity;
 
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcNormalisedRatioMeasure;
@@ -15,10 +25,13 @@ public class IfcColourRgb extends IfcColourSpecification {
     private IfcNormalisedRatioMeasure green;
     private IfcNormalisedRatioMeasure blue;
 
-    public IfcColourRgb() {
-    }
+    public IfcColourRgb() {}
 
-    public IfcColourRgb(IfcNormalisedRatioMeasure red, IfcNormalisedRatioMeasure green, IfcNormalisedRatioMeasure blue) {
+    public IfcColourRgb(
+        IfcNormalisedRatioMeasure red,
+        IfcNormalisedRatioMeasure green,
+        IfcNormalisedRatioMeasure blue
+    ) {
         this.red = red;
         this.green = green;
         this.blue = blue;

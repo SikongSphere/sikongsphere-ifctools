@@ -25,10 +25,13 @@ public class IfcBuilding extends IfcSpatialStructureElement {
     private IfcLengthMeasure elevationOfRefTerrain;
     private IfcPostalAddress buildingAddress;
 
-    public IfcBuilding() {
-    }
+    public IfcBuilding() {}
 
-    public IfcBuilding(IfcLengthMeasure elevationOfRefHeight, IfcLengthMeasure elevationOfRefTerrain, IfcPostalAddress buildingAddress) {
+    public IfcBuilding(
+        IfcLengthMeasure elevationOfRefHeight,
+        IfcLengthMeasure elevationOfRefTerrain,
+        IfcPostalAddress buildingAddress
+    ) {
         this.elevationOfRefHeight = elevationOfRefHeight;
         this.elevationOfRefTerrain = elevationOfRefTerrain;
         this.buildingAddress = buildingAddress;

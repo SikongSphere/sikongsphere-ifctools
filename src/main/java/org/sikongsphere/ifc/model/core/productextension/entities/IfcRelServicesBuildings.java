@@ -1,3 +1,13 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
 import org.sikongsphere.ifc.model.basic.SET;
@@ -14,10 +24,12 @@ public class IfcRelServicesBuildings extends IfcRelConnects {
     private IfcSystem relatingSystem;
     private SET<IfcSpatialStructureElement> relatedBuildings;
 
-    public IfcRelServicesBuildings() {
-    }
+    public IfcRelServicesBuildings() {}
 
-    public IfcRelServicesBuildings(IfcSystem relatingSystem, SET<IfcSpatialStructureElement> relatedBuildings) {
+    public IfcRelServicesBuildings(
+        IfcSystem relatingSystem,
+        SET<IfcSpatialStructureElement> relatedBuildings
+    ) {
         this.relatingSystem = relatingSystem;
         this.relatedBuildings = relatedBuildings;
     }

@@ -27,10 +27,13 @@ public class IfcCurveStyleFontAndScaling {
     private IfcCurveStyleFontSelect curveFont;
     private IfcPositiveRatioMeasure curveFontScaling;
 
-    public IfcCurveStyleFontAndScaling() {
-    }
+    public IfcCurveStyleFontAndScaling() {}
 
-    public IfcCurveStyleFontAndScaling(IfcLabel name, IfcCurveStyleFontSelect curveFont, IfcPositiveRatioMeasure curveFontScaling) {
+    public IfcCurveStyleFontAndScaling(
+        IfcLabel name,
+        IfcCurveStyleFontSelect curveFont,
+        IfcPositiveRatioMeasure curveFontScaling
+    ) {
         this.name = name;
         this.curveFont = curveFont;
         this.curveFontScaling = curveFontScaling;

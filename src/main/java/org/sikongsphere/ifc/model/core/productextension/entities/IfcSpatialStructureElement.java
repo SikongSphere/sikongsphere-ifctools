@@ -32,10 +32,15 @@ public class IfcSpatialStructureElement extends IfcProduct {
     private SET<IfcRelServicesBuildings> servicedBySystems;
     private SET<IfcRelContainedInSpatialStructure> containsElements;
 
-    public IfcSpatialStructureElement() {
-    }
+    public IfcSpatialStructureElement() {}
 
-    public IfcSpatialStructureElement(IfcLabel longName, IfcElementCompositionEnum compositionType, SET<IfcRelReferencedInSpatialStructure> referenceElements, SET<IfcRelServicesBuildings> servicedBySystems, SET<IfcRelContainedInSpatialStructure> containsElements) {
+    public IfcSpatialStructureElement(
+        IfcLabel longName,
+        IfcElementCompositionEnum compositionType,
+        SET<IfcRelReferencedInSpatialStructure> referenceElements,
+        SET<IfcRelServicesBuildings> servicedBySystems,
+        SET<IfcRelContainedInSpatialStructure> containsElements
+    ) {
         this.longName = longName;
         this.compositionType = compositionType;
         this.referenceElements = referenceElements;

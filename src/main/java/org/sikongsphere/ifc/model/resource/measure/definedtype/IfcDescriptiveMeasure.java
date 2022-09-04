@@ -21,8 +21,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
 public class IfcDescriptiveMeasure {
     private STRING descriptiveMeasure;
 
-    public IfcDescriptiveMeasure() {
-    }
+    public IfcDescriptiveMeasure() {}
 
     public IfcDescriptiveMeasure(STRING descriptiveMeasure) {
         this.descriptiveMeasure = descriptiveMeasure;

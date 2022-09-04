@@ -24,8 +24,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
 public class IfcPresentationStyleAssignment {
     private SET<IfcPresentationStyleSelect> styles;
 
-    public IfcPresentationStyleAssignment() {
-    }
+    public IfcPresentationStyleAssignment() {}
 
     public IfcPresentationStyleAssignment(SET<IfcPresentationStyleSelect> styles) {
         this.styles = styles;
