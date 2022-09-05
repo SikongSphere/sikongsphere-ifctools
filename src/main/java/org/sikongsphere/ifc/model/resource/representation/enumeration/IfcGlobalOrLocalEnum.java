@@ -11,24 +11,13 @@
 package org.sikongsphere.ifc.model.resource.representation.enumeration;
 
 /**
- * An enumeration of the international abbreviations of surface side.
+ * This enumeration type defines if the local object coordinate system or the global world coordinate system for the
+ * project is used to describe the measure values of entities which have a reference to this type.
  *
  * @author zaiyuan
- * @date 2022/8/31 21:24
+ * @date 2022-09-05 20:30:00
  */
-public enum IfcSurfaceSide {
-    /**
-     * The side of a surface which is in the same direction as the surface normal derived
-     * from the mathematical definition
-     */
-    POSITIVE,
-    /**
-     * The side of a surface which is in the opposite direction than the surface normal
-     * derived from the mathematical definition
-     */
-    NEGATIVE,
-    /**
-     * Both, positive and negative side
-     */
-    BOTH
+public enum IfcGlobalOrLocalEnum {
+    GLOBAL_COORDS,
+    LOCAL_COORDS
 }

@@ -12,7 +12,7 @@ package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
-import org.sikongsphere.ifc.model.resource.representation.enumeration.IfcSurfaceSide;
+import org.sikongsphere.ifc.model.resource.presentationappearance.enumeration.IfcSurfaceSide;
 
 /**
  * An assignment of one or many surface style elements to a surface,
