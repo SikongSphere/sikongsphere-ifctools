@@ -72,7 +72,7 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
       if (ctx.ident().getText.toUpperCase().equals("IFCPERSON")) {
         new IfcPerson
       } else new IfcBodyTemplate
-    body.IfcName = ctx.ident().getText
+    body.ifcName = ctx.ident().getText
     if (null != ctx.exprFuncParams()) ctx.exprFuncParams().funcParam().asScala.foreach { i =>
       body.elements.add(visitFuncParam(i))
     }
