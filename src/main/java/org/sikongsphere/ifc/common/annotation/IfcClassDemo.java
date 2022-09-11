@@ -10,9 +10,6 @@
 */
 package org.sikongsphere.ifc.common.annotation;
 
-import org.sikongsphere.ifc.common.enumeration.IfcLayer;
-import org.sikongsphere.ifc.common.enumeration.IfcType;
-
 import java.lang.annotation.*;
 
 /**
@@ -23,9 +20,7 @@ import java.lang.annotation.*;
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-public @interface IfcClass {
-    IfcLayer layer();
-
-    IfcType type();
+@Target(ElementType.METHOD)
+public @interface IfcClassDemo {
+    String value() default "haha";
 }

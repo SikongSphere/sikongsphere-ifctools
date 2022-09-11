@@ -8,24 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.common.annotation;
-
-import org.sikongsphere.ifc.common.enumeration.IfcLayer;
-import org.sikongsphere.ifc.common.enumeration.IfcType;
-
-import java.lang.annotation.*;
+package org.sikongsphere.ifc.common.enumeration;
 
 /**
- * This is an annotation demo
+ * IfcType
  *
- * @Author: zaiyuan
- * @Date: 2022/09/10 11:47
+ * @author zaiyuan
+ * @date 2022-09-11 16:30:00
  */
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-public @interface IfcClass {
-    IfcLayer layer();
-
-    IfcType type();
+public enum IfcType {
+    ENTITY,
+    DEFINED_TYPE,
+    SELECT_TYPE,
+    ENUMERATION,
+    FUNCTIONS,
 }

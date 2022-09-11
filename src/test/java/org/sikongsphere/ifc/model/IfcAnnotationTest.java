@@ -10,31 +10,26 @@
 */
 package org.sikongsphere.ifc.model;
 
-import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.junit.Test;
+import org.sikongsphere.ifc.common.annotation.IfcClassDemo;
 
 import java.lang.reflect.Method;
 
 public class IfcAnnotationTest {
 
-    @IfcClass(value = "test1")
+    @IfcClassDemo(value = "test1")
     public void test1() {
         System.out.println("test1()方法");
     }
 
-    @IfcClass("test2")
+    @IfcClassDemo("test2")
     public void test2() {
         System.out.println("test2()方法");
     }
 
-    public static void main(String[] args) {
-        Class clazz = IfcAnnotationTest.class;
-        Method[] methods = clazz.getMethods();
-        for (Method method : methods) {
-            boolean flag = method.isAnnotationPresent(IfcClass.class);
-            if (flag) {
-                IfcClass c = method.getAnnotation(IfcClass.class);
-                System.out.println(c.value());
-            }
-        }
+    @Test
+    public void testAnnotation() {
+        Method[] methods = IfcAnnotationTest.class.getMethods();
+        assert methods.length == 12;
     }
 }

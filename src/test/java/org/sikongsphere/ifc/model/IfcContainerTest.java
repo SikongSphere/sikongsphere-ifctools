@@ -8,24 +8,16 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.common.annotation;
+package org.sikongsphere.ifc.model;
 
-import org.sikongsphere.ifc.common.enumeration.IfcLayer;
-import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.junit.Test;
+import org.sikongsphere.ifc.model.infra.IfcClassContainer;
 
-import java.lang.annotation.*;
+public class IfcContainerTest {
 
-/**
- * This is an annotation demo
- *
- * @Author: zaiyuan
- * @Date: 2022/09/10 11:47
- */
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-public @interface IfcClass {
-    IfcLayer layer();
-
-    IfcType type();
+    @Test
+    public void demo() {
+        IfcClassContainer instance = IfcClassContainer.getInstance();
+        assert instance != null;
+    }
 }
