@@ -27,4 +27,8 @@ public class IfcLabel extends STRING {
     public IfcLabel(String value) {
         super(value);
     }
+
+    public IfcLabel(STRING value) {
+        super(value.value);
+    }
 }

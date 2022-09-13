@@ -8,26 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.definedtype;
+package org.sikongsphere.ifc.common.annotation;
 
-import org.sikongsphere.ifc.model.basic.STRING;
+import java.lang.annotation.*;
 
 /**
- * This class is used to encapsulate text information
+ * This is an annotation for constructor function
  *
- * @author zaiyuan
- * @date 2022-08-28 18:30:00
+ * @Author: zaiyuan
+ * @Date: 2022/09/10 11:47
  */
-public class IfcText extends STRING {
-    /**
-     * Construction Function
-     * @param value
-     */
-    public IfcText(String value) {
-        super(value);
-    }
-
-    public IfcText(STRING value) {
-        super(value.value);
-    }
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.CONSTRUCTOR)
+public @interface IfcParserConstructor {
 }

@@ -8,26 +8,14 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.definedtype;
+package org.sikongsphere.ifc.model.body;
 
-import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.IfcNode;
 
 /**
- * This class is used to encapsulate text information
+ * This is an empty Ifc Node
  *
  * @author zaiyuan
- * @date 2022-08-28 18:30:00
+ * @date 2022-08-13 11:44:00
  */
-public class IfcText extends STRING {
-    /**
-     * Construction Function
-     * @param value
-     */
-    public IfcText(String value) {
-        super(value);
-    }
-
-    public IfcText(STRING value) {
-        super(value.value);
-    }
-}
+public class IfcEmptyNode extends IfcNode {}

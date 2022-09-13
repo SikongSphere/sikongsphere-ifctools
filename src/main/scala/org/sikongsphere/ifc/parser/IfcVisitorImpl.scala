@@ -11,10 +11,12 @@
 package org.sikongsphere.ifc.parser
 
 import org.antlr.v4.runtime.tree.TerminalNode
+import org.sikongsphere.ifc.common.util.StringUtil
 import org.sikongsphere.ifc.model.basic.STRING
 import org.sikongsphere.ifc.model.body.{IfcBody, IfcBodyTemplate}
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcPerson
 import org.sikongsphere.ifc.model.header.{IfcFileDescription, IfcFileName, IfcFileSchema, IfcHeader}
+import org.sikongsphere.ifc.model.infra.IfcInstanceFactory
 import org.sikongsphere.ifc.model.{IfcModel, IfcNode, IfcNodeList}
 import org.sikongsphere.ifc.parser.IFCParser._
 
@@ -70,6 +72,11 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
   override def visitExprFunc(ctx: ExprFuncContext): IfcBodyTemplate = {
     val body =
       if (ctx.ident().getText.toUpperCase().equals("IFCPERSON")) {
+        // This is very important
+//        val args = ctx.exprFuncParams().funcParam().asScala.map(visitFuncParam).toArray
+//        return IfcInstanceFactory
+//          .getIfcInstance(ctx.ident().getText, args)
+//          .asInstanceOf[IfcBodyTemplate]
         new IfcPerson
       } else new IfcBodyTemplate
     body.ifcName = ctx.ident().getText
@@ -81,7 +88,10 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
 
   override def visitFuncParam(ctx: FuncParamContext): IfcNode = ctx.getChild(0) match {
     case c: ExprFuncContext => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
-    case _                  => new STRING(ctx.getText)
+//    case c: ExprContext        => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
+//    case c if c.getText == "$" => null
+//    case _                     => new STRING(StringUtil.dropQuota(ctx.getText))
+    case _ => new STRING(ctx.getText)
   }
 
   override def visitExpr(ctx: IFCParser.ExprContext): IfcNode = ctx.getChild(0) match {

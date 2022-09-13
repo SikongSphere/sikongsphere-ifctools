@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.actor.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.LIST;
@@ -22,6 +26,7 @@ import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
  * @author zaiyuan
  * @date 2022-08-13 11:44:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPerson extends IfcBodyTemplate {
     private IfcIdentifier id;
     private IfcLabel familyName;
@@ -31,6 +36,29 @@ public class IfcPerson extends IfcBodyTemplate {
     private LIST<IfcLabel> suffixTitles;
     private LIST<IfcActorRole> roles;
     private LIST<IfcAddress> addresses;
+
+    public IfcPerson() {}
+
+    @IfcParserConstructor
+    public IfcPerson(
+        IfcIdentifier id,
+        IfcLabel familyName,
+        IfcLabel givenName,
+        LIST<IfcLabel> middleName,
+        LIST<IfcLabel> prefixTitles,
+        LIST<IfcLabel> suffixTitles,
+        LIST<IfcActorRole> roles,
+        LIST<IfcAddress> addresses
+    ) {
+        this.id = id;
+        this.familyName = familyName;
+        this.givenName = givenName;
+        this.middleName = middleName;
+        this.prefixTitles = prefixTitles;
+        this.suffixTitles = suffixTitles;
+        this.roles = roles;
+        this.addresses = addresses;
+    }
 
     /**
      * Inverse

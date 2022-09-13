@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
@@ -30,6 +31,7 @@ public class IfcActorRole extends IfcBodyTemplate {
     private IfcLabel userDefinedRole;
     private IfcText description;
 
+    @IfcParserConstructor
     public IfcActorRole(IfcRoleEnum role, IfcLabel userDefinedRole, IfcText description) {
         this.role = role;
         this.userDefinedRole = userDefinedRole;
