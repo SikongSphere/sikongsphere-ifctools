@@ -44,4 +44,12 @@ public class IfcContainerTest {
         assert instance != null;
     }
 
+    @Test
+    public void nullTest() {
+        STRING b = new STRING("b");
+        Object[] o = { IfcRoleEnum.ARCHITECT, null, b };
+        IfcNode instance = IfcInstanceFactory.getIfcInstance("IFCACTORROLE", o);
+        assert instance != null;
+    }
+
 }
