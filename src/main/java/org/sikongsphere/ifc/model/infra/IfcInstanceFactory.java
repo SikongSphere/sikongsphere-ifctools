@@ -52,6 +52,7 @@ public class IfcInstanceFactory {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
         int length = parameterTypes.length;
         for (int i = 0; i < length; i++) {
+            if (args[i] == null) continue;
             if (parameterTypes[i] != args[i].getClass()) {
                 Object instance = parameterTypes[i].getConstructor(args[i].getClass())
                     .newInstance(args[i]);
