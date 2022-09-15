@@ -10,6 +10,11 @@
 */
 package org.sikongsphere.ifc.model.resource.utility.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcPersonAndOrganization;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
@@ -21,7 +26,8 @@ import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcStateEnum;
  * @author Wang Bohong
  * @date 2022/8/31 21:07
  */
-public class IfcOwnerHistory {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcOwnerHistory extends IfcBodyTemplate {
     private IfcPersonAndOrganization owningUser;
 
     private IfcApplication owningApplication;
@@ -52,6 +58,7 @@ public class IfcOwnerHistory {
         this.creationDate = creationDate;
     }
 
+    @IfcParserConstructor
     public IfcOwnerHistory(
         IfcPersonAndOrganization owningUser,
         IfcApplication owningApplication,

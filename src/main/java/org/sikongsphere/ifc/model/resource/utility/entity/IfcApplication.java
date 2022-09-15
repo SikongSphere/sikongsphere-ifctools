@@ -10,6 +10,11 @@
 */
 package org.sikongsphere.ifc.model.resource.utility.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcOrganization;
@@ -21,7 +26,9 @@ import org.sikongsphere.ifc.model.resource.actor.entity.IfcOrganization;
  * @author Wang Bohong
  * @date 2022/8/31 18:44
  */
-public class IfcApplication {
+
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcApplication extends IfcBodyTemplate {
 
     private IfcOrganization applicationDeveloper;
 
@@ -33,6 +40,7 @@ public class IfcApplication {
 
     public IfcApplication() {}
 
+    @IfcParserConstructor
     public IfcApplication(
         IfcOrganization applicationDeveloper,
         IfcLabel version,

@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 
 /**
@@ -21,7 +22,7 @@ import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
  * @author stan
  * @date 2022/09/01 22:18
  */
-public abstract class IfcObjectPlacement {
+public abstract class IfcObjectPlacement extends IfcBodyTemplate {
     private SET<IfcProduct> placesObject;
     private SET<IfcLocalPlacement> referencedByPlacements;
 

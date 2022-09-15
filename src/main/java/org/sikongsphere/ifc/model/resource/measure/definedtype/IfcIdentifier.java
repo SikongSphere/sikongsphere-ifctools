@@ -26,4 +26,8 @@ public class IfcIdentifier extends STRING {
     public IfcIdentifier(String value) {
         super(value);
     }
+
+    public IfcIdentifier(STRING value) {
+        super(value.value);
+    }
 }

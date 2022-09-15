@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIPrefix;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIUnitName;
 
@@ -19,6 +23,7 @@ import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIUnitName;
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSIUnit extends IfcNamedUnit {
     private IfcSIPrefix prefix;
     private IfcSIUnitName name;
@@ -28,4 +33,10 @@ public class IfcSIUnit extends IfcNamedUnit {
      * DERIVE
      * SELF\IfcNamedUnit.Dimensions	 : 	IfcDimensionalExponents :=  IfcDimensionsForSiUnit (SELF.Name);
      */
+
+    @IfcParserConstructor
+    public IfcSIUnit(IfcSIPrefix prefix, IfcSIUnitName name) {
+        this.prefix = prefix;
+        this.name = name;
+    }
 }

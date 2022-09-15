@@ -20,6 +20,7 @@ import org.sikongsphere.ifc.model.infra.IfcInstanceFactory
 import org.sikongsphere.ifc.model.{IfcModel, IfcNode, IfcNodeList}
 import org.sikongsphere.ifc.parser.IFCParser._
 
+import java.util
 import scala.collection.JavaConverters._
 
 /**
@@ -70,28 +71,46 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
   }
 
   override def visitExprFunc(ctx: ExprFuncContext): IfcBodyTemplate = {
-    val body =
-      if (ctx.ident().getText.toUpperCase().equals("IFCPERSON")) {
-        // This is very important
-//        val args = ctx.exprFuncParams().funcParam().asScala.map(visitFuncParam).toArray
-//        return IfcInstanceFactory
-//          .getIfcInstance(ctx.ident().getText, args)
-//          .asInstanceOf[IfcBodyTemplate]
-        new IfcPerson
-      } else new IfcBodyTemplate
-    body.ifcName = ctx.ident().getText
-    if (null != ctx.exprFuncParams()) ctx.exprFuncParams().funcParam().asScala.foreach { i =>
-      body.elements.add(visitFuncParam(i))
+//    val body =
+//      if (ctx.ident().getText.toUpperCase().equals("IFCPERSON")) {
+//        // This is very important
+////        val args = ctx.exprFuncParams().funcParam().asScala.map(visitFuncParam).toArray
+////        return IfcInstanceFactory
+////          .getIfcInstance(ctx.ident().getText, args)
+////          .asInstanceOf[IfcBodyTemplate]
+//        new IfcPerson
+//      } else new IfcBodyTemplate
+//    body.ifcName = ctx.ident().getText
+//    if (null != ctx.exprFuncParams()) ctx.exprFuncParams().funcParam().asScala.foreach { i =>
+//      body.elements.add(visitFuncParam(i))
+//    }
+//    body
+    val list = new util.ArrayList[Object]
+    val originArgs = ctx.exprFuncParams().funcParam().asScala
+    val nodes = originArgs.map(visitFuncParam)
+    nodes.foreach { f =>
+      if (f.isInstanceOf[IfcNodeList]) {
+        val nodeList = f.asInstanceOf[IfcNodeList]
+        val elements = nodeList.elements
+        elements.forEach(e => list.add(e))
+      } else {
+        list.add(f)
+      }
     }
+    val args = list.toArray()
+//    val args = ctx.exprFuncParams().funcParam().asScala.map(visitFuncParam).toArray
+    val body =
+      IfcInstanceFactory.getIfcInstance(ctx.ident().getText, args).asInstanceOf[IfcBodyTemplate]
     body
   }
 
   override def visitFuncParam(ctx: FuncParamContext): IfcNode = ctx.getChild(0) match {
     case c: ExprFuncContext => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
-//    case c: ExprContext        => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
-//    case c if c.getText == "$" => null
-//    case _                     => new STRING(StringUtil.dropQuota(ctx.getText))
-    case _ => new STRING(ctx.getText)
+    // ToDO 0914 这先打开
+    case c: ExprContext        => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
+    case c if c.getText == "$" => null
+    case _                     => new STRING(StringUtil.dropQuota(ctx.getText))
+//    case _                     => new STRING(ctx.getText)
   }
 
   override def visitExpr(ctx: IFCParser.ExprContext): IfcNode = ctx.getChild(0) match {

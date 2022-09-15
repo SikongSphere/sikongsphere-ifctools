@@ -10,6 +10,11 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 
 import java.util.Set;
@@ -19,12 +24,14 @@ import java.util.Set;
  * @author Wang Bohong
  * @date 2022/9/1 13:10
  */
-public class IfcUnitAssignment {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcUnitAssignment extends IfcBodyTemplate {
 
     private Set<IfcUnit> units;
 
     public IfcUnitAssignment() {}
 
+    @IfcParserConstructor
     public IfcUnitAssignment(Set<IfcUnit> units) {
         this.units = units;
     }

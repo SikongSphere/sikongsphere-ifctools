@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcUnitEnum;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 
@@ -20,7 +21,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
-public abstract class IfcNamedUnit extends IfcNonLeafNode implements IfcUnit {
+public abstract class IfcNamedUnit extends IfcBodyTemplate implements IfcUnit {
     protected IfcDimensionalExponents dimensions;
     protected IfcUnitEnum unitType;
 }

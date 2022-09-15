@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
@@ -22,6 +26,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement
  * @author stan
  * @date 2022/09/01 22:10
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
     private IfcDimensionCount coordinateSpaceDimension;
     private Boolean precision;// todo -> REAL
@@ -32,6 +37,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
 
     public IfcGeometricRepresentationContext() {}
 
+    @IfcParserConstructor
     public IfcGeometricRepresentationContext(
         IfcDimensionCount coordinateSpaceDimension,
         Boolean precision,
