@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+
 /**
  * A instance of the class is an element of product data that participates in one or more representations
  * or contributes to the definition of another representation item.
@@ -17,6 +19,6 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author Wang Bohong
  * @date 2022/9/1 13:29
  */
-public class IfcRepresentationItem {
-    // ToDO Inverse IfcPresentationLayerAssignment\、IfcStyledItem
+public class IfcRepresentationItem extends IfcBodyTemplate {
+    // ToDO Inverse IfcPresentationLayerAssignment, IfcStyledItem
 }

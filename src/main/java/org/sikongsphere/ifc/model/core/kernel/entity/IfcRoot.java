@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
@@ -22,7 +23,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  * @author zaiyuan
  * @date 2022/8/31 21:15
  */
-public abstract class IfcRoot extends IfcNonLeafNode {
+public abstract class IfcRoot extends IfcBodyTemplate {
     private IfcGloballyUniqueId globalId;
     private IfcOwnerHistory ownerHistory;
     private IfcLabel name;

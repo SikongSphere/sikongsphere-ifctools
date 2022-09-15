@@ -10,10 +10,26 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.SET;
+
 /**
  * IfcRelAggregates
  *
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
-public class IfcRelAggregates extends IfcRelDecomposes {}
+
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcRelAggregates extends IfcRelDecomposes {
+    @IfcParserConstructor
+    public IfcRelAggregates(
+        IfcObjectDefinition relatingObject,
+        SET<IfcObjectDefinition> relatedObjects
+    ) {
+        super(relatingObject, relatedObjects);
+    }
+}

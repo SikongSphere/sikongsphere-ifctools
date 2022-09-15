@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcPostalAddress;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
@@ -20,6 +24,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
  * @author stan
  * @date 2022/09/01 23:15
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcBuilding extends IfcSpatialStructureElement {
     private IfcLengthMeasure elevationOfRefHeight;
     private IfcLengthMeasure elevationOfRefTerrain;
@@ -27,6 +32,7 @@ public class IfcBuilding extends IfcSpatialStructureElement {
 
     public IfcBuilding() {}
 
+    @IfcParserConstructor
     public IfcBuilding(
         IfcLengthMeasure elevationOfRefHeight,
         IfcLengthMeasure elevationOfRefTerrain,

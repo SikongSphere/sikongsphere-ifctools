@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.entity.IfcUnitAssignment;
@@ -24,6 +28,8 @@ import org.sikongsphere.ifc.model.resource.representation.entity.IfcRepresentati
  * @author stan
  * @date 2022/09/01 22:56
  */
+
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcProject extends IfcObject {
     private IfcLabel longName;
     private IfcLabel phase;
@@ -32,6 +38,7 @@ public class IfcProject extends IfcObject {
 
     public IfcProject() {}
 
+    @IfcParserConstructor
     public IfcProject(
         IfcLabel longName,
         IfcLabel phase,

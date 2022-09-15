@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
@@ -21,6 +25,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
  * @author Wang Bohong
  * @date 2022/9/1 15:52
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianPoint extends IfcPoint {
     private LIST<IfcLengthMeasure> coordinates;
 
@@ -28,6 +33,7 @@ public class IfcCartesianPoint extends IfcPoint {
 
     // toDo DERIVE
 
+    @IfcParserConstructor
     public IfcCartesianPoint(LIST<IfcLengthMeasure> coordinates) throws Exception {
         this.coordinates = coordinates;
         if (coordinates.size() > 3) {

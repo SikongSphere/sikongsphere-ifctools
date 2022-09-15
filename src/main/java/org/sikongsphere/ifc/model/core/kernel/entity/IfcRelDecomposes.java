@@ -21,4 +21,12 @@ import org.sikongsphere.ifc.model.basic.SET;
 public abstract class IfcRelDecomposes extends IfcRelationship {
     private IfcObjectDefinition relatingObject;
     private SET<IfcObjectDefinition> relatedObjects;
+
+    public IfcRelDecomposes(
+        IfcObjectDefinition relatingObject,
+        SET<IfcObjectDefinition> relatedObjects
+    ) {
+        this.relatingObject = relatingObject;
+        this.relatedObjects = relatedObjects;
+    }
 }

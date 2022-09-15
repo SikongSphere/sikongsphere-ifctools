@@ -31,6 +31,7 @@ public class IfcInstanceFactory {
         Constructor<?>[] constructors = instance.get(stepName.toUpperCase(Locale.ROOT))
             .getConstructors();
         Object o = new IfcEmptyNode();
+        args = (Object[]) args[0];
         for (Constructor<?> constructor : constructors) {
             if (constructor.isAnnotationPresent(IfcParserConstructor.class)) {
                 try {

@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
@@ -18,7 +19,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
-public class IfcRepresentationContext {
+public class IfcRepresentationContext extends IfcBodyTemplate {
     private IfcLabel contextIdentifier;
     private IfcLabel contextType;
 }

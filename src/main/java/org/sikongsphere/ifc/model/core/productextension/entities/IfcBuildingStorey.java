@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
 /**
@@ -19,11 +23,14 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
  * @author stan
  * @date 2022/09/01 23:06
  */
+
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcBuildingStorey extends IfcSpatialStructureElement {
     private IfcLengthMeasure elevation;
 
     public IfcBuildingStorey() {}
 
+    @IfcParserConstructor
     public IfcBuildingStorey(IfcLengthMeasure elevation) {
         this.elevation = elevation;
     }

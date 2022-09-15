@@ -10,6 +10,11 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The location and orientation in three dimensional space
  * of three mutually perpendicular axes.
@@ -17,12 +22,14 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/01 21:34
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAxis2Placement3D extends IfcPlacement {
     private IfcDirection axis;
     private IfcDirection refDirection;
 
     public IfcAxis2Placement3D() {}
 
+    @IfcParserConstructor
     public IfcAxis2Placement3D(IfcDirection axis, IfcDirection refDirection) {
         this.axis = axis;
         this.refDirection = refDirection;

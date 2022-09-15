@@ -17,9 +17,8 @@ package org.sikongsphere.ifc.common.enumeration;
  * @date 2022-09-11 16:30:00
  */
 public enum IfcLayer {
-    KERNEL,
+    CORE,
     RESOURCE,
-    EXTENSION,
     SHARED,
     DOMAIN
 }
