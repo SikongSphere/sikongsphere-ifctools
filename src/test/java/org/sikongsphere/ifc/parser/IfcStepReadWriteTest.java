@@ -27,6 +27,7 @@ import java.io.*;
  * @author stan
  * @date 2022/09/07 22:26
  */
+@Ignore
 public class IfcStepReadWriteTest {
     private final static String BLANK_INPUT_PATH = "src/test/resources/blank_1.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
