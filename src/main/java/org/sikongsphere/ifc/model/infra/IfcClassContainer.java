@@ -12,7 +12,9 @@ package org.sikongsphere.ifc.model.infra;
 
 import org.reflections.Reflections;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.constant.ConfigParameter;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.common.environment.ConfigProvider;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -34,7 +36,7 @@ public class IfcClassContainer {
      * Constructor, we cannot instantiate IfcContiner Object bias this constructor function
      */
     private IfcClassContainer() {
-        String packageName = "org.sikongsphere.ifc.model";
+        String packageName = ConfigProvider.getProperty(ConfigParameter.IFC_MODEL_PATH_KEY);
         Reflections reflections = new Reflections(packageName);
         Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(IfcClass.class);
         typesAnnotatedWith.forEach(this::wrapTypeClass);
