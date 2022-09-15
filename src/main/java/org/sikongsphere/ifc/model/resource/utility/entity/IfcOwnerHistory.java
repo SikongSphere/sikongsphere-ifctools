@@ -46,7 +46,6 @@ public class IfcOwnerHistory extends IfcBodyTemplate {
 
     public IfcOwnerHistory() {}
 
-    @IfcParserConstructor
     public IfcOwnerHistory(
         IfcPersonAndOrganization owningUser,
         IfcApplication owningApplication,
@@ -59,6 +58,7 @@ public class IfcOwnerHistory extends IfcBodyTemplate {
         this.creationDate = creationDate;
     }
 
+    @IfcParserConstructor
     public IfcOwnerHistory(
         IfcPersonAndOrganization owningUser,
         IfcApplication owningApplication,

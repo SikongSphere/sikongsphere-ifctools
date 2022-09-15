@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.IfcNode;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Locale;
@@ -31,7 +32,8 @@ public class IfcInstanceFactory {
         Constructor<?>[] constructors = instance.get(stepName.toUpperCase(Locale.ROOT))
             .getConstructors();
         Object o = new IfcEmptyNode();
-        args = (Object[]) args[0];
+        // ToDO 这个地方写发还有问题，需要思考下怎么处理
+        if (args[0].getClass().isArray()) args = (Object[]) args[0];
         for (Constructor<?> constructor : constructors) {
             if (constructor.isAnnotationPresent(IfcParserConstructor.class)) {
                 try {

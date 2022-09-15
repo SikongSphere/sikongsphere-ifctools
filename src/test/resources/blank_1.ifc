@@ -7,7 +7,9 @@ ENDSEC;
 
 DATA;
 #1= IFCPERSON($,'unknown','user',$,$,$,$,$);
-
+#2= IFCORGANIZATION($,'ifctoolsproject.com',$,$,$);
+#3= IFCPERSONANDORGANIZATION(#1,#2,$);
+#4= IFCAPPLICATION(#2,'1.0','ifctoolsproject.com','ifctoolsproject.com');
 ENDSEC;
 
 END-ISO-10303-21;
