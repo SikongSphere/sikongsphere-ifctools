@@ -8,25 +8,19 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.common.constant;
+package org.sikongsphere.ifc.common.exception;
 
 /**
- * Config Parameter Constant
+ * Exception for SikongSphere
  *
  * @author zaiyuan
  * @date 2022/09/15 19:52
  */
-public class ConfigParameter {
+public class SikongSphereException extends RuntimeException {
 
-    /**
-     * Key
-     */
-    public final static String SIKONGSPHERE_CONFIG_PROPERTIES_PATH_KEY = "sikongsphere.config.path";
-    public final static String IFC_MODEL_PATH_KEY = "sikongsphere.ifc.model.path";
+    public SikongSphereException() {}
 
-    /**
-     * Value
-     */
-    public final static String SIKONGSPHERE_CONFIG_PROPERTIES_DEFAULT_PATH =
-        "/sikongsphere.properties";
+    public SikongSphereException(String message) {
+        super(message);
+    }
 }

@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.common.environment;
 
 import org.sikongsphere.ifc.common.constant.ConfigParameter;
+import org.sikongsphere.ifc.common.exception.SikongSphereConfigException;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -22,13 +23,17 @@ import java.util.Properties;
  * @date 2022/09/15 19:52
  */
 public class ConfigProvider {
+
     public static String getProperty(String key) {
-        String f = "/sikongsphere.properties";
+        String s = System.getProperty(
+            ConfigParameter.SIKONGSPHERE_CONFIG_PROPERTIES_PATH_KEY,
+            ConfigParameter.SIKONGSPHERE_CONFIG_PROPERTIES_DEFAULT_PATH
+        );
         Properties props = new Properties();
         try {
-            props.load(ConfigProvider.class.getResourceAsStream(f));
+            props.load(ConfigProvider.class.getResourceAsStream(s));
         } catch (IOException e) {
-            throw new RuntimeException(String.format("%s property is not found", key));
+            throw new SikongSphereConfigException(String.format("%s property is not found", key));
         }
         return props.getProperty(key);
     }
