@@ -10,7 +10,6 @@
 */
 package org.sikongsphere.ifc.model.infra;
 
-import org.junit.jupiter.api.Test;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
 import org.sikongsphere.ifc.model.IfcNode;
