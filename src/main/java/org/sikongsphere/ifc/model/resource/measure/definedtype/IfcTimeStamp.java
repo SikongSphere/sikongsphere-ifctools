@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
+import org.sikongsphere.ifc.model.basic.STRING;
+
 /**
  * IfcTimeStamp
  *
@@ -18,19 +20,23 @@ package org.sikongsphere.ifc.model.resource.measure.definedtype;
  */
 public class IfcTimeStamp {
 
-    private Integer timestamp;
+    private Long timestamp;
 
-    public IfcTimeStamp(Integer timestamp) {
+    public IfcTimeStamp(Long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public IfcTimeStamp(STRING timestamp) {
+        this.timestamp = Long.parseLong(timestamp.value);
     }
 
     public IfcTimeStamp() {}
 
-    public Integer getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 }
