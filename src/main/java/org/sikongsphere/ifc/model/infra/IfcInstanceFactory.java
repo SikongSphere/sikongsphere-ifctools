@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.infra;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
+import org.sikongsphere.ifc.common.util.StringUtil;
 import org.sikongsphere.ifc.model.IfcNode;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
@@ -41,7 +42,7 @@ public class IfcInstanceFactory {
         for (Constructor<?> constructor : constructors) {
             if (constructor.isAnnotationPresent(IfcParserConstructor.class)) {
                 try {
-                    validateType(constructor, args);
+                    validateType(constructor, stepName, args);
                     o = constructor.newInstance(args);
                 } catch (Exception e) {
                     throw new RuntimeException(
@@ -53,7 +54,7 @@ public class IfcInstanceFactory {
         return (IfcNode) o;
     }
 
-    public static void validateType(Constructor<?> constructor, Object... args)
+    public static void validateType(Constructor<?> constructor, String stepName, Object... args)
         throws NoSuchMethodException, InvocationTargetException, InstantiationException,
         IllegalAccessException {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
@@ -63,7 +64,9 @@ public class IfcInstanceFactory {
             if (parameterTypes[i] != args[i].getClass()) {
                 // 针对枚举类的处理
                 if (parameterTypes[i].isEnum()) {
-                    // ToDO
+                    String[] route = parameterTypes[i].getName().split("\\.");
+                    String className = route[route.length - 1];
+                    args[i] = getEnumInstance(className, ((STRING) args[i]).value);
                 } else {
                     Object instance = parameterTypes[i].getConstructor(args[i].getClass())
                         .newInstance(args[i]);
@@ -77,6 +80,7 @@ public class IfcInstanceFactory {
         // 获取类
         IfcClassContainer instance = IfcClassContainer.getInstance();
         Class clazz = instance.get(className.toUpperCase(Locale.ROOT));
+        value = StringUtil.dropQuota(value);
         Enum[] enumConstants = (Enum[]) clazz.getEnumConstants();
         for (Enum enumConstant : enumConstants) {
             if (value.equals(enumConstant.name())) {
