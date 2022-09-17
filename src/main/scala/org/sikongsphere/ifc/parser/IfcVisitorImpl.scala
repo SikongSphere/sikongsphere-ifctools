@@ -71,20 +71,6 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
   }
 
   override def visitExprFunc(ctx: ExprFuncContext): IfcBodyTemplate = {
-//    val body =
-//      if (ctx.ident().getText.toUpperCase().equals("IFCPERSON")) {
-//        // This is very important
-////        val args = ctx.exprFuncParams().funcParam().asScala.map(visitFuncParam).toArray
-////        return IfcInstanceFactory
-////          .getIfcInstance(ctx.ident().getText, args)
-////          .asInstanceOf[IfcBodyTemplate]
-//        new IfcPerson
-//      } else new IfcBodyTemplate
-//    body.ifcName = ctx.ident().getText
-//    if (null != ctx.exprFuncParams()) ctx.exprFuncParams().funcParam().asScala.foreach { i =>
-//      body.elements.add(visitFuncParam(i))
-//    }
-//    body
     val list = new util.ArrayList[Object]
     val originArgs = ctx.exprFuncParams().funcParam().asScala
     val nodes = originArgs.map(visitFuncParam)

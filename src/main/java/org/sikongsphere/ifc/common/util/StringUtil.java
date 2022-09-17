@@ -21,7 +21,8 @@ public class StringUtil {
         if (!empty(input)
             && ((input.startsWith("'") && input.endsWith("'"))
                 || (input.startsWith("\"") && input.endsWith("\""))
-                || (input.startsWith("`") && input.endsWith("`")))) {
+                || (input.startsWith("`") && input.endsWith("`"))
+                || (input.startsWith(".") && input.endsWith(".")))) {
             return input.substring(1, input.length() - 1);
         } else {
             return input;

@@ -52,4 +52,14 @@ public class IfcContainerTest {
         assert instance != null;
     }
 
+    /**
+     * Get the enumeration class by reflection
+     */
+    @Test
+    public void enumTest() {
+        String b = "ARCHITECT";
+        String ifcRoleEnum = IfcInstanceFactory.getEnumInstance("IfcRoleEnum", b).toString();
+        assert "ARCHITECT".equals(ifcRoleEnum);
+    }
+
 }

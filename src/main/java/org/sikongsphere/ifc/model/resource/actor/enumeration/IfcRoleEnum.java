@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.actor.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This enumeration is used to tag different role
  *
  * @author zaiyuan
  * @date 2022-08-28 18:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcRoleEnum {
     SUPPLIER,
     MANUFACTURER,

@@ -11,12 +11,16 @@
 package org.sikongsphere.ifc.model.infra;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.exception.SikongSphereException;
 import org.sikongsphere.ifc.model.IfcNode;
+import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
+import scala.tools.jline_embedded.internal.TestAccessible;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Locale;
 
 /**
@@ -32,7 +36,7 @@ public class IfcInstanceFactory {
         Constructor<?>[] constructors = instance.get(stepName.toUpperCase(Locale.ROOT))
             .getConstructors();
         Object o = new IfcEmptyNode();
-        // ToDO 这个地方写发还有问题，需要思考下怎么处理
+        // ToDO 这个地方写法还有问题，需要思考下怎么处理
         if (args[0].getClass().isArray()) args = (Object[]) args[0];
         for (Constructor<?> constructor : constructors) {
             if (constructor.isAnnotationPresent(IfcParserConstructor.class)) {
@@ -57,11 +61,29 @@ public class IfcInstanceFactory {
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
             if (parameterTypes[i] != args[i].getClass()) {
-                Object instance = parameterTypes[i].getConstructor(args[i].getClass())
-                    .newInstance(args[i]);
-                args[i] = instance;
+                // 针对枚举类的处理
+                if (parameterTypes[i].isEnum()) {
+                    // ToDO
+                } else {
+                    Object instance = parameterTypes[i].getConstructor(args[i].getClass())
+                        .newInstance(args[i]);
+                    args[i] = instance;
+                }
             }
         }
+    }
+
+    public static Object getEnumInstance(String className, String value) {
+        // 获取类
+        IfcClassContainer instance = IfcClassContainer.getInstance();
+        Class clazz = instance.get(className.toUpperCase(Locale.ROOT));
+        Enum[] enumConstants = (Enum[]) clazz.getEnumConstants();
+        for (Enum enumConstant : enumConstants) {
+            if (value.equals(enumConstant.name())) {
+                return enumConstant;
+            }
+        }
+        return null;
     }
 
 }
