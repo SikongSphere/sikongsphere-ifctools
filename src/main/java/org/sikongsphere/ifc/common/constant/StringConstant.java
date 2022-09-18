@@ -28,6 +28,9 @@ public class StringConstant {
     public static final String WELL = "#";
     public static final String WHITE_SPACE = " ";
     public static final String EQUALS = "=";
+    public static final String COMMA = ",";
+    public static final String DOLLAR = "$";
+    public static final String DOT = ".";
 
     /**
      * IFC Tag
@@ -36,4 +39,5 @@ public class StringConstant {
     public static final String END_ISO = "END-ISO-10303-21";
     public static final String BODY_TAG = "DATA";
     public static final String BEGIN_ISO = "ISO-10303-21";
+    public static final String INVERSE_TAG = "SET";
 }

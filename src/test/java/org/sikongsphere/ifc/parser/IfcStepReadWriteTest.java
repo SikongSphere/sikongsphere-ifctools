@@ -27,16 +27,14 @@ import java.io.*;
  * @author stan
  * @date 2022/09/07 22:26
  */
-@Ignore
 public class IfcStepReadWriteTest {
     private final static String BLANK_INPUT_PATH = "src/test/resources/blank_1.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
     /**
      * Test whether both of them are as the same.
-     * ToDO：修改完InstanceFactory以后要打开
      */
-    @Ignore
+    @Test
     public void blankFile() throws IOException {
         IfcModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
         IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);
@@ -48,6 +46,7 @@ public class IfcStepReadWriteTest {
         String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
             .toString()
             .replaceAll("\\s*|\r", "");
+
         assert ifcFileone.equals(ifcFiletwo);
     }
 

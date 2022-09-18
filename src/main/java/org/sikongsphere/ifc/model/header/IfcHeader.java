@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.header;
 
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcNode;
+import org.sikongsphere.ifc.model.IfcNodeList;
 import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
@@ -25,12 +26,33 @@ public class IfcHeader extends IfcNode {
     public IfcFileDescription fileDescription;
     public IfcFileSchema fileSchema;
 
+    /**
+     * make up IFC Header according to params received.
+     * @param ifcNode
+     * @return
+     */
+    private String mkParams(IfcNodeList ifcNode) {
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < ifcNode.elements.size(); i++) {
+            STRING node = (STRING) ifcNode.elements.get(i);
+            if (i < ifcNode.elements.size() - 1) {
+                builder.append(node.value).append(StringConstant.COMMA);
+            } else {
+                builder.append(node.value);
+            }
+        }
+
+        return builder.toString();
+    }
+
     @Override
     public String toString() {
 
-        STRING fileDescription = (STRING) this.fileDescription.elements.get(0);
-        STRING fileName = (STRING) this.fileName.elements.get(0);
-        STRING fileSchema = (STRING) this.fileSchema.elements.get(0);
+        String fileDescription = this.mkParams((IfcNodeList) this.fileDescription.elements.get(0));
+        String fileName = this.mkParams((IfcNodeList) this.fileName.elements.get(0));
+        String fileSchema = this.mkParams((IfcNodeList) this.fileSchema.elements.get(0));
 
         StringBuilder builder = new StringBuilder();
         // Header entity
@@ -39,7 +61,7 @@ public class IfcHeader extends IfcNode {
         // File Description
         builder.append("FILE_DESCRIPTION")
             .append(StringConstant.LEFT_BRACKETS)
-            .append(fileDescription.value)
+            .append(fileDescription)
             .append(StringConstant.RIGHT_BRACKETS)
             .append(StringConstant.COLON)
             .append(StringConstant.NEW_LINE);
@@ -47,7 +69,7 @@ public class IfcHeader extends IfcNode {
         // File Name
         builder.append("FILE_NAME")
             .append(StringConstant.LEFT_BRACKETS)
-            .append(fileName.value)
+            .append(fileName)
             .append(StringConstant.RIGHT_BRACKETS)
             .append(StringConstant.COLON)
             .append(StringConstant.NEW_LINE);
@@ -55,7 +77,7 @@ public class IfcHeader extends IfcNode {
         // File Schema
         builder.append("FILE_SCHEMA")
             .append(StringConstant.LEFT_BRACKETS)
-            .append(fileSchema.value)
+            .append(fileSchema)
             .append(StringConstant.RIGHT_BRACKETS)
             .append(StringConstant.COLON)
             .append(StringConstant.NEW_LINE)

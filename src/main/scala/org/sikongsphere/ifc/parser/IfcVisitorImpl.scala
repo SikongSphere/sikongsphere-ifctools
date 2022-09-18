@@ -74,14 +74,12 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
     val list = new util.ArrayList[Object]
     val originArgs = ctx.exprFuncParams().funcParam().asScala
     val nodes = originArgs.map(visitFuncParam)
-    nodes.foreach { f =>
-      if (f.isInstanceOf[IfcNodeList]) {
-        val nodeList = f.asInstanceOf[IfcNodeList]
+    nodes.foreach {
+      case nodeList: IfcNodeList =>
         val elements = nodeList.elements
         elements.forEach(e => list.add(e))
-      } else {
+      case f =>
         list.add(f)
-      }
     }
     val args = list.toArray()
 //    val args = ctx.exprFuncParams().funcParam().asScala.map(visitFuncParam).toArray
