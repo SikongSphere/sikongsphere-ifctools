@@ -11,11 +11,14 @@
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcGenericType;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
+
+import java.util.List;
 
 /**
  * A point defined by its coordinates in a two or
@@ -28,6 +31,12 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianPoint extends IfcPoint {
     private LIST<IfcLengthMeasure> coordinates;
+
+    /**
+     * Record generics in a class
+     */
+    @IfcGenericType
+    public final static Object[][] CLASSES = { { "coordinates", IfcLengthMeasure.class } };
 
     public IfcCartesianPoint() {}
 
