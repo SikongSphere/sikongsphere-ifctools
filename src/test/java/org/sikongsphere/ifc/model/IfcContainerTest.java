@@ -11,12 +11,18 @@
 package org.sikongsphere.ifc.model;
 
 import org.junit.Test;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.infra.IfcClassContainer;
 import org.sikongsphere.ifc.model.infra.IfcInstanceFactory;
 import org.sikongsphere.ifc.model.resource.actor.enumeration.IfcRoleEnum;
+import org.sikongsphere.ifc.model.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 
 public class IfcContainerTest {
 
@@ -60,6 +66,20 @@ public class IfcContainerTest {
         String b = "ARCHITECT";
         String ifcRoleEnum = IfcInstanceFactory.getEnumInstance("IfcRoleEnum", b).toString();
         assert "ARCHITECT".equals(ifcRoleEnum);
+    }
+
+    /**
+     * get the class which constructors contain list by reflection
+     */
+    @Test
+    public void testList() {
+        String a = "(0.0,0.0,0.0)";
+        STRING str = new STRING(a);
+        IfcClassContainer container = IfcClassContainer.getInstance();
+        Class<?> clazz = container.get("IFCCARTESIANPOINT");
+        Object[] generic = container.getGeneric("IFCCARTESIANPOINT");
+        String[] strs = ((Object[]) generic[0])[1].toString().split("\\.");
+        assert "IfcLengthMeasure".equals(strs[strs.length - 1]);
     }
 
 }
