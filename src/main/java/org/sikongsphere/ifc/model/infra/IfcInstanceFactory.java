@@ -11,17 +11,15 @@
 package org.sikongsphere.ifc.model.infra;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
-import org.sikongsphere.ifc.common.exception.SikongSphereException;
 import org.sikongsphere.ifc.common.util.StringUtil;
 import org.sikongsphere.ifc.model.IfcNode;
+import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
-import scala.tools.jline_embedded.internal.TestAccessible;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -58,7 +56,7 @@ public class IfcInstanceFactory {
         throws NoSuchMethodException, InvocationTargetException, InstantiationException,
         IllegalAccessException {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
-        int length = parameterTypes.length;
+        int length = parameterTypes.length, listIndex = 0;
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
             if (parameterTypes[i] != args[i].getClass()) {
@@ -67,6 +65,13 @@ public class IfcInstanceFactory {
                     String[] route = parameterTypes[i].getName().split("\\.");
                     String className = route[route.length - 1];
                     args[i] = getEnumInstance(className, ((STRING) args[i]).value);
+                } else if (parameterTypes[i].equals(LIST.class)) {
+                    // ToDO 引用类型的list
+                    args[i] = getSimpleListInstance(
+                        stepName,
+                        ((STRING) args[i]).value,
+                        listIndex++
+                    );
                 } else {
                     Object instance = parameterTypes[i].getConstructor(args[i].getClass())
                         .newInstance(args[i]);
@@ -88,6 +93,28 @@ public class IfcInstanceFactory {
             }
         }
         return null;
+    }
+
+    /**
+     * convert String to LIST instance
+     * @param stepName the name of the class
+     * @param value STRING.value
+     * @param listIndex the index of LIST
+     * @return
+     */
+    public static LIST getSimpleListInstance(String stepName, String value, int listIndex)
+        throws InstantiationException, IllegalAccessException, NoSuchMethodException,
+        InvocationTargetException {
+        List list = new ArrayList();
+        IfcClassContainer container = IfcClassContainer.getInstance();
+        String[] strs = value.substring(1, value.length() - 1).split(",");
+        Object[] generics = container.getGeneric(stepName);
+        Object[] genericTuple = (Object[]) generics[listIndex];
+        Class generic = (Class) genericTuple[1];
+        for (String str : strs) {
+            list.add(generic.getConstructor(STRING.class).newInstance(new STRING(str)));
+        }
+        return new LIST(list);
     }
 
 }

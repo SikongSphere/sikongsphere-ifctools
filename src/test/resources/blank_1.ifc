@@ -11,6 +11,7 @@ DATA;
 #3= IFCPERSONANDORGANIZATION(#1,#2,$);
 #4= IFCAPPLICATION(#2,'1.0','ifctoolsproject.com','ifctoolsproject.com');
 #5= IFCOWNERHISTORY(#3,#4,$,.ADDED.,$,$,$,1660128237);
+#6= IFCCARTESIANPOINT((0.0,0.0,0.0));
 ENDSEC;
 
 END-ISO-10303-21;
