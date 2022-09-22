@@ -17,7 +17,6 @@ import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
 
-
 import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.List;
