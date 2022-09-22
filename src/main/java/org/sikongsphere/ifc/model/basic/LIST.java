@@ -22,6 +22,12 @@ import java.util.List;
 public class LIST<E> extends IfcBasicType {
     private List<E> objects = new ArrayList<>();
 
+    public LIST(List<E> objects) {
+        this.objects = objects;
+    }
+
+    public LIST() {}
+
     public void add(E object) {
         objects.add(object);
     }

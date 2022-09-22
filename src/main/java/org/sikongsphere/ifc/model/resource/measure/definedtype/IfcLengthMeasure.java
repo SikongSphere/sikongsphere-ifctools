@@ -10,30 +10,37 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.STRING;
+
 /**
  * A length measure is the value of a distance.
  * @author Wang Bohong
  * @date 2022/9/1 16:04
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public class IfcLengthMeasure {
-    private IfcLogical logic;
 
     // ToDo It's not quite clear here
-    {
-        logic.setValue(true);
-    }
+    private Double value;
 
     public IfcLengthMeasure() {}
 
-    public IfcLengthMeasure(IfcLogical logic) {
-        this.logic = logic;
+    public IfcLengthMeasure(Double value) {
+        this.value = value;
     }
 
-    public IfcLogical getLogic() {
-        return logic;
+    public IfcLengthMeasure(STRING value) {
+        this.value = Double.valueOf(value.value);
     }
 
-    public void setLogic(IfcLogical logic) {
-        this.logic = logic;
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
     }
 }
