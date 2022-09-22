@@ -34,7 +34,7 @@ public class IfcStepReadWriteTest {
     /**
      * Test whether both of them are as the same.
      */
-    @Test
+    @Ignore
     public void blankFile() throws IOException {
         IfcModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
         IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);
