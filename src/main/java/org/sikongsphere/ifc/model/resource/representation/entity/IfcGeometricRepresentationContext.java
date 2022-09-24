@@ -15,8 +15,10 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
 
 /**
@@ -29,27 +31,41 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
     private IfcDimensionCount coordinateSpaceDimension;
-    private Boolean precision;// todo -> REAL
+    private STRING precision;// todo -> REAL
     private IfcAxis2Placement worldCoordinateSystem;
     private IfcDirection trueNorth;
 
-    private SET<IfcGeometricRepresentationSubContext> hasSubContexts;
+    // ToDO 反转属性先不写
+    // private SET<IfcGeometricRepresentationSubContext> hasSubContexts;
 
     public IfcGeometricRepresentationContext() {}
 
-    @IfcParserConstructor
     public IfcGeometricRepresentationContext(
         IfcDimensionCount coordinateSpaceDimension,
-        Boolean precision,
+        STRING precision,
         IfcAxis2Placement worldCoordinateSystem,
-        IfcDirection trueNorth,
-        SET<IfcGeometricRepresentationSubContext> hasSubContexts
+        IfcDirection trueNorth
     ) {
         this.coordinateSpaceDimension = coordinateSpaceDimension;
         this.precision = precision;
         this.worldCoordinateSystem = worldCoordinateSystem;
         this.trueNorth = trueNorth;
-        this.hasSubContexts = hasSubContexts;
+    }
+
+    @IfcParserConstructor
+    public IfcGeometricRepresentationContext(
+        IfcLabel contextIdentifier,
+        IfcLabel contextType,
+        IfcDimensionCount coordinateSpaceDimension,
+        STRING precision,
+        IfcAxis2Placement worldCoordinateSystem,
+        IfcDirection trueNorth
+    ) {
+        super(contextIdentifier, contextType);
+        this.coordinateSpaceDimension = coordinateSpaceDimension;
+        this.precision = precision;
+        this.worldCoordinateSystem = worldCoordinateSystem;
+        this.trueNorth = trueNorth;
     }
 
     public IfcDimensionCount getCoordinateSpaceDimension() {
@@ -60,11 +76,11 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.coordinateSpaceDimension = coordinateSpaceDimension;
     }
 
-    public Boolean getPrecision() {
+    public STRING getPrecision() {
         return precision;
     }
 
-    public void setPrecision(Boolean precision) {
+    public void setPrecision(STRING precision) {
         this.precision = precision;
     }
 
@@ -84,11 +100,11 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.trueNorth = trueNorth;
     }
 
-    public SET<IfcGeometricRepresentationSubContext> getHasSubContexts() {
-        return hasSubContexts;
-    }
-
-    public void setHasSubContexts(SET<IfcGeometricRepresentationSubContext> hasSubContexts) {
-        this.hasSubContexts = hasSubContexts;
-    }
+    // public SET<IfcGeometricRepresentationSubContext> getHasSubContexts() {
+    // return hasSubContexts;
+    // }
+    //
+    // public void setHasSubContexts(SET<IfcGeometricRepresentationSubContext> hasSubContexts) {
+    // this.hasSubContexts = hasSubContexts;
+    // }
 }

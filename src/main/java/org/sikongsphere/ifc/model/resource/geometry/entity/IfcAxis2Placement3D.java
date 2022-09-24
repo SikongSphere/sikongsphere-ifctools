@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
 
 /**
  * The location and orientation in three dimensional space
@@ -23,14 +24,22 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/09/01 21:34
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAxis2Placement3D extends IfcPlacement {
+public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placement {
+
+    // ToDO 这个和文档中的定义不符合,
+    private IfcCartesianPoint point;
     private IfcDirection axis;
     private IfcDirection refDirection;
 
     public IfcAxis2Placement3D() {}
 
     @IfcParserConstructor
-    public IfcAxis2Placement3D(IfcDirection axis, IfcDirection refDirection) {
+    public IfcAxis2Placement3D(
+        IfcCartesianPoint point,
+        IfcDirection axis,
+        IfcDirection refDirection
+    ) {
+        this.point = point;
         this.axis = axis;
         this.refDirection = refDirection;
     }

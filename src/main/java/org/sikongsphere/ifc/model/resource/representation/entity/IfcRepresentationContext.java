@@ -22,4 +22,27 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 public class IfcRepresentationContext extends IfcBodyTemplate {
     private IfcLabel contextIdentifier;
     private IfcLabel contextType;
+
+    public IfcRepresentationContext() {}
+
+    public IfcRepresentationContext(IfcLabel contextIdentifier, IfcLabel contextType) {
+        this.contextIdentifier = contextIdentifier;
+        this.contextType = contextType;
+    }
+
+    public IfcLabel getContextIdentifier() {
+        return contextIdentifier;
+    }
+
+    public void setContextIdentifier(IfcLabel contextIdentifier) {
+        this.contextIdentifier = contextIdentifier;
+    }
+
+    public IfcLabel getContextType() {
+        return contextType;
+    }
+
+    public void setContextType(IfcLabel contextType) {
+        this.contextType = contextType;
+    }
 }
