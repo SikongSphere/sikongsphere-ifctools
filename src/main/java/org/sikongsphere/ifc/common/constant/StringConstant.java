@@ -24,6 +24,8 @@ public class StringConstant {
     public static final String COLON = ";";
     public static final String LEFT_BRACKETS = "(";
     public static final String RIGHT_BRACKETS = ")";
+    public static final String LEFT_SQUARE_BRACKETS = "[";
+    public static final String RIGHT_SQUARE_BRACKETS = "]";
     public static final String BLANK_ROW = "\n";
     public static final String WELL = "#";
     public static final String WHITE_SPACE = " ";

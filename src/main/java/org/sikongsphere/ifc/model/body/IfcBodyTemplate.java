@@ -12,12 +12,16 @@ package org.sikongsphere.ifc.model.body;
 
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is used to encapsulate data template
@@ -42,43 +46,70 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
 
         for (int i = 0; i < fields.length; i++) {
             Field field = fields[i];
-            field.setAccessible(true);
-            if (!field.getType().getName().contains(StringConstant.INVERSE_TAG)) {
-                try {
-                    // when value is null, should be replaced with "$"
-                    if (field.get(value) == null) {
-                        list.add(StringConstant.DOLLAR);
 
-                        // when value extended from STRING, like "unknown","user"
-                    } else if (STRING.class.isAssignableFrom(field.get(value).getClass())) {
-                        STRING o = (STRING) field.get(value);
-                        list.add(o.value);
+            if (!Modifier.isStatic(field.getModifiers())) {
+                field.setAccessible(true);
+                if (!field.getType().getName().contains(StringConstant.INVERSE_TAG)) {
+                    try {
+                        // when value is null, should be replaced with "$"
+                        if (field.get(value) == null) {
+                            list.add(StringConstant.DOLLAR);
 
-                        // when value is an enum, like ".ADDED."
-                        // Todo: all Enum should extended from one superclass like "IfcBodyTemplate"
-                    } else if (Enum.class.isAssignableFrom(field.get(value).getClass())) {
-                        IfcChangeActionEnum o = (IfcChangeActionEnum) field.get(value);
-                        list.add(StringConstant.DOT + o.name() + StringConstant.DOT);
+                            // when value extended from STRING, like "unknown","user"
+                        } else if (STRING.class.isAssignableFrom(field.get(value).getClass())) {
+                            STRING o = (STRING) field.get(value);
+                            list.add(o.value);
 
-                        // when value's class is IfcTimeStamp, like 1660128237;
-                        // Todo: other class like IfcTimeStamp should be complemented
-                    } else if (IfcTimeStamp.class.isAssignableFrom(field.get(value).getClass())) {
-                        IfcTimeStamp o = (IfcTimeStamp) field.get(value);
-                        list.add(o.getTimestamp());
+                            // when value is an enum, like ".ADDED."
+                            // Todo: all Enum should extended from one superclass like
+                            // "IfcBodyTemplate"
+                        } else if (Enum.class.isAssignableFrom(field.get(value).getClass())) {
+                            IfcChangeActionEnum o = (IfcChangeActionEnum) field.get(value);
+                            list.add(StringConstant.DOT + o.name() + StringConstant.DOT);
 
-                        /*
-                          Actually when value extended from IfcBodyTemplate, like "IfcPerson",
-                          which performs as "#1","#2" in an Ifc file. So we just get its stepNumber
-                          when write to a new Ifc File.
-                         */
-                    } else {
-                        IfcBodyTemplate o = (IfcBodyTemplate) field.get(value);
-                        list.add(StringConstant.WELL + o.stepNumber);
+                            // when value's class is IfcTimeStamp, like 1660128237;
+                            // Todo: other class like IfcTimeStamp should be complemented
+                        } else if (IfcTimeStamp.class.isAssignableFrom(
+                            field.get(value).getClass()
+                        )) {
+                            IfcTimeStamp o = (IfcTimeStamp) field.get(value);
+                            list.add(o.getTimestamp());
+
+                            /*
+                              Actually when value extended from IfcBodyTemplate, like "IfcPerson",
+                              which performs as "#1","#2" in an Ifc file. So we just get its stepNumber
+                              when write to a new Ifc File.
+                             */
+                        } else if (LIST.class.isAssignableFrom(field.get(value).getClass())) {
+                            LIST listElements = (LIST) field.get(value);
+
+                            ArrayList<Double> tempList = new ArrayList<>();
+
+                            for (int j = 0; j < listElements.size(); j++) {
+                                IfcLengthMeasure element = (IfcLengthMeasure) listElements.get(j);
+                                tempList.add(element.getValue());
+                            }
+                            String replacedTuple = String.valueOf(tempList)
+                                .replace(
+                                    StringConstant.LEFT_SQUARE_BRACKETS,
+                                    StringConstant.LEFT_BRACKETS
+                                )
+                                .replace(
+                                    StringConstant.RIGHT_SQUARE_BRACKETS,
+                                    StringConstant.RIGHT_BRACKETS
+                                );
+
+                            list.add(replacedTuple);
+                        } else {
+                            IfcBodyTemplate o = (IfcBodyTemplate) field.get(value);
+                            list.add(StringConstant.WELL + o.stepNumber);
+                        }
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
                     }
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
                 }
             }
+
         }
 
         String strList = String.valueOf(list);
