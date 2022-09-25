@@ -46,8 +46,7 @@ public class IfcStepReadWriteTest {
         String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
             .toString()
             .replaceAll("\\s*|\r", "");
-        System.out.println(ifcFileone);
-        System.out.println(ifcFiletwo);
+
         assert ifcFileone.equals(ifcFiletwo);
     }
 
