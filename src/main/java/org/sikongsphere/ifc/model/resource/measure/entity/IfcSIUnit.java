@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIPrefix;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIUnitName;
+import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcUnitEnum;
 
 /**
  * This class is used to encapsulate SI Unit information
@@ -34,9 +35,21 @@ public class IfcSIUnit extends IfcNamedUnit {
      * SELF\IfcNamedUnit.Dimensions	 : 	IfcDimensionalExponents :=  IfcDimensionsForSiUnit (SELF.Name);
      */
 
-    @IfcParserConstructor
     public IfcSIUnit(IfcSIPrefix prefix, IfcSIUnitName name) {
         this.prefix = prefix;
         this.name = name;
     }
+
+    @IfcParserConstructor
+    public IfcSIUnit(
+        IfcDimensionalExponents dimensions,
+        IfcUnitEnum unitType,
+        IfcSIPrefix prefix,
+        IfcSIUnitName name
+    ) {
+        super(dimensions, unitType);
+        this.prefix = prefix;
+        this.name = name;
+    }
+
 }

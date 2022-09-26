@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.util.StringUtil;
 import org.sikongsphere.ifc.model.IfcNode;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
 
 import java.lang.reflect.*;
@@ -59,6 +60,15 @@ public class IfcInstanceFactory {
         int length = parameterTypes.length, listIndex = 0;
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
+            if (args[i].getClass().equals(STRING.class) && "*".equals(((STRING) args[i]).value)) {
+                // 当传入参数为*的时候，所有值视作默认值
+                IfcClassContainer instance = IfcClassContainer.getInstance();
+                Constructor<?> constructorWithNoParam = parameterTypes[i].getConstructor();
+                args[i] = constructorWithNoParam.newInstance();
+                IfcBodyTemplate body = (IfcBodyTemplate) args[i];
+                body.setDefault(true);
+                continue;
+            }
             if (parameterTypes[i] != args[i].getClass()
                 && !parameterTypes[i].isAssignableFrom(args[i].getClass())) {
                 // 针对枚举类的处理

@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.INTEGER;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * This class is used to encapsulate dimension exponents information
@@ -19,7 +20,7 @@ import org.sikongsphere.ifc.model.basic.INTEGER;
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
-public class IfcDimensionalExponents extends IfcNonLeafNode {
+public class IfcDimensionalExponents extends IfcBodyTemplate {
 
     /**
      * The power of the length base quantity
@@ -49,6 +50,8 @@ public class IfcDimensionalExponents extends IfcNonLeafNode {
      * The power of the luminous intensity base quantity
      */
     private INTEGER luminousIntensityExponent;
+
+    public IfcDimensionalExponents() {}
 
     public IfcDimensionalExponents(
         INTEGER lengthExponent,

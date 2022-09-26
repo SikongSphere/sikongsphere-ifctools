@@ -29,6 +29,13 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
     public String ifcName;
 
     /**
+     * 当ifc文件中某个类的值为"*"时，将此值设为true，并利用空参构造器初始化实例。
+     * 输出ifc文件时，若某个实例该值为true，则输出"*"
+     * @author Wang Bohong
+     */
+    private boolean isDefault;
+
+    /**
      * make up IFC data according to params received.
      * @param value
      * @param stepNumber
@@ -104,5 +111,13 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
             .append(StringConstant.COLON);
 
         return builder.toString();
+    }
+
+    public boolean isDefault() {
+        return isDefault;
+    }
+
+    public void setDefault(boolean aDefault) {
+        isDefault = aDefault;
     }
 }
