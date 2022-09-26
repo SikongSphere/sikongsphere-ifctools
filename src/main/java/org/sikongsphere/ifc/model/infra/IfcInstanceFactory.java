@@ -59,7 +59,8 @@ public class IfcInstanceFactory {
         int length = parameterTypes.length, listIndex = 0;
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
-            if (parameterTypes[i] != args[i].getClass()) {
+            if (parameterTypes[i] != args[i].getClass()
+                && !parameterTypes[i].isAssignableFrom(args[i].getClass())) {
                 // 针对枚举类的处理
                 if (parameterTypes[i].isEnum()) {
                     String[] route = parameterTypes[i].getName().split("\\.");
