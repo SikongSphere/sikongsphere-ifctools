@@ -34,6 +34,8 @@ public class StringConstant {
     public static final String DOLLAR = "$";
     public static final String DOT = ".";
 
+    public static final String ASTERISK = "*";
+
     /**
      * IFC Tag
      */

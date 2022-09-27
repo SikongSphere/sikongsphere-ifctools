@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An enumeration type for allowed SI units.
  *
  * @author zaiyuan
  * @date 2022/8/31 19:27
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcSIUnitName {
     /**
      * Unit for electric current

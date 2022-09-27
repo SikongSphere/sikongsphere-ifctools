@@ -24,4 +24,11 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 public abstract class IfcNamedUnit extends IfcBodyTemplate implements IfcUnit {
     protected IfcDimensionalExponents dimensions;
     protected IfcUnitEnum unitType;
+
+    public IfcNamedUnit() {}
+
+    public IfcNamedUnit(IfcDimensionalExponents dimensions, IfcUnitEnum unitType) {
+        this.dimensions = dimensions;
+        this.unitType = unitType;
+    }
 }
