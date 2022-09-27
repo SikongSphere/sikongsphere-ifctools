@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static org.sikongsphere.ifc.common.constant.StringConstant.ASTERISK;
+import static org.sikongsphere.ifc.common.constant.StringConstant.COMMA;
+
 /**
  * This class is used to encapsulate actor role information
  *
@@ -60,7 +63,7 @@ public class IfcInstanceFactory {
         int length = parameterTypes.length, listIndex = 0;
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
-            if (args[i].getClass().equals(STRING.class) && "*".equals(((STRING) args[i]).value)) {
+            if (args[i].getClass().equals(STRING.class) && ASTERISK.equals(((STRING) args[i]).value)) {
                 // 当传入参数为*的时候，所有值视作默认值
                 IfcClassContainer instance = IfcClassContainer.getInstance();
                 Constructor<?> constructorWithNoParam = parameterTypes[i].getConstructor();
@@ -118,7 +121,7 @@ public class IfcInstanceFactory {
         InvocationTargetException {
         List list = new ArrayList();
         IfcClassContainer container = IfcClassContainer.getInstance();
-        String[] strs = value.substring(1, value.length() - 1).split(",");
+        String[] strs = value.substring(1, value.length() - 1).split(COMMA);
         Object[] generics = container.getGeneric(stepName);
         Object[] genericTuple = (Object[]) generics[listIndex];
         Class generic = (Class) genericTuple[1];
