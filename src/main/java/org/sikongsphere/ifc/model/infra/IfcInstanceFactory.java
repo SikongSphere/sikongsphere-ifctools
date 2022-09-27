@@ -63,7 +63,8 @@ public class IfcInstanceFactory {
         int length = parameterTypes.length, listIndex = 0;
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
-            if (args[i].getClass().equals(STRING.class) && ASTERISK.equals(((STRING) args[i]).value)) {
+            if (args[i].getClass().equals(STRING.class)
+                && ASTERISK.equals(((STRING) args[i]).value)) {
                 // 当传入参数为*的时候，所有值视作默认值
                 IfcClassContainer instance = IfcClassContainer.getInstance();
                 Constructor<?> constructorWithNoParam = parameterTypes[i].getConstructor();
