@@ -89,22 +89,24 @@ class IfcVisitorImpl(ifcModel: IfcModel) extends IFCBaseVisitor[IfcNode] {
   }
 
   override def visitFuncParam(ctx: FuncParamContext): IfcNode = ctx.getChild(0) match {
-    case c: ExprFuncContext => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
-    // ToDO 0914 这先打开
-    case c: ExprContext        => new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
+    case c: ExprContext =>
+      new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
     case c if c.getText == "$" => null
     case _                     => new STRING(StringUtil.dropQuota(ctx.getText))
-//    case _                     => new STRING(ctx.getText)
   }
 
   override def visitExpr(ctx: IFCParser.ExprContext): IfcNode = ctx.getChild(0) match {
-    case c: ExprFuncContext => visitExprFunc(ctx.exprFunc())
-    case c: ExprAtomContext => visitExprAtom(ctx.exprAtom())
+    case c: ExprFuncContext =>
+      visitExprFunc(ctx.exprFunc())
+    case c: ExprAtomContext =>
+      visitExprAtom(ctx.exprAtom())
     case c: TerminalNode if null != ctx.T_WELL() =>
       ifcModel.elements.get(ctx.intNumber().getText.toInt)
-    case c: TerminalNode if null != ctx.T_DOT() => new STRING(ctx.getText)
     case c: TerminalNode if null != ctx.T_OPEN_P() =>
       new IfcNodeList(ctx.expr().asScala.map(visitExpr).asJava)
+    case c: TerminalNode if null != ctx.T_DOT() =>
+      new STRING(ctx.getText)
+
   }
 
   override def visitExprAtom(ctx: IFCParser.ExprAtomContext): IfcNode = ctx.getChild(0) match {
