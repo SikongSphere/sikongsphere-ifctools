@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 
@@ -27,20 +28,20 @@ import java.util.Set;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcUnitAssignment extends IfcBodyTemplate {
 
-    private Set<IfcUnit> units;
+    private SET<IfcUnit> units;
 
     public IfcUnitAssignment() {}
 
     @IfcParserConstructor
-    public IfcUnitAssignment(Set<IfcUnit> units) {
+    public IfcUnitAssignment(SET<IfcUnit> units) {
         this.units = units;
     }
 
-    public Set<IfcUnit> getUnits() {
+    public SET<IfcUnit> getUnits() {
         return units;
     }
 
-    public void setUnits(Set<IfcUnit> units) {
+    public void setUnits(SET<IfcUnit> units) {
         this.units = units;
     }
 }

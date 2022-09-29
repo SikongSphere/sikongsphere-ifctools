@@ -13,15 +13,15 @@ package org.sikongsphere.ifc.model.infra;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.util.StringUtil;
 import org.sikongsphere.ifc.model.IfcNode;
+import org.sikongsphere.ifc.model.IfcNodeList;
 import org.sikongsphere.ifc.model.basic.LIST;
+import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.body.IfcEmptyNode;
 
 import java.lang.reflect.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 import static org.sikongsphere.ifc.common.constant.StringConstant.ASTERISK;
 import static org.sikongsphere.ifc.common.constant.StringConstant.COMMA;
@@ -60,7 +60,7 @@ public class IfcInstanceFactory {
         throws NoSuchMethodException, InvocationTargetException, InstantiationException,
         IllegalAccessException {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
-        int length = parameterTypes.length, listIndex = 0;
+        int length = parameterTypes.length, listIndex = 0, setIndex = 0;
         for (int i = 0; i < length; i++) {
             if (args[i] == null) continue;
             if (args[i].getClass().equals(STRING.class)
@@ -82,15 +82,34 @@ public class IfcInstanceFactory {
                     args[i] = getEnumInstance(className, ((STRING) args[i]).value);
                 } else if (parameterTypes[i].equals(LIST.class)) {
                     // ToDO 引用类型的list
-                    args[i] = getSimpleListInstance(
-                        stepName,
-                        ((STRING) args[i]).value,
-                        listIndex++
-                    );
+                    if (args[i].getClass() == IfcNodeList.class) {
+                        args[i] = getListInstance((IfcNodeList) args[i]);
+                        listIndex++;
+                    } else {
+                        args[i] = getSimpleListInstance(
+                            stepName,
+                            ((STRING) args[i]).value,
+                            listIndex++
+                        );
+                    }
                 } else {
-                    Object instance = parameterTypes[i].getConstructor(args[i].getClass())
-                        .newInstance(args[i]);
-                    args[i] = instance;
+                    // ToDO 需要重构
+                    if (parameterTypes[i].equals(SET.class)) {
+                        if (args[i].getClass() == IfcNodeList.class) {
+                            args[i] = getSetInstance((IfcNodeList) args[i]);
+                            setIndex++;
+                        } else {
+                            args[i] = getSimpleSetInstance(
+                                stepName,
+                                ((STRING) args[i]).value,
+                                setIndex++
+                            );
+                        }
+                    } else {
+                        Object instance = parameterTypes[i].getConstructor(args[i].getClass())
+                            .newInstance(args[i]);
+                        args[i] = instance;
+                    }
                 }
             }
         }
@@ -108,6 +127,19 @@ public class IfcInstanceFactory {
             }
         }
         return null;
+    }
+
+    public static LIST getListInstance(IfcNodeList list) {
+        List res = new ArrayList();
+        return new LIST(list.elements);
+    }
+
+    public static SET getSetInstance(IfcNodeList list) {
+        SET set = new SET();
+        for (IfcNode element : list.elements) {
+            set.add(element);
+        }
+        return set;
     }
 
     /**
@@ -130,6 +162,21 @@ public class IfcInstanceFactory {
             list.add(generic.getConstructor(STRING.class).newInstance(new STRING(str)));
         }
         return new LIST(list);
+    }
+
+    public static SET getSimpleSetInstance(String stepName, String value, int listIndex)
+        throws InstantiationException, IllegalAccessException, NoSuchMethodException,
+        InvocationTargetException {
+        Set set = new HashSet<>();
+        IfcClassContainer container = IfcClassContainer.getInstance();
+        String[] strs = value.substring(1, value.length() - 1).split(COMMA);
+        Object[] generics = container.getGeneric(stepName);
+        Object[] genericTuple = (Object[]) generics[listIndex];
+        Class generic = (Class) genericTuple[1];
+        for (String str : strs) {
+            set.add(generic.getConstructor(STRING.class).newInstance(new STRING(str)));
+        }
+        return new SET(set);
     }
 
 }

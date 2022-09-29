@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.basic;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class is used to encapsulate set information
@@ -19,7 +20,13 @@ import java.util.HashSet;
  * @date 2022-08-11 18:30:00
  */
 public class SET<E> extends IfcBasicType {
-    private HashSet<E> objects = new HashSet<>();
+    private Set<E> objects = new HashSet<>();
+
+    public SET() {}
+
+    public SET(Set<E> objects) {
+        this.objects = objects;
+    }
 
     public void add(E object) {
         objects.add(object);
