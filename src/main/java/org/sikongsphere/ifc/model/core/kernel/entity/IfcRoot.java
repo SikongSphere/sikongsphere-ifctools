@@ -28,4 +28,18 @@ public abstract class IfcRoot extends IfcBodyTemplate {
     private IfcOwnerHistory ownerHistory;
     private IfcLabel name;
     private IfcText description;
+
+    public IfcRoot() {}
+
+    public IfcRoot(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description
+    ) {
+        this.globalId = globalId;
+        this.ownerHistory = ownerHistory;
+        this.name = name;
+        this.description = description;
+    }
 }

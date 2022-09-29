@@ -22,4 +22,8 @@ public class IfcGloballyUniqueId extends STRING {
     public IfcGloballyUniqueId(String value) {
         super(value);
     }
+
+    public IfcGloballyUniqueId(STRING value) {
+        super(value.value);
+    }
 }

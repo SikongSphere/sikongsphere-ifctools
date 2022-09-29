@@ -14,8 +14,15 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.core.productextension.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcPostalAddress;
+import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcObjectPlacement;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.representation.entity.IfcProductRepresentation;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * Construction work that has the provision of shelter for its occupants or contents
@@ -32,12 +39,42 @@ public class IfcBuilding extends IfcSpatialStructureElement {
 
     public IfcBuilding() {}
 
-    @IfcParserConstructor
     public IfcBuilding(
         IfcLengthMeasure elevationOfRefHeight,
         IfcLengthMeasure elevationOfRefTerrain,
         IfcPostalAddress buildingAddress
     ) {
+        this.elevationOfRefHeight = elevationOfRefHeight;
+        this.elevationOfRefTerrain = elevationOfRefTerrain;
+        this.buildingAddress = buildingAddress;
+    }
+
+    @IfcParserConstructor
+    public IfcBuilding(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcLabel longName,
+        IfcElementCompositionEnum compositionType,
+        IfcLengthMeasure elevationOfRefHeight,
+        IfcLengthMeasure elevationOfRefTerrain,
+        IfcPostalAddress buildingAddress
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            longName,
+            compositionType
+        );
         this.elevationOfRefHeight = elevationOfRefHeight;
         this.elevationOfRefTerrain = elevationOfRefTerrain;
         this.buildingAddress = buildingAddress;
