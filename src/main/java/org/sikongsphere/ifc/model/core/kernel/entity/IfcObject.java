@@ -10,8 +10,12 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcObject
@@ -21,5 +25,20 @@ import org.sikongsphere.ifc.model.basic.SET;
  */
 public abstract class IfcObject extends IfcObjectDefinition {
     private IfcLabel objectType;
-    private SET<IfcRelDefines> isDefinedBy;
+    // toDO inverse
+    // private SET<IfcRelDefines> isDefinedBy;
+
+    public IfcObject() {}
+
+    @IfcParserConstructor
+    public IfcObject(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType
+    ) {
+        super(globalId, ownerHistory, name, description);
+        this.objectType = objectType;
+    }
 }

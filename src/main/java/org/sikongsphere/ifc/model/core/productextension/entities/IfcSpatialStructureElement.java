@@ -10,10 +10,16 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.core.productextension.enumeration.IfcElementCompositionEnum;
+import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.representation.entity.IfcProductRepresentation;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * A spatial structure element (IfcSpatialStructureElement) is the generalization
@@ -28,24 +34,47 @@ public class IfcSpatialStructureElement extends IfcProduct {
     private IfcLabel longName;
     private IfcElementCompositionEnum compositionType;
 
-    private SET<IfcRelReferencedInSpatialStructure> referenceElements;
-    private SET<IfcRelServicesBuildings> servicedBySystems;
-    private SET<IfcRelContainedInSpatialStructure> containsElements;
+    // private SET<IfcRelReferencedInSpatialStructure> referenceElements;
+    // private SET<IfcRelServicesBuildings> servicedBySystems;
+    // private SET<IfcRelContainedInSpatialStructure> containsElements;
 
     public IfcSpatialStructureElement() {}
 
-    public IfcSpatialStructureElement(
-        IfcLabel longName,
-        IfcElementCompositionEnum compositionType,
-        SET<IfcRelReferencedInSpatialStructure> referenceElements,
-        SET<IfcRelServicesBuildings> servicedBySystems,
-        SET<IfcRelContainedInSpatialStructure> containsElements
+    public IfcSpatialStructureElement(IfcLabel longName, IfcElementCompositionEnum compositionType
+    // SET<IfcRelReferencedInSpatialStructure> referenceElements,
+    // SET<IfcRelServicesBuildings> servicedBySystems,
+    // SET<IfcRelContainedInSpatialStructure> containsElements
     ) {
         this.longName = longName;
         this.compositionType = compositionType;
-        this.referenceElements = referenceElements;
-        this.servicedBySystems = servicedBySystems;
-        this.containsElements = containsElements;
+        // this.referenceElements = referenceElements;
+        // this.servicedBySystems = servicedBySystems;
+        // this.containsElements = containsElements;
+    }
+
+    @IfcParserConstructor
+    public IfcSpatialStructureElement(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcLabel longName,
+        IfcElementCompositionEnum compositionType
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation
+        );
+        this.longName = longName;
+        this.compositionType = compositionType;
     }
 
     public IfcLabel getLongName() {
@@ -64,27 +93,27 @@ public class IfcSpatialStructureElement extends IfcProduct {
         this.compositionType = compositionType;
     }
 
-    public SET<IfcRelReferencedInSpatialStructure> getReferenceElements() {
-        return referenceElements;
-    }
-
-    public void setReferenceElements(SET<IfcRelReferencedInSpatialStructure> referenceElements) {
-        this.referenceElements = referenceElements;
-    }
-
-    public SET<IfcRelServicesBuildings> getServicedBySystems() {
-        return servicedBySystems;
-    }
-
-    public void setServicedBySystems(SET<IfcRelServicesBuildings> servicedBySystems) {
-        this.servicedBySystems = servicedBySystems;
-    }
-
-    public SET<IfcRelContainedInSpatialStructure> getContainsElements() {
-        return containsElements;
-    }
-
-    public void setContainsElements(SET<IfcRelContainedInSpatialStructure> containsElements) {
-        this.containsElements = containsElements;
-    }
+    // public SET<IfcRelReferencedInSpatialStructure> getReferenceElements() {
+    // return referenceElements;
+    // }
+    //
+    // public void setReferenceElements(SET<IfcRelReferencedInSpatialStructure> referenceElements) {
+    // this.referenceElements = referenceElements;
+    // }
+    //
+    // public SET<IfcRelServicesBuildings> getServicedBySystems() {
+    // return servicedBySystems;
+    // }
+    //
+    // public void setServicedBySystems(SET<IfcRelServicesBuildings> servicedBySystems) {
+    // this.servicedBySystems = servicedBySystems;
+    // }
+    //
+    // public SET<IfcRelContainedInSpatialStructure> getContainsElements() {
+    // return containsElements;
+    // }
+    //
+    // public void setContainsElements(SET<IfcRelContainedInSpatialStructure> containsElements) {
+    // this.containsElements = containsElements;
+    // }
 }

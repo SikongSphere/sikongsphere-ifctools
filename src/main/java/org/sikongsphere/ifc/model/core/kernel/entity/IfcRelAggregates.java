@@ -15,6 +15,10 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcRelAggregates
@@ -25,11 +29,17 @@ import org.sikongsphere.ifc.model.basic.SET;
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRelAggregates extends IfcRelDecomposes {
+    public IfcRelAggregates() {}
+
     @IfcParserConstructor
     public IfcRelAggregates(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
         IfcObjectDefinition relatingObject,
         SET<IfcObjectDefinition> relatedObjects
     ) {
-        super(relatingObject, relatedObjects);
+        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
     }
 }

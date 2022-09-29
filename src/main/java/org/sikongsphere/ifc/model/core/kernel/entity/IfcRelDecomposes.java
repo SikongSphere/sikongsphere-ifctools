@@ -10,7 +10,12 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcRelDecomposes
@@ -22,10 +27,18 @@ public abstract class IfcRelDecomposes extends IfcRelationship {
     private IfcObjectDefinition relatingObject;
     private SET<IfcObjectDefinition> relatedObjects;
 
+    public IfcRelDecomposes() {}
+
+    @IfcParserConstructor
     public IfcRelDecomposes(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
         IfcObjectDefinition relatingObject,
         SET<IfcObjectDefinition> relatedObjects
     ) {
+        super(globalId, ownerHistory, name, description);
         this.relatingObject = relatingObject;
         this.relatedObjects = relatedObjects;
     }

@@ -16,8 +16,11 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.measure.entity.IfcUnitAssignment;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcRepresentationContext;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * The undertaking of some design, engineering,
@@ -38,13 +41,31 @@ public class IfcProject extends IfcObject {
 
     public IfcProject() {}
 
-    @IfcParserConstructor
     public IfcProject(
         IfcLabel longName,
         IfcLabel phase,
         SET<IfcRepresentationContext> representationContexts,
         IfcUnitAssignment unitsInContext
     ) {
+        this.longName = longName;
+        this.phase = phase;
+        this.representationContexts = representationContexts;
+        this.unitsInContext = unitsInContext;
+    }
+
+    @IfcParserConstructor
+    public IfcProject(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcLabel longName,
+        IfcLabel phase,
+        SET<IfcRepresentationContext> representationContexts,
+        IfcUnitAssignment unitsInContext
+    ) {
+        super(globalId, ownerHistory, name, description, objectType);
         this.longName = longName;
         this.phase = phase;
         this.representationContexts = representationContexts;

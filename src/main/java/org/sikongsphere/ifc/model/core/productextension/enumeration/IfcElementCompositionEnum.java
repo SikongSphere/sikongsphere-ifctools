@@ -10,12 +10,18 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Enumeration that provides an indication, whether the spatial structure element or proxy represents
  *
  * @author Wang Bohong
  * @date 2022/8/29 15:35
  */
+
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENUMERATION)
 public enum IfcElementCompositionEnum {
     /**
      * a group or aggregation of similar elements

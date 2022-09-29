@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.parser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.junit.Test;
 import org.sikongsphere.ifc.model.IfcModel;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ import java.io.IOException;
 public class IFCParseDriverDemo {
     public static void main(String[] args) throws IOException {
         // CharStream stream = CharStreams.fromFileName("src\\test\\resources\\blank.ifc");
-        CharStream stream = CharStreams.fromFileName("src/test/resources/blank_1.ifc");
+        CharStream stream = CharStreams.fromFileName("src/test/resources/blank.ifc");
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
@@ -29,4 +30,5 @@ public class IFCParseDriverDemo {
         ifcVisitorImpl.visit(ifcmodel);
         System.out.println(ifcmodel.getText());
     }
+
 }

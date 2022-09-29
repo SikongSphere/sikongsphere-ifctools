@@ -10,9 +10,14 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcObjectPlacement;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcProductRepresentation;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * Any object, or any aid to define, organize and annotate an object,
@@ -27,18 +32,28 @@ public class IfcProduct extends IfcObject {
     private IfcObjectPlacement objectPlacement;
     private IfcProductRepresentation representation;
 
-    private SET<IfcRelAssignsToProduct> referencedBy;
+    // private SET<IfcRelAssignsToProduct> referencedBy;
 
     public IfcProduct() {}
 
-    public IfcProduct(
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        SET<IfcRelAssignsToProduct> referencedBy
-    ) {
+    public IfcProduct(IfcObjectPlacement objectPlacement, IfcProductRepresentation representation) {
         this.objectPlacement = objectPlacement;
         this.representation = representation;
-        this.referencedBy = referencedBy;
+    }
+
+    @IfcParserConstructor
+    public IfcProduct(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation
+    ) {
+        super(globalId, ownerHistory, name, description, objectType);
+        this.objectPlacement = objectPlacement;
+        this.representation = representation;
     }
 
     public IfcObjectPlacement getObjectPlacement() {
@@ -57,11 +72,11 @@ public class IfcProduct extends IfcObject {
         this.representation = representation;
     }
 
-    public SET<IfcRelAssignsToProduct> getReferencedBy() {
-        return referencedBy;
-    }
-
-    public void setReferencedBy(SET<IfcRelAssignsToProduct> referencedBy) {
-        this.referencedBy = referencedBy;
-    }
+    // public SET<IfcRelAssignsToProduct> getReferencedBy() {
+    // return referencedBy;
+    // }
+    //
+    // public void setReferencedBy(SET<IfcRelAssignsToProduct> referencedBy) {
+    // this.referencedBy = referencedBy;
+    // }
 }

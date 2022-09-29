@@ -10,10 +10,28 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
+
 /**
  * IfcRoot
  *
  * @author zaiyuan
  * @date 2022/8/31 21:15
  */
-public abstract class IfcRelationship extends IfcRoot {}
+public abstract class IfcRelationship extends IfcRoot {
+    public IfcRelationship() {}
+
+    @IfcParserConstructor
+    public IfcRelationship(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description
+    ) {
+        super(globalId, ownerHistory, name, description);
+    }
+}
