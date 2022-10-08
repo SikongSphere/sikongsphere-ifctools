@@ -1,25 +1,35 @@
 # sikongsphere-ifctools
 
+#### [![2022-10-08-14-44-44.png](https://i.postimg.cc/zf58kGVg/2022-10-08-14-44-44.png)](https://postimg.cc/tsrKqydq)
+
 #### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
 
-#### 软件架构
-软件架构说明
+Sikongsphere-ifctools是司空学社组织的开源项目，是国内第一个完全实现IFC标准的开源核心模型库。该项目的定位为基于Java语言的IFC（industry foundation class）开源实现，并涵盖了相关工具包，旨在为建筑模型的信息化夯实基础。关于IFC的信息，可参阅[buildingsmart官网](https://www.buildingsmart.org/)。
 
+#### 架构
 
-#### 安装教程
+从架构上，可以分为三层：Model层、扩展层和SDK层
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- Model层：负责所有IFC标准的具体实现
 
-#### 使用说明
+- SDK层：负责与用户进行交互
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- 扩展层：一些扩展功能模块
+
+[![2022-10-08-15.07.26.md.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.07.26.md.png)](https://www.imagehub.cc/image/GCZPk9)
+#### 参与贡献🚀🧑‍💻
+
+搭建开发环境和贡献者指南，请参考：
+
+[贡献者](https://gitee.com/sikongsphere/sikongsphere-ifctools/contributors?ref=develop)
+
+#### 状态
+
+Version 0.0.1：已发布🎉
+
+🔗请访问[0.0.1 版本说明 ](https://gitee.com/sikongsphere/sikongsphere-ifctools/wikis/0.0.1%20%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E?sort_id=6433688)获得更详细的信息。
+
+🔜 Version 0.0.2 正在开发中
 
 #### 参与贡献
 
@@ -29,11 +39,6 @@ Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN�
 4.  新建 Pull Request
 
 
-#### 特技
+#### 线路图
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+[![2022-10-08-15.20.11.md.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.20.11.md.png)](https://www.imagehub.cc/image/GCZcAv)
