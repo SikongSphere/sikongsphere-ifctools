@@ -63,7 +63,7 @@ public class IfcPerson extends IfcBodyTemplate {
     /**
      * Inverse
      */
-    private SET<IfcPersonAndOrganization> engagedIn;
+    // private SET<IfcPersonAndOrganization> engagedIn;
 
     public IfcIdentifier getId() {
         return id;

@@ -23,32 +23,32 @@ import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
  * @date 2022/09/01 22:18
  */
 public abstract class IfcObjectPlacement extends IfcBodyTemplate {
-    private SET<IfcProduct> placesObject;
-    private SET<IfcLocalPlacement> referencedByPlacements;
+    // private SET<IfcProduct> placesObject;
+    // private SET<IfcLocalPlacement> referencedByPlacements;
 
     public IfcObjectPlacement() {}
 
-    public IfcObjectPlacement(
-        SET<IfcProduct> placesObject,
-        SET<IfcLocalPlacement> referencedByPlacements
-    ) {
-        this.placesObject = placesObject;
-        this.referencedByPlacements = referencedByPlacements;
-    }
-
-    public SET<IfcProduct> getPlacesObject() {
-        return placesObject;
-    }
-
-    public void setPlacesObject(SET<IfcProduct> placesObject) {
-        this.placesObject = placesObject;
-    }
-
-    public SET<IfcLocalPlacement> getReferencedByPlacements() {
-        return referencedByPlacements;
-    }
-
-    public void setReferencedByPlacements(SET<IfcLocalPlacement> referencedByPlacements) {
-        this.referencedByPlacements = referencedByPlacements;
-    }
+    // public IfcObjectPlacement(
+    // SET<IfcProduct> placesObject,
+    // SET<IfcLocalPlacement> referencedByPlacements
+    // ) {
+    // this.placesObject = placesObject;
+    // this.referencedByPlacements = referencedByPlacements;
+    // }
+    //
+    // public SET<IfcProduct> getPlacesObject() {
+    // return placesObject;
+    // }
+    //
+    // public void setPlacesObject(SET<IfcProduct> placesObject) {
+    // this.placesObject = placesObject;
+    // }
+    //
+    // public SET<IfcLocalPlacement> getReferencedByPlacements() {
+    // return referencedByPlacements;
+    // }
+    //
+    // public void setReferencedByPlacements(SET<IfcLocalPlacement> referencedByPlacements) {
+    // this.referencedByPlacements = referencedByPlacements;
+    // }
 }

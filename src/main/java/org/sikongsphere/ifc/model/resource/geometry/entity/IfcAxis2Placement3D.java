@@ -26,8 +26,6 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placement {
 
-    // ToDO 这个和文档中的定义不符合,
-    private IfcCartesianPoint point;
     private IfcDirection axis;
     private IfcDirection refDirection;
 
@@ -39,7 +37,7 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
         IfcDirection axis,
         IfcDirection refDirection
     ) {
-        this.point = point;
+        setLocation(point);
         this.axis = axis;
         this.refDirection = refDirection;
     }

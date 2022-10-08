@@ -13,15 +13,15 @@ package org.sikongsphere.ifc.model.body;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.LIST;
+import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.basic.STRING;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
+import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
-import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
+import org.sikongsphere.ifc.model.resource.measure.entity.IfcDimensionalExponents;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * This class is used to encapsulate data template
@@ -39,84 +39,116 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
      */
     private boolean isDefault;
 
+    private Field[] getAllFields(Object object) {
+        Class clazz = object.getClass();
+        List<Field> fieldList = new ArrayList<>();
+
+        while (clazz != null) {
+            fieldList.addAll(0, new ArrayList<>(Arrays.asList(clazz.getDeclaredFields())));
+            clazz = clazz.getSuperclass();
+        }
+        Field[] fields = new Field[fieldList.size()];
+        fieldList.toArray(fields);
+        return fields;
+    }
+
     /**
      * make up IFC data according to params received.
      * @param value
      * @param stepNumber
      * @return
      */
-    public String toString(IfcBodyTemplate value, Integer stepNumber) {
+    public String toString(IfcBodyTemplate value, Integer stepNumber)
+        throws IllegalAccessException {
         ArrayList<Object> list = new ArrayList<>();
-        Field[] fields = value.getClass().getDeclaredFields();
+        Field[] fields = getAllFields(value);
 
         value.stepNumber = stepNumber;
 
         for (int i = 0; i < fields.length; i++) {
             Field field = fields[i];
+            field.setAccessible(true);
 
-            if (!Modifier.isStatic(field.getModifiers())) {
-                field.setAccessible(true);
-                if (!field.getType().getName().contains(StringConstant.INVERSE_TAG)) {
-                    try {
-                        // when value is null, should be replaced with "$"
-                        if (field.get(value) == null) {
-                            list.add(StringConstant.DOLLAR);
+            if (!Modifier.isStatic(field.getModifiers())
+                && !Modifier.isPublic(field.getModifiers())) {
 
-                            // when value extended from STRING, like "unknown","user"
-                        } else if (STRING.class.isAssignableFrom(field.get(value).getClass())) {
-                            STRING o = (STRING) field.get(value);
-                            list.add(o.value);
+                if (field.get(value) == null) {
+                    list.add(StringConstant.DOLLAR);
 
-                            // when value is an enum, like ".ADDED."
-                            // Todo: all Enum should extended from one superclass like
-                            // "IfcBodyTemplate"
-                        } else if (Enum.class.isAssignableFrom(field.get(value).getClass())) {
-                            IfcChangeActionEnum o = (IfcChangeActionEnum) field.get(value);
-                            list.add(StringConstant.DOT + o.name() + StringConstant.DOT);
+                } else if (Boolean.class.equals(field.get(value).getClass())) {
+                    continue;
 
-                            // when value's class is IfcTimeStamp, like 1660128237;
-                            // Todo: other class like IfcTimeStamp should be complemented
-                        } else if (IfcTimeStamp.class.isAssignableFrom(
-                            field.get(value).getClass()
-                        )) {
-                            IfcTimeStamp o = (IfcTimeStamp) field.get(value);
-                            list.add(o.getTimestamp());
+                } else if (STRING.class.isAssignableFrom(field.get(value).getClass())) {
+                    STRING o = (STRING) field.get(value);
+                    list.add(o.value);
 
-                            /*
-                              Actually when value extended from IfcBodyTemplate, like "IfcPerson",
-                              which performs as "#1","#2" in an Ifc file. So we just get its stepNumber
-                              when write to a new Ifc File.
-                             */
-                        } else if (LIST.class.isAssignableFrom(field.get(value).getClass())) {
-                            LIST listElements = (LIST) field.get(value);
+                } else if (Enum.class.isAssignableFrom(field.get(value).getClass())) {
+                    Enum o = (Enum) field.get(value);
+                    list.add(StringConstant.DOT + o.name() + StringConstant.DOT);
 
-                            ArrayList<Double> tempList = new ArrayList<>();
+                } else if (IfcTimeStamp.class.equals(field.get(value).getClass())) {
+                    IfcTimeStamp o = (IfcTimeStamp) field.get(value);
+                    list.add(o.getTimestamp());
 
-                            for (int j = 0; j < listElements.size(); j++) {
-                                IfcLengthMeasure element = (IfcLengthMeasure) listElements.get(j);
-                                tempList.add(element.getValue());
-                            }
-                            String replacedTuple = String.valueOf(tempList)
-                                .replace(
-                                    StringConstant.LEFT_SQUARE_BRACKETS,
-                                    StringConstant.LEFT_BRACKETS
-                                )
-                                .replace(
-                                    StringConstant.RIGHT_SQUARE_BRACKETS,
-                                    StringConstant.RIGHT_BRACKETS
-                                );
+                } else if (LIST.class.isAssignableFrom(field.get(value).getClass())) {
+                    LIST listElements = (LIST) field.get(value);
 
-                            list.add(replacedTuple);
-                        } else {
-                            IfcBodyTemplate o = (IfcBodyTemplate) field.get(value);
-                            list.add(StringConstant.WELL + o.stepNumber);
-                        }
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
+                    ArrayList<String> tempList = new ArrayList<>();
+
+                    for (int j = 0; j < listElements.size(); j++) {
+                        STRING element = (STRING) listElements.get(j);
+                        tempList.add(element.value);
                     }
+                    String replacedTuple = String.valueOf(tempList)
+                        .replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
+                        .replace(
+                            StringConstant.RIGHT_SQUARE_BRACKETS,
+                            StringConstant.RIGHT_BRACKETS
+                        );
+
+                    list.add(replacedTuple);
+
+                } else if (SET.class.equals(field.get(value).getClass())) {
+                    SET o = ((SET) field.get(value));
+                    Iterator iterator = o.getObjects().iterator();
+
+                    ArrayList<Integer> temp = new ArrayList<>();
+
+                    while (iterator.hasNext()) {
+                        IfcBodyTemplate next = (IfcBodyTemplate) iterator.next();
+                        temp.add(next.stepNumber);
+                    }
+
+                    temp.sort((x1, x2) -> x1 - x2);
+
+                    ArrayList<String> strings = new ArrayList<>();
+                    temp.forEach(x -> strings.add(StringConstant.WELL + x));
+                    list.add(
+                        String.valueOf(strings)
+                            .replace(
+                                StringConstant.LEFT_SQUARE_BRACKETS,
+                                StringConstant.LEFT_BRACKETS
+                            )
+                            .replace(
+                                StringConstant.RIGHT_SQUARE_BRACKETS,
+                                StringConstant.RIGHT_BRACKETS
+                            )
+                    );
+
+                } else if (IfcDimensionCount.class.equals(field.get(value).getClass())) {
+                    IfcDimensionCount o = (IfcDimensionCount) field.get(value);
+                    list.add(o.getDimensionCount().value);
+
+                } else if (IfcDimensionalExponents.class.equals(field.get(value).getClass())) {
+                    IfcDimensionalExponents o = (IfcDimensionalExponents) field.get(value);
+                    if (o.isDefault()) {
+                        list.add(StringConstant.ASTERISK);
+                    }
+                } else {
+                    IfcBodyTemplate o = (IfcBodyTemplate) field.get(value);
+                    list.add(StringConstant.WELL + o.stepNumber);
                 }
             }
-
         }
 
         String strList = String.valueOf(list);

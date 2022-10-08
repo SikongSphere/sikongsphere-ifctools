@@ -35,4 +35,8 @@ public class SET<E> extends IfcBasicType {
     public Integer size() {
         return objects.size();
     }
+
+    public Set<E> getObjects() {
+        return objects;
+    }
 }

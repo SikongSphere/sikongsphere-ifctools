@@ -34,9 +34,9 @@ public class IfcOrganization extends IfcBodyTemplate {
     private LIST<IfcActorRole> roles;
     private LIST<IfcAddress> addresses;
 
-    private SET<IfcOrganizationRelationship> isRelatedBy;
-    private SET<IfcOrganizationRelationship> relates;
-    private SET<IfcPersonAndOrganization> engages;
+    // private SET<IfcOrganizationRelationship> isRelatedBy;
+    // private SET<IfcOrganizationRelationship> relates;
+    // private SET<IfcPersonAndOrganization> engages;
 
     @IfcParserConstructor
     public IfcOrganization(
@@ -93,27 +93,27 @@ public class IfcOrganization extends IfcBodyTemplate {
         this.addresses = addresses;
     }
 
-    public SET<IfcOrganizationRelationship> getIsRelatedBy() {
-        return isRelatedBy;
-    }
+    // public SET<IfcOrganizationRelationship> getIsRelatedBy() {
+    // return isRelatedBy;
+    // }
 
-    public void setIsRelatedBy(SET<IfcOrganizationRelationship> isRelatedBy) {
-        this.isRelatedBy = isRelatedBy;
-    }
+    // public void setIsRelatedBy(SET<IfcOrganizationRelationship> isRelatedBy) {
+    // this.isRelatedBy = isRelatedBy;
+    // }
 
-    public SET<IfcOrganizationRelationship> getRelates() {
-        return relates;
-    }
+    // public SET<IfcOrganizationRelationship> getRelates() {
+    // return relates;
+    // }
 
-    public void setRelates(SET<IfcOrganizationRelationship> relates) {
-        this.relates = relates;
-    }
+    // public void setRelates(SET<IfcOrganizationRelationship> relates) {
+    // this.relates = relates;
+    // }
 
-    public SET<IfcPersonAndOrganization> getEngages() {
-        return engages;
-    }
+    // public SET<IfcPersonAndOrganization> getEngages() {
+    // return engages;
+    // }
 
-    public void setEngages(SET<IfcPersonAndOrganization> engages) {
-        this.engages = engages;
-    }
+    // public void setEngages(SET<IfcPersonAndOrganization> engages) {
+    // this.engages = engages;
+    // }
 }

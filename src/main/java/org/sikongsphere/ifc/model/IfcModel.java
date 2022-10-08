@@ -13,7 +13,6 @@ package org.sikongsphere.ifc.model;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.header.IfcHeader;
-import org.sikongsphere.ifc.model.resource.actor.entity.IfcPerson;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +38,12 @@ public class IfcModel extends IfcNode {
 
         elements.forEach((key, value) -> {
 
-            String s = value.toString(value, key);
+            String s = null;
+            try {
+                s = value.toString(value, key);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
             builder.append(s).append(StringConstant.NEW_LINE);
         });
         builder.append(StringConstant.END_TAG).append(StringConstant.COLON);

@@ -36,11 +36,21 @@ public class IfcHeader extends IfcNode {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < ifcNode.elements.size(); i++) {
-            STRING node = (STRING) ifcNode.elements.get(i);
+            String ifcValue = null;
+
+            if (IfcNodeList.class.equals(ifcNode.elements.get(i).getClass())) {
+                IfcNodeList node = (IfcNodeList) ifcNode.elements.get(i);
+                ifcValue = StringConstant.LEFT_BRACKETS + ((STRING) node.elements.get(0)).value
+                    + StringConstant.RIGHT_BRACKETS;
+
+            } else if (STRING.class.equals(ifcNode.elements.get(i).getClass())) {
+                ifcValue = ((STRING) ifcNode.elements.get(i)).value;
+            }
+
             if (i < ifcNode.elements.size() - 1) {
-                builder.append(node.value).append(StringConstant.COMMA);
+                builder.append(ifcValue).append(StringConstant.COMMA);
             } else {
-                builder.append(node.value);
+                builder.append(ifcValue);
             }
         }
 
