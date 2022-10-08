@@ -21,7 +21,7 @@ import java.io.*;
 
 /**
  * a test between an input IFC file
- * and a output IFC file from self-define method.
+ * and an output IFC file from self-define method.
  *
  * @author stan
  * @date 2022/09/07 22:26
