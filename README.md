@@ -16,8 +16,7 @@ Sikongsphere-ifctools是司空学社组织的开源项目，是国内第一个�
 
 - 扩展层：一些扩展功能模块
 
-[![2022-10-08-15.07.26.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.07.26.png)](https://www.imagehub.cc/image/GCZPk9)
-
+[![2022-10-08-15.07.26.md.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.07.26.md.png)](https://www.imagehub.cc/image/GCZPk9)
 #### 参与贡献🚀🧑‍💻
 
 搭建开发环境和贡献者指南，请参考：
@@ -42,4 +41,4 @@ Version 0.0.1：已发布🎉
 
 #### 线路图
 
-![2022-10-08-15.20.11.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.20.11.png)
+[![2022-10-08-15.20.11.md.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.20.11.md.png)](https://www.imagehub.cc/image/GCZcAv)
