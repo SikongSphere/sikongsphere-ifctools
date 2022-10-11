@@ -39,4 +39,5 @@ public class IfcPropertyDefinition extends IfcRoot {
     ) {
         super(globalId, ownerHistory, name, description);
     }
+
 }

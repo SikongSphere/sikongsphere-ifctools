@@ -46,4 +46,36 @@ public abstract class IfcRoot extends IfcBodyTemplate {
         this.name = name;
         this.description = description;
     }
+
+    public IfcGloballyUniqueId getGlobalId() {
+        return globalId;
+    }
+
+    public void setGlobalId(IfcGloballyUniqueId globalId) {
+        this.globalId = globalId;
+    }
+
+    public IfcOwnerHistory getOwnerHistory() {
+        return ownerHistory;
+    }
+
+    public void setOwnerHistory(IfcOwnerHistory ownerHistory) {
+        this.ownerHistory = ownerHistory;
+    }
+
+    public IfcLabel getName() {
+        return name;
+    }
+
+    public void setName(IfcLabel name) {
+        this.name = name;
+    }
+
+    public IfcText getDescription() {
+        return description;
+    }
+
+    public void setDescription(IfcText description) {
+        this.description = description;
+    }
 }
