@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcSurfaceTextureEnum defines the range of different types of image or pixel maps available.
  *
  * @author Wang Bohong
  * @date 2022/8/29 15:23
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcSurfaceTextureEnum {
     /**
      * 	Shows the amplitude of the microstructure of a surface.

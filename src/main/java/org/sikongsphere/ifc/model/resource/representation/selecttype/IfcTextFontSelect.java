@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.selecttype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
  * text font to be used to describe the font of a text literal.
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.representation.selecttype;
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcTextFontSelect {}

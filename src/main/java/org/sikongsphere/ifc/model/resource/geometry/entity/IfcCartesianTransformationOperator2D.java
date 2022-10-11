@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * A Cartesian transformation operator 2d
  * defines a geometric transformation in two-dimensional space composed of
@@ -18,4 +22,5 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/02 13:24
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianTransformationOperator2D extends IfcCartesianTransformationOperator {}

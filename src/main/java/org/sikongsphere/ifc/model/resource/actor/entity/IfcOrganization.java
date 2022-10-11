@@ -26,6 +26,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
  * @author zaiyuan
  * @date 2022-08-30 18:30:00
  */
+
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcOrganization extends IfcBodyTemplate {
     private IfcIdentifier id;

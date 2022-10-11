@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The surface style element select is a selection of the different surface styles to use in the
  * presentation of the side of a surface.
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcSurfaceStyleElementSelect {}

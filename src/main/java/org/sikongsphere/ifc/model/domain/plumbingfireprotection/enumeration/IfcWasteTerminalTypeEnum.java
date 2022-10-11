@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcWasteTerminalTypeEnum defines the range of different types of waste terminal that can be specified.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcWasteTerminalTypeEnum {
     /**
      * Pipe fitting, set into the floor, that retains liquid to prevent the passage of foul air

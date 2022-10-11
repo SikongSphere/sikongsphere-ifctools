@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An IfcStackTerminalTypeEnum defines the range of different types of stack terminal that can be specified for
  * use at the top of a vertical stack subsystem.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcStackTerminalTypeEnum {
     /**
      * Guard cage, typically wire mesh, at the top of the stack preventing access by birds

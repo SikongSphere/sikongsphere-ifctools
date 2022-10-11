@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.timeseries.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcTimeSeriesDataTypeEnum describes a type of time series data and is used to determine a value during the time
  * series which is not explicitly specified:
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.timeseries.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcTimeSeriesDataTypeEnum {
     /**
      * The time series data is continuous.

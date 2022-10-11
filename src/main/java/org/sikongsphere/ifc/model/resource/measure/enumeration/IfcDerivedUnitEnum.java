@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An enumeration type for allowed types of derived units.
  *
  * @author Wang Bohong
  * @date 2022/8/29 15:28
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDerivedUnitEnum {
     ANGULARVELOCITYUNIT,
     COMPOUNDPLANEANGLEUNIT,

@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.presentation.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The pre defined colour determines those qualified names
  * which can be used to identify a colour that is in scope of the current data exchange specification (in contrary to colour specification
@@ -18,6 +22,7 @@ package org.sikongsphere.ifc.model.resource.presentation.entity;
  * @author stan
  * @date 2022/09/01 23:50
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public abstract class IfcPreDefinedColour extends IfcPreDefinedItem {
     public IfcPreDefinedColour() {}
 }

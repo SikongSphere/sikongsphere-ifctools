@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcGeometricRepresentationSubContext defines the context that applies to several shape representations
  * of a product being a sub context, sharing the WorldCoordinateSystem, CoordinateSpaceDimension, Precision
@@ -18,4 +22,5 @@ package org.sikongsphere.ifc.model.resource.representation.entity;
  * @author stan
  * @date 2022/09/02 13:31
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresentationContext {}

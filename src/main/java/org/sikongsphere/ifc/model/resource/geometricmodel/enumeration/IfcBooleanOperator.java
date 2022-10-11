@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.geometricmodel.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  *  This type defines the three Boolean operators used in the definition of CSG solids.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcBooleanOperator {
     UNION,
     INTERSECTION,

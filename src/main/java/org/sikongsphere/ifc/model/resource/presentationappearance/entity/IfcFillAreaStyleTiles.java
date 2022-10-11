@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcGeometricRepresentationItem;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveRatioMeasure;
@@ -22,6 +25,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
  * @author Wang Bohong
  * @date 2022/9/2 11:25
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcFillAreaStyleTiles extends IfcGeometricRepresentationItem {
     private IfcOneDirectionRepeatFactor tilingPattern;
     private SET<IfcFillAreaStyleTileShapeSelect> tiles;

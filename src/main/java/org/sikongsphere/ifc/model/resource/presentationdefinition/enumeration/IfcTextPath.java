@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationdefinition.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The text path determines the direction of the text characters in respect to each other.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcTextPath {
     LEFT,
     RIGHT,

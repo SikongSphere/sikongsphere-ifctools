@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.timeseries.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcTimeSeriesDataGeneratedByEnum identifies the origin of the time series data
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDataOriginEnum {
     /**
      * The origin of the time series data is a measurement device.

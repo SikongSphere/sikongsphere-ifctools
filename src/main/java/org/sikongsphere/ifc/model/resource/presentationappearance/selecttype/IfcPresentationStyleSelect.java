@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * he presentation style select is a selection of one of many kinds of styles, a different one for
  * each kind of geometric representation item to be styled.
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcPresentationStyleSelect {}

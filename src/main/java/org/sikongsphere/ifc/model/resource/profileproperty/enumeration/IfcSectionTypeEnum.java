@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.profileproperty.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An enumeration indicating whether a specific piece of a cross section is uniform or tapered in longitudinal direction.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcSectionTypeEnum {
     UNIFORM,
     TAPERED

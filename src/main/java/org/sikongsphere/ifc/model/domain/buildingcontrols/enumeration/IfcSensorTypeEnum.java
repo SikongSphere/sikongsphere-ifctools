@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.domain.buildingcontrols.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcSensorTypeEnum defines the range of different types of sensor that can be specified.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcSensorTypeEnum {
     /**
      * A device that senses or detects carbon dioxide.

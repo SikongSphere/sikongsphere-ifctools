@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcSanitaryTerminalTypeEnum defines the range of different types of sanitary
  * terminal that can be specified.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcSanitaryTerminalTypeEnum {
     /**
      * Sanitary appliance for immersion of the human body or parts of it

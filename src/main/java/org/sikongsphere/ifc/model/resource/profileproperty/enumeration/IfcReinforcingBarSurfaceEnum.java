@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.profileproperty.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Enumeration indicating whether the bar has a plain or textured (ribbed) surface.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcReinforcingBarSurfaceEnum {
     PLAIN,
     TEXTURED

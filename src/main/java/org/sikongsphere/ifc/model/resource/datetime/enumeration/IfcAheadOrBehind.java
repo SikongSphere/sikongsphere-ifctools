@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.datetime.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  *  An enumeration type that is used to specify whether a local time is ahead or behind of the coordinated universal time.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcAheadOrBehind {
     AHEAD,
     BEHIND

@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationorganization.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
@@ -21,6 +24,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
  * @author stan
  * @date 2022/09/14 23:26
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPresentationStyleAssignment {
     private SET<IfcPresentationStyleSelect> styles;
 

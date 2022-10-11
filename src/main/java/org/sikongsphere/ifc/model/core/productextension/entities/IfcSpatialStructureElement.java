@@ -10,7 +10,10 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.core.productextension.enumeration.IfcElementCompositionEnum;
@@ -30,6 +33,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  * @author stan
  * @date 2022/09/01 22:57
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcSpatialStructureElement extends IfcProduct {
     private IfcLabel longName;
     private IfcElementCompositionEnum compositionType;

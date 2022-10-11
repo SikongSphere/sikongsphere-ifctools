@@ -10,10 +10,15 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An point is a location in some real Cartesian coordinate space Rm, for m = 1, 2 or 3.
  *
  * @author Wang Bohong
  * @date 2022/9/1 15:52
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPoint extends IfcGeometricRepresentationItem {}

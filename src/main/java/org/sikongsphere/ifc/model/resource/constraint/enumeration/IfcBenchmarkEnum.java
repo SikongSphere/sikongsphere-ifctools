@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.constraint.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An IfcBenchmarkEnum is an enumeration used to identify the logical comparators that can be applied in conjunction
  * with constraint values.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.constraint.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcBenchmarkEnum {
     GREATERTHAN,
     GREATERTHANOREQUALTO,

@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.domain.buildingcontrols.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcAlarmTypeEnum defines the range of different types of alarm that can be specified
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcAlarmTypeEnum {
     /**
      * An audible alarm

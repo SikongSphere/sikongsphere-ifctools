@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.domain.buildingcontrols.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcFlowInstrumentTypeEnum defines the range of different types of flow instrument that can be specified.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcFlowInstrumentTypeEnum {
     /**
      * A device that reads and displays a pressure value at a point or the pressure difference between two points.

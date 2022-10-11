@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.presentation.entity.IfcColourRgb;
 
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.resource.presentation.entity.IfcColourRgb;
  * @author stan
  * @date 2022/09/02 13:20
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSurfaceStyleLighting {
     private IfcColourRgb diffusetransmissionColor;
     private IfcColourRgb diffuseReflectionColour;

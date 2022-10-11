@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcGroup;
 
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.core.kernel.entity.IfcGroup;
  * @author stan
  * @date 2022/09/02 13:36
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcSystem extends IfcGroup {
     private SET<IfcRelServicesBuildings> serviceBuildings;
 

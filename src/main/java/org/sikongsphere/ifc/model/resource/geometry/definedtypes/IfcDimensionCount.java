@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.definedtypes;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.INTEGER;
 import org.sikongsphere.ifc.model.basic.STRING;
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @author stan
  * @date 2022/09/02 00:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
 public class IfcDimensionCount {
     private INTEGER dimensionCount;
 

@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcGeometricRepresentationItem;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcVector;
 
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.resource.geometry.entity.IfcVector;
  * @author stan
  * @date 2022/09/01 23:55
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcOneDirectionRepeatFactor extends IfcGeometricRepresentationItem {
     private IfcVector repeatFactor;
 

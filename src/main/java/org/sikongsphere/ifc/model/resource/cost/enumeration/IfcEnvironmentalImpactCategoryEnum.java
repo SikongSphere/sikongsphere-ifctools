@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.cost.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcEnvironmentalImpactCategoryEnum defines the range of categories into which an environmental impact can be
  * broken down and from which the category required may be selected.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.cost.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcEnvironmentalImpactCategoryEnum {
     /**
      * An environmental impact value is deduced from values in more than one category as a result of using the

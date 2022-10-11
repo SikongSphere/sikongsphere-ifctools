@@ -10,10 +10,15 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationdefinition.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An annotation symbol occurrence is a symbol with a style assignment.
  *
  * @author Wang Bohong
  * @date 2022/9/2 11:40
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAnnotationSymbolOccurrence extends IfcAnnotationOccurrence {}

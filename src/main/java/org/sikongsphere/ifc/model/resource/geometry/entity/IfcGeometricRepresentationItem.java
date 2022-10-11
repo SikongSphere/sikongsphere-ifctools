@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * a instance of the class is a representation item that has the additional meaning
  * of having geometric position or orientation or both.
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author Wang Bohong
  * @date 2022/9/1 15:48
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationItem extends IfcRepresentationItem {}

@@ -10,7 +10,11 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcCharacterStyleSelect;
 import org.sikongsphere.ifc.model.resource.representation.selecttype.IfcColour;
 
 /**
@@ -19,6 +23,7 @@ import org.sikongsphere.ifc.model.resource.representation.selecttype.IfcColour;
  * @author zaiyuan
  * @date 2022/9/2 19:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcTextStyleForDefinedFont extends IfcNonLeafNode implements IfcCharacterStyleSelect {
     private IfcColour colour;
     private IfcColour backgroundColour;

@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * his entity defines a general direction vector in two or three dimensional space.
  * The actual magnitudes of the components have no effect upon the direction being defined,
@@ -18,6 +22,7 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/01 23:59
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDirection extends IfcGeometricRepresentationItem {
     private Boolean directionRatios;// todo -> REAL
 

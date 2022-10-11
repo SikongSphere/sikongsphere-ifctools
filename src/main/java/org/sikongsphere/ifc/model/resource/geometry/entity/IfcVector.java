@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
 /**
@@ -19,6 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
  * @author stan
  * @date 2022/09/01 23:56
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcVector extends IfcGeometricRepresentationItem {
     private IfcDirection orientation;
     private IfcLengthMeasure magnitude;

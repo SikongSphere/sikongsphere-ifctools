@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
@@ -21,6 +24,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @author stan
  * @date 2022/09/10 23:37
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCurveStyleFont {
     private IfcLabel name;
     private SET<IfcCurveStyleFontPattern> patternList;

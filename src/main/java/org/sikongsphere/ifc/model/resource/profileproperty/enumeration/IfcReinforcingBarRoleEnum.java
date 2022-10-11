@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.profileproperty.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Enumeration defining standard types for the role, purpose or usage of the bar, i.e. the kind of loads and
  * stresses they are intended to carry.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.profileproperty.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcReinforcingBarRoleEnum {
     /**
      * The reinforcing bar is a main bar.
