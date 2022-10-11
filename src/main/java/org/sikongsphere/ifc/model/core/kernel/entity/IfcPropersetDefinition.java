@@ -15,42 +15,25 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcObject
- *
- * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @author Wang Bohong
+ * @date 2022/10/11 21:25
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcObject extends IfcObjectDefinition {
-    private IfcLabel objectType;
-    // toDO inverse
-    // private SET<IfcRelDefines> isDefinedBy;
-
-    public IfcObject() {}
+public class IfcPropersetDefinition extends IfcPropertyDefinition {
+    public IfcPropersetDefinition() {}
 
     @IfcParserConstructor
-    public IfcObject(
+    public IfcPropersetDefinition(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
-        IfcText description,
-        IfcLabel objectType
+        IfcText description
     ) {
         super(globalId, ownerHistory, name, description);
-        this.objectType = objectType;
-    }
-
-    public IfcLabel getObjectType() {
-        return objectType;
-    }
-
-    public void setObjectType(IfcLabel objectType) {
-        this.objectType = objectType;
     }
 }
