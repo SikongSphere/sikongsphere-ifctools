@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.profile.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The enumeration defines whether the definition of a profile shape shall be geometrically resolved into
  * a curve or into a surface.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.profile.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcProfileTypeEnum {
     CURVE,
     AREA

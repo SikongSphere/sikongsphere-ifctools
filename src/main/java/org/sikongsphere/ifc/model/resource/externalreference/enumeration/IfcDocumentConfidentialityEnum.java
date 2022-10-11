@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.externalreference.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * IfcDocumentConfidentialityEnum enables selection of the level of confidentiality of document information from
  * a list of choices. time.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.externalreference.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDocumentConfidentialityEnum {
     PUBLIC,
     RESTRICTED,

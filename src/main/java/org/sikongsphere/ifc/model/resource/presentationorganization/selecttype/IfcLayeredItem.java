@@ -10,10 +10,15 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationorganization.selecttype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * It is the collection of all those items, that are assigned to a single layer.
  *
  * @author stan
  * @date 2022/09/01 23:21
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcLayeredItem {}

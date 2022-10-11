@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcFireSuppressionTerminalTypeEnum defines the range of different types of fire suppression
  * terminal that can be specified.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.domain.plumbingfireprotection.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcFireSuppressionTerminalTypeEnum {
     /**
      * Symmetrical pipe fitting that unites two or more inlets into a single pipe

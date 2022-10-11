@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This type conveys the continuity properties of a composite curve or surface. The continuity referred to
  * is geometric, not parametric continuity.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.geometry.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcTransitionCode {
     DISCONTINUOUS,
     CONTINUOUS,

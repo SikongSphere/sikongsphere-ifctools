@@ -10,12 +10,18 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * IfcGroup
  *
  * @author zaiyuan
  * @date 2022/8/31 21:15
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcGroup extends IfcObject {
     private IfcRelAssignsToGroup isGroupedBy;
 }

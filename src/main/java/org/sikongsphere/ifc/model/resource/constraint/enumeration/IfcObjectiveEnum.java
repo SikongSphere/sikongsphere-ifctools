@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.constraint.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An IfcObjectiveEnum is an enumeration used to determine the objective for which purpose the constraint
  * needs to be satisfied.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.constraint.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcObjectiveEnum {
     CODECOMPLIANCE,
     DESIGNINTENT,

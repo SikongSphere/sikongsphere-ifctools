@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 
 /**
@@ -18,6 +21,7 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @author stan
  * @date 2022/09/01 23:47
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
 public class IfcNormalisedRatioMeasure extends IfcNonLeafNode {
     private IfcRatioMeasure normalisedRatioMeasure;
 

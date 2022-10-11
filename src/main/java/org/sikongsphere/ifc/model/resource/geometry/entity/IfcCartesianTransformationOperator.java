@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * A Cartesian transformation operator
  * defines a geometric transformation composed of translation, rotation, mirroring and uniform scaling.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/02 13:24
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public abstract class IfcCartesianTransformationOperator extends IfcGeometricRepresentationItem {
     private IfcDirection axis1;
     private IfcDirection axis2;

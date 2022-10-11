@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationdefinition.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
@@ -18,4 +21,5 @@ import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcSt
  * @author Wang Bohong
  * @date 2022/9/2 11:39
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAnnotationOccurrence extends IfcStyledItem {}

@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcCharacterStyleSelect;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcTextStyleSelect;
@@ -19,6 +22,7 @@ import org.sikongsphere.ifc.model.resource.representation.selecttype.IfcTextFont
  * @author Wang Bohong
  * @date 2022/9/2 11:44
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcTextStyle extends IfcPresentationStyle {
     private IfcCharacterStyleSelect textCharacterAppearance;
     private IfcTextStyleSelect textStyle;

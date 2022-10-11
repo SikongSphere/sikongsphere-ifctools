@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This enumeration defines the applicable object categories
  *
  * @author Wang Bohong
  * @date 2022/8/29 15:33
  */
+@IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.CORE)
 public enum IfcObjectTypeEnum {
     /**
      * IfcProduct or its subclasses.

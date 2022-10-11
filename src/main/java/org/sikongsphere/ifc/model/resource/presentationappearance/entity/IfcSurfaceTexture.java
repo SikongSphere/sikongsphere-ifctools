@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.LOGICAL;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcCartesianTransformationOperator;
@@ -24,6 +27,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.enumeration.If
  * @author stan
  * @date 2022/09/02 13:22
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public abstract class IfcSurfaceTexture {
     private LOGICAL repeatS;// todo -> BOOLEAN
     private LOGICAL repeatT;// todo -> BOOLEAN

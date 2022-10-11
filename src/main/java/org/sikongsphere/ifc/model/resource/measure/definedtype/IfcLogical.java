@@ -10,12 +10,16 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.LOGICAL;
 
 /**
  * @author Wang Bohong
  * @date 2022/9/1 16:09
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
 public class IfcLogical extends LOGICAL {
     public IfcLogical(boolean value) {
         super(value);

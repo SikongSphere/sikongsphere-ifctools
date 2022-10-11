@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This type is used to indicate that the B-spline curve represents a part of a curve of some sppecific form.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcBSplineCurveForm {
     POLYLINE_FORM,
     CIRCULAR_ARC,

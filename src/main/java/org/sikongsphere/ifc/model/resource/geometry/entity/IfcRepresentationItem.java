@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
@@ -19,6 +22,7 @@ import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
  * @author Wang Bohong
  * @date 2022/9/1 13:29
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentationItem extends IfcBodyTemplate {
     // ToDO Inverse IfcPresentationLayerAssignment, IfcStyledItem
 }

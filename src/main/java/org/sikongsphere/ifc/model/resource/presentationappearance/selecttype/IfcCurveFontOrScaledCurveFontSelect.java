@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The curve font or scaled curve font select is a selection of either a curve font style select (being either
  * a predefined curve font or an explicitly defined curve font) or a curve style font and scaling.
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcCurveFontOrScaledCurveFontSelect {}

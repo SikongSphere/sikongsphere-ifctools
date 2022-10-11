@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
@@ -19,6 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @author stan
  * @date 2022/09/02 22:53
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public abstract class IfcPresentationStyle {
     private IfcLabel name;
 }

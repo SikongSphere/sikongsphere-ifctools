@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationdimension.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The dimension extent usage declares the usage of a dimension terminator symbol, being either an origin, or a target.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDimensionExtentUsage {
     ORIGIN,
     TARGET

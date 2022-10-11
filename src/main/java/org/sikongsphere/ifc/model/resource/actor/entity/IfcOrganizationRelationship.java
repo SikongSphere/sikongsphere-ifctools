@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.actor.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.basic.SET;
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.basic.SET;
  * @author zaiyuan
  * @date 2022-08-30 18:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcOrganizationRelationship {
     private IfcLabel name;
     private IfcText description;

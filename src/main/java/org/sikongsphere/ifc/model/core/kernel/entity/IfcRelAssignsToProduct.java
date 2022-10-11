@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This objectified relationship IfcRelAssignsToProduct handles the assignment of objects (subtypes of IfcObject)
  * to a product (subtypes of IfcProduct).
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.core.kernel.entity;
  * @author stan
  * @date 2022/09/02 13:33
  */
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcRelAssignsToProduct extends IfcRelAssigns {
     private IfcProduct relatingProduct;
 

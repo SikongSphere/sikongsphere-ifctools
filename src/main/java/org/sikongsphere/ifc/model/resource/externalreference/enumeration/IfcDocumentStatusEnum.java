@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.externalreference.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Enables selection of the status of document information from a list of choices.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDocumentStatusEnum {
     DRAFT,
     FINALDRAFT,

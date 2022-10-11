@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.INTEGER;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDimensionalExponents extends IfcBodyTemplate {
 
     /**

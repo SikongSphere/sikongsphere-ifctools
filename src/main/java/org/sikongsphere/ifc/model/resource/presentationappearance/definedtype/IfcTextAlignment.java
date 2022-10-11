@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.definedtype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
@@ -19,6 +22,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
 public class IfcTextAlignment extends STRING {
     public IfcTextAlignment(String value) {
         super(value);

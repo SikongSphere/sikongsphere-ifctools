@@ -20,6 +20,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @author Wang Bohong
  * @date 2022/9/1 16:04
  */
+
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public class IfcLengthMeasure {
 

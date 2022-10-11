@@ -10,7 +10,10 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
@@ -23,6 +26,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  * @author zaiyuan
  * @date 2022/8/31 21:15
  */
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public abstract class IfcObject extends IfcObjectDefinition {
     private IfcLabel objectType;
     // toDO inverse

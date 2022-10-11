@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.material.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Identification of the axis of element geometry denoting the layer set thickness direction.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcLayerSetDirectionEnum {
     AXIS1,
     AXIS2,

@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentation.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcNormalisedRatioMeasure;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcColourSpecification;
 
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.resource.representation.entity.IfcColourSpecif
  * @author stan
  * @date 2022/09/02 13:18
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcColourRgb extends IfcColourSpecification {
     private IfcNormalisedRatioMeasure red;
     private IfcNormalisedRatioMeasure green;

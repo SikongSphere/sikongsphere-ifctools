@@ -10,10 +10,14 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPlaneAngleMeasure;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcSizeSelect;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcTextStyleSelect;
 
 /**
  * IfcTextStyleWithBoxCharacteristics
@@ -21,6 +25,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
  * @author zaiyuan
  * @date 2022/9/2 19:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcTextStyleWithBoxCharacteristics extends IfcNonLeafNode
     implements
         IfcTextStyleSelect {

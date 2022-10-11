@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.selecttypes;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Definition from ISO/CD 10303-41:1992:
  * A unit is a physical quantity, with a value of one,
@@ -18,4 +22,5 @@ package org.sikongsphere.ifc.model.resource.measure.selecttypes;
  * @author Wang Bohong
  * @date 2022/9/1 13:14
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcUnit {}

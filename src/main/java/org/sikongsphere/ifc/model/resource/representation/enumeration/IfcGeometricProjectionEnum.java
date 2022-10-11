@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcGeometricProjectionEnum defines the various representation types that can be semantically distinguished.
  *
  * @author Wang Bohong
  * @date 2022/8/29 15:24
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcGeometricProjectionEnum {
     /**
      * Geometric display representation that shows an abstract, often 1D element representation

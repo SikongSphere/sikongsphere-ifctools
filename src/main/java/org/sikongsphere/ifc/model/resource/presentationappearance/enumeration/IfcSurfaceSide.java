@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An enumeration of the international abbreviations of surface side.
  *
  * @author zaiyuan
  * @date 2022/8/31 21:24
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcSurfaceSide {
     /**
      * The side of a surface which is in the same direction as the surface normal derived

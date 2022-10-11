@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This enumeration defines the different ways, in which a time lag is applied to a sequence between two processes.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.CORE)
 public enum IfcSequenceEnum {
     START_START,
     START_FINISH,

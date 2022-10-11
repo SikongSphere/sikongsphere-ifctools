@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.representation.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This enumeration type defines if the local object coordinate system or the global world coordinate system for the
  * project is used to describe the measure values of entities which have a reference to this type.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.representation.enumeration;
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcGlobalOrLocalEnum {
     GLOBAL_COORDS,
     LOCAL_COORDS

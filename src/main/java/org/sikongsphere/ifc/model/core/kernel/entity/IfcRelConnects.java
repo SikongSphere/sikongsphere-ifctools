@@ -10,10 +10,15 @@
 */
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * IfcRelConnects
  *
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public abstract class IfcRelConnects extends IfcRelationship {}

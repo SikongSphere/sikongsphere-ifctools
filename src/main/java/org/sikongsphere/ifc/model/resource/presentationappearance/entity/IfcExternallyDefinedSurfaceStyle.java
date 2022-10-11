@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.externalreference.entity.IfcExternalReference;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
@@ -20,6 +23,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @author Wang Bohong
  * @date 2022/9/1 16:46
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference {
 
     public IfcExternallyDefinedSurfaceStyle(

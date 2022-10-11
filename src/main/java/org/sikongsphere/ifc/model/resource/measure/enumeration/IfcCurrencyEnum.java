@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.measure.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * An enumeration of the international abbreviations of currencies used of various countries.
  *
  * @author Wang Bohong
  * @date 2022/8/29 15:31
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public enum IfcCurrencyEnum {
     /**
      * Dirham

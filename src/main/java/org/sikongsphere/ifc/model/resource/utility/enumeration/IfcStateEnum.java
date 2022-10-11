@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.utility.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * Enumeration identifying the state or accessibility of the object (e.g., read/write, locked, etc.).
  *
  * @author Wang Bohong
  * @date 2022/08/29 15:14
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 
 public enum IfcStateEnum {
     /**

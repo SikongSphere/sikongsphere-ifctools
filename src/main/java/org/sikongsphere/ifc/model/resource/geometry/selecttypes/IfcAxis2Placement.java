@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.selecttypes;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * This select type collects together both versions of the placement as used
  * in two dimensional or in three dimensional Cartesian space.
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.geometry.selecttypes;
  * @author stan
  * @date 2022/09/02 21:04
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcAxis2Placement {}

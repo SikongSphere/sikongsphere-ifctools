@@ -10,11 +10,15 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.presentationappearance.definedtype.IfcTextAlignment;
 import org.sikongsphere.ifc.model.resource.presentationappearance.definedtype.IfcTextDecoration;
 import org.sikongsphere.ifc.model.resource.presentationappearance.definedtype.IfcTextTransformation;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcSizeSelect;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcTextStyleSelect;
 
 /**
  * IfcTextStyleTextModel
@@ -22,6 +26,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
  * @author zaiyuan
  * @date 2022/9/2 19:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcTextStyleTextModel extends IfcNonLeafNode implements IfcTextStyleSelect {
     private IfcSizeSelect TextIndent;
     private IfcTextAlignment TextAlign;

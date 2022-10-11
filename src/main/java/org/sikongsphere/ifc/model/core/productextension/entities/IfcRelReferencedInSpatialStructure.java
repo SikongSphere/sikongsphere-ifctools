@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelConnects;
@@ -22,6 +25,7 @@ import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelConnects;
  * @author stan
  * @date 2022/09/02 13:34
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcRelReferencedInSpatialStructure extends IfcRelConnects {
     private SET<IfcProduct> relatedElements;
     private IfcSpatialStructureElement relatingStructure;

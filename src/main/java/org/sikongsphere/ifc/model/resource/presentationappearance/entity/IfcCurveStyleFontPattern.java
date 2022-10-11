@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveLengthMeasure;
@@ -21,6 +24,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveLength
  * @author stan
  * @date 2022/09/01 23:39
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCurveStyleFontPattern {
     private IfcLengthMeasure visibleSegmentLength;
     private IfcPositiveLengthMeasure invisiblesegmentLength;

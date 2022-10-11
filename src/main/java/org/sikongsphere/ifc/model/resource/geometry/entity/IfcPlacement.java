@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * A placement entity defines the local environment for
  * the definition of a geometry item.
@@ -17,6 +21,7 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
  * @author stan
  * @date 2022/09/01 22:01
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public abstract class IfcPlacement extends IfcGeometricRepresentationItem {
     private IfcCartesianPoint location;
 

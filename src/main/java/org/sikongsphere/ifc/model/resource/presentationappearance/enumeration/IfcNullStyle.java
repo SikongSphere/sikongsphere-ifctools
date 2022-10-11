@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
 
 /**
@@ -18,6 +21,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcNullStyle implements IfcPresentationStyleSelect {
     /**
      * Null

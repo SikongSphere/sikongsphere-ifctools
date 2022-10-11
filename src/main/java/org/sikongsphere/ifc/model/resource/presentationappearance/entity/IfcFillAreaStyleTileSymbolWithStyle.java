@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcGeometricRepresentationItem;
 import org.sikongsphere.ifc.model.resource.presentationdefinition.entity.IfcAnnotationSymbolOccurrence;
 
@@ -19,6 +22,7 @@ import org.sikongsphere.ifc.model.resource.presentationdefinition.entity.IfcAnno
  * @author Wang Bohong
  * @date 2022/9/2 11:34
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcFillAreaStyleTileSymbolWithStyle extends IfcGeometricRepresentationItem {
     private IfcAnnotationSymbolOccurrence Symbol;
 

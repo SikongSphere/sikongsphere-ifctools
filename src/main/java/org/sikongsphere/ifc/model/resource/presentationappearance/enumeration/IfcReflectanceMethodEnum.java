@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.enumeration;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcReflectanceMethodEnum defines the range of different reflectance methods available.
  *
  * @author zaiyuan
  * @date 2022-09-05 20:30:00
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcReflectanceMethodEnum {
     /**
      * A reflectance model providing a smooth, slightly shiny appearance.

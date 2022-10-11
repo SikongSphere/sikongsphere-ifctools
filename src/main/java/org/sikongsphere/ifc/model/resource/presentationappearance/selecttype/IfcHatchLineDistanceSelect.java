@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * The IfcHatchLineDistanceSelect is a selection between different ways to determine the distance and potentially
  * start point of hatch lines, either by an offset distance length measure or by a vector..
@@ -17,4 +21,5 @@ package org.sikongsphere.ifc.model.resource.presentationappearance.selecttype;
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public interface IfcHatchLineDistanceSelect {}
