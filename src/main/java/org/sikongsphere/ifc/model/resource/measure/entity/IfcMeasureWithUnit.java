@@ -32,7 +32,7 @@ public class IfcMeasureWithUnit {
     @IfcParserConstructor
     public IfcMeasureWithUnit(IfcValue valueComponent, IfcUnit unitComponent) {
         this.valueComponent = valueComponent;
-        unitComponent = unitComponent;
+        this.unitComponent = unitComponent;
     }
 
     public IfcValue getValueComponent() {
