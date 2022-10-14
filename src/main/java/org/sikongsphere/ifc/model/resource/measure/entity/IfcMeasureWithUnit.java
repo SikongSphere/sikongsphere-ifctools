@@ -48,6 +48,6 @@ public class IfcMeasureWithUnit {
     }
 
     public void setUnitComponent(IfcUnit unitComponent) {
-        unitComponent = unitComponent;
+        this.unitComponent = unitComponent;
     }
 }
