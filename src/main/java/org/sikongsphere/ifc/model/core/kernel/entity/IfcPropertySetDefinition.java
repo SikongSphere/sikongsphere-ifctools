@@ -24,11 +24,11 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  * @date 2022/10/11 21:25
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public class IfcPropersetDefinition extends IfcPropertyDefinition {
-    public IfcPropersetDefinition() {}
+public class IfcPropertySetDefinition extends IfcPropertyDefinition {
+    public IfcPropertySetDefinition() {}
 
     @IfcParserConstructor
-    public IfcPropersetDefinition(
+    public IfcPropertySetDefinition(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
