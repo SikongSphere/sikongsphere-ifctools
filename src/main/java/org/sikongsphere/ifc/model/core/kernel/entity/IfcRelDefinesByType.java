@@ -11,7 +11,6 @@
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
@@ -21,35 +20,32 @@ import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUnique
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelDefines
- *
- * @author yiwei
- * @date 2022/10/15 21:15
+ * @author Yiwei
+ * @date 2022/10/16
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcRelDefinesByProperties extends IfcRelDefines {
-    private IfcPropertySetDefinition relatingPropertyDefinition;
+public class IfcRelDefinesByType extends IfcRelDefines {
+    private IfcTypeObject relatingType;
 
-    public IfcRelDefinesByProperties() {}
+    public IfcRelDefinesByType() {}
 
-    @IfcParserConstructor
-    public IfcRelDefinesByProperties(
+    public IfcRelDefinesByType(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
         SET<IfcObject> relatedObjects,
-        IfcPropertySetDefinition relatingPropertyDefinition
+        IfcTypeObject relatingType
     ) {
         super(globalId, ownerHistory, name, description, relatedObjects);
-        this.relatingPropertyDefinition = relatingPropertyDefinition;
+        this.relatingType = relatingType;
     }
 
-    public IfcPropertySetDefinition getRelatingPropertyDefinition() {
-        return relatingPropertyDefinition;
+    public IfcTypeObject getRelatingType() {
+        return relatingType;
     }
 
-    public void setRelatingPropertyDefinition(IfcPropertySetDefinition relatingPropertyDefinition) {
-        this.relatingPropertyDefinition = relatingPropertyDefinition;
+    public void setRelatingType(IfcTypeObject relatingType) {
+        this.relatingType = relatingType;
     }
 }
