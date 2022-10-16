@@ -11,9 +11,12 @@
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.geometry.entity.IfcRepresentationItem;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
@@ -26,7 +29,55 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 public class IfcRepresentation extends IfcNonLeafNode {
     private IfcRepresentation contextContextOfItems;
     private IfcLabel representationIdentifier;
-    private IfcLabel RepresentationType;
+    private IfcLabel representationType;
+    private SET<IfcRepresentationItem> items;
+
+    public IfcRepresentation() {}
+
+    @IfcParserConstructor
+    public IfcRepresentation(
+        IfcRepresentation contextContextOfItems,
+        IfcLabel representationIdentifier,
+        IfcLabel representationType,
+        SET<IfcRepresentationItem> items
+    ) {
+        this.contextContextOfItems = contextContextOfItems;
+        this.representationIdentifier = representationIdentifier;
+        this.representationType = representationType;
+        this.items = items;
+    }
+
+    public IfcRepresentation getContextContextOfItems() {
+        return contextContextOfItems;
+    }
+
+    public void setContextContextOfItems(IfcRepresentation contextContextOfItems) {
+        this.contextContextOfItems = contextContextOfItems;
+    }
+
+    public IfcLabel getRepresentationIdentifier() {
+        return representationIdentifier;
+    }
+
+    public void setRepresentationIdentifier(IfcLabel representationIdentifier) {
+        this.representationIdentifier = representationIdentifier;
+    }
+
+    public IfcLabel getRepresentationType() {
+        return representationType;
+    }
+
+    public void setRepresentationType(IfcLabel representationType) {
+        this.representationType = representationType;
+    }
+
+    public SET<IfcRepresentationItem> getItems() {
+        return items;
+    }
+
+    public void setItems(SET<IfcRepresentationItem> items) {
+        this.items = items;
+    }
     // TODO private Items : SET [1:?] OF IfcRepresentationItem;
 
     /**
