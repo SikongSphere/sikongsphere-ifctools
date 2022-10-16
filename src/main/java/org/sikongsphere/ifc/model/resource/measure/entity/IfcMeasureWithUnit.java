@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 
@@ -22,7 +23,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
  * @date 2022/10/14 17:20
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMeasureWithUnit {
+public class IfcMeasureWithUnit extends IfcBodyTemplate {
     private IfcValue valueComponent;
 
     private IfcUnit unitComponent;
