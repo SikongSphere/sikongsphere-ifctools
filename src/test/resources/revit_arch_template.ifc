@@ -1,7 +1,7 @@
 ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(('ViewDefinition [CoordinationView_V2.0]'),'2;1');
-FILE_NAME('\X2\987976EE7F1653F7\X0\','2022-06-09T23:47:36+08:00',(''),(''),'ODA SDAI 22.12','23.0.11.19 - Exporter 23.0.11.19 - \X2\59077528\X0\ UI 23.0.11.19','');
+FILE_NAME('/Users/wangbohong/Desktop/revit_arch_template.ifc','2022-06-09T23:47:36+08:00',(''),(''),'ODA SDAI 22.12','23.0.11.19 - Exporter 23.0.11.19 - \X2\59077528\X0\ UI 23.0.11.19','');
 FILE_SCHEMA(('IFC2X3'));
 ENDSEC;
 
