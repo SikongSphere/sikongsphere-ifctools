@@ -11,9 +11,14 @@
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcRelAssociates
@@ -24,4 +29,23 @@ import org.sikongsphere.ifc.model.basic.SET;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcRelAssociates extends IfcRelationship {
     private SET<IfcRoot> relatedObjects;
+
+    public IfcRelAssociates() {}
+
+    @IfcParserConstructor
+    public IfcRelAssociates(SET<IfcRoot> relatedObjects) {
+        this.relatedObjects = relatedObjects;
+    }
+
+    public IfcRelAssociates(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcRoot> relatedObjects
+    ) {
+        super(globalId, ownerHistory, name, description);
+        this.relatedObjects = relatedObjects;
+    }
+
 }
