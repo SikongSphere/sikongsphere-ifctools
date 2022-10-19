@@ -33,7 +33,6 @@ public class IfcRelAssociatesMaterial extends IfcRelAssociates {
     public IfcRelAssociatesMaterial() {}
 
     @IfcParserConstructor
-
     public IfcRelAssociatesMaterial(Set<IfcRoot> relatedObjects) {
         this.relatedObjects = relatedObjects;
     }
