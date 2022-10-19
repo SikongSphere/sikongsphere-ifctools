@@ -8,43 +8,45 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.core.kernel.entity;
+package org.sikongsphere.ifc.model.core.productextension.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelAssociates;
+import org.sikongsphere.ifc.model.core.kernel.entity.IfcRoot;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
+
 /**
- * IfcRelAssociates
+ * IfcRelAssociatesMaterial
  *
- * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @author GaoSu
+ * @date 2022/10/18 14:15
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public class IfcRelAssociates extends IfcRelationship {
+public class IfcRelAssociatesMaterial extends IfcRelAssociates {
     private SET<IfcRoot> relatedObjects;
 
-    public IfcRelAssociates() {}
-
-    public IfcRelAssociates(SET<IfcRoot> relatedObjects) {
-        this.relatedObjects = relatedObjects;
+    public IfcRelAssociatesMaterial() {
     }
+
     @IfcParserConstructor
-    public IfcRelAssociates(
-        IfcGloballyUniqueId globalId,
-        IfcOwnerHistory ownerHistory,
-        IfcLabel name,
-        IfcText description,
-        SET<IfcRoot> relatedObjects
-    ) {
-        super(globalId, ownerHistory, name, description);
-        this.relatedObjects = relatedObjects;
+    public IfcRelAssociatesMaterial(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcRoot> relatedObjects, SET<IfcRoot> relatedObjects1) {
+        super(globalId, ownerHistory, name, description, relatedObjects);
+        this.relatedObjects = relatedObjects1;
     }
 
+    public SET<IfcRoot> getRelatedObjects() {
+        return relatedObjects;
+    }
+
+    public void setRelatedObjects(SET<IfcRoot> relatedObjects) {
+        this.relatedObjects = relatedObjects;
+    }
 }
