@@ -15,12 +15,12 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.INTEGER;
+import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcElement;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcRelConnectsElements;
 import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcConnectionGeometry;
 import org.sikongsphere.ifc.model.shared.sharedbldelements.enumeration.IfcConnectionTypeEnum;
 
-import java.util.List;
 
 /**
  * IfcRelConnectsPathElements
@@ -30,8 +30,8 @@ import java.util.List;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
 public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
-    List<INTEGER> relatingPriorities;
-    List<INTEGER> relatedPriorities;
+    LIST<INTEGER> relatingPriorities;
+    LIST<INTEGER> relatedPriorities;
     IfcConnectionTypeEnum relatedConnectionType;
     IfcConnectionTypeEnum relatingConnectionType;
 
@@ -39,8 +39,8 @@ public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
 
     @IfcParserConstructor
     public IfcRelConnectsPathElements(
-        List<INTEGER> relatingPriorities,
-        List<INTEGER> relatedPriorities,
+        LIST<INTEGER> relatingPriorities,
+        LIST<INTEGER> relatedPriorities,
         IfcConnectionTypeEnum relatedConnectionType,
         IfcConnectionTypeEnum relatingConnectionType
     ) {
@@ -54,8 +54,8 @@ public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
         IfcConnectionGeometry connectionGeometry,
         IfcElement relatingElement,
         IfcElement relatedElement,
-        List<INTEGER> relatingPriorities,
-        List<INTEGER> relatedPriorities,
+        LIST<INTEGER> relatingPriorities,
+        LIST<INTEGER> relatedPriorities,
         IfcConnectionTypeEnum relatedConnectionType,
         IfcConnectionTypeEnum relatingConnectionType
     ) {
@@ -66,19 +66,19 @@ public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
         this.relatingConnectionType = relatingConnectionType;
     }
 
-    public List<INTEGER> getRelatingPriorities() {
+    public LIST<INTEGER> getRelatingPriorities() {
         return relatingPriorities;
     }
 
-    public void setRelatingPriorities(List<INTEGER> relatingPriorities) {
+    public void setRelatingPriorities(LIST<INTEGER> relatingPriorities) {
         this.relatingPriorities = relatingPriorities;
     }
 
-    public List<INTEGER> getRelatedPriorities() {
+    public LIST<INTEGER> getRelatedPriorities() {
         return relatedPriorities;
     }
 
-    public void setRelatedPriorities(List<INTEGER> relatedPriorities) {
+    public void setRelatedPriorities(LIST<INTEGER> relatedPriorities) {
         this.relatedPriorities = relatedPriorities;
     }
 

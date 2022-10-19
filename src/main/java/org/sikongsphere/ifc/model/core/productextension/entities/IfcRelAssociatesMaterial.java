@@ -17,8 +17,11 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelAssociates;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRoot;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
-import java.util.Set;
 
 /**
  * IfcRelAssociatesMaterial
@@ -28,25 +31,22 @@ import java.util.Set;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcRelAssociatesMaterial extends IfcRelAssociates {
-    private Set<IfcRoot> relatedObjects;
+    private SET<IfcRoot> relatedObjects;
 
-    public IfcRelAssociatesMaterial() {}
-
-    @IfcParserConstructor
-    public IfcRelAssociatesMaterial(Set<IfcRoot> relatedObjects) {
-        this.relatedObjects = relatedObjects;
+    public IfcRelAssociatesMaterial() {
     }
 
-    public IfcRelAssociatesMaterial(SET<IfcRoot> relatedObjects, Set<IfcRoot> relatedObjects1) {
-        super(relatedObjects);
+    @IfcParserConstructor
+    public IfcRelAssociatesMaterial(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcRoot> relatedObjects, SET<IfcRoot> relatedObjects1) {
+        super(globalId, ownerHistory, name, description, relatedObjects);
         this.relatedObjects = relatedObjects1;
     }
 
-    public Set<IfcRoot> getRelatedObjects() {
+    public SET<IfcRoot> getRelatedObjects() {
         return relatedObjects;
     }
 
-    public void setRelatedObjects(Set<IfcRoot> relatedObjects) {
+    public void setRelatedObjects(SET<IfcRoot> relatedObjects) {
         this.relatedObjects = relatedObjects;
     }
 }
