@@ -32,11 +32,10 @@ public class IfcRelAssociates extends IfcRelationship {
 
     public IfcRelAssociates() {}
 
-    @IfcParserConstructor
     public IfcRelAssociates(SET<IfcRoot> relatedObjects) {
         this.relatedObjects = relatedObjects;
     }
-
+    @IfcParserConstructor
     public IfcRelAssociates(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,

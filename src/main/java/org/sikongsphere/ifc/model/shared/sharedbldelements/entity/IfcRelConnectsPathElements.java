@@ -38,7 +38,6 @@ public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
     public IfcRelConnectsPathElements() {}
 
     @IfcParserConstructor
-
     public IfcRelConnectsPathElements(
         List<INTEGER> relatingPriorities,
         List<INTEGER> relatedPriorities,

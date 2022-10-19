@@ -32,7 +32,6 @@ public class IfcRelConnectsElements extends IfcRelConnects {
     public IfcRelConnectsElements() {}
 
     @IfcParserConstructor
-
     public IfcRelConnectsElements(
         IfcConnectionGeometry connectionGeometry,
         IfcElement relatingElement,
