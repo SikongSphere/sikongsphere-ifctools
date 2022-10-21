@@ -30,11 +30,16 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 public class IfcRelDefines extends IfcRelationship {
     private SET<IfcObject> relatedObjects;
 
-    public IfcRelDefines() {
-    }
+    public IfcRelDefines() {}
 
     @IfcParserConstructor
-    public IfcRelDefines(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcObject> relatedObjects) {
+    public IfcRelDefines(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcObject> relatedObjects
+    ) {
         super(globalId, ownerHistory, name, description);
         this.relatedObjects = relatedObjects;
     }

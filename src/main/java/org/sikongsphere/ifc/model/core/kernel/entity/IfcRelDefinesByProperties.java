@@ -27,7 +27,14 @@ public abstract class IfcRelDefinesByProperties extends IfcRelDefines {
     public IfcRelDefinesByProperties() {}
 
     @IfcParserConstructor
-    public IfcRelDefinesByProperties(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcObject> relatedObjects, IfcPropertySetDefinition relatingPropertyDefinition) {
+    public IfcRelDefinesByProperties(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcObject> relatedObjects,
+        IfcPropertySetDefinition relatingPropertyDefinition
+    ) {
         super(globalId, ownerHistory, name, description, relatedObjects);
         this.relatingPropertyDefinition = relatingPropertyDefinition;
     }

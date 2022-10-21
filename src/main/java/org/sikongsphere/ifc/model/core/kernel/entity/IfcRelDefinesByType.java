@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -32,12 +32,12 @@ public class IfcRelDefinesByType extends IfcRelDefines {
 
     @IfcParserConstructor
     public IfcRelDefinesByType(
-            IfcGloballyUniqueId globalId,
-            IfcOwnerHistory ownerHistory,
-            IfcLabel name,
-            IfcText description,
-            SET<IfcObject> relatedObjects,
-            IfcTypeObject relatingType
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcObject> relatedObjects,
+        IfcTypeObject relatingType
     ) {
         super(globalId, ownerHistory, name, description, relatedObjects);
         this.relatingType = relatingType;
