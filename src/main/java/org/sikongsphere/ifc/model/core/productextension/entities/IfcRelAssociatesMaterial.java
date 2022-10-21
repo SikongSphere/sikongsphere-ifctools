@@ -17,11 +17,11 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelAssociates;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRoot;
+import org.sikongsphere.ifc.model.resource.material.select_type.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
-
 
 /**
  * IfcRelAssociatesMaterial
@@ -31,22 +31,28 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcRelAssociatesMaterial extends IfcRelAssociates {
-    private SET<IfcRoot> relatedObjects;
+    private IfcMaterialSelect relatingMaterial;
 
-    public IfcRelAssociatesMaterial() {
-    }
+    public IfcRelAssociatesMaterial() {}
 
     @IfcParserConstructor
-    public IfcRelAssociatesMaterial(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcRoot> relatedObjects, SET<IfcRoot> relatedObjects1) {
+    public IfcRelAssociatesMaterial(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcRoot> relatedObjects,
+        IfcMaterialSelect relatingMaterial
+    ) {
         super(globalId, ownerHistory, name, description, relatedObjects);
-        this.relatedObjects = relatedObjects1;
+        this.relatingMaterial = relatingMaterial;
     }
 
-    public SET<IfcRoot> getRelatedObjects() {
-        return relatedObjects;
+    public IfcMaterialSelect getRelatingMaterial() {
+        return relatingMaterial;
     }
 
-    public void setRelatedObjects(SET<IfcRoot> relatedObjects) {
-        this.relatedObjects = relatedObjects;
+    public void setRelatingMaterial(IfcMaterialSelect relatingMaterial) {
+        this.relatingMaterial = relatingMaterial;
     }
 }

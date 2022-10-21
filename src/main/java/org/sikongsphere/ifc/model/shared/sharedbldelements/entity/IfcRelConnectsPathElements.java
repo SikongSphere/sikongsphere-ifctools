@@ -21,7 +21,6 @@ import org.sikongsphere.ifc.model.core.productextension.entities.IfcRelConnectsE
 import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcConnectionGeometry;
 import org.sikongsphere.ifc.model.shared.sharedbldelements.enumeration.IfcConnectionTypeEnum;
 
-
 /**
  * IfcRelConnectsPathElements
  *

@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 
@@ -26,8 +27,20 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
  * @date 2022/09/02 13:32
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcProductRepresentation {
+public class IfcProductRepresentation extends IfcBodyTemplate {
     private IfcLabel name;
     private IfcText description;
     private SET<IfcRepresentation> representations;
+
+    public IfcProductRepresentation() {}
+
+    public IfcProductRepresentation(
+        IfcLabel name,
+        IfcText description,
+        SET<IfcRepresentation> representations
+    ) {
+        this.name = name;
+        this.description = description;
+        this.representations = representations;
+    }
 }

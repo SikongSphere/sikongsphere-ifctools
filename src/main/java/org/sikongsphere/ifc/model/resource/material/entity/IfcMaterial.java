@@ -14,6 +14,8 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.resource.material.select_type.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
@@ -21,7 +23,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @date 2022/10/14 22:24
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMaterial {
+public class IfcMaterial extends IfcBodyTemplate implements IfcMaterialSelect {
 
     private IfcLabel name;
 
