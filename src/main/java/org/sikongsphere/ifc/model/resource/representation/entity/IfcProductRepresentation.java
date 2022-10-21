@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
@@ -34,6 +35,7 @@ public class IfcProductRepresentation extends IfcBodyTemplate {
 
     public IfcProductRepresentation() {}
 
+    @IfcParserConstructor
     public IfcProductRepresentation(
         IfcLabel name,
         IfcText description,
@@ -41,6 +43,30 @@ public class IfcProductRepresentation extends IfcBodyTemplate {
     ) {
         this.name = name;
         this.description = description;
+        this.representations = representations;
+    }
+
+    public IfcLabel getName() {
+        return name;
+    }
+
+    public void setName(IfcLabel name) {
+        this.name = name;
+    }
+
+    public IfcText getDescription() {
+        return description;
+    }
+
+    public void setDescription(IfcText description) {
+        this.description = description;
+    }
+
+    public SET<IfcRepresentation> getRepresentations() {
+        return representations;
+    }
+
+    public void setRepresentations(SET<IfcRepresentation> representations) {
         this.representations = representations;
     }
 }
