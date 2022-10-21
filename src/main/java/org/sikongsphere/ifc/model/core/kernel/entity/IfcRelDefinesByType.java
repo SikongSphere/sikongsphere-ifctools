@@ -20,30 +20,34 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
+/**
+ * @author Yiwei
+ * @date 2022/10/16
+ */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcRelDefinesByProperties extends IfcRelDefines {
-    private IfcPropertySetDefinition relatingPropertyDefinition;
+public class IfcRelDefinesByType extends IfcRelDefines {
+    private IfcTypeObject relatingType;
 
-    public IfcRelDefinesByProperties() {}
+    public IfcRelDefinesByType() {}
 
     @IfcParserConstructor
-    public IfcRelDefinesByProperties(
+    public IfcRelDefinesByType(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
         SET<IfcObject> relatedObjects,
-        IfcPropertySetDefinition relatingPropertyDefinition
+        IfcTypeObject relatingType
     ) {
         super(globalId, ownerHistory, name, description, relatedObjects);
-        this.relatingPropertyDefinition = relatingPropertyDefinition;
+        this.relatingType = relatingType;
     }
 
-    public IfcPropertySetDefinition getRelatingPropertyDefinition() {
-        return relatingPropertyDefinition;
+    public IfcTypeObject getRelatingType() {
+        return relatingType;
     }
 
-    public void setRelatingPropertyDefinition(IfcPropertySetDefinition relatingPropertyDefinition) {
-        this.relatingPropertyDefinition = relatingPropertyDefinition;
+    public void setRelatingType(IfcTypeObject relatingType) {
+        this.relatingType = relatingType;
     }
 }
