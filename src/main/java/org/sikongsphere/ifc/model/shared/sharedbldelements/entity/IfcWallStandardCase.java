@@ -31,7 +31,6 @@ public class IfcWallStandardCase extends IfcWall {
     public IfcWallStandardCase() {}
 
     @IfcParserConstructor
-
     public IfcWallStandardCase(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
