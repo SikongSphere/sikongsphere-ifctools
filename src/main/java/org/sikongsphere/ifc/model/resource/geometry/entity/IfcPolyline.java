@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.LIST;
 
 /**
  * @author Yiwei
@@ -21,20 +22,21 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPolyline extends IfcBoundedCurve {
-    private IfcCartesianPoint points;
+    private LIST points;
 
     public IfcPolyline() {}
 
     @IfcParserConstructor
-    public IfcPolyline(IfcCartesianPoint points) {
+
+    public IfcPolyline(LIST points) {
         this.points = points;
     }
 
-    public IfcCartesianPoint getPoints() {
+    public LIST getPoints() {
         return points;
     }
 
-    public void setPoints(IfcCartesianPoint points) {
+    public void setPoints(LIST points) {
         this.points = points;
     }
 }
