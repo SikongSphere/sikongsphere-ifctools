@@ -35,7 +35,6 @@ public class IfcRailing extends IfcBuildingElement {
     public IfcRailing() {}
 
     @IfcParserConstructor
-
     public IfcRailing(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
