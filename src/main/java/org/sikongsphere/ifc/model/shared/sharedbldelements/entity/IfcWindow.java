@@ -36,7 +36,6 @@ public class IfcWindow extends IfcBuildingElement {
     public IfcWindow() {}
 
     @IfcParserConstructor
-
     public IfcWindow(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
