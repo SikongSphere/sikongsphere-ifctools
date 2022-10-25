@@ -29,7 +29,6 @@ public class IfcArbitraryClosedProfileDef extends IfcProfileDef {
     public IfcArbitraryClosedProfileDef() {}
 
     @IfcParserConstructor
-
     public IfcArbitraryClosedProfileDef(
         IfcProfileTypeEnum profileType,
         IfcLabel profileName,

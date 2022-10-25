@@ -30,7 +30,6 @@ public class IfcProfileDef extends IfcBodyTemplate {
     public IfcProfileDef() {}
 
     @IfcParserConstructor
-
     public IfcProfileDef(IfcProfileTypeEnum profileType, IfcLabel profileName) {
         ProfileType = profileType;
         ProfileName = profileName;

@@ -28,7 +28,6 @@ public class IfcFaceBound extends IfcTopologicalRepresentationItem {
     public IfcFaceBound() {}
 
     @IfcParserConstructor
-
     public IfcFaceBound(IfcLoop bound, BOOLEAN orientation) {
         this.bound = bound;
         this.orientation = orientation;

@@ -41,7 +41,6 @@ public class IfcWindowStyle extends IfcTypeProduct {
     public IfcWindowStyle() {}
 
     @IfcParserConstructor
-
     public IfcWindowStyle(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,

@@ -27,7 +27,6 @@ public class IfcFace extends IfcTopologicalRepresentationItem {
     public IfcFace() {}
 
     @IfcParserConstructor
-
     public IfcFace(SET<IfcFaceBound> bounds) {
         Bounds = bounds;
     }
