@@ -31,12 +31,12 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
 
     @IfcParserConstructor
     public IfcConversionBasedUnit(
-        IfcUnitEnum UnitType,
-        IfcDimensionalExponents Dimensions,
+        IfcUnitEnum unitType,
+        IfcDimensionalExponents dimensions,
         IfcLabel name,
         IfcMeasureWithUnit conversionFactor
     ) {
-        super(Dimensions, UnitType);
+        super(dimensions, unitType);
         this.name = name;
         this.conversionFactor = conversionFactor;
     }
