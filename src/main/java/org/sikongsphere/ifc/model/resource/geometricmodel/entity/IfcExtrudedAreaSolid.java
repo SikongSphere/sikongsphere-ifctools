@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.geometricmodel.enumeration;
+package org.sikongsphere.ifc.model.resource.geometricmodel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
@@ -18,15 +18,17 @@ import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCou
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveLengthMeasure;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
 import org.sikongsphere.ifc.model.resource.presentationorganization.entity.IfcStyledItem;
+import org.sikongsphere.ifc.model.resource.profile.entity.IfcProfileDef;
 
 /**
  * @author zhongqi
  * @date 2022/10/26
  */
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
     private IfcDirection extrudedDirection;
     private IfcPositiveLengthMeasure depth;
@@ -35,15 +37,13 @@ public class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
 
     @IfcParserConstructor
     public IfcExtrudedAreaSolid(
-        IfcPresentationLayerAssignment layerAssignments,
-        IfcStyledItem styledByItem,
         IfcDimensionCount dim,
         IfcProfileDef sweptArea,
-        IfcAxis2Placement3D position,
+        IfcAxis2Placement position,
         IfcDirection extrudedDirection,
         IfcPositiveLengthMeasure depth
     ) {
-        super(layerAssignments, styledByItem, dim, sweptArea, position);
+        super(dim, sweptArea, position);
         this.extrudedDirection = extrudedDirection;
         this.depth = depth;
     }

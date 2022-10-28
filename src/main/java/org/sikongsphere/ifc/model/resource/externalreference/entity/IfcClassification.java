@@ -14,6 +14,8 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.resource.datetime.entity.IfcCalendarDate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 /**
@@ -22,7 +24,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  */
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcClassification {
+public class IfcClassification extends IfcBodyTemplate {
     private IfcLabel source;
     private IfcLabel edition;
     private IfcCalendarDate editionDate;
