@@ -19,35 +19,35 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.profile.enumeration.IfcProfileTypeEnum;
 
 /**
- * @author GaoSU
- * @date 2022/10/25 13:26
+ * @author Wang Bohong
+ * @date 2022/10/28 10:33
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcProfileDef extends IfcBodyTemplate {
-    private IfcProfileTypeEnum ProfileType;
-    private IfcLabel ProfileName;
+    private IfcProfileTypeEnum profileType;
+    private IfcLabel profileName;
 
     public IfcProfileDef() {}
 
     @IfcParserConstructor
     public IfcProfileDef(IfcProfileTypeEnum profileType, IfcLabel profileName) {
-        ProfileType = profileType;
-        ProfileName = profileName;
+        this.profileType = profileType;
+        this.profileName = profileName;
     }
 
     public IfcProfileTypeEnum getProfileType() {
-        return ProfileType;
+        return profileType;
     }
 
     public void setProfileType(IfcProfileTypeEnum profileType) {
-        ProfileType = profileType;
+        this.profileType = profileType;
     }
 
     public IfcLabel getProfileName() {
-        return ProfileName;
+        return profileName;
     }
 
     public void setProfileName(IfcLabel profileName) {
-        ProfileName = profileName;
+        this.profileName = profileName;
     }
 }
