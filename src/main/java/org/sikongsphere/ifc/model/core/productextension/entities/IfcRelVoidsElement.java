@@ -24,7 +24,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  * @author Yiwei
  * @date 2022/10/28
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcRelVoidsElement extends IfcRelConnects {
     private IfcElement relatingBuildingElement;
     private IfcFeatureElementSubtraction relatedOpeningElement;
