@@ -11,8 +11,11 @@
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.INTEGER;
+import org.sikongsphere.ifc.model.basic.LIST;
 
 /**
  * his entity defines a general direction vector in two or three dimensional space.
@@ -24,19 +27,20 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDirection extends IfcGeometricRepresentationItem {
-    private Boolean directionRatios;// todo -> REAL
+    private LIST<INTEGER> directionRatios;// todo -> REAL
 
     public IfcDirection() {}
 
-    public IfcDirection(Boolean directionRatios) {
+    @IfcParserConstructor
+    public IfcDirection(LIST<INTEGER> directionRatios) {
         this.directionRatios = directionRatios;
     }
 
-    public Boolean getDirectionRatios() {
+    public LIST<INTEGER> getDirectionRatios() {
         return directionRatios;
     }
 
-    public void setDirectionRatios(Boolean directionRatios) {
+    public void setDirectionRatios(LIST<INTEGER> directionRatios) {
         this.directionRatios = directionRatios;
     }
 }

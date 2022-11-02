@@ -11,10 +11,12 @@
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.INTEGER;
+import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
@@ -91,6 +93,31 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
         this.thermodynamicTemperatureExponent = new INTEGER(thermodynamicTemperatureExponent);
         this.amountOfSubstanceExponent = new INTEGER(amountOfSubstanceExponent);
         this.luminousIntensityExponent = new INTEGER(luminousIntensityExponent);
+    }
+
+    @IfcParserConstructor
+    public IfcDimensionalExponents(
+        STRING lengthExponent,
+        STRING massExponent,
+        STRING timeExponent,
+        STRING electricCurrentExponent,
+        STRING thermodynamicTemperatureExponent,
+        STRING amountOfSubstanceExponent,
+        STRING luminousIntensityExponent
+    ) {
+        this.lengthExponent = new INTEGER(Integer.valueOf(lengthExponent.value));
+        this.massExponent = new INTEGER(Integer.valueOf(massExponent.value));
+        this.timeExponent = new INTEGER(Integer.valueOf(timeExponent.value));
+        this.electricCurrentExponent = new INTEGER(Integer.valueOf(electricCurrentExponent.value));
+        this.thermodynamicTemperatureExponent = new INTEGER(
+            Integer.valueOf(thermodynamicTemperatureExponent.value)
+        );
+        this.amountOfSubstanceExponent = new INTEGER(
+            Integer.valueOf(amountOfSubstanceExponent.value)
+        );
+        this.luminousIntensityExponent = new INTEGER(
+            Integer.valueOf(luminousIntensityExponent.value)
+        );
     }
 
     public INTEGER getLengthExponent() {

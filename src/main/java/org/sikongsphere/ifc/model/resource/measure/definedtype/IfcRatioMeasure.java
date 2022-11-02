@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
 /**
  * A ratio measure is the value of the relation between two physical quantities that are of the same kind.
  *
+ * NOTE: Input given in percent is to be divided by 100% when stored as an IfcRatioMeasure. E.g. 25% becomes 0.25.
  * @author stan
  * @date 2022/09/01 23:45
  */
