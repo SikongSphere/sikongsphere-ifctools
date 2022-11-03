@@ -10,7 +10,6 @@
 */
 package org.sikongsphere.ifc.model.basic;
 
-import org.junit.jupiter.api.Test;
 import org.sikongsphere.ifc.model.IfcLeafNode;
 
 /**
