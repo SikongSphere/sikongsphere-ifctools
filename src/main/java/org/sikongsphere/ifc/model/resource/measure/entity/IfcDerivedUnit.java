@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnum;
@@ -26,7 +28,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
  * @date 2022-08-31 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcDerivedUnit extends IfcNonLeafNode implements IfcUnit {
+public class IfcDerivedUnit extends IfcBodyTemplate implements IfcUnit {
     private SET<IfcDerivedUnitElement> elements;
     private IfcDerivedUnitEnum unitType;
     private IfcLabel userDefinedType;
@@ -36,6 +38,7 @@ public class IfcDerivedUnit extends IfcNonLeafNode implements IfcUnit {
         this.unitType = unitType;
     }
 
+    @IfcParserConstructor
     public IfcDerivedUnit(
         SET<IfcDerivedUnitElement> elements,
         IfcDerivedUnitEnum unitType,

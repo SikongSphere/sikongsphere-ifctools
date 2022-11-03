@@ -11,10 +11,12 @@
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.INTEGER;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * This class is used to encapsulate derived unit element information
@@ -23,7 +25,31 @@ import org.sikongsphere.ifc.model.basic.INTEGER;
  * @date 2022-08-31 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcDerivedUnitElement extends IfcNonLeafNode {
+public class IfcDerivedUnitElement extends IfcBodyTemplate {
     private IfcNamedUnit unit;
     private INTEGER exponent;
+
+    public IfcDerivedUnitElement() {}
+
+    @IfcParserConstructor
+    public IfcDerivedUnitElement(IfcNamedUnit unit, INTEGER exponent) {
+        this.unit = unit;
+        this.exponent = exponent;
+    }
+
+    public IfcNamedUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(IfcNamedUnit unit) {
+        this.unit = unit;
+    }
+
+    public INTEGER getExponent() {
+        return exponent;
+    }
+
+    public void setExponent(INTEGER exponent) {
+        this.exponent = exponent;
+    }
 }

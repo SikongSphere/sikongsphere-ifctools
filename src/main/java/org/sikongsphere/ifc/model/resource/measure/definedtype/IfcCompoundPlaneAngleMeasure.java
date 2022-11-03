@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
 import org.sikongsphere.ifc.model.basic.INTEGER;
 import org.sikongsphere.ifc.model.basic.LIST;
+import org.sikongsphere.ifc.model.basic.STRING;
 
 /**
  * @author Wang Bohong
@@ -28,14 +29,24 @@ public class IfcCompoundPlaneAngleMeasure {
 
     public IfcCompoundPlaneAngleMeasure() {}
 
+    // public IfcCompoundPlaneAngleMeasure(LIST<INTEGER> value) {
+    // if (!isValid(value)) throw new SikongSphereException();
+    // this.value = value;
+    // }
+
+    /* TODO 如果通过Integer类型传参，如何处理？*/
     @IfcParserConstructor
-    public IfcCompoundPlaneAngleMeasure(LIST<INTEGER> value) {
-        if (!isValid(value)) throw new SikongSphereException();
-        this.value = value;
+    public IfcCompoundPlaneAngleMeasure(LIST<STRING> strs) {
+        LIST<INTEGER> list = new LIST<>();
+        for (int i = 0; i < strs.size(); i++) {
+            list.add(new INTEGER(Integer.valueOf(strs.get(i).value)));
+        }
+        if (!isValid(list)) throw new SikongSphereException();
+        this.value = list;
     }
 
     private boolean isValid(LIST<INTEGER> value) {
-        if (value.size() != 3) return false;
+        // if (value.size() != 3) return false;
         if (value.get(0).value < -360 || value.get(0).value >= 360) return false;
         if (value.get(1).value < -60 || value.get(1).value >= 60) return false;
         if (value.get(2).value < -60 || value.get(2).value >= 60) return false;

@@ -11,9 +11,13 @@
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.DOUBLE;
+import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcMeasureValue;
 
 /**
  * A ratio measure is the value of the relation between two physical quantities that are of the same kind.
@@ -23,20 +27,15 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @date 2022/09/01 23:45
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcRatioMeasure {
-    private Boolean ratioMeasure;// todo -> REAL
-
+public class IfcRatioMeasure extends DOUBLE implements IfcMeasureValue {
     public IfcRatioMeasure() {}
 
-    public IfcRatioMeasure(Boolean ratioMeasure) {
-        this.ratioMeasure = ratioMeasure;
+    public IfcRatioMeasure(double value) {
+        super(value);
     }
 
-    public Boolean getRatioMeasure() {
-        return ratioMeasure;
-    }
-
-    public void setRatioMeasure(Boolean ratioMeasure) {
-        this.ratioMeasure = ratioMeasure;
+    @IfcParserConstructor
+    public IfcRatioMeasure(STRING value) {
+        super(value);
     }
 }

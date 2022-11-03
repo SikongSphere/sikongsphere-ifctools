@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
@@ -31,6 +32,19 @@ public class IfcAddress extends IfcBodyTemplate {
     private IfcText description;
     private IfcLabel userDefinedPurpose;
 
-    private SET<IfcPerson> ofPerson;
-    private SET<IfcOrganization> ofOrganization;
+    // private SET<IfcPerson> ofPerson;
+    // private SET<IfcOrganization> ofOrganization;
+
+    public IfcAddress() {}
+
+    @IfcParserConstructor
+    public IfcAddress(
+        IfcAddressTypeEnum purpose,
+        IfcText description,
+        IfcLabel userDefinedPurpose
+    ) {
+        this.purpose = purpose;
+        this.description = description;
+        this.userDefinedPurpose = userDefinedPurpose;
+    }
 }
