@@ -66,6 +66,11 @@ public class IfcInstanceFactory {
             if (args[i].getClass().equals(STRING.class)
                 && ASTERISK.equals(((STRING) args[i]).value)) {
                 // 当传入参数为*的时候，所有值视作默认值
+                // 如果该类为接口 设为null
+                if (parameterTypes[i].isInterface()) {
+                    args[i] = null;
+                    continue;
+                }
                 IfcClassContainer instance = IfcClassContainer.getInstance();
                 Constructor<?> constructorWithNoParam = parameterTypes[i].getConstructor();
                 args[i] = constructorWithNoParam.newInstance();
@@ -81,7 +86,6 @@ public class IfcInstanceFactory {
                     String className = route[route.length - 1];
                     args[i] = getEnumInstance(className, ((STRING) args[i]).value);
                 } else if (parameterTypes[i].equals(LIST.class)) {
-                    // ToDO 引用类型的list
                     if (args[i].getClass() == IfcNodeList.class) {
                         args[i] = getListInstance((IfcNodeList) args[i]);
                         listIndex++;
@@ -104,6 +108,21 @@ public class IfcInstanceFactory {
                                 ((STRING) args[i]).value,
                                 setIndex++
                             );
+                        }
+                    } else if (args[i].getClass().equals(IfcNodeList.class)) {
+                        // 处理某个参数的类构造器为单一简单类型list
+                        Constructor<?>[] constructors = parameterTypes[i].getConstructors();
+                        for (Constructor<?> cons : constructors) {
+                            if (cons.isAnnotationPresent(IfcParserConstructor.class)) {
+                                List<IfcNode> elements = ((IfcNodeList) args[i]).elements;
+                                List<STRING> params = new ArrayList<>();
+                                for (IfcNode element : elements) {
+                                    params.add((STRING) element);
+                                }
+                                LIST<STRING> paramList = new LIST<>(params);
+                                Object instance = cons.newInstance(paramList);
+                                args[i] = instance;
+                            }
                         }
                     } else {
                         Object instance = parameterTypes[i].getConstructor(args[i].getClass())

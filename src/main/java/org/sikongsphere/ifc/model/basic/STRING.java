@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.basic;
 
 import org.sikongsphere.ifc.model.IfcLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * This class is used to encapsulate string information
@@ -18,8 +19,10 @@ import org.sikongsphere.ifc.model.IfcLeafNode;
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
-public class STRING extends IfcLeafNode {
+public class STRING extends IfcBodyTemplate {
     public String value = "";
+
+    public STRING() {}
 
     public STRING(String value) {
         this.value = value;

@@ -24,4 +24,9 @@ public class INTEGER extends IfcLeafNode {
     public INTEGER(Integer value) {
         this.value = value;
     }
+
+    public INTEGER(STRING value) {
+        this.value = new Integer(Integer.valueOf(value.value));
+    }
+
 }

@@ -31,8 +31,8 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
 
     @IfcParserConstructor
     public IfcConversionBasedUnit(
-        IfcUnitEnum unitType,
         IfcDimensionalExponents dimensions,
+        IfcUnitEnum unitType,
         IfcLabel name,
         IfcMeasureWithUnit conversionFactor
     ) {

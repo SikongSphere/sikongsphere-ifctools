@@ -10,11 +10,13 @@
 */
 package org.sikongsphere.ifc.model.basic;
 
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+
 /**
  * @author Wang Bohong
  * @date 2022/11/1 13:27
  */
-public class DOUBLE {
+public class DOUBLE extends IfcBodyTemplate {
     public double value = 0.0;
 
     public DOUBLE() {}

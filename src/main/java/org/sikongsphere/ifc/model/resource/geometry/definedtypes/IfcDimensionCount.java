@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.INTEGER;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * A dimension count is a positive integer used to define the coordinate space dimensionality.
@@ -24,7 +25,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @date 2022/09/02 00:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcDimensionCount {
+public class IfcDimensionCount extends IfcBodyTemplate {
     private INTEGER dimensionCount;
 
     public IfcDimensionCount() {}
