@@ -11,7 +11,9 @@
 package org.sikongsphere.ifc.common.environment;
 
 import org.sikongsphere.ifc.common.constant.ConfigParameter;
+import org.sikongsphere.ifc.common.environment.entity.Application;
 import org.sikongsphere.ifc.common.exception.SikongSphereConfigException;
+import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -37,4 +39,13 @@ public class ConfigProvider {
         }
         return props.getProperty(key);
     }
+
+    public static Application getApplication() {
+        String s = System.getProperty(
+            ConfigParameter.SIKONGSPHERE_APPLICATION_CONFIG_PATH_KEY,
+            ConfigParameter.SIKONGSPHERE_APPLICATION_CONFIG_DEFAULT_PATH
+        );
+        return new Yaml().loadAs(ConfigProvider.class.getResourceAsStream(s), Application.class);
+    }
+
 }
