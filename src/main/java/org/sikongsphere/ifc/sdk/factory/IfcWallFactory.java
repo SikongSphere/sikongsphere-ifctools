@@ -10,9 +10,15 @@
 */
 package org.sikongsphere.ifc.sdk.factory;
 
+import org.sikongsphere.ifc.common.environment.ConfigProvider;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWall;
 import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWallStandardCase;
 import org.sikongsphere.ifc.sdk.order.IOrder;
+import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
 
 /**
  * This is an factory for IfcWall
@@ -20,7 +26,7 @@ import org.sikongsphere.ifc.sdk.order.IOrder;
  * @Author: zaiyuan
  * @Date: 2022/11/09 11:47
  */
-public class IfcWallFactory implements IFactory<IfcWall> {
+public class IfcWallFactory extends AbstractFactory<IfcWall> {
 
     /**
      * create general wall
@@ -29,7 +35,23 @@ public class IfcWallFactory implements IFactory<IfcWall> {
      */
     @Override
     public IfcWall create(IOrder<IfcWall> order) {
+        if (order instanceof IfcWallOrder) {
+            return create(order);
+        }
         return null;
+    }
+
+    public IfcWall create(IfcWallOrder order) {
+        return new IfcWall(
+            new IfcGloballyUniqueId(order.getGlobalId()),
+            getOwnerHistory(ConfigProvider.getApplication()),
+            new IfcLabel(order.getName()),
+            new IfcText(order.getDescription()),
+            new IfcLabel(order.getObjectType()),
+            null,   // factory does not define placement
+            null,   // factory does not define representation
+            new IfcIdentifier(order.getTag())
+        );
     }
 
     /**

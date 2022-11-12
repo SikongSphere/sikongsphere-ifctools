@@ -10,11 +10,15 @@
 */
 package org.sikongsphere.ifc.sdk;
 
+import org.junit.Test;
 import org.sikongsphere.ifc.model.IfcModel;
+import org.sikongsphere.ifc.model.resource.actor.entity.IfcPerson;
 import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWall;
 import org.sikongsphere.ifc.sdk.factory.IfcWallFactory;
 import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
 import org.sikongsphere.ifc.sdk.worker.IfcWallWorker;
+
+import java.util.UUID;
 
 /**
  * This is a demo for sdk design
@@ -32,5 +36,23 @@ public class SDKDemo {
         IfcWallWorker wallWorker = new IfcWallWorker();
         wallWorker.install(model, ifcWall);
         model.build();
+    }
+
+    @Test
+    public void createWall() {
+        IfcWallOrder wallOrder = new IfcWallOrder();
+        wallOrder.setGlobalId(UUID.randomUUID().toString());
+        wallOrder.setName("niubility wall");
+        wallOrder.setDescription("gang gang di");
+        wallOrder.setObjectType("steel wall");
+
+        IfcWallFactory wallFactory = new IfcWallFactory();
+        IfcWall ifcWall = wallFactory.create(wallOrder);
+        IfcPerson thePerson = ifcWall.getOwnerHistory().getLastModifyingUser().getThePerson();
+
+        assert ifcWall.getName().value.equals("niubility wall");
+        assert thePerson.getFamilyName().value.equals("Ma");
+        assert thePerson.getMiddleName().get(0).value.equals("Da");
+        assert thePerson.getGivenName().value.equals("Shuai");
     }
 }

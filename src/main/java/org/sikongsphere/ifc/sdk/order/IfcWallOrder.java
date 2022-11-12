@@ -18,4 +18,50 @@ import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWall;
  * @Author: zaiyuan
  * @Date: 2022/11/09 11:47
  */
-public class IfcWallOrder implements IOrder<IfcWall> {}
+public class IfcWallOrder extends AbstractOrder<IfcWall> {
+    private String globalId;
+    private String name;
+    private String description;
+    private String objectType;
+    private String tag;
+
+    public String getGlobalId() {
+        return globalId;
+    }
+
+    public void setGlobalId(String globalId) {
+        this.globalId = globalId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getObjectType() {
+        return objectType;
+    }
+
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+}

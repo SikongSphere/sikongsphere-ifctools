@@ -10,12 +10,10 @@
 */
 package org.sikongsphere.ifc.sdk.order;
 
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
-
 /**
  * This is an interface for order
  *
  * @Author: zaiyuan
  * @Date: 2022/11/09 11:47
  */
-public interface IOrder<T extends IfcProduct> {}
+public interface IOrder<T> {}

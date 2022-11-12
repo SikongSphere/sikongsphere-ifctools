@@ -10,7 +10,6 @@
 */
 package org.sikongsphere.ifc.sdk.factory;
 
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**
@@ -19,6 +18,6 @@ import org.sikongsphere.ifc.sdk.order.IOrder;
  * @Author: zaiyuan
  * @Date: 2022/11/09 11:47
  */
-public interface IFactory<T extends IfcProduct> {
+public interface IFactory<T> {
     T create(IOrder<T> order);
 }

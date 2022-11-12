@@ -8,19 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.worker;
-
-import org.sikongsphere.ifc.model.IfcModel;
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
+package org.sikongsphere.ifc.sdk.order;
 
 /**
- * This is an interface for order
+ * Abstract Order
  *
- * @Author: zaiyuan
- * @Date: 2022/11/09 11:47
+ * @author zaiyuan
+ * @date 2022/11/11 19:52
  */
-public interface IWorker<T> {
-    void install(IfcModel model, T product);
-
-    void install(IfcModel model, T product, Object... params);
-}
+public class AbstractOrder<T> implements IOrder<T> {}
