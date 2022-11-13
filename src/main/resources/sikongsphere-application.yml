@@ -1,0 +1,22 @@
+fullName: sikongsphere-ifctools
+version: 0.0.1
+person:
+  familyName: Ma
+  givenName: Shuai
+  middleName:
+    - Da
+  prefixTitles:
+    - Dear
+  suffixTitles:
+    - Nubility
+organization:
+  name: sikongsphere
+  description: open source organization
+roles:
+  - roleEnum: architect
+    userDefinedRole: wu
+    description: wu
+addresses:
+  - purpose: office
+    description: bangong
+    userDefinedPurpose: wu

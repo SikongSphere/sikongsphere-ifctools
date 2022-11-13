@@ -51,6 +51,13 @@ public class IfcModel extends IfcNode {
         return builder;
     }
 
+    /**
+     * build IfcModel instance
+     */
+    public void build() {
+        // TODO
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
