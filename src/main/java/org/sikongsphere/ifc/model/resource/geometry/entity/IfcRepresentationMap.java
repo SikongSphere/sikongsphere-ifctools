@@ -35,12 +35,13 @@ public class IfcRepresentationMap extends IfcBodyTemplate {
     public IfcRepresentationMap() {}
 
     @IfcParserConstructor
-    public IfcRepresentationMap(IfcAxis2Placement mappingOrigin, IfcRepresentation mappedRepresentation) {
+    public IfcRepresentationMap(
+        IfcAxis2Placement mappingOrigin,
+        IfcRepresentation mappedRepresentation
+    ) {
         this.mappingOrigin = mappingOrigin;
         this.mappedRepresentation = mappedRepresentation;
     }
-
-
 
     public IfcRepresentation getMappedRepresentation() {
         return mappedRepresentation;

@@ -29,8 +29,7 @@ import org.sikongsphere.ifc.model.resource.representation.selecttype.IfcColour;
 public class IfcColourSpecification extends IfcBodyTemplate implements IfcColour {
     private IfcLabel name;
 
-    public IfcColourSpecification() {
-    }
+    public IfcColourSpecification() {}
 
     @IfcParserConstructor
     public IfcColourSpecification(IfcLabel name) {

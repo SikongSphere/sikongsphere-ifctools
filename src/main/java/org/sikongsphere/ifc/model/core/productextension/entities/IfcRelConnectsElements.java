@@ -36,7 +36,15 @@ public class IfcRelConnectsElements extends IfcRelConnects {
     public IfcRelConnectsElements() {}
 
     @IfcParserConstructor
-    public IfcRelConnectsElements(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, IfcConnectionGeometry connectionGeometry, IfcElement relatingElement, IfcElement relatedElement) {
+    public IfcRelConnectsElements(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcConnectionGeometry connectionGeometry,
+        IfcElement relatingElement,
+        IfcElement relatedElement
+    ) {
         super(globalId, ownerHistory, name, description);
         this.connectionGeometry = connectionGeometry;
         this.relatingElement = relatingElement;

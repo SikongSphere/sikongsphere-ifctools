@@ -26,8 +26,7 @@ import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.Ifc
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
 public class IfcNormalisedRatioMeasure extends IfcRatioMeasure implements IfcColourOrFactor {
-    public IfcNormalisedRatioMeasure() {
-    }
+    public IfcNormalisedRatioMeasure() {}
 
     public IfcNormalisedRatioMeasure(double value) {
         super(value);

@@ -30,7 +30,7 @@ public class BOOLEAN extends IfcBodyTemplate {
     public BOOLEAN(STRING value) {
         String str = value.value;
         if (str != null) {
-            if(str.indexOf("T") != -1) {
+            if (str.indexOf("T") != -1) {
                 this.value = true;
             }
         }

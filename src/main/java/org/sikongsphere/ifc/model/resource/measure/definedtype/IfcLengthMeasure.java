@@ -27,7 +27,6 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
 public class IfcLengthMeasure extends DOUBLE implements IfcValue {
 
-
     public IfcLengthMeasure() {}
 
     public IfcLengthMeasure(double value) {

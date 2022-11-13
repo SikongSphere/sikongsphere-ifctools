@@ -41,13 +41,34 @@ public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
     public IfcRelConnectsPathElements() {}
 
     @IfcParserConstructor
-    public IfcRelConnectsPathElements(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, IfcConnectionGeometry connectionGeometry, IfcElement relatingElement, IfcElement relatedElement, LIST<INTEGER> relatingPriorities, LIST<INTEGER> relatedPriorities, IfcConnectionTypeEnum relatedConnectionType, IfcConnectionTypeEnum relatingConnectionType) {
-        super(globalId, ownerHistory, name, description, connectionGeometry, relatingElement, relatedElement);
+    public IfcRelConnectsPathElements(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcConnectionGeometry connectionGeometry,
+        IfcElement relatingElement,
+        IfcElement relatedElement,
+        LIST<INTEGER> relatingPriorities,
+        LIST<INTEGER> relatedPriorities,
+        IfcConnectionTypeEnum relatedConnectionType,
+        IfcConnectionTypeEnum relatingConnectionType
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            connectionGeometry,
+            relatingElement,
+            relatedElement
+        );
         this.relatingPriorities = relatingPriorities;
         this.relatedPriorities = relatedPriorities;
         this.relatedConnectionType = relatedConnectionType;
         this.relatingConnectionType = relatingConnectionType;
     }
+
     public LIST<INTEGER> getRelatingPriorities() {
         return relatingPriorities;
     }

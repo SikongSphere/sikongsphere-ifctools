@@ -38,7 +38,14 @@ public class IfcRelContainedInSpatialStructure extends IfcRelConnects {
     public IfcRelContainedInSpatialStructure() {}
 
     @IfcParserConstructor
-    public IfcRelContainedInSpatialStructure(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcProduct> relatedElements, IfcSpatialStructureElement relatingStructure) {
+    public IfcRelContainedInSpatialStructure(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcProduct> relatedElements,
+        IfcSpatialStructureElement relatingStructure
+    ) {
         super(globalId, ownerHistory, name, description);
         this.relatedElements = relatedElements;
         this.relatingStructure = relatingStructure;

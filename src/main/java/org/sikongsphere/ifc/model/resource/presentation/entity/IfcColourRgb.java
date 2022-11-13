@@ -34,7 +34,12 @@ public class IfcColourRgb extends IfcColourSpecification {
     public IfcColourRgb() {}
 
     @IfcParserConstructor
-    public IfcColourRgb(IfcLabel name, IfcNormalisedRatioMeasure red, IfcNormalisedRatioMeasure green, IfcNormalisedRatioMeasure blue) {
+    public IfcColourRgb(
+        IfcLabel name,
+        IfcNormalisedRatioMeasure red,
+        IfcNormalisedRatioMeasure green,
+        IfcNormalisedRatioMeasure blue
+    ) {
         super(name);
         this.red = red;
         this.green = green;

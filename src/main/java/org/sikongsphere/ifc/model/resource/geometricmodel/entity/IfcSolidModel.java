@@ -32,7 +32,6 @@ public class IfcSolidModel extends IfcGeometricRepresentationItem {
         dim = new IfcDimensionCount(new INTEGER(3));
     }
 
-
     public IfcDimensionCount getDim() {
         return dim;
     }

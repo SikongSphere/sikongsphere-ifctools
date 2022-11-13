@@ -31,7 +31,25 @@ public class IfcOpeningElement extends IfcFeatureElementSubtraction {
     public IfcOpeningElement() {}
 
     @IfcParserConstructor
-    public IfcOpeningElement(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, IfcLabel objectType, IfcObjectPlacement objectPlacement, IfcProductRepresentation representation, IfcIdentifier tag) {
-        super(globalId, ownerHistory, name, description, objectType, objectPlacement, representation, tag);
+    public IfcOpeningElement(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcIdentifier tag
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            tag
+        );
     }
 }

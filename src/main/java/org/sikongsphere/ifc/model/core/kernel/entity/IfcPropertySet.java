@@ -33,7 +33,13 @@ public class IfcPropertySet extends IfcPropertySetDefinition {
     public IfcPropertySet() {}
 
     @IfcParserConstructor
-    public IfcPropertySet(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcProperty> hasProperties) {
+    public IfcPropertySet(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcProperty> hasProperties
+    ) {
         super(globalId, ownerHistory, name, description);
         this.hasProperties = hasProperties;
     }

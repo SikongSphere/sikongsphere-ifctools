@@ -34,7 +34,11 @@ public class IfcSurfaceStyle extends IfcPresentationStyle {
     public IfcSurfaceStyle() {}
 
     @IfcParserConstructor
-    public IfcSurfaceStyle(IfcLabel name, IfcSurfaceSide side, SET<IfcSurfaceStyleElementSelect> styles) {
+    public IfcSurfaceStyle(
+        IfcLabel name,
+        IfcSurfaceSide side,
+        SET<IfcSurfaceStyleElementSelect> styles
+    ) {
         super(name);
         this.side = side;
         this.styles = styles;

@@ -29,5 +29,7 @@ public class IfcLogical extends LOGICAL implements IfcValue {
     }
 
     @IfcParserConstructor
-    public IfcLogical(STRING value) {super(value);}
+    public IfcLogical(STRING value) {
+        super(value);
+    }
 }

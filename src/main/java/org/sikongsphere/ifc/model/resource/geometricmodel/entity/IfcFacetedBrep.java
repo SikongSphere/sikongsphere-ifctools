@@ -28,7 +28,7 @@ public class IfcFacetedBrep extends IfcManifoldSolidBrep {
     @IfcParserConstructor
 
     public IfcFacetedBrep(IfcClosedShell outer) {
-        super( outer);
+        super(outer);
     }
 
 }
