@@ -15,6 +15,9 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcRatioMeasure;
+import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIPrefix;
+import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIUnitName;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 
@@ -34,6 +37,11 @@ public class IfcMeasureWithUnit extends IfcBodyTemplate {
     public IfcMeasureWithUnit(IfcValue valueComponent, IfcUnit unitComponent) {
         this.valueComponent = valueComponent;
         this.unitComponent = unitComponent;
+    }
+
+    public IfcMeasureWithUnit(Double value, IfcSIPrefix unitPrefix, IfcSIUnitName unitName) {
+        this.valueComponent = new IfcRatioMeasure(value);
+        this.unitComponent = new IfcSIUnit(unitPrefix, unitName);
     }
 
     public IfcValue getValueComponent() {

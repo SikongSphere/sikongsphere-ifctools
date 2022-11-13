@@ -27,20 +27,27 @@ import org.sikongsphere.ifc.model.basic.LIST;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDirection extends IfcGeometricRepresentationItem {
-    private LIST<INTEGER> directionRatios;// todo -> REAL
+    private LIST<Double> directionRatios;// todo -> REAL
 
     public IfcDirection() {}
 
     @IfcParserConstructor
-    public IfcDirection(LIST<INTEGER> directionRatios) {
+    public IfcDirection(LIST<Double> directionRatios) {
         this.directionRatios = directionRatios;
     }
 
-    public LIST<INTEGER> getDirectionRatios() {
+    public IfcDirection(Double x, Double y, Double z) {
+        directionRatios = new LIST<>();
+        directionRatios.add(x);
+        directionRatios.add(y);
+        directionRatios.add(z);
+    }
+
+    public LIST<Double> getDirectionRatios() {
         return directionRatios;
     }
 
-    public void setDirectionRatios(LIST<INTEGER> directionRatios) {
+    public void setDirectionRatios(LIST<Double> directionRatios) {
         this.directionRatios = directionRatios;
     }
 }

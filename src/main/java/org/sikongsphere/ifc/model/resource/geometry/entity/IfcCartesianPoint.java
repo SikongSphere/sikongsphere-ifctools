@@ -50,6 +50,13 @@ public class IfcCartesianPoint extends IfcPoint {
         }
     }
 
+    public IfcCartesianPoint(Double x, Double y, Double z) {
+        coordinates = new LIST<>();
+        coordinates.add(new IfcLengthMeasure(x));
+        coordinates.add(new IfcLengthMeasure(y));
+        coordinates.add(new IfcLengthMeasure(z));
+    }
+
     public LIST<IfcLengthMeasure> getCoordinates() {
         return coordinates;
     }
@@ -60,4 +67,5 @@ public class IfcCartesianPoint extends IfcPoint {
             throw new Exception("The amount of coordinates is between 1 and 3");
         }
     }
+
 }

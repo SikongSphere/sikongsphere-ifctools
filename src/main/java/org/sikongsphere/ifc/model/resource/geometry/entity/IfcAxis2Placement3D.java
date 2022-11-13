@@ -42,6 +42,14 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
         this.refDirection = refDirection;
     }
 
+    public IfcAxis2Placement3D(IfcCartesianPoint location) {
+        setLocation(location);
+    }
+
+    public IfcAxis2Placement3D(Double x, Double y, Double z) {
+        setLocation(new IfcCartesianPoint(x, y, z));
+    }
+
     public IfcDirection getAxis() {
         return axis;
     }
