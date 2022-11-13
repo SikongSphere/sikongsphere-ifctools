@@ -37,13 +37,12 @@ public class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
 
     @IfcParserConstructor
     public IfcExtrudedAreaSolid(
-        IfcDimensionCount dim,
         IfcProfileDef sweptArea,
         IfcAxis2Placement position,
         IfcDirection extrudedDirection,
         IfcPositiveLengthMeasure depth
     ) {
-        super(dim, sweptArea, position);
+        super(sweptArea, position);
         this.extrudedDirection = extrudedDirection;
         this.depth = depth;
     }

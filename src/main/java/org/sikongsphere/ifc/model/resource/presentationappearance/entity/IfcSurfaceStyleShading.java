@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.presentation.entity.IfcColourRgb;
 
 /**
@@ -24,7 +25,7 @@ import org.sikongsphere.ifc.model.resource.presentation.entity.IfcColourRgb;
  * @date 2022/09/02 13:17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyleShading {
+public class IfcSurfaceStyleShading extends IfcBodyTemplate {
     private IfcColourRgb surfaceColour;
 
     public IfcSurfaceStyleShading() {}

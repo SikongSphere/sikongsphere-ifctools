@@ -11,11 +11,13 @@
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.DOUBLE;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 
 /**
  * A plane angle measure is the value of an angle in a plane.
@@ -24,7 +26,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @date 2022/09/02 00:02
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcPlaneAngleMeasure extends DOUBLE {
+public class IfcPlaneAngleMeasure extends DOUBLE implements IfcValue {
 
     public IfcPlaneAngleMeasure() {}
 
@@ -32,6 +34,7 @@ public class IfcPlaneAngleMeasure extends DOUBLE {
         super(value);
     }
 
+    @IfcParserConstructor
     public IfcPlaneAngleMeasure(STRING value) {
         super(value);
     }

@@ -30,7 +30,7 @@ public abstract class IfcStyleModel extends IfcRepresentation {
 
     @IfcParserConstructor
     public IfcStyleModel(
-        IfcRepresentation contextContextOfItems,
+        IfcRepresentationContext contextContextOfItems,
         IfcLabel representationIdentifier,
         IfcLabel representationType,
         SET<IfcRepresentationItem> items

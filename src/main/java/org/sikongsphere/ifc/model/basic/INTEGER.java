@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.basic;
 
 import org.sikongsphere.ifc.model.IfcLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * This class is used to encapsulate Integer information
@@ -18,7 +19,7 @@ import org.sikongsphere.ifc.model.IfcLeafNode;
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
-public class INTEGER extends IfcLeafNode {
+public class INTEGER extends IfcBodyTemplate {
     public Integer value = 0;
 
     public INTEGER(Integer value) {

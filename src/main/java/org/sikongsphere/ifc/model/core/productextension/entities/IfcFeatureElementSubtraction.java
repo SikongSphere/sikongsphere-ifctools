@@ -31,27 +31,7 @@ public class IfcFeatureElementSubtraction extends IfcFeatureElement {
     public IfcFeatureElementSubtraction() {}
 
     @IfcParserConstructor
-    public IfcFeatureElementSubtraction(
-        IfcGloballyUniqueId globalId,
-        IfcOwnerHistory ownerHistory,
-        IfcLabel name,
-        IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag,
-        IfcIdentifier tag1
-    ) {
-        super(
-            globalId,
-            ownerHistory,
-            name,
-            description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag,
-            tag1
-        );
+    public IfcFeatureElementSubtraction(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, IfcLabel objectType, IfcObjectPlacement objectPlacement, IfcProductRepresentation representation, IfcIdentifier tag) {
+        super(globalId, ownerHistory, name, description, objectType, objectPlacement, representation, tag);
     }
 }

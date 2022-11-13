@@ -26,6 +26,10 @@ public class DOUBLE extends IfcBodyTemplate {
     }
 
     public DOUBLE(STRING value) {
-        this.value = Double.valueOf(value.value);
+        String str = value.value;
+        if (str != null && str.charAt(str.length() - 1) == '.') {
+            str = str.substring(0, str.length() - 1);
+        }
+        this.value = Double.valueOf(str);
     }
 }

@@ -19,6 +19,10 @@ import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcElement;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcRelConnectsElements;
 import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcConnectionGeometry;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 import org.sikongsphere.ifc.model.shared.sharedbldelements.enumeration.IfcConnectionTypeEnum;
 
 /**
@@ -37,34 +41,13 @@ public class IfcRelConnectsPathElements extends IfcRelConnectsElements {
     public IfcRelConnectsPathElements() {}
 
     @IfcParserConstructor
-    public IfcRelConnectsPathElements(
-        LIST<INTEGER> relatingPriorities,
-        LIST<INTEGER> relatedPriorities,
-        IfcConnectionTypeEnum relatedConnectionType,
-        IfcConnectionTypeEnum relatingConnectionType
-    ) {
+    public IfcRelConnectsPathElements(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, IfcConnectionGeometry connectionGeometry, IfcElement relatingElement, IfcElement relatedElement, LIST<INTEGER> relatingPriorities, LIST<INTEGER> relatedPriorities, IfcConnectionTypeEnum relatedConnectionType, IfcConnectionTypeEnum relatingConnectionType) {
+        super(globalId, ownerHistory, name, description, connectionGeometry, relatingElement, relatedElement);
         this.relatingPriorities = relatingPriorities;
         this.relatedPriorities = relatedPriorities;
         this.relatedConnectionType = relatedConnectionType;
         this.relatingConnectionType = relatingConnectionType;
     }
-
-    public IfcRelConnectsPathElements(
-        IfcConnectionGeometry connectionGeometry,
-        IfcElement relatingElement,
-        IfcElement relatedElement,
-        LIST<INTEGER> relatingPriorities,
-        LIST<INTEGER> relatedPriorities,
-        IfcConnectionTypeEnum relatedConnectionType,
-        IfcConnectionTypeEnum relatingConnectionType
-    ) {
-        super(connectionGeometry, relatingElement, relatedElement);
-        this.relatingPriorities = relatingPriorities;
-        this.relatedPriorities = relatedPriorities;
-        this.relatedConnectionType = relatedConnectionType;
-        this.relatingConnectionType = relatingConnectionType;
-    }
-
     public LIST<INTEGER> getRelatingPriorities() {
         return relatingPriorities;
     }

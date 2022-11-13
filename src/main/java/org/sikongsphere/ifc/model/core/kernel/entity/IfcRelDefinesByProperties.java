@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUnique
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcRelDefinesByProperties extends IfcRelDefines {
+public class IfcRelDefinesByProperties extends IfcRelDefines {
     private IfcPropertySetDefinition relatingPropertyDefinition;
 
     public IfcRelDefinesByProperties() {}

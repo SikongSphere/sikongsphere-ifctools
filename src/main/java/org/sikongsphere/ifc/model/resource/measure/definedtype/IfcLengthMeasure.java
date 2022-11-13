@@ -11,9 +11,12 @@
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.DOUBLE;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 
 /**
  * A length measure is the value of a distance.
@@ -22,26 +25,18 @@ import org.sikongsphere.ifc.model.basic.STRING;
  */
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public class IfcLengthMeasure {
+public class IfcLengthMeasure extends DOUBLE implements IfcValue {
 
-    // ToDo It's not quite clear here
-    private Double value;
 
     public IfcLengthMeasure() {}
 
-    public IfcLengthMeasure(Double value) {
-        this.value = value;
+    public IfcLengthMeasure(double value) {
+        super(value);
     }
 
+    @IfcParserConstructor
     public IfcLengthMeasure(STRING value) {
-        this.value = Double.valueOf(value.value);
+        super(value);
     }
 
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
 }

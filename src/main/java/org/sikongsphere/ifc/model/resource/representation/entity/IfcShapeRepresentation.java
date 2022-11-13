@@ -28,7 +28,7 @@ public class IfcShapeRepresentation extends IfcShapeModel {
 
     @IfcParserConstructor
     public IfcShapeRepresentation(
-        IfcRepresentation contextContextOfItems,
+        IfcRepresentationContext contextContextOfItems,
         IfcLabel representationIdentifier,
         IfcLabel representationType,
         SET<IfcRepresentationItem> items

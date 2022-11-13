@@ -11,9 +11,12 @@
 package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcColourOrFactor;
 
 /**
  * Dimensionless measure to express ratio values ranging from 0.0 to 1.0
@@ -22,20 +25,16 @@ import org.sikongsphere.ifc.model.IfcNonLeafNode;
  * @date 2022/09/01 23:47
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcNormalisedRatioMeasure extends IfcNonLeafNode {
-    private IfcRatioMeasure normalisedRatioMeasure;
-
-    public IfcNormalisedRatioMeasure() {}
-
-    public IfcNormalisedRatioMeasure(IfcRatioMeasure normalisedRatioMeasure) {
-        this.normalisedRatioMeasure = normalisedRatioMeasure;
+public class IfcNormalisedRatioMeasure extends IfcRatioMeasure implements IfcColourOrFactor {
+    public IfcNormalisedRatioMeasure() {
     }
 
-    public IfcRatioMeasure getNormalisedRatioMeasure() {
-        return normalisedRatioMeasure;
+    public IfcNormalisedRatioMeasure(double value) {
+        super(value);
     }
 
-    public void setNormalisedRatioMeasure(IfcRatioMeasure normalisedRatioMeasure) {
-        this.normalisedRatioMeasure = normalisedRatioMeasure;
+    @IfcParserConstructor
+    public IfcNormalisedRatioMeasure(STRING value) {
+        super(value);
     }
 }

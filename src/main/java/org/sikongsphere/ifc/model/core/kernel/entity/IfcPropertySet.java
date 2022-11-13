@@ -14,8 +14,10 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.proper.entity.IfcProperty;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
@@ -26,17 +28,21 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcPropertySet extends IfcPropertySetDefinition {
-    // private SET<IfcProperty> hasProperties;
+    private SET<IfcProperty> hasProperties;
 
     public IfcPropertySet() {}
 
     @IfcParserConstructor
-    public IfcPropertySet(
-        IfcGloballyUniqueId globalId,
-        IfcOwnerHistory ownerHistory,
-        IfcLabel name,
-        IfcText description
-    ) {
+    public IfcPropertySet(IfcGloballyUniqueId globalId, IfcOwnerHistory ownerHistory, IfcLabel name, IfcText description, SET<IfcProperty> hasProperties) {
         super(globalId, ownerHistory, name, description);
+        this.hasProperties = hasProperties;
+    }
+
+    public SET<IfcProperty> getHasProperties() {
+        return hasProperties;
+    }
+
+    public void setHasProperties(SET<IfcProperty> hasProperties) {
+        this.hasProperties = hasProperties;
     }
 }

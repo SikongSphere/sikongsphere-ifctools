@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
@@ -27,6 +28,7 @@ public abstract class IfcPlacement extends IfcGeometricRepresentationItem {
 
     public IfcPlacement() {}
 
+    @IfcParserConstructor
     public IfcPlacement(IfcCartesianPoint location) {
         this.location = location;
     }
