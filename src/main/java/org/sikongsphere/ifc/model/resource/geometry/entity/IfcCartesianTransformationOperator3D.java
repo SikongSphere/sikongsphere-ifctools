@@ -14,6 +14,8 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.BOOLEAN;
+import org.sikongsphere.ifc.model.basic.DOUBLE;
 
 /**
  * @author GaoSu
@@ -30,7 +32,7 @@ public class IfcCartesianTransformationOperator3D extends IfcCartesianTransforma
         IfcDirection axis1,
         IfcDirection axis2,
         IfcCartesianPoint localOrigin,
-        Boolean scale,
+        DOUBLE scale,
         IfcDirection axis3
     ) {
         super(axis1, axis2, localOrigin, scale);

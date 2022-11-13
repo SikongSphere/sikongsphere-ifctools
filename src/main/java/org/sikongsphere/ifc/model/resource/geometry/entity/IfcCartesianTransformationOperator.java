@@ -13,6 +13,8 @@ package org.sikongsphere.ifc.model.resource.geometry.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.BOOLEAN;
+import org.sikongsphere.ifc.model.basic.DOUBLE;
 
 /**
  * A Cartesian transformation operator
@@ -26,7 +28,7 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
     private IfcDirection axis1;
     private IfcDirection axis2;
     private IfcCartesianPoint localOrigin;
-    private Boolean scale;// todo -> REAL
+    private DOUBLE scale;// todo -> REAL
 
     public IfcCartesianTransformationOperator() {}
 
@@ -34,7 +36,7 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
         IfcDirection axis1,
         IfcDirection axis2,
         IfcCartesianPoint localOrigin,
-        Boolean scale
+        DOUBLE scale
     ) {
         this.axis1 = axis1;
         this.axis2 = axis2;
@@ -66,11 +68,11 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
         this.localOrigin = localOrigin;
     }
 
-    public Boolean getScale() {
+    public DOUBLE getScale() {
         return scale;
     }
 
-    public void setScale(Boolean scale) {
+    public void setScale(DOUBLE scale) {
         this.scale = scale;
     }
 }

@@ -29,8 +29,8 @@ public class IfcAxis2Placement2D extends IfcPlacement {
     public IfcAxis2Placement2D() {}
 
     @IfcParserConstructor
-
-    public IfcAxis2Placement2D(IfcDirection refDirection) {
+    public IfcAxis2Placement2D(IfcCartesianPoint location, IfcDirection refDirection) {
+        super(location);
         this.refDirection = refDirection;
     }
 

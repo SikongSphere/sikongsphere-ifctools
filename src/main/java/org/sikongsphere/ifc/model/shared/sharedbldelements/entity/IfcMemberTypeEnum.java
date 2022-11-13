@@ -10,8 +10,28 @@
 */
 package org.sikongsphere.ifc.model.shared.sharedbldelements.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * @author Yiwei
  * @date 2022/10/25
  */
-public class IfcMemberTypeEnum {}
+@IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.RESOURCE)
+public enum IfcMemberTypeEnum {
+    BRACE,
+    CHORD,
+    COLLAR,
+    MEMBER,
+    MULLION,
+    PLATE,
+    POST,
+    PURLIN,
+    RAFTER,
+    STRINGER,
+    STRUT,
+    STUD,
+    USERDEFINED,
+    NOTDEFINED;
+}

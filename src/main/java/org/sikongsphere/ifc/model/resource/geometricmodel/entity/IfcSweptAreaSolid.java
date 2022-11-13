@@ -30,12 +30,7 @@ public class IfcSweptAreaSolid extends IfcSolidModel {
     public IfcSweptAreaSolid() {}
 
     @IfcParserConstructor
-    public IfcSweptAreaSolid(
-        IfcDimensionCount dim,
-        IfcProfileDef sweptArea,
-        IfcAxis2Placement position
-    ) {
-        super(dim);
+    public IfcSweptAreaSolid(IfcProfileDef sweptArea, IfcAxis2Placement position) {
         this.sweptArea = sweptArea;
         this.position = position;
     }

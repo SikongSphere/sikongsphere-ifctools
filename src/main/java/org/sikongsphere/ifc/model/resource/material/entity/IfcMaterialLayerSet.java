@@ -14,7 +14,9 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.model.resource.material.select_type.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
 import java.util.List;
@@ -26,24 +28,23 @@ import java.util.List;
  * @date 2022/10/16 16:11
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcMaterialLayerSet extends IfcBodyTemplate {
-    private List<IfcMaterialLayer> materialLayers;
+public class IfcMaterialLayerSet extends IfcBodyTemplate implements IfcMaterialSelect {
+    private LIST<IfcMaterialLayer> materialLayers;
     private IfcLabel layerSetName;
 
     public IfcMaterialLayerSet() {}
 
     @IfcParserConstructor
-
-    public IfcMaterialLayerSet(List<IfcMaterialLayer> materialLayers, IfcLabel layerSetName) {
+    public IfcMaterialLayerSet(LIST<IfcMaterialLayer> materialLayers, IfcLabel layerSetName) {
         this.materialLayers = materialLayers;
         this.layerSetName = layerSetName;
     }
 
-    public List<IfcMaterialLayer> getMaterialLayers() {
+    public LIST<IfcMaterialLayer> getMaterialLayers() {
         return materialLayers;
     }
 
-    public void setMaterialLayers(List<IfcMaterialLayer> materialLayers) {
+    public void setMaterialLayers(LIST<IfcMaterialLayer> materialLayers) {
         this.materialLayers = materialLayers;
     }
 

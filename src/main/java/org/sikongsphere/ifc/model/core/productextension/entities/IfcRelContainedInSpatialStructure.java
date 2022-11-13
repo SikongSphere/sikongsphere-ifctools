@@ -11,11 +11,16 @@
 package org.sikongsphere.ifc.model.core.productextension.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelConnects;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * This objectified relationship, IfcRelContainedInSpatialStructure,
@@ -32,10 +37,16 @@ public class IfcRelContainedInSpatialStructure extends IfcRelConnects {
 
     public IfcRelContainedInSpatialStructure() {}
 
+    @IfcParserConstructor
     public IfcRelContainedInSpatialStructure(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
         SET<IfcProduct> relatedElements,
         IfcSpatialStructureElement relatingStructure
     ) {
+        super(globalId, ownerHistory, name, description);
         this.relatedElements = relatedElements;
         this.relatingStructure = relatingStructure;
     }

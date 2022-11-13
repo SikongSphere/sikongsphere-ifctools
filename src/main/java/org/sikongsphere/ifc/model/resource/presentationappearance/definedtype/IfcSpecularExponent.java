@@ -8,28 +8,31 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.measure.definedtype;
+package org.sikongsphere.ifc.model.resource.presentationappearance.definedtype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.basic.LOGICAL;
+import org.sikongsphere.ifc.model.basic.DOUBLE;
 import org.sikongsphere.ifc.model.basic.STRING;
-import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
+import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcSpecularHighlightSelect;
 
 /**
  * @author Wang Bohong
- * @date 2022/9/1 16:09
+ * @date 2022/11/12 14:27
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcLogical extends LOGICAL implements IfcValue {
-    public IfcLogical(boolean value) {
+@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
+public class IfcSpecularExponent extends DOUBLE implements IfcSpecularHighlightSelect {
+
+    public IfcSpecularExponent() {}
+
+    public IfcSpecularExponent(double value) {
         super(value);
     }
 
     @IfcParserConstructor
-    public IfcLogical(STRING value) {
+    public IfcSpecularExponent(STRING value) {
         super(value);
     }
 }

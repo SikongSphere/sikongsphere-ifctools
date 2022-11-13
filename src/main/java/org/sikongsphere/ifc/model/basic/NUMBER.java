@@ -10,22 +10,24 @@
 */
 package org.sikongsphere.ifc.model.basic;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * @author Wang Bohong
- * @date 2022/11/1 13:27
+ * @date 2022/11/13 11:45
  */
-public class DOUBLE extends IfcBodyTemplate {
-    public double value = 0.0;
+public class NUMBER extends IfcBodyTemplate {
+    private double value;
 
-    public DOUBLE() {}
+    public NUMBER() {}
 
-    public DOUBLE(double value) {
+    public NUMBER(double value) {
         this.value = value;
     }
 
-    public DOUBLE(STRING value) {
+    @IfcParserConstructor
+    public NUMBER(STRING value) {
         String str = value.value;
         if (str != null && str.charAt(str.length() - 1) == '.') {
             str = str.substring(0, str.length() - 1);

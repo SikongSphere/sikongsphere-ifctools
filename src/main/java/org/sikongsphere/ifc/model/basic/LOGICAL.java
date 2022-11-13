@@ -11,19 +11,30 @@
 package org.sikongsphere.ifc.model.basic;
 
 import org.sikongsphere.ifc.model.IfcLeafNode;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 
 /**
  * Boolean
  * @author Wang Bohong
  * @date 2022/9/1 16:09
  */
-public class LOGICAL extends IfcLeafNode {
+public class LOGICAL extends IfcBodyTemplate {
     private boolean value;
 
     public LOGICAL() {}
 
     public LOGICAL(boolean value) {
         this.value = value;
+    }
+
+    public LOGICAL(STRING value) {
+        String str = value.value;
+        if (str == null) return;
+        if (str.indexOf("T") != -1) {
+            this.value = true;
+        } else if (str.indexOf("F") != -1) {
+            this.value = false;
+        }
     }
 
     public boolean isValue() {

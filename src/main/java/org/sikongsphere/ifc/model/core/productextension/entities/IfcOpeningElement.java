@@ -39,8 +39,7 @@ public class IfcOpeningElement extends IfcFeatureElementSubtraction {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag,
-        IfcIdentifier tag1
+        IfcIdentifier tag
     ) {
         super(
             globalId,
@@ -50,8 +49,7 @@ public class IfcOpeningElement extends IfcFeatureElementSubtraction {
             objectType,
             objectPlacement,
             representation,
-            tag,
-            tag1
+            tag
         );
     }
 }

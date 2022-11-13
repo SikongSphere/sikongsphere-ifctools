@@ -28,8 +28,6 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
 public class IfcFeatureElement extends IfcElement {
-    private IfcIdentifier tag;
-
     public IfcFeatureElement() {}
 
     @IfcParserConstructor
@@ -41,8 +39,7 @@ public class IfcFeatureElement extends IfcElement {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag,
-        IfcIdentifier tag1
+        IfcIdentifier tag
     ) {
         super(
             globalId,
@@ -54,16 +51,6 @@ public class IfcFeatureElement extends IfcElement {
             representation,
             tag
         );
-        this.tag = tag1;
     }
 
-    @Override
-    public IfcIdentifier getTag() {
-        return tag;
-    }
-
-    @Override
-    public void setTag(IfcIdentifier tag) {
-        this.tag = tag;
-    }
 }

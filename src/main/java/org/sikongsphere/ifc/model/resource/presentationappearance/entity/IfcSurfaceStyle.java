@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 import org.sikongsphere.ifc.model.resource.presentationappearance.enumeration.IfcSurfaceSide;
 
@@ -31,7 +33,13 @@ public class IfcSurfaceStyle extends IfcPresentationStyle {
 
     public IfcSurfaceStyle() {}
 
-    public IfcSurfaceStyle(IfcSurfaceSide side, SET<IfcSurfaceStyleElementSelect> styles) {
+    @IfcParserConstructor
+    public IfcSurfaceStyle(
+        IfcLabel name,
+        IfcSurfaceSide side,
+        SET<IfcSurfaceStyleElementSelect> styles
+    ) {
+        super(name);
         this.side = side;
         this.styles = styles;
     }

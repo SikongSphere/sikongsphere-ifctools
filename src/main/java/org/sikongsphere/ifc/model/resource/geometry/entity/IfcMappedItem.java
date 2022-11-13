@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
@@ -26,6 +27,7 @@ public class IfcMappedItem extends IfcRepresentationItem {
 
     public IfcMappedItem() {}
 
+    @IfcParserConstructor
     public IfcMappedItem(
         IfcRepresentationMap mappingSource,
         IfcCartesianTransformationOperator mappingTarget

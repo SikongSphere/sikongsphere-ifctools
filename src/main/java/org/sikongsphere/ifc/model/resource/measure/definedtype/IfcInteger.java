@@ -8,18 +8,29 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.resource.geometry.selecttypes;
+package org.sikongsphere.ifc.model.resource.measure.definedtype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.INTEGER;
+import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 
 /**
- * This select type collects together both versions of the placement as used
- * in two dimensional or in three dimensional Cartesian space.
- *
- * @author stan
- * @date 2022/09/02 21:04
+ * @author Wang Bohong
+ * @date 2022/11/9 13:27
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcAxis2Placement {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcInteger extends INTEGER implements IfcValue {
+
+    public IfcInteger(Integer value) {
+        super(value);
+    }
+
+    @IfcParserConstructor
+    public IfcInteger(STRING value) {
+        super(value);
+    }
+}

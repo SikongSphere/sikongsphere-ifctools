@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.material.enumeration.IfcDirectionSenseEnum;
 import org.sikongsphere.ifc.model.resource.material.enumeration.IfcLayerSetDirectionEnum;
+import org.sikongsphere.ifc.model.resource.material.select_type.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
 
 /**
@@ -24,7 +25,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLengthMeasure;
  * @date 2022/10/17 15:42
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcMaterialLayerSetUsage extends IfcBodyTemplate {
+public class IfcMaterialLayerSetUsage extends IfcBodyTemplate implements IfcMaterialSelect {
     private IfcMaterialLayerSet forLayerSet;
     private IfcLayerSetDirectionEnum layerSetDirection;
     private IfcDirectionSenseEnum directionSense;

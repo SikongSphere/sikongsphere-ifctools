@@ -27,12 +27,8 @@ import org.sikongsphere.ifc.model.resource.geometry.entity.IfcGeometricRepresent
 public class IfcSolidModel extends IfcGeometricRepresentationItem {
     private IfcDimensionCount dim;
 
-    public IfcSolidModel() {
-        dim = new IfcDimensionCount(new INTEGER(3));
-    }
-
     @IfcParserConstructor
-    public IfcSolidModel(IfcDimensionCount dim) {
+    public IfcSolidModel() {
         dim = new IfcDimensionCount(new INTEGER(3));
     }
 

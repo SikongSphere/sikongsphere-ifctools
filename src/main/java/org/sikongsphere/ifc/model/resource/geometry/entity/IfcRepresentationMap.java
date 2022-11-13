@@ -15,7 +15,8 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
-import org.sikongsphere.ifc.model.resource.geometry.selecttypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcRepresentation;
 
 /**
@@ -26,7 +27,9 @@ import org.sikongsphere.ifc.model.resource.representation.entity.IfcRepresentati
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentationMap extends IfcBodyTemplate {
+
     private IfcAxis2Placement mappingOrigin;
+
     private IfcRepresentation mappedRepresentation;
 
     public IfcRepresentationMap() {}
@@ -40,19 +43,19 @@ public class IfcRepresentationMap extends IfcBodyTemplate {
         this.mappedRepresentation = mappedRepresentation;
     }
 
-    public IfcAxis2Placement getMappingOrigin() {
-        return mappingOrigin;
-    }
-
-    public void setMappingOrigin(IfcAxis2Placement mappingOrigin) {
-        this.mappingOrigin = mappingOrigin;
-    }
-
     public IfcRepresentation getMappedRepresentation() {
         return mappedRepresentation;
     }
 
     public void setMappedRepresentation(IfcRepresentation mappedRepresentation) {
         this.mappedRepresentation = mappedRepresentation;
+    }
+
+    public IfcAxis2Placement getMappingOrigin() {
+        return mappingOrigin;
+    }
+
+    public void setMappingOrigin(IfcAxis2Placement mappingOrigin) {
+        this.mappingOrigin = mappingOrigin;
     }
 }

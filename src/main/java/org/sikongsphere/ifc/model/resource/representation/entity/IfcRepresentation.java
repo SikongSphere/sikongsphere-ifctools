@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcRepresentationItem;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 
@@ -26,8 +27,8 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
  * @date 2022/9/1 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRepresentation extends IfcNonLeafNode {
-    private IfcRepresentation contextContextOfItems;
+public class IfcRepresentation extends IfcBodyTemplate {
+    private IfcRepresentationContext contextContextOfItems;
     private IfcLabel representationIdentifier;
     private IfcLabel representationType;
     private SET<IfcRepresentationItem> items;
@@ -36,7 +37,7 @@ public class IfcRepresentation extends IfcNonLeafNode {
 
     @IfcParserConstructor
     public IfcRepresentation(
-        IfcRepresentation contextContextOfItems,
+        IfcRepresentationContext contextContextOfItems,
         IfcLabel representationIdentifier,
         IfcLabel representationType,
         SET<IfcRepresentationItem> items
@@ -47,11 +48,11 @@ public class IfcRepresentation extends IfcNonLeafNode {
         this.items = items;
     }
 
-    public IfcRepresentation getContextContextOfItems() {
+    public IfcRepresentationContext getContextContextOfItems() {
         return contextContextOfItems;
     }
 
-    public void setContextContextOfItems(IfcRepresentation contextContextOfItems) {
+    public void setContextContextOfItems(IfcRepresentationContext contextContextOfItems) {
         this.contextContextOfItems = contextContextOfItems;
     }
 
@@ -78,13 +79,4 @@ public class IfcRepresentation extends IfcNonLeafNode {
     public void setItems(SET<IfcRepresentationItem> items) {
         this.items = items;
     }
-    // TODO private Items : SET [1:?] OF IfcRepresentationItem;
-
-    /**
-     * TODO
-     *
-     * RepresentationMap	 : 	SET [0:1] OF IfcRepresentationMap FOR MappedRepresentation;
-     * LayerAssignments	 : 	SET OF IfcPresentationLayerAssignment FOR Assigneditems;
-     * OfProductRepresentation	 : 	SET [0:1] OF IfcProductRepresentation FOR Representations;
-     */
 }

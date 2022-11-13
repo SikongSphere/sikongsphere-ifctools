@@ -14,22 +14,24 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.basic.LOGICAL;
+import org.sikongsphere.ifc.model.basic.DOUBLE;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
 
 /**
  * @author Wang Bohong
- * @date 2022/9/1 16:09
+ * @date 2022/11/13 11:38
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcLogical extends LOGICAL implements IfcValue {
-    public IfcLogical(boolean value) {
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
+public class IfcAreaMeasure extends DOUBLE implements IfcValue {
+    public IfcAreaMeasure() {}
+
+    public IfcAreaMeasure(double value) {
         super(value);
     }
 
     @IfcParserConstructor
-    public IfcLogical(STRING value) {
+    public IfcAreaMeasure(STRING value) {
         super(value);
     }
 }

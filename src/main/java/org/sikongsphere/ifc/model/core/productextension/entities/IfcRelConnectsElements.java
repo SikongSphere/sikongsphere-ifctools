@@ -16,6 +16,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelConnects;
 import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcConnectionGeometry;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcRelConnectsElements
@@ -33,10 +37,15 @@ public class IfcRelConnectsElements extends IfcRelConnects {
 
     @IfcParserConstructor
     public IfcRelConnectsElements(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
         IfcConnectionGeometry connectionGeometry,
         IfcElement relatingElement,
         IfcElement relatedElement
     ) {
+        super(globalId, ownerHistory, name, description);
         this.connectionGeometry = connectionGeometry;
         this.relatingElement = relatingElement;
         this.relatedElement = relatedElement;

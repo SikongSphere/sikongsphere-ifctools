@@ -28,8 +28,7 @@ public class IfcManifoldSolidBrep extends IfcSolidModel {
     public IfcManifoldSolidBrep() {}
 
     @IfcParserConstructor
-    public IfcManifoldSolidBrep(IfcDimensionCount dim, IfcClosedShell outer) {
-        super(dim);
+    public IfcManifoldSolidBrep(IfcClosedShell outer) {
         this.outer = outer;
     }
 

@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.model.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcNormalisedRatioMeasure;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcColourSpecification;
 
@@ -31,11 +33,14 @@ public class IfcColourRgb extends IfcColourSpecification {
 
     public IfcColourRgb() {}
 
+    @IfcParserConstructor
     public IfcColourRgb(
+        IfcLabel name,
         IfcNormalisedRatioMeasure red,
         IfcNormalisedRatioMeasure green,
         IfcNormalisedRatioMeasure blue
     ) {
+        super(name);
         this.red = red;
         this.green = green;
         this.blue = blue;
