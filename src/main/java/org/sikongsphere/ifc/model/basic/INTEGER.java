@@ -30,4 +30,11 @@ public class INTEGER extends IfcBodyTemplate {
         this.value = new Integer(Integer.valueOf(value.value));
     }
 
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
+    }
 }
