@@ -34,4 +34,12 @@ public class NUMBER extends IfcBodyTemplate {
         }
         this.value = Double.valueOf(str);
     }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
 }
