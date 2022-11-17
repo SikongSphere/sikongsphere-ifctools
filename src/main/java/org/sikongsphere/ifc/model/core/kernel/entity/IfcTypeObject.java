@@ -44,7 +44,7 @@ public class IfcTypeObject extends IfcObjectDefinition {
     ) {
         super(globalId, ownerHistory, name, description);
         this.applicableOccurrence = applicableOccurrence;
-        hasPropertySets = hasPropertySets;
+        this.hasPropertySets = hasPropertySets;
     }
 
     public IfcLabel getApplicableOccurrence() {
