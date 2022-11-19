@@ -37,6 +37,11 @@ public class IfcDerivedUnitElement extends IfcBodyTemplate {
         this.exponent = exponent;
     }
 
+    public IfcDerivedUnitElement(IfcNamedUnit unit, Integer exponent) {
+        this.unit = unit;
+        this.exponent = new INTEGER(exponent);
+    }
+
     public IfcNamedUnit getUnit() {
         return unit;
     }

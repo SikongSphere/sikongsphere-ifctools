@@ -26,7 +26,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
  * @date 2022/10/14 17:20
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMeasureWithUnit extends IfcBodyTemplate {
+public class IfcMeasureWithUnit extends IfcBodyTemplate implements IfcUnit {
     private IfcValue valueComponent;
 
     private IfcUnit unitComponent;
