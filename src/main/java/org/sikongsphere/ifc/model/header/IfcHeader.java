@@ -22,9 +22,9 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @date 2022/09/08 13:51
  */
 public class IfcHeader extends IfcNode {
-    public IfcFileName fileName;
-    public IfcFileDescription fileDescription;
-    public IfcFileSchema fileSchema;
+    private IfcFileName fileName;
+    private IfcFileDescription fileDescription;
+    private IfcFileSchema fileSchema;
 
     /**
      * make up IFC Header according to params received.
@@ -55,6 +55,30 @@ public class IfcHeader extends IfcNode {
         }
 
         return builder.toString();
+    }
+
+    public IfcFileName getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(IfcFileName fileName) {
+        this.fileName = fileName;
+    }
+
+    public IfcFileDescription getFileDescription() {
+        return fileDescription;
+    }
+
+    public void setFileDescription(IfcFileDescription fileDescription) {
+        this.fileDescription = fileDescription;
+    }
+
+    public IfcFileSchema getFileSchema() {
+        return fileSchema;
+    }
+
+    public void setFileSchema(IfcFileSchema fileSchema) {
+        this.fileSchema = fileSchema;
     }
 
     @Override
