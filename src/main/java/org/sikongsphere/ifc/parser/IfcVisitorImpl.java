@@ -39,11 +39,11 @@ import java.util.stream.Stream;
  * @author zaiyuan
  * @date 2022-11-18 20:44:00
  */
-public class IfcJavaVisitor extends IFCBaseVisitor<IfcNode> {
+public class IfcVisitorImpl extends IFCBaseVisitor<IfcNode> {
 
     private final IfcModel ifcModel;
 
-    public IfcJavaVisitor(IfcModel ifcModel) {
+    public IfcVisitorImpl(IfcModel ifcModel) {
         this.ifcModel = ifcModel;
     }
 
@@ -78,12 +78,12 @@ public class IfcJavaVisitor extends IFCBaseVisitor<IfcNode> {
 
     @Override
     public IfcNode visitDataItem(DataItemContext ctx) {
-        IfcBodyTemplate ifcElement = (IfcBodyTemplate) visitExprFunc(ctx.exprFunc());
+        IfcBodyTemplate ifcElement = visitExprFunc(ctx.exprFunc());
         return ifcModel.elements.put(Integer.parseInt(ctx.stepNumber.getText()), ifcElement);
     }
 
     @Override
-    public IfcNode visitExprFunc(ExprFuncContext ctx) {
+    public IfcBodyTemplate visitExprFunc(ExprFuncContext ctx) {
         List<Object> list = new ArrayList<>();
         List<FuncParamContext> originArgs = ctx.exprFuncParams().funcParam();
         List<IfcNode> nodes = originArgs.stream()
@@ -91,7 +91,7 @@ public class IfcJavaVisitor extends IFCBaseVisitor<IfcNode> {
             .collect(Collectors.toList());
         nodes.forEach(i -> wrapArgs(i, list));
         Object[] args = list.toArray();
-        return IfcInstanceFactory.getIfcInstance(ctx.ident().getText(), args);
+        return (IfcBodyTemplate) IfcInstanceFactory.getIfcInstance(ctx.ident().getText(), args);
     }
 
     public void wrapArgs(IfcNode node, List<Object> list) {

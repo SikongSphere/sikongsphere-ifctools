@@ -60,6 +60,6 @@ public class IfcTypeObject extends IfcObjectDefinition {
     }
 
     public void setHasPropertySets(SET<IfcPropertySetDefinition> hasPropertySets) {
-        hasPropertySets = hasPropertySets;
+        this.hasPropertySets = hasPropertySets;
     }
 }

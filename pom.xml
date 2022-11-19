@@ -15,10 +15,6 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <junit.version>4.12</junit.version>
-        <scala.version>2.12.7</scala.version>
-        <scalafmt.version>2.0.1</scalafmt.version>
-        <scala-plugin.version>2.9.1</scala-plugin.version>
-        <scala-maven-plugin.version>4.0.1</scala-maven-plugin.version>
         <snakeyaml.version>1.29</snakeyaml.version>
         <spotless-maven-plugin.version>2.22.5</spotless-maven-plugin.version>
         <maven-surefire.version>2.5</maven-surefire.version>
@@ -36,21 +32,6 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-compiler</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-reflect</artifactId>
-            <version>${scala.version}</version>
         </dependency>
         <dependency>
             <groupId>org.reflections</groupId>
@@ -72,33 +53,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>${scala-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>compile-scala</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>scala-compile-first</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <scalaVersion>${scala.version}</scalaVersion>
-                    <scalaCompatVersion>${scala.version}</scalaCompatVersion>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
                 <version>${spotless-maven-plugin.version}</version>
@@ -111,31 +65,7 @@
                             <file>/conventions/license-header</file>
                         </licenseHeader>
                     </java>
-                    <scala>
-                        <scalafmt>
-                            <version>${scalafmt.version}</version>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <file>conventions/.scalafmt.conf</file>
-                        </scalafmt>
-                        <licenseHeader>
-                            <!--suppress UnresolvedMavenProperty -->
-                            <file>conventions/license-header</file>
-                        </licenseHeader>
-                    </scala>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.scala-tools</groupId>
-                <artifactId>maven-scala-plugin</artifactId>
-                <version>${scala-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
