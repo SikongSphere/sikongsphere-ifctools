@@ -34,6 +34,10 @@ public class IfcDimensionCount extends IfcBodyTemplate {
         this.dimensionCount = dimensionCount;
     }
 
+    public IfcDimensionCount(Integer dimensionCount) {
+        this.dimensionCount = new INTEGER(dimensionCount);
+    }
+
     public IfcDimensionCount(STRING dimensionCount) {
         this.dimensionCount = new INTEGER(Integer.valueOf(dimensionCount.value));
     }

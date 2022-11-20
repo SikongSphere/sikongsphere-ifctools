@@ -107,4 +107,5 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     // public void setHasSubContexts(SET<IfcGeometricRepresentationSubContext> hasSubContexts) {
     // this.hasSubContexts = hasSubContexts;
     // }
+
 }
