@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -29,7 +30,9 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public abstract class IfcObject extends IfcObjectDefinition {
     private IfcLabel objectType;
-    // toDO inverse
+
+    @IfcInverseParameter
+    private SET<IfcRelDefines> isDefinedBy;
     // private SET<IfcRelDefines> isDefinedBy;
 
     public IfcObject() {}

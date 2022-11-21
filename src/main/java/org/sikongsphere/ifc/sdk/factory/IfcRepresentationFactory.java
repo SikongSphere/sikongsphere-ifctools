@@ -84,53 +84,53 @@ public class IfcRepresentationFactory extends AbstractFactory<IfcRepresentation>
         );
     }
 
-    // public IfcGeometricRepresentationContext createGeometricRepresentationContext() {
-    // IfcGeometricRepresentationContext context = new IfcGeometricRepresentationContext();
-    // IfcDimensionCount dimensionCount = new IfcDimensionCount(3);
-    // STRING precision = new STRING("0.01");
-    // IfcAxis2Placement3D worldCoordinateSystem = createDefaultWorldCoordinateSystem();
-    // IfcDirection trueNorthDirection = createDefaultTrueNorthDirection();
-    // SET<IfcGeometricRepresentationSubContext> subContextSet = new SET<>();
-    // subContextSet.add(
-    // createGeometricRepresentationSubContext(
-    // context,
-    // "Body",
-    // "Model",
-    // IfcGeometricProjectionEnum.MODEL_VIEW
-    // )
-    // );
-    // subContextSet.add(
-    // createGeometricRepresentationSubContext(
-    // context,
-    // "Axis",
-    // "Model",
-    // IfcGeometricProjectionEnum.GRAPH_VIEW
-    // )
-    // );
-    // subContextSet.add(
-    // createGeometricRepresentationSubContext(
-    // context,
-    // "Box",
-    // "Model",
-    // IfcGeometricProjectionEnum.MODEL_VIEW
-    // )
-    // );
-    // subContextSet.add(
-    // createGeometricRepresentationSubContext(
-    // context,
-    // "FootPrint",
-    // "Model",
-    // IfcGeometricProjectionEnum.MODEL_VIEW
-    // )
-    // );
-    // IfcLabel contextType = new IfcLabel("Model");
-    //
-    // context.setCoordinateSpaceDimension(dimensionCount);
-    // context.setPrecision(precision);
-    // context.setWorldCoordinateSystem(worldCoordinateSystem);
-    // context.setTrueNorth(trueNorthDirection);
-    // context.setHasSubContexts(subContextSet);
-    // context.setContextType(contextType);
-    // return context;
-    // }
+    public IfcGeometricRepresentationContext createGeometricRepresentationContext() {
+        IfcGeometricRepresentationContext context = new IfcGeometricRepresentationContext();
+        IfcDimensionCount dimensionCount = new IfcDimensionCount(3);
+        STRING precision = new STRING("0.01");
+        IfcAxis2Placement3D worldCoordinateSystem = createDefaultWorldCoordinateSystem();
+        IfcDirection trueNorthDirection = createDefaultTrueNorthDirection();
+        SET<IfcGeometricRepresentationSubContext> subContextSet = new SET<>();
+        subContextSet.add(
+            createGeometricRepresentationSubContext(
+                context,
+                "Body",
+                "Model",
+                IfcGeometricProjectionEnum.MODEL_VIEW
+            )
+        );
+        subContextSet.add(
+            createGeometricRepresentationSubContext(
+                context,
+                "Axis",
+                "Model",
+                IfcGeometricProjectionEnum.GRAPH_VIEW
+            )
+        );
+        subContextSet.add(
+            createGeometricRepresentationSubContext(
+                context,
+                "Box",
+                "Model",
+                IfcGeometricProjectionEnum.MODEL_VIEW
+            )
+        );
+        subContextSet.add(
+            createGeometricRepresentationSubContext(
+                context,
+                "FootPrint",
+                "Model",
+                IfcGeometricProjectionEnum.MODEL_VIEW
+            )
+        );
+        IfcLabel contextType = new IfcLabel("Model");
+
+        context.setCoordinateSpaceDimension(dimensionCount);
+        context.setPrecision(precision);
+        context.setWorldCoordinateSystem(worldCoordinateSystem);
+        context.setTrueNorth(trueNorthDirection);
+        context.setHasSubContexts(subContextSet);
+        context.setContextType(contextType);
+        return context;
+    }
 }

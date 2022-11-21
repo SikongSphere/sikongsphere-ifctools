@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -35,8 +36,8 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     private IfcAxis2Placement worldCoordinateSystem;
     private IfcDirection trueNorth;
 
-    // ToDO 反转属性先不写
-    // private SET<IfcGeometricRepresentationSubContext> hasSubContexts;
+    @IfcInverseParameter
+    private SET<IfcGeometricRepresentationSubContext> hasSubContexts;
 
     public IfcGeometricRepresentationContext() {}
 
@@ -100,12 +101,12 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.trueNorth = trueNorth;
     }
 
-    // public SET<IfcGeometricRepresentationSubContext> getHasSubContexts() {
-    // return hasSubContexts;
-    // }
-    //
-    // public void setHasSubContexts(SET<IfcGeometricRepresentationSubContext> hasSubContexts) {
-    // this.hasSubContexts = hasSubContexts;
-    // }
+    public SET<IfcGeometricRepresentationSubContext> getHasSubContexts() {
+        return hasSubContexts;
+    }
+
+    public void setHasSubContexts(SET<IfcGeometricRepresentationSubContext> hasSubContexts) {
+        this.hasSubContexts = hasSubContexts;
+    }
 
 }

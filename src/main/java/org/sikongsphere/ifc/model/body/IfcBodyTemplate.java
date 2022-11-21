@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.body;
 
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.LIST;
@@ -68,6 +69,11 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
         for (int i = 0; i < fields.length; i++) {
             Field field = fields[i];
             field.setAccessible(true);
+
+            // Inverse Parameter does not need to output to ifc file
+            if (field.isAnnotationPresent(IfcInverseParameter.class)) {
+                continue;
+            }
 
             if (!Modifier.isStatic(field.getModifiers())
                 && !Modifier.isPublic(field.getModifiers())) {
