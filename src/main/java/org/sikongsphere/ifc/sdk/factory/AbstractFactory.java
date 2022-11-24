@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
+import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcApplication;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
@@ -27,6 +28,7 @@ import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcStateEnum;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -36,6 +38,10 @@ import java.util.stream.Collectors;
  * @date 2022/11/11 19:52
  */
 public abstract class AbstractFactory<T> implements IFactory<T> {
+
+    protected IfcGloballyUniqueId createUniqueId() {
+        return new IfcGloballyUniqueId(UUID.randomUUID().toString());
+    }
 
     protected IfcOwnerHistory getOwnerHistory(Application application) {
         Person person = application.getPerson();

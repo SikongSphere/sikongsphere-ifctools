@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
@@ -25,6 +27,12 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcPropertySetDefinition extends IfcPropertyDefinition {
+
+    @IfcInverseParameter
+    private SET<IfcRelDefinesByProperties> propertyDefinitionOf = new SET<>();
+    @IfcInverseParameter
+    private SET<IfcTypeObject> definesType = new SET<>();
+
     public IfcPropertySetDefinition() {}
 
     @IfcParserConstructor
@@ -35,5 +43,13 @@ public class IfcPropertySetDefinition extends IfcPropertyDefinition {
         IfcText description
     ) {
         super(globalId, ownerHistory, name, description);
+    }
+
+    public void addPropertyDefinitionOf(IfcRelDefinesByProperties properties) {
+        propertyDefinitionOf.add(properties);
+    }
+
+    public void addDefinesType(IfcTypeObject typeObject) {
+        definesType.add(typeObject);
     }
 }

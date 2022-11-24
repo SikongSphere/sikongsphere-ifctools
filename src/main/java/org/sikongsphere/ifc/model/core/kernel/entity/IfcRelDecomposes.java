@@ -29,7 +29,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public abstract class IfcRelDecomposes extends IfcRelationship {
     private IfcObjectDefinition relatingObject;
-    private SET<IfcObjectDefinition> relatedObjects;
+    private SET<IfcObjectDefinition> relatedObjects = new SET<>();
 
     public IfcRelDecomposes() {}
 
@@ -45,5 +45,13 @@ public abstract class IfcRelDecomposes extends IfcRelationship {
         super(globalId, ownerHistory, name, description);
         this.relatingObject = relatingObject;
         this.relatedObjects = relatedObjects;
+    }
+
+    public void addRelatedObject(IfcObjectDefinition object) {
+        relatedObjects.add(object);
+    }
+
+    public void addRelatedObjects(SET<IfcObjectDefinition> objects) {
+        objects.getObjects().forEach(relatedObjects::add);
     }
 }
