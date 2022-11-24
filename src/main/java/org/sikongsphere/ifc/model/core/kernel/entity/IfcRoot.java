@@ -71,11 +71,19 @@ public abstract class IfcRoot extends IfcBodyTemplate {
         this.name = name;
     }
 
+    public void setName(String name) {
+        this.name = new IfcLabel(name);
+    }
+
     public IfcText getDescription() {
         return description;
     }
 
     public void setDescription(IfcText description) {
         this.description = description;
+    }
+
+    public void setDescription(String description) {
+        this.description = new IfcText(description);
     }
 }

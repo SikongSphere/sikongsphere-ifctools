@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
  * @author Wang Bohong
  * @date 2022/11/12 20:13
  */
-@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
+@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE, isStepElement = false)
 public class IfcBoolean extends BOOLEAN implements IfcValue {
     public IfcBoolean() {}
 

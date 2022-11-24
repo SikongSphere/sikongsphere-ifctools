@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @author zaiyuan
  * @date 2022-08-28 18:30:00
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcText extends STRING {
     /**
      * Construction Function

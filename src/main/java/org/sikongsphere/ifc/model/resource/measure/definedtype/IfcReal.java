@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @author stan
  * @date 2022/09/02 22:35
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcReal {
     // TODO
 }

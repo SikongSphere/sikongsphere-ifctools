@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
  * @author Wang Bohong
  * @date 2022/11/9 13:27
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY, isStepElement = false)
 public class IfcInteger extends INTEGER implements IfcValue {
 
     public IfcInteger(Integer value) {
