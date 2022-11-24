@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.sdk.factory;
 
+import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcInteger;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLogical;
@@ -30,11 +31,11 @@ public class IfcPropertyFactory extends AbstractFactory<IfcProperty> {
         return null;
     }
 
-    public IfcPropertySingleValue createSingleValueProperty(boolean value, String name) {
+    public IfcPropertySingleValue createSingleValueProperty(String value, String name) {
         return new IfcPropertySingleValue(
             new IfcIdentifier(name),
             null,
-            new IfcLogical(value),
+            new IfcLogical(new STRING(value)),
             null
         );
     }

@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -28,11 +29,14 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public abstract class IfcObjectDefinition extends IfcRoot {
-    // inverse: 后续需要思考怎么处理
-    // private SET<IfcRelAssigns> hasAssignments;
-    // private SET<IfcRelDecomposes> isDecomposedBy;
-    // private SET<IfcRelDecomposes> decomposes;
-    // private SET<IfcRelAssociates> hasAssociations;
+    @IfcInverseParameter
+    private SET<IfcRelAssigns> hasAssignments = new SET<>();
+    @IfcInverseParameter
+    private SET<IfcRelDecomposes> isDecomposedBy = new SET<>();
+    @IfcInverseParameter
+    private SET<IfcRelDecomposes> decomposes = new SET<>();
+    @IfcInverseParameter
+    private SET<IfcRelAssociates> hasAssociations = new SET<>();
 
     public IfcObjectDefinition() {}
 
@@ -44,5 +48,45 @@ public abstract class IfcObjectDefinition extends IfcRoot {
         IfcText description
     ) {
         super(globalId, ownerHistory, name, description);
+    }
+
+    public SET<IfcRelAssigns> getHasAssignments() {
+        return hasAssignments;
+    }
+
+    public void setHasAssignments(SET<IfcRelAssigns> hasAssignments) {
+        this.hasAssignments = hasAssignments;
+    }
+
+    public SET<IfcRelDecomposes> getIsDecomposedBy() {
+        return isDecomposedBy;
+    }
+
+    public void setIsDecomposedBy(SET<IfcRelDecomposes> isDecomposedBy) {
+        this.isDecomposedBy = isDecomposedBy;
+    }
+
+    public void addIsDecomposedBy(IfcRelDecomposes isDecomposedBy) {
+        this.isDecomposedBy.add(isDecomposedBy);
+    }
+
+    public SET<IfcRelDecomposes> getDecomposes() {
+        return decomposes;
+    }
+
+    public void setDecomposes(SET<IfcRelDecomposes> decomposes) {
+        this.decomposes = decomposes;
+    }
+
+    public void addDecompose(IfcRelDecomposes decompose) {
+        decomposes.add(decompose);
+    }
+
+    public SET<IfcRelAssociates> getHasAssociations() {
+        return hasAssociations;
+    }
+
+    public void setHasAssociations(SET<IfcRelAssociates> hasAssociations) {
+        this.hasAssociations = hasAssociations;
     }
 }

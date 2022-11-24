@@ -56,4 +56,16 @@ public abstract class IfcObject extends IfcObjectDefinition {
     public void setObjectType(IfcLabel objectType) {
         this.objectType = objectType;
     }
+
+    public SET<IfcRelDefines> getIsDefinedBy() {
+        return isDefinedBy;
+    }
+
+    public void setIsDefinedBy(SET<IfcRelDefines> isDefinedBy) {
+        this.isDefinedBy = isDefinedBy;
+    }
+
+    public void addIsDefinedBy(IfcRelDefines subProperty) {
+        isDefinedBy.add(subProperty);
+    }
 }

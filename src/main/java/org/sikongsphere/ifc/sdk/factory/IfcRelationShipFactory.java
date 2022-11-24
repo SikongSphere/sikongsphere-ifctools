@@ -47,7 +47,8 @@ public class IfcRelationShipFactory extends AbstractFactory<IfcRelationship> {
         IfcObjectDefinition relatedObject
     ) {
         SET<IfcObjectDefinition> relatedObjectSet = new SET<>();
-        return new IfcRelAggregates(
+        relatedObjectSet.add(relatedObject);
+        IfcRelAggregates relAggregates = new IfcRelAggregates(
             createUniqueId(),
             getOwnerHistory(ConfigProvider.getApplication()),
             null,
@@ -55,6 +56,8 @@ public class IfcRelationShipFactory extends AbstractFactory<IfcRelationship> {
             relatingObject,
             relatedObjectSet
         );
+        relatedObject.addDecompose(relAggregates);
+        return relAggregates;
     }
 
     public IfcRelAggregates createRelAggregates(

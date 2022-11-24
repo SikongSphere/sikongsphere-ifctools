@@ -28,7 +28,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcPropertySet extends IfcPropertySetDefinition {
-    private SET<IfcProperty> hasProperties;
+    private SET<IfcProperty> hasProperties = new SET<>();
 
     public IfcPropertySet() {}
 
@@ -50,5 +50,9 @@ public class IfcPropertySet extends IfcPropertySetDefinition {
 
     public void setHasProperties(SET<IfcProperty> hasProperties) {
         this.hasProperties = hasProperties;
+    }
+
+    public void addProperty(IfcProperty property) {
+        hasProperties.add(property);
     }
 }

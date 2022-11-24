@@ -10,12 +10,15 @@
 */
 package org.sikongsphere.ifc.sdk.factory;
 
+import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.model.IfcRoot;
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProject;
+import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelAggregates;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcBuilding;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcBuildingStorey;
 import org.sikongsphere.ifc.model.core.productextension.entities.IfcSite;
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcPostalAddress;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**
@@ -36,7 +39,36 @@ public class IfcProjectFactory extends AbstractFactory<IfcRoot> {
     }
 
     public IfcProject createProject() {
-        return new IfcProject();
+        IfcProject ifcProject = new IfcProject();
+
+        return ifcProject;
+    }
+
+    public IfcProject createArchitectTemplateProject(String longName, String phase) {
+        IfcProject ifcProject = new IfcProject();
+
+        ifcProject.setLongName(new IfcLabel(longName));
+        ifcProject.setPhase(new IfcLabel(phase));
+
+        IfcUnitFactory unitFactory = new IfcUnitFactory();
+        ifcProject.setUnitsInContext(unitFactory.createIfcUnitAssignment());
+
+        IfcRepresentationFactory representationFactory = new IfcRepresentationFactory();
+        ifcProject.addRepresentationContext(
+            representationFactory.createGeometricRepresentationContext()
+        );
+
+        IfcSiteFactory siteFactory = new IfcSiteFactory();
+        IfcSite site = siteFactory.createSite();
+
+        IfcRelationShipFactory relationShipFactory = new IfcRelationShipFactory();
+        IfcRelAggregates relAggregates = relationShipFactory.createRelAggregates(ifcProject, site);
+        ifcProject.addIsDecomposedBy(relAggregates);
+
+        ifcProject.setGlobalId(createUniqueId());
+        ifcProject.setOwnerHistory(getOwnerHistory(ConfigProvider.getApplication()));
+
+        return ifcProject;
     }
 
     public IfcSite createSite() {
