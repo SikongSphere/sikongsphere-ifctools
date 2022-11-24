@@ -32,8 +32,7 @@ public abstract class IfcObject extends IfcObjectDefinition {
     private IfcLabel objectType;
 
     @IfcInverseParameter
-    private SET<IfcRelDefines> isDefinedBy;
-    // private SET<IfcRelDefines> isDefinedBy;
+    private SET<IfcRelDefines> isDefinedBy = new SET<>();
 
     public IfcObject() {}
 

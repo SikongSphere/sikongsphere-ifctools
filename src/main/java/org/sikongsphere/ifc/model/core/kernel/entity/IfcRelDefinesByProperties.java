@@ -47,7 +47,7 @@ public class IfcRelDefinesByProperties extends IfcRelDefines {
         IfcObject relatedObject,
         IfcPropertySetDefinition relatingPropertyDefinition
     ) {
-        super(globalId, ownerHistory, name, description, null);
+        super(globalId, ownerHistory, name, description, new SET<>());
         relatedObjects.add(relatedObject);
 
         this.relatingPropertyDefinition = relatingPropertyDefinition;
