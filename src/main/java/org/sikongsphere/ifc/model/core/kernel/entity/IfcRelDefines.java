@@ -28,7 +28,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcRelDefines extends IfcRelationship {
-    private SET<IfcObject> relatedObjects;
+    protected SET<IfcObject> relatedObjects = new SET<>();
 
     public IfcRelDefines() {}
 

@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.model.basic.STRING;
  * @author Wang Bohong
  * @date 2022/8/31 21:15
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcTimeStamp {
 
     private Long timestamp;

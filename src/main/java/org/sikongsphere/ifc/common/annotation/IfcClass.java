@@ -28,4 +28,6 @@ public @interface IfcClass {
     IfcLayer layer();
 
     IfcType type();
+
+    boolean isStepElement() default true;
 }

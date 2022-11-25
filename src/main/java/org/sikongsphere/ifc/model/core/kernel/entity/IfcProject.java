@@ -36,7 +36,7 @@ import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 public class IfcProject extends IfcObject {
     private IfcLabel longName;
     private IfcLabel phase;
-    private SET<IfcRepresentationContext> representationContexts;
+    private SET<IfcRepresentationContext> representationContexts = new SET<>();
     private IfcUnitAssignment unitsInContext;
 
     public IfcProject() {}
@@ -94,6 +94,10 @@ public class IfcProject extends IfcObject {
 
     public void setRepresentationContexts(SET<IfcRepresentationContext> representationContexts) {
         this.representationContexts = representationContexts;
+    }
+
+    public void addRepresentationContext(IfcRepresentationContext representationContext) {
+        representationContexts.add(representationContext);
     }
 
     public IfcUnitAssignment getUnitsInContext() {

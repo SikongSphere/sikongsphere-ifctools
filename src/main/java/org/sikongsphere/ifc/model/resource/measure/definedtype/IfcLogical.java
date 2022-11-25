@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcValue;
  * @author Wang Bohong
  * @date 2022/9/1 16:09
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcLogical extends LOGICAL implements IfcValue {
     public IfcLogical(boolean value) {
         super(value);
