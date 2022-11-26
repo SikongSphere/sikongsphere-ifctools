@@ -24,7 +24,7 @@ import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
  * @author stan
  * @date 2022/09/02 00:00
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcDimensionCount extends IfcBodyTemplate {
     private INTEGER dimensionCount;
 

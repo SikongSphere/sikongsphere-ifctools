@@ -12,14 +12,20 @@ package org.sikongsphere.ifc.sdk;
 
 import org.sikongsphere.ifc.model.core.kernel.entity.IfcProject;
 import org.sikongsphere.ifc.sdk.factory.IfcProjectFactory;
+import org.sikongsphere.ifc.sdk.handler.StepHandler;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class DefaultElementDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException,
+        IllegalAccessException {
         IfcProjectFactory projectFactory = new IfcProjectFactory();
         IfcProject project = projectFactory.createArchitectTemplateProject(
             "small building",
             "design"
         );
+        StepHandler handler = new StepHandler();
+        handler.handle(project);
         System.out.println();
     }
 }
