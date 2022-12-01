@@ -13,7 +13,9 @@ package org.sikongsphere.ifc.model;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.header.IfcHeader;
+import org.sikongsphere.ifc.sdk.handler.StepHandler;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 

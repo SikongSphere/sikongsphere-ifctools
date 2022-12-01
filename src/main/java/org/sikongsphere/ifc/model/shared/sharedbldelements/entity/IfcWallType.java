@@ -35,6 +35,14 @@ public class IfcWallType extends IfcBuildingElementType {
 
     public IfcWallType() {}
 
+    public IfcWallTypeEnum getPredefinedType() {
+        return predefinedType;
+    }
+
+    public void setPredefinedType(IfcWallTypeEnum predefinedType) {
+        this.predefinedType = predefinedType;
+    }
+
     @IfcParserConstructor
     public IfcWallType(
         IfcGloballyUniqueId globalId,

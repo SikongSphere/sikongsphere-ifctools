@@ -27,6 +27,10 @@ import org.sikongsphere.ifc.model.basic.STRING;
 public class IfcCompoundPlaneAngleMeasure {
     private LIST<INTEGER> value;
 
+    public LIST<INTEGER> getValue() {
+        return value;
+    }
+
     public IfcCompoundPlaneAngleMeasure() {}
 
     // public IfcCompoundPlaneAngleMeasure(LIST<INTEGER> value) {

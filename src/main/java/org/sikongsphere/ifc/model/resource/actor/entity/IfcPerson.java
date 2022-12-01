@@ -112,4 +112,20 @@ public class IfcPerson extends IfcBodyTemplate {
     public void setSuffixTitles(LIST<IfcLabel> suffixTitles) {
         this.suffixTitles = suffixTitles;
     }
+
+    public LIST<IfcActorRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(LIST<IfcActorRole> roles) {
+        this.roles = roles;
+    }
+
+    public LIST<IfcAddress> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(LIST<IfcAddress> addresses) {
+        this.addresses = addresses;
+    }
 }

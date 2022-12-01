@@ -10,15 +10,25 @@
 */
 package org.sikongsphere.ifc.model.body;
 
-import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.INTEGER;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.basic.STRING;
 import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
+import org.sikongsphere.ifc.model.resource.geometry.entity.IfcCartesianPoint;
+import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
+import org.sikongsphere.ifc.model.resource.geometry.entity.IfcPolyline;
+import org.sikongsphere.ifc.model.resource.material.entity.IfcMaterial;
+import org.sikongsphere.ifc.model.resource.material.entity.IfcMaterialLayer;
+import org.sikongsphere.ifc.model.resource.material.entity.IfcMaterialLayerSet;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcCompoundPlaneAngleMeasure;
+import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveRatioMeasure;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
 import org.sikongsphere.ifc.model.resource.measure.entity.IfcDimensionalExponents;
+import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -61,103 +71,13 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
      */
     public String toString(IfcBodyTemplate value, Integer stepNumber)
         throws IllegalAccessException {
-        ArrayList<Object> list = new ArrayList<>();
+
         Field[] fields = getAllFields(value);
 
-        value.stepNumber = stepNumber;
+        IfcBodyValidateUtils validateUtils = new IfcBodyValidateUtils(value, stepNumber);
+        validateUtils.validateTypeToString(fields);
 
-        for (int i = 0; i < fields.length; i++) {
-            Field field = fields[i];
-            field.setAccessible(true);
-
-            // Inverse Parameter does not need to output to ifc file
-            if (field.isAnnotationPresent(IfcInverseParameter.class)) {
-                continue;
-            }
-
-            if (!Modifier.isStatic(field.getModifiers())
-                && !Modifier.isPublic(field.getModifiers())) {
-
-                if (field.get(value) == null) {
-                    list.add(StringConstant.DOLLAR);
-
-                } else if (Boolean.class.equals(field.get(value).getClass())) {
-                    continue;
-
-                } else if (STRING.class.isAssignableFrom(field.get(value).getClass())) {
-                    STRING o = (STRING) field.get(value);
-                    list.add(o.value);
-
-                } else if (Enum.class.isAssignableFrom(field.get(value).getClass())) {
-                    Enum o = (Enum) field.get(value);
-                    list.add(StringConstant.DOT + o.name() + StringConstant.DOT);
-
-                } else if (IfcTimeStamp.class.equals(field.get(value).getClass())) {
-                    IfcTimeStamp o = (IfcTimeStamp) field.get(value);
-                    list.add(o.getTimestamp());
-
-                } else if (LIST.class.isAssignableFrom(field.get(value).getClass())) {
-                    LIST listElements = (LIST) field.get(value);
-
-                    ArrayList<String> tempList = new ArrayList<>();
-
-                    for (int j = 0; j < listElements.size(); j++) {
-                        STRING element = (STRING) listElements.get(j);
-                        tempList.add(element.value);
-                    }
-                    String replacedTuple = String.valueOf(tempList)
-                        .replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
-                        .replace(
-                            StringConstant.RIGHT_SQUARE_BRACKETS,
-                            StringConstant.RIGHT_BRACKETS
-                        );
-
-                    list.add(replacedTuple);
-
-                } else if (SET.class.equals(field.get(value).getClass())) {
-                    SET o = ((SET) field.get(value));
-                    Iterator iterator = o.getObjects().iterator();
-
-                    ArrayList<Integer> temp = new ArrayList<>();
-
-                    while (iterator.hasNext()) {
-                        IfcBodyTemplate next = (IfcBodyTemplate) iterator.next();
-                        temp.add(next.stepNumber);
-                    }
-
-                    temp.sort((x1, x2) -> x1 - x2);
-
-                    ArrayList<String> strings = new ArrayList<>();
-                    temp.forEach(x -> strings.add(StringConstant.WELL + x));
-                    list.add(
-                        String.valueOf(strings)
-                            .replace(
-                                StringConstant.LEFT_SQUARE_BRACKETS,
-                                StringConstant.LEFT_BRACKETS
-                            )
-                            .replace(
-                                StringConstant.RIGHT_SQUARE_BRACKETS,
-                                StringConstant.RIGHT_BRACKETS
-                            )
-                    );
-
-                } else if (IfcDimensionCount.class.equals(field.get(value).getClass())) {
-                    IfcDimensionCount o = (IfcDimensionCount) field.get(value);
-                    list.add(o.getDimensionCount().value);
-
-                } else if (IfcDimensionalExponents.class.equals(field.get(value).getClass())) {
-                    IfcDimensionalExponents o = (IfcDimensionalExponents) field.get(value);
-                    if (o.isDefault()) {
-                        list.add(StringConstant.ASTERISK);
-                    }
-                } else {
-                    IfcBodyTemplate o = (IfcBodyTemplate) field.get(value);
-                    list.add(StringConstant.WELL + o.stepNumber);
-                }
-            }
-        }
-
-        String strList = String.valueOf(list);
+        String strList = String.valueOf(validateUtils.getList());
         String substring = strList.substring(1, strList.length() - 1);
 
         StringBuilder builder = new StringBuilder();

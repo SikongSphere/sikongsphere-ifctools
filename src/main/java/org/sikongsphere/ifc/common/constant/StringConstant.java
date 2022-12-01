@@ -44,4 +44,13 @@ public class StringConstant {
     public static final String BODY_TAG = "DATA";
     public static final String BEGIN_ISO = "ISO-10303-21";
     public static final String INVERSE_TAG = "SET";
+
+    /**
+     * IFC Elements
+     */
+
+    public static final String IFCRATIOMEASURE = "IFCRATIOMEASURE";
+    public static final String IFCBOOLEAN = "IFCBOOLEAN";
+    public static final String TRUE = "T";
+    public static final String FALSE = "F";
 }

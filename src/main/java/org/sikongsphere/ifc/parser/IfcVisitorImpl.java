@@ -79,6 +79,7 @@ public class IfcVisitorImpl extends IFCBaseVisitor<IfcNode> {
     @Override
     public IfcNode visitDataItem(DataItemContext ctx) {
         IfcBodyTemplate ifcElement = visitExprFunc(ctx.exprFunc());
+        ifcElement.stepNumber = Integer.parseInt(ctx.stepNumber.getText());
         return ifcModel.elements.put(Integer.parseInt(ctx.stepNumber.getText()), ifcElement);
     }
 

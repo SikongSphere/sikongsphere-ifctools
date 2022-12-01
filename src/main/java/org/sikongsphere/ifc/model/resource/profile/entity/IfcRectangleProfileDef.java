@@ -43,19 +43,19 @@ public class IfcRectangleProfileDef extends IfcParameterizedProfileDef {
         this.yDim = yDim;
     }
 
-    public IfcPositiveLengthMeasure getxDim() {
+    public IfcPositiveLengthMeasure getXDim() {
         return xDim;
     }
 
-    public void setxDim(IfcPositiveLengthMeasure xDim) {
+    public void setXDim(IfcPositiveLengthMeasure xDim) {
         this.xDim = xDim;
     }
 
-    public IfcPositiveLengthMeasure getyDim() {
+    public IfcPositiveLengthMeasure getYDim() {
         return yDim;
     }
 
-    public void setyDim(IfcPositiveLengthMeasure yDim) {
+    public void setYDim(IfcPositiveLengthMeasure yDim) {
         this.yDim = yDim;
     }
 }

@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.basic.STRING;
@@ -71,7 +72,7 @@ public class IfcContainerTest {
     /**
      * get the class which constructors contain list by reflection
      */
-    @Test
+    @Ignore
     public void testList() {
         String a = "(0.0,0.0,0.0)";
         STRING str = new STRING(a);

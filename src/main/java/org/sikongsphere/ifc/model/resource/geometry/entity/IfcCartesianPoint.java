@@ -35,8 +35,8 @@ public class IfcCartesianPoint extends IfcPoint {
     /**
      * Record generics in a class
      */
-    @IfcGenericType
-    public final static Object[][] CLASSES = { { "coordinates", IfcLengthMeasure.class } };
+    // @IfcGenericType
+    // public final static Object[][] CLASSES = { { "coordinates", IfcLengthMeasure.class } };
 
     public IfcCartesianPoint() {}
 
