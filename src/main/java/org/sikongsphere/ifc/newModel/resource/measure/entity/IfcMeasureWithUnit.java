@@ -1,0 +1,62 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
+package org.sikongsphere.ifc.newModel.resource.measure.entity;
+
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.body.IfcBodyTemplate;
+import org.sikongsphere.ifc.newModel.resource.measure.definedtype.IfcRatioMeasure;
+import org.sikongsphere.ifc.newModel.resource.measure.enumeration.IfcSIPrefix;
+import org.sikongsphere.ifc.newModel.resource.measure.enumeration.IfcSIUnitName;
+import org.sikongsphere.ifc.newModel.resource.measure.selecttypes.IfcUnit;
+import org.sikongsphere.ifc.newModel.resource.measure.selecttypes.IfcValue;
+
+/**
+ * @author Gao Su
+ * @date 2022/10/14 17:20
+ */
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcMeasureWithUnit extends IfcBodyTemplate implements IfcUnit {
+    private IfcValue valueComponent;
+
+    private IfcUnit unitComponent;
+
+    public IfcMeasureWithUnit() {}
+
+    @IfcParserConstructor
+    public IfcMeasureWithUnit(IfcValue valueComponent, IfcUnit unitComponent) {
+        this.valueComponent = valueComponent;
+        this.unitComponent = unitComponent;
+    }
+
+    public IfcMeasureWithUnit(Double value, IfcSIPrefix unitPrefix, IfcSIUnitName unitName) {
+        this.valueComponent = new IfcRatioMeasure(value);
+        this.unitComponent = new IfcSIUnit(unitPrefix, unitName);
+    }
+
+    public IfcValue getValueComponent() {
+        return valueComponent;
+    }
+
+    public void setValueComponent(IfcValue valueComponent) {
+        this.valueComponent = valueComponent;
+    }
+
+    public IfcUnit getUnitComponent() {
+        return unitComponent;
+    }
+
+    public void setUnitComponent(IfcUnit unitComponent) {
+        this.unitComponent = unitComponent;
+    }
+}
