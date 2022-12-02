@@ -27,7 +27,6 @@ import java.io.*;
  * @author stan
  * @date 2022/09/07 22:26
  */
-@Ignore
 public class IfcStepReadWriteTest {
     private final static String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
@@ -35,7 +34,7 @@ public class IfcStepReadWriteTest {
     /**
      * Test whether both of them are as the same.
      */
-    @Ignore
+    @Test
     public void blankFile() throws IOException {
         IfcModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
         IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);

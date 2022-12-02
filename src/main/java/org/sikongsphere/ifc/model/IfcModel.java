@@ -38,11 +38,11 @@ public class IfcModel extends IfcNode {
     private StringBuilder mkDataBody() {
         StringBuilder builder = new StringBuilder();
 
-        elements.forEach((key, value) -> {
+        this.elements.forEach((key, value) -> {
 
             String s = null;
             try {
-                s = value.toString(value, key);
+                s = value.toString(value);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -50,6 +50,7 @@ public class IfcModel extends IfcNode {
         });
         builder.append(StringConstant.END_TAG).append(StringConstant.COLON);
         builder.append(StringConstant.BLANK_ROW);
+
         return builder;
     }
 
