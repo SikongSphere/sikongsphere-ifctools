@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.resource.utility.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
@@ -19,6 +20,9 @@ import org.sikongsphere.ifc.model.resource.actor.entity.IfcPersonAndOrganization
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
 import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcStateEnum;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * This class defines all history and identification related information.
@@ -141,5 +145,23 @@ public class IfcOwnerHistory extends IfcBodyTemplate {
 
     public void setCreationDate(IfcTimeStamp creationDate) {
         this.creationDate = creationDate;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format("#%s=%s(#%s,#%s,%s,.%s.,%s,%s,%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                this.owningUser.stepNumber,
+                this.owningApplication.stepNumber,
+                Optional.ofNullable(this.state).map(x -> this.state).orElse(IfcStateEnum.$),
+                Optional.ofNullable(this.changeAction).map(x -> this.changeAction).orElse(IfcChangeActionEnum.$),
+                Optional.ofNullable(this.lastModifiedDate).map(x -> this.lastModifiedDate.toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(this.lastModifyingUser).map(x -> this.lastModifyingUser.toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(this.lastModifyingApplication).map(x -> this.lastModifyingApplication.toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(this.creationDate).map(x -> this.creationDate.toString()).orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

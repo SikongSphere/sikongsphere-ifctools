@@ -12,9 +12,15 @@ package org.sikongsphere.ifc.model.resource.geometricconstraint.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.IntegerConstant;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * The IfcLocalPlacement defines the relative placement of a product
@@ -55,5 +61,20 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
 
     public void setRelativePlacement(IfcAxis2Placement relativePlacement) {
         this.relativePlacement = relativePlacement;
+    }
+
+    @Override
+    public String toString() {
+
+        IfcBodyTemplate placement = (IfcBodyTemplate) getRelativePlacement();
+
+        String format = String.format("#%s=%s(#%s,#%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                Optional.ofNullable(getPlacementRelTo()).map(x -> getPlacementRelTo().stepNumber).orElse(IntegerConstant.BACK_REFERENCE),
+                placement.stepNumber
+        );
+
+        return format;
     }
 }

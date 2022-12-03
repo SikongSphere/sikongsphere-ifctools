@@ -56,7 +56,7 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s)",
+        String format = String.format("#%s=%s(%s);",
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
                 this.directionRatios.toString());

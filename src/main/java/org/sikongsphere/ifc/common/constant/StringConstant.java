@@ -48,7 +48,6 @@ public class StringConstant {
     /**
      * IFC Elements
      */
-
     public static final String IFCRATIOMEASURE = "IFCRATIOMEASURE";
     public static final String IFCBOOLEAN = "IFCBOOLEAN";
     public static final String TRUE = "T";
