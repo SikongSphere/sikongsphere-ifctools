@@ -12,14 +12,19 @@ package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcNonLeafNode;
+import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnum;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
+import scala.Int;
+
+import java.util.*;
 
 /**
  * This class is used to encapsulate derived unit information
@@ -76,5 +81,32 @@ public class IfcDerivedUnit extends IfcBodyTemplate implements IfcUnit {
 
     public void setUserDefinedType(IfcLabel userDefinedType) {
         this.userDefinedType = userDefinedType;
+    }
+
+    @Override
+    public String toString() {
+
+        Iterator<IfcDerivedUnitElement> iterator = this.elements.getObjects().iterator();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (iterator.hasNext()){
+            IfcDerivedUnitElement element = iterator.next();
+            list.add(element.stepNumber);
+        }
+
+        list.sort(Comparator.comparingInt(x -> x));
+        LIST<String> strings = new LIST<>();
+
+        list.forEach(x -> strings.add(StringConstant.WELL + x));
+
+        String format = String.format("#%s=%s(%s,%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                strings,
+                StringConstant.DOT + this.unitType + StringConstant.DOT,
+                Optional.ofNullable(this.userDefinedType).map(x -> this.userDefinedType.value).orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

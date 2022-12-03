@@ -13,14 +13,20 @@ package org.sikongsphere.ifc.model.resource.representation.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.IntegerConstant;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * A geometric representation context is a representation context
@@ -109,4 +115,21 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.hasSubContexts = hasSubContexts;
     }
 
+    @Override
+    public String toString() {
+        IfcBodyTemplate worldCoordinateSystem = (IfcBodyTemplate) getWorldCoordinateSystem();
+
+        String format = String.format("#%s=%s(%s,%s,%s,%s,#%s,#%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                Optional.ofNullable(getContextIdentifier()).map(x -> getContextIdentifier().value).orElse(StringConstant.DOLLAR),
+                getContextType().value,
+                Optional.ofNullable(this.coordinateSpaceDimension).map(x -> this.coordinateSpaceDimension.getDimensionCount().value.toString()).orElse(StringConstant.DOLLAR),
+                this.precision.value,
+                worldCoordinateSystem.stepNumber,
+                this.trueNorth.stepNumber
+        );
+
+        return format;
+    }
 }

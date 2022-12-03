@@ -12,15 +12,22 @@ package org.sikongsphere.ifc.model.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.model.resource.measure.entity.IfcDerivedUnitElement;
 import org.sikongsphere.ifc.model.resource.measure.entity.IfcUnitAssignment;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcRepresentationContext;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
+
+import javax.swing.text.html.Option;
+import java.util.*;
 
 /**
  * The undertaking of some design, engineering,
@@ -106,5 +113,38 @@ public class IfcProject extends IfcObject {
 
     public void setUnitsInContext(IfcUnitAssignment unitsInContext) {
         this.unitsInContext = unitsInContext;
+    }
+
+    @Override
+    public String toString() {
+
+        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects().iterator();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (iterator.hasNext()){
+            IfcRepresentationContext element = iterator.next();
+            list.add(element.stepNumber);
+        }
+
+        list.sort(Comparator.comparingInt(x -> x));
+        LIST<String> strings = new LIST<>();
+
+        list.forEach(x -> strings.add(StringConstant.WELL + x));
+
+        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                getGlobalId().value,
+                getOwnerHistory().stepNumber,
+                getName().value,
+                Optional.ofNullable(getDescription()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getObjectType()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
+                getLongName().value,
+                getPhase().value,
+                strings,
+                getUnitsInContext().stepNumber
+        );
+
+        return format;
     }
 }
