@@ -38,7 +38,19 @@ public class LIST<E> extends IfcDataType {
         return objects.get(idx);
     }
 
+    public void addAll(SET<E> set) {
+        objects.addAll(set.getObjects());
+    }
+
     public Integer size() {
         return objects.size();
+    }
+
+    public List<E> getObjects() {
+        return objects;
+    }
+
+    public void setObjects(List<E> objects) {
+        this.objects = objects;
     }
 }

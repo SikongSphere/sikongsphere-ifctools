@@ -10,39 +10,28 @@
 */
 package org.sikongsphere.ifc.newModel.datatype;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
- * This class is used to encapsulate set information
- *
- * @author zaiyuan
- * @date 2022-08-11 18:30:00
+ * @author Wang Bohong
+ * @date 2022/10/25 12:08
  */
-public class SET<E> extends IfcDataType {
-    private Set<E> objects = new HashSet<>();
+public class ENUM extends IfcDataType {
+    private String enumName;
 
-    public SET() {}
+    public ENUM() {}
 
-    public SET(Set<E> objects) {
-        this.objects = objects;
+    @IfcParserConstructor
+    public ENUM(STRING value) {
+        this.enumName = value.getValue();
     }
 
-    public void add(E object) {
-        objects.add(object);
+    public String getEnumName() {
+        return enumName;
     }
 
-    public void addAll(LIST<E> list) {
-        objects.addAll(list.getObjects());
-    }
-
-    public Integer size() {
-        return objects.size();
-    }
-
-    public Set<E> getObjects() {
-        return objects;
+    public void setEnumName(String enumName) {
+        this.enumName = enumName;
     }
 }

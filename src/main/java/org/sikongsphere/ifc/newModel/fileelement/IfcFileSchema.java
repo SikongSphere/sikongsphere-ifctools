@@ -10,6 +10,15 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
+import org.sikongsphere.ifc.newModel.IfcFileElement;
 import org.sikongsphere.ifc.newModel.IfcInterface;
 
-public class IfcFileSchema implements IfcInterface {}
+import java.util.List;
+
+public class IfcFileSchema extends IfcFileElement {
+    public IfcFileSchema() {}
+
+    public IfcFileSchema(List<IfcInterface> params) {
+        super(params);
+    }
+}

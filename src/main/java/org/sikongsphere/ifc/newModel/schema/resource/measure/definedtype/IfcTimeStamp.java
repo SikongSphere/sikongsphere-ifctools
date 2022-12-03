@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.INTEGER;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 
 /**
@@ -28,6 +29,10 @@ public class IfcTimeStamp {
 
     public IfcTimeStamp(Long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public IfcTimeStamp(INTEGER timestamp) {
+        this.timestamp = (long) timestamp.value;
     }
 
     public IfcTimeStamp(STRING timestamp) {

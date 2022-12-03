@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
-import org.sikongsphere.ifc.newModel.IfcInterface;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 
 /**
  * This is an empty Ifc Node
@@ -18,4 +18,11 @@ import org.sikongsphere.ifc.newModel.IfcInterface;
  * @author zaiyuan
  * @date 2022-08-13 11:44:00
  */
-public class IfcEmptyNode implements IfcInterface {}
+public class IfcEmptyNode extends IfcAbstractClass {
+
+    public IfcEmptyNode() {}
+
+    public IfcEmptyNode(int stepNumber) {
+        super(stepNumber);
+    }
+}

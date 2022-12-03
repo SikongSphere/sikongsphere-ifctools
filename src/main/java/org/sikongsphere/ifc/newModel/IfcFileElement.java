@@ -10,10 +10,21 @@
 */
 package org.sikongsphere.ifc.newModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *  This abstract class is mainly used to encapsulate file element
  *
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
-public abstract class IfcFileElement implements IfcInterface {}
+public abstract class IfcFileElement implements IfcInterface {
+    protected List<IfcInterface> params = new ArrayList<>();
+
+    public IfcFileElement() {}
+
+    public IfcFileElement(List<IfcInterface> params) {
+        this.params = params;
+    }
+}

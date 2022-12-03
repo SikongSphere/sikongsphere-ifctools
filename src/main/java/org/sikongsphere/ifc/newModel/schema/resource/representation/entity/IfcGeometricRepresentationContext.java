@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.DOUBLE;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.definedtypes.IfcDimensionCount;
@@ -32,7 +33,7 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcAxis
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
     private IfcDimensionCount coordinateSpaceDimension;
-    private STRING precision;// todo -> REAL
+    private DOUBLE precision;
     private IfcAxis2Placement worldCoordinateSystem;
     private IfcDirection trueNorth;
 
@@ -43,7 +44,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
 
     public IfcGeometricRepresentationContext(
         IfcDimensionCount coordinateSpaceDimension,
-        STRING precision,
+        DOUBLE precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth
     ) {
@@ -58,7 +59,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         IfcLabel contextIdentifier,
         IfcLabel contextType,
         IfcDimensionCount coordinateSpaceDimension,
-        STRING precision,
+        DOUBLE precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth
     ) {
@@ -77,11 +78,11 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.coordinateSpaceDimension = coordinateSpaceDimension;
     }
 
-    public STRING getPrecision() {
+    public DOUBLE getPrecision() {
         return precision;
     }
 
-    public void setPrecision(STRING precision) {
+    public void setPrecision(DOUBLE precision) {
         this.precision = precision;
     }
 
