@@ -10,11 +10,13 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 import org.sikongsphere.ifc.newModel.IfcInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class is used to encapsulate data information
@@ -23,5 +25,17 @@ import java.util.List;
  * @date 2022-08-13 11:44:00
  */
 public class IfcBody extends IfcFileElement {
-    public List<IfcInterface> elements = new ArrayList<>();
+    public Map<Integer, IfcAbstractClass> elements;
+
+    public IfcBody(Map<Integer, IfcAbstractClass> elements) {
+        this.elements = elements;
+    }
+
+    public Map<Integer, IfcAbstractClass> getElements() {
+        return elements;
+    }
+
+    public void setElements(Map<Integer, IfcAbstractClass> elements) {
+        this.elements = elements;
+    }
 }

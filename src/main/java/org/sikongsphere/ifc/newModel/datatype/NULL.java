@@ -8,18 +8,17 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.fileelement;
+package org.sikongsphere.ifc.newModel.datatype;
 
-import org.sikongsphere.ifc.newModel.IfcFileElement;
-import org.sikongsphere.ifc.newModel.IfcInterface;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.newModel.IfcDataType;
 
-import java.util.List;
+/**
+ * @author zaiyuan
+ * @date 2022/12/03 12:08
+ */
+public class NULL extends IfcDataType {
 
-public class IfcFileName extends IfcFileElement {
-
-    public IfcFileName() {}
-
-    public IfcFileName(List<IfcInterface> params) {
-        super(params);
-    }
+    @IfcParserConstructor
+    public NULL() {}
 }

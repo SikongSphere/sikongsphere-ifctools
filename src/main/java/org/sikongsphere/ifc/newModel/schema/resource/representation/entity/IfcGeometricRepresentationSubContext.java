@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.DOUBLE;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirection;
@@ -45,7 +46,7 @@ public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
         IfcLabel contextIdentifier,
         IfcLabel contextType,
         IfcDimensionCount coordinateSpaceDimension,
-        STRING precision,
+        DOUBLE precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth,
         IfcGeometricRepresentationContext parentContext,

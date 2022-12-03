@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.INTEGER;
+import org.sikongsphere.ifc.newModel.datatype.SCIENTIFICNOTATION;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 
@@ -31,6 +32,10 @@ public class IfcDimensionCount extends IfcAbstractClass {
 
     public IfcDimensionCount(INTEGER dimensionCount) {
         this.dimensionCount = dimensionCount;
+    }
+
+    public IfcDimensionCount(SCIENTIFICNOTATION dimensionCount) {
+        this.dimensionCount = new INTEGER(dimensionCount.getInteger());
     }
 
     public IfcDimensionCount(Integer dimensionCount) {

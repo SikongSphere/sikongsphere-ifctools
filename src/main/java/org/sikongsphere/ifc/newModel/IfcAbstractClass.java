@@ -18,7 +18,13 @@ package org.sikongsphere.ifc.newModel;
  * @date 2022-08-11 18:30:00
  */
 public abstract class IfcAbstractClass implements IfcInterface {
-    private int stepNumber;
+    protected int stepNumber;
+
+    public IfcAbstractClass() {}
+
+    protected IfcAbstractClass(int stepNumber) {
+        this.stepNumber = stepNumber;
+    }
 
     public int getStepNumber() {
         return stepNumber;

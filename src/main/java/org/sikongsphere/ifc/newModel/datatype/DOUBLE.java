@@ -25,6 +25,10 @@ public class DOUBLE extends IfcDataType {
         this.value = value;
     }
 
+    public DOUBLE(SCIENTIFICNOTATION value) {
+        this.value = value.getDouble();
+    }
+
     public DOUBLE(STRING value) {
         String str = value.value;
         if (str != null && str.charAt(str.length() - 1) == '.') {

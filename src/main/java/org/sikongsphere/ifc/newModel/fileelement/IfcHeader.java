@@ -11,6 +11,11 @@
 package org.sikongsphere.ifc.newModel.fileelement;
 
 import org.sikongsphere.ifc.newModel.IfcFileElement;
+import org.sikongsphere.ifc.newModel.IfcInterface;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * header of IFC file
@@ -22,6 +27,23 @@ public class IfcHeader extends IfcFileElement {
     private IfcFileName fileName;
     private IfcFileDescription fileDescription;
     private IfcFileSchema fileSchema;
+
+    public IfcHeader(List<IfcInterface> params) {
+        super(params);
+    }
+
+    public IfcHeader(
+        IfcFileName fileName,
+        IfcFileDescription fileDescription,
+        IfcFileSchema fileSchema
+    ) {
+        this.fileName = fileName;
+        this.fileDescription = fileDescription;
+        this.fileSchema = fileSchema;
+        params.add(fileName);
+        params.add(fileDescription);
+        params.add(fileSchema);
+    }
 
     // /**
     // * make up IFC Header according to params received.

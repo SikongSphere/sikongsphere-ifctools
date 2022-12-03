@@ -16,4 +16,8 @@ package org.sikongsphere.ifc.common.exception;
  * @author zaiyuan
  * @date 2022/09/15 19:52
  */
-public class SikongSphereParseException extends SikongSphereException {}
+public class SikongSphereParseException extends SikongSphereException {
+    public SikongSphereParseException(String message) {
+        super(message);
+    }
+}

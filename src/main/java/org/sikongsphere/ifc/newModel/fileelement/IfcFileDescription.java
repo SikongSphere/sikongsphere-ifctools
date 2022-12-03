@@ -11,5 +11,13 @@
 package org.sikongsphere.ifc.newModel.fileelement;
 
 import org.sikongsphere.ifc.newModel.IfcFileElement;
+import org.sikongsphere.ifc.newModel.IfcInterface;
 
-public class IfcFileDescription extends IfcFileElement {}
+import java.util.List;
+
+public class IfcFileDescription extends IfcFileElement {
+
+    public IfcFileDescription(List<IfcInterface> params) {
+        super(params);
+    }
+}
