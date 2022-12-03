@@ -179,6 +179,23 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
     }
 
     @Override
+    public String toString() {
+        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                this.lengthExponent.value,
+                this.massExponent.value,
+                this.timeExponent.value,
+                this.electricCurrentExponent.value,
+                this.thermodynamicTemperatureExponent.value,
+                this.amountOfSubstanceExponent.value,
+                this.luminousIntensityExponent.value
+        );
+
+        return format;
+    }
+
+    @Override
     public boolean isDefault() {
         return lengthExponent.isDefault()
             && massExponent.isDefault()
