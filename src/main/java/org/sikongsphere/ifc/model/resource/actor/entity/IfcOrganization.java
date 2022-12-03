@@ -123,7 +123,7 @@ public class IfcOrganization extends IfcBodyTemplate {
     // }
 
     @Override
-    public String toString(IfcBodyTemplate value) throws IllegalAccessException {
+    public String toString(IfcBodyTemplate value) {
         String format = String.format("#%s=%s(%s,%s,%s,%s,%s);",
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),

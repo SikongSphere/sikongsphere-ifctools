@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.basic;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,5 +40,13 @@ public class LIST<E> extends IfcBasicType {
 
     public Integer size() {
         return objects.size();
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format("%s", objects.toString());
+
+        return format.replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
+                .replace(StringConstant.RIGHT_SQUARE_BRACKETS, StringConstant.RIGHT_BRACKETS);
     }
 }

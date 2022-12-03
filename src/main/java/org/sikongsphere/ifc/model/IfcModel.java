@@ -35,18 +35,13 @@ public class IfcModel extends IfcNode {
      *
      * @return data body.
      */
-    private StringBuilder mkDataBody() {
+    private StringBuilder mkDataBody(){
         StringBuilder builder = new StringBuilder();
 
         this.elements.forEach((key, value) -> {
 
-            String s = null;
-            try {
-                s = value.toString(value);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            builder.append(s).append(StringConstant.NEW_LINE);
+            String stepElement = value.toString(value);
+            builder.append(stepElement).append(StringConstant.NEW_LINE);
         });
         builder.append(StringConstant.END_TAG).append(StringConstant.COLON);
         builder.append(StringConstant.BLANK_ROW);

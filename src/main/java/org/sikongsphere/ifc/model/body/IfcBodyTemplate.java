@@ -55,7 +55,7 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
      * @param value
      * @return
      */
-    public String toString(IfcBodyTemplate value) throws IllegalAccessException {
+    public String toString(IfcBodyTemplate value) {
         return value.toString();
     }
 
