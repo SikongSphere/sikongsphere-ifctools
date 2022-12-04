@@ -14,10 +14,7 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.sikongsphere.ifc.model.infra.IfcClassContainer;
-import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.IfcClassFactory;
-import org.sikongsphere.ifc.newModel.IfcDataType;
-import org.sikongsphere.ifc.newModel.IfcInterface;
+import org.sikongsphere.ifc.newModel.*;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
@@ -33,24 +30,45 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class ParserDemo {
-
-    private static final Map<Integer, IfcAbstractClass> newElements = new TreeMap<>();
+/**
+ * Interface for Ifc File
+ *
+ * @author zaiyuan
+ * @date 2022/12/04 15:27
+ */
+public class IfcFileParser implements IParser {
 
     public static void main(String[] args) throws IOException {
         CharStream stream = CharStreams.fromFileName(
-            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\demo1.ifc"
+            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc"
         );
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
         IfcFileVisitor fileVisitor = new IfcFileVisitor();
         IfcFileModel ifcFileModel = fileVisitor.visitIfcmodel(ifcmodel);
+        Map<Integer, IfcAbstractClass> myElements = new TreeMap<>();
         validate(ifcFileModel);
-        convert(ifcFileModel);
-        link();
-        ifcFileModel.getBody().setElements(newElements);
+        convert(ifcFileModel, myElements);
+        link(myElements);
+        ifcFileModel.getBody().setElements(myElements);
         System.out.println();
+    }
+
+    @Override
+    public Model parseFile(String path) throws IOException {
+        CharStream stream = CharStreams.fromFileName(path);
+        IFCLexer ifcLexer = new IFCLexer(stream);
+        IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
+        IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
+        IfcFileVisitor fileVisitor = new IfcFileVisitor();
+        IfcFileModel ifcFileModel = fileVisitor.visitIfcmodel(ifcmodel);
+        Map<Integer, IfcAbstractClass> myElements = new TreeMap<>();
+        validate(ifcFileModel);
+        convert(ifcFileModel, myElements);
+        link(myElements);
+        ifcFileModel.getBody().setElements(myElements);
+        return ifcFileModel;
     }
 
     /**
@@ -58,7 +76,6 @@ public class ParserDemo {
      *
      * @param ifcInterface
      */
-
     public static void validate(IfcFileModel ifcInterface) {
         Map<Integer, IfcAbstractClass> elements = ifcInterface.getBody().getElements();
         for (Map.Entry<Integer, IfcAbstractClass> classEntry : elements.entrySet()) {
@@ -73,22 +90,31 @@ public class ParserDemo {
     ) {
         if (node instanceof IfcLogicNode) {
             List<Object> args = ((IfcLogicNode) node).getArgs();
+            // 如果 node 没有className，那说明是第一次访问的成员节点
+            // 例如：#31= IFCAXIS2PLACEMENT3D(#6,$,$);
+            // 我们并不知道 #6 是什么东西，因此就需要从elements中获取。
             if (((IfcLogicNode) node).getIfcClassName() == null) {
                 return elements.get(((IfcLogicNode) node).getStepNumber());
             }
             for (int i = 0; i < args.size(); i++) {
                 if (args.get(i) instanceof IfcLogicNode
                     && ((IfcLogicNode) args.get(i)).getIfcClassName() == null) {
+                    // 如果参数中存在类似于上述的情况，同样需要从elements中获取
                     IfcLogicNode arg = (IfcLogicNode) args.get(i);
                     args.set(i, elements.get(arg.getStepNumber()));
                 } else if (args.get(i) instanceof LIST) {
+                    // 如果参数中存在LIST，那么需要递归
+                    // LIST本身不需要修改参数
                     validateItem((IfcInterface) args.get(i), elements);
                 } else {
+                    // 如果是其他的对象，童谣需要递归
+                    // 其他对象是需要对elements进行修改的
                     IfcInterface ifcInterface = validateItem((IfcInterface) args.get(i), elements);
                     args.set(i, ifcInterface);
                 }
             }
         } else if (node instanceof LIST) {
+            // 如果访问到的是LIST，那么同样需要对LIST进行修改
             List<IfcInterface> objects = ((LIST<IfcInterface>) node).getObjects();
             for (int i = 0; i < objects.size(); i++) {
                 IfcInterface fillNode = validateItem(objects.get(i), elements);
@@ -98,25 +124,31 @@ public class ParserDemo {
         return node;
     }
 
-    public static void convert(IfcFileModel ifcInterface) {
+    public static void convert(
+        IfcFileModel ifcInterface,
+        Map<Integer, IfcAbstractClass> myElements
+    ) {
         Map<Integer, IfcAbstractClass> elements = ifcInterface.getBody().getElements();
         Set<Map.Entry<Integer, IfcAbstractClass>> entries = elements.entrySet();
         for (Map.Entry<Integer, IfcAbstractClass> entry : entries) {
-            convertItem(entry.getValue());
+            convertItem(entry.getValue(), myElements);
         }
     }
 
-    public static IfcAbstractClass convertItem(IfcAbstractClass node) {
+    public static IfcAbstractClass convertItem(
+        IfcAbstractClass node,
+        Map<Integer, IfcAbstractClass> myElements
+    ) {
         if (node instanceof IfcLogicNode) {
-            if (newElements.containsKey(node.getStepNumber())) {
-                return newElements.get(node.getStepNumber());
+            if (myElements.containsKey(node.getStepNumber())) {
+                return myElements.get(node.getStepNumber());
             }
             List<Object> args = ((IfcLogicNode) node).getArgs();
             for (int i = 0; i < args.size(); i++) {
                 Object arg = args.get(i);
                 if (arg instanceof IfcLogicNode) {
-                    if (newElements.containsKey(((IfcLogicNode) arg).getStepNumber())) {
-                        args.set(i, newElements.get(((IfcLogicNode) arg).getStepNumber()));
+                    if (myElements.containsKey(((IfcLogicNode) arg).getStepNumber())) {
+                        args.set(i, myElements.get(((IfcLogicNode) arg).getStepNumber()));
                     } else if (IfcDataType.class.isAssignableFrom(
                         IfcClassContainer.getInstance().get(((IfcLogicNode) arg).getIfcClassName())
                     )) {
@@ -126,7 +158,7 @@ public class ParserDemo {
                         );
                         args.set(i, ifcClass);
                     } else {
-                        IfcAbstractClass aClass = convertItem((IfcAbstractClass) arg);
+                        IfcAbstractClass aClass = convertItem((IfcAbstractClass) arg, myElements);
                         args.set(i, aClass);
                     }
                 } else if (arg instanceof LIST) {
@@ -135,10 +167,11 @@ public class ParserDemo {
                         IfcInterface objClass = objects.get(j);
                         if (objClass instanceof IfcAbstractClass) {
                             IfcAbstractClass aClass = convertItem(
-                                (IfcAbstractClass) objects.get(j)
+                                (IfcAbstractClass) objects.get(j),
+                                myElements
                             );
                             objects.set(j, aClass);
-                            newElements.put(((IfcAbstractClass) objClass).getStepNumber(), aClass);
+                            myElements.put(((IfcAbstractClass) objClass).getStepNumber(), aClass);
                         }
                     }
                 }
@@ -149,22 +182,22 @@ public class ParserDemo {
                 args.toArray()
             );
             ((IfcAbstractClass) ifcClass).setStepNumber(node.getStepNumber());
-            newElements.put(node.getStepNumber(), (IfcAbstractClass) ifcClass);
+            myElements.put(node.getStepNumber(), (IfcAbstractClass) ifcClass);
             return (IfcAbstractClass) ifcClass;
         }
         return node;
     }
 
-    public static void link() {
-        Set<Map.Entry<Integer, IfcAbstractClass>> entries = newElements.entrySet();
+    public static void link(Map<Integer, IfcAbstractClass> myElements) {
+        Set<Map.Entry<Integer, IfcAbstractClass>> entries = myElements.entrySet();
         for (Map.Entry<Integer, IfcAbstractClass> entry : entries) {
             if (IfcRelationship.class.isAssignableFrom(entry.getValue().getClass())) {
-                linkItem((IfcRelationship) entry.getValue());
+                linkItem((IfcRelationship) entry.getValue(), myElements);
             }
         }
     }
 
-    public static void linkItem(IfcRelationship node) {
+    public static void linkItem(IfcRelationship node, Map<Integer, IfcAbstractClass> myElements) {
         if (node instanceof IfcRelAggregates) {
             IfcObjectDefinition relatingObject = ((IfcRelAggregates) node).getRelatingObject();
             SET<IfcObjectDefinition> relatedObjects = ((IfcRelAggregates) node).getRelatedObjects();
