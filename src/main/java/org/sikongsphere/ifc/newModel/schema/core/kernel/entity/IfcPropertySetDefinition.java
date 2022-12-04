@@ -45,6 +45,22 @@ public class IfcPropertySetDefinition extends IfcPropertyDefinition {
         super(globalId, ownerHistory, name, description);
     }
 
+    public SET<IfcRelDefinesByProperties> getPropertyDefinitionOf() {
+        return propertyDefinitionOf;
+    }
+
+    public void setPropertyDefinitionOf(SET<IfcRelDefinesByProperties> propertyDefinitionOf) {
+        this.propertyDefinitionOf = propertyDefinitionOf;
+    }
+
+    public SET<IfcTypeObject> getDefinesType() {
+        return definesType;
+    }
+
+    public void setDefinesType(SET<IfcTypeObject> definesType) {
+        this.definesType = definesType;
+    }
+
     public void addPropertyDefinitionOf(IfcRelDefinesByProperties properties) {
         propertyDefinitionOf.add(properties);
     }
