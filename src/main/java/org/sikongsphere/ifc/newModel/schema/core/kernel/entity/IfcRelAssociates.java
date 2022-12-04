@@ -48,4 +48,11 @@ public class IfcRelAssociates extends IfcRelationship {
         this.relatedObjects = relatedObjects;
     }
 
+    public SET<IfcRoot> getRelatedObjects() {
+        return relatedObjects;
+    }
+
+    public void setRelatedObjects(SET<IfcRoot> relatedObjects) {
+        this.relatedObjects = relatedObjects;
+    }
 }

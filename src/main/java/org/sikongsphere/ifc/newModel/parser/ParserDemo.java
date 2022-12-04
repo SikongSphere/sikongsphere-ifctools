@@ -19,17 +19,23 @@ import org.sikongsphere.ifc.newModel.IfcClassFactory;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 import org.sikongsphere.ifc.newModel.IfcInterface;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
-import org.sikongsphere.ifc.newModel.fileelement.IfcLogicNode;
+import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.newModel.fileelement.IfcLogicNode;
+import org.sikongsphere.ifc.newModel.schema.core.kernel.entity.*;
+import org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial;
 import org.sikongsphere.ifc.parser.IFCLexer;
 import org.sikongsphere.ifc.parser.IFCParser;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class ParserDemo {
 
-    public static Map<Integer, IfcAbstractClass> newElements = new TreeMap<>();
+    private static final Map<Integer, IfcAbstractClass> newElements = new TreeMap<>();
 
     public static void main(String[] args) throws IOException {
         CharStream stream = CharStreams.fromFileName(
@@ -42,6 +48,8 @@ public class ParserDemo {
         IfcFileModel ifcFileModel = fileVisitor.visitIfcmodel(ifcmodel);
         validate(ifcFileModel);
         convert(ifcFileModel);
+        link();
+        ifcFileModel.getBody().setElements(newElements);
         System.out.println();
     }
 
@@ -55,11 +63,14 @@ public class ParserDemo {
         Map<Integer, IfcAbstractClass> elements = ifcInterface.getBody().getElements();
         for (Map.Entry<Integer, IfcAbstractClass> classEntry : elements.entrySet()) {
             IfcAbstractClass value = classEntry.getValue();
-            fill(value, elements);
+            validateItem(value, elements);
         }
     }
 
-    public static IfcInterface fill(IfcInterface node, Map<Integer, IfcAbstractClass> elements) {
+    public static IfcInterface validateItem(
+        IfcInterface node,
+        Map<Integer, IfcAbstractClass> elements
+    ) {
         if (node instanceof IfcLogicNode) {
             List<Object> args = ((IfcLogicNode) node).getArgs();
             if (((IfcLogicNode) node).getIfcClassName() == null) {
@@ -71,13 +82,16 @@ public class ParserDemo {
                     IfcLogicNode arg = (IfcLogicNode) args.get(i);
                     args.set(i, elements.get(arg.getStepNumber()));
                 } else if (args.get(i) instanceof LIST) {
-                    fill((IfcInterface) args.get(i), elements);
+                    validateItem((IfcInterface) args.get(i), elements);
+                } else {
+                    IfcInterface ifcInterface = validateItem((IfcInterface) args.get(i), elements);
+                    args.set(i, ifcInterface);
                 }
             }
         } else if (node instanceof LIST) {
             List<IfcInterface> objects = ((LIST<IfcInterface>) node).getObjects();
             for (int i = 0; i < objects.size(); i++) {
-                IfcInterface fillNode = fill(objects.get(i), elements);
+                IfcInterface fillNode = validateItem(objects.get(i), elements);
                 objects.set(i, fillNode);
             }
         }
@@ -88,61 +102,14 @@ public class ParserDemo {
         Map<Integer, IfcAbstractClass> elements = ifcInterface.getBody().getElements();
         Set<Map.Entry<Integer, IfcAbstractClass>> entries = elements.entrySet();
         for (Map.Entry<Integer, IfcAbstractClass> entry : entries) {
-            convert02(entry.getValue());
+            convertItem(entry.getValue());
         }
-        ifcInterface.getBody().setElements(newElements);
     }
 
-    public static IfcAbstractClass convert(IfcAbstractClass node, IfcFileModel ifcInterface) {
-        if (node instanceof IfcLogicNode) {
-            if (node.getStepNumber() == 256) {
-                System.out.println();
-            }
-            boolean isLeaf = true;
-            List<Object> args = ((IfcLogicNode) node).getArgs();
-            for (int i = 0; i < args.size(); i++) {
-                Object arg = args.get(i);
-                if (arg instanceof IfcLogicNode) {
-                    if (((IfcLogicNode) arg).getStepNumber() == 0) {
-                        // 封装一些简单类型，比如IfcBoolean
-                        IfcInterface simpleNode = IfcClassFactory.getIfcClass(
-                            ((IfcLogicNode) arg).getIfcClassName(),
-                            ((IfcLogicNode) arg).getArgs().toArray()
-                        );
-                        args.set(i, simpleNode);
-                    } else {
-                        isLeaf = false;
-                    }
-                }
-            }
-
-            // 处理一些叶子节点，已经可以将叶子节点放入element了
-            if (isLeaf) {
-                IfcInterface leafClass = IfcClassFactory.getIfcClass(
-                    ((IfcLogicNode) node).getIfcClassName(),
-                    ((IfcLogicNode) node).getArgs().toArray()
-                );
-                return ifcInterface.getBody()
-                    .getElements()
-                    .put(node.getStepNumber(), (IfcAbstractClass) leafClass);
-            }
-
-            // 处理剩下的情况
-            for (int i = 0; i < args.size(); i++) {
-                Object arg = args.get(i);
-                if (arg instanceof IfcLogicNode) {
-                    IfcAbstractClass convert = convert((IfcAbstractClass) arg, ifcInterface);
-                    args.set(i, convert);
-                }
-            }
-        }
-        return node;
-    }
-
-    public static IfcAbstractClass convert02(IfcAbstractClass node) {
+    public static IfcAbstractClass convertItem(IfcAbstractClass node) {
         if (node instanceof IfcLogicNode) {
             if (newElements.containsKey(node.getStepNumber())) {
-                return node;
+                return newElements.get(node.getStepNumber());
             }
             List<Object> args = ((IfcLogicNode) node).getArgs();
             for (int i = 0; i < args.size(); i++) {
@@ -159,7 +126,7 @@ public class ParserDemo {
                         );
                         args.set(i, ifcClass);
                     } else {
-                        IfcAbstractClass aClass = convert02((IfcAbstractClass) arg);
+                        IfcAbstractClass aClass = convertItem((IfcAbstractClass) arg);
                         args.set(i, aClass);
                     }
                 } else if (arg instanceof LIST) {
@@ -167,8 +134,11 @@ public class ParserDemo {
                     for (int j = 0; j < objects.size(); j++) {
                         IfcInterface objClass = objects.get(j);
                         if (objClass instanceof IfcAbstractClass) {
-                            IfcAbstractClass aClass = convert02((IfcAbstractClass) objects.get(j));
+                            IfcAbstractClass aClass = convertItem(
+                                (IfcAbstractClass) objects.get(j)
+                            );
                             objects.set(j, aClass);
+                            newElements.put(((IfcAbstractClass) objClass).getStepNumber(), aClass);
                         }
                     }
                 }
@@ -183,6 +153,44 @@ public class ParserDemo {
             return (IfcAbstractClass) ifcClass;
         }
         return node;
+    }
+
+    public static void link() {
+        Set<Map.Entry<Integer, IfcAbstractClass>> entries = newElements.entrySet();
+        for (Map.Entry<Integer, IfcAbstractClass> entry : entries) {
+            if (IfcRelationship.class.isAssignableFrom(entry.getValue().getClass())) {
+                linkItem((IfcRelationship) entry.getValue());
+            }
+        }
+    }
+
+    public static void linkItem(IfcRelationship node) {
+        if (node instanceof IfcRelAggregates) {
+            IfcObjectDefinition relatingObject = ((IfcRelAggregates) node).getRelatingObject();
+            SET<IfcObjectDefinition> relatedObjects = ((IfcRelAggregates) node).getRelatedObjects();
+            relatingObject.addIsDecomposedBy((IfcRelDecomposes) node);
+            for (IfcObjectDefinition relatedObject : relatedObjects.getObjects()) {
+                relatedObject.addDecompose((IfcRelDecomposes) node);
+            }
+        } else if (node instanceof IfcRelDefinesByProperties) {
+            IfcPropertySetDefinition relatingPropertyDefinition = ((IfcRelDefinesByProperties) node)
+                .getRelatingPropertyDefinition();
+            Set<IfcObject> objects = ((IfcRelDefinesByProperties) node).getRelatedObjects()
+                .getObjects();
+            relatingPropertyDefinition.addPropertyDefinitionOf((IfcRelDefinesByProperties) node);
+            for (IfcObject object : objects) {
+                object.addIsDefinedBy((IfcRelDefines) node);
+            }
+        } else if (node instanceof IfcRelAssociatesMaterial) {
+            Set<IfcRoot> objects = ((IfcRelAssociatesMaterial) node).getRelatedObjects()
+                .getObjects();
+            for (IfcRoot object : objects) {
+                if (object instanceof IfcObjectDefinition) {
+                    ((IfcObjectDefinition) object).addHasAssociations((IfcRelAssociates) node);
+                }
+            }
+
+        }
     }
 
 }

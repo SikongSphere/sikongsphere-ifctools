@@ -89,4 +89,8 @@ public abstract class IfcObjectDefinition extends IfcRoot {
     public void setHasAssociations(SET<IfcRelAssociates> hasAssociations) {
         this.hasAssociations = hasAssociations;
     }
+
+    public void addHasAssociations(IfcRelAssociates hasAssociation) {
+        this.hasAssociations.add(hasAssociation);
+    }
 }

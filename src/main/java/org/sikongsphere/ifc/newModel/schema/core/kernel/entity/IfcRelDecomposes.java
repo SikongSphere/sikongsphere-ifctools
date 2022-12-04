@@ -47,6 +47,22 @@ public abstract class IfcRelDecomposes extends IfcRelationship {
         this.relatedObjects = relatedObjects;
     }
 
+    public IfcObjectDefinition getRelatingObject() {
+        return relatingObject;
+    }
+
+    public void setRelatingObject(IfcObjectDefinition relatingObject) {
+        this.relatingObject = relatingObject;
+    }
+
+    public SET<IfcObjectDefinition> getRelatedObjects() {
+        return relatedObjects;
+    }
+
+    public void setRelatedObjects(SET<IfcObjectDefinition> relatedObjects) {
+        this.relatedObjects = relatedObjects;
+    }
+
     public void addRelatedObject(IfcObjectDefinition object) {
         relatedObjects.add(object);
     }
