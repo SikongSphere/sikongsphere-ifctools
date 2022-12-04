@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.common.annotation;
 
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.fileelement.IfcLogicNode;
 
 import java.lang.annotation.*;
 
@@ -30,4 +31,6 @@ public @interface IfcClass {
     IfcType type();
 
     boolean isStepElement() default true;
+
+    Class<?> defaultClass() default IfcLogicNode.class;
 }

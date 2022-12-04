@@ -38,4 +38,8 @@ public class IfcLabel extends STRING implements IfcValue {
     public IfcLabel(STRING value) {
         super(value.value);
     }
+
+    public IfcLabel(IfcLabel value) {
+        super(value.value);
+    }
 }

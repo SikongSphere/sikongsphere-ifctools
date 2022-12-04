@@ -35,4 +35,27 @@ public class IfcFileModel extends IfcFileElement implements Model {
         this.body = body;
     }
 
+    public IsoTagEnum getIsoTagEnum() {
+        return isoTagEnum;
+    }
+
+    public void setIsoTagEnum(IsoTagEnum isoTagEnum) {
+        this.isoTagEnum = isoTagEnum;
+    }
+
+    public IfcHeader getHeader() {
+        return header;
+    }
+
+    public void setHeader(IfcHeader header) {
+        this.header = header;
+    }
+
+    public IfcBody getBody() {
+        return body;
+    }
+
+    public void setBody(IfcBody body) {
+        this.body = body;
+    }
 }

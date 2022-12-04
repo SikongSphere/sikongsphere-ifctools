@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.DOUBLE;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcColourOrFactor;
 
@@ -29,6 +30,10 @@ public class IfcNormalisedRatioMeasure extends IfcRatioMeasure implements IfcCol
 
     public IfcNormalisedRatioMeasure(double value) {
         super(value);
+    }
+
+    public IfcNormalisedRatioMeasure(DOUBLE value) {
+        super(value.value);
     }
 
     @IfcParserConstructor

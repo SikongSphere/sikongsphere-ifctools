@@ -37,4 +37,8 @@ public class IfcIdentifier extends STRING implements IfcValue {
     public IfcIdentifier(STRING value) {
         super(value.value);
     }
+
+    public IfcIdentifier(IfcIdentifier value) {
+        super(value.value);
+    }
 }

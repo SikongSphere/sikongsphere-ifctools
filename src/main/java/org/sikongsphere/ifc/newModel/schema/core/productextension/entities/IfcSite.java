@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.core.productextension.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.entity.IfcPostalAddress;
+import org.sikongsphere.ifc.newModel.schema.resource.geometricconstraint.entity.IfcLocalPlacement;
 import org.sikongsphere.ifc.newModel.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcCompoundPlaneAngleMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
@@ -40,6 +41,40 @@ public class IfcSite extends IfcSpatialStructureElement {
     public IfcSite() {}
 
     @IfcParserConstructor
+    public IfcSite(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcLocalPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcLabel longName,
+        IfcElementCompositionEnum compositionType,
+        IfcCompoundPlaneAngleMeasure refLatitude,
+        IfcCompoundPlaneAngleMeasure refLongitude,
+        IfcLengthMeasure refElevation,
+        IfcLabel landTitleNumber,
+        IfcPostalAddress siteAddress
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            longName,
+            compositionType
+        );
+        this.refLatitude = refLatitude;
+        this.refLongitude = refLongitude;
+        this.refElevation = refElevation;
+        this.landTitleNumber = landTitleNumber;
+        this.siteAddress = siteAddress;
+    }
+
     public IfcSite(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,

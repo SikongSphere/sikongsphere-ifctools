@@ -33,6 +33,10 @@ public class IfcPositiveLengthMeasure extends DOUBLE implements IfcValue {
         super(value);
     }
 
+    public IfcPositiveLengthMeasure(DOUBLE value) {
+        super(value);
+    }
+
     @IfcParserConstructor
     public IfcPositiveLengthMeasure(STRING value) {
         super(value);
