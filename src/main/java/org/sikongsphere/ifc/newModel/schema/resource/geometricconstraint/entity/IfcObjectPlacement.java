@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.newModel.IfcAbstractClass;
  * @author stan
  * @date 2022/09/01 22:18
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY, defaultClass = IfcLocalPlacement.class)
 public abstract class IfcObjectPlacement extends IfcAbstractClass {
     // private SET<IfcProduct> placesObject;
     // private SET<IfcLocalPlacement> referencedByPlacements;

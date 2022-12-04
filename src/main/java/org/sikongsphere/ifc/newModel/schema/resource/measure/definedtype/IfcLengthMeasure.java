@@ -33,6 +33,10 @@ public class IfcLengthMeasure extends DOUBLE implements IfcValue {
         super(value);
     }
 
+    public IfcLengthMeasure(DOUBLE value) {
+        super(value);
+    }
+
     @IfcParserConstructor
     public IfcLengthMeasure(STRING value) {
         super(value);

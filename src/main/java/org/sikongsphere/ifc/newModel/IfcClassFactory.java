@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.exception.SikongSphereParseException;
@@ -31,13 +32,14 @@ public class IfcClassFactory {
         IfcClassContainer container = IfcClassContainer.getInstance();
         Constructor<?>[] constructors = container.get(ifcClassName.toUpperCase(Locale.ROOT))
             .getConstructors();
-        IfcAbstractClass ifcClass = null;
+        IfcInterface ifcClass = null;
         for (Constructor<?> constructor : constructors) {
             if (constructor.isAnnotationPresent(IfcParserConstructor.class)) {
                 try {
                     validateType(constructor, args);
-                    ifcClass = (IfcAbstractClass) constructor.newInstance(args);
+                    ifcClass = (IfcInterface) constructor.newInstance(args);
                 } catch (Exception e) {
+                    e.printStackTrace();
                     throw new SikongSphereParseException(
                         String.format(
                             "Class for %s does not instantiated successfully.",
@@ -61,34 +63,46 @@ public class IfcClassFactory {
                 continue;
             }
 
-            if (args[i].getClass() == STRING.class
+            if (args[i] instanceof STRING
                 && ((STRING) args[i]).value.equals(StringConstant.ASTERISK)) {
-                args[i] = parameterTypes[i].newInstance();
+                if (parameterTypes[i].isInterface()) {
+                    IfcClass aClass = parameterTypes[i].getAnnotation(IfcClass.class);
+                    args[i] = aClass.defaultClass().newInstance();
+                } else {
+                    args[i] = parameterTypes[i].newInstance();
+                }
                 continue;
             }
 
             // handle String
-            if (args[i].getClass() == STRING.class
-                || args[i].getClass() == INTEGER.class
-                || args[i].getClass() == SCIENTIFICNOTATION.class) {
-                Constructor<?> con = parameterTypes[i].getConstructor(args[i].getClass());
-                args[i] = con.newInstance(args[i]);
+            if (args[i] instanceof STRING
+                || args[i] instanceof INTEGER
+                || args[i] instanceof DOUBLE
+                || args[i] instanceof SCIENTIFICNOTATION) {
+                if (!parameterTypes[i].isInterface()) {
+                    Constructor<?> con = parameterTypes[i].getConstructor(args[i].getClass());
+                    args[i] = con.newInstance(args[i]);
+                }
                 continue;
             }
 
             // handle Enum
-            if (args[i].getClass() == ENUM.class) {
-                for (Object constant : parameterTypes[i].getEnumConstants()) {
-                    if (args[i].getClass().isEnum()) {
-                        continue;
-                    }
-                    if (((ENUM) args[i]).getEnumName().equals(((Enum<?>) constant).name())) {
-                        args[i] = constant;
+            if (args[i] instanceof ENUM) {
+                if (parameterTypes[i].getEnumConstants() == null) {
+                    args[i] = new STRING(((ENUM) args[i]).getEnumName());
+                } else {
+                    for (Object constant : parameterTypes[i].getEnumConstants()) {
+                        if (args[i].getClass().isEnum()) {
+                            continue;
+                        }
+                        if (((ENUM) args[i]).getEnumName().equals(((Enum<?>) constant).name())) {
+                            args[i] = constant;
+                        }
                     }
                 }
             }
 
-            if ((args[i].getClass() == SET.class) && (parameterTypes[i] == LIST.class)) {
+            if ((args[i] instanceof SET) && (parameterTypes[i] == LIST.class)) {
                 SET<IfcInterface> origin = (SET<IfcInterface>) args[i];
                 LIST<IfcInterface> list = new LIST<>();
                 list.addAll(origin);
@@ -96,13 +110,36 @@ public class IfcClassFactory {
                 continue;
             }
 
-            if ((args[i].getClass() == LIST.class) && (parameterTypes[i] == SET.class)) {
+            if ((args[i] instanceof LIST) && (parameterTypes[i] == SET.class)) {
                 LIST<IfcInterface> origin = (LIST<IfcInterface>) args[i];
                 SET<IfcInterface> set = new SET<>();
                 set.addAll(origin);
                 args[i] = set;
                 continue;
             }
+
+            if (args[i].getClass() != parameterTypes[i] && parameterTypes[i].isInterface()) {
+                continue;
+            }
+
+            try {
+                if (args[i].getClass() != parameterTypes[i]
+                    && IfcDataType.class.isAssignableFrom(args[i].getClass())) {
+                    Constructor<?> paramConstructor = parameterTypes[i].getConstructor(
+                        args[i].getClass()
+                    );
+                    Object o = paramConstructor.newInstance(args[i]);
+                    args[i] = o;
+                }
+            } catch (Exception e) {
+                System.out.println();
+            }
+
+            // if ((args[i] instanceof LIST) && (parameterTypes[i] != LIST.class)) {
+            // Constructor<?> paramConstructor = parameterTypes[i].getConstructor(LIST.class);
+            // Object o = paramConstructor.newInstance(args[i]);
+            // args[i] = o;
+            // }
 
         }
     }

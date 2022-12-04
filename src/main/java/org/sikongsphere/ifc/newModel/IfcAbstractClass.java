@@ -43,4 +43,5 @@ public abstract class IfcAbstractClass implements IfcInterface {
         // TODO
         return "";
     }
+
 }

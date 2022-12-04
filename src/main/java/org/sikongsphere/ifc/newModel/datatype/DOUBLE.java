@@ -25,6 +25,10 @@ public class DOUBLE extends IfcDataType {
         this.value = value;
     }
 
+    public DOUBLE(DOUBLE value) {
+        this.value = value.value;
+    }
+
     public DOUBLE(SCIENTIFICNOTATION value) {
         this.value = value.getDouble();
     }

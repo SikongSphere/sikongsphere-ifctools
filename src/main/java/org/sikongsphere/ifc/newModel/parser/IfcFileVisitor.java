@@ -16,7 +16,6 @@ import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.exception.SikongSphereParseException;
 import org.sikongsphere.ifc.common.util.StringUtil;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.IfcClassFactory;
 import org.sikongsphere.ifc.newModel.IfcInterface;
 import org.sikongsphere.ifc.newModel.datatype.*;
 import org.sikongsphere.ifc.newModel.fileelement.*;
@@ -24,10 +23,7 @@ import org.sikongsphere.ifc.parser.IFCBaseVisitor;
 import org.sikongsphere.ifc.parser.IFCParser;
 import org.sikongsphere.ifc.parser.IFCParser.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -38,7 +34,7 @@ import java.util.stream.Collectors;
  */
 public class IfcFileVisitor extends IFCBaseVisitor<IfcInterface> {
 
-    private final Map<Integer, IfcAbstractClass> bodyElements = new HashMap<>();
+    private final Map<Integer, IfcAbstractClass> bodyElements = new TreeMap<>();
 
     @Override
     public IfcFileModel visitIfcmodel(IfcmodelContext ctx) {
@@ -89,13 +85,12 @@ public class IfcFileVisitor extends IFCBaseVisitor<IfcInterface> {
             .map(this::visitFuncParam)
             .collect(Collectors.toList());
         nodes.forEach(i -> wrapArgs(i, list));
-        Object[] args = list.toArray();
-        return (IfcAbstractClass) IfcClassFactory.getIfcClass(ctx.ident().getText(), args);
+        return new IfcLogicNode(ctx.ident().getText(), list);
     }
 
     public void wrapArgs(IfcInterface node, List<Object> list) {
         if (node instanceof LIST) {
-            list.addAll(((LIST) node).getObjects());
+            list.addAll(((LIST<?>) node).getObjects());
         } else {
             list.add(node);
         }
@@ -118,6 +113,9 @@ public class IfcFileVisitor extends IFCBaseVisitor<IfcInterface> {
     @Override
     public IfcInterface visitExpr(ExprContext ctx) {
         ParseTree firstChild = ctx.getChild(0);
+        if ("".equals(ctx.getText())) {
+            return null;
+        }
         if (firstChild instanceof ExprFuncContext) {
             return visitExprFunc(ctx.exprFunc());
         } else if (firstChild instanceof ExprAtomContext) {
@@ -128,7 +126,7 @@ public class IfcFileVisitor extends IFCBaseVisitor<IfcInterface> {
                 if (bodyElements.containsKey(stepNum)) {
                     return bodyElements.get(stepNum);
                 } else {
-                    return new IfcEmptyNode(stepNum);
+                    return new IfcLogicNode(stepNum);
                 }
             } else if (null != ctx.T_OPEN_P()) {
                 return new LIST<>(

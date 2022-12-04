@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement3D;
 
 /**
  * This select type collects together both versions of the placement
@@ -21,5 +22,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @author stan
  * @date 2022/09/02 21:57
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+@IfcClass(
+    layer = IfcLayer.RESOURCE,
+    type = IfcType.SELECT_TYPE,
+    defaultClass = IfcAxis2Placement3D.class
+)
 public interface IfcAxis2Placement {}

@@ -30,34 +30,35 @@ public class IfcDimensionalExponents extends IfcAbstractClass {
     /**
      * The power of the length base quantity
      */
-    private INTEGER lengthExponent;
+    private INTEGER lengthExponent = new INTEGER(0);
     /**
      * The power of the mass base quantity
      */
-    private INTEGER massExponent;
+    private INTEGER massExponent = new INTEGER(0);
     /**
      * 	The power of the time base quantity
      */
-    private INTEGER timeExponent;
+    private INTEGER timeExponent = new INTEGER(0);
     /**
      * The power of the electric current base quantity
      */
-    private INTEGER electricCurrentExponent;
+    private INTEGER electricCurrentExponent = new INTEGER(0);
     /**
      * The power of the thermodynamic temperature base quantity
      */
-    private INTEGER thermodynamicTemperatureExponent;
+    private INTEGER thermodynamicTemperatureExponent = new INTEGER(0);
     /**
      * The power of the amount of substance base quantity
      */
-    private INTEGER amountOfSubstanceExponent;
+    private INTEGER amountOfSubstanceExponent = new INTEGER(0);
     /**
      * The power of the luminous intensity base quantity
      */
-    private INTEGER luminousIntensityExponent;
+    private INTEGER luminousIntensityExponent = new INTEGER(0);
 
     public IfcDimensionalExponents() {}
 
+    @IfcParserConstructor
     public IfcDimensionalExponents(
         INTEGER lengthExponent,
         INTEGER massExponent,
@@ -94,7 +95,6 @@ public class IfcDimensionalExponents extends IfcAbstractClass {
         this.luminousIntensityExponent = new INTEGER(luminousIntensityExponent);
     }
 
-    @IfcParserConstructor
     public IfcDimensionalExponents(
         STRING lengthExponent,
         STRING massExponent,

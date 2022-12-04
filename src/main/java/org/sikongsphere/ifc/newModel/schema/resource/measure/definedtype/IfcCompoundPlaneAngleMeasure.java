@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
+import org.sikongsphere.ifc.newModel.IfcDataType;
 import org.sikongsphere.ifc.newModel.datatype.INTEGER;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
@@ -39,13 +40,28 @@ public class IfcCompoundPlaneAngleMeasure {
     // }
 
     /* TODO 如果通过Integer类型传参，如何处理？*/
+
+    // public IfcCompoundPlaneAngleMeasure(LIST<STRING> strs) {
+    // LIST<INTEGER> list = new LIST<>();
+    // for (int i = 0; i < strs.size(); i++) {
+    // list.add(new INTEGER(Integer.valueOf(strs.get(i).value)));
+    // }
+    // if (!isValid(list)) throw new SikongSphereException();
+    // this.value = list;
+    // }
     @IfcParserConstructor
-    public IfcCompoundPlaneAngleMeasure(LIST<STRING> strs) {
+    public IfcCompoundPlaneAngleMeasure(LIST<IfcDataType> objs) {
         LIST<INTEGER> list = new LIST<>();
-        for (int i = 0; i < strs.size(); i++) {
-            list.add(new INTEGER(Integer.valueOf(strs.get(i).value)));
+        for (int i = 0; i < objs.size(); i++) {
+            if (objs.get(i) instanceof STRING) {
+                list.add(new INTEGER((STRING) objs.get(i)));
+            } else if (objs.get(i) instanceof INTEGER) {
+                list.add((INTEGER) objs.get(i));
+            }
         }
-        if (!isValid(list)) throw new SikongSphereException();
+        if (!isValid(list)) {
+            throw new SikongSphereException();
+        }
         this.value = list;
     }
 

@@ -25,6 +25,10 @@ public class INTEGER extends IfcDataType {
         this.value = value;
     }
 
+    public INTEGER(INTEGER value) {
+        this.value = value.value;
+    }
+
     public INTEGER(STRING value) {
         this.value = Integer.valueOf(value.value);
     }

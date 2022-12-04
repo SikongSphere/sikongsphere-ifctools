@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
@@ -27,7 +29,7 @@ import org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.se
  * @date 2022/09/01
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcPresentationLayerAssignment {
+public class IfcPresentationLayerAssignment extends IfcAbstractClass {
     private IfcLabel name;
     private IfcText description;
     private SET<IfcLayeredItem> assignedItems;
@@ -35,6 +37,7 @@ public class IfcPresentationLayerAssignment {
 
     public IfcPresentationLayerAssignment() {}
 
+    @IfcParserConstructor
     public IfcPresentationLayerAssignment(
         IfcLabel name,
         IfcText description,

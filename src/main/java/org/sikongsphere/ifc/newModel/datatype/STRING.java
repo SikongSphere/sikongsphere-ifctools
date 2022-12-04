@@ -27,6 +27,18 @@ public class STRING extends IfcDataType {
         this.value = value;
     }
 
+    public STRING(DOUBLE value) {
+        this.value = value.getValue() + "";
+    }
+
+    public STRING(INTEGER value) {
+        this.value = value.getValue() + "";
+    }
+
+    public STRING(STRING value) {
+        this.value = value.value;
+    }
+
     public String getValue() {
         return value;
     }

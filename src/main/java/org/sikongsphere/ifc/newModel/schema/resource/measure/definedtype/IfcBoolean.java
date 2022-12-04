@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.BOOLEAN;
+import org.sikongsphere.ifc.newModel.datatype.ENUM;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcValue;
 
@@ -34,7 +35,16 @@ public class IfcBoolean extends BOOLEAN implements IfcValue {
     public IfcBoolean(STRING value) {
         String str = value.value;
         if (str != null) {
-            if (str.indexOf("T") != -1) {
+            if (str.contains("T")) {
+                super.setValue(true);
+            }
+        }
+    }
+
+    public IfcBoolean(ENUM value) {
+        String str = value.getEnumName();
+        if (str != null) {
+            if (str.contains("T")) {
                 super.setValue(true);
             }
         }
