@@ -20,4 +20,11 @@ public class IfcFileDescription extends IfcFileElement {
     public IfcFileDescription(List<IfcInterface> params) {
         super(params);
     }
+
+    @Override
+    public String toString() {
+        IfcInterface ifcInterface = params.get(0);
+
+        return ifcInterface.toString();
+    }
 }

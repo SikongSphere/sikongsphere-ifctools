@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.datatype;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 
 /**
@@ -45,5 +46,10 @@ public class STRING extends IfcDataType {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return StringConstant.QUOTE + value + StringConstant.QUOTE;
     }
 }

@@ -10,13 +10,8 @@
 */
 package org.sikongsphere.ifc.io;
 
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.sikongsphere.ifc.model.IfcModel;
-import org.sikongsphere.ifc.parser.IFCLexer;
-import org.sikongsphere.ifc.parser.IFCParser;
-import org.sikongsphere.ifc.parser.IfcVisitorImpl;
+import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.newModel.parser.file.IfcFileParser;
 
 import java.io.IOException;
 
@@ -28,14 +23,10 @@ import java.io.IOException;
  */
 public class IfcFileReader {
 
-    public static IfcModel readFile(String path) throws IOException {
-        CharStream stream = CharStreams.fromFileName(path);
-        IFCLexer ifcLexer = new IFCLexer(stream);
-        IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
-        IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
-        IfcModel model = new IfcModel();
-        IfcVisitorImpl ifcVisitorImpl = new IfcVisitorImpl(model);
-        ifcVisitorImpl.visit(ifcmodel);
+    public static IfcFileModel readFile(String path) throws IOException {
+        IfcFileParser ifcFileParser = new IfcFileParser();
+        IfcFileModel model = (IfcFileModel) ifcFileParser.parseFile(path);
+
         return model;
     }
 }

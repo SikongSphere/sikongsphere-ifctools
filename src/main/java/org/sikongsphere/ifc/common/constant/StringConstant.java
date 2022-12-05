@@ -33,7 +33,7 @@ public class StringConstant {
     public static final String COMMA = ",";
     public static final String DOLLAR = "$";
     public static final String DOT = ".";
-
+    public static final String QUOTE = "'";
     public static final String ASTERISK = "*";
 
     /**

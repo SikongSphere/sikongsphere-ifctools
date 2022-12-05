@@ -1,19 +1,11 @@
 package org.sikongsphere.ifc.model;
 
 import org.junit.Test;
-import org.sikongsphere.ifc.model.basic.LIST;
-import org.sikongsphere.ifc.model.basic.SET;
+import org.sikongsphere.ifc.newModel.datatype.LIST;
+import org.sikongsphere.ifc.newModel.datatype.SET;
+import org.sikongsphere.ifc.newModel.datatype.STRING;
 
 public class IfcStepElementToStringTest {
-
-    @Test
-    public void testList() {
-        LIST<Object> list = new LIST<>();
-        list.add("0.");
-        list.add("1.");
-        String s = list.toString();
-        System.out.println(s);
-    }
 
     @Test
     public void testSet() {
@@ -22,5 +14,13 @@ public class IfcStepElementToStringTest {
         set.add("1");
         String s = set.toString();
         System.out.println(s);
+    }
+
+    @Test
+    public void testList() {
+        LIST<Object> list = new LIST<>();
+        list.add(new STRING("user"));
+        list.add(new STRING("passwd"));
+        System.out.println(list);
     }
 }

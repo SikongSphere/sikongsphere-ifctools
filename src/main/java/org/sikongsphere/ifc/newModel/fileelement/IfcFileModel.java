@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IsoTagEnum;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 import org.sikongsphere.ifc.newModel.Model;
@@ -52,5 +53,13 @@ public class IfcFileModel extends IfcFileElement implements Model {
 
     public void setBody(IfcBody body) {
         this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return isoTagEnum + StringConstant.COLON + StringConstant.NEW_LINE
+                + getHeader()
+                + getBody()
+                + isoTagEnum;
     }
 }

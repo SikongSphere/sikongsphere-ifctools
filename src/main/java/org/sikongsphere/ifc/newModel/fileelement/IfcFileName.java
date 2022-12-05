@@ -22,4 +22,11 @@ public class IfcFileName extends IfcFileElement {
     public IfcFileName(List<IfcInterface> params) {
         super(params);
     }
+
+    @Override
+    public String toString() {
+        IfcInterface ifcInterface = params.get(0);
+
+        return ifcInterface.toString();
+    }
 }

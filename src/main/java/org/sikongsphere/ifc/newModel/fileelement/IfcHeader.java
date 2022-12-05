@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 import org.sikongsphere.ifc.newModel.IfcInterface;
 
@@ -45,37 +46,6 @@ public class IfcHeader extends IfcFileElement {
         params.add(fileSchema);
     }
 
-    // /**
-    // * make up IFC Header according to params received.
-    // * @param ifcNode
-    // * @return
-    // */
-    // private String mkParams(IfcNodeList ifcNode) {
-    //
-    // StringBuilder builder = new StringBuilder();
-    //
-    // for (int i = 0; i < ifcNode.elements.size(); i++) {
-    // String ifcValue = null;
-    //
-    // if (IfcNodeList.class.equals(ifcNode.elements.get(i).getClass())) {
-    // IfcNodeList node = (IfcNodeList) ifcNode.elements.get(i);
-    // ifcValue = StringConstant.LEFT_BRACKETS + ((STRING) node.elements.get(0)).value
-    // + StringConstant.RIGHT_BRACKETS;
-    //
-    // } else if (STRING.class.equals(ifcNode.elements.get(i).getClass())) {
-    // ifcValue = ((STRING) ifcNode.elements.get(i)).value;
-    // }
-    //
-    // if (i < ifcNode.elements.size() - 1) {
-    // builder.append(ifcValue).append(StringConstant.COMMA);
-    // } else {
-    // builder.append(ifcValue);
-    // }
-    // }
-    //
-    // return builder.toString();
-    // }
-
     public IfcFileName getFileName() {
         return fileName;
     }
@@ -100,45 +70,12 @@ public class IfcHeader extends IfcFileElement {
         this.fileSchema = fileSchema;
     }
 
-    // @Override
-    // public String toString() {
-    //
-    // String fileDescription = this.mkParams((IfcNodeList) this.fileDescription.elements.get(0));
-    // String fileName = this.mkParams((IfcNodeList) this.fileName.elements.get(0));
-    // String fileSchema = this.mkParams((IfcNodeList) this.fileSchema.elements.get(0));
-    //
-    // StringBuilder builder = new StringBuilder();
-    // // Header entity
-    // builder.append("HEADER").append(StringConstant.COLON).append(StringConstant.NEW_LINE);
-    //
-    // // File Description
-    // builder.append("FILE_DESCRIPTION")
-    // .append(StringConstant.LEFT_BRACKETS)
-    // .append(fileDescription)
-    // .append(StringConstant.RIGHT_BRACKETS)
-    // .append(StringConstant.COLON)
-    // .append(StringConstant.NEW_LINE);
-    //
-    // // File Name
-    // builder.append("FILE_NAME")
-    // .append(StringConstant.LEFT_BRACKETS)
-    // .append(fileName)
-    // .append(StringConstant.RIGHT_BRACKETS)
-    // .append(StringConstant.COLON)
-    // .append(StringConstant.NEW_LINE);
-    //
-    // // File Schema
-    // builder.append("FILE_SCHEMA")
-    // .append(StringConstant.LEFT_BRACKETS)
-    // .append(fileSchema)
-    // .append(StringConstant.RIGHT_BRACKETS)
-    // .append(StringConstant.COLON)
-    // .append(StringConstant.NEW_LINE)
-    // .append(StringConstant.END_TAG)
-    // .append(StringConstant.COLON);
-    //
-    // builder.append(StringConstant.BLANK_ROW);
-    //
-    // return builder.toString();
-    // }
+    @Override
+    public String toString() {
+        return "HEADER;" + StringConstant.NEW_LINE +
+                "FILE_DESCRIPTION" + fileDescription +
+                "FILE_NAME" + fileDescription +
+                "FILE_SCHEMA=" + fileSchema +
+                StringConstant.END_TAG + StringConstant.COLON;
+    }
 }

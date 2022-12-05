@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.datatype;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 
 import java.util.ArrayList;
@@ -52,5 +53,15 @@ public class LIST<E> extends IfcDataType {
 
     public void setObjects(List<E> objects) {
         this.objects = objects;
+    }
+
+    @Override
+    public String toString() {
+        String str = objects.toString();
+        String substring = str.substring(1, str.length() - 1);
+
+        return StringConstant.LEFT_BRACKETS
+                + substring
+                + StringConstant.RIGHT_BRACKETS;
     }
 }

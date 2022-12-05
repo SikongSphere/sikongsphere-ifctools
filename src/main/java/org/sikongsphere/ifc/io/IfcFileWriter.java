@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.io;
 
-import org.sikongsphere.ifc.model.IfcModel;
+import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
 
 import java.io.*;
 
@@ -23,7 +23,7 @@ import java.io.*;
  */
 public class IfcFileWriter {
 
-    public static void writeFile(IfcModel model, String path) {
+    public static void writeFile(IfcFileModel model, String path) {
         try (
             BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(new FileOutputStream(path))
