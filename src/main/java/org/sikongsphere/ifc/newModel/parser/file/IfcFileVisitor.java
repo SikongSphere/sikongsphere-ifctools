@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.parser;
+package org.sikongsphere.ifc.newModel.parser.file;
 
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
