@@ -36,39 +36,34 @@ import java.util.TreeMap;
  * @author zaiyuan
  * @date 2022/12/04 15:27
  */
-public class IfcFileParser implements IParser {
+public class IfcFileParser extends AbstractFileParser {
 
     public static void main(String[] args) throws IOException {
-        CharStream stream = CharStreams.fromFileName(
-            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc"
+        IfcFileParser fileParser = new IfcFileParser();
+        Model model = fileParser.parseFile(
+            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\basic_0.ifc"
         );
-        IFCLexer ifcLexer = new IFCLexer(stream);
-        IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
-        IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
-        IfcFileVisitor fileVisitor = new IfcFileVisitor();
-        IfcFileModel ifcFileModel = fileVisitor.visitIfcmodel(ifcmodel);
-        Map<Integer, IfcAbstractClass> myElements = new TreeMap<>();
-        validate(ifcFileModel);
-        convert(ifcFileModel, myElements);
-        link(myElements);
-        ifcFileModel.getBody().setElements(myElements);
         System.out.println();
     }
 
     @Override
     public Model parseFile(String path) throws IOException {
+        IfcFileModel ifcFileModel = parse(path);
+        Map<Integer, IfcAbstractClass> internalElements = new TreeMap<>();
+        validate(ifcFileModel);
+        convert(ifcFileModel, internalElements);
+        link(internalElements);
+        ifcFileModel.getBody().setElements(internalElements);
+        return ifcFileModel;
+    }
+
+    public IfcFileModel parse(String path) throws IOException {
         CharStream stream = CharStreams.fromFileName(path);
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
-        IFCParser.IfcmodelContext ifcmodel = ifcParser.ifcmodel();
+        IFCParser.IfcmodelContext modelContext = ifcParser.ifcmodel();
         IfcFileVisitor fileVisitor = new IfcFileVisitor();
-        IfcFileModel ifcFileModel = fileVisitor.visitIfcmodel(ifcmodel);
-        Map<Integer, IfcAbstractClass> myElements = new TreeMap<>();
-        validate(ifcFileModel);
-        convert(ifcFileModel, myElements);
-        link(myElements);
-        ifcFileModel.getBody().setElements(myElements);
-        return ifcFileModel;
+        return fileVisitor.visitIfcmodel(modelContext);
     }
 
     /**
@@ -76,7 +71,7 @@ public class IfcFileParser implements IParser {
      *
      * @param ifcInterface
      */
-    public static void validate(IfcFileModel ifcInterface) {
+    public void validate(IfcFileModel ifcInterface) {
         Map<Integer, IfcAbstractClass> elements = ifcInterface.getBody().getElements();
         for (Map.Entry<Integer, IfcAbstractClass> classEntry : elements.entrySet()) {
             IfcAbstractClass value = classEntry.getValue();
@@ -84,10 +79,7 @@ public class IfcFileParser implements IParser {
         }
     }
 
-    public static IfcInterface validateItem(
-        IfcInterface node,
-        Map<Integer, IfcAbstractClass> elements
-    ) {
+    public IfcInterface validateItem(IfcInterface node, Map<Integer, IfcAbstractClass> elements) {
         if (node instanceof IfcLogicNode) {
             List<Object> args = ((IfcLogicNode) node).getArgs();
             // 如果 node 没有className，那说明是第一次访问的成员节点
@@ -124,10 +116,7 @@ public class IfcFileParser implements IParser {
         return node;
     }
 
-    public static void convert(
-        IfcFileModel ifcInterface,
-        Map<Integer, IfcAbstractClass> myElements
-    ) {
+    public void convert(IfcFileModel ifcInterface, Map<Integer, IfcAbstractClass> myElements) {
         Map<Integer, IfcAbstractClass> elements = ifcInterface.getBody().getElements();
         Set<Map.Entry<Integer, IfcAbstractClass>> entries = elements.entrySet();
         for (Map.Entry<Integer, IfcAbstractClass> entry : entries) {
@@ -135,7 +124,7 @@ public class IfcFileParser implements IParser {
         }
     }
 
-    public static IfcAbstractClass convertItem(
+    public IfcAbstractClass convertItem(
         IfcAbstractClass node,
         Map<Integer, IfcAbstractClass> myElements
     ) {
@@ -188,16 +177,16 @@ public class IfcFileParser implements IParser {
         return node;
     }
 
-    public static void link(Map<Integer, IfcAbstractClass> myElements) {
+    public void link(Map<Integer, IfcAbstractClass> myElements) {
         Set<Map.Entry<Integer, IfcAbstractClass>> entries = myElements.entrySet();
         for (Map.Entry<Integer, IfcAbstractClass> entry : entries) {
             if (IfcRelationship.class.isAssignableFrom(entry.getValue().getClass())) {
-                linkItem((IfcRelationship) entry.getValue(), myElements);
+                linkItem((IfcRelationship) entry.getValue());
             }
         }
     }
 
-    public static void linkItem(IfcRelationship node, Map<Integer, IfcAbstractClass> myElements) {
+    public void linkItem(IfcRelationship node) {
         if (node instanceof IfcRelAggregates) {
             IfcObjectDefinition relatingObject = ((IfcRelAggregates) node).getRelatingObject();
             SET<IfcObjectDefinition> relatedObjects = ((IfcRelAggregates) node).getRelatedObjects();

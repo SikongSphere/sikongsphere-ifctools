@@ -10,9 +10,15 @@
 */
 package org.sikongsphere.ifc.newModel.parser;
 
+import org.sikongsphere.ifc.newModel.Model;
+
+import java.io.IOException;
+
 /**
- * Interface for different Parser
+ * Parser for File
  * @author zaiyuan
  * @date 2022/12/04 15:27
  */
-public interface IParser {}
+public abstract class AbstractFileParser implements IParser {
+    abstract Model parseFile(String filePath) throws IOException;
+}

@@ -30,8 +30,16 @@ import java.util.Locale;
 public class IfcClassFactory {
     public static IfcInterface getIfcClass(String ifcClassName, Object... args) {
         IfcClassContainer container = IfcClassContainer.getInstance();
-        Constructor<?>[] constructors = container.get(ifcClassName.toUpperCase(Locale.ROOT))
-            .getConstructors();
+        Class<?> aClass = container.get(ifcClassName.toUpperCase(Locale.ROOT));
+        if (aClass == null) {
+            throw new SikongSphereParseException(
+                String.format(
+                    "This class has not been supported: %s",
+                    ifcClassName.toUpperCase(Locale.ROOT)
+                )
+            );
+        }
+        Constructor<?>[] constructors = aClass.getConstructors();
         IfcInterface ifcClass = null;
         for (Constructor<?> constructor : constructors) {
             if (constructor.isAnnotationPresent(IfcParserConstructor.class)) {
@@ -39,7 +47,6 @@ public class IfcClassFactory {
                     validateType(constructor, args);
                     ifcClass = (IfcInterface) constructor.newInstance(args);
                 } catch (Exception e) {
-                    e.printStackTrace();
                     throw new SikongSphereParseException(
                         String.format(
                             "Class for %s does not instantiated successfully.",
@@ -122,25 +129,14 @@ public class IfcClassFactory {
                 continue;
             }
 
-            try {
-                if (args[i].getClass() != parameterTypes[i]
-                    && IfcDataType.class.isAssignableFrom(args[i].getClass())) {
-                    Constructor<?> paramConstructor = parameterTypes[i].getConstructor(
-                        args[i].getClass()
-                    );
-                    Object o = paramConstructor.newInstance(args[i]);
-                    args[i] = o;
-                }
-            } catch (Exception e) {
-                System.out.println();
+            if (args[i].getClass() != parameterTypes[i]
+                && IfcDataType.class.isAssignableFrom(args[i].getClass())) {
+                Constructor<?> paramConstructor = parameterTypes[i].getConstructor(
+                    args[i].getClass()
+                );
+                Object o = paramConstructor.newInstance(args[i]);
+                args[i] = o;
             }
-
-            // if ((args[i] instanceof LIST) && (parameterTypes[i] != LIST.class)) {
-            // Constructor<?> paramConstructor = parameterTypes[i].getConstructor(LIST.class);
-            // Object o = paramConstructor.newInstance(args[i]);
-            // args[i] = o;
-            // }
-
         }
     }
 }
