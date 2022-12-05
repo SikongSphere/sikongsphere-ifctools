@@ -17,14 +17,18 @@ import org.sikongsphere.ifc.newModel.IfcDataType;
  * @author Wang Bohong
  * @date 2022/10/25 12:08
  */
-public class SCIENTIFICNOTATION extends IfcDataType {
+public class SCIENTIFICNOTATION extends DOUBLE {
     private double mantissa;
     private int index;
 
     public SCIENTIFICNOTATION() {}
 
     @IfcParserConstructor
-    public SCIENTIFICNOTATION(STRING value) {}
+    public SCIENTIFICNOTATION(STRING value) {
+        String[] es = value.getValue().split("E");
+        this.mantissa = Double.parseDouble(es[0].trim());
+        this.index = Integer.parseInt(es[1].trim());
+    }
 
     public SCIENTIFICNOTATION(double mantissa, int index) {
         this.mantissa = mantissa;
