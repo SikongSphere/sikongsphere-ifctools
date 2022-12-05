@@ -42,7 +42,7 @@ public class INTEGER extends IfcDataType {
     }
 
     @Override
-    public final boolean isDefault() {
+    public boolean isDefault() {
         return this.value == 0;
     }
 }

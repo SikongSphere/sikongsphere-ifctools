@@ -180,7 +180,7 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
     }
 
     @Override
-    public final boolean isDefault() {
+    public boolean isDefault() {
         return lengthExponent.isDefault() && massExponent.isDefault() && timeExponent.isDefault()
                 && electricCurrentExponent.isDefault() && thermodynamicTemperatureExponent.isDefault()
                 && amountOfSubstanceExponent.isDefault() && luminousIntensityExponent.isDefault();

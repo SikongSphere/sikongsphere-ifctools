@@ -67,7 +67,7 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
     }
 
     @Override
-    public final boolean isDefault() {
+    public boolean isDefault() {
         return axis.isDefault() && refDirection.isDefault();
     }
 }
