@@ -26,7 +26,7 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabe
  * @date 2022-08-13 11:44:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcPerson extends IfcAbstractClass {
+public class IfcPerson extends IfcAbstractClass implements IfcActorSelect {
     private IfcIdentifier id;
     private IfcLabel familyName;
     private IfcLabel givenName;

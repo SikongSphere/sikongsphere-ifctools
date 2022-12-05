@@ -28,7 +28,7 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText
  */
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcOrganization extends IfcAbstractClass {
+public class IfcOrganization extends IfcAbstractClass implements IfcActorSelect {
     private IfcIdentifier id;
     private IfcLabel name;
     private IfcText description;

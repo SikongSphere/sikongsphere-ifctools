@@ -24,7 +24,7 @@ import org.sikongsphere.ifc.newModel.IfcAbstractClass;
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcPersonAndOrganization extends IfcAbstractClass {
+public class IfcPersonAndOrganization extends IfcAbstractClass implements IfcActorSelect {
 
     /**
      * @
