@@ -34,16 +34,6 @@ public abstract class IfcAbstractClass implements IfcInterface {
         this.stepNumber = stepNumber;
     }
 
-    @Override
-    public String toString() {
-        return "IfcAbstractClass{" + "stepNumber=" + stepNumber + '}';
-    }
-
-    public String toString(Integer stepNum, IfcAbstractClass entity) {
-        // TODO
-        return "";
-    }
-
     public boolean isDefault() {
         return false;
     }

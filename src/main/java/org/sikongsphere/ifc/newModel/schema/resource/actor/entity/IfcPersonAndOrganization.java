@@ -12,10 +12,14 @@ package org.sikongsphere.ifc.newModel.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * This class is used to encapsulate actor person and organization information
@@ -68,5 +72,18 @@ public class IfcPersonAndOrganization extends IfcAbstractClass implements IfcAct
 
     public void setRoles(LIST<IfcActorRole> roles) {
         this.roles = roles;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format("#%s=%s(#%s,#%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                this.thePerson.getStepNumber(),
+                this.theOrganization.getStepNumber(),
+                Optional.ofNullable(this.roles).map(x -> this.roles.toString()).orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

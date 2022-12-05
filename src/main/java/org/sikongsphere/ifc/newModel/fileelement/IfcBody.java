@@ -38,4 +38,11 @@ public class IfcBody extends IfcFileElement {
     public void setElements(Map<Integer, IfcAbstractClass> elements) {
         this.elements = elements;
     }
+
+    @Override
+    public String toString() {
+        return "IfcBody{" +
+                "elements=" + elements +
+                '}';
+    }
 }
