@@ -21,4 +21,5 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcRoofTypeEnum {
+    NOTDEFINED
 }
