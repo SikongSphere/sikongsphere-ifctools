@@ -8,9 +8,10 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.parser;
+package org.sikongsphere.ifc.newModel.parser.file;
 
 import org.sikongsphere.ifc.newModel.Model;
+import org.sikongsphere.ifc.newModel.parser.IParser;
 
 import java.io.IOException;
 

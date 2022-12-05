@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.parser;
+package org.sikongsphere.ifc.newModel.parser.file;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.newModel.fileelement.IfcLogicNode;
+import org.sikongsphere.ifc.newModel.parser.IfcClassFactory;
 import org.sikongsphere.ifc.newModel.schema.core.kernel.entity.*;
 import org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial;
 import org.sikongsphere.ifc.parser.IFCLexer;

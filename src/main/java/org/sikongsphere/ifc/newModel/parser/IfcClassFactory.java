@@ -8,13 +8,15 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel;
+package org.sikongsphere.ifc.newModel.parser;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.exception.SikongSphereParseException;
 import org.sikongsphere.ifc.model.infra.IfcClassContainer;
+import org.sikongsphere.ifc.newModel.IfcDataType;
+import org.sikongsphere.ifc.newModel.IfcInterface;
 import org.sikongsphere.ifc.newModel.datatype.*;
 
 import java.lang.reflect.Constructor;
