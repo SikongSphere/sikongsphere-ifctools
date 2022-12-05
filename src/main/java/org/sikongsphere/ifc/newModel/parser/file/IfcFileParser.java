@@ -42,7 +42,7 @@ public class IfcFileParser extends AbstractFileParser {
     public static void main(String[] args) throws IOException {
         IfcFileParser fileParser = new IfcFileParser();
         Model model = fileParser.parseFile(
-            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\basic_0.ifc"
+            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc"
         );
         System.out.println();
     }
