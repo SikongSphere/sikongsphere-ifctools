@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
-*/
+ */
 package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -37,7 +37,7 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
      */
     private INTEGER massExponent;
     /**
-     * 	The power of the time base quantity
+     * The power of the time base quantity
      */
     private INTEGER timeExponent;
     /**
@@ -57,16 +57,17 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
      */
     private INTEGER luminousIntensityExponent;
 
-    public IfcDimensionalExponents() {}
+    public IfcDimensionalExponents() {
+    }
 
     public IfcDimensionalExponents(
-        INTEGER lengthExponent,
-        INTEGER massExponent,
-        INTEGER timeExponent,
-        INTEGER electricCurrentExponent,
-        INTEGER thermodynamicTemperatureExponent,
-        INTEGER amountOfSubstanceExponent,
-        INTEGER luminousIntensityExponent
+            INTEGER lengthExponent,
+            INTEGER massExponent,
+            INTEGER timeExponent,
+            INTEGER electricCurrentExponent,
+            INTEGER thermodynamicTemperatureExponent,
+            INTEGER amountOfSubstanceExponent,
+            INTEGER luminousIntensityExponent
     ) {
         this.lengthExponent = lengthExponent;
         this.massExponent = massExponent;
@@ -78,13 +79,13 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
     }
 
     public IfcDimensionalExponents(
-        int lengthExponent,
-        int massExponent,
-        int timeExponent,
-        int electricCurrentExponent,
-        int thermodynamicTemperatureExponent,
-        int amountOfSubstanceExponent,
-        int luminousIntensityExponent
+            int lengthExponent,
+            int massExponent,
+            int timeExponent,
+            int electricCurrentExponent,
+            int thermodynamicTemperatureExponent,
+            int amountOfSubstanceExponent,
+            int luminousIntensityExponent
     ) {
         this.lengthExponent = new INTEGER(lengthExponent);
         this.massExponent = new INTEGER(massExponent);
@@ -97,26 +98,26 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
 
     @IfcParserConstructor
     public IfcDimensionalExponents(
-        STRING lengthExponent,
-        STRING massExponent,
-        STRING timeExponent,
-        STRING electricCurrentExponent,
-        STRING thermodynamicTemperatureExponent,
-        STRING amountOfSubstanceExponent,
-        STRING luminousIntensityExponent
+            STRING lengthExponent,
+            STRING massExponent,
+            STRING timeExponent,
+            STRING electricCurrentExponent,
+            STRING thermodynamicTemperatureExponent,
+            STRING amountOfSubstanceExponent,
+            STRING luminousIntensityExponent
     ) {
         this.lengthExponent = new INTEGER(Integer.valueOf(lengthExponent.value));
         this.massExponent = new INTEGER(Integer.valueOf(massExponent.value));
         this.timeExponent = new INTEGER(Integer.valueOf(timeExponent.value));
         this.electricCurrentExponent = new INTEGER(Integer.valueOf(electricCurrentExponent.value));
         this.thermodynamicTemperatureExponent = new INTEGER(
-            Integer.valueOf(thermodynamicTemperatureExponent.value)
+                Integer.valueOf(thermodynamicTemperatureExponent.value)
         );
         this.amountOfSubstanceExponent = new INTEGER(
-            Integer.valueOf(amountOfSubstanceExponent.value)
+                Integer.valueOf(amountOfSubstanceExponent.value)
         );
         this.luminousIntensityExponent = new INTEGER(
-            Integer.valueOf(luminousIntensityExponent.value)
+                Integer.valueOf(luminousIntensityExponent.value)
         );
     }
 
@@ -174,5 +175,12 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
 
     public void setLuminousIntensityExponent(INTEGER luminousIntensityExponent) {
         this.luminousIntensityExponent = luminousIntensityExponent;
+    }
+
+    @Override
+    public final boolean isDefault() {
+        return lengthExponent.isDefault() && massExponent.isDefault() && timeExponent.isDefault()
+                && electricCurrentExponent.isDefault() && thermodynamicTemperatureExponent.isDefault()
+                && amountOfSubstanceExponent.isDefault() && luminousIntensityExponent.isDefault();
     }
 }

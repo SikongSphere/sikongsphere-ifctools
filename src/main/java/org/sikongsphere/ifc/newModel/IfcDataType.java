@@ -17,4 +17,8 @@ package org.sikongsphere.ifc.newModel;
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
-public abstract class IfcDataType implements IfcInterface {}
+public abstract class IfcDataType implements IfcInterface {
+    public boolean isDefault() {
+        return false;
+    }
+}

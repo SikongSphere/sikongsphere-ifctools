@@ -40,4 +40,9 @@ public class INTEGER extends IfcDataType {
     public void setValue(Integer value) {
         this.value = value;
     }
+
+    @Override
+    public final boolean isDefault() {
+        return this.value == 0;
+    }
 }

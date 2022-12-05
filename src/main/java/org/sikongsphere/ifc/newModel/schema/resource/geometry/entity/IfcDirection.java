@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
-*/
+ */
 package org.sikongsphere.ifc.newModel.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -28,7 +28,8 @@ import org.sikongsphere.ifc.newModel.datatype.LIST;
 public class IfcDirection extends IfcGeometricRepresentationItem {
     private LIST<Double> directionRatios;// todo -> REAL
 
-    public IfcDirection() {}
+    public IfcDirection() {
+    }
 
     @IfcParserConstructor
     public IfcDirection(LIST<Double> directionRatios) {
@@ -48,5 +49,10 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
 
     public void setDirectionRatios(LIST<Double> directionRatios) {
         this.directionRatios = directionRatios;
+    }
+
+    @Override
+    public final boolean isDefault() {
+        return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
     }
 }
