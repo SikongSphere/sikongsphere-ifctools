@@ -49,4 +49,9 @@ public class DOUBLE extends IfcDataType {
     public void setValue(double value) {
         this.value = value;
     }
+
+    @Override
+    public boolean isDefault() {
+        return this.value == 0.0;
+    }
 }

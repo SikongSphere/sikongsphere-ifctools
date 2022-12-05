@@ -10,14 +10,9 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
-import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IsoTagEnum;
-import org.sikongsphere.ifc.newModel.Model;
-import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.sikongsphere.ifc.newModel.Model;
 
 /**
  * This class is used to encapsulate IfcModel information

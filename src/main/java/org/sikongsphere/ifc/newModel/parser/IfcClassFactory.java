@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.infra.IfcClassContainer;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 import org.sikongsphere.ifc.newModel.IfcInterface;
 import org.sikongsphere.ifc.newModel.datatype.*;
+import org.sikongsphere.ifc.newModel.fileelement.IfcLogicNode;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -83,11 +84,14 @@ public class IfcClassFactory {
                 continue;
             }
 
+            if (args[i] instanceof SCIENTIFICNOTATION) {
+                continue;
+            }
+
             // handle String
             if (args[i] instanceof STRING
                 || args[i] instanceof INTEGER
-                || args[i] instanceof DOUBLE
-                || args[i] instanceof SCIENTIFICNOTATION) {
+                || args[i] instanceof DOUBLE) {
                 if (!parameterTypes[i].isInterface()) {
                     Constructor<?> con = parameterTypes[i].getConstructor(args[i].getClass());
                     args[i] = con.newInstance(args[i]);

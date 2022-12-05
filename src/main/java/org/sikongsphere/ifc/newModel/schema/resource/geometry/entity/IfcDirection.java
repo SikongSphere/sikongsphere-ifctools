@@ -49,4 +49,9 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
     public void setDirectionRatios(LIST<Double> directionRatios) {
         this.directionRatios = directionRatios;
     }
+
+    @Override
+    public boolean isDefault() {
+        return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
+    }
 }

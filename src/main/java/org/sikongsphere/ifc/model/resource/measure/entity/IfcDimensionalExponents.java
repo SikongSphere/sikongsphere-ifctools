@@ -37,7 +37,7 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
      */
     private INTEGER massExponent;
     /**
-     * 	The power of the time base quantity
+     * The power of the time base quantity
      */
     private INTEGER timeExponent;
     /**
@@ -174,5 +174,16 @@ public class IfcDimensionalExponents extends IfcBodyTemplate {
 
     public void setLuminousIntensityExponent(INTEGER luminousIntensityExponent) {
         this.luminousIntensityExponent = luminousIntensityExponent;
+    }
+
+    @Override
+    public boolean isDefault() {
+        return lengthExponent.isDefault()
+            && massExponent.isDefault()
+            && timeExponent.isDefault()
+            && electricCurrentExponent.isDefault()
+            && thermodynamicTemperatureExponent.isDefault()
+            && amountOfSubstanceExponent.isDefault()
+            && luminousIntensityExponent.isDefault();
     }
 }
