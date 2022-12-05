@@ -52,7 +52,7 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
     }
 
     @Override
-    public final boolean isDefault() {
+    public boolean isDefault() {
         return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
     }
 }
