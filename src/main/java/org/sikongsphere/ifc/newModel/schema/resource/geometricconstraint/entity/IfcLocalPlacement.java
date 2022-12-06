@@ -12,12 +12,11 @@ package org.sikongsphere.ifc.newModel.schema.resource.geometricconstraint.entity
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
-import org.sikongsphere.ifc.common.constant.IntegerConstant;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 
 import java.util.Locale;
 import java.util.Optional;
