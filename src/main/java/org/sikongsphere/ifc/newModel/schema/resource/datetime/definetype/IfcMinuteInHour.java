@@ -17,20 +17,20 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.INTEGER;
 
 /**
- * @author Wang Bohong
- * @date 2022/10/28 09:58
+ * @author zaiyuan
+ * @date 2022/12/06 19:58
  */
 @IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
-public class IfcDayInMonthNumber extends INTEGER {
+public class IfcMinuteInHour extends INTEGER {
 
     @IfcParserConstructor
-    public IfcDayInMonthNumber(INTEGER value) {
+    public IfcMinuteInHour(INTEGER value) {
         super(value);
         check();
     }
 
     @Override
     public boolean illegal() {
-        return value >= 1 && value <= 12;
+        return value >= 0 && value <= 59;
     }
 }

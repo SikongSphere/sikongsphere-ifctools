@@ -8,29 +8,11 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.schema.resource.datetime.defineType;
+package org.sikongsphere.ifc.newModel.schema.resource.datetime.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.datatype.INTEGER;
 
-/**
- * @author Wang Bohong
- * @date 2022/10/28 09:58
- */
-@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
-public class IfcDayInMonthNumber extends INTEGER {
-
-    @IfcParserConstructor
-    public IfcDayInMonthNumber(INTEGER value) {
-        super(value);
-        check();
-    }
-
-    @Override
-    public boolean illegal() {
-        return value >= 1 && value <= 12;
-    }
-}
+@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
+public interface IfcDateTimeSelect {}

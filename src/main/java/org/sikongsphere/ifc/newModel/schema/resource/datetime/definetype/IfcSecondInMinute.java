@@ -14,23 +14,24 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.datatype.INTEGER;
+import org.sikongsphere.ifc.newModel.datatype.NUMBER;
+import org.sikongsphere.ifc.newModel.datatype.STRING;
 
 /**
  * @author Wang Bohong
- * @date 2022/10/28 09:58
+ * @date 2022/10/28 10:00
  */
 @IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
-public class IfcDayInMonthNumber extends INTEGER {
+public class IfcSecondInMinute extends NUMBER {
 
     @IfcParserConstructor
-    public IfcDayInMonthNumber(INTEGER value) {
+    public IfcSecondInMinute(STRING value) {
         super(value);
         check();
     }
 
     @Override
     public boolean illegal() {
-        return value >= 1 && value <= 12;
+        return getValue() >= 1 && getValue() <= 12;
     }
 }

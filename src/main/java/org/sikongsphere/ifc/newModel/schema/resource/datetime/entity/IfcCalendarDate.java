@@ -15,9 +15,9 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.datetime.definetype.IfcDayInMonthNumber;
-import org.sikongsphere.ifc.newModel.schema.resource.datetime.definetype.IfcMonthInYearNumber;
-import org.sikongsphere.ifc.newModel.schema.resource.datetime.definetype.IfcYearNumber;
+import org.sikongsphere.ifc.newModel.schema.resource.datetime.defineType.IfcDayInMonthNumber;
+import org.sikongsphere.ifc.newModel.schema.resource.datetime.defineType.IfcMonthInYearNumber;
+import org.sikongsphere.ifc.newModel.schema.resource.datetime.defineType.IfcYearNumber;
 
 /**
  * @author Wang Bohong
