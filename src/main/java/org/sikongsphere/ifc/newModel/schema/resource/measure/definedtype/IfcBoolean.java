@@ -17,7 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.BOOLEAN;
 import org.sikongsphere.ifc.newModel.datatype.ENUM;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcValue;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * @author Wang Bohong

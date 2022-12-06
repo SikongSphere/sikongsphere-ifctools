@@ -8,11 +8,23 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.schema.resource.material.select_type;
+package org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement3D;
 
-@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
-public interface IfcMaterialSelect {}
+/**
+ * This select type collects together both versions of the placement
+ * as used in two dimensional or in three dimensional Cartesian space.
+ *
+ * @author stan
+ * @date 2022/09/02 21:57
+ */
+@IfcClass(
+    layer = IfcLayer.RESOURCE,
+    type = IfcType.SELECT_TYPE,
+    defaultClass = IfcAxis2Placement3D.class
+)
+public interface IfcAxis2Placement {}

@@ -18,7 +18,7 @@ import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcDerivedUnitEnum;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcUnit;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
  * This class is used to encapsulate derived unit information

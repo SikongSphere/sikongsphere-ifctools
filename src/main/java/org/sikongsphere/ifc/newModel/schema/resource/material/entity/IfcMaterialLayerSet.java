@@ -16,7 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.material.select_type.IfcMaterialSelect;
+import org.sikongsphere.ifc.newModel.schema.resource.material.selectType.IfcMaterialSelect;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 
 /**

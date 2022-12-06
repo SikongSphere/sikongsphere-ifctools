@@ -18,8 +18,8 @@ import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcSIPrefix;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcSIUnitName;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcUnit;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcValue;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcUnit;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * @author Gao Su
