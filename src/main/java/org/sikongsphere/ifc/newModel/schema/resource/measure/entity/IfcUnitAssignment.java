@@ -12,11 +12,18 @@ package org.sikongsphere.ifc.newModel.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcUnit;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Locale;
 
 /**
  * This class contains a set of units which may be assigned.
@@ -41,5 +48,29 @@ public class IfcUnitAssignment extends IfcAbstractClass {
 
     public void setUnits(SET<IfcUnit> units) {
         this.units = units;
+    }
+
+    @Override
+    public String toString() {
+        Iterator<IfcUnit> iterator = this.units.getObjects().iterator();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (iterator.hasNext()){
+            IfcAbstractClass element = (IfcAbstractClass) iterator.next();
+            list.add(element.getStepNumber());
+        }
+
+        list.sort(Comparator.comparingInt(x -> x));
+        LIST<String> strings = new LIST<>();
+
+        list.forEach(x -> strings.add(StringConstant.WELL + x));
+
+        String format = String.format("#%s=%s(%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                strings
+        );
+
+        return format;
     }
 }

@@ -54,4 +54,9 @@ public class DOUBLE extends IfcDataType {
     public boolean isDefault() {
         return this.value == 0.0;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }

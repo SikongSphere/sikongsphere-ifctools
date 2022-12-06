@@ -12,8 +12,10 @@ package org.sikongsphere.ifc.newModel.schema.core.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
@@ -21,6 +23,8 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.entity.IfcUnitAssig
 import org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcRepresentationContext;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.entity.IfcOwnerHistory;
+
+import java.util.*;
 
 /**
  * The undertaking of some design, engineering,
@@ -106,5 +110,38 @@ public class IfcProject extends IfcObject {
 
     public void setUnitsInContext(IfcUnitAssignment unitsInContext) {
         this.unitsInContext = unitsInContext;
+    }
+
+    @Override
+    public String toString() {
+
+        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects().iterator();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (iterator.hasNext()){
+            IfcRepresentationContext element = iterator.next();
+            list.add(element.getStepNumber());
+        }
+
+        list.sort(Comparator.comparingInt(x -> x));
+        LIST<String> strings = new LIST<>();
+
+        list.forEach(x -> strings.add(StringConstant.WELL + x));
+
+        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                getGlobalId(),
+                getOwnerHistory().getStepNumber(),
+                getName(),
+                Optional.ofNullable(getDescription()).map(x -> getDescription().toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getObjectType()).map(x -> getObjectType().toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getLongName()).map(x -> getLongName().toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getPhase()).map(x -> getPhase().toString()).orElse(StringConstant.DOLLAR),
+                strings,
+                getUnitsInContext().getStepNumber()
+        );
+
+        return format;
     }
 }

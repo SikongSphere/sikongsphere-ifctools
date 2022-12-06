@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 import org.sikongsphere.ifc.newModel.IfcInterface;
@@ -39,10 +40,14 @@ public class IfcBody extends IfcFileElement {
         this.elements = elements;
     }
 
+    //Todo 对elements的构造
+
     @Override
     public String toString() {
-        return "IfcBody{" +
-                "elements=" + elements +
-                '}';
+        String ifcBody =  "DATA;" + StringConstant.NEW_LINE +
+                elements +
+                StringConstant.END_TAG + StringConstant.COLON;
+
+        return ifcBody;
     }
 }
