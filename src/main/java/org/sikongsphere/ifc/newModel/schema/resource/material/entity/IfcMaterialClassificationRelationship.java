@@ -34,8 +34,10 @@ public class IfcMaterialClassificationRelationship extends IfcAbstractClass {
     public IfcMaterialClassificationRelationship() {}
 
     @IfcParserConstructor
-    public IfcMaterialClassificationRelationship(SET<IfcClassificationNotationSelect> materialClassifications,
-                                                 IfcMaterial classifiedMaterial) {
+    public IfcMaterialClassificationRelationship(
+        SET<IfcClassificationNotationSelect> materialClassifications,
+        IfcMaterial classifiedMaterial
+    ) {
         this.materialClassifications = materialClassifications;
         this.classifiedMaterial = classifiedMaterial;
     }
@@ -44,7 +46,9 @@ public class IfcMaterialClassificationRelationship extends IfcAbstractClass {
         return materialClassifications;
     }
 
-    public void setMaterialClassifications(SET<IfcClassificationNotationSelect> materialClassifications) {
+    public void setMaterialClassifications(
+        SET<IfcClassificationNotationSelect> materialClassifications
+    ) {
         this.materialClassifications = materialClassifications;
     }
 
