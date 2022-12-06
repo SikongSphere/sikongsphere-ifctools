@@ -15,14 +15,12 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcNonLeafNode;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnum;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
-import scala.Int;
 
 import java.util.*;
 
