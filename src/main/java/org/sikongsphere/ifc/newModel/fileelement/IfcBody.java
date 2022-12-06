@@ -13,10 +13,7 @@ package org.sikongsphere.ifc.newModel.fileelement;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
-import org.sikongsphere.ifc.newModel.IfcInterface;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,12 +37,24 @@ public class IfcBody extends IfcFileElement {
         this.elements = elements;
     }
 
-    //Todo 对elements的构造
+    /**
+     * used to make up IFC Body with elements:Map
+     */
+    protected String mkIfcBody() {
+        StringBuilder builder = new StringBuilder();
+
+        this.elements.forEach((key, value) -> {
+            builder.append(value);
+            builder.append(StringConstant.NEW_LINE);
+        });
+        return builder.toString();
+    }
+
 
     @Override
     public String toString() {
         String ifcBody =  "DATA;" + StringConstant.NEW_LINE +
-                elements +
+                mkIfcBody() +
                 StringConstant.END_TAG + StringConstant.COLON;
 
         return ifcBody;

@@ -124,10 +124,10 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
                 Optional.ofNullable(getContextIdentifier()).map(x -> getContextIdentifier().toString()).orElse(StringConstant.DOLLAR),
-                getContextType().value,
+                getContextType(),
                 Optional.ofNullable(this.coordinateSpaceDimension).map(x -> this.coordinateSpaceDimension.getDimensionCount().toString()).orElse(StringConstant.DOLLAR),
                 //ToDo 科学计数法
-                this.precision.value,
+                getPrecision(),
                 worldCoordinateSystem.getStepNumber(),
                 Optional.ofNullable(this.trueNorth).map(x -> StringConstant.WELL + getTrueNorth().getStepNumber()).orElse(StringConstant.DOLLAR)
         );

@@ -57,10 +57,10 @@ public class IfcFileModel extends IfcFileElement implements Model {
 
     @Override
     public String toString() {
-         String ifcFile = isoTagEnum + StringConstant.COLON + StringConstant.NEW_LINE
-                + getHeader()
+         String ifcFile = StringConstant.BEGIN_ISO + StringConstant.COLON + StringConstant.NEW_LINE
+                + getHeader() + StringConstant.NEW_LINE
                 + getBody() + StringConstant.NEW_LINE
-                + "END-" + isoTagEnum;
+                + StringConstant.END_ISO + StringConstant.COLON;
 
          return ifcFile;
     }

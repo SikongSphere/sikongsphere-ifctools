@@ -110,7 +110,7 @@ public class IfcBuilding extends IfcSpatialStructureElement {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s,%s,%s)",
+        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s,%s,%s);",
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
                 getGlobalId(),

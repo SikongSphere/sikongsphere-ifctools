@@ -5,6 +5,10 @@ import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
 
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+
 public class IfcStepElementToStringTest {
 
     @Test
@@ -22,5 +26,10 @@ public class IfcStepElementToStringTest {
         list.add(new STRING("user"));
         list.add(new STRING("passwd"));
         System.out.println(list);
+    }
+
+    @Test
+    public void testMap() {
+
     }
 }
