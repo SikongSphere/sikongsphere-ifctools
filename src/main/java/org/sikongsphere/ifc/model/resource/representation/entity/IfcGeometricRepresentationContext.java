@@ -119,15 +119,20 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     public String toString() {
         IfcBodyTemplate worldCoordinateSystem = (IfcBodyTemplate) getWorldCoordinateSystem();
 
-        String format = String.format("#%s=%s(%s,%s,%s,%s,#%s,#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(getContextIdentifier()).map(x -> getContextIdentifier().value).orElse(StringConstant.DOLLAR),
-                getContextType().value,
-                Optional.ofNullable(this.coordinateSpaceDimension).map(x -> this.coordinateSpaceDimension.getDimensionCount().value.toString()).orElse(StringConstant.DOLLAR),
-                this.precision.value,
-                worldCoordinateSystem.stepNumber,
-                this.trueNorth.stepNumber
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,#%s,#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getContextIdentifier())
+                .map(x -> getContextIdentifier().value)
+                .orElse(StringConstant.DOLLAR),
+            getContextType().value,
+            Optional.ofNullable(this.coordinateSpaceDimension)
+                .map(x -> this.coordinateSpaceDimension.getDimensionCount().value.toString())
+                .orElse(StringConstant.DOLLAR),
+            this.precision.value,
+            worldCoordinateSystem.stepNumber,
+            this.trueNorth.stepNumber
         );
 
         return format;

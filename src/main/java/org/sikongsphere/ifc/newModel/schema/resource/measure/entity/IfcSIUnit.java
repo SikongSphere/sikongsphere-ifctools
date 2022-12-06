@@ -76,18 +76,22 @@ public class IfcSIUnit extends IfcNamedUnit {
     public String toString() {
 
         String dimension;
-        if (this.dimensions.isDefault()){
+        if (this.dimensions.isDefault()) {
             dimension = StringConstant.ASTERISK;
-        } else
-            dimension = this.dimensions.toString();
+        } else dimension = this.dimensions.toString();
 
-        String format = String.format("#%s=%s(%s,%s,%s,.%s.);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                dimension,
-                Optional.ofNullable(this.unitType).map(x -> StringConstant.DOT + this.unitType + StringConstant.DOT).orElse(StringConstant.ASTERISK),
-                Optional.ofNullable(this.prefix).map(x -> StringConstant.DOT + this.prefix + StringConstant.DOT).orElse(StringConstant.DOLLAR),
-                this.name
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,.%s.);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            dimension,
+            Optional.ofNullable(this.unitType)
+                .map(x -> StringConstant.DOT + this.unitType + StringConstant.DOT)
+                .orElse(StringConstant.ASTERISK),
+            Optional.ofNullable(this.prefix)
+                .map(x -> StringConstant.DOT + this.prefix + StringConstant.DOT)
+                .orElse(StringConstant.DOLLAR),
+            this.name
         );
 
         return format;

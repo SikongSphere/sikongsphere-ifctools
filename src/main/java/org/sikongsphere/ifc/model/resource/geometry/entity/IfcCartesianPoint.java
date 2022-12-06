@@ -72,10 +72,12 @@ public class IfcCartesianPoint extends IfcPoint {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.coordinates.toString());
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.coordinates.toString()
+        );
 
         return format;
     }

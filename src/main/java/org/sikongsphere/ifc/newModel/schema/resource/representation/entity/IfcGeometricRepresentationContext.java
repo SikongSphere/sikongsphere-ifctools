@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.datatype.DOUBLE;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
@@ -118,15 +119,22 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     public String toString() {
         IfcAbstractClass worldCoordinateSystem = (IfcAbstractClass) getWorldCoordinateSystem();
 
-        String format = String.format("#%s=%s(%s,%s,%s,%s,#%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(getContextIdentifier()).map(x -> getContextIdentifier().toString()).orElse(StringConstant.DOLLAR),
-                getContextType(),
-                Optional.ofNullable(this.coordinateSpaceDimension).map(x -> this.coordinateSpaceDimension.getDimensionCount().toString()).orElse(StringConstant.DOLLAR),
-                getPrecision(),
-                worldCoordinateSystem.getStepNumber(),
-                Optional.ofNullable(this.trueNorth).map(x -> StringConstant.WELL + getTrueNorth().getStepNumber()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,#%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getContextIdentifier())
+                .map(x -> getContextIdentifier().toString())
+                .orElse(StringConstant.DOLLAR),
+            getContextType(),
+            Optional.ofNullable(this.coordinateSpaceDimension)
+                .map(x -> this.coordinateSpaceDimension.getDimensionCount().toString())
+                .orElse(StringConstant.DOLLAR),
+            getPrecision(),
+            worldCoordinateSystem.getStepNumber(),
+            Optional.ofNullable(this.trueNorth)
+                .map(x -> StringConstant.WELL + getTrueNorth().getStepNumber())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

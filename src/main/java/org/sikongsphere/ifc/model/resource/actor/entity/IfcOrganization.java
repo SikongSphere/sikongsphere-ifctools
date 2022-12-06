@@ -124,14 +124,21 @@ public class IfcOrganization extends IfcBodyTemplate {
 
     @Override
     public String toString(IfcBodyTemplate value) {
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(this.id).map(x -> this.id.value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.name).map(x -> this.name.value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.description).map(x -> this.description.value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.roles).map(x -> this.roles.toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.addresses).map(x -> this.addresses.toString()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(this.id).map(x -> this.id.value).orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.name).map(x -> this.name.value).orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.description)
+                .map(x -> this.description.value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.roles)
+                .map(x -> this.roles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.addresses)
+                .map(x -> this.addresses.toString())
+                .orElse(StringConstant.DOLLAR)
         );
         return format;
     }

@@ -89,7 +89,7 @@ public class IfcDerivedUnit extends IfcBodyTemplate implements IfcUnit {
         Iterator<IfcDerivedUnitElement> iterator = this.elements.getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             IfcDerivedUnitElement element = iterator.next();
             list.add(element.stepNumber);
         }
@@ -99,12 +99,15 @@ public class IfcDerivedUnit extends IfcBodyTemplate implements IfcUnit {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        String format = String.format("#%s=%s(%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                strings,
-                StringConstant.DOT + this.unitType + StringConstant.DOT,
-                Optional.ofNullable(this.userDefinedType).map(x -> this.userDefinedType.value).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            strings,
+            StringConstant.DOT + this.unitType + StringConstant.DOT,
+            Optional.ofNullable(this.userDefinedType)
+                .map(x -> this.userDefinedType.value)
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

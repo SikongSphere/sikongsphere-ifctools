@@ -68,12 +68,13 @@ public class IfcMeasureWithUnit extends IfcBodyTemplate implements IfcUnit {
         IfcRatioMeasure valueComponent = (IfcRatioMeasure) getValueComponent();
         IfcSIUnit unitComponent = (IfcSIUnit) getUnitComponent();
 
-        String format = String.format("#%s=%s(%s(%s),#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                valueComponent.value,
-                unitComponent.stepNumber
+        String format = String.format(
+            "#%s=%s(%s(%s),#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            valueComponent.value,
+            unitComponent.stepNumber
         );
 
         return format;

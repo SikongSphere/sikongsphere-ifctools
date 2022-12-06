@@ -89,13 +89,14 @@ public class IfcApplication extends IfcAbstractClass {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(#%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.applicationDeveloper.getStepNumber(),
-                this.version.toString(),
-                this.applicationFullName.toString(),
-                this.applicationIdentifier.toString()
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.applicationDeveloper.getStepNumber(),
+            this.version.toString(),
+            this.applicationFullName.toString(),
+            this.applicationIdentifier.toString()
         );
         return format;
     }

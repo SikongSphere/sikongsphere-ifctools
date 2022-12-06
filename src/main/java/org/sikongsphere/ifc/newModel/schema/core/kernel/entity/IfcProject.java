@@ -115,10 +115,11 @@ public class IfcProject extends IfcObject {
     @Override
     public String toString() {
 
-        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects().iterator();
+        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects()
+            .iterator();
         ArrayList<Integer> list = new ArrayList<>();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             IfcRepresentationContext element = iterator.next();
             list.add(element.getStepNumber());
         }
@@ -128,18 +129,27 @@ public class IfcProject extends IfcObject {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId(),
-                getOwnerHistory().getStepNumber(),
-                getName(),
-                Optional.ofNullable(getDescription()).map(x -> getDescription().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getObjectType()).map(x -> getObjectType().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getLongName()).map(x -> getLongName().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getPhase()).map(x -> getPhase().toString()).orElse(StringConstant.DOLLAR),
-                strings,
-                getUnitsInContext().getStepNumber()
+        String format = String.format(
+            "#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId(),
+            getOwnerHistory().getStepNumber(),
+            getName(),
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getObjectType())
+                .map(x -> getObjectType().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getLongName())
+                .map(x -> getLongName().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getPhase())
+                .map(x -> getPhase().toString())
+                .orElse(StringConstant.DOLLAR),
+            strings,
+            getUnitsInContext().getStepNumber()
         );
 
         return format;

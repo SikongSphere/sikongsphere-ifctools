@@ -47,6 +47,6 @@ public class LIST<E> extends IfcBasicType {
         String format = String.format("%s", objects.toString());
 
         return format.replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
-                .replace(StringConstant.RIGHT_SQUARE_BRACKETS, StringConstant.RIGHT_BRACKETS);
+            .replace(StringConstant.RIGHT_SQUARE_BRACKETS, StringConstant.RIGHT_BRACKETS);
     }
 }

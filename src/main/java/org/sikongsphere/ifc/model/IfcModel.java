@@ -35,7 +35,7 @@ public class IfcModel extends IfcNode {
      *
      * @return data body.
      */
-    private StringBuilder mkDataBody(){
+    private StringBuilder mkDataBody() {
         StringBuilder builder = new StringBuilder();
 
         this.elements.forEach((key, value) -> {

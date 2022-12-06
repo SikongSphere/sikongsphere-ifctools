@@ -45,7 +45,7 @@ public class SET<E> extends IfcBasicType {
     @Override
     public String toString() {
         return objects.toString()
-                .replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
-                .replace(StringConstant.RIGHT_SQUARE_BRACKETS, StringConstant.RIGHT_BRACKETS);
+            .replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
+            .replace(StringConstant.RIGHT_SQUARE_BRACKETS, StringConstant.RIGHT_BRACKETS);
     }
 }

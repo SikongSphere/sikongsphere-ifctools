@@ -83,19 +83,24 @@ public class IfcBuildingStorey extends IfcSpatialStructureElement {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId().value,
-                getOwnerHistory().stepNumber,
-                getName().value,
-                Optional.ofNullable(getDescription()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
-                getObjectType().value,
-                getObjectPlacement().stepNumber,
-                Optional.ofNullable(getRepresentation()).map(x -> getRepresentation().toString()).orElse(StringConstant.DOLLAR),
-                getLongName().value,
-                StringConstant.DOT + getCompositionType() + StringConstant.DOT,
-                getElevation().value
+        String format = String.format(
+            "#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId().value,
+            getOwnerHistory().stepNumber,
+            getName().value,
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            getObjectType().value,
+            getObjectPlacement().stepNumber,
+            Optional.ofNullable(getRepresentation())
+                .map(x -> getRepresentation().toString())
+                .orElse(StringConstant.DOLLAR),
+            getLongName().value,
+            StringConstant.DOT + getCompositionType() + StringConstant.DOT,
+            getElevation().value
         );
 
         return format;

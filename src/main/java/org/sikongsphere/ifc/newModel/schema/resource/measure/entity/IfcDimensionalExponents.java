@@ -179,16 +179,17 @@ public class IfcDimensionalExponents extends IfcAbstractClass {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.lengthExponent,
-                this.massExponent,
-                this.timeExponent,
-                this.electricCurrentExponent,
-                this.thermodynamicTemperatureExponent,
-                this.amountOfSubstanceExponent,
-                this.luminousIntensityExponent
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.lengthExponent,
+            this.massExponent,
+            this.timeExponent,
+            this.electricCurrentExponent,
+            this.thermodynamicTemperatureExponent,
+            this.amountOfSubstanceExponent,
+            this.luminousIntensityExponent
         );
 
         return format;
@@ -197,11 +198,11 @@ public class IfcDimensionalExponents extends IfcAbstractClass {
     @Override
     public boolean isDefault() {
         return lengthExponent.isDefault()
-                && massExponent.isDefault()
-                && timeExponent.isDefault()
-                && electricCurrentExponent.isDefault()
-                && thermodynamicTemperatureExponent.isDefault()
-                && amountOfSubstanceExponent.isDefault()
-                && luminousIntensityExponent.isDefault();
+            && massExponent.isDefault()
+            && timeExponent.isDefault()
+            && electricCurrentExponent.isDefault()
+            && thermodynamicTemperatureExponent.isDefault()
+            && amountOfSubstanceExponent.isDefault()
+            && luminousIntensityExponent.isDefault();
     }
 }

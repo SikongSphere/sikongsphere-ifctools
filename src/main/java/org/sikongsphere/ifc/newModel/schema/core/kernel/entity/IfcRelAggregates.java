@@ -54,7 +54,7 @@ public class IfcRelAggregates extends IfcRelDecomposes {
         Iterator<IfcObjectDefinition> iterator = getRelatedObjects().getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             IfcAbstractClass element = iterator.next();
             list.add(element.getStepNumber());
         }
@@ -64,15 +64,20 @@ public class IfcRelAggregates extends IfcRelDecomposes {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId(),
-                StringConstant.WELL + getOwnerHistory().getStepNumber(),
-                Optional.ofNullable(getName()).map(x -> getName().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getDescription()).map(x -> getDescription().toString()).orElse(StringConstant.DOLLAR),
-                StringConstant.WELL + getRelatingObject().getStepNumber(),
-                strings
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId(),
+            StringConstant.WELL + getOwnerHistory().getStepNumber(),
+            Optional.ofNullable(getName())
+                .map(x -> getName().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.WELL + getRelatingObject().getStepNumber(),
+            strings
         );
 
         return format;

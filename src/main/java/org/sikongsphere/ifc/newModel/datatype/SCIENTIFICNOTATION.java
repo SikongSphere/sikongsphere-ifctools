@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.newModel.datatype;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
@@ -62,9 +62,6 @@ public class SCIENTIFICNOTATION extends DOUBLE {
 
     @Override
     public String toString() {
-        return mantissa
-                + StringConstant.SCI_NOTATION
-                + StringConstant.DIFFER
-                + index;
+        return mantissa + StringConstant.SCI_NOTATION + StringConstant.DIFFER + index;
     }
 }

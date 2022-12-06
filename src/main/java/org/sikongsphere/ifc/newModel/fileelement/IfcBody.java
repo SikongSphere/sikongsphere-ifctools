@@ -54,9 +54,11 @@ public class IfcBody extends IfcFileElement {
 
     @Override
     public String toString() {
-        String ifcBody =  "DATA;" + StringConstant.NEW_LINE +
-                mkIfcBody() +
-                StringConstant.END_TAG + StringConstant.COLON;
+        String ifcBody = "DATA;"
+            + StringConstant.NEW_LINE
+            + mkIfcBody()
+            + StringConstant.END_TAG
+            + StringConstant.COLON;
 
         return ifcBody;
     }

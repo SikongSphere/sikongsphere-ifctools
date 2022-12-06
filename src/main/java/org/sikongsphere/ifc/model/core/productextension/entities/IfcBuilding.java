@@ -112,21 +112,32 @@ public class IfcBuilding extends IfcSpatialStructureElement {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s,%s,#%s)",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId().value,
-                getOwnerHistory().stepNumber,
-                getName().value,
-                Optional.ofNullable(getDescription()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getObjectType()).map(x -> getObjectType().value).orElse(StringConstant.DOLLAR),
-                getObjectPlacement().stepNumber,
-                Optional.ofNullable(getRepresentation()).map(x -> getRepresentation().toString()).orElse(StringConstant.DOLLAR),
-                getLongName().value,
-                StringConstant.DOT + getCompositionType() + StringConstant.DOT,
-                Optional.ofNullable(getElevationOfRefHeight()).map(x -> String.valueOf(getElevationOfRefHeight().value)).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getElevationOfRefTerrain()).map(x -> String.valueOf(getElevationOfRefTerrain().value)).orElse(StringConstant.DOLLAR),
-                getBuildingAddress().stepNumber
+        String format = String.format(
+            "#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s,%s,#%s)",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId().value,
+            getOwnerHistory().stepNumber,
+            getName().value,
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getObjectType())
+                .map(x -> getObjectType().value)
+                .orElse(StringConstant.DOLLAR),
+            getObjectPlacement().stepNumber,
+            Optional.ofNullable(getRepresentation())
+                .map(x -> getRepresentation().toString())
+                .orElse(StringConstant.DOLLAR),
+            getLongName().value,
+            StringConstant.DOT + getCompositionType() + StringConstant.DOT,
+            Optional.ofNullable(getElevationOfRefHeight())
+                .map(x -> String.valueOf(getElevationOfRefHeight().value))
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getElevationOfRefTerrain())
+                .map(x -> String.valueOf(getElevationOfRefTerrain().value))
+                .orElse(StringConstant.DOLLAR),
+            getBuildingAddress().stepNumber
         );
 
         return format;

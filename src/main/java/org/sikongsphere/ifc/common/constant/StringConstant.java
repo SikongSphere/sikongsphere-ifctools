@@ -55,5 +55,5 @@ public class StringConstant {
      * Math Symbol
      */
     public static final String SCI_NOTATION = "E";
-    public static final String DIFFER = "-"; //May be another nickname.
+    public static final String DIFFER = "-"; // May be another nickname.
 }

@@ -68,11 +68,14 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
 
         IfcAbstractClass placement = (IfcAbstractClass) getRelativePlacement();
 
-        String format = String.format("#%s=%s(%s,#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(getPlacementRelTo()).map(x -> StringConstant.WELL + getPlacementRelTo().getStepNumber()).orElse(StringConstant.DOLLAR),
-                placement.getStepNumber()
+        String format = String.format(
+            "#%s=%s(%s,#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getPlacementRelTo())
+                .map(x -> StringConstant.WELL + getPlacementRelTo().getStepNumber())
+                .orElse(StringConstant.DOLLAR),
+            placement.getStepNumber()
         );
 
         return format;

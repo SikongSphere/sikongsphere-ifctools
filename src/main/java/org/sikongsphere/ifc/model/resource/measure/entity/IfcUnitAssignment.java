@@ -52,7 +52,7 @@ public class IfcUnitAssignment extends IfcBodyTemplate {
         Iterator<IfcUnit> iterator = this.units.getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             IfcBodyTemplate element = (IfcBodyTemplate) iterator.next();
             list.add(element.stepNumber);
         }
@@ -62,10 +62,11 @@ public class IfcUnitAssignment extends IfcBodyTemplate {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        String format = String.format("#%s=%s(%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                strings
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            strings
         );
 
         return format;

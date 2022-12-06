@@ -63,13 +63,14 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(#%s,%s,%s,#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.dimensions.stepNumber,
-                StringConstant.DOT + this.unitType + StringConstant.DOT,
-                this.name.value,
-                this.conversionFactor.stepNumber
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s,#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.dimensions.stepNumber,
+            StringConstant.DOT + this.unitType + StringConstant.DOT,
+            this.name.value,
+            this.conversionFactor.stepNumber
         );
 
         return format;

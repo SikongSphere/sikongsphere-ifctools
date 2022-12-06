@@ -135,17 +135,28 @@ public class IfcPerson extends IfcBodyTemplate {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(this.id).map(x -> this.id.value).orElse(StringConstant.DOLLAR),
-                this.familyName.value,
-                this.givenName.value,
-                Optional.ofNullable(this.middleName).map(x -> this.middleName.toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.prefixTitles).map(x -> this.prefixTitles.toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.suffixTitles).map(x -> this.suffixTitles.toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.roles).map(x -> this.roles.toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.addresses).map(x -> this.addresses.toString()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(this.id).map(x -> this.id.value).orElse(StringConstant.DOLLAR),
+            this.familyName.value,
+            this.givenName.value,
+            Optional.ofNullable(this.middleName)
+                .map(x -> this.middleName.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.prefixTitles)
+                .map(x -> this.prefixTitles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.suffixTitles)
+                .map(x -> this.suffixTitles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.roles)
+                .map(x -> this.roles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.addresses)
+                .map(x -> this.addresses.toString())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

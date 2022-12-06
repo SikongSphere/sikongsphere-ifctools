@@ -118,10 +118,11 @@ public class IfcProject extends IfcObject {
     @Override
     public String toString() {
 
-        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects().iterator();
+        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects()
+            .iterator();
         ArrayList<Integer> list = new ArrayList<>();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             IfcRepresentationContext element = iterator.next();
             list.add(element.stepNumber);
         }
@@ -131,18 +132,23 @@ public class IfcProject extends IfcObject {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId().value,
-                getOwnerHistory().stepNumber,
-                getName().value,
-                Optional.ofNullable(getDescription()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getObjectType()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
-                getLongName().value,
-                getPhase().value,
-                strings,
-                getUnitsInContext().stepNumber
+        String format = String.format(
+            "#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId().value,
+            getOwnerHistory().stepNumber,
+            getName().value,
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getObjectType())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            getLongName().value,
+            getPhase().value,
+            strings,
+            getUnitsInContext().stepNumber
         );
 
         return format;

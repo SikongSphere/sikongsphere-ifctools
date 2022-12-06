@@ -110,21 +110,36 @@ public class IfcBuilding extends IfcSpatialStructureElement {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId(),
-                getOwnerHistory().getStepNumber(),
-                getName(),
-                Optional.ofNullable(getDescription()).map(x -> getDescription().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getObjectType()).map(x -> getObjectType().toString()).orElse(StringConstant.DOLLAR),
-                getObjectPlacement().getStepNumber(),
-                Optional.ofNullable(getRepresentation()).map(x -> getRepresentation().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getLongName()).map(x -> getLongName().toString()).orElse(StringConstant.DOLLAR),
-                StringConstant.DOT + getCompositionType() + StringConstant.DOT,
-                Optional.ofNullable(getElevationOfRefHeight()).map(x -> String.valueOf(getElevationOfRefHeight().value)).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getElevationOfRefTerrain()).map(x -> String.valueOf(getElevationOfRefTerrain().value)).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getBuildingAddress()).map(x -> StringConstant.WELL + getBuildingAddress().getStepNumber()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId(),
+            getOwnerHistory().getStepNumber(),
+            getName(),
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getObjectType())
+                .map(x -> getObjectType().toString())
+                .orElse(StringConstant.DOLLAR),
+            getObjectPlacement().getStepNumber(),
+            Optional.ofNullable(getRepresentation())
+                .map(x -> getRepresentation().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getLongName())
+                .map(x -> getLongName().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.DOT + getCompositionType() + StringConstant.DOT,
+            Optional.ofNullable(getElevationOfRefHeight())
+                .map(x -> String.valueOf(getElevationOfRefHeight().value))
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getElevationOfRefTerrain())
+                .map(x -> String.valueOf(getElevationOfRefTerrain().value))
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getBuildingAddress())
+                .map(x -> StringConstant.WELL + getBuildingAddress().getStepNumber())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

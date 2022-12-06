@@ -124,19 +124,30 @@ public class IfcPostalAddress extends IfcAddress {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(getPurpose()).map(x -> getPurpose().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getDescription()).map(x -> getDescription().value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getUserDefinedPurpose()).map(x -> getUserDefinedPurpose().value).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getInternalLocation()).map(x -> getInternalLocation().value).orElse(StringConstant.DOLLAR),
-                getAddressLines().toString(),
-                Optional.ofNullable(getPostalBox()).map(x -> getPostalBox().value).orElse(StringConstant.DOLLAR),
-                getTown().value,
-                getRegion().value,
-                getPostalCode().value,
-                getCountry().value
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getPurpose())
+                .map(x -> getPurpose().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getUserDefinedPurpose())
+                .map(x -> getUserDefinedPurpose().value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getInternalLocation())
+                .map(x -> getInternalLocation().value)
+                .orElse(StringConstant.DOLLAR),
+            getAddressLines().toString(),
+            Optional.ofNullable(getPostalBox())
+                .map(x -> getPostalBox().value)
+                .orElse(StringConstant.DOLLAR),
+            getTown().value,
+            getRegion().value,
+            getPostalCode().value,
+            getCountry().value
         );
 
         return format;

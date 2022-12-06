@@ -76,12 +76,15 @@ public class IfcPersonAndOrganization extends IfcAbstractClass implements IfcAct
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(#%s,#%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.thePerson.getStepNumber(),
-                this.theOrganization.getStepNumber(),
-                Optional.ofNullable(this.roles).map(x -> this.roles.toString()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(#%s,#%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.thePerson.getStepNumber(),
+            this.theOrganization.getStepNumber(),
+            Optional.ofNullable(this.roles)
+                .map(x -> this.roles.toString())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

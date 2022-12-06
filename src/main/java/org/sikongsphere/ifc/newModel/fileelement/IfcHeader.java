@@ -72,10 +72,22 @@ public class IfcHeader extends IfcFileElement {
 
     @Override
     public String toString() {
-        return "HEADER;" + StringConstant.NEW_LINE +
-                "FILE_DESCRIPTION" + fileDescription + StringConstant.COLON + StringConstant.NEW_LINE +
-                "FILE_NAME" + fileName + StringConstant.COLON + StringConstant.NEW_LINE +
-                "FILE_SCHEMA" + fileSchema + StringConstant.COLON + StringConstant.NEW_LINE +
-                StringConstant.END_TAG + StringConstant.COLON + StringConstant.NEW_LINE;
+        return "HEADER;"
+            + StringConstant.NEW_LINE
+            + "FILE_DESCRIPTION"
+            + fileDescription
+            + StringConstant.COLON
+            + StringConstant.NEW_LINE
+            + "FILE_NAME"
+            + fileName
+            + StringConstant.COLON
+            + StringConstant.NEW_LINE
+            + "FILE_SCHEMA"
+            + fileSchema
+            + StringConstant.COLON
+            + StringConstant.NEW_LINE
+            + StringConstant.END_TAG
+            + StringConstant.COLON
+            + StringConstant.NEW_LINE;
     }
 }

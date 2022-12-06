@@ -55,7 +55,7 @@ public class IfcUnitAssignment extends IfcAbstractClass {
         Iterator<IfcUnit> iterator = this.units.getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             IfcAbstractClass element = (IfcAbstractClass) iterator.next();
             list.add(element.getStepNumber());
         }
@@ -65,10 +65,11 @@ public class IfcUnitAssignment extends IfcAbstractClass {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        String format = String.format("#%s=%s(%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                strings
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            strings
         );
 
         return format;

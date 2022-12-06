@@ -91,13 +91,14 @@ public class IfcApplication extends IfcBodyTemplate {
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(#%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.applicationDeveloper.stepNumber,
-                this.version.value,
-                this.applicationFullName.value,
-                this.applicationIdentifier.value
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.applicationDeveloper.stepNumber,
+            this.version.value,
+            this.applicationFullName.value,
+            this.applicationIdentifier.value
         );
         return format;
     }

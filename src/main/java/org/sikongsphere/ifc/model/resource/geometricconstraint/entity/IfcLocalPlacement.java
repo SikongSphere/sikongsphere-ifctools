@@ -68,11 +68,14 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
 
         IfcBodyTemplate placement = (IfcBodyTemplate) getRelativePlacement();
 
-        String format = String.format("#%s=%s(#%s,#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(getPlacementRelTo()).map(x -> getPlacementRelTo().stepNumber).orElse(IntegerConstant.BACK_REFERENCE),
-                placement.stepNumber
+        String format = String.format(
+            "#%s=%s(#%s,#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getPlacementRelTo())
+                .map(x -> getPlacementRelTo().stepNumber)
+                .orElse(IntegerConstant.BACK_REFERENCE),
+            placement.stepNumber
         );
 
         return format;

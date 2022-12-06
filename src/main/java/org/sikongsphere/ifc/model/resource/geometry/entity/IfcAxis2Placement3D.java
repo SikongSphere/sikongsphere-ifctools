@@ -73,12 +73,17 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
 
     @Override
     public String toString() {
-        String format = String.format("#%s=%s(#%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getLocation().stepNumber,
-                Optional.ofNullable(this.axis).map(x -> this.axis.toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(this.refDirection).map(x -> this.refDirection.toString()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getLocation().stepNumber,
+            Optional.ofNullable(this.axis)
+                .map(x -> this.axis.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.refDirection)
+                .map(x -> this.refDirection.toString())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

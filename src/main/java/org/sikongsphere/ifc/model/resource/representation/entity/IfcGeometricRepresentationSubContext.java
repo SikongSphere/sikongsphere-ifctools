@@ -116,19 +116,30 @@ public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
             temp = precision.value;
         }
 
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,#%s,%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getContextIdentifier().value,
-                getContextType().value,
-                Optional.ofNullable(getCoordinateSpaceDimension().getDimensionCount()).map(x -> getCoordinateSpaceDimension().getDimensionCount().toString()).orElse(StringConstant.ASTERISK),
-                temp,
-                Optional.ofNullable(getWorldCoordinateSystem()).map(x -> getWorldCoordinateSystem().toString()).orElse(StringConstant.ASTERISK),
-                Optional.ofNullable(getTrueNorth().getDirectionRatios()).map(x -> getTrueNorth().toString()).orElse(StringConstant.ASTERISK),
-                this.parentContext.stepNumber,
-                Optional.ofNullable(this.targetScale).map(x -> this.targetScale.getPositiveRatioMeasure().toString()).orElse(StringConstant.DOLLAR),
-                StringConstant.DOT + this.targetView + StringConstant.DOT,
-                Optional.ofNullable(this.userDefinedTargetView).map(x -> this.userDefinedTargetView.value).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getContextIdentifier().value,
+            getContextType().value,
+            Optional.ofNullable(getCoordinateSpaceDimension().getDimensionCount())
+                .map(x -> getCoordinateSpaceDimension().getDimensionCount().toString())
+                .orElse(StringConstant.ASTERISK),
+            temp,
+            Optional.ofNullable(getWorldCoordinateSystem())
+                .map(x -> getWorldCoordinateSystem().toString())
+                .orElse(StringConstant.ASTERISK),
+            Optional.ofNullable(getTrueNorth().getDirectionRatios())
+                .map(x -> getTrueNorth().toString())
+                .orElse(StringConstant.ASTERISK),
+            this.parentContext.stepNumber,
+            Optional.ofNullable(this.targetScale)
+                .map(x -> this.targetScale.getPositiveRatioMeasure().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.DOT + this.targetView + StringConstant.DOT,
+            Optional.ofNullable(this.userDefinedTargetView)
+                .map(x -> this.userDefinedTargetView.value)
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

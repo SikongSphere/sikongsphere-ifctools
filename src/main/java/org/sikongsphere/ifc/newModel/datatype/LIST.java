@@ -60,8 +60,6 @@ public class LIST<E> extends IfcDataType {
         String str = objects.toString();
         String substring = str.substring(1, str.length() - 1);
 
-        return StringConstant.LEFT_BRACKETS
-                + substring
-                + StringConstant.RIGHT_BRACKETS;
+        return StringConstant.LEFT_BRACKETS + substring + StringConstant.RIGHT_BRACKETS;
     }
 }
