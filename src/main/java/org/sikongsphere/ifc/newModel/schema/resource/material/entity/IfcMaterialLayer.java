@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
+import org.sikongsphere.ifc.newModel.schema.resource.material.selectType.IfcMaterialSelect;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLogical;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPositiveLengthMeasure;
 
@@ -25,7 +26,7 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPosi
  * @date 2022/10/16 16:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcMaterialLayer extends IfcAbstractClass {
+public class IfcMaterialLayer extends IfcAbstractClass implements IfcMaterialSelect {
     private IfcMaterial material;
     private IfcPositiveLengthMeasure layerThickness;
     private IfcLogical isVentilated;

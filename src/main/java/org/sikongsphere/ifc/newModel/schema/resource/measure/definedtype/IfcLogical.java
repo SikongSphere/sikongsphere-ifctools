@@ -16,7 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LOGICAL;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcValue;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * @author Wang Bohong

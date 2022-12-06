@@ -8,19 +8,22 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes;
+package org.sikongsphere.ifc.newModel.schema.resource.actor.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
+import org.sikongsphere.ifc.newModel.schema.resource.actor.enumeration.IfcAddressTypeEnum;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
 
 /**
- * Definition from ISO/CD 10303-41:1992:
- * A unit is a physical quantity, with a value of one,
- * which is used as a standard in terms of which other quantities are expressed.
+ * The actor select type allows a person and/or organization to be referenced.
  *
- * @author Wang Bohong
- * @date 2022/9/1 13:14
+ * @author zaiyuan
+ * @date 2022-12-05 21:44:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcUnit {}
+public interface IfcActorSelect {}

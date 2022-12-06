@@ -8,14 +8,11 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes;
+package org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes;
 
-/**
- * A measure value is a value as defined in ISO 31-0 (clause 2).
- *
- * @author Wang Bohong
- * @date 2022/11/1 13:21
- */
-public interface IfcMeasureValue extends IfcValue {
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 
-}
+@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
+public interface IfcValue {}

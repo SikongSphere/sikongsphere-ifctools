@@ -16,7 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPositiveLengthMeasure;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcProfileDef;
 
 /**

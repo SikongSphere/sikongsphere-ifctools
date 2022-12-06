@@ -18,7 +18,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcUnit;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcUnit;
 
 import java.util.ArrayList;
 import java.util.Comparator;

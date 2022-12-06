@@ -14,7 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcCurrencyEnum;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcUnit;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
  * This class is used to encapsulate monetary unit information

@@ -12,7 +12,7 @@ package org.sikongsphere.ifc.newModel.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcUnitEnum;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.selecttypes.IfcUnit;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
  * This class is used to encapsulate named unit information
