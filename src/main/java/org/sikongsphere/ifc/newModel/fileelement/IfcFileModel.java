@@ -10,7 +10,6 @@
 */
 package org.sikongsphere.ifc.newModel.fileelement;
 
-import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IsoTagEnum;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 import org.sikongsphere.ifc.newModel.Model;

@@ -14,6 +14,8 @@ import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,7 +51,6 @@ public class IfcBody extends IfcFileElement {
         });
         return builder.toString();
     }
-
 
     @Override
     public String toString() {

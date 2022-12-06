@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.newModel.datatype;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.newModel.IfcDataType;
 
 /**
  * @author Wang Bohong

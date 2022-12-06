@@ -37,4 +37,8 @@ public abstract class IfcAbstractClass implements IfcInterface {
     public boolean isDefault() {
         return false;
     }
+
+    public boolean isDefault() {
+        return false;
+    }
 }
