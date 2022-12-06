@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.newModel.schema.resource.externalreference.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 
@@ -22,9 +24,12 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabe
  * @date 2022/9/1 16:32
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcExternalReference {
+public class IfcExternalReference extends IfcAbstractClass {
+    @IfcOptionField
     private IfcLabel location;
+    @IfcOptionField
     private IfcIdentifier itemReference;
+    @IfcOptionField
     private IfcLabel name;
 
     public IfcExternalReference() {}

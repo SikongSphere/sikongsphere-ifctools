@@ -21,4 +21,4 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/12/06 22:24
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcClassificationNotationSelect {}
+public interface IfcDocumentSelect {}

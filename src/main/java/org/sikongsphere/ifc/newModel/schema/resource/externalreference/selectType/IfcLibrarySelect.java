@@ -15,10 +15,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * IfcClassificationNotationSelect enables selection of whether a classification notation is to be contained within an
- * IFC model or is to be referenced from an external source (or classification server).
+ * An IfcLibrarySelect enables selection of whether library information is to be contained within an IFC model or is
+ * to be referenced from an external source.
  * @author zaiyuan
  * @date 2022/12/06 22:24
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcClassificationNotationSelect {}
+public interface IfcLibrarySelect {}
