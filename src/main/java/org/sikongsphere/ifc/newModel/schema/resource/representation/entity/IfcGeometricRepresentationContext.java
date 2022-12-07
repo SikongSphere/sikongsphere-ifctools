@@ -122,12 +122,18 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
             "#%s=%s(%s,%s,%s,%s,#%s,%s);",
             this.stepNumber,
             this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            Optional.ofNullable(getContextIdentifier()).map(x -> getContextIdentifier().toString()).orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getContextIdentifier())
+                .map(x -> getContextIdentifier().toString())
+                .orElse(StringConstant.DOLLAR),
             getContextType(),
-            Optional.ofNullable(this.coordinateSpaceDimension).map(x -> this.coordinateSpaceDimension.getDimensionCount().toString()).orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.coordinateSpaceDimension)
+                .map(x -> this.coordinateSpaceDimension.getDimensionCount().toString())
+                .orElse(StringConstant.DOLLAR),
             getPrecision(),
             worldCoordinateSystem.getStepNumber(),
-            Optional.ofNullable(this.trueNorth).map(x -> StringConstant.WELL + getTrueNorth().getStepNumber()).orElse(StringConstant.DOLLAR)
+            Optional.ofNullable(this.trueNorth)
+                .map(x -> StringConstant.WELL + getTrueNorth().getStepNumber())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

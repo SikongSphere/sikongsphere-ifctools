@@ -1,0 +1,1706 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [CoordinationView_V2.0]'), '2;1');
+FILE_NAME('X2987976EE7F1653F7X0', '2022-10-23T10:10:34+08:00', (''), (''), 'ODA SDAI 22.12', '23.0.11.19 - Exporter 23.0.11.19 - X259077528X0 UI 23.0.11.19', '');
+FILE_SCHEMA(('IFC2X3'));
+ENDSEC;
+
+DATA;
+#1=IFCORGANIZATION($,'Autodesk Revit 2023 (CHS)',$,$,$);
+#2=IFCAPPLICATION(#1,'2023','Autodesk Revit 2023 (CHS)','Revit');
+#3=IFCCARTESIANPOINT((0., 0., 0.));
+#4=IFCCARTESIANPOINT((0., 0.));
+#5=IFCDIRECTION((1., 0., 0.));
+#6=IFCDIRECTION((-1., 0., 0.));
+#7=IFCDIRECTION((0., 1., 0.));
+#8=IFCDIRECTION((0., -1., 0.));
+#9=IFCDIRECTION((0., 0., 1.));
+#10=IFCDIRECTION((0., 0., -1.));
+#11=IFCDIRECTION((1., 0.));
+#12=IFCDIRECTION((-1., 0.));
+#13=IFCDIRECTION((0., 1.));
+#14=IFCDIRECTION((0., -1.));
+#15=IFCAXIS2PLACEMENT3D(#3,$,$);
+#16=IFCLOCALPLACEMENT(#109,#15);
+#17=IFCPERSON($,'','bohong_wang',$,$,$,$,$);
+#18=IFCORGANIZATION($,'','',$,$);
+#19=IFCPERSONANDORGANIZATION(#17,#18,$);
+#20=IFCOWNERHISTORY(#19,#2,$,.NOCHANGE.,$,$,$,1653574869);
+#21=IFCSIUNIT(*,.LENGTHUNIT.,.MILLI.,.METRE.);
+#22=IFCSIUNIT(*,.LENGTHUNIT.,$,.METRE.);
+#23=IFCSIUNIT(*,.AREAUNIT.,$,.SQUARE_METRE.);
+#24=IFCSIUNIT(*,.VOLUMEUNIT.,$,.CUBIC_METRE.);
+#25=IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
+#26=IFCDIMENSIONALEXPONENTS(0,0,0,0,0,0,0);
+#27=IFCMEASUREWITHUNIT(IFCRATIOMEASURE(0.017453292519943278),#25);
+#28=IFCCONVERSIONBASEDUNIT(#26,.PLANEANGLEUNIT.,'DEGREE',#27);
+#29=IFCSIUNIT(*,.MASSUNIT.,.KILO.,.GRAM.);
+#30=IFCDERIVEDUNITELEMENT(#29,1);
+#31=IFCDERIVEDUNITELEMENT(#22,-3);
+#32=IFCDERIVEDUNIT((#30, #31),.MASSDENSITYUNIT.,$);
+#33=IFCDERIVEDUNITELEMENT(#22,4);
+#34=IFCDERIVEDUNIT((#33),.MOMENTOFINERTIAUNIT.,$);
+#35=IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
+#36=IFCSIUNIT(*,.FREQUENCYUNIT.,$,.HERTZ.);
+#37=IFCSIUNIT(*,.THERMODYNAMICTEMPERATUREUNIT.,$,.KELVIN.);
+#38=IFCSIUNIT(*,.THERMODYNAMICTEMPERATUREUNIT.,$,.DEGREE_CELSIUS.);
+#39=IFCDERIVEDUNITELEMENT(#29,1);
+#40=IFCDERIVEDUNITELEMENT(#37,-1);
+#41=IFCDERIVEDUNITELEMENT(#35,-3);
+#42=IFCDERIVEDUNIT((#39, #40, #41),.THERMALTRANSMITTANCEUNIT.,$);
+#43=IFCSIUNIT(*,.LENGTHUNIT.,.DECI.,.METRE.);
+#44=IFCDERIVEDUNITELEMENT(#22,3);
+#45=IFCDERIVEDUNITELEMENT(#35,-1);
+#46=IFCDERIVEDUNIT((#44, #45),.VOLUMETRICFLOWRATEUNIT.,$);
+#47=IFCDERIVEDUNITELEMENT(#29,1);
+#48=IFCDERIVEDUNITELEMENT(#35,-1);
+#49=IFCDERIVEDUNIT((#47, #48),.MASSFLOWRATEUNIT.,$);
+#50=IFCDERIVEDUNITELEMENT(#35,-1);
+#51=IFCDERIVEDUNIT((#50),.ROTATIONALFREQUENCYUNIT.,$);
+#52=IFCSIUNIT(*,.ELECTRICCURRENTUNIT.,$,.AMPERE.);
+#53=IFCSIUNIT(*,.ELECTRICVOLTAGEUNIT.,$,.VOLT.);
+#54=IFCSIUNIT(*,.POWERUNIT.,$,.WATT.);
+#55=IFCSIUNIT(*,.FORCEUNIT.,.KILO.,.NEWTON.);
+#56=IFCSIUNIT(*,.ILLUMINANCEUNIT.,$,.LUX.);
+#57=IFCSIUNIT(*,.LUMINOUSFLUXUNIT.,$,.LUMEN.);
+#58=IFCSIUNIT(*,.LUMINOUSINTENSITYUNIT.,$,.CANDELA.);
+#59=IFCDERIVEDUNITELEMENT(#29,-1);
+#60=IFCDERIVEDUNITELEMENT(#22,-2);
+#61=IFCDERIVEDUNITELEMENT(#35,3);
+#62=IFCDERIVEDUNITELEMENT(#57,1);
+#63=IFCDERIVEDUNIT((#59, #60, #61, #62),.USERDEFINED.,'Luminous Efficacy');
+#64=IFCDERIVEDUNITELEMENT(#29,1);
+#65=IFCDERIVEDUNITELEMENT(#22,2);
+#66=IFCDERIVEDUNITELEMENT(#35,-3);
+#67=IFCDERIVEDUNIT((#64, #65, #66),.SOUNDPOWERUNIT.,$);
+#68=IFCDERIVEDUNITELEMENT(#29,1);
+#69=IFCDERIVEDUNITELEMENT(#22,-1);
+#70=IFCDERIVEDUNITELEMENT(#35,-2);
+#71=IFCDERIVEDUNIT((#68, #69, #70),.SOUNDPRESSUREUNIT.,$);
+#72=IFCDERIVEDUNITELEMENT(#22,1);
+#73=IFCDERIVEDUNITELEMENT(#35,-1);
+#74=IFCDERIVEDUNIT((#72, #73),.LINEARVELOCITYUNIT.,$);
+#75=IFCSIUNIT(*,.PRESSUREUNIT.,$,.PASCAL.);
+#76=IFCDERIVEDUNITELEMENT(#22,-2);
+#77=IFCDERIVEDUNITELEMENT(#29,1);
+#78=IFCDERIVEDUNITELEMENT(#35,-2);
+#79=IFCDERIVEDUNIT((#76, #77, #78),.USERDEFINED.,'Friction Loss');
+#80=IFCDERIVEDUNITELEMENT(#29,1);
+#81=IFCDERIVEDUNITELEMENT(#22,1);
+#82=IFCDERIVEDUNITELEMENT(#35,-2);
+#83=IFCDERIVEDUNITELEMENT(#22,-1);
+#84=IFCDERIVEDUNIT((#80, #81, #82, #83),.LINEARFORCEUNIT.,$);
+#85=IFCDERIVEDUNITELEMENT(#29,1);
+#86=IFCDERIVEDUNITELEMENT(#22,1);
+#87=IFCDERIVEDUNITELEMENT(#35,-2);
+#88=IFCDERIVEDUNITELEMENT(#22,-2);
+#89=IFCDERIVEDUNIT((#85, #86, #87, #88),.PLANARFORCEUNIT.,$);
+#90=IFCUNITASSIGNMENT((#21, #23, #24, #28, #29, #32, #34, #35, #36, #38, #42, #46, #49, #51, #52, #53, #54, #55, #56, #57, #58, #63, #67, #71, #74, #75, #79, #84, #89));
+#91=IFCAXIS2PLACEMENT3D(#3,$,$);
+#92=IFCDIRECTION((6.123031769111886E-17, 1.));
+#93=IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.01,#91,#92);
+#94=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Axis','Model',*,*,*,*,#93,$,.GRAPH_VIEW.,$);
+#95=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Body','Model',*,*,*,*,#93,$,.MODEL_VIEW.,$);
+#96=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('Box','Model',*,*,*,*,#93,$,.MODEL_VIEW.,$);
+#97=IFCGEOMETRICREPRESENTATIONSUBCONTEXT('FootPrint','Model',*,*,*,*,#93,$,.MODEL_VIEW.,$);
+#98=IFCPROJECT('1n5bnXWxz90hoCf_sMoXh2',#20,'X2987976EE7F1653F7X0',$,$,'X2987976EE540D79F0X0','X2987976EE72B66001X0',(#93),#90);
+#99=IFCPOSTALADDRESS($,$,$,$,('X28BF757286B6459048F93516557305740X0'),$,'','','','X24E2D56FD53174EACX0');
+#100=IFCBUILDING('1n5bnXWxz90hoCf_sMoXh3',#20,'',$,$,#16,$,'',.ELEMENT.,$,$,#99);
+#101=IFCAXIS2PLACEMENT3D(#3,$,$);
+#102=IFCLOCALPLACEMENT(#16,#101);
+#103=IFCBUILDINGSTOREY('3Zu5Bv0LOHrPC10026FoQQ',#20,'X268079AD8X0 1',$,'X268079AD8X0:X26B638D1F96F668079AD8X0',#102,$,'X268079AD8X0 1',.ELEMENT.,0.);
+#104=IFCCARTESIANPOINT((0., 0., 4000.));
+#105=IFCAXIS2PLACEMENT3D(#104,$,$);
+#106=IFCLOCALPLACEMENT(#16,#105);
+#107=IFCBUILDINGSTOREY('15Z0v90RiHrPC20026FoKR',#20,'X268079AD8X0 2',$,'X268079AD8X0:X24E0A68075934X0',#106,$,'X268079AD8X0 2',.ELEMENT.,4000.0000000000005);
+#108=IFCAXIS2PLACEMENT3D(#3,$,$);
+#109=IFCLOCALPLACEMENT($,#108);
+#110=IFCSITE('1n5bnXWxz90hoCf_sMoXh0',#20,'Default',$,$,#109,$,$,.ELEMENT.,(39, 54, 57, 601318),(116, 25, 58, 795166),0.,$,$)
+#111=IFCCARTESIANPOINT((-2756.7714427154656, 60.144949441307176, 0.));
+#112=IFCAXIS2PLACEMENT3D(#111,$,$);
+#113=IFCLOCALPLACEMENT(#102,#112);
+#114=IFCCARTESIANPOINT((6200., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@196a42c3
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@4b29d1d2
+#117=IFCCARTESIANPOINT((3099.999999999998, 7.105427357601002E-15));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@1e4d3ce5
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@3ddc6915
+#120=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@1349883
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@704deff2
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@4c60d6e9
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@15043a2f
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@4a83a74a
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@379614be
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@7f485fda
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@404bbcbd
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@5afa3c9
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@1e81f160
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@28261e8e
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@d737b89
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@8519cb4
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@1acaf3d
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@6986852
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@1bab8268
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@a307a8c
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallType@4bc222e
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@35dab4eb
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2d901eb0
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3ba987b8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6e01f9b0
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3f191845
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2b9ed6da
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5f049ea1
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@72cc7e6f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6c61a903
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@34b9f960
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@43015c69
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@19b89d4
+org.sikongsphere.ifc.newModel.schema.resource.externalreference.entity.IfcClassification@658c5a19
+#152=IFCCARTESIANPOINT((3343.228557284532, 160.14494944128745, 0.));
+#153=IFCAXIS2PLACEMENT3D(#152,#9=IFCDIRECTION((0., 0., 1.));,#7=IFCDIRECTION((0., 1., 0.)););
+#154=IFCLOCALPLACEMENT(#102,#153);
+#155=IFCCARTESIANPOINT((3000., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@72035809
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@18271936
+#158=IFCCARTESIANPOINT((1500., 2.1316282072803006E-13));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@421e361
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@59d4cd39
+#161=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@909217e
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@389c4eb1
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@606e4010
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3fc79729
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@7a35b0f5
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@34f6515b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4b34fff9
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@68c9133c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1187c9e8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@127a7a2e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4bbf6d0e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@30b6ffe0
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@791d1f8b
+#175=IFCCARTESIANPOINT((3243.2285572845403, 3060.144949441288, 0.));
+#176=IFCAXIS2PLACEMENT3D(#175,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+#177=IFCLOCALPLACEMENT(#102,#176);
+#178=IFCCARTESIANPOINT((6000., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@5e2c3d18
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@cc43f62
+#181=IFCCARTESIANPOINT((3000., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@14008db3
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@78a773fd
+#184=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2cb4893b
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@57c03d88
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5b218417
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@16aa8654
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@6caf0677
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@6d7fc27
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@45ac5f9b
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@645aa696
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@135606db
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@518caac3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2415fc55
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@14f232c4
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@13bc8645
+#198=IFCCARTESIANPOINT((-2656.77144271546, 2960.1449494413077, 0.));
+#199=IFCAXIS2PLACEMENT3D(#198,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
+#200=IFCLOCALPLACEMENT(#102,#199);
+#201=IFCCARTESIANPOINT((2800., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@413d1baf
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@273444fe
+#204=IFCCARTESIANPOINT((1400.0000000000007, -1.5631940186722204E-13));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@68034211
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@4f74980d
+#207=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@16eb3ea3
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6c372fe6
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@33bc72d1
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@58594a11
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@5524cca1
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@2a3888c1
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4167d97b
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1a75e76a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@14fa86ae
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6e15fe2
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@24c22fe
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@93081b6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@cd1e646
+#221=IFCAXIS2PLACEMENT3D(#3,$,$);
+#222=IFCLOCALPLACEMENT(#102,#221);
+#223=IFCCARTESIANPOINT((0., 2.2737367544323206E-13));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@68f1b17f
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@1722011b
+#226=IFCCARTESIANPOINT((343.22855728453465, 1560.1449494412975, 0.));
+#227=IFCAXIS2PLACEMENT3D(#226,#10=IFCDIRECTION((0., 0., -1.));,#7=IFCDIRECTION((0., 1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2767e23c
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@57ad2aa7
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@57a78e3
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@402c4085
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@6fa51cd4
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5b3f61ff
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@710c2b53
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3e2059ae
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@5890e879
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@2dc9b0f5
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@398dada8
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@7ce026d3
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7ce69770
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@1750fbeb
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@7cb502c
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@275bf9b3
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@1b8a29df
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@4fbe37eb
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5b247367
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@12a94400
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@268f106e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6a47b187
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@cecf639
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6c284af
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2049a9c1
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7ba8c737
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@1890516e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@15a04efb
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1caa0244
+#257=IFCAXIS2PLACEMENT3D(#3,$,$);
+#258=IFCLOCALPLACEMENT(#102,#257);
+#259=IFCCARTESIANPOINT((-4.547473508864641E-13, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@1ef6d34c
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@46271dd6
+#262=IFCCARTESIANPOINT((343.2285572845365, 1560.1449494412973, 2600.));
+#263=IFCAXIS2PLACEMENT3D(#262,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@7d9d0818
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@11bb571c
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@231f98ef
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@7c137fd5
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@183ec003
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7c51f34b
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@221a3fa4
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@5495333e
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcCovering@5ddeb7cb
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcCoveringType@2a225dd7
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@61eaec38
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@125290e5
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@3e08ff24
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@4d1c005e
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@8462f31
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@6fa34d52
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@57576994
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@616ac46a
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@67b9b51a
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@1205bd62
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@24569dba
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@7ef27d7f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@490caf5f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@16c069df
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2bec854f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@451001e5
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2b40ff9c
+#291=IFCCARTESIANPOINT((8.43769498715119E-15, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@6337c201
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@5c669da8
+#294=IFCCARTESIANPOINT((457.50000000000557, 159., 63.));
+#295=IFCAXIS2PLACEMENT3D(#294,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2b30a42c
+#297=IFCCARTESIANPOINT((-438.49999999999994, -591.));
+#298=IFCCARTESIANPOINT((438.49999999999994, -591.));
+#299=IFCCARTESIANPOINT((438.49999999999994, 591.));
+#300=IFCCARTESIANPOINT((-438.49999999999994, 591.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@31920ade
+#302=IFCCARTESIANPOINT((-394.49999999999966, -547.));
+#303=IFCCARTESIANPOINT((-394.49999999999966, 547.));
+#304=IFCCARTESIANPOINT((394.4999999999975, 547.));
+#305=IFCCARTESIANPOINT((394.4999999999975, -547.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@59402b8f
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@1d483de4
+#308=IFCCARTESIANPOINT((457.50000000000665, 137., 610.));
+#309=IFCAXIS2PLACEMENT3D(#308,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@609e8838
+#311=IFCCARTESIANPOINT((-457.49999999999983, -610.));
+#312=IFCCARTESIANPOINT((457.49999999999983, -610.));
+#313=IFCCARTESIANPOINT((457.49999999999983, 610.));
+#314=IFCCARTESIANPOINT((-457.49999999999983, 610.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@4032d386
+#316=IFCCARTESIANPOINT((-438.50000000000114, -591.));
+#317=IFCCARTESIANPOINT((-438.50000000000114, 591.));
+#318=IFCCARTESIANPOINT((438.49999999999864, 591.));
+#319=IFCCARTESIANPOINT((438.49999999999864, -591.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@7188af83
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@28d18df5
+#322=IFCCARTESIANPOINT((457.50000000000796, 137., 610.));
+#323=IFCAXIS2PLACEMENT3D(#322,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@359df09a
+#325=IFCCARTESIANPOINT((-457.5000000000002, -610.));
+#326=IFCCARTESIANPOINT((457.5000000000002, -610.));
+#327=IFCCARTESIANPOINT((457.5000000000002, 610.));
+#328=IFCCARTESIANPOINT((-457.5000000000002, 610.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@934b6cb
+#330=IFCCARTESIANPOINT((-425.4999999999999, -578.));
+#331=IFCCARTESIANPOINT((-425.4999999999999, 578.));
+#332=IFCCARTESIANPOINT((425.50000000000017, 578.));
+#333=IFCCARTESIANPOINT((425.50000000000017, -578.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@6be968ce
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@55cf0d14
+#336=IFCCARTESIANPOINT((457.5000000000084, 0., 610.));
+#337=IFCAXIS2PLACEMENT3D(#336,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@43df23d3
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@3b74ac8
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@1033576a
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@303cf2ba
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@76494737
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@27adc16e
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@b83a9be
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@4a003cbe
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@4082ba93
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@17fc391b
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@2609b277
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@1fd14d74
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@563e4951
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@4066c471
+#352=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationMap@2b175c00
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindowLiningProperties@792b749c
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindowStyle@6531a794
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@3eb81efb
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@19932c16
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@73eb439a
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@514646ef
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@1ae8bcbc
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@6cdba6dc
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@305ffe9e
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@302c971f
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@1972e513
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@7d3d101b
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@30c8681
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcCartesianTransformationOperator3D@5cdec700
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcMappedItem@7ae0a9ec
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@35841320
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6d026701
+#371=IFCCARTESIANPOINT((973.2285572845334, 160.1449494412966, 915.));
+#372=IFCAXIS2PLACEMENT3D(#371,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindow@548a24a
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@78aa1f72
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1040be71
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1f75a668
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@35399441
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@31edaa7d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@26adfd2d
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6d60fe40
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@23e84203
+#383=IFCCARTESIANPOINT((-451., -1057.));
+#384=IFCCARTESIANPOINT((451., -1057.));
+#385=IFCCARTESIANPOINT((451., 1019.));
+#386=IFCCARTESIANPOINT((375., 1019.));
+#387=IFCCARTESIANPOINT((375., -981.));
+#388=IFCCARTESIANPOINT((-375., -981.));
+#389=IFCCARTESIANPOINT((-375., 1019.));
+#390=IFCCARTESIANPOINT((-451., 1019.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@4b7dc788
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@6304101a
+#393=IFCCARTESIANPOINT((375., 200., 1019.));
+#394=IFCAXIS2PLACEMENT3D(#393,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@52f27fbd
+#396=IFCCARTESIANPOINT((-1057., -451.));
+#397=IFCCARTESIANPOINT((1019., -451.));
+#398=IFCCARTESIANPOINT((1019., -375.));
+#399=IFCCARTESIANPOINT((-981., -375.));
+#400=IFCCARTESIANPOINT((-981., 375.));
+#401=IFCCARTESIANPOINT((1019., 375.));
+#402=IFCCARTESIANPOINT((1019., 451.));
+#403=IFCCARTESIANPOINT((-1057., 451.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@5170bcf4
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@2812b107
+#406=IFCCARTESIANPOINT((375., -25., 1019.));
+#407=IFCAXIS2PLACEMENT3D(#406,#7=IFCDIRECTION((0., 1., 0.));,#10=IFCDIRECTION((0., 0., -1.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4c163e3
+#409=IFCCARTESIANPOINT((-5.329070518200751E-15, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@df6620a
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@4e31276e
+#412=IFCCARTESIANPOINT((375., 174.5000000000007, 0.));
+#413=IFCAXIS2PLACEMENT3D(#412,#9=IFCDIRECTION((0., 0., 1.));,#7=IFCDIRECTION((0., 1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4a8355dd
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@1a72a540
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@3f4faf53
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@7fd50002
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@533bda92
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@27d5a580
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@198d6542
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@5e403b4a
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@25be7b63
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@28dcca0c
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@45d84a20
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5117dd67
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5be49b60
+#427=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationMap@2931522b
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorLiningProperties@c430e6c
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorPanelProperties@312aa7c
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorStyle@3b5fad2d
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@7674b62c
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@72bc6553
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@66982506
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@70cf32e3
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@19e7a160
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@662706a7
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@5a59ca5e
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@4bdeaabb
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@6c4906d3
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@45a4b042
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@16b2bb0c
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcMappedItem@65987993
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@71075444
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@327af41b
+#446=IFCCARTESIANPOINT((-1306.771442715463, 160.14494944130323, 0.));
+#447=IFCAXIS2PLACEMENT3D(#446,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoor@6b695b06
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@6cb6decd
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4f32a3ad
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@c7045b9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@f99f5e0
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3336e6b6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7c3fdb62
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4d0d9fe7
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@536f2a7e
+#458=IFCAXIS2PLACEMENT3D(#460,$,$);
+#459=IFCLOCALPLACEMENT(#106,#458);
+#460=IFCCARTESIANPOINT((-2756.7714427154874, -39.855050558719405, 0.));
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRoof@72c8e7b
+#462=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6aa61224
+#465=IFCCARTESIANPOINT((1500., 923.7604307033953));
+#466=IFCCARTESIANPOINT((-1500., 923.7604307034026));
+#467=IFCCARTESIANPOINT((-3100., -923.7604307033912));
+#468=IFCCARTESIANPOINT((3100., -923.7604307034088));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@30bce90b
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@3e6f3f28
+#471=IFCCARTESIANPOINT((3100., 800., 461.8802153517003));
+#472=IFCDIRECTION((0., -0.4999999999999999, 0.8660254037844387));
+#473=IFCAXIS2PLACEMENT3D(#471,#472=IFCDIRECTION((0., -0.4999999999999999, 0.8660254037844387));,#5=IFCDIRECTION((1., 0., 0.)););
+#474=IFCDIRECTION((0., 0.4999999999999999, 0.8660254037844387));
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4d1bf319
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@7e19ebf0
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@5c80cf32
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@7d900ecf
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@6f01b95f
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@2474f125
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@6f53b8a
+#482=IFCAXIS2PLACEMENT3D(#3,$,$);
+#483=IFCLOCALPLACEMENT(#459,#1698);
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@6e535154
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@7357a011
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@3406472c
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@4201c465
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5b799640
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@6cb107fd
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@5717c37
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@68f4865
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@4816278d
+#493=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@4eaf3684
+#496=IFCCARTESIANPOINT((-923.7604307033973, 1600.));
+#497=IFCCARTESIANPOINT((-923.7604307034035, -1600.));
+#498=IFCCARTESIANPOINT((923.7604307034002, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@40317ba2
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@3c01cfa1
+#501=IFCCARTESIANPOINT((800., 1600., 461.8802153517003));
+#502=IFCDIRECTION((-0.4999999999999997, 0., 0.8660254037844388));
+#503=IFCDIRECTION((0.8660254037844388, 0., 0.4999999999999997));
+#504=IFCAXIS2PLACEMENT3D(#501,#502=IFCDIRECTION((-0.4999999999999997, 0., 0.8660254037844388));,#503=IFCDIRECTION((0.8660254037844388, 0., 0.4999999999999997)););
+#505=IFCDIRECTION((0.4999999999999997, 0., 0.8660254037844388));
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2ab4bc72
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@45d2ade3
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@740fb309
+#509=IFCAXIS2PLACEMENT3D(#3,$,$);
+#510=IFCLOCALPLACEMENT(#459,#1700);
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@15a34df2
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@727eb8cb
+#513=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@39d9314d
+#516=IFCCARTESIANPOINT((3100., 923.7604307033916));
+#517=IFCCARTESIANPOINT((-3100., 923.7604307034096));
+#518=IFCCARTESIANPOINT((-1500., -923.7604307033962));
+#519=IFCCARTESIANPOINT((1500., -923.760430703404));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@b978d10
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@5b7a8434
+#522=IFCCARTESIANPOINT((3100., 2400., 461.8802153517003));
+#523=IFCDIRECTION((0., 0.4999999999999998, 0.8660254037844389));
+#524=IFCAXIS2PLACEMENT3D(#522,#523=IFCDIRECTION((0., 0.4999999999999998, 0.8660254037844389));,#5=IFCDIRECTION((1., 0., 0.)););
+#525=IFCDIRECTION((0., -0.4999999999999998, 0.8660254037844389));
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2a8448fa
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5c45d770
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@6f204a1a
+#529=IFCAXIS2PLACEMENT3D(#3,$,$);
+#530=IFCLOCALPLACEMENT(#459,#1702);
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@5b38c1ec
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@2ce6c6ec
+#533=IFCAXIS2PLACEMENT3D(#3,$,$);
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@1bae316d
+#536=IFCCARTESIANPOINT((923.7604307033948, -1600.));
+#537=IFCCARTESIANPOINT((923.7604307034062, 1600.));
+#538=IFCCARTESIANPOINT((-923.7604307034004, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@147a5d08
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@6676f6a0
+#541=IFCCARTESIANPOINT((5400., 1600., 461.8802153517003));
+#542=IFCDIRECTION((0.4999999999999997, 0., 0.8660254037844388));
+#543=IFCDIRECTION((0.8660254037844388, 0., -0.4999999999999997));
+#544=IFCAXIS2PLACEMENT3D(#541,#542=IFCDIRECTION((0.4999999999999997, 0., 0.8660254037844388));,#543=IFCDIRECTION((0.8660254037844388, 0., -0.4999999999999997)););
+#545=IFCDIRECTION((-0.4999999999999997, 0., 0.8660254037844388));
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@3ad83a66
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7cbd9d24
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@3cce5371
+#549=IFCAXIS2PLACEMENT3D(#3,$,$);
+#550=IFCLOCALPLACEMENT(#459,#1704);
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@338fc1d8
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@1672fe87
+#553=IFCRELAGGREGATES('1hgbiH3hjE8uj_SsYpJvS_',#20,$,$,#461,(#484, #511, #531, #551));
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4722ef0c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@73a8da0f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@48e1f6c7
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@55cb6996
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@50dfbc58
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4416d64f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1807e3f6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6bf08014
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@480d3575
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5e3d57c7
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@732d0d24
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@f1da57d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1fb19a0
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6ee4d9ab
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5a5338df
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@194fad1
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@418c5a9c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@18e36d14
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5082d622
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@26abb146
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@13d4992d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@302f7971
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6950ed69
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6dd7b5a3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6f3187b0
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2663e964
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@48b67364
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@189cbd7c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7bf3a5d8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@42e25b0b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@39b43d60
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@44be0077
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2205a05d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@72ef8d15
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6aa8e115
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@5e21e98f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@673fdbce
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@7bd7d6d6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2de56eb2
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@17bffc17
+#594=IFCAXIS2PLACEMENT3D(#3,$,$);
+#595=IFCLOCALPLACEMENT(#102,#594);
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStair@c05fddc
+#597=IFCAXIS2PLACEMENT3D(#3,$,$);
+#598=IFCLOCALPLACEMENT(#595,#597);
+#599=IFCCARTESIANPOINT((0., -6.794564910705958E-14));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@332729ad
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@75d2da2d
+#602=IFCCARTESIANPOINT((-1574.5369590333096, -822.4697202034756, 0.));
+#603=IFCAXIS2PLACEMENT3D(#602,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@65f8f5ae
+#605=IFCCARTESIANPOINT((0., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@4278284b
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@9573584
+#608=IFCCARTESIANPOINT((-1574.5369590333094, -572.4697202034755, 150.));
+#609=IFCAXIS2PLACEMENT3D(#608,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@431cd9b2
+#611=IFCCARTESIANPOINT((2.7000623958883807E-13, 1.4210854715202004E-13));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@3370f42
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@6057aebb
+#614=IFCCARTESIANPOINT((-1574.5369590333096, -703.7197202034756, 100.));
+#615=IFCAXIS2PLACEMENT3D(#614,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@38467116
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5b7a7f33
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@63eef88a
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStairFlight@25df00a0
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStairFlightType@53251a66
+#621=IFCAXIS2PLACEMENT3D(#3,$,$);
+#622=IFCLOCALPLACEMENT(#595,#621);
+#623=IFCCARTESIANPOINT((-125., -154.52379737113245));
+#624=IFCCARTESIANPOINT((125., -154.52379737113245));
+#625=IFCCARTESIANPOINT((125., 229.5237973711326));
+#626=IFCCARTESIANPOINT((-125., 79.52379737113229));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@6853425f
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@352c1b98
+#629=IFCCARTESIANPOINT((-2124.53695903331, -703.7197202034749, 154.52379737113245));
+#630=IFCAXIS2PLACEMENT3D(#629,#5=IFCDIRECTION((1., 0., 0.));,#7=IFCDIRECTION((0., 1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@790da477
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5c7933ad
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@21129f1f
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMemberType@5a9f4771
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMember@4d15107f
+#636=IFCAXIS2PLACEMENT3D(#3,$,$);
+#637=IFCLOCALPLACEMENT(#595,#636);
+#638=IFCCARTESIANPOINT((-125., -154.52379737113233));
+#639=IFCCARTESIANPOINT((125., -154.52379737113233));
+#640=IFCCARTESIANPOINT((125., 229.5237973711322));
+#641=IFCCARTESIANPOINT((-125., 79.52379737113252));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@282cb7c7
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@7d898981
+#644=IFCCARTESIANPOINT((-1074.5369590333094, -703.7197202034763, 154.52379737113233));
+#645=IFCAXIS2PLACEMENT3D(#644,#5=IFCDIRECTION((1., 0., 0.));,#7=IFCDIRECTION((0., 1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@57bc27f5
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5fb759d6
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@48d61b48
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMember@7b4c50bc
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@68c9d179
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@68d279ec
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@d554c5f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@2dfaea86
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@15888343
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@33ecda92
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@258d79be
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@14fc5f04
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@14f9390f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6e2829c7
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3feb2dda
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6a8658ff
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1c742ed4
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@333d4a8c
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@55de24cc
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@dc7df28
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@30f842ca
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6c0d7c83
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@69c81773
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4d14b6c2
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@176b75f7
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5965be2d
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7e990ed7
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@409c54f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@3e74829
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@51a9ad5e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@5f20155b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@72ade7e3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@239105a8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3fce8fd9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@609bcfb6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7d94beb9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@560348e6
+#683=IFCAXIS2PLACEMENT3D(#3,$,$);
+#685=IFCAXIS2PLACEMENT3D(#1143,$,$);
+#686=IFCLOCALPLACEMENT(#595,#685);
+#687=IFCCARTESIANPOINT((34.09527223591623, 239.08750000000055, 995.8523848412368));
+#688=IFCCARTESIANPOINT((34.09527223591623, 239.08750000000055, 0.));
+#689=IFCCARTESIANPOINT((21.59527223591636, 251.5875000000006, 0.));
+#690=IFCCARTESIANPOINT((9.095272235916225, 239.08750000000066, 0.));
+#691=IFCCARTESIANPOINT((9.095272235916225, 239.0875000000008, 995.8523848412369));
+#692=IFCCARTESIANPOINT((24.3767839103704, 251.27409890227335, 1003.1643441826005));
+#693=IFCCARTESIANPOINT((18.813760561462324, 226.9009010977278, 988.5404254998733));
+#694=IFCCARTESIANPOINT((21.595272235916227, 226.5875000000006, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4f6f416f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5884a914
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5dafbe45
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3b8f0a79
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50378a4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2254127a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71e693fa
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@60f00693
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51891008
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@48793bef
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@79207381
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2f953efd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7d286fb6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@491b9b8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@f68f0dc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3eb77ea8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a4927d6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@d2de489
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7b8b43c7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7a6d7e92
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@14bdbc74
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7aaca91a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@aba625
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@12591ac8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@44c73c26
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@97e93f1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5a7fe64f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41005828
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5a5a729f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@38145825
+#725=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000047, 860.8523848412368));
+#726=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000047, 0.));
+#727=IFCCARTESIANPOINT((21.59527223591609, 26.58750000000005, 0.));
+#728=IFCCARTESIANPOINT((9.09527223591582, 14.087500000000182, 0.));
+#729=IFCCARTESIANPOINT((9.09527223591582, 14.087500000000317, 860.8523848412368));
+#730=IFCCARTESIANPOINT((24.376783910369994, 26.274098902272787, 868.1643441826002));
+#731=IFCCARTESIANPOINT((18.81376056146192, 1.900901097727304, 853.5404254998729));
+#732=IFCCARTESIANPOINT((21.59527223591582, 1.5875000000000452, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@60b4beb4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b520ea8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@41330d4f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7fcf2fc1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@624ea235
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1b66c0fb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2141a12
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3932c79a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3e0e1046
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4196c360
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@782859e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@24c1b2d2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41294f8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@23f5b5dc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc19a70
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@225129c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5db6b9cd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@508dec2b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20435c40
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7857fe2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e4f4a5c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@573906eb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6f15d60e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@37313c65
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@479ceda0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1be2019a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@465232e9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6d07a63d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@29d80d2b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@798162bc
+#763=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 682.5071443154641));
+#764=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 667.3578869079209));
+#765=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 667.3578869079209));
+#766=IFCCARTESIANPOINT((36.59527223591579, 1.5875000000000452, 682.5071443154641));
+#767=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 697.6564017230071));
+#768=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 697.6564017230071));
+#769=IFCCARTESIANPOINT((6.595272235916252, 251.5875000000006, 832.5071443154641));
+#770=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 847.6564017230071));
+#771=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 847.6564017230071));
+#772=IFCCARTESIANPOINT((36.5952722359162, 251.5875000000006, 832.5071443154642));
+#773=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 817.3578869079209));
+#774=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 817.3578869079208));
+#775=IFCCARTESIANPOINT((11.09466207989387, 251.5875000000006, 823.4188223256906));
+#776=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 674.9325156116925));
+#777=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 677.9629833206817));
+#778=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 667.3578869079209));
+#779=IFCCARTESIANPOINT((21.595272235916227, 251.5875000000006, 817.3578869079208));
+#780=IFCCARTESIANPOINT((25.345272235916184, 251.58750000000066, 817.3578869079209));
+#781=IFCCARTESIANPOINT((32.845272235915836, 1.5875000000000452, 674.9325156116926));
+#782=IFCCARTESIANPOINT((32.845272235916106, 251.58750000000074, 824.9325156116923));
+#783=IFCCARTESIANPOINT((34.345577313972534, 251.58750000000074, 827.9629833206682));
+#784=IFCCARTESIANPOINT((17.845272235915726, 1.5875000000000452, 667.3578869079209));
+#785=IFCCARTESIANPOINT((17.845272235916266, 251.5875000000006, 817.3578869079208));
+#786=IFCCARTESIANPOINT((30.97027223591572, 1.5875000000000452, 671.1452012598068));
+#787=IFCCARTESIANPOINT((30.970272235916124, 251.58750000000066, 821.1452012598066));
+#788=IFCCARTESIANPOINT((12.220272235915786, 1.5875000000000452, 671.1452012598068));
+#789=IFCCARTESIANPOINT((12.594967157905089, 251.5875000000006, 820.3883546168056));
+#790=IFCCARTESIANPOINT((8.844967157904993, 251.5875000000006, 827.9629833205773));
+#791=IFCCARTESIANPOINT((25.34527223591578, 1.5875000000000452, 667.3578869079209));
+#792=IFCCARTESIANPOINT((34.72027223591568, 1.5875000000000452, 678.7198299635784));
+#793=IFCCARTESIANPOINT((32.09588239204064, 1.5875000000000452, 691.5954663050306));
+#794=IFCCARTESIANPOINT((32.84527223591624, 251.58750000000074, 840.0817730192355));
+#795=IFCCARTESIANPOINT((30.970272235916262, 251.58750000000074, 843.8690873711213));
+#796=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 697.6564017230071));
+#797=IFCCARTESIANPOINT((21.59527223591636, 251.5875000000006, 847.6564017230071));
+#798=IFCCARTESIANPOINT((17.8452722359164, 251.5875000000006, 847.6564017230071));
+#799=IFCCARTESIANPOINT((10.345272235916347, 251.5875000000006, 840.0817730192357));
+#800=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 690.0817730192357));
+#801=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 693.8690873711214));
+#802=IFCCARTESIANPOINT((34.34557731397497, 251.58750000000074, 837.0513053102547));
+#803=IFCCARTESIANPOINT((34.34557731397835, 1.5875000000001804, 687.0513053102472));
+#804=IFCCARTESIANPOINT((25.34527223591605, 1.5875000000000452, 697.6564017230071));
+#805=IFCCARTESIANPOINT((25.345272235916184, 251.5875000000006, 847.6564017230072));
+#806=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 687.0513053102459));
+#807=IFCCARTESIANPOINT((8.470272235916367, 251.5875000000006, 836.2944586673499));
+#808=IFCCARTESIANPOINT((30.595577313978392, 1.5875000000000452, 694.6259340140189));
+#809=IFCCARTESIANPOINT((17.84527223591586, 1.5875000000000452, 697.6564017230072));
+#810=IFCCARTESIANPOINT((12.220272235916326, 251.5875000000006, 843.8690873711214));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@571c5681
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@58e1d9d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1df8da7a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@488d1cd7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@446a1e84
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@23941fb4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@68dc098b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4f0f2942
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7486b455
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@38ba6ce3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2657d4dd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@660acfb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@d278d2b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5340477f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5d908d47
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2d6c53fc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@47caedad
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5efa40fe
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@25f4878b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7139992f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1f9f6368
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4e423aa2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@69504ae9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1c9b0314
+#835=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 482.5071443154642));
+#836=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 467.35788690792106));
+#837=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 467.35788690792106));
+#838=IFCCARTESIANPOINT((36.59527223591579, 1.5875000000000452, 482.5071443154642));
+#839=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 497.6564017230072));
+#840=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 497.6564017230072));
+#841=IFCCARTESIANPOINT((6.595272235916252, 251.5875000000006, 632.5071443154642));
+#842=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 647.6564017230072));
+#843=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 647.6564017230072));
+#844=IFCCARTESIANPOINT((36.5952722359162, 251.5875000000006, 632.5071443154643));
+#845=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 617.357886907921));
+#846=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 617.3578869079209));
+#847=IFCCARTESIANPOINT((11.09466207989387, 251.5875000000006, 623.4188223256907));
+#848=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 474.9325156116927));
+#849=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 477.9629833206818));
+#850=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 467.35788690792106));
+#851=IFCCARTESIANPOINT((21.595272235916227, 251.5875000000006, 617.357886907921));
+#852=IFCCARTESIANPOINT((25.345272235916184, 251.58750000000066, 617.357886907921));
+#853=IFCCARTESIANPOINT((32.845272235915836, 1.5875000000000452, 474.9325156116927));
+#854=IFCCARTESIANPOINT((32.845272235916106, 251.58750000000074, 624.9325156116925));
+#855=IFCCARTESIANPOINT((34.345577313972534, 251.58750000000074, 627.9629833206683));
+#856=IFCCARTESIANPOINT((17.845272235915726, 1.5875000000000452, 467.35788690792106));
+#857=IFCCARTESIANPOINT((17.845272235916266, 251.5875000000006, 617.357886907921));
+#858=IFCCARTESIANPOINT((30.97027223591572, 1.5875000000000452, 471.14520125980687));
+#859=IFCCARTESIANPOINT((30.970272235916124, 251.58750000000066, 621.1452012598068));
+#860=IFCCARTESIANPOINT((12.220272235915786, 1.5875000000000452, 471.14520125980687));
+#861=IFCCARTESIANPOINT((12.594967157905089, 251.5875000000006, 620.3883546168058));
+#862=IFCCARTESIANPOINT((8.844967157904993, 251.5875000000006, 627.9629833205775));
+#863=IFCCARTESIANPOINT((25.34527223591578, 1.5875000000000452, 467.35788690792106));
+#864=IFCCARTESIANPOINT((34.72027223591568, 1.5875000000000452, 478.7198299635785));
+#865=IFCCARTESIANPOINT((32.09588239204064, 1.5875000000000452, 491.59546630503075));
+#866=IFCCARTESIANPOINT((32.84527223591624, 251.58750000000074, 640.0817730192357));
+#867=IFCCARTESIANPOINT((30.970272235916262, 251.58750000000074, 643.8690873711214));
+#868=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 497.6564017230074));
+#869=IFCCARTESIANPOINT((21.59527223591636, 251.5875000000006, 647.6564017230073));
+#870=IFCCARTESIANPOINT((17.8452722359164, 251.5875000000006, 647.6564017230073));
+#871=IFCCARTESIANPOINT((10.345272235916347, 251.5875000000006, 640.0817730192357));
+#872=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 490.0817730192357));
+#873=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 493.8690873711215));
+#874=IFCCARTESIANPOINT((34.34557731397497, 251.58750000000074, 637.0513053102549));
+#875=IFCCARTESIANPOINT((34.34557731397835, 1.5875000000001804, 487.0513053102474));
+#876=IFCCARTESIANPOINT((25.34527223591605, 1.5875000000000452, 497.6564017230072));
+#877=IFCCARTESIANPOINT((25.345272235916184, 251.5875000000006, 647.6564017230073));
+#878=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 487.05130531024616));
+#879=IFCCARTESIANPOINT((8.470272235916367, 251.5875000000006, 636.29445866735));
+#880=IFCCARTESIANPOINT((30.595577313978392, 1.5875000000000452, 494.62593401401904));
+#881=IFCCARTESIANPOINT((17.84527223591586, 1.5875000000000452, 497.6564017230074));
+#882=IFCCARTESIANPOINT((12.220272235916326, 251.5875000000006, 643.8690873711216));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7fbdb894
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@387a8303
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@45385f75
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3081f72c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@28cda624
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@49c90a9c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3148f668
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1500b2f3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2d29b4ee
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6e005dc9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7eecb5b8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@69ee81fc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7ceb3185
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@126253fd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6e2aa843
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@436c81a3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@57db2b13
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6f36c2f0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3561c410
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@475c9c31
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@f58853c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@59e32960
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c86a017
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1224144a
+#907=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 282.50714431546396));
+#908=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 267.35788690792083));
+#909=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 267.35788690792094));
+#910=IFCCARTESIANPOINT((36.59527223591579, 1.5875000000000452, 282.50714431546396));
+#911=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 297.6564017230071));
+#912=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 297.65640172300715));
+#913=IFCCARTESIANPOINT((6.595272235916252, 251.5875000000006, 432.5071443154641));
+#914=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 447.6564017230071));
+#915=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 447.6564017230071));
+#916=IFCCARTESIANPOINT((36.5952722359162, 251.5875000000006, 432.50714431546413));
+#917=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 417.357886907921));
+#918=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 417.35788690792083));
+#919=IFCCARTESIANPOINT((11.094662079893734, 251.5875000000006, 423.41882232569054));
+#920=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 274.93251561169245));
+#921=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 277.96298332068176));
+#922=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 267.3578869079209));
+#923=IFCCARTESIANPOINT((21.595272235916227, 251.5875000000006, 417.3578869079209));
+#924=IFCCARTESIANPOINT((25.345272235916184, 251.5875000000006, 417.3578869079209));
+#925=IFCCARTESIANPOINT((32.845272235915836, 1.5875000000000452, 274.9325156116924));
+#926=IFCCARTESIANPOINT((32.845272235916106, 251.58750000000074, 424.9325156116924));
+#927=IFCCARTESIANPOINT((34.345577313972534, 251.58750000000074, 427.9629833206683));
+#928=IFCCARTESIANPOINT((17.845272235915726, 1.5875000000000452, 267.3578869079209));
+#929=IFCCARTESIANPOINT((17.84527223591613, 251.5875000000006, 417.35788690792083));
+#930=IFCCARTESIANPOINT((30.97027223591572, 1.5875000000000452, 271.14520125980664));
+#931=IFCCARTESIANPOINT((30.970272235916124, 251.58750000000066, 421.14520125980664));
+#932=IFCCARTESIANPOINT((12.220272235915786, 1.5875000000000452, 271.1452012598067));
+#933=IFCCARTESIANPOINT((12.594967157904817, 251.5875000000006, 420.3883546168057));
+#934=IFCCARTESIANPOINT((8.844967157904993, 251.5875000000006, 427.96298332057734));
+#935=IFCCARTESIANPOINT((25.34527223591578, 1.5875000000000452, 267.3578869079209));
+#936=IFCCARTESIANPOINT((34.720272235915814, 1.5875000000001804, 278.71982996357815));
+#937=IFCCARTESIANPOINT((32.09588239204091, 1.5875000000000452, 291.5954663050306));
+#938=IFCCARTESIANPOINT((32.845272235916376, 251.58750000000066, 440.0817730192355));
+#939=IFCCARTESIANPOINT((30.970272235916262, 251.58750000000066, 443.8690873711213));
+#940=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 297.6564017230071));
+#941=IFCCARTESIANPOINT((21.59527223591636, 251.5875000000006, 447.65640172300715));
+#942=IFCCARTESIANPOINT((17.8452722359164, 251.5875000000006, 447.6564017230072));
+#943=IFCCARTESIANPOINT((10.345272235916347, 251.5875000000006, 440.0817730192357));
+#944=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 290.0817730192357));
+#945=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 293.86908737112145));
+#946=IFCCARTESIANPOINT((34.34557731397497, 251.58750000000066, 437.05130531025486));
+#947=IFCCARTESIANPOINT((34.34557731397822, 1.5875000000000452, 287.05130531024724));
+#948=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 297.6564017230071));
+#949=IFCCARTESIANPOINT((25.345272235916323, 251.58750000000066, 447.65640172300715));
+#950=IFCCARTESIANPOINT((8.84496715785261, 1.5875000000000452, 287.05130531024616));
+#951=IFCCARTESIANPOINT((8.470272235916232, 251.5875000000006, 436.2944586673499));
+#952=IFCCARTESIANPOINT((30.595577313978257, 1.5875000000000452, 294.62593401401875));
+#953=IFCCARTESIANPOINT((17.845272235915996, 1.5874999999999098, 297.6564017230072));
+#954=IFCCARTESIANPOINT((12.220272235916191, 251.5875000000006, 443.8690873711215));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7c214cc0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c7bfdc1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@29f7cefd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5b67bb7e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5276d6ee
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@700fb871
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@609db546
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@71687585
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3b35a229
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20f5281c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1807f5a7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@9816741
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@56c4278e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1b919693
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e16c0aa
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@301eda63
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7fb4f2a9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13d73f29
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3d246ea3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4dc27487
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@565f390
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@341814d3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6a4f1a55
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc3712
+#979=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 82.50714431546393));
+#980=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 67.35788690792079));
+#981=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 67.35788690792089));
+#982=IFCCARTESIANPOINT((36.59527223591579, 1.5875000000000452, 82.50714431546393));
+#983=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 97.656401723007));
+#984=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 97.65640172300705));
+#985=IFCCARTESIANPOINT((6.595272235916252, 251.5875000000006, 232.507144315464));
+#986=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 247.65640172300706));
+#987=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 247.656401723007));
+#988=IFCCARTESIANPOINT((36.5952722359162, 251.5875000000006, 232.50714431546405));
+#989=IFCCARTESIANPOINT((29.09527223591628, 251.5875000000006, 217.35788690792089));
+#990=IFCCARTESIANPOINT((14.095272235916307, 251.5875000000006, 217.35788690792074));
+#991=IFCCARTESIANPOINT((11.094662079893734, 251.5875000000006, 223.41882232569043));
+#992=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 74.9325156116924));
+#993=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 77.96298332068166));
+#994=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 67.35788690792081));
+#995=IFCCARTESIANPOINT((21.595272235916227, 251.58750000000074, 217.35788690792089));
+#996=IFCCARTESIANPOINT((25.345272235916184, 251.58750000000074, 217.35788690792089));
+#997=IFCCARTESIANPOINT((32.845272235915836, 1.5875000000000452, 74.9325156116924));
+#998=IFCCARTESIANPOINT((32.845272235916106, 251.5875000000008, 224.93251561169234));
+#999=IFCCARTESIANPOINT((34.345577313972534, 251.5875000000009, 227.96298332066826));
+#1000=IFCCARTESIANPOINT((17.845272235915726, 1.5875000000000452, 67.35788690792081));
+#1001=IFCCARTESIANPOINT((17.84527223591613, 251.58750000000074, 217.35788690792089));
+#1002=IFCCARTESIANPOINT((30.97027223591572, 1.5875000000000452, 71.14520125980664));
+#1003=IFCCARTESIANPOINT((30.970272235916262, 251.58750000000074, 221.14520125980658));
+#1004=IFCCARTESIANPOINT((12.22027223591565, 1.5875000000000452, 71.1452012598066));
+#1005=IFCCARTESIANPOINT((12.594967157905089, 251.58750000000066, 220.38835461680566));
+#1006=IFCCARTESIANPOINT((8.844967157904993, 251.5875000000006, 227.96298332057717));
+#1007=IFCCARTESIANPOINT((25.34527223591578, 1.5875000000000452, 67.35788690792084));
+#1008=IFCCARTESIANPOINT((34.72027223591568, 1.5874999999999098, 78.71982996357822));
+#1009=IFCCARTESIANPOINT((32.09588239204064, 1.5875000000000452, 91.5954663050305));
+#1010=IFCCARTESIANPOINT((32.845272235916376, 251.58750000000066, 240.0817730192354));
+#1011=IFCCARTESIANPOINT((30.970272235916262, 251.5875000000006, 243.86908737112117));
+#1012=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 97.65640172300705));
+#1013=IFCCARTESIANPOINT((21.595272235916497, 251.5875000000006, 247.65640172300706));
+#1014=IFCCARTESIANPOINT((17.845272235916536, 251.5875000000006, 247.65640172300712));
+#1015=IFCCARTESIANPOINT((10.345272235916347, 251.5875000000006, 240.08177301923556));
+#1016=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 90.08177301923561));
+#1017=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 93.86908737112137));
+#1018=IFCCARTESIANPOINT((34.34557731397497, 251.58750000000074, 237.0513053102547));
+#1019=IFCCARTESIANPOINT((34.34557731397835, 1.5875000000000452, 87.05130531024717));
+#1020=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 97.656401723007));
+#1021=IFCCARTESIANPOINT((25.345272235916323, 251.5875000000006, 247.656401723007));
+#1022=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 87.05130531024602));
+#1023=IFCCARTESIANPOINT((8.470272235916232, 251.5875000000006, 236.29445866734986));
+#1024=IFCCARTESIANPOINT((30.595577313978257, 1.5875000000000452, 94.62593401401871));
+#1025=IFCCARTESIANPOINT((17.845272235915996, 1.5874999999999098, 97.6564017230071));
+#1026=IFCCARTESIANPOINT((12.220272235916463, 251.5875000000006, 243.86908737112137));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4397ad89
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7dfd3c81
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2f67a4d3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@59cba5a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2584b82d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5e3f861
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1bd39d3c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7bbc8656
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2fb0623e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6f19ac19
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6933b6c6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@49b2a47d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@119cbf96
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d3e8655
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5be1d0a4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71329995
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7dfb0c0f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@415b0b49
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@768fc0f2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@626abbd0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6d5620ce
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5454d35e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@169bb4dd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@311bf055
+#1051=IFCCARTESIANPOINT((41.59527223591601, 1.5875000000000452, 876.6761924206185));
+#1052=IFCCARTESIANPOINT((31.59527223591598, 1.5875000000000452, 896.8752022973426));
+#1053=IFCCARTESIANPOINT((11.595272235916063, 1.5875000000000452, 896.8752022973428));
+#1054=IFCCARTESIANPOINT((1.5952722359158997, 1.5875000000000452, 876.676192420619));
+#1055=IFCCARTESIANPOINT((11.595272235915791, 1.5875000000000452, 856.4771825438946));
+#1056=IFCCARTESIANPOINT((31.595272235915846, 1.5875000000000452, 856.4771825438944));
+#1057=IFCCARTESIANPOINT((41.59527223591642, 251.5875000000006, 1026.6761924206185));
+#1058=IFCCARTESIANPOINT((31.595272235916255, 251.5875000000006, 1006.4771825438944));
+#1059=IFCCARTESIANPOINT((11.595272235916198, 251.5875000000006, 1006.4771825438945));
+#1060=IFCCARTESIANPOINT((1.5952722359163058, 251.5875000000006, 1026.6761924206187));
+#1061=IFCCARTESIANPOINT((11.595272235916468, 251.5875000000006, 1046.8752022973429));
+#1062=IFCCARTESIANPOINT((31.59527223591639, 251.5875000000006, 1046.8752022973426));
+#1063=IFCCARTESIANPOINT((34.736661780805, 1.5875000000000452, 890.5299064529576));
+#1064=IFCCARTESIANPOINT((36.59527223591633, 251.5875000000006, 1036.7756973589803));
+#1065=IFCCARTESIANPOINT((34.0952722359165, 251.5875000000006, 1041.8254498281617));
+#1066=IFCCARTESIANPOINT((21.595272235916227, 1.5875000000000452, 896.8752022973425));
+#1067=IFCCARTESIANPOINT((21.595272235916497, 251.5875000000006, 1046.8752022973426));
+#1068=IFCCARTESIANPOINT((16.595272235916685, 251.58750000000066, 1046.8752022973429));
+#1069=IFCCARTESIANPOINT((6.595272235916387, 251.5875000000006, 1036.775697358981));
+#1070=IFCCARTESIANPOINT((6.595272235915981, 1.5874999999999098, 886.7756973589808));
+#1071=IFCCARTESIANPOINT((9.09527223591609, 1.5875000000000452, 891.8254498281617));
+#1072=IFCCARTESIANPOINT((38.165967008360504, 1.5875000000000452, 883.603049436788));
+#1073=IFCCARTESIANPOINT((26.595272235916173, 1.5875000000000452, 896.8752022973425));
+#1074=IFCCARTESIANPOINT((26.595272235916443, 251.5875000000006, 1046.8752022973426));
+#1075=IFCCARTESIANPOINT((5.024577463464501, 1.5875000000000452, 883.603049436774));
+#1076=IFCCARTESIANPOINT((4.095272235916414, 251.58750000000055, 1031.7259448898));
+#1077=IFCCARTESIANPOINT((16.595272235916145, 1.5875000000000452, 896.8752022973428));
+#1078=IFCCARTESIANPOINT((9.095272235916632, 251.5875000000006, 1041.825449828162));
+#1079=IFCCARTESIANPOINT((39.88061962213819, 1.5875000000000452, 880.1396209287032));
+#1080=IFCCARTESIANPOINT((39.09527223591631, 251.5875000000006, 1031.7259448897996));
+#1081=IFCCARTESIANPOINT((36.45131439458282, 1.5875000000000452, 887.0664779448725));
+#1082=IFCCARTESIANPOINT((3.3099248496902005, 1.5874999999999098, 880.1396209286964));
+#1083=IFCCARTESIANPOINT((8.45388269104613, 251.5875000000006, 1012.8224783882416));
+#1084=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 866.576687482257));
+#1085=IFCCARTESIANPOINT((5.02457746346423, 1.5875000000000452, 869.7493354044637));
+#1086=IFCCARTESIANPOINT((5.024577463481285, 251.5875000000006, 1019.7493354044304));
+#1087=IFCCARTESIANPOINT((21.59527223591609, 251.5875000000006, 1006.4771825438945));
+#1088=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 856.4771825438945));
+#1089=IFCCARTESIANPOINT((16.5952722359156, 1.5875000000000452, 856.4771825438945));
+#1090=IFCCARTESIANPOINT((36.59527223591579, 1.5875000000000452, 866.5766874822565));
+#1091=IFCCARTESIANPOINT((36.5952722359162, 251.5875000000006, 1016.5766874822564));
+#1092=IFCCARTESIANPOINT((38.16596700836578, 251.5875000000006, 1019.7493354044593));
+#1093=IFCCARTESIANPOINT((26.59527223591604, 251.5875000000006, 1006.4771825438944));
+#1094=IFCCARTESIANPOINT((26.595272235915765, 1.5875000000000452, 856.4771825438944));
+#1095=IFCCARTESIANPOINT((34.09527223591582, 1.5875000000000452, 861.5269350130753));
+#1096=IFCCARTESIANPOINT((34.09527223591609, 251.5875000000006, 1011.5269350130754));
+#1097=IFCCARTESIANPOINT((9.095272235915683, 1.5875000000000452, 861.5269350130757));
+#1098=IFCCARTESIANPOINT((6.7392300772635725, 251.5875000000006, 1016.285906896336));
+#1099=IFCCARTESIANPOINT((3.3099248496985925, 251.58750000000055, 1023.2127639125248));
+#1100=IFCCARTESIANPOINT((3.309924849690065, 1.5875000000000452, 873.2127639125414));
+#1101=IFCCARTESIANPOINT((16.595272235916145, 251.58750000000066, 1006.4771825438945));
+#1102=IFCCARTESIANPOINT((39.88061962214103, 251.58750000000066, 1023.2127639125389));
+#1103=IFCCARTESIANPOINT((39.0952722359159, 1.5875000000000452, 871.6264399514374));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20c0a64d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1f9e9475
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@642a7222
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@455b6df1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3aa078fd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7d322cad
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4ddbbdf8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@d23e042
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21be3395
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3f67593e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@46d59067
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4f49f6af
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1ab06251
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2d0399f4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@78452606
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41ab013
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@14dd7b39
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@147e2ae7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@14bee915
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@66ea810
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@448c8166
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1115ec15
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6cd24612
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4470fbd6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@82ea68c
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@15d49048
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@59e505b2
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@7098b907
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@3af0a9da
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@503f91c3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@43b9fd5
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@13526e59
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@79dc5318
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@2235eaab
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@8e50104
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@17503f6b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@37e4d7bb
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@3bcd05cb
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@3b6d844d
+#1143=IFCCARTESIANPOINT((-1121.5322312692256, -830.3072202034767, 150.));
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6f7923a5
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRailing@10289886
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@74a6f9c1
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@730d2164
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@54eb2b70
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@24959ca4
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@45a37759
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@1df8b5b8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@23202fce
+#1153=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1155=IFCAXIS2PLACEMENT3D(#1613,$,$);
+#1156=IFCLOCALPLACEMENT(#595,#1155);
+#1157=IFCCARTESIANPOINT((9.09527223591636, 239.08749999999938, 995.8523848412368));
+#1158=IFCCARTESIANPOINT((18.81376056146219, 251.27409890227227, 1003.1643441826005));
+#1159=IFCCARTESIANPOINT((34.09527223591609, 239.08749999999958, 995.8523848412368));
+#1160=IFCCARTESIANPOINT((34.09527223591609, 239.08749999999978, 0.));
+#1161=IFCCARTESIANPOINT((21.595272235915957, 251.58749999999952, 0.));
+#1162=IFCCARTESIANPOINT((9.09527223591636, 239.08749999999952, 0.));
+#1163=IFCCARTESIANPOINT((21.595272235916227, 226.58749999999952, 0.));
+#1164=IFCCARTESIANPOINT((24.376783910369994, 226.90090109772672, 988.5404254998733));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@63611043
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c86dbc5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@38af9828
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20ca951f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@461ad730
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@376a0d86
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2d778add
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4ee203eb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@62656be4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@73302995
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a5a4e19
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@17d919b6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1838ccb8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7068e664
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@53f3bdbd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6c2ed0cd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@60db1c0e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@34129c78
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7d9e8ef7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3e78b6a5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7d61eb55
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@f107c50
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@769a1df5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@222a59e6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@51133c06
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@41f69e84
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6c7a164b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4b213651
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7975d1d8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4c2bb6e0
+#1195=IFCCARTESIANPOINT((9.09527223591609, 14.087500000000047, 860.8523848412366));
+#1196=IFCCARTESIANPOINT((18.81376056146192, 26.274098902272787, 868.1643441826002));
+#1197=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000047, 860.8523848412368));
+#1198=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000317, 0.));
+#1199=IFCCARTESIANPOINT((21.595272235915683, 26.58750000000005, 0.));
+#1200=IFCCARTESIANPOINT((9.09527223591609, 14.087500000000047, 0.));
+#1201=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 0.));
+#1202=IFCCARTESIANPOINT((24.37678391036972, 1.900901097727304, 853.5404254998729));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4241e0f4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2438dcd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3e62d773
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4ebff610
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@24105dc5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4ef74c30
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@60410cd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5167f57d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7283d3eb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@44d52de2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@64b0598
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@638ef7ed
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@95e33cc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@18f8cd79
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4bff7da0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@38604b81
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3e2055d6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3f1d2e23
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1e44b638
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50029372
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@536dbea0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7393222f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@e3b3b2f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@47c81abf
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@babafc2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50f6ac94
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@776a6d9b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@31add175
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6cc4cdb9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21d03963
+#1233=IFCCARTESIANPOINT((36.59527223591633, 1.5875000000000452, 682.507144315464));
+#1234=IFCCARTESIANPOINT((29.095272235916145, 1.5875000000000452, 697.6564017230071));
+#1235=IFCCARTESIANPOINT((14.095272235916307, 1.5875000000000452, 697.6564017230071));
+#1236=IFCCARTESIANPOINT((6.595272235916116, 1.5875000000000452, 682.5071443154642));
+#1237=IFCCARTESIANPOINT((14.095272235916037, 1.5875000000000452, 667.3578869079209));
+#1238=IFCCARTESIANPOINT((29.095272235916145, 1.5875000000000452, 667.3578869079208));
+#1239=IFCCARTESIANPOINT((36.5952722359166, 251.58749999999952, 832.5071443154638));
+#1240=IFCCARTESIANPOINT((29.095272235916415, 251.58749999999952, 817.3578869079208));
+#1241=IFCCARTESIANPOINT((14.095272235916307, 251.58749999999952, 817.357886907921));
+#1242=IFCCARTESIANPOINT((6.595272235916387, 251.58749999999952, 832.5071443154641));
+#1243=IFCCARTESIANPOINT((14.095272235916577, 251.58749999999952, 847.6564017230071));
+#1244=IFCCARTESIANPOINT((29.095272235916415, 251.58749999999952, 847.6564017230071));
+#1245=IFCCARTESIANPOINT((32.095882392037396, 1.5875000000000452, 691.595466305038));
+#1246=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999952, 840.0817730192355));
+#1247=IFCCARTESIANPOINT((30.970272235916532, 251.58749999999952, 843.8690873711213));
+#1248=IFCCARTESIANPOINT((21.595272235916227, 1.5875000000000452, 697.6564017230071));
+#1249=IFCCARTESIANPOINT((21.595272235916497, 251.58749999999952, 847.6564017230071));
+#1250=IFCCARTESIANPOINT((17.845272235916536, 251.58749999999952, 847.6564017230072));
+#1251=IFCCARTESIANPOINT((10.345272235916617, 251.58749999999952, 840.0817730192358));
+#1252=IFCCARTESIANPOINT((10.345272235916076, 1.5875000000000452, 690.0817730192356));
+#1253=IFCCARTESIANPOINT((12.220272235916191, 1.5875000000000452, 693.8690873711214));
+#1254=IFCCARTESIANPOINT((34.345577313943025, 251.58749999999952, 837.0513053103202));
+#1255=IFCCARTESIANPOINT((34.34557731397659, 1.5875000000000452, 687.0513053102509));
+#1256=IFCCARTESIANPOINT((25.345272235916184, 1.5875000000000452, 697.6564017230071));
+#1257=IFCCARTESIANPOINT((25.345272235916458, 251.58749999999952, 847.6564017230071));
+#1258=IFCCARTESIANPOINT((8.844967157853151, 1.5875000000000452, 687.0513053102459));
+#1259=IFCCARTESIANPOINT((8.470272235916502, 251.58749999999952, 836.2944586673502));
+#1260=IFCCARTESIANPOINT((30.595577313976634, 1.5875000000000452, 694.6259340140227));
+#1261=IFCCARTESIANPOINT((17.845272235916266, 1.5875000000000452, 697.6564017230071));
+#1262=IFCCARTESIANPOINT((12.220272235916463, 251.58749999999952, 843.8690873711215));
+#1263=IFCCARTESIANPOINT((11.094662079807781, 251.58749999999958, 823.4188223258647));
+#1264=IFCCARTESIANPOINT((10.345272235916076, 1.5875000000000452, 674.9325156116927));
+#1265=IFCCARTESIANPOINT((8.844967157853151, 1.5875000000000452, 677.9629833206824));
+#1266=IFCCARTESIANPOINT((21.595272235916227, 1.5875000000000452, 667.3578869079208));
+#1267=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999966, 817.3578869079209));
+#1268=IFCCARTESIANPOINT((25.345272235916458, 251.58749999999966, 817.3578869079208));
+#1269=IFCCARTESIANPOINT((32.845272235916376, 1.5875000000000452, 674.9325156116921));
+#1270=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999966, 824.9325156116922));
+#1271=IFCCARTESIANPOINT((34.34557731397822, 251.58749999999966, 827.9629833206787));
+#1272=IFCCARTESIANPOINT((17.845272235915996, 1.5875000000000452, 667.3578869079209));
+#1273=IFCCARTESIANPOINT((17.845272235916266, 251.58749999999966, 817.357886907921));
+#1274=IFCCARTESIANPOINT((30.970272235916262, 1.5875000000000452, 671.1452012598065));
+#1275=IFCCARTESIANPOINT((30.970272235916532, 251.58749999999966, 821.1452012598065));
+#1276=IFCCARTESIANPOINT((12.220272235916191, 1.5875000000000452, 671.1452012598068));
+#1277=IFCCARTESIANPOINT((12.594967157862044, 251.58749999999952, 820.3883546168929));
+#1278=IFCCARTESIANPOINT((8.844967157862085, 251.58749999999952, 827.9629833206646));
+#1279=IFCCARTESIANPOINT((25.345272235916184, 1.5875000000000452, 667.3578869079206));
+#1280=IFCCARTESIANPOINT((34.72027223591622, 1.5874999999999098, 678.7198299635778));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@ae3540e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@28194a50
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1f760b47
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@600b9d27
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7f2cfe3f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@18ece7f4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3688eb5b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a5b6f42
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3cce57c7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@69f1a286
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5038d0b5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1cf56a1c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7922d892
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@32115b28
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@33f676f6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@457c9034
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2ad48653
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4c5ae43b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@345f69f3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6bb4dd34
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@264f218
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@50de186c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d9f158f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3576ddc2
+#1305=IFCCARTESIANPOINT((36.59527223591606, 1.5875000000000452, 482.5071443154642));
+#1306=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 497.6564017230074));
+#1307=IFCCARTESIANPOINT((14.095272235916037, 1.5875000000000452, 497.6564017230074));
+#1308=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 482.5071443154645));
+#1309=IFCCARTESIANPOINT((14.095272235915765, 1.5875000000000452, 467.35788690792117));
+#1310=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 467.35788690792106));
+#1311=IFCCARTESIANPOINT((36.59527223591633, 251.58749999999952, 632.5071443154641));
+#1312=IFCCARTESIANPOINT((29.095272235916145, 251.58749999999952, 617.357886907921));
+#1313=IFCCARTESIANPOINT((14.095272235916037, 251.58749999999952, 617.3578869079213));
+#1314=IFCCARTESIANPOINT((6.595272235916116, 251.58749999999952, 632.5071443154643));
+#1315=IFCCARTESIANPOINT((14.095272235916307, 251.58749999999952, 647.6564017230073));
+#1316=IFCCARTESIANPOINT((29.095272235916145, 251.58749999999952, 647.6564017230073));
+#1317=IFCCARTESIANPOINT((32.095882392037126, 1.5875000000000452, 491.5954663050384));
+#1318=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999952, 640.0817730192357));
+#1319=IFCCARTESIANPOINT((30.970272235916262, 251.58749999999952, 643.8690873711215));
+#1320=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 497.6564017230074));
+#1321=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999952, 647.6564017230073));
+#1322=IFCCARTESIANPOINT((17.845272235916266, 251.58749999999952, 647.6564017230075));
+#1323=IFCCARTESIANPOINT((10.345272235916076, 251.58749999999952, 640.0817730192362));
+#1324=IFCCARTESIANPOINT((10.345272235916076, 1.5875000000000452, 490.08177301923587));
+#1325=IFCCARTESIANPOINT((12.220272235916191, 1.5875000000000452, 493.8690873711217));
+#1326=IFCCARTESIANPOINT((34.345577313942485, 251.58749999999952, 637.0513053103205));
+#1327=IFCCARTESIANPOINT((34.34557731397659, 1.5875000000000452, 487.05130531025134));
+#1328=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 497.6564017230074));
+#1329=IFCCARTESIANPOINT((25.345272235916184, 251.58749999999952, 647.6564017230073));
+#1330=IFCCARTESIANPOINT((8.844967157853151, 1.5875000000000452, 487.05130531024616));
+#1331=IFCCARTESIANPOINT((8.470272235916232, 251.58749999999952, 636.2944586673505));
+#1332=IFCCARTESIANPOINT((30.595577313976364, 1.5875000000000452, 494.62593401402296));
+#1333=IFCCARTESIANPOINT((17.845272235915996, 1.5875000000000452, 497.6564017230074));
+#1334=IFCCARTESIANPOINT((12.220272235916191, 251.58749999999952, 643.8690873711219));
+#1335=IFCCARTESIANPOINT((11.094662079807511, 251.58749999999958, 623.4188223258649));
+#1336=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 474.93251561169296));
+#1337=IFCCARTESIANPOINT((8.84496715785261, 1.5875000000000452, 477.9629833206826));
+#1338=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 467.35788690792106));
+#1339=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999966, 617.3578869079212));
+#1340=IFCCARTESIANPOINT((25.345272235916184, 251.58749999999966, 617.357886907921));
+#1341=IFCCARTESIANPOINT((32.845272235915836, 1.5875000000000452, 474.9325156116924));
+#1342=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999966, 624.9325156116925));
+#1343=IFCCARTESIANPOINT((34.34557731397768, 251.58749999999966, 627.962983320679));
+#1344=IFCCARTESIANPOINT((17.845272235915996, 1.5875000000000452, 467.35788690792106));
+#1345=IFCCARTESIANPOINT((17.845272235915996, 251.58749999999966, 617.3578869079213));
+#1346=IFCCARTESIANPOINT((30.97027223591572, 1.5875000000000452, 471.14520125980675));
+#1347=IFCCARTESIANPOINT((30.970272235916262, 251.58749999999966, 621.1452012598068));
+#1348=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 471.145201259807));
+#1349=IFCCARTESIANPOINT((12.594967157862044, 251.58749999999952, 620.388354616893));
+#1350=IFCCARTESIANPOINT((8.844967157861815, 251.58749999999952, 627.9629833206648));
+#1351=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 467.35788690792106));
+#1352=IFCCARTESIANPOINT((34.72027223591595, 1.5874999999999098, 478.7198299635781));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3f57bcad
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@45efd90f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@35b74c5c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1e8b7643
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b8729ff
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2e570ded
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@51549490
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@61710c6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@b86de0d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71e9ebae
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3214ee6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@81d9a72
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@73d983ea
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@383dc82c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@747f281
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36a5cabc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4a07d605
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1169afe1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@432038ec
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@74287ea3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2ca26d77
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7daa0fbd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d7758be
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4808bc9b
+#1377=IFCCARTESIANPOINT((36.59527223591633, 1.5875000000000452, 282.50714431546396));
+#1378=IFCCARTESIANPOINT((29.095272235916145, 1.5875000000000452, 297.65640172300715));
+#1379=IFCCARTESIANPOINT((14.095272235916307, 1.5875000000000452, 297.6564017230072));
+#1380=IFCCARTESIANPOINT((6.595272235916116, 1.5875000000000452, 282.50714431546425));
+#1381=IFCCARTESIANPOINT((14.095272235916037, 1.5875000000000452, 267.3578869079211));
+#1382=IFCCARTESIANPOINT((29.095272235916145, 1.5875000000000452, 267.35788690792083));
+#1383=IFCCARTESIANPOINT((36.5952722359166, 251.58749999999952, 432.5071443154639));
+#1384=IFCCARTESIANPOINT((29.095272235916415, 251.58749999999952, 417.3578869079209));
+#1385=IFCCARTESIANPOINT((14.095272235916307, 251.58749999999952, 417.3578869079211));
+#1386=IFCCARTESIANPOINT((6.595272235916387, 251.58749999999952, 432.50714431546413));
+#1387=IFCCARTESIANPOINT((14.095272235916577, 251.58749999999952, 447.65640172300726));
+#1388=IFCCARTESIANPOINT((29.095272235916415, 251.58749999999952, 447.6564017230072));
+#1389=IFCCARTESIANPOINT((32.095882392037126, 1.5875000000000452, 291.59546630503837));
+#1390=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999952, 440.08177301923564));
+#1391=IFCCARTESIANPOINT((30.970272235916532, 251.58749999999952, 443.8690873711214));
+#1392=IFCCARTESIANPOINT((21.595272235916227, 1.5875000000000452, 297.6564017230072));
+#1393=IFCCARTESIANPOINT((21.595272235916497, 251.58749999999952, 447.65640172300726));
+#1394=IFCCARTESIANPOINT((17.845272235916536, 251.58749999999952, 447.6564017230074));
+#1395=IFCCARTESIANPOINT((10.345272235916617, 251.58749999999952, 440.0817730192359));
+#1396=IFCCARTESIANPOINT((10.345272235916076, 1.5875000000000452, 290.0817730192357));
+#1397=IFCCARTESIANPOINT((12.220272235916191, 1.5875000000000452, 293.8690873711215));
+#1398=IFCCARTESIANPOINT((34.345577313942755, 251.58749999999952, 437.05130531032034));
+#1399=IFCCARTESIANPOINT((34.34557731397659, 1.5875000000000452, 287.05130531025117));
+#1400=IFCCARTESIANPOINT((25.345272235916184, 1.5875000000000452, 297.6564017230072));
+#1401=IFCCARTESIANPOINT((25.345272235916184, 251.58749999999952, 447.6564017230074));
+#1402=IFCCARTESIANPOINT((8.844967157853151, 1.5875000000000452, 287.0513053102461));
+#1403=IFCCARTESIANPOINT((8.470272235916232, 251.58749999999952, 436.29445866735017));
+#1404=IFCCARTESIANPOINT((30.595577313976904, 1.5875000000000452, 294.62593401402273));
+#1405=IFCCARTESIANPOINT((17.845272235916266, 1.5875000000000452, 297.65640172300726));
+#1406=IFCCARTESIANPOINT((12.220272235916733, 251.58749999999952, 443.8690873711217));
+#1407=IFCCARTESIANPOINT((11.094662079807781, 251.58749999999958, 423.41882232586465));
+#1408=IFCCARTESIANPOINT((10.345272235916076, 1.5875000000000452, 274.9325156116927));
+#1409=IFCCARTESIANPOINT((8.844967157853151, 1.5875000000000452, 277.9629833206823));
+#1410=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 267.3578869079209));
+#1411=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999966, 417.35788690792106));
+#1412=IFCCARTESIANPOINT((25.345272235916458, 251.58749999999966, 417.35788690792106));
+#1413=IFCCARTESIANPOINT((32.845272235916376, 1.5875000000000452, 274.9325156116923));
+#1414=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999966, 424.9325156116924));
+#1415=IFCCARTESIANPOINT((34.34557731397822, 251.58749999999966, 427.962983320679));
+#1416=IFCCARTESIANPOINT((17.845272235915996, 1.5875000000000452, 267.35788690792106));
+#1417=IFCCARTESIANPOINT((17.845272235916266, 251.58749999999966, 417.35788690792106));
+#1418=IFCCARTESIANPOINT((30.970272235916262, 1.5875000000000452, 271.1452012598066));
+#1419=IFCCARTESIANPOINT((30.970272235916532, 251.58749999999966, 421.14520125980664));
+#1420=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 271.1452012598069));
+#1421=IFCCARTESIANPOINT((12.594967157862044, 251.58749999999952, 420.3883546168929));
+#1422=IFCCARTESIANPOINT((8.844967157862085, 251.58749999999952, 427.96298332066453));
+#1423=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 267.35788690792083));
+#1424=IFCCARTESIANPOINT((34.72027223591622, 1.5874999999999098, 278.7198299635781));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@42530531
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2bdd8394
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@70e38ce1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5a3bc7ed
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5f9edf14
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2ca923bb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@181e731e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@68746f22
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13df2a8c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@35645047
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2f01783a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1ebea008
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6f44a157
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@68878f6d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@72d6b3ba
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6bc407fd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@41488b16
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1787f2a0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@291f18
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@a8ef162
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7de62196
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@17d88132
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2eea88a1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@163370c2
+#1449=IFCCARTESIANPOINT((36.59527223591606, 1.5875000000000452, 82.50714431546393));
+#1450=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 97.65640172300712));
+#1451=IFCCARTESIANPOINT((14.095272235916037, 1.5875000000000452, 97.65640172300719));
+#1452=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 82.50714431546425));
+#1453=IFCCARTESIANPOINT((14.095272235915765, 1.5875000000000452, 67.35788690792099));
+#1454=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 67.35788690792074));
+#1455=IFCCARTESIANPOINT((36.59527223591633, 251.58749999999952, 232.5071443154639));
+#1456=IFCCARTESIANPOINT((29.095272235916145, 251.58749999999952, 217.35788690792083));
+#1457=IFCCARTESIANPOINT((14.095272235916037, 251.58749999999952, 217.35788690792103));
+#1458=IFCCARTESIANPOINT((6.595272235916116, 251.58749999999952, 232.5071443154641));
+#1459=IFCCARTESIANPOINT((14.095272235916307, 251.58749999999952, 247.6564017230072));
+#1460=IFCCARTESIANPOINT((29.095272235916145, 251.58749999999952, 247.65640172300712));
+#1461=IFCCARTESIANPOINT((32.095882392037126, 1.5875000000000452, 91.59546630503824));
+#1462=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999966, 240.08177301923556));
+#1463=IFCCARTESIANPOINT((30.970272235916262, 251.58749999999966, 243.86908737112137));
+#1464=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 97.65640172300719));
+#1465=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999958, 247.65640172300726));
+#1466=IFCCARTESIANPOINT((17.845272235916266, 251.58749999999952, 247.65640172300735));
+#1467=IFCCARTESIANPOINT((10.345272235916076, 251.58749999999952, 240.08177301923595));
+#1468=IFCCARTESIANPOINT((10.345272235916076, 1.5875000000000452, 90.08177301923568));
+#1469=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 93.86908737112144));
+#1470=IFCCARTESIANPOINT((34.345577313942485, 251.58749999999958, 237.0513053103202));
+#1471=IFCCARTESIANPOINT((34.34557731397659, 1.5875000000000452, 87.05130531025105));
+#1472=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 97.65640172300716));
+#1473=IFCCARTESIANPOINT((25.345272235916184, 251.58749999999952, 247.65640172300726));
+#1474=IFCCARTESIANPOINT((8.84496715785288, 1.5875000000000452, 87.05130531024602));
+#1475=IFCCARTESIANPOINT((8.470272235916232, 251.58749999999952, 236.29445866735028));
+#1476=IFCCARTESIANPOINT((30.595577313976634, 1.5875000000000452, 94.62593401402268));
+#1477=IFCCARTESIANPOINT((17.845272235915996, 1.5875000000000452, 97.65640172300719));
+#1478=IFCCARTESIANPOINT((12.220272235916191, 251.58749999999952, 243.86908737112165));
+#1479=IFCCARTESIANPOINT((11.094662079807781, 251.58749999999958, 223.41882232586477));
+#1480=IFCCARTESIANPOINT((10.345272235915806, 1.5875000000000452, 74.93251561169266));
+#1481=IFCCARTESIANPOINT((8.84496715785261, 1.5874999999999098, 77.96298332068237));
+#1482=IFCCARTESIANPOINT((21.595272235915683, 1.5875000000000452, 67.35788690792089));
+#1483=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999966, 217.35788690792103));
+#1484=IFCCARTESIANPOINT((25.345272235916184, 251.58749999999958, 217.35788690792089));
+#1485=IFCCARTESIANPOINT((32.845272235915836, 1.5875000000000452, 74.93251561169225));
+#1486=IFCCARTESIANPOINT((32.845272235916376, 251.58749999999966, 224.9325156116924));
+#1487=IFCCARTESIANPOINT((34.34557731397768, 251.58749999999966, 227.96298332067903));
+#1488=IFCCARTESIANPOINT((17.845272235915726, 1.5875000000000452, 67.35788690792094));
+#1489=IFCCARTESIANPOINT((17.845272235915996, 251.58749999999958, 217.35788690792108));
+#1490=IFCCARTESIANPOINT((30.97027223591572, 1.5875000000000452, 71.1452012598065));
+#1491=IFCCARTESIANPOINT((30.970272235916262, 251.58749999999966, 221.14520125980658));
+#1492=IFCCARTESIANPOINT((12.220272235915921, 1.5875000000000452, 71.14520125980684));
+#1493=IFCCARTESIANPOINT((12.594967157861774, 251.58749999999952, 220.38835461689288));
+#1494=IFCCARTESIANPOINT((8.844967157861815, 251.58749999999952, 227.96298332066462));
+#1495=IFCCARTESIANPOINT((25.345272235915914, 1.5874999999999098, 67.35788690792084));
+#1496=IFCCARTESIANPOINT((34.72027223591595, 1.5875000000000452, 78.71982996357801));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5ddcc487
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7ac296f6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51bf5add
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@16eccb2e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7fd7a283
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7905a0b8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5ef5c734
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@22f59fa
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@35a3d49f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@d771cc9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@78fa769e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@389b0789
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36b4091c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@16612a51
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13d9cbf5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4671115f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@54e041a4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@478db956
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36cda2c2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2c78324b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6ca18a14
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3697186
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@79defdc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@c667f46
+#1521=IFCCARTESIANPOINT((41.59527223591628, 1.5875000000000452, 876.6761924206188));
+#1522=IFCCARTESIANPOINT((31.59527223591639, 1.5875000000000452, 896.8752022973431));
+#1523=IFCCARTESIANPOINT((11.595272235916333, 1.5875000000000452, 896.8752022973432));
+#1524=IFCCARTESIANPOINT((1.5952722359161704, 1.5875000000000452, 876.6761924206194));
+#1525=IFCCARTESIANPOINT((11.595272235916063, 1.5875000000000452, 856.4771825438951));
+#1526=IFCCARTESIANPOINT((31.59527223591612, 1.5875000000000452, 856.4771825438947));
+#1527=IFCCARTESIANPOINT((41.59527223591655, 251.58749999999952, 1026.676192420619));
+#1528=IFCCARTESIANPOINT((31.59527223591639, 251.58749999999952, 1006.4771825438947));
+#1529=IFCCARTESIANPOINT((11.595272235916333, 251.58749999999952, 1006.4771825438951));
+#1530=IFCCARTESIANPOINT((1.5952722359164413, 251.58749999999952, 1026.676192420619));
+#1531=IFCCARTESIANPOINT((11.595272235916605, 251.58749999999952, 1046.8752022973433));
+#1532=IFCCARTESIANPOINT((31.59527223591666, 251.58749999999952, 1046.875202297343));
+#1533=IFCCARTESIANPOINT((34.73666178080527, 1.5875000000000452, 890.529906452958));
+#1534=IFCCARTESIANPOINT((36.5952722359166, 251.58749999999966, 1036.775697358981));
+#1535=IFCCARTESIANPOINT((34.09527223591663, 251.58749999999966, 1041.825449828162));
+#1536=IFCCARTESIANPOINT((21.595272235916227, 1.5875000000000452, 896.8752022973431));
+#1537=IFCCARTESIANPOINT((21.595272235916767, 251.58749999999966, 1046.875202297343));
+#1538=IFCCARTESIANPOINT((16.59527223591655, 251.58749999999966, 1046.8752022973433));
+#1539=IFCCARTESIANPOINT((6.595272235916658, 251.58749999999952, 1036.7756973589815));
+#1540=IFCCARTESIANPOINT((6.595272235916387, 1.5875000000000452, 886.7756973589812));
+#1541=IFCCARTESIANPOINT((9.09527223591636, 1.5875000000000452, 891.8254498281622));
+#1542=IFCCARTESIANPOINT((38.16596700836064, 1.5875000000000452, 883.6030494367883));
+#1543=IFCCARTESIANPOINT((26.595272235916173, 1.5875000000001804, 896.8752022973431));
+#1544=IFCCARTESIANPOINT((26.595272235916713, 251.58749999999966, 1046.875202297343));
+#1545=IFCCARTESIANPOINT((5.024577463464772, 1.5875000000000452, 883.6030494367744));
+#1546=IFCCARTESIANPOINT((4.095272235916414, 251.58749999999938, 1031.7259448898008));
+#1547=IFCCARTESIANPOINT((16.59527223591655, 1.5875000000000452, 896.8752022973431));
+#1548=IFCCARTESIANPOINT((9.095272235916632, 251.58749999999952, 1041.8254498281624));
+#1549=IFCCARTESIANPOINT((39.880619622138596, 1.5875000000000452, 880.1396209287036));
+#1550=IFCCARTESIANPOINT((39.09527223591658, 251.58749999999958, 1031.7259448898));
+#1551=IFCCARTESIANPOINT((36.45131439458296, 1.5875000000000452, 887.0664779448732));
+#1552=IFCCARTESIANPOINT((3.309924849690336, 1.5875000000000452, 880.1396209286967));
+#1553=IFCCARTESIANPOINT((8.45388269104613, 251.58749999999952, 1012.8224783882423));
+#1554=IFCCARTESIANPOINT((6.5952722359158455, 1.5874999999999098, 866.5766874822573));
+#1555=IFCCARTESIANPOINT((5.024577463464772, 1.5875000000000452, 869.7493354044643));
+#1556=IFCCARTESIANPOINT((5.024577463481556, 251.58749999999952, 1019.7493354044309));
+#1557=IFCCARTESIANPOINT((21.595272235916227, 251.58749999999952, 1006.4771825438951));
+#1558=IFCCARTESIANPOINT((21.595272235916227, 1.5875000000000452, 856.477182543895));
+#1559=IFCCARTESIANPOINT((16.59527223591601, 1.5875000000000452, 856.477182543895));
+#1560=IFCCARTESIANPOINT((36.59527223591606, 1.5875000000000452, 866.5766874822567));
+#1561=IFCCARTESIANPOINT((36.59527223591633, 251.58749999999966, 1016.5766874822567));
+#1562=IFCCARTESIANPOINT((38.16596700836605, 251.58749999999966, 1019.7493354044597));
+#1563=IFCCARTESIANPOINT((26.595272235916173, 251.58749999999958, 1006.4771825438947));
+#1564=IFCCARTESIANPOINT((26.595272235916173, 1.5875000000000452, 856.477182543895));
+#1565=IFCCARTESIANPOINT((34.09527223591636, 1.5875000000000452, 861.5269350130757));
+#1566=IFCCARTESIANPOINT((34.09527223591609, 251.58749999999958, 1011.5269350130759));
+#1567=IFCCARTESIANPOINT((9.09527223591582, 1.5875000000000452, 861.5269350130761));
+#1568=IFCCARTESIANPOINT((6.7392300772635725, 251.58749999999952, 1016.2859068963365));
+#1569=IFCCARTESIANPOINT((3.309924849698999, 251.58749999999947, 1023.2127639125252));
+#1570=IFCCARTESIANPOINT((3.309924849690336, 1.5874999999999098, 873.212763912542));
+#1571=IFCCARTESIANPOINT((16.59527223591628, 251.58749999999952, 1006.4771825438952));
+#1572=IFCCARTESIANPOINT((39.8806196221413, 251.58749999999972, 1023.2127639125392));
+#1573=IFCCARTESIANPOINT((39.095272235916035, 1.5875000000000452, 871.6264399514378));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1583741e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@18317edc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51bd8b5c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5b367418
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4e0ae11f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7b50df34
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36060e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@238d68ff
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1b410b60
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@481ba2cf
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b86805d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2462cb01
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@46b61c56
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5852c06f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@19b843ba
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2e48362c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4149c063
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@64ec96c6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1efe439d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@9cb8225
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@77659b30
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@be68757
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@76b07f29
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@456d6c1e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@7d446ed1
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@1e13529a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@12d2ce03
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@1ec9bd38
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@7e5c856f
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@452e19ca
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@413f69cc
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@6b0d80ed
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1f53a5dc
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@6f8e8894
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1b75c2e3
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@3cfdd820
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1984b1f
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@928763c
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@e25951c
+#1613=IFCCARTESIANPOINT((-2070.732231269226, -830.3072202034746, 150.));
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3bd323e9
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRailing@471a9022
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@39ac0c0a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@c7ba306
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@15f47664
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4ff8d125
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7b993c65
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@37911f88
+#1622=IFCRELAGGREGATES('0XsocJryT73uCfJ6U7Jl3H',#20,$,$,#596,(#619, #635, #649, #1145, #1615));
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@dc9876b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6d167f58
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4d6025c5
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelContainedInSpatialStructure@3403e2ac
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@65b104b9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7f284218
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelContainedInSpatialStructure@6c4980d3
+#1630=IFCRELAGGREGATES('02JEX2aNf6Ew0fPTGso3V$',#20,$,$,#98,(#110));
+#1631=IFCRELAGGREGATES('1lNwcTzD9Bwx4Y6L6g5DNk',#20,$,$,#110,(#100));
+#1632=IFCRELAGGREGATES('27PCKGLxT4mxtV9cw6mgBW',#20,$,$,#100,(#103, #107));
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@57a3e26a
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@75c56eb9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@327bcebd
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3fa247d1
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@2cb2fc20
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4f4c4b1a
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@723e88f9
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@5f0fd5a0
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@64e7619d
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@495ee280
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4fa1c212
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@6ea2bc93
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@3116c353
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@f627d13
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4e928fbf
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@352ff4da
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@3224a577
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@2e32ccc5
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@748741cb
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@3e44f2a5
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@19c65cdc
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@74bf1791
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@54504ecd
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@38b27cdc
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@1339e7aa
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@1fb669c3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@49c66ade
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@6239aba6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@3e6104fc
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@12359a82
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@68df9280
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@479460a6
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@7164ca4c
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@4f3bbf68
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@5be46f9d
+#1668=IFCCARTESIANPOINT((999.9999999999997, 374.99999999999994));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@3f91b517
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@68702e03
+#1671=IFCAXIS2PLACEMENT3D(#3,#8=IFCDIRECTION((0., -1., 0.));,#9=IFCDIRECTION((0., 0., 1.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@56dc1551
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@102cec62
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@7a220c9a
+#1675=IFCCARTESIANPOINT((1450., 100., 0.));
+#1676=IFCAXIS2PLACEMENT3D(#1675,$,$);
+#1677=IFCLOCALPLACEMENT(#113,#1676);
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcOpeningElement@2421cc4
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelVoidsElement@30c93896
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelFillsElement@59a008ba
+#1681=IFCAXIS2PLACEMENT3D(#3,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+#1682=IFCLOCALPLACEMENT(#1677,#1681);
+#1683=IFCCARTESIANPOINT((609.9999999999987, 457.49999999999966));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@338c99c8
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@21ba0741
+#1686=IFCAXIS2PLACEMENT3D(#3,#8=IFCDIRECTION((0., -1., 0.));,#9=IFCDIRECTION((0., 0., 1.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@74f6c5d8
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@27912e3
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@58ce9668
+#1690=IFCCARTESIANPOINT((3730., 100., 915.));
+#1691=IFCAXIS2PLACEMENT3D(#1690,$,$);
+#1692=IFCLOCALPLACEMENT(#113,#1691);
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcOpeningElement@172b013
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelVoidsElement@56673b2c
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelFillsElement@2796aeae
+#1696=IFCAXIS2PLACEMENT3D(#3,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+#1697=IFCLOCALPLACEMENT(#1692,#1696);
+#1698=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1699=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1700=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1701=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1702=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1703=IFCAXIS2PLACEMENT3D(#3,$,$);
+#1704=IFCAXIS2PLACEMENT3D(#3,$,$);
+ENDSEC;
+END-ISO-10303-21;

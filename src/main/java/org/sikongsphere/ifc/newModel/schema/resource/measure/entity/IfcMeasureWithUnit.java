@@ -69,12 +69,12 @@ public class IfcMeasureWithUnit extends IfcAbstractClass implements IfcUnit {
         IfcSIUnit unitComponent = (IfcSIUnit) getUnitComponent();
 
         String format = String.format(
-                "#%s=%s(%s(%s),#%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                valueComponent.toString(),
-                unitComponent.getStepNumber()
+            "#%s=%s(%s(%s),#%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            valueComponent.toString(),
+            unitComponent.getStepNumber()
         );
 
         return format;

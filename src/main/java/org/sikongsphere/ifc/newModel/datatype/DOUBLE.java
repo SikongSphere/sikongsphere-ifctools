@@ -61,7 +61,6 @@ public class DOUBLE extends IfcDataType {
         int num = (int) value;
         if (num - value == 0) {
             return num + StringConstant.DOT;
-        } else
-            return String.valueOf(value);
+        } else return String.valueOf(value);
     }
 }

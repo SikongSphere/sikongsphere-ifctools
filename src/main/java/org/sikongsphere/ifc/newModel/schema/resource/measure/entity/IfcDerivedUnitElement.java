@@ -62,11 +62,11 @@ public class IfcDerivedUnitElement extends IfcAbstractClass {
     @Override
     public String toString() {
         String format = String.format(
-                "#%s=%s(#%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                this.unit.getStepNumber(),
-                this.exponent
+            "#%s=%s(#%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.unit.getStepNumber(),
+            this.exponent
         );
 
         return format;

@@ -98,14 +98,14 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
         String format = String.format(
-                "#%s=%s(%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                strings,
-                StringConstant.DOT + this.unitType + StringConstant.DOT,
-                Optional.ofNullable(this.userDefinedType)
-                        .map(x -> this.userDefinedType.toString())
-                        .orElse(StringConstant.DOLLAR)
+            "#%s=%s(%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            strings,
+            StringConstant.DOT + this.unitType + StringConstant.DOT,
+            Optional.ofNullable(this.userDefinedType)
+                .map(x -> this.userDefinedType.toString())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;

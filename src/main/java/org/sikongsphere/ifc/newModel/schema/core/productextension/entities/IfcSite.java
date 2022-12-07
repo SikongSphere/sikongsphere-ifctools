@@ -156,23 +156,36 @@ public class IfcSite extends IfcSpatialStructureElement {
     @Override
     public String toString() {
 
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getGlobalId(),
-                StringConstant.WELL + getOwnerHistory().getStepNumber(),
-                getName(),
-                Optional.ofNullable(getDescription()).map(x -> getDescription().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getObjectType()).map(x -> getObjectType().toString()).orElse(StringConstant.DOLLAR),
-                StringConstant.WELL + getObjectPlacement().getStepNumber(),
-                Optional.ofNullable(getRepresentation()).map(x -> getRepresentation().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getLongName()).map(x -> getLongName().toString()).orElse(StringConstant.DOLLAR),
-                StringConstant.DOT + getCompositionType() + StringConstant.DOT,
-                getRefLatitude(),
-                getRefLongitude(),
-                getRefElevation(),
-                Optional.ofNullable(getLandTitleNumber()).map(x -> getLandTitleNumber().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getSiteAddress()).map(x -> getSiteAddress().toString()).orElse(StringConstant.DOLLAR)
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId(),
+            StringConstant.WELL + getOwnerHistory().getStepNumber(),
+            getName(),
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getObjectType())
+                .map(x -> getObjectType().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.WELL + getObjectPlacement().getStepNumber(),
+            Optional.ofNullable(getRepresentation())
+                .map(x -> getRepresentation().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getLongName())
+                .map(x -> getLongName().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.DOT + getCompositionType() + StringConstant.DOT,
+            getRefLatitude(),
+            getRefLongitude(),
+            getRefElevation(),
+            Optional.ofNullable(getLandTitleNumber())
+                .map(x -> getLandTitleNumber().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getSiteAddress())
+                .map(x -> getSiteAddress().toString())
+                .orElse(StringConstant.DOLLAR)
         );
 
         return format;
