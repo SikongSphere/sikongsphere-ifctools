@@ -12,10 +12,13 @@ package org.sikongsphere.ifc.newModel.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcUnitEnum;
+
+import java.util.Locale;
 
 /**
  * @author zhongqi
@@ -55,5 +58,20 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
 
     public void setConversionFactor(IfcMeasureWithUnit conversionFactor) {
         this.conversionFactor = conversionFactor;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+                "#%s=%s(#%s,%s,%s,#%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                this.dimensions.getStepNumber(),
+                StringConstant.DOT + this.unitType + StringConstant.DOT,
+                this.name,
+                this.conversionFactor.getStepNumber()
+        );
+
+        return format;
     }
 }

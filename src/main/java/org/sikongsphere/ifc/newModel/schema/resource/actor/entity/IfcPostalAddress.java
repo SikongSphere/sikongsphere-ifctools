@@ -12,12 +12,16 @@ package org.sikongsphere.ifc.newModel.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.enumeration.IfcAddressTypeEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * IfcPostalAddress
@@ -115,5 +119,36 @@ public class IfcPostalAddress extends IfcAddress {
 
     public void setCountry(IfcLabel country) {
         Country = country;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+                "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                Optional.ofNullable(getPurpose())
+                        .map(x -> getPurpose().toString())
+                        .orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getDescription())
+                        .map(x -> getDescription().toString())
+                        .orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getUserDefinedPurpose())
+                        .map(x -> getUserDefinedPurpose().toString())
+                        .orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getInternalLocation())
+                        .map(x -> getInternalLocation().toString())
+                        .orElse(StringConstant.DOLLAR),
+                getAddressLines().toString(),
+                Optional.ofNullable(getPostalBox())
+                        .map(x -> getPostalBox().toString())
+                        .orElse(StringConstant.DOLLAR),
+                getTown(),
+                getRegion(),
+                getPostalCode(),
+                getCountry()
+        );
+
+        return format;
     }
 }

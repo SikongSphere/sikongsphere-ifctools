@@ -76,4 +76,9 @@ public class IfcCompoundPlaneAngleMeasure {
             return true;
         return false;
     }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
 }

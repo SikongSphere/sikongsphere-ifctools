@@ -65,16 +65,16 @@ public class IfcMeasureWithUnit extends IfcAbstractClass implements IfcUnit {
     @Override
     public String toString() {
 
-        org.sikongsphere.ifc.model.resource.measure.definedtype.IfcRatioMeasure valueComponent = (org.sikongsphere.ifc.model.resource.measure.definedtype.IfcRatioMeasure) getValueComponent();
-        org.sikongsphere.ifc.model.resource.measure.entity.IfcSIUnit unitComponent = (org.sikongsphere.ifc.model.resource.measure.entity.IfcSIUnit) getUnitComponent();
+        IfcRatioMeasure valueComponent = (IfcRatioMeasure) getValueComponent();
+        IfcSIUnit unitComponent = (IfcSIUnit) getUnitComponent();
 
         String format = String.format(
                 "#%s=%s(%s(%s),#%s);",
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
                 this.valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                valueComponent.value,
-                unitComponent.stepNumber
+                valueComponent.toString(),
+                unitComponent.getStepNumber()
         );
 
         return format;
