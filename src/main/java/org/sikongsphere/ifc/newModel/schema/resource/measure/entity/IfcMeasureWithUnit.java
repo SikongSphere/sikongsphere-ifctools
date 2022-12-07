@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcRatioMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcSIPrefix;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.enumeration.IfcSIUnitName;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcUnit;

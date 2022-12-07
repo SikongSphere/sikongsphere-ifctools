@@ -16,7 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationItem;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 
 /**
  * The IfcShapeModel represents the concept of a particular geometric and/or topological representation of a product's shape or a product component's shape within a representation context.

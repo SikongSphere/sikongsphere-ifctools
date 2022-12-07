@@ -11,13 +11,11 @@
 package org.sikongsphere.ifc.newModel.schema.resource.externalreference.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.datatype.SET;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 
 /**
  * @author zaiyuan

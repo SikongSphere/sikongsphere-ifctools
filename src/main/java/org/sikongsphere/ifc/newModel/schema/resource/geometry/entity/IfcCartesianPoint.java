@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
  * A point defined by its coordinates in a two or

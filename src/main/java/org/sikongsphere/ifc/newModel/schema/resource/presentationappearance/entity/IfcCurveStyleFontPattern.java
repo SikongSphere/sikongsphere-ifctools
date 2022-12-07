@@ -13,8 +13,8 @@ package org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.ent
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLengthMeasure;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPositiveLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
  *  A curve style font pattern is a pair of visible

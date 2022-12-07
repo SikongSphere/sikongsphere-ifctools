@@ -18,7 +18,7 @@ import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.material.enumeration.IfcDirectionSenseEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.material.enumeration.IfcLayerSetDirectionEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.material.selectType.IfcMaterialSelect;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
  * @author Wang Bohong

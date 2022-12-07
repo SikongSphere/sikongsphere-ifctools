@@ -13,7 +13,7 @@ package org.sikongsphere.ifc.newModel.schema.resource.geometry.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
  *  The vector is defined in terms of the direction and magnitude of the vector.

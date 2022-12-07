@@ -13,7 +13,7 @@ package org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.ent
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcReal;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcReal;
 
 /**
  * IfcSurfaceStyleRefraction extends the surface style lighting, or the surface style rendering definition

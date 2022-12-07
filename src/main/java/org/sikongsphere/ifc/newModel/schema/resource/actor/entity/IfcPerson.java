@@ -17,8 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.selectType.IfcActorSelect;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 
 /**
  * This class is used to encapsulate person information

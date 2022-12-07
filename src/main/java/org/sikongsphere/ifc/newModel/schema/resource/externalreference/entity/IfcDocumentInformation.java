@@ -23,9 +23,9 @@ import org.sikongsphere.ifc.newModel.schema.resource.datetime.entity.IfcDateAndT
 import org.sikongsphere.ifc.newModel.schema.resource.externalreference.enumeration.IfcDocumentConfidentialityEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.externalreference.enumeration.IfcDocumentStatusEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.externalreference.selectType.IfcDocumentSelect;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcText;
 
 /**
  * @author zaiyuan

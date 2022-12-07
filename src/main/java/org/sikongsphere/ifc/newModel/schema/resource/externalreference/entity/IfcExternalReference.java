@@ -15,8 +15,8 @@ import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 
 /**
  * This class is the identification of information that is not explicitly represented in the current model or in the project database .

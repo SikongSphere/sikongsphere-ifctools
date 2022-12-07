@@ -16,8 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.entity.IfcOrganization;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 
 /**
  * This class holds the information about an IFC compliant application developed by an application developer

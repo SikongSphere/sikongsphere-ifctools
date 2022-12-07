@@ -14,8 +14,8 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPlaneAngleMeasure;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPositiveLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPlaneAngleMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcTextStyleSelect;
 

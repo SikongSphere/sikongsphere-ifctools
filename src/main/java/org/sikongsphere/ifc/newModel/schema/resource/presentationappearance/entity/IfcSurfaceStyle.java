@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.SET;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.enumeration.IfcSurfaceSide;
 

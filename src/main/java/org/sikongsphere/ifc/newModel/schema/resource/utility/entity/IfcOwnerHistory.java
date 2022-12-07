@@ -16,7 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.entity.IfcPersonAndOrganization;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcTimeStamp;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcTimeStamp;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.enumeration.IfcChangeActionEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.enumeration.IfcStateEnum;
 
