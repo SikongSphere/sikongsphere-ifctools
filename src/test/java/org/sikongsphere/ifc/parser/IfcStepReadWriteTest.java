@@ -29,7 +29,7 @@ import java.io.*;
  * @date 2022/09/07 22:26
  */
 public class IfcStepReadWriteTest {
-    private final static String BLANK_INPUT_PATH = "src/test/resources/blank.ifc";
+    private final static String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
     /**
