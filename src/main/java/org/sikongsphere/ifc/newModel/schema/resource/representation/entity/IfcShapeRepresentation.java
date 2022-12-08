@@ -53,14 +53,14 @@ public class IfcShapeRepresentation extends IfcShapeModel {
             list.add(StringConstant.WELL + item.getStepNumber());
         }
 
-
-        String format = String.format("#%s=%s(%s,%s,%s,%s)",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                StringConstant.WELL + getContextContextOfItems().getStepNumber(),
-                getRepresentationIdentifier(),
-                getRepresentationType(),
-                list
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s)",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            StringConstant.WELL + getContextContextOfItems().getStepNumber(),
+            getRepresentationIdentifier(),
+            getRepresentationType(),
+            list
         );
 
         return format;

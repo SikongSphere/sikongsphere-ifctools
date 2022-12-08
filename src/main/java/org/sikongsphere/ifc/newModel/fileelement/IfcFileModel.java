@@ -147,8 +147,8 @@ public class IfcFileModel extends IfcFileElement implements Model {
             return ((SCIENTIFICNOTATION) o).getString();
         } else if (o instanceof DOUBLE) {
             double doubleValue = ((DOUBLE) o).value;
-            if(doubleValue == (int)doubleValue) {
-                return (int)doubleValue + ".";
+            if (doubleValue == (int) doubleValue) {
+                return (int) doubleValue + ".";
             } else {
                 return doubleValue + "";
             }
@@ -184,8 +184,8 @@ public class IfcFileModel extends IfcFileElement implements Model {
     @Override
     public String toString() {
         String ifcFile = StringConstant.BEGIN_ISO + StringConstant.COLON + StringConstant.NEW_LINE
-                + getHeader() + StringConstant.NEW_LINE + getBody() + StringConstant.NEW_LINE
-                + StringConstant.END_ISO + StringConstant.COLON;
+            + getHeader() + StringConstant.NEW_LINE + getBody() + StringConstant.NEW_LINE
+            + StringConstant.END_ISO + StringConstant.COLON;
 
         return ifcFile;
     }
