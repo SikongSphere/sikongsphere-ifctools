@@ -115,7 +115,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
         IfcAbstractClass worldCoordinateSystem = (IfcAbstractClass) getWorldCoordinateSystem();
 
         String format = String.format(

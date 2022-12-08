@@ -82,7 +82,7 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         Iterator<IfcDerivedUnitElement> iterator = this.elements.getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();

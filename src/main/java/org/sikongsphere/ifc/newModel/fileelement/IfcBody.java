@@ -46,7 +46,7 @@ public class IfcBody extends IfcFileElement {
         StringBuilder builder = new StringBuilder();
 
         this.elements.forEach((key, value) -> {
-            builder.append(value);
+            builder.append(value.toIfc());
             builder.append(StringConstant.NEW_LINE);
         });
         return builder.toString();

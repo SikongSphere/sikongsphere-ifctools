@@ -69,7 +69,7 @@ public class IfcCartesianPoint extends IfcPoint {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
         String format = String.format(
             "#%s=%s(%s);",
             this.stepNumber,

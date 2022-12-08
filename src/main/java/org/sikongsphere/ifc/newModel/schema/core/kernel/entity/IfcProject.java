@@ -113,7 +113,7 @@ public class IfcProject extends IfcObject {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects()
             .iterator();

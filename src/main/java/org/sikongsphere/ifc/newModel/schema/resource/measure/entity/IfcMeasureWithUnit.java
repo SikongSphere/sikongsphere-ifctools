@@ -63,7 +63,7 @@ public class IfcMeasureWithUnit extends IfcAbstractClass implements IfcUnit {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         IfcRatioMeasure valueComponent = (IfcRatioMeasure) getValueComponent();
         IfcSIUnit unitComponent = (IfcSIUnit) getUnitComponent();

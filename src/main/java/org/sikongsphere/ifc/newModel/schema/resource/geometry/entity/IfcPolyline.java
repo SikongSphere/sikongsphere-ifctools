@@ -44,7 +44,7 @@ public class IfcPolyline extends IfcBoundedCurve {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         List<IfcCartesianPoint> points = getPoints().getObjects();
         LIST<Object> list = new LIST<>();

@@ -44,7 +44,7 @@ public class IfcShapeRepresentation extends IfcShapeModel {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         Set<IfcRepresentationItem> items = getItems().getObjects();
         LIST<Object> list = new LIST<>();

@@ -106,7 +106,7 @@ public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         DOUBLE precision = getPrecision();
         String temp;

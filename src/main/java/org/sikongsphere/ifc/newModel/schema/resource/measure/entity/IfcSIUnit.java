@@ -73,7 +73,7 @@ public class IfcSIUnit extends IfcNamedUnit {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         String dimension;
         if (this.dimensions.isDefault()) {

@@ -49,7 +49,7 @@ public class IfcRelAggregates extends IfcRelDecomposes {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         Iterator<IfcObjectDefinition> iterator = getRelatedObjects().getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();

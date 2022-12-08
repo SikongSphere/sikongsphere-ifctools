@@ -76,7 +76,7 @@ public class IfcPersonAndOrganization extends IfcAbstractClass implements IfcAct
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
         String format = String.format(
             "#%s=%s(#%s,#%s,%s);",
             this.stepNumber,

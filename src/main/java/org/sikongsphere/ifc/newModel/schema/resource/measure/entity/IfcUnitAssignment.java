@@ -51,7 +51,7 @@ public class IfcUnitAssignment extends IfcAbstractClass {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
         Iterator<IfcUnit> iterator = this.units.getObjects().iterator();
         ArrayList<Integer> list = new ArrayList<>();
 

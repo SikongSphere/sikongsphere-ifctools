@@ -58,7 +58,7 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
         String format = String.format(
             "#%s=%s(%s);",
             this.stepNumber,
@@ -68,4 +68,5 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
 
         return format;
     }
+
 }

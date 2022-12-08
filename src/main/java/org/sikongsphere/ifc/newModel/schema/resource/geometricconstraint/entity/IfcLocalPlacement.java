@@ -63,7 +63,7 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         IfcAbstractClass placement = (IfcAbstractClass) getRelativePlacement();
 

@@ -154,7 +154,7 @@ public class IfcSite extends IfcSpatialStructureElement {
     }
 
     @Override
-    public String toString() {
+    public String toIfc() {
 
         String format = String.format(
             "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",

@@ -38,4 +38,8 @@ public abstract class IfcAbstractClass implements IfcInterface {
         return false;
     }
 
+    public String toIfc() {
+        return "Not overwrite yet";
+    }
+
 }
