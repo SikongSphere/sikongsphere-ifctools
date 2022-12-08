@@ -30,4 +30,20 @@ public abstract class IfcNamedUnit extends IfcAbstractClass implements IfcUnit {
         this.dimensions = dimensions;
         this.unitType = unitType;
     }
+
+    public IfcDimensionalExponents getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(IfcDimensionalExponents dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public IfcUnitEnum getUnitType() {
+        return unitType;
+    }
+
+    public void setUnitType(IfcUnitEnum unitType) {
+        this.unitType = unitType;
+    }
 }

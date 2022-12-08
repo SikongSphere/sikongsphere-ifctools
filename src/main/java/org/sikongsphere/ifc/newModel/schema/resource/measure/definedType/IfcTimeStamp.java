@@ -23,23 +23,28 @@ import org.sikongsphere.ifc.newModel.datatype.STRING;
  * @date 2022/8/31 21:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcTimeStamp {
+public class IfcTimeStamp extends INTEGER {
 
     private Long timestamp;
 
-    public IfcTimeStamp(Long timestamp) {
-        this.timestamp = timestamp;
+    public IfcTimeStamp(Integer value) {
+        super(value);
     }
 
+    // public IfcTimeStamp(Long timestamp) {
+    // super((Integer) timestamp.longValue());
+    // this.timestamp = timestamp;
+    // }
+
     public IfcTimeStamp(INTEGER timestamp) {
+        super(timestamp);
         this.timestamp = (long) timestamp.value;
     }
 
     public IfcTimeStamp(STRING timestamp) {
+        super(Integer.parseInt(timestamp.value));
         this.timestamp = Long.parseLong(timestamp.value);
     }
-
-    public IfcTimeStamp() {}
 
     public Long getTimestamp() {
         return timestamp;

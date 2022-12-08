@@ -30,6 +30,14 @@ public abstract class IfcFileElement implements IfcInterface {
         this.params = params;
     }
 
+    public List<IfcInterface> getParams() {
+        return params;
+    }
+
+    public void setParams(List<IfcInterface> params) {
+        this.params = params;
+    }
+
     @Override
     public void check() {
         if (!illegal()) {
