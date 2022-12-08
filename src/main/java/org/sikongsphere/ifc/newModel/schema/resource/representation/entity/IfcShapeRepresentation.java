@@ -46,21 +46,13 @@ public class IfcShapeRepresentation extends IfcShapeModel {
     @Override
     public String toIfc() {
 
-        Set<IfcRepresentationItem> items = getItems().getObjects();
-        LIST<Object> list = new LIST<>();
-
-        for (IfcRepresentationItem item : items) {
-            list.add(StringConstant.WELL + item.getStepNumber());
-        }
-
-
         String format = String.format("#%s=%s(%s,%s,%s,%s)",
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
                 StringConstant.WELL + getContextContextOfItems().getStepNumber(),
                 getRepresentationIdentifier(),
                 getRepresentationType(),
-                list
+                getItems()
         );
 
         return format;

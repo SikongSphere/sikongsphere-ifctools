@@ -53,18 +53,11 @@ public class IfcPresentationStyleAssignment extends IfcAbstractClass {
 
     @Override
     public String toIfc() {
-        Set<IfcPresentationStyleSelect> objects = getStyles().getObjects();
-        LIST<Object> list = new LIST<>();
-
-        for (Object object : objects) {
-            IfcAbstractClass element = (IfcAbstractClass) object;
-            list.add(StringConstant.WELL + element.getStepNumber());
-        }
 
         String format = String.format("#%s=%s(%s)",
                 this.stepNumber,
                 this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                list
+                getStyles()
         );
 
         return format;
