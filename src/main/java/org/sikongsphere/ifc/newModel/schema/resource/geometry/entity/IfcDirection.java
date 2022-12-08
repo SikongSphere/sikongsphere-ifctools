@@ -16,6 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 
+import java.util.Locale;
+
 /**
  * his entity defines a general direction vector in two or three dimensional space.
  * The actual magnitudes of the components have no effect upon the direction being defined,
@@ -54,4 +56,17 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
     public boolean isDefault() {
         return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
     }
+
+    @Override
+    public String toIfc() {
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.directionRatios.toString()
+        );
+
+        return format;
+    }
+
 }

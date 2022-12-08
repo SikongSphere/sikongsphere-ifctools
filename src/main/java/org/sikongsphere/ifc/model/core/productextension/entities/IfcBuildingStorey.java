@@ -12,8 +12,10 @@ package org.sikongsphere.ifc.model.core.productextension.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.core.productextension.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.model.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
@@ -22,6 +24,9 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
 import org.sikongsphere.ifc.model.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * The building storey has an elevation and typically represents a (nearly) horizontal aggregation
@@ -74,5 +79,30 @@ public class IfcBuildingStorey extends IfcSpatialStructureElement {
 
     public void setElevation(IfcLengthMeasure elevation) {
         this.elevation = elevation;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+            "#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getGlobalId().value,
+            getOwnerHistory().stepNumber,
+            getName().value,
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            getObjectType().value,
+            getObjectPlacement().stepNumber,
+            Optional.ofNullable(getRepresentation())
+                .map(x -> getRepresentation().toString())
+                .orElse(StringConstant.DOLLAR),
+            getLongName().value,
+            StringConstant.DOT + getCompositionType() + StringConstant.DOT,
+            getElevation().value
+        );
+
+        return format;
     }
 }

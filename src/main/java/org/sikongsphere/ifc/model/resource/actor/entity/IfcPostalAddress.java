@@ -12,12 +12,17 @@ package org.sikongsphere.ifc.model.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.actor.enumeration.IfcAddressTypeEnum;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * IfcPostalAddress
@@ -115,5 +120,36 @@ public class IfcPostalAddress extends IfcAddress {
 
     public void setCountry(IfcLabel country) {
         Country = country;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getPurpose())
+                .map(x -> getPurpose().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getDescription())
+                .map(x -> getDescription().value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getUserDefinedPurpose())
+                .map(x -> getUserDefinedPurpose().value)
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getInternalLocation())
+                .map(x -> getInternalLocation().value)
+                .orElse(StringConstant.DOLLAR),
+            getAddressLines().toString(),
+            Optional.ofNullable(getPostalBox())
+                .map(x -> getPostalBox().value)
+                .orElse(StringConstant.DOLLAR),
+            getTown().value,
+            getRegion().value,
+            getPostalCode().value,
+            getCountry().value
+        );
+
+        return format;
     }
 }

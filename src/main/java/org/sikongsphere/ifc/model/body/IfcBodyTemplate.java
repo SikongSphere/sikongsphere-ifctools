@@ -50,56 +50,13 @@ public class IfcBodyTemplate extends IfcNonLeafNode {
      */
     private boolean isDefault;
 
-    private Field[] getAllFields(Object object) {
-        Class clazz = object.getClass();
-        List<Field> fieldList = new ArrayList<>();
-
-        while (clazz != null) {
-            fieldList.addAll(0, new ArrayList<>(Arrays.asList(clazz.getDeclaredFields())));
-            clazz = clazz.getSuperclass();
-        }
-        Field[] fields = new Field[fieldList.size()];
-        fieldList.toArray(fields);
-        return fields;
-    }
-
     /**
      * make up IFC data according to params received.
      * @param value
-     * @param stepNumber
      * @return
      */
-    public String toString(IfcBodyTemplate value, Integer stepNumber)
-        throws IllegalAccessException {
-
-        Field[] fields = getAllFields(value);
-
-        IfcBodyValidateUtils validateUtils = new IfcBodyValidateUtils(value, stepNumber);
-        validateUtils.validateTypeToString(fields);
-
-        String strList = String.valueOf(validateUtils.getList());
-        String substring = strList.substring(1, strList.length() - 1);
-
-        StringBuilder builder = new StringBuilder();
-
-        // stepNumber
-        builder.append(StringConstant.WELL)
-            .append(stepNumber)
-            .append(StringConstant.EQUALS)
-            .append(StringConstant.WHITE_SPACE)
-
-            // left
-            .append(this.getClass().getSimpleName().toUpperCase())
-            .append(StringConstant.LEFT_BRACKETS)
-
-            // data
-            .append(substring)
-
-            // right
-            .append(StringConstant.RIGHT_BRACKETS)
-            .append(StringConstant.COLON);
-
-        return builder.toString();
+    public String toString(IfcBodyTemplate value) {
+        return value.toString();
     }
 
     public boolean isDefault() {

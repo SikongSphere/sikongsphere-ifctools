@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.newModel.datatype;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 
 /**
@@ -25,7 +26,7 @@ public class SCIENTIFICNOTATION extends DOUBLE {
 
     @IfcParserConstructor
     public SCIENTIFICNOTATION(STRING value) {
-        String[] es = value.getValue().split("E");
+        String[] es = value.getValue().split(StringConstant.SCI_NOTATION);
         this.mantissa = Double.parseDouble(es[0].trim());
         this.index = Integer.parseInt(es[1].trim());
     }
@@ -57,5 +58,10 @@ public class SCIENTIFICNOTATION extends DOUBLE {
 
     public Double getDouble() {
         return mantissa * Math.pow(10, index);
+    }
+
+    @Override
+    public String toString() {
+        return mantissa + StringConstant.SCI_NOTATION + StringConstant.DIFFER + index;
     }
 }

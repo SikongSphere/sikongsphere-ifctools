@@ -52,5 +52,10 @@ public enum IfcChangeActionEnum {
      * The object has been modified and deleted.
      * @author Wang Bohong
      */
-    MODIFIEDDELETED
+    MODIFIEDDELETED,
+    /**
+     * Constant of Enum which is null
+     * @author stan
+     */
+    $
 }

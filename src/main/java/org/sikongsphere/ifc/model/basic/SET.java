@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.basic;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,5 +40,12 @@ public class SET<E> extends IfcBasicType {
 
     public Set<E> getObjects() {
         return objects;
+    }
+
+    @Override
+    public String toString() {
+        return objects.toString()
+            .replace(StringConstant.LEFT_SQUARE_BRACKETS, StringConstant.LEFT_BRACKETS)
+            .replace(StringConstant.RIGHT_SQUARE_BRACKETS, StringConstant.RIGHT_BRACKETS);
     }
 }

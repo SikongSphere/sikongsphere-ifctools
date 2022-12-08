@@ -12,9 +12,13 @@ package org.sikongsphere.ifc.newModel.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * The location and orientation in three dimensional space
@@ -69,5 +73,23 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
     @Override
     public boolean isDefault() {
         return axis.isDefault() && refDirection.isDefault();
+    }
+
+    @Override
+    public String toIfc() {
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getLocation().getStepNumber(),
+            Optional.ofNullable(this.axis)
+                .map(x -> this.axis.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.refDirection)
+                .map(x -> this.refDirection.toString())
+                .orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

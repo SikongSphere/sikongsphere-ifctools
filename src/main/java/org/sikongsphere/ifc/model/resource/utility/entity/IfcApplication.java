@@ -12,12 +12,16 @@ package org.sikongsphere.ifc.model.resource.utility.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.actor.entity.IfcOrganization;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * This class holds the information about an IFC compliant application developed by an application developer
@@ -83,5 +87,19 @@ public class IfcApplication extends IfcBodyTemplate {
 
     public void setApplicationIdentifier(IfcIdentifier applicationIdentifier) {
         this.applicationIdentifier = applicationIdentifier;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.applicationDeveloper.stepNumber,
+            this.version.value,
+            this.applicationFullName.value,
+            this.applicationIdentifier.value
+        );
+        return format;
     }
 }

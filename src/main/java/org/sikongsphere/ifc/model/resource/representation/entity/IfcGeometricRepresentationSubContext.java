@@ -12,15 +12,20 @@ package org.sikongsphere.ifc.model.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.STRING;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcPositiveRatioMeasure;
 import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.resource.representation.enumeration.IfcGeometricProjectionEnum;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * The IfcGeometricRepresentationSubContext defines the context that applies to several shape representations
@@ -97,5 +102,46 @@ public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
 
     public void setUserDefinedTargetView(IfcLabel userDefinedTargetView) {
         this.userDefinedTargetView = userDefinedTargetView;
+    }
+
+    @Override
+    public String toString() {
+
+        STRING precision = getPrecision();
+        String temp;
+
+        if (precision.isDefault()) {
+            temp = StringConstant.ASTERISK;
+        } else {
+            temp = precision.value;
+        }
+
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getContextIdentifier().value,
+            getContextType().value,
+            Optional.ofNullable(getCoordinateSpaceDimension().getDimensionCount())
+                .map(x -> getCoordinateSpaceDimension().getDimensionCount().toString())
+                .orElse(StringConstant.ASTERISK),
+            temp,
+            Optional.ofNullable(getWorldCoordinateSystem())
+                .map(x -> getWorldCoordinateSystem().toString())
+                .orElse(StringConstant.ASTERISK),
+            Optional.ofNullable(getTrueNorth().getDirectionRatios())
+                .map(x -> getTrueNorth().toString())
+                .orElse(StringConstant.ASTERISK),
+            this.parentContext.stepNumber,
+            Optional.ofNullable(this.targetScale)
+                .map(x -> this.targetScale.getPositiveRatioMeasure().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.DOT + this.targetView + StringConstant.DOT,
+            Optional.ofNullable(this.userDefinedTargetView)
+                .map(x -> this.userDefinedTargetView.value)
+                .orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.INTEGER;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 
+import java.util.Locale;
+
 /**
  * This class is used to encapsulate derived unit element information
  *
@@ -55,5 +57,18 @@ public class IfcDerivedUnitElement extends IfcAbstractClass {
 
     public void setExponent(INTEGER exponent) {
         this.exponent = exponent;
+    }
+
+    @Override
+    public String toIfc() {
+        String format = String.format(
+            "#%s=%s(#%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.unit.getStepNumber(),
+            this.exponent
+        );
+
+        return format;
     }
 }

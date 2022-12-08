@@ -17,6 +17,7 @@ import org.junit.Test;
 import org.sikongsphere.ifc.io.IfcFileReader;
 import org.sikongsphere.ifc.model.IfcModel;
 import org.sikongsphere.ifc.io.IfcFileWriter;
+import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
 
 import java.io.*;
 
@@ -27,7 +28,6 @@ import java.io.*;
  * @author stan
  * @date 2022/09/07 22:26
  */
-@Ignore
 public class IfcStepReadWriteTest {
     private final static String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
@@ -35,9 +35,9 @@ public class IfcStepReadWriteTest {
     /**
      * Test whether both of them are as the same.
      */
-    @Ignore
+    @Test
     public void blankFile() throws IOException {
-        IfcModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
+        IfcFileModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
         IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);
 
         String ifcFileone = CharStreams.fromFileName(BLANK_INPUT_PATH)
@@ -47,7 +47,8 @@ public class IfcStepReadWriteTest {
         String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
             .toString()
             .replaceAll("\\s*|\r", "");
-
+        System.out.println(ifcFileone);
+        System.out.println(ifcFiletwo);
         assert ifcFileone.equals(ifcFiletwo);
     }
 

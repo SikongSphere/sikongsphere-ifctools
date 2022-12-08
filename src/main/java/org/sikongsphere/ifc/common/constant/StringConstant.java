@@ -33,7 +33,7 @@ public class StringConstant {
     public static final String COMMA = ",";
     public static final String DOLLAR = "$";
     public static final String DOT = ".";
-
+    public static final String QUOTE = "'";
     public static final String ASTERISK = "*";
 
     /**
@@ -46,11 +46,14 @@ public class StringConstant {
     public static final String INVERSE_TAG = "SET";
 
     /**
-     * IFC Elements
+     * Bool Constant
      */
-
-    public static final String IFCRATIOMEASURE = "IFCRATIOMEASURE";
-    public static final String IFCBOOLEAN = "IFCBOOLEAN";
     public static final String TRUE = "T";
     public static final String FALSE = "F";
+
+    /**
+     * Math Symbol
+     */
+    public static final String SCI_NOTATION = "E";
+    public static final String DIFFER = "-"; // May be another nickname.
 }

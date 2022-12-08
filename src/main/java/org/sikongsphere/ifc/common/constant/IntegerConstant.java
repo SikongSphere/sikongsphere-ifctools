@@ -8,23 +8,17 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.fileelement;
+package org.sikongsphere.ifc.common.constant;
 
-import org.sikongsphere.ifc.newModel.IfcFileElement;
-import org.sikongsphere.ifc.newModel.IfcInterface;
-
-import java.util.List;
-
-public class IfcFileDescription extends IfcFileElement {
-
-    public IfcFileDescription(List<IfcInterface> params) {
-        super(params);
-    }
-
-    @Override
-    public String toString() {
-        IfcInterface ifcInterface = params.get(0);
-
-        return ifcInterface.toString();
-    }
+/**
+ * some Integer constant used in an IFC file
+ *
+ * @author stan
+ * @date 2022/12/03 11:11
+ */
+public class IntegerConstant {
+    /**
+     * IFC StepNumber ALTERNATIVE
+     */
+    public static final Integer BACK_REFERENCE = 0; // 用于暂时替代向后引用的地方
 }

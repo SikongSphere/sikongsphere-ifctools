@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
@@ -19,6 +20,9 @@ import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
 import org.sikongsphere.ifc.model.basic.LIST;
 import org.sikongsphere.ifc.model.basic.SET;
 import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * This class is used to encapsulate person information
@@ -127,5 +131,34 @@ public class IfcPerson extends IfcBodyTemplate {
 
     public void setAddresses(LIST<IfcAddress> addresses) {
         this.addresses = addresses;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(this.id).map(x -> this.id.value).orElse(StringConstant.DOLLAR),
+            this.familyName.value,
+            this.givenName.value,
+            Optional.ofNullable(this.middleName)
+                .map(x -> this.middleName.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.prefixTitles)
+                .map(x -> this.prefixTitles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.suffixTitles)
+                .map(x -> this.suffixTitles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.roles)
+                .map(x -> this.roles.toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(this.addresses)
+                .map(x -> this.addresses.toString())
+                .orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

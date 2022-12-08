@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.newModel.datatype;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 
 /**
@@ -53,5 +54,13 @@ public class DOUBLE extends IfcDataType {
     @Override
     public boolean isDefault() {
         return this.value == 0.0;
+    }
+
+    @Override
+    public String toString() {
+        int num = (int) value;
+        if (num - value == 0) {
+            return num + StringConstant.DOT;
+        } else return String.valueOf(value);
     }
 }

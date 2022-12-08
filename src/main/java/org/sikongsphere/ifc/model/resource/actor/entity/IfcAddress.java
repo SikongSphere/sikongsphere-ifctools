@@ -47,4 +47,28 @@ public class IfcAddress extends IfcBodyTemplate {
         this.description = description;
         this.userDefinedPurpose = userDefinedPurpose;
     }
+
+    public IfcAddressTypeEnum getPurpose() {
+        return purpose;
+    }
+
+    public void setPurpose(IfcAddressTypeEnum purpose) {
+        this.purpose = purpose;
+    }
+
+    public IfcText getDescription() {
+        return description;
+    }
+
+    public void setDescription(IfcText description) {
+        this.description = description;
+    }
+
+    public IfcLabel getUserDefinedPurpose() {
+        return userDefinedPurpose;
+    }
+
+    public void setUserDefinedPurpose(IfcLabel userDefinedPurpose) {
+        this.userDefinedPurpose = userDefinedPurpose;
+    }
 }

@@ -12,15 +12,21 @@ package org.sikongsphere.ifc.newModel.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.DOUBLE;
+import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.definedtypes.IfcDimensionCount;
+import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.newModel.schema.resource.representation.enumeration.IfcGeometricProjectionEnum;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * The IfcGeometricRepresentationSubContext defines the context that applies to several shape representations
@@ -97,5 +103,49 @@ public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
 
     public void setUserDefinedTargetView(IfcLabel userDefinedTargetView) {
         this.userDefinedTargetView = userDefinedTargetView;
+    }
+
+    @Override
+    public String toIfc() {
+
+        DOUBLE precision = getPrecision();
+        String temp;
+
+        if (precision.isDefault()) {
+            temp = StringConstant.ASTERISK;
+        } else {
+            temp = precision.toString();
+        }
+
+        IfcAxis2Placement3D worldCoordinateSystem =
+            (IfcAxis2Placement3D) getWorldCoordinateSystem();
+
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getContextIdentifier(),
+            getContextType(),
+            Optional.ofNullable(getCoordinateSpaceDimension().getDimensionCount())
+                .map(x -> getCoordinateSpaceDimension().getDimensionCount().toString())
+                .orElse(StringConstant.ASTERISK),
+            temp,
+            Optional.ofNullable(worldCoordinateSystem.getLocation())
+                .map(x -> getWorldCoordinateSystem().toString())
+                .orElse(StringConstant.ASTERISK),
+            Optional.ofNullable(getTrueNorth().getDirectionRatios())
+                .map(x -> getTrueNorth().toString())
+                .orElse(StringConstant.ASTERISK),
+            this.parentContext.getStepNumber(),
+            Optional.ofNullable(this.targetScale)
+                .map(x -> this.targetScale.getPositiveRatioMeasure().toString())
+                .orElse(StringConstant.DOLLAR),
+            StringConstant.DOT + this.targetView + StringConstant.DOT,
+            Optional.ofNullable(this.userDefinedTargetView)
+                .map(x -> this.userDefinedTargetView.toString())
+                .orElse(StringConstant.DOLLAR)
+        );
+
+        return format;
     }
 }

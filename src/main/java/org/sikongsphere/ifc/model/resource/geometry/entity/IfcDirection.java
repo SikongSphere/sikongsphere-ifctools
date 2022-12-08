@@ -16,6 +16,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.basic.INTEGER;
 import org.sikongsphere.ifc.model.basic.LIST;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
+
+import java.util.Locale;
 
 /**
  * his entity defines a general direction vector in two or three dimensional space.
@@ -49,5 +52,17 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
 
     public void setDirectionRatios(LIST<Double> directionRatios) {
         this.directionRatios = directionRatios;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.directionRatios.toString()
+        );
+
+        return format;
     }
 }

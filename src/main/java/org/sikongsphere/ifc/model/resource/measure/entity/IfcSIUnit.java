@@ -12,11 +12,16 @@ package org.sikongsphere.ifc.model.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIPrefix;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIUnitName;
 import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcUnitEnum;
+
+import javax.swing.text.html.Option;
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * This class is used to encapsulate SI Unit information
@@ -66,5 +71,26 @@ public class IfcSIUnit extends IfcNamedUnit {
 
     public void setName(IfcSIUnitName name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,.%s.);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(this.dimensions.getLengthExponent())
+                .map(x -> this.dimensions.toString())
+                .orElse(StringConstant.ASTERISK),
+            Optional.ofNullable(this.unitType)
+                .map(x -> StringConstant.DOT + this.unitType + StringConstant.DOT)
+                .orElse(StringConstant.ASTERISK),
+            Optional.ofNullable(this.prefix)
+                .map(x -> StringConstant.DOT + this.prefix + StringConstant.DOT)
+                .orElse(StringConstant.DOLLAR),
+            this.name
+        );
+
+        return format;
     }
 }

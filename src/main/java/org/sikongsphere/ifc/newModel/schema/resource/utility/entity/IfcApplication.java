@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.newModel.schema.resource.actor.entity.IfcOrganizatio
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 
+import java.util.Locale;
+
 /**
  * This class holds the information about an IFC compliant application developed by an application developer
  * who is a member of the IAI.
@@ -83,5 +85,19 @@ public class IfcApplication extends IfcAbstractClass {
 
     public void setApplicationIdentifier(IfcIdentifier applicationIdentifier) {
         this.applicationIdentifier = applicationIdentifier;
+    }
+
+    @Override
+    public String toIfc() {
+        String format = String.format(
+            "#%s=%s(#%s,%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.applicationDeveloper.getStepNumber(),
+            this.version.toString(),
+            this.applicationFullName.toString(),
+            this.applicationIdentifier.toString()
+        );
+        return format;
     }
 }

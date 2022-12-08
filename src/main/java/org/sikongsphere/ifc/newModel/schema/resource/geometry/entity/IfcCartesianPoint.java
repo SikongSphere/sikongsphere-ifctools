@@ -14,8 +14,11 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.body.IfcBodyTemplate;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLengthMeasure;
+
+import java.util.Locale;
 
 /**
  * A point defined by its coordinates in a two or
@@ -65,4 +68,15 @@ public class IfcCartesianPoint extends IfcPoint {
         }
     }
 
+    @Override
+    public String toIfc() {
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.coordinates.toString()
+        );
+
+        return format;
+    }
 }

@@ -47,5 +47,10 @@ public enum IfcStateEnum {
      * Object is in a Read-Write-Locked state.
      * @author Wang Bohong
      */
-    READONLYLOCKED
+    READONLYLOCKED,
+    /**
+     * Constant of Enum which is null
+     * @author stan
+     */
+    $
 }
