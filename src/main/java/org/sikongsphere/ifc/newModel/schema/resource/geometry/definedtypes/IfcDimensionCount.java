@@ -16,7 +16,6 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.INTEGER;
 import org.sikongsphere.ifc.newModel.datatype.SCIENTIFICNOTATION;
 import org.sikongsphere.ifc.newModel.datatype.STRING;
-import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 
 /**
  * A dimension count is a positive integer used to define the coordinate space dimensionality.
@@ -25,24 +24,30 @@ import org.sikongsphere.ifc.newModel.IfcAbstractClass;
  * @date 2022/09/02 00:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcDimensionCount extends IfcAbstractClass {
+public class IfcDimensionCount extends INTEGER {
     private INTEGER dimensionCount;
 
-    public IfcDimensionCount() {}
+    public IfcDimensionCount() {
+        super(3);
+    }
 
     public IfcDimensionCount(INTEGER dimensionCount) {
+        super(dimensionCount);
         this.dimensionCount = dimensionCount;
     }
 
     public IfcDimensionCount(SCIENTIFICNOTATION dimensionCount) {
+        super(dimensionCount.getInteger());
         this.dimensionCount = new INTEGER(dimensionCount.getInteger());
     }
 
     public IfcDimensionCount(Integer dimensionCount) {
+        super(dimensionCount);
         this.dimensionCount = new INTEGER(dimensionCount);
     }
 
     public IfcDimensionCount(STRING dimensionCount) {
+        super(dimensionCount);
         this.dimensionCount = new INTEGER(Integer.valueOf(dimensionCount.value));
     }
 
@@ -53,4 +58,5 @@ public class IfcDimensionCount extends IfcAbstractClass {
     public void setDimensionCount(INTEGER dimensionCount) {
         this.dimensionCount = dimensionCount;
     }
+
 }

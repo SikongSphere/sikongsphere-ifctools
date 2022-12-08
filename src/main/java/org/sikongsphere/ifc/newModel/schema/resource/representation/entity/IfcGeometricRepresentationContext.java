@@ -24,7 +24,6 @@ import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirectio
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 
-import java.util.Locale;
 import java.util.Optional;
 
 /**
@@ -121,7 +120,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         String format = String.format(
             "#%s=%s(%s,%s,%s,%s,#%s,%s);",
             this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.getClass().getSimpleName().toUpperCase(),
             Optional.ofNullable(getContextIdentifier())
                 .map(x -> getContextIdentifier().toString())
                 .orElse(StringConstant.DOLLAR),

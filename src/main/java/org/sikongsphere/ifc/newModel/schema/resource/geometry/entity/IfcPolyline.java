@@ -53,10 +53,11 @@ public class IfcPolyline extends IfcBoundedCurve {
             list.add(StringConstant.WELL + point.getStepNumber());
         }
 
-        String format = String.format("#%s=%s(%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                list
+        String format = String.format(
+            "#%s=%s(%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            list
         );
 
         return format;

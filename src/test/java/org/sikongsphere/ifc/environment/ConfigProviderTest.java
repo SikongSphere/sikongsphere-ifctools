@@ -23,7 +23,7 @@ public class ConfigProviderTest {
     @Test
     public void modelPathTest() {
         String property = ConfigProvider.getProperty(ConfigParameter.IFC_MODEL_PATH_KEY);
-        assert property.equals("org.sikongsphere.ifc.model");
+        assert property.equals("org.sikongsphere.ifc.newModel");
     }
 
     @Test
