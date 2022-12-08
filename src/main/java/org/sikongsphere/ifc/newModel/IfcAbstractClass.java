@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.newModel;
 
+import org.sikongsphere.ifc.common.exception.SikongSphereException;
+
 /**
  *  This abstract class is mainly used to encapsulate class
  *
@@ -46,5 +48,17 @@ public abstract class IfcAbstractClass implements IfcInterface {
 
     public boolean isDefault() {
         return false;
+    }
+
+    @Override
+    public void check() {
+        if (!illegal()) {
+            throw new SikongSphereException("Value is illegal");
+        }
+    }
+
+    @Override
+    public boolean illegal() {
+        return true;
     }
 }
