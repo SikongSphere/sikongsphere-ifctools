@@ -12,12 +12,16 @@ package org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcProfileDef;
+
+import java.util.Locale;
 
 /**
  * @author zhongqi
@@ -57,5 +61,21 @@ public class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
 
     public void setDepth(IfcPositiveLengthMeasure depth) {
         this.depth = depth;
+    }
+
+    @Override
+    public String toIfc() {
+        IfcAbstractClass position = (IfcAbstractClass) getPosition();
+
+        String format = String.format("#%s=%s(%s,%s,%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                StringConstant.WELL + getSweptArea().getStepNumber(),
+                StringConstant.WELL + position.getStepNumber(),
+                StringConstant.WELL + getExtrudedDirection().getStepNumber(),
+                getDepth()
+        );
+
+        return format;
     }
 }

@@ -31,6 +31,14 @@ public class IfcColourSpecification extends IfcAbstractClass implements IfcColou
 
     public IfcColourSpecification() {}
 
+    public IfcLabel getName() {
+        return name;
+    }
+
+    public void setName(IfcLabel name) {
+        this.name = name;
+    }
+
     @IfcParserConstructor
     public IfcColourSpecification(IfcLabel name) {
         this.name = name;

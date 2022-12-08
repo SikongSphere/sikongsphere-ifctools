@@ -12,11 +12,15 @@ package org.sikongsphere.ifc.newModel.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcColourSpecification;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * A colour rgb as a subtype of colour specifications is defined
@@ -68,5 +72,19 @@ public class IfcColourRgb extends IfcColourSpecification {
 
     public void setBlue(IfcNormalisedRatioMeasure blue) {
         this.blue = blue;
+    }
+
+    @Override
+    public String toIfc() {
+        String format = String.format("#%s=%s(%s,%s,%s,%s)",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                Optional.ofNullable(getName()).map(x -> getName().toString()).orElse(StringConstant.DOLLAR),
+                getRed(),
+                getGreen(),
+                getBlue()
+                );
+
+        return format;
     }
 }

@@ -12,8 +12,11 @@ package org.sikongsphere.ifc.newModel.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+
+import java.util.Locale;
 
 /**
  * IfcAxis2Placement2D
@@ -39,5 +42,17 @@ public class IfcAxis2Placement2D extends IfcPlacement {
 
     public void setRefDirection(IfcDirection refDirection) {
         this.refDirection = refDirection;
+    }
+
+    @Override
+    public String toIfc() {
+        String format = String.format("#%s=%s(%s,%s);",
+                this.getStepNumber(),
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                StringConstant.WELL + getLocation().getStepNumber(),
+                StringConstant.WELL + getRefDirection().getStepNumber()
+        );
+
+        return format;
     }
 }

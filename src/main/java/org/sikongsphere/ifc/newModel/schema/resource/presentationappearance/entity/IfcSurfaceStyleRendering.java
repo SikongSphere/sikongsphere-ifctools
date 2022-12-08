@@ -12,13 +12,18 @@ package org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.ent
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb;
+import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.definedtype.IfcSpecularExponent;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.enumeration.IfcReflectanceMethodEnum;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcColourOrFactor;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcSpecularHighlightSelect;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * @author Yiwei
@@ -100,16 +105,24 @@ public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
         this.reflectionColour = reflectionColour;
     }
 
-    public IfcColourOrFactor getSpecularColour() {
-        return specularColour;
+    public String getSpecularColour() {
+        String format = String.format("%s(%s)",
+                specularColour.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                specularColour);
+
+        return format;
     }
 
     public void setSpecularColour(IfcColourOrFactor specularColour) {
         this.specularColour = specularColour;
     }
 
-    public IfcSpecularHighlightSelect getSpecularHighlight() {
-        return specularHighlight;
+    public String getSpecularHighlight() {
+        String format = String.format("%s(%s)",
+                specularHighlight.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                specularHighlight);
+
+        return format;
     }
 
     public void setSpecularHighlight(IfcSpecularHighlightSelect specularHighlight) {
@@ -122,5 +135,25 @@ public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
 
     public void setReflectanceMethod(IfcReflectanceMethodEnum reflectanceMethod) {
         this.reflectanceMethod = reflectanceMethod;
+    }
+
+    @Override
+    public String toIfc() {
+
+        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                StringConstant.WELL + getSurfaceColour().getStepNumber(),
+                getTransparency(),
+                Optional.ofNullable(getDiffuseColour()).map(x -> getDiffuseColour().toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getTransmissionColour()).map(x -> getTransmissionColour().toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getDiffuseTransmissionColour()).map(x -> getDiffuseTransmissionColour().toString()).orElse(StringConstant.DOLLAR),
+                Optional.ofNullable(getReflectionColour()).map(x -> getReflectionColour().toString()).orElse(StringConstant.DOLLAR),
+                getSpecularColour(),
+                getSpecularHighlight(),
+                StringConstant.DOT + getReflectanceMethod() + StringConstant.DOT
+        );
+
+        return format;
     }
 }

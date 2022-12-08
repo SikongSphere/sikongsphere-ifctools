@@ -12,12 +12,16 @@ package org.sikongsphere.ifc.newModel.schema.resource.profile.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.profile.enumeration.IfcProfileTypeEnum;
+
+import java.util.Locale;
+import java.util.Optional;
 
 /**
  * @author GaoSu
@@ -57,5 +61,20 @@ public class IfcRectangleProfileDef extends IfcParameterizedProfileDef {
 
     public void setYDim(IfcPositiveLengthMeasure yDim) {
         this.yDim = yDim;
+    }
+
+    @Override
+    public String toIfc() {
+        String format = String.format("#%s=%s(%s,%s,%s,%s,%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                StringConstant.DOT + getProfileType() + StringConstant.DOT,
+                Optional.ofNullable(getProfileName()).map(x -> getProfileName().toString()).orElse(StringConstant.DOLLAR),
+                StringConstant.WELL + getPosition().getStepNumber(),
+                getXDim().toString(),
+                getYDim().toString()
+        );
+
+        return format;
     }
 }
