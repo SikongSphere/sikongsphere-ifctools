@@ -60,6 +60,10 @@ public class SCIENTIFICNOTATION extends DOUBLE {
         return mantissa * Math.pow(10, index);
     }
 
+    public String getString() {
+        return String.format("%sE-%s", mantissa, index);
+    }
+
     @Override
     public String toString() {
         return mantissa + StringConstant.SCI_NOTATION + StringConstant.DIFFER + index;

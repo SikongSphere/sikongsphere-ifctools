@@ -24,7 +24,6 @@ import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirectio
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 
-import java.util.Locale;
 import java.util.Optional;
 
 /**

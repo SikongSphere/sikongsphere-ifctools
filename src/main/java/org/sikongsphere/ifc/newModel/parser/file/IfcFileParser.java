@@ -26,6 +26,7 @@ import org.sikongsphere.ifc.parser.IFCLexer;
 import org.sikongsphere.ifc.parser.IFCParser;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -39,10 +40,14 @@ import java.util.TreeMap;
  */
 public class IfcFileParser extends AbstractFileParser {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchMethodException,
+        InvocationTargetException, IllegalAccessException {
         IfcFileParser fileParser = new IfcFileParser();
         Model model = fileParser.parseFile(
             "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc"
+        );
+        ((IfcFileModel) model).printFile(
+            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\new_blank.ifc"
         );
         System.out.println();
     }

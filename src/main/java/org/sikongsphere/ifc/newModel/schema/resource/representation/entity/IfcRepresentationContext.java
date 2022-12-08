@@ -24,8 +24,8 @@ import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabe
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentationContext extends IfcAbstractClass {
-    private IfcLabel contextIdentifier;
-    private IfcLabel contextType;
+    protected IfcLabel contextIdentifier;
+    protected IfcLabel contextType;
 
     public IfcRepresentationContext() {}
 
