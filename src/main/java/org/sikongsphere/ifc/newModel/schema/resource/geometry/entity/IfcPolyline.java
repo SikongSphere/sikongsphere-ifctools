@@ -12,9 +12,13 @@ package org.sikongsphere.ifc.newModel.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
+
+import java.util.List;
+import java.util.Locale;
 
 /**
  * @author Yiwei
@@ -37,5 +41,24 @@ public class IfcPolyline extends IfcBoundedCurve {
 
     public void setPoints(LIST<IfcCartesianPoint> points) {
         this.points = points;
+    }
+
+    @Override
+    public String toString() {
+
+        List<IfcCartesianPoint> points = getPoints().getObjects();
+        LIST<Object> list = new LIST<>();
+
+        for (IfcCartesianPoint point : points) {
+            list.add(StringConstant.WELL + point.getStepNumber());
+        }
+
+        String format = String.format("#%s=%s(%s);",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                list
+        );
+
+        return format;
     }
 }

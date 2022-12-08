@@ -12,11 +12,18 @@ package org.sikongsphere.ifc.newModel.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
+import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationItem;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * @author Wang Bohong
@@ -34,5 +41,28 @@ public class IfcShapeRepresentation extends IfcShapeModel {
         SET<IfcRepresentationItem> items
     ) {
         super(contextContextOfItems, representationIdentifier, representationType, items);
+    }
+
+    @Override
+    public String toString() {
+
+        Set<IfcRepresentationItem> items = getItems().getObjects();
+        LIST<Object> list = new LIST<>();
+
+        for (IfcRepresentationItem item : items) {
+            list.add(StringConstant.WELL + item.getStepNumber());
+        }
+
+
+        String format = String.format("#%s=%s(%s,%s,%s,%s)",
+                this.stepNumber,
+                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                StringConstant.WELL + getContextContextOfItems().getStepNumber(),
+                getRepresentationIdentifier(),
+                getRepresentationType(),
+                list
+        );
+
+        return format;
     }
 }

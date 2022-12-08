@@ -120,273 +120,273 @@ DATA;
 #112=IFCAXIS2PLACEMENT3D(#111,$,$);
 #113=IFCLOCALPLACEMENT(#102,#112);
 #114=IFCCARTESIANPOINT((6200., 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@196a42c3
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@4b29d1d2
+#115=IFCPOLYLINE((#4, #114));
+#116=IFCSHAPEREPRESENTATION(#94,'Axis','Curve2D',(#115))
 #117=IFCCARTESIANPOINT((3099.999999999998, 7.105427357601002E-15));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@1e4d3ce5
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@3ddc6915
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@6e01f9b0
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@2b9ed6da
 #120=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@1349883
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@704deff2
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@4c60d6e9
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@15043a2f
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@4a83a74a
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@379614be
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@7f485fda
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@404bbcbd
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@5afa3c9
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@1e81f160
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@28261e8e
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@d737b89
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@8519cb4
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@1acaf3d
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@6986852
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@1bab8268
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@a307a8c
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallType@4bc222e
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@35dab4eb
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2d901eb0
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3ba987b8
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6e01f9b0
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3f191845
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2b9ed6da
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5f049ea1
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@72cc7e6f
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6c61a903
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@34b9f960
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@43015c69
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@19b89d4
-org.sikongsphere.ifc.newModel.schema.resource.externalreference.entity.IfcClassification@658c5a19
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@5f049ea1
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@6c61a903
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@2d901eb0
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@3ba987b8
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@3f191845
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@658c5a19
+#127=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#121))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@421e361
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@2cb4893b
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@59d4cd39
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@72035809
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@909217e
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@18271936
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@389c4eb1
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@3fc79729
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@34f6515b
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@4b34fff9
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallType@34b9f960
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@606e4010
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@8458f04
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@48075da3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1187c9e8
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@68c9133c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@127a7a2e
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7a35b0f5
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5e2c3d18
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@14008db3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@93081b6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@cd1e646
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7ba8c737
+org.sikongsphere.ifc.newModel.schema.resource.externalreference.entity.IfcClassification@78a773fd
 #152=IFCCARTESIANPOINT((3343.228557284532, 160.14494944128745, 0.));
 #153=IFCAXIS2PLACEMENT3D(#152,#9=IFCDIRECTION((0., 0., 1.));,#7=IFCDIRECTION((0., 1., 0.)););
 #154=IFCLOCALPLACEMENT(#102,#153);
 #155=IFCCARTESIANPOINT((3000., 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@72035809
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@18271936
+#156=IFCPOLYLINE((#4, #155));
+#157=IFCSHAPEREPRESENTATION(#94,'Axis','Curve2D',(#156))
 #158=IFCCARTESIANPOINT((1500., 2.1316282072803006E-13));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@421e361
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@59d4cd39
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@57c03d88
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@16aa8654
 #161=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@909217e
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@389c4eb1
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@606e4010
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3fc79729
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@7a35b0f5
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@34f6515b
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4b34fff9
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@68c9133c
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1187c9e8
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@127a7a2e
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4bbf6d0e
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@30b6ffe0
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@791d1f8b
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@5b218417
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6d7fc27
+#164=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#162))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@45ac5f9b
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@33bc72d1
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@135606db
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@518caac3
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@273444fe
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@68034211
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4f74980d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@1890516e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@15a04efb
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@16c069df
 #175=IFCCARTESIANPOINT((3243.2285572845403, 3060.144949441288, 0.));
 #176=IFCAXIS2PLACEMENT3D(#175,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
 #177=IFCLOCALPLACEMENT(#102,#176);
 #178=IFCCARTESIANPOINT((6000., 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@5e2c3d18
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@cc43f62
+#179=IFCPOLYLINE((#4, #178));
+#180=IFCSHAPEREPRESENTATION(#94,'Axis','Curve2D',(#179))
 #181=IFCCARTESIANPOINT((3000., 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@14008db3
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@78a773fd
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@6c372fe6
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@58594a11
 #184=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2cb4893b
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@57c03d88
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5b218417
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@16aa8654
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@6caf0677
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@6d7fc27
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@45ac5f9b
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@645aa696
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@135606db
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@518caac3
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2415fc55
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@14f232c4
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@13bc8645
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@5524cca1
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@2a3888c1
+#187=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#185))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@4167d97b
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@4681c175
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@14fa86ae
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6e15fe2
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@353352b6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@68f1b17f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1722011b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2bec854f
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@31edaa7d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@26adfd2d
 #198=IFCCARTESIANPOINT((-2656.77144271546, 2960.1449494413077, 0.));
 #199=IFCAXIS2PLACEMENT3D(#198,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
 #200=IFCLOCALPLACEMENT(#102,#199);
 #201=IFCCARTESIANPOINT((2800., 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@413d1baf
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@273444fe
+#202=IFCPOLYLINE((#4, #201));
+#203=IFCSHAPEREPRESENTATION(#94,'Axis','Curve2D',(#202))
 #204=IFCCARTESIANPOINT((1400.0000000000007, -1.5631940186722204E-13));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@68034211
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@4f74980d
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@57ad2aa7
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@5b3f61ff
 #207=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@16eb3ea3
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6c372fe6
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@33bc72d1
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@58594a11
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@5524cca1
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@2a3888c1
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4167d97b
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1a75e76a
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@14fa86ae
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6e15fe2
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@24c22fe
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@93081b6
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@cd1e646
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@402c4085
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@3e2059ae
+#210=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#208))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@398dada8
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWallStandardCase@5386659f
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@7cb502c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@275bf9b3
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@710c2b53
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1b8a29df
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4fbe37eb
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3336e6b6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7c3fdb62
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@205d38da
 #221=IFCAXIS2PLACEMENT3D(#3,$,$);
 #222=IFCLOCALPLACEMENT(#102,#221);
 #223=IFCCARTESIANPOINT((0., 2.2737367544323206E-13));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@68f1b17f
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@1722011b
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@12a94400
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@6a47b187
 #226=IFCCARTESIANPOINT((343.22855728453465, 1560.1449494412975, 0.));
 #227=IFCAXIS2PLACEMENT3D(#226,#10=IFCDIRECTION((0., 0., -1.));,#7=IFCDIRECTION((0., 1., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2767e23c
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@57ad2aa7
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@57a78e3
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@402c4085
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@6fa51cd4
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5b3f61ff
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@710c2b53
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3e2059ae
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@5890e879
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@2dc9b0f5
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@398dada8
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@7ce026d3
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7ce69770
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@1750fbeb
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@7cb502c
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@275bf9b3
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@1b8a29df
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@4fbe37eb
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5b247367
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@12a94400
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@268f106e
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6a47b187
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@cecf639
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6c284af
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2049a9c1
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7ba8c737
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@1890516e
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@15a04efb
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1caa0244
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@268f106e
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@2049a9c1
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@7ce69770
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@1750fbeb
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@5b247367
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@1ef6d34c
+#234=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#228))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@46271dd6
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@3e08ff24
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@43015c69
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@11bb571c
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@31ea9581
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@231f98ef
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@7c137fd5
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@7c51f34b
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@5495333e
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@2a225dd7
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@61eaec38
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@183ec003
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@125290e5
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7d9d0818
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6fa34d52
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5890e879
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@2b40ff9c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@57576994
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6950ed69
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6dd7b5a3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6f3187b0
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6440112d
 #257=IFCAXIS2PLACEMENT3D(#3,$,$);
 #258=IFCLOCALPLACEMENT(#102,#257);
 #259=IFCCARTESIANPOINT((-4.547473508864641E-13, 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@1ef6d34c
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@46271dd6
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@616ac46a
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@67b9b51a
 #262=IFCCARTESIANPOINT((343.2285572845365, 1560.1449494412973, 2600.));
 #263=IFCAXIS2PLACEMENT3D(#262,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@7d9d0818
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@11bb571c
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@231f98ef
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@7c137fd5
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@183ec003
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7c51f34b
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@221a3fa4
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@5495333e
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcCovering@5ddeb7cb
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcCoveringType@2a225dd7
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@61eaec38
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@125290e5
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@3e08ff24
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@4d1c005e
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@8462f31
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@6fa34d52
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@57576994
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@616ac46a
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@67b9b51a
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@1205bd62
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@24569dba
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@7ef27d7f
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@490caf5f
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@16c069df
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2bec854f
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@451001e5
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2b40ff9c
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@496bc455
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@1205bd62
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@24569dba
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@5ddeb7cb
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@70ed52de
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7ef27d7f
+#270=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#264))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@490caf5f
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcCovering@76494737
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcCoveringType@6337c201
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@5c669da8
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@31920ade
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@7c37508a
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@247310d0
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@1033576a
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@1d483de4
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@4032d386
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@28d18df5
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@934b6cb
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSetUsage@55cf0d14
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@303cf2ba
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@3b74ac8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@27adc16e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2663e964
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@48b67364
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7188af83
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6be968ce
 #291=IFCCARTESIANPOINT((8.43769498715119E-15, 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@6337c201
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@5c669da8
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@b83a9be
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@2609b277
 #294=IFCCARTESIANPOINT((457.50000000000557, 159., 63.));
 #295=IFCAXIS2PLACEMENT3D(#294,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2b30a42c
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@305ffe9e
 #297=IFCCARTESIANPOINT((-438.49999999999994, -591.));
 #298=IFCCARTESIANPOINT((438.49999999999994, -591.));
 #299=IFCCARTESIANPOINT((438.49999999999994, 591.));
 #300=IFCCARTESIANPOINT((-438.49999999999994, 591.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@31920ade
+#301=IFCPOLYLINE((#297, #298, #299, #300, #297));
 #302=IFCCARTESIANPOINT((-394.49999999999966, -547.));
 #303=IFCCARTESIANPOINT((-394.49999999999966, 547.));
 #304=IFCCARTESIANPOINT((394.4999999999975, 547.));
 #305=IFCCARTESIANPOINT((394.4999999999975, -547.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@59402b8f
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@1d483de4
+#306=IFCPOLYLINE((#302, #303, #304, #305, #302));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@1fd14d74
 #308=IFCCARTESIANPOINT((457.50000000000665, 137., 610.));
 #309=IFCAXIS2PLACEMENT3D(#308,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@609e8838
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@302c971f
 #311=IFCCARTESIANPOINT((-457.49999999999983, -610.));
 #312=IFCCARTESIANPOINT((457.49999999999983, -610.));
 #313=IFCCARTESIANPOINT((457.49999999999983, 610.));
 #314=IFCCARTESIANPOINT((-457.49999999999983, 610.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@4032d386
+#315=IFCPOLYLINE((#311, #312, #313, #314, #311));
 #316=IFCCARTESIANPOINT((-438.50000000000114, -591.));
 #317=IFCCARTESIANPOINT((-438.50000000000114, 591.));
 #318=IFCCARTESIANPOINT((438.49999999999864, 591.));
 #319=IFCCARTESIANPOINT((438.49999999999864, -591.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@7188af83
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@28d18df5
+#320=IFCPOLYLINE((#316, #317, #318, #319, #316));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@563e4951
 #322=IFCCARTESIANPOINT((457.50000000000796, 137., 610.));
 #323=IFCAXIS2PLACEMENT3D(#322,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@359df09a
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@1972e513
 #325=IFCCARTESIANPOINT((-457.5000000000002, -610.));
 #326=IFCCARTESIANPOINT((457.5000000000002, -610.));
 #327=IFCCARTESIANPOINT((457.5000000000002, 610.));
 #328=IFCCARTESIANPOINT((-457.5000000000002, 610.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@934b6cb
+#329=IFCPOLYLINE((#325, #326, #327, #328, #325));
 #330=IFCCARTESIANPOINT((-425.4999999999999, -578.));
 #331=IFCCARTESIANPOINT((-425.4999999999999, 578.));
 #332=IFCCARTESIANPOINT((425.50000000000017, 578.));
 #333=IFCCARTESIANPOINT((425.50000000000017, -578.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@6be968ce
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@55cf0d14
+#334=IFCPOLYLINE((#330, #331, #332, #333, #330));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryProfileDefWithVoids@4066c471
 #336=IFCCARTESIANPOINT((457.5000000000084, 0., 610.));
 #337=IFCAXIS2PLACEMENT3D(#336,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@43df23d3
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@3b74ac8
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@1033576a
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@303cf2ba
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@76494737
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@27adc16e
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@b83a9be
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@4a003cbe
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@4082ba93
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@17fc391b
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@2609b277
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@1fd14d74
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@563e4951
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@4066c471
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@7ae0a9ec
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@2b175c00
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@6d60fe40
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@792b749c
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@23e84203
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@3eb81efb
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@1ae8bcbc
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@19932c16
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@73eb439a
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@514646ef
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6cdba6dc
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7d3d101b
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@30c8681
+#351=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#296, #324, #310, #338))
 #352=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationMap@2b175c00
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindowLiningProperties@792b749c
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindowStyle@6531a794
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@3eb81efb
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@19932c16
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@73eb439a
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@514646ef
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@1ae8bcbc
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@6cdba6dc
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@305ffe9e
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@302c971f
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@1972e513
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@7d3d101b
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@30c8681
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcCartesianTransformationOperator3D@5cdec700
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcMappedItem@7ae0a9ec
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@35841320
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6d026701
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationMap@5cdec700
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindowLiningProperties@61c4eee0
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindowStyle@19b89d4
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@6d026701
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@1040be71
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@548a24a
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@433defed
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@78aa1f72
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@1f75a668
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@2a693f59
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@3f4faf53
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@7fd50002
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@35399441
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@4b7dc788
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcCartesianTransformationOperator3D@6304101a
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcMappedItem@533bda92
+#369=IFCSHAPEREPRESENTATION(#95,'Body','MappedRepresentation',(#368))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@5170bcf4
 #371=IFCCARTESIANPOINT((973.2285572845334, 160.1449494412966, 915.));
 #372=IFCAXIS2PLACEMENT3D(#371,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindow@548a24a
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@78aa1f72
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1040be71
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1f75a668
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@35399441
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@31edaa7d
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@26adfd2d
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6d60fe40
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@23e84203
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcWindow@45d84a20
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@2812b107
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@28dcca0c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@df6620a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4e31276e
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@189cbd7c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7bf3a5d8
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@35841320
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6f10d5b6
 #383=IFCCARTESIANPOINT((-451., -1057.));
 #384=IFCCARTESIANPOINT((451., -1057.));
 #385=IFCCARTESIANPOINT((451., 1019.));
@@ -395,11 +395,11 @@ org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@23e84203
 #388=IFCCARTESIANPOINT((-375., -981.));
 #389=IFCCARTESIANPOINT((-375., 1019.));
 #390=IFCCARTESIANPOINT((-451., 1019.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@4b7dc788
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@6304101a
+#391=IFCPOLYLINE((#383, #384, #385, #386, #387, #388, #389, #390, #383));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@1a72a540
 #393=IFCCARTESIANPOINT((375., 200., 1019.));
 #394=IFCAXIS2PLACEMENT3D(#393,#7=IFCDIRECTION((0., 1., 0.));,#5=IFCDIRECTION((1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@52f27fbd
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@5a59ca5e
 #396=IFCCARTESIANPOINT((-1057., -451.));
 #397=IFCCARTESIANPOINT((1019., -451.));
 #398=IFCCARTESIANPOINT((1019., -375.));
@@ -408,272 +408,177 @@ org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedA
 #401=IFCCARTESIANPOINT((1019., 375.));
 #402=IFCCARTESIANPOINT((1019., 451.));
 #403=IFCCARTESIANPOINT((-1057., 451.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@5170bcf4
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@2812b107
+#404=IFCPOLYLINE((#396, #397, #398, #399, #400, #401, #402, #403, #396));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@27d5a580
 #406=IFCCARTESIANPOINT((375., -25., 1019.));
 #407=IFCAXIS2PLACEMENT3D(#406,#7=IFCDIRECTION((0., 1., 0.));,#10=IFCDIRECTION((0., 0., -1.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4c163e3
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4bdeaabb
 #409=IFCCARTESIANPOINT((-5.329070518200751E-15, 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@df6620a
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@4e31276e
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@198d6542
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@5e403b4a
 #412=IFCCARTESIANPOINT((375., 174.5000000000007, 0.));
 #413=IFCAXIS2PLACEMENT3D(#412,#9=IFCDIRECTION((0., 0., 1.));,#7=IFCDIRECTION((0., 1., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4a8355dd
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@1a72a540
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@3f4faf53
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@7fd50002
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@533bda92
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@27d5a580
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@198d6542
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@5e403b4a
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@25be7b63
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@28dcca0c
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@45d84a20
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5117dd67
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5be49b60
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@6c4906d3
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@5117dd67
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@4a8355dd
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@4d0d9fe7
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@c430e6c
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5be49b60
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@2931522b
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@7674b62c
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@72bc6553
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@66982506
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@70cf32e3
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@19e7a160
+#426=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#408, #395, #414))
 #427=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationMap@2931522b
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorLiningProperties@c430e6c
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorPanelProperties@312aa7c
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorStyle@3b5fad2d
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@7674b62c
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@72bc6553
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@66982506
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@70cf32e3
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@19e7a160
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@662706a7
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@5a59ca5e
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@4bdeaabb
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@6c4906d3
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@45a4b042
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@16b2bb0c
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcMappedItem@65987993
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@71075444
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@327af41b
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcRepresentationMap@662706a7
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorLiningProperties@71075444
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorPanelProperties@4f32a3ad
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoorStyle@4bbf6d0e
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@45a4b042
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@4d1bf319
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6f53b8a
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@5c80cf32
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@16b2bb0c
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@327af41b
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@7d900ecf
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6f01b95f
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@4007f65e
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@6cb6decd
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@c7045b9
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcMappedItem@1a245833
+#444=IFCSHAPEREPRESENTATION(#95,'Body','MappedRepresentation',(#443))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@f99f5e0
 #446=IFCCARTESIANPOINT((-1306.771442715463, 160.14494944130323, 0.));
 #447=IFCAXIS2PLACEMENT3D(#446,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoor@6b695b06
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@6cb6decd
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4f32a3ad
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@c7045b9
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@f99f5e0
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3336e6b6
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7c3fdb62
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4d0d9fe7
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@536f2a7e
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcDoor@7a5ceedd
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@6aa61224
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5965d37
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@30bce90b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@3e6f3f28
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@42e25b0b
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@39b43d60
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@65987993
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6b695b06
 #458=IFCAXIS2PLACEMENT3D(#460,$,$);
 #459=IFCLOCALPLACEMENT(#106,#458);
 #460=IFCCARTESIANPOINT((-2756.7714427154874, -39.855050558719405, 0.));
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRoof@72c8e7b
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRoof@5e7cd6cc
 #462=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6aa61224
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@7e19ebf0
 #465=IFCCARTESIANPOINT((1500., 923.7604307033953));
 #466=IFCCARTESIANPOINT((-1500., 923.7604307034026));
 #467=IFCCARTESIANPOINT((-3100., -923.7604307033912));
 #468=IFCCARTESIANPOINT((3100., -923.7604307034088));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@30bce90b
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@3e6f3f28
+#469=IFCPOLYLINE((#465, #466, #467, #468, #465));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@2474f125
 #471=IFCCARTESIANPOINT((3100., 800., 461.8802153517003));
 #472=IFCDIRECTION((0., -0.4999999999999999, 0.8660254037844387));
 #473=IFCAXIS2PLACEMENT3D(#471,#472=IFCDIRECTION((0., -0.4999999999999999, 0.8660254037844387));,#5=IFCDIRECTION((1., 0., 0.)););
 #474=IFCDIRECTION((0., 0.4999999999999999, 0.8660254037844387));
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4d1bf319
-org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@7e19ebf0
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@5c80cf32
-org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@7d900ecf
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@6f01b95f
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@2474f125
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@6f53b8a
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@4201c465
+org.sikongsphere.ifc.newModel.schema.resource.presentation.entity.IfcColourRgb@7357a011
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering@6cb107fd
+org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyle@710636b0
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@3de8f619
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@3406472c
+#481=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#475))
 #482=IFCAXIS2PLACEMENT3D(#3,$,$);
 #483=IFCLOCALPLACEMENT(#459,#1698);
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@6e535154
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@7357a011
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@3406472c
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@4201c465
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5b799640
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@6cb107fd
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@5717c37
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@68f4865
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@4816278d
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@194fad1
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@5717c37
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterial@68f4865
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcPresentationStyleAssignment@43f02ef2
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@239a307b
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcStyledRepresentation@2a8448fa
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation@4816278d
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayer@4eaf3684
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialLayerSet@40317ba2
 #493=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@4eaf3684
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3c01cfa1
 #496=IFCCARTESIANPOINT((-923.7604307033973, 1600.));
 #497=IFCCARTESIANPOINT((-923.7604307034035, -1600.));
 #498=IFCCARTESIANPOINT((923.7604307034002, 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@40317ba2
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@3c01cfa1
+#499=IFCPOLYLINE((#496, #497, #498, #496));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@45d2ade3
 #501=IFCCARTESIANPOINT((800., 1600., 461.8802153517003));
 #502=IFCDIRECTION((-0.4999999999999997, 0., 0.8660254037844388));
 #503=IFCDIRECTION((0.8660254037844388, 0., 0.4999999999999997));
 #504=IFCAXIS2PLACEMENT3D(#501,#502=IFCDIRECTION((-0.4999999999999997, 0., 0.8660254037844388));,#503=IFCDIRECTION((0.8660254037844388, 0., 0.4999999999999997)););
 #505=IFCDIRECTION((0.4999999999999997, 0., 0.8660254037844388));
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2ab4bc72
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@45d2ade3
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@740fb309
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@5f8e8a9d
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@727eb8cb
+#508=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#506))
 #509=IFCAXIS2PLACEMENT3D(#3,$,$);
 #510=IFCLOCALPLACEMENT(#459,#1700);
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@15a34df2
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@727eb8cb
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@26abb146
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@39d9314d
 #513=IFCAXIS2PLACEMENT3D(#3,$,$);
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@39d9314d
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@b978d10
 #516=IFCCARTESIANPOINT((3100., 923.7604307033916));
 #517=IFCCARTESIANPOINT((-3100., 923.7604307034096));
 #518=IFCCARTESIANPOINT((-1500., -923.7604307033962));
 #519=IFCCARTESIANPOINT((1500., -923.760430703404));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@b978d10
+#520=IFCPOLYLINE((#516, #517, #518, #519, #516));
 org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@5b7a8434
 #522=IFCCARTESIANPOINT((3100., 2400., 461.8802153517003));
 #523=IFCDIRECTION((0., 0.4999999999999998, 0.8660254037844389));
 #524=IFCAXIS2PLACEMENT3D(#522,#523=IFCDIRECTION((0., 0.4999999999999998, 0.8660254037844389));,#5=IFCDIRECTION((1., 0., 0.)););
 #525=IFCDIRECTION((0., -0.4999999999999998, 0.8660254037844389));
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2a8448fa
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@5b38c1ec
 org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@5c45d770
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@6f204a1a
+#528=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#526))
 #529=IFCAXIS2PLACEMENT3D(#3,$,$);
 #530=IFCLOCALPLACEMENT(#459,#1702);
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@5b38c1ec
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@72c8e7b
 org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@2ce6c6ec
 #533=IFCAXIS2PLACEMENT3D(#3,$,$);
 org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@1bae316d
 #536=IFCCARTESIANPOINT((923.7604307033948, -1600.));
 #537=IFCCARTESIANPOINT((923.7604307034062, 1600.));
 #538=IFCCARTESIANPOINT((-923.7604307034004, 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@147a5d08
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@6676f6a0
+#539=IFCPOLYLINE((#536, #537, #538, #536));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@147a5d08
 #541=IFCCARTESIANPOINT((5400., 1600., 461.8802153517003));
 #542=IFCDIRECTION((0.4999999999999997, 0., 0.8660254037844388));
 #543=IFCDIRECTION((0.8660254037844388, 0., -0.4999999999999997));
 #544=IFCAXIS2PLACEMENT3D(#541,#542=IFCDIRECTION((0.4999999999999997, 0., 0.8660254037844388));,#543=IFCDIRECTION((0.8660254037844388, 0., -0.4999999999999997)););
 #545=IFCDIRECTION((-0.4999999999999997, 0., 0.8660254037844388));
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@3ad83a66
-org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@7cbd9d24
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@3cce5371
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@1807e3f6
+org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.entity.IfcStyledItem@6676f6a0
+#548=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#546))
 #549=IFCAXIS2PLACEMENT3D(#3,$,$);
 #550=IFCLOCALPLACEMENT(#459,#1704);
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@338fc1d8
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@1672fe87
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlab@65f8f5ae
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcSlabType@7cbd9d24
 #553=IFCRELAGGREGATES('1hgbiH3hjE8uj_SsYpJvS_',#20,$,$,#461,(#484, #511, #531, #551));
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4722ef0c
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@431cd9b2
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@10f7f7de
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@38467116
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5b7a7f33
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@73a8da0f
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@48e1f6c7
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@55cb6996
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@50dfbc58
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@790da477
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4416d64f
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1807e3f6
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5c7933ad
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6bf08014
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@480d3575
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5e3d57c7
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@57bc27f5
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@732d0d24
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@f1da57d
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1fb19a0
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6ee4d9ab
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5fb759d6
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5a5338df
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@194fad1
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@418c5a9c
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@18e36d14
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4b8d604b
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5082d622
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@26abb146
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@13d4992d
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@302f7971
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6950ed69
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6dd7b5a3
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6f3187b0
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2663e964
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@48b67364
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@189cbd7c
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7bf3a5d8
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@42e25b0b
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@39b43d60
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@44be0077
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2205a05d
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@72ef8d15
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6aa8e115
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@5e21e98f
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@673fdbce
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@7bd7d6d6
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@2de56eb2
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@17bffc17
-#594=IFCAXIS2PLACEMENT3D(#3,$,$);
-#595=IFCLOCALPLACEMENT(#102,#594);
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStair@c05fddc
-#597=IFCAXIS2PLACEMENT3D(#3,$,$);
-#598=IFCLOCALPLACEMENT(#595,#597);
-#599=IFCCARTESIANPOINT((0., -6.794564910705958E-14));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@332729ad
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@75d2da2d
-#602=IFCCARTESIANPOINT((-1574.5369590333096, -822.4697202034756, 0.));
-#603=IFCAXIS2PLACEMENT3D(#602,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@65f8f5ae
-#605=IFCCARTESIANPOINT((0., 0.));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@4278284b
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@9573584
-#608=IFCCARTESIANPOINT((-1574.5369590333094, -572.4697202034755, 150.));
-#609=IFCAXIS2PLACEMENT3D(#608,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@431cd9b2
-#611=IFCCARTESIANPOINT((2.7000623958883807E-13, 1.4210854715202004E-13));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@3370f42
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@6057aebb
-#614=IFCCARTESIANPOINT((-1574.5369590333096, -703.7197202034756, 100.));
-#615=IFCAXIS2PLACEMENT3D(#614,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@38467116
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5b7a7f33
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@63eef88a
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStairFlight@25df00a0
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStairFlightType@53251a66
-#621=IFCAXIS2PLACEMENT3D(#3,$,$);
-#622=IFCLOCALPLACEMENT(#595,#621);
-#623=IFCCARTESIANPOINT((-125., -154.52379737113245));
-#624=IFCCARTESIANPOINT((125., -154.52379737113245));
-#625=IFCCARTESIANPOINT((125., 229.5237973711326));
-#626=IFCCARTESIANPOINT((-125., 79.52379737113229));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@6853425f
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@352c1b98
-#629=IFCCARTESIANPOINT((-2124.53695903331, -703.7197202034749, 154.52379737113245));
-#630=IFCAXIS2PLACEMENT3D(#629,#5=IFCDIRECTION((1., 0., 0.));,#7=IFCDIRECTION((0., 1., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@790da477
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5c7933ad
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@21129f1f
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMemberType@5a9f4771
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMember@4d15107f
-#636=IFCAXIS2PLACEMENT3D(#3,$,$);
-#637=IFCLOCALPLACEMENT(#595,#636);
-#638=IFCCARTESIANPOINT((-125., -154.52379737113233));
-#639=IFCCARTESIANPOINT((125., -154.52379737113233));
-#640=IFCCARTESIANPOINT((125., 229.5237973711322));
-#641=IFCCARTESIANPOINT((-125., 79.52379737113252));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcPolyline@282cb7c7
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@7d898981
-#644=IFCCARTESIANPOINT((-1074.5369590333094, -703.7197202034763, 154.52379737113233));
-#645=IFCAXIS2PLACEMENT3D(#644,#5=IFCDIRECTION((1., 0., 0.));,#7=IFCDIRECTION((0., 1., 0.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@57bc27f5
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@5fb759d6
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@48d61b48
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMember@7b4c50bc
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@68c9d179
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@68d279ec
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@d554c5f
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@2dfaea86
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@15888343
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@33ecda92
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@258d79be
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@14fc5f04
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@14f9390f
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6e2829c7
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3feb2dda
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@6a8658ff
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1c742ed4
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@333d4a8c
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@55de24cc
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@dc7df28
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@30f842ca
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6c0d7c83
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@69c81773
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4d14b6c2
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@176b75f7
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@5965be2d
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7e990ed7
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@409c54f
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@3e74829
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@51a9ad5e
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@5f20155b
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@72ade7e3
@@ -682,6 +587,101 @@ org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByPropertie
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@609bcfb6
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7d94beb9
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@560348e6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@1df8b5b8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@23202fce
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@eadd4fb
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@17bffc17
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4722ef0c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@f1da57d
+#594=IFCAXIS2PLACEMENT3D(#3,$,$);
+#595=IFCLOCALPLACEMENT(#102,#594);
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStair@7a6d7e92
+#597=IFCAXIS2PLACEMENT3D(#3,$,$);
+#598=IFCLOCALPLACEMENT(#595,#597);
+#599=IFCCARTESIANPOINT((0., -6.794564910705958E-14));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@302f7971
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@332729ad
+#602=IFCCARTESIANPOINT((-1574.5369590333096, -822.4697202034756, 0.));
+#603=IFCAXIS2PLACEMENT3D(#602,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@68c9d179
+#605=IFCCARTESIANPOINT((0., 0.));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@75d2da2d
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@4278284b
+#608=IFCCARTESIANPOINT((-1574.5369590333094, -572.4697202034755, 150.));
+#609=IFCAXIS2PLACEMENT3D(#608,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@d554c5f
+#611=IFCCARTESIANPOINT((2.7000623958883807E-13, 1.4210854715202004E-13));
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@9573584
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@3370f42
+#614=IFCCARTESIANPOINT((-1574.5369590333096, -703.7197202034756, 100.));
+#615=IFCAXIS2PLACEMENT3D(#614,#9=IFCDIRECTION((0., 0., 1.));,#8=IFCDIRECTION((0., -1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2dfaea86
+#617=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#604, #610, #616))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6057aebb
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStairFlight@aba625
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcStairFlightType@63eef88a
+#621=IFCAXIS2PLACEMENT3D(#3,$,$);
+#622=IFCLOCALPLACEMENT(#595,#621);
+#623=IFCCARTESIANPOINT((-125., -154.52379737113245));
+#624=IFCCARTESIANPOINT((125., -154.52379737113245));
+#625=IFCCARTESIANPOINT((125., 229.5237973711326));
+#626=IFCCARTESIANPOINT((-125., 79.52379737113229));
+#627=IFCPOLYLINE((#623, #624, #625, #626, #623));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@53251a66
+#629=IFCCARTESIANPOINT((-2124.53695903331, -703.7197202034749, 154.52379737113245));
+#630=IFCAXIS2PLACEMENT3D(#629,#5=IFCDIRECTION((1., 0., 0.));,#7=IFCDIRECTION((0., 1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@33ecda92
+#632=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#631))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6853425f
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMemberType@352c1b98
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMember@97e93f1
+#636=IFCAXIS2PLACEMENT3D(#3,$,$);
+#637=IFCLOCALPLACEMENT(#595,#636);
+#638=IFCCARTESIANPOINT((-125., -154.52379737113233));
+#639=IFCCARTESIANPOINT((125., -154.52379737113233));
+#640=IFCCARTESIANPOINT((125., 229.5237973711322));
+#641=IFCCARTESIANPOINT((-125., 79.52379737113252));
+#642=IFCPOLYLINE((#638, #639, #640, #641, #638));
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcArbitraryClosedProfileDef@21129f1f
+#644=IFCCARTESIANPOINT((-1074.5369590333094, -703.7197202034763, 154.52379737113233));
+#645=IFCAXIS2PLACEMENT3D(#644,#5=IFCDIRECTION((1., 0., 0.));,#7=IFCDIRECTION((0., 1., 0.)););
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@6e2829c7
+#647=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#646))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@5a9f4771
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcMember@5a5a729f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@333d4a8c
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@282cb7c7
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@55de24cc
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@dc7df28
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@30f842ca
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@69c81773
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@7d898981
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4d14b6c2
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@48d61b48
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7e990ed7
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@c05fddc
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@25df00a0
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@4d15107f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@7b4c50bc
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@5884a914
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@50378a4
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@60f00693
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@68d279ec
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@79207381
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@491b9b8
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@258d79be
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@14f9390f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@1a4927d6
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6c0d7c83
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@176b75f7
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7b993c65
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@37911f88
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@6f1c29b7
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4d6025c5
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7f284218
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@407a7f2a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4ea5b703
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2a7ed1f
 #683=IFCAXIS2PLACEMENT3D(#3,$,$);
 #685=IFCAXIS2PLACEMENT3D(#1143,$,$);
 #686=IFCLOCALPLACEMENT(#595,#685);
@@ -693,36 +693,36 @@ org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByPropertie
 #692=IFCCARTESIANPOINT((24.3767839103704, 251.27409890227335, 1003.1643441826005));
 #693=IFCCARTESIANPOINT((18.813760561462324, 226.9009010977278, 988.5404254998733));
 #694=IFCCARTESIANPOINT((21.595272235916227, 226.5875000000006, 0.));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5965be2d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b520ea8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@41330d4f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@409c54f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@16150369
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1b66c0fb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3e74829
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6b09fb41
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3e0e1046
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4f6f416f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5884a914
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5dafbe45
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@624ea235
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@24c1b2d2
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3b8f0a79
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50378a4
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2254127a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3932c79a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc19a70
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71e693fa
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@60f00693
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51891008
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@782859e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@508dec2b
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@48793bef
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@79207381
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2f953efd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@23f5b5dc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e4f4a5c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7d286fb6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@491b9b8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@f68f0dc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@34bde49d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@37313c65
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3eb77ea8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a4927d6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@d2de489
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1b1cfb87
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@465232e9
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7b8b43c7
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7a6d7e92
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@14bdbc74
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7aaca91a
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@aba625
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@12591ac8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@44c73c26
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@97e93f1
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5a7fe64f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41005828
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5a5a729f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@38145825
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@821330f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@798162bc
 #725=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000047, 860.8523848412368));
 #726=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000047, 0.));
 #727=IFCCARTESIANPOINT((21.59527223591609, 26.58750000000005, 0.));
@@ -731,36 +731,36 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@38145825
 #730=IFCCARTESIANPOINT((24.376783910369994, 26.274098902272787, 868.1643441826002));
 #731=IFCCARTESIANPOINT((18.81376056146192, 1.900901097727304, 853.5404254998729));
 #732=IFCCARTESIANPOINT((21.59527223591582, 1.5875000000000452, 0.));
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@60b4beb4
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b520ea8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@41330d4f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7fcf2fc1
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@624ea235
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1b66c0fb
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2141a12
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3932c79a
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3e0e1046
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4196c360
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@782859e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@24c1b2d2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41294f8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@23f5b5dc
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc19a70
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@225129c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5db6b9cd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@508dec2b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20435c40
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7aaca91a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6f43c82
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1df8da7a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@44c73c26
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@20b2475a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@23941fb4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41005828
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7857fe2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e4f4a5c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@573906eb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7486b455
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@60b4beb4
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6f15d60e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@37313c65
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@479ceda0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@660acfb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7fcf2fc1
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1be2019a
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@465232e9
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6d07a63d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@29d80d2b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@798162bc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5d908d47
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2141a12
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2657d4dd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5efa40fe
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4196c360
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7139992f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1f9f6368
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41294f8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@69504ae9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1c9b0314
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@225129c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@387a8303
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@45385f75
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20435c40
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@28cda624
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@49c90a9c
 #763=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 682.5071443154641));
 #764=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 667.3578869079209));
 #765=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 667.3578869079209));
@@ -809,30 +809,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@798162bc
 #808=IFCCARTESIANPOINT((30.595577313978392, 1.5875000000000452, 694.6259340140189));
 #809=IFCCARTESIANPOINT((17.84527223591586, 1.5875000000000452, 697.6564017230072));
 #810=IFCCARTESIANPOINT((12.220272235916326, 251.5875000000006, 843.8690873711214));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@573906eb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1500b2f3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2d29b4ee
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@479ceda0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7eecb5b8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@69ee81fc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6d07a63d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@126253fd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6e2aa843
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@571c5681
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@58e1d9d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1df8da7a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@57db2b13
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6f36c2f0
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@488d1cd7
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@446a1e84
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@23941fb4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@475c9c31
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@f58853c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@68dc098b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4f0f2942
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7486b455
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c86a017
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1224144a
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@38ba6ce3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2657d4dd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@660acfb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c7bfdc1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@29f7cefd
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@d278d2b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5340477f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5d908d47
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2d6c53fc
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@47caedad
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5efa40fe
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@25f4878b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7139992f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1f9f6368
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4e423aa2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@69504ae9
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1c9b0314
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5276d6ee
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@700fb871
 #835=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 482.5071443154642));
 #836=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 467.35788690792106));
 #837=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 467.35788690792106));
@@ -881,30 +881,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1c9b0314
 #880=IFCCARTESIANPOINT((30.595577313978392, 1.5875000000000452, 494.62593401401904));
 #881=IFCCARTESIANPOINT((17.84527223591586, 1.5875000000000452, 497.6564017230074));
 #882=IFCCARTESIANPOINT((12.220272235916326, 251.5875000000006, 643.8690873711216));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2d6c53fc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@71687585
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3b35a229
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@25f4878b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1807f5a7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@9816741
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4e423aa2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1b919693
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e16c0aa
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7fbdb894
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@387a8303
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@45385f75
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7fb4f2a9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13d73f29
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3081f72c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@28cda624
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@49c90a9c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4dc27487
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@565f390
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3148f668
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1500b2f3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2d29b4ee
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6a4f1a55
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc3712
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6e005dc9
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7eecb5b8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@69ee81fc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7dfd3c81
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2f67a4d3
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7ceb3185
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@126253fd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6e2aa843
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@436c81a3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@57db2b13
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6f36c2f0
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3561c410
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@475c9c31
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@f58853c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@59e32960
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c86a017
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1224144a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2584b82d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5e3f861
 #907=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 282.50714431546396));
 #908=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 267.35788690792083));
 #909=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 267.35788690792094));
@@ -953,30 +953,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1224144a
 #952=IFCCARTESIANPOINT((30.595577313978257, 1.5875000000000452, 294.62593401401875));
 #953=IFCCARTESIANPOINT((17.845272235915996, 1.5874999999999098, 297.6564017230072));
 #954=IFCCARTESIANPOINT((12.220272235916191, 251.5875000000006, 443.8690873711215));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@436c81a3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7bbc8656
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2fb0623e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3561c410
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6933b6c6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@49b2a47d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@59e32960
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d3e8655
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5be1d0a4
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7c214cc0
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c7bfdc1
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@29f7cefd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7dfb0c0f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@415b0b49
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5b67bb7e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5276d6ee
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@700fb871
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@626abbd0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6d5620ce
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@609db546
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@71687585
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3b35a229
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@169bb4dd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@311bf055
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20f5281c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1807f5a7
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@9816741
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1f9e9475
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@642a7222
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@56c4278e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1b919693
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e16c0aa
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@301eda63
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7fb4f2a9
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13d73f29
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3d246ea3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4dc27487
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@565f390
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@341814d3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6a4f1a55
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc3712
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3aa078fd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7d322cad
 #979=IFCCARTESIANPOINT((6.5952722359158455, 1.5875000000000452, 82.50714431546393));
 #980=IFCCARTESIANPOINT((14.0952722359159, 1.5875000000000452, 67.35788690792079));
 #981=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 67.35788690792089));
@@ -1025,30 +1025,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7dc3712
 #1024=IFCCARTESIANPOINT((30.595577313978257, 1.5875000000000452, 94.62593401401871));
 #1025=IFCCARTESIANPOINT((17.845272235915996, 1.5874999999999098, 97.6564017230071));
 #1026=IFCCARTESIANPOINT((12.220272235916463, 251.5875000000006, 243.86908737112137));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@301eda63
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@d23e042
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21be3395
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3d246ea3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@46d59067
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4f49f6af
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@341814d3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2d0399f4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@78452606
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4397ad89
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7dfd3c81
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2f67a4d3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@14dd7b39
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@147e2ae7
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@59cba5a
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2584b82d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5e3f861
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@66ea810
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@448c8166
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1bd39d3c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7bbc8656
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2fb0623e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6cd24612
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4470fbd6
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6f19ac19
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6933b6c6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@49b2a47d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5dafbe45
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@15d49048
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@119cbf96
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d3e8655
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@5be1d0a4
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71329995
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7dfb0c0f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@415b0b49
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@768fc0f2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@626abbd0
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6d5620ce
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5454d35e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@169bb4dd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@311bf055
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2254127a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7098b907
 #1051=IFCCARTESIANPOINT((41.59527223591601, 1.5875000000000452, 876.6761924206185));
 #1052=IFCCARTESIANPOINT((31.59527223591598, 1.5875000000000452, 896.8752022973426));
 #1053=IFCCARTESIANPOINT((11.595272235916063, 1.5875000000000452, 896.8752022973428));
@@ -1102,55 +1102,55 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@311bf055
 #1101=IFCCARTESIANPOINT((16.595272235916145, 251.58750000000066, 1006.4771825438945));
 #1102=IFCCARTESIANPOINT((39.88061962214103, 251.58750000000066, 1023.2127639125389));
 #1103=IFCCARTESIANPOINT((39.0952722359159, 1.5875000000000452, 871.6264399514374));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71329995
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@51891008
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@503f91c3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@768fc0f2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2f953efd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13526e59
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5454d35e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@f68f0dc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2235eaab
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20c0a64d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1f9e9475
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@642a7222
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@d2de489
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@17503f6b
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@455b6df1
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3aa078fd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7d322cad
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@14bdbc74
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3bcd05cb
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4ddbbdf8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@d23e042
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21be3395
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@12591ac8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3b6d844d
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3f67593e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@46d59067
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4f49f6af
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5a7fe64f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@36804139
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1ab06251
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2d0399f4
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@78452606
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@41ab013
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@14dd7b39
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@147e2ae7
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@14bee915
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@66ea810
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@448c8166
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1115ec15
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6cd24612
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4470fbd6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@38145825
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@20bd8be5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@41ab013
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@730d2164
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@14bee915
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@24959ca4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1115ec15
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@10289886
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@82ea68c
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@15d49048
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@5c86dbc5
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@59e505b2
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@7098b907
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@461ad730
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@3af0a9da
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@503f91c3
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@4ee203eb
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@43b9fd5
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@13526e59
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@79dc5318
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@2235eaab
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@8e50104
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@17503f6b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@37e4d7bb
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@3bcd05cb
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@3b6d844d
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@1a5a4e19
+#1142=IFCSHAPEREPRESENTATION(#95,'Body','Brep',(#1131, #1135, #1141, #1129, #1139, #1137, #1133))
 #1143=IFCCARTESIANPOINT((-1121.5322312692256, -830.3072202034767, 150.));
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@6f7923a5
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRailing@10289886
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@74a6f9c1
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@730d2164
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@54eb2b70
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@24959ca4
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@45a37759
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@1df8b5b8
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@23202fce
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@79dc5318
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRailing@7975d1d8
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@8e50104
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@769a1df5
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@37e4d7bb
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@41f69e84
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6f7923a5
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3fa247d1
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@2cb2fc20
 #1153=IFCAXIS2PLACEMENT3D(#3,$,$);
 #1155=IFCAXIS2PLACEMENT3D(#1613,$,$);
 #1156=IFCLOCALPLACEMENT(#595,#1155);
@@ -1162,36 +1162,36 @@ org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByPropertie
 #1162=IFCCARTESIANPOINT((9.09527223591636, 239.08749999999952, 0.));
 #1163=IFCCARTESIANPOINT((21.595272235916227, 226.58749999999952, 0.));
 #1164=IFCCARTESIANPOINT((24.376783910369994, 226.90090109772672, 988.5404254998733));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@74a6f9c1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2438dcd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3e62d773
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@54eb2b70
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@24105dc5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4ef74c30
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@45a37759
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5167f57d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7283d3eb
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@63611043
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5c86dbc5
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@38af9828
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@64b0598
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@638ef7ed
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@20ca951f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@461ad730
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@376a0d86
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@18f8cd79
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4bff7da0
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2d778add
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4ee203eb
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@62656be4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3e2055d6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3f1d2e23
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@73302995
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a5a4e19
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@17d919b6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50029372
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@536dbea0
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1838ccb8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7068e664
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@53f3bdbd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@e3b3b2f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@47c81abf
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6c2ed0cd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@60db1c0e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@34129c78
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50f6ac94
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@776a6d9b
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7d9e8ef7
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3e78b6a5
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7d61eb55
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@f107c50
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@769a1df5
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@222a59e6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@51133c06
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@41f69e84
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6c7a164b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4b213651
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7975d1d8
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4c2bb6e0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6cc4cdb9
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21d03963
 #1195=IFCCARTESIANPOINT((9.09527223591609, 14.087500000000047, 860.8523848412366));
 #1196=IFCCARTESIANPOINT((18.81376056146192, 26.274098902272787, 868.1643441826002));
 #1197=IFCCARTESIANPOINT((34.09527223591582, 14.087500000000047, 860.8523848412368));
@@ -1200,36 +1200,36 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4c2bb6e0
 #1200=IFCCARTESIANPOINT((9.09527223591609, 14.087500000000047, 0.));
 #1201=IFCCARTESIANPOINT((21.595272235915957, 1.5875000000000452, 0.));
 #1202=IFCCARTESIANPOINT((24.37678391036972, 1.900901097727304, 853.5404254998729));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@f107c50
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@28194a50
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1f760b47
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@51133c06
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7f2cfe3f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@18ece7f4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4b213651
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a5b6f42
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3cce57c7
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4241e0f4
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2438dcd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3e62d773
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5038d0b5
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1cf56a1c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4ebff610
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@24105dc5
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4ef74c30
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@32115b28
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@33f676f6
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@60410cd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5167f57d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7283d3eb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2ad48653
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4c5ae43b
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@44d52de2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@64b0598
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@638ef7ed
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6bb4dd34
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@264f218
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@95e33cc
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@18f8cd79
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4bff7da0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d9f158f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3576ddc2
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@38604b81
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3e2055d6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3f1d2e23
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@45efd90f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@35b74c5c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1e44b638
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50029372
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@536dbea0
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7393222f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@e3b3b2f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@47c81abf
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@babafc2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@50f6ac94
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@776a6d9b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@31add175
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6cc4cdb9
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21d03963
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b8729ff
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2e570ded
 #1233=IFCCARTESIANPOINT((36.59527223591633, 1.5875000000000452, 682.507144315464));
 #1234=IFCCARTESIANPOINT((29.095272235916145, 1.5875000000000452, 697.6564017230071));
 #1235=IFCCARTESIANPOINT((14.095272235916307, 1.5875000000000452, 697.6564017230071));
@@ -1278,30 +1278,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@21d03963
 #1278=IFCCARTESIANPOINT((8.844967157862085, 251.58749999999952, 827.9629833206646));
 #1279=IFCCARTESIANPOINT((25.345272235916184, 1.5875000000000452, 667.3578869079206));
 #1280=IFCCARTESIANPOINT((34.72027223591622, 1.5874999999999098, 678.7198299635778));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7393222f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@61710c6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@b86de0d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@babafc2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3214ee6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@81d9a72
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@31add175
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@383dc82c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@747f281
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@ae3540e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@28194a50
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1f760b47
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4a07d605
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1169afe1
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@600b9d27
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7f2cfe3f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@18ece7f4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@74287ea3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2ca26d77
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3688eb5b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@1a5b6f42
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3cce57c7
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d7758be
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4808bc9b
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@69f1a286
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5038d0b5
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1cf56a1c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2bdd8394
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@70e38ce1
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7922d892
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@32115b28
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@33f676f6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@457c9034
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2ad48653
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4c5ae43b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@345f69f3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6bb4dd34
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@264f218
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@50de186c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d9f158f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3576ddc2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5f9edf14
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2ca923bb
 #1305=IFCCARTESIANPOINT((36.59527223591606, 1.5875000000000452, 482.5071443154642));
 #1306=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 497.6564017230074));
 #1307=IFCCARTESIANPOINT((14.095272235916037, 1.5875000000000452, 497.6564017230074));
@@ -1350,30 +1350,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3576ddc2
 #1350=IFCCARTESIANPOINT((8.844967157861815, 251.58749999999952, 627.9629833206648));
 #1351=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 467.35788690792106));
 #1352=IFCCARTESIANPOINT((34.72027223591595, 1.5874999999999098, 478.7198299635781));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@457c9034
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@68746f22
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13df2a8c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@345f69f3
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2f01783a
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1ebea008
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@50de186c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@68878f6d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@72d6b3ba
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3f57bcad
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@45efd90f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@35b74c5c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@41488b16
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1787f2a0
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1e8b7643
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b8729ff
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2e570ded
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@a8ef162
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7de62196
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@51549490
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@61710c6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@b86de0d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2eea88a1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@163370c2
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@71e9ebae
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@3214ee6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@81d9a72
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7ac296f6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51bf5add
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@73d983ea
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@383dc82c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@747f281
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36a5cabc
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4a07d605
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1169afe1
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@432038ec
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@74287ea3
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2ca26d77
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7daa0fbd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d7758be
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4808bc9b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7fd7a283
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7905a0b8
 #1377=IFCCARTESIANPOINT((36.59527223591633, 1.5875000000000452, 282.50714431546396));
 #1378=IFCCARTESIANPOINT((29.095272235916145, 1.5875000000000452, 297.65640172300715));
 #1379=IFCCARTESIANPOINT((14.095272235916307, 1.5875000000000452, 297.6564017230072));
@@ -1422,30 +1422,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@4808bc9b
 #1422=IFCCARTESIANPOINT((8.844967157862085, 251.58749999999952, 427.96298332066453));
 #1423=IFCCARTESIANPOINT((25.345272235915914, 1.5875000000000452, 267.35788690792083));
 #1424=IFCCARTESIANPOINT((34.72027223591622, 1.5874999999999098, 278.7198299635781));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36a5cabc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@22f59fa
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@35a3d49f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@432038ec
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@78fa769e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@389b0789
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@7daa0fbd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@16612a51
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13d9cbf5
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@42530531
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2bdd8394
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@70e38ce1
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@54e041a4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@478db956
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5a3bc7ed
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5f9edf14
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2ca923bb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2c78324b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6ca18a14
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@181e731e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@68746f22
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13df2a8c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@79defdc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@c667f46
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@35645047
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2f01783a
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1ebea008
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@18317edc
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51bd8b5c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6f44a157
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@68878f6d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@72d6b3ba
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6bc407fd
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@41488b16
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1787f2a0
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@291f18
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@a8ef162
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7de62196
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@17d88132
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2eea88a1
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@163370c2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4e0ae11f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7b50df34
 #1449=IFCCARTESIANPOINT((36.59527223591606, 1.5875000000000452, 82.50714431546393));
 #1450=IFCCARTESIANPOINT((29.095272235915875, 1.5875000000000452, 97.65640172300712));
 #1451=IFCCARTESIANPOINT((14.095272235916037, 1.5875000000000452, 97.65640172300719));
@@ -1494,30 +1494,30 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@163370c2
 #1494=IFCCARTESIANPOINT((8.844967157861815, 251.58749999999952, 227.96298332066462));
 #1495=IFCCARTESIANPOINT((25.345272235915914, 1.5874999999999098, 67.35788690792084));
 #1496=IFCCARTESIANPOINT((34.72027223591595, 1.5875000000000452, 78.71982996357801));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@6bc407fd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@238d68ff
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1b410b60
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@291f18
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b86805d
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2462cb01
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@17d88132
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5852c06f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@19b843ba
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5ddcc487
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7ac296f6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51bf5add
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4149c063
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@64ec96c6
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@16eccb2e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7fd7a283
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7905a0b8
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@9cb8225
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@77659b30
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5ef5c734
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@22f59fa
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@35a3d49f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@76b07f29
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@456d6c1e
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@d771cc9
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@78fa769e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@389b0789
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@38af9828
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1e13529a
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36b4091c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@16612a51
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@13d9cbf5
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4671115f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@54e041a4
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@478db956
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36cda2c2
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@2c78324b
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6ca18a14
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3697186
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@79defdc
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@c667f46
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@376a0d86
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1ec9bd38
 #1521=IFCCARTESIANPOINT((41.59527223591628, 1.5875000000000452, 876.6761924206188));
 #1522=IFCCARTESIANPOINT((31.59527223591639, 1.5875000000000452, 896.8752022973431));
 #1523=IFCCARTESIANPOINT((11.595272235916333, 1.5875000000000452, 896.8752022973432));
@@ -1571,85 +1571,88 @@ org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@c667f46
 #1571=IFCCARTESIANPOINT((16.59527223591628, 251.58749999999952, 1006.4771825438952));
 #1572=IFCCARTESIANPOINT((39.8806196221413, 251.58749999999972, 1023.2127639125392));
 #1573=IFCCARTESIANPOINT((39.095272235916035, 1.5875000000000452, 871.6264399514378));
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@4671115f
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@62656be4
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@452e19ca
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36cda2c2
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@17d919b6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6b0d80ed
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@3697186
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@53f3bdbd
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@6f8e8894
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1583741e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@18317edc
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@51bd8b5c
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@34129c78
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@3cfdd820
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@5b367418
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4e0ae11f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@7b50df34
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@7d61eb55
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@928763c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@36060e
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@238d68ff
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@1b410b60
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@222a59e6
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@e25951c
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@481ba2cf
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4b86805d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@2462cb01
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@6c7a164b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@15f47664
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@46b61c56
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@5852c06f
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@19b843ba
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@2e48362c
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4149c063
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@64ec96c6
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@1efe439d
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@9cb8225
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@77659b30
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcPolyLoop@be68757
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@76b07f29
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@456d6c1e
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFaceOuterBound@4c2bb6e0
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcFace@471a9022
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@2e48362c
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@dc9876b
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1efe439d
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@2f666ebb
+org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@be68757
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@19976a65
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@7d446ed1
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@1e13529a
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@a1f72f5
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@12d2ce03
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@1ec9bd38
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@4b2c5e02
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@7e5c856f
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@452e19ca
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@57a3e26a
 org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@413f69cc
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@6b0d80ed
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1f53a5dc
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@6f8e8894
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1b75c2e3
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@3cfdd820
-org.sikongsphere.ifc.newModel.schema.resource.topology.entity.IfcClosedShell@1984b1f
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@928763c
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@e25951c
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcFacetedBrep@75c56eb9
+#1612=IFCSHAPEREPRESENTATION(#95,'Body','Brep',(#1599, #1603, #1609, #1605, #1611, #1601, #1607))
 #1613=IFCCARTESIANPOINT((-2070.732231269226, -830.3072202034746, 150.));
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@3bd323e9
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRailing@471a9022
-org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@39ac0c0a
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@c7ba306
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@15f47664
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4ff8d125
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7b993c65
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@37911f88
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@1f53a5dc
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRailing@6531a794
+org.sikongsphere.ifc.newModel.schema.resource.material.entity.IfcMaterialList@1b75c2e3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@1984b1f
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@2dc9b0f5
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@3bd323e9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4f4c4b1a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@723e88f9
 #1622=IFCRELAGGREGATES('0XsocJryT73uCfJ6U7Jl3H',#20,$,$,#596,(#619, #635, #649, #1145, #1615));
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@dc9876b
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@6d167f58
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@4d6025c5
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelContainedInSpatialStructure@3403e2ac
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@65b104b9
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@7f284218
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelContainedInSpatialStructure@6c4980d3
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@3b5fad2d
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@39ac0c0a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@64e7619d
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelContainedInSpatialStructure@c7ba306
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@4ff8d125
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@495ee280
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelContainedInSpatialStructure@6d167f58
 #1630=IFCRELAGGREGATES('02JEX2aNf6Ew0fPTGso3V$',#20,$,$,#98,(#110));
 #1631=IFCRELAGGREGATES('1lNwcTzD9Bwx4Y6L6g5DNk',#20,$,$,#110,(#100));
 #1632=IFCRELAGGREGATES('27PCKGLxT4mxtV9cw6mgBW',#20,$,$,#100,(#103, #107));
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@57a3e26a
-org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@75c56eb9
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@327bcebd
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@3fa247d1
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@2cb2fc20
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4f4c4b1a
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@723e88f9
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@5f0fd5a0
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@64e7619d
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@495ee280
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4fa1c212
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@6ea2bc93
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@3116c353
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@f627d13
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@74f6c5d8
+org.sikongsphere.ifc.newModel.schema.resource.proper.entity.IfcPropertySingleValue@27912e3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcPropertySet@3403e2ac
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByProperties@f627d13
 org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4e928fbf
 org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@352ff4da
 org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@3224a577
 org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@2e32ccc5
 org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@748741cb
 org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@3e44f2a5
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@295cf707
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@1130520d
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@5f77d0f9
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@463fd068
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@895e367
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@1b266842
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@7a3793c7
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@42b3b079
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@651aed93
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelAssociatesMaterial@4dd6fd0a
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@65b104b9
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@6c4980d3
+org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@327bcebd
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@19c65cdc
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@74bf1791
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@54504ecd
@@ -1658,41 +1661,38 @@ org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@1339
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@1fb669c3
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@49c66ade
 org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@6239aba6
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@3e6104fc
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@12359a82
-org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelDefinesByType@68df9280
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@3e6104fc
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@12359a82
+org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@68df9280
 org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@479460a6
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@7164ca4c
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@4f3bbf68
-org.sikongsphere.ifc.newModel.schema.shared.sharedbldelements.entity.IfcRelConnectsPathElements@5be46f9d
 #1668=IFCCARTESIANPOINT((999.9999999999997, 374.99999999999994));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@3f91b517
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@68702e03
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@7164ca4c
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@4f3bbf68
 #1671=IFCAXIS2PLACEMENT3D(#3,#8=IFCDIRECTION((0., -1., 0.));,#9=IFCDIRECTION((0., 0., 1.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@56dc1551
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@102cec62
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@7a220c9a
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@2415fc55
+#1673=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#1672))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@5be46f9d
 #1675=IFCCARTESIANPOINT((1450., 100., 0.));
 #1676=IFCAXIS2PLACEMENT3D(#1675,$,$);
 #1677=IFCLOCALPLACEMENT(#113,#1676);
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcOpeningElement@2421cc4
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelVoidsElement@30c93896
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelFillsElement@59a008ba
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcOpeningElement@3f91b517
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelVoidsElement@68702e03
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelFillsElement@7a220c9a
 #1681=IFCAXIS2PLACEMENT3D(#3,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
 #1682=IFCLOCALPLACEMENT(#1677,#1681);
 #1683=IFCCARTESIANPOINT((609.9999999999987, 457.49999999999966));
-org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@338c99c8
-org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@21ba0741
+org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement2D@2421cc4
+org.sikongsphere.ifc.newModel.schema.resource.profile.entity.IfcRectangleProfileDef@30c93896
 #1686=IFCAXIS2PLACEMENT3D(#3,#8=IFCDIRECTION((0., -1., 0.));,#9=IFCDIRECTION((0., 0., 1.)););
-org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@74f6c5d8
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcShapeRepresentation@27912e3
-org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@58ce9668
+org.sikongsphere.ifc.newModel.schema.resource.geometricmodel.entity.IfcExtrudedAreaSolid@13bc8645
+#1688=IFCSHAPEREPRESENTATION(#95,'Body','SweptSolid',(#1687))
+org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductDefinitionShape@59a008ba
 #1690=IFCCARTESIANPOINT((3730., 100., 915.));
 #1691=IFCAXIS2PLACEMENT3D(#1690,$,$);
 #1692=IFCLOCALPLACEMENT(#113,#1691);
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcOpeningElement@172b013
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelVoidsElement@56673b2c
-org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelFillsElement@2796aeae
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcOpeningElement@338c99c8
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelVoidsElement@21ba0741
+org.sikongsphere.ifc.newModel.schema.core.productextension.entities.IfcRelFillsElement@58ce9668
 #1696=IFCAXIS2PLACEMENT3D(#3,#9=IFCDIRECTION((0., 0., 1.));,#6=IFCDIRECTION((-1., 0., 0.)););
 #1697=IFCLOCALPLACEMENT(#1692,#1696);
 #1698=IFCAXIS2PLACEMENT3D(#3,$,$);
