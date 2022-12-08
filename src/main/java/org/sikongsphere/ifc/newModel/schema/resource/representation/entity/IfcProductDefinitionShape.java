@@ -15,8 +15,8 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.SET;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcText;
 
 /**
  * A product definition shape identifies a product’s shape as the conceptual idea of the form of a product.

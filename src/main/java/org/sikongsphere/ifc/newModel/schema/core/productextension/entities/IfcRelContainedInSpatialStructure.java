@@ -17,8 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.newModel.schema.core.kernel.entity.IfcRelConnects;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.entity.IfcOwnerHistory;
 

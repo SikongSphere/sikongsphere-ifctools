@@ -16,8 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.enumeration.IfcRoleEnum;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcText;
 
 /**
  * This class is used to encapsulate actor role information

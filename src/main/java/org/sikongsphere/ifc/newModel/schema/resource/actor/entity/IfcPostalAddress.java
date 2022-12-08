@@ -16,9 +16,9 @@ import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.actor.enumeration.IfcAddressTypeEnum;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.datatype.LIST;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcText;
 
 import java.util.Locale;
 import java.util.Optional;

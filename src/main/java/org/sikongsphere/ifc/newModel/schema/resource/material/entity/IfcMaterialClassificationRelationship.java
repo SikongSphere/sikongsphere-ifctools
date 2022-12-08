@@ -17,8 +17,6 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.schema.resource.externalreference.selectType.IfcClassificationNotationSelect;
-import org.sikongsphere.ifc.newModel.schema.resource.material.selectType.IfcMaterialSelect;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
 
 /**
  * @author Gao Su

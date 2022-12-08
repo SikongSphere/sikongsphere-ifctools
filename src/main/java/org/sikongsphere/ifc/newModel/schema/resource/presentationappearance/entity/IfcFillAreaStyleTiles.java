@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPositiveRatioMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcFillAreaStyleTileShapeSelect;
 
 /**

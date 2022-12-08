@@ -19,10 +19,10 @@ import org.sikongsphere.ifc.newModel.schema.core.productextension.enumeration.If
 import org.sikongsphere.ifc.newModel.schema.resource.actor.entity.IfcPostalAddress;
 import org.sikongsphere.ifc.newModel.schema.resource.geometricconstraint.entity.IfcLocalPlacement;
 import org.sikongsphere.ifc.newModel.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcCompoundPlaneAngleMeasure;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLengthMeasure;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcText;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcCompoundPlaneAngleMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLengthMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.newModel.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.newModel.schema.resource.utility.entity.IfcOwnerHistory;

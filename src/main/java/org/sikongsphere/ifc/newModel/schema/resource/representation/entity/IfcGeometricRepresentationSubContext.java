@@ -20,8 +20,8 @@ import org.sikongsphere.ifc.newModel.datatype.STRING;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcDirection;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPositiveRatioMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.selectTypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.newModel.schema.resource.representation.enumeration.IfcGeometricProjectionEnum;
 

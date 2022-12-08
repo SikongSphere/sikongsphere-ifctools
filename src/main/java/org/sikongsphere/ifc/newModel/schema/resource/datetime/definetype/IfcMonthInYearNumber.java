@@ -8,41 +8,28 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.newModel.schema.resource.datetime.definetype;
+package org.sikongsphere.ifc.newModel.schema.resource.datetime.defineType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.datatype.INTEGER;
-import org.sikongsphere.ifc.newModel.datatype.STRING;
-import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 
 /**
- * TODO: 日期规则校验
  * @author Wang Bohong
  * @date 2022/10/28 10:00
  */
 @IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
-public class IfcMonthInYearNumber extends IfcAbstractClass {
-    private INTEGER val;
-
-    public IfcMonthInYearNumber() {}
-
+public class IfcMonthInYearNumber extends INTEGER {
     @IfcParserConstructor
-    public IfcMonthInYearNumber(INTEGER val) {
-        this.val = val;
+    public IfcMonthInYearNumber(INTEGER value) {
+        super(value);
+        check();
     }
 
-    public IfcMonthInYearNumber(STRING val) {
-        this.val = new INTEGER(Integer.valueOf(val.value));
-    }
-
-    public INTEGER getVal() {
-        return val;
-    }
-
-    public void setVal(INTEGER val) {
-        this.val = val;
+    @Override
+    public boolean illegal() {
+        return value >= 1 && value <= 12;
     }
 }

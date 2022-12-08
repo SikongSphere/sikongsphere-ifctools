@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcPlaneAngleMeasure;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcPlaneAngleMeasure;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcHatchLineDistanceSelect;
 
 /**

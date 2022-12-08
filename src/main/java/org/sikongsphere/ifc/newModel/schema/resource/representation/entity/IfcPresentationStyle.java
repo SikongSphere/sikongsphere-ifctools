@@ -13,7 +13,7 @@ package org.sikongsphere.ifc.newModel.schema.resource.representation.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.schema.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 
 /**
  *An abstract generalisation of style table for presentation information

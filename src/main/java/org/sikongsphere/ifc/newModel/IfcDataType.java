@@ -10,15 +10,27 @@
 */
 package org.sikongsphere.ifc.newModel;
 
+import org.sikongsphere.ifc.common.exception.SikongSphereException;
+
 /**
- *  This abstract class is mainly used to encapsulate data type
- *
+ * This abstract class is mainly used to encapsulate data type
  *
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
 public abstract class IfcDataType implements IfcInterface {
+
     public boolean isDefault() {
         return false;
+    }
+
+    public boolean illegal() {
+        return true;
+    }
+
+    public void check() {
+        if (!illegal()) {
+            throw new SikongSphereException("Value is illegal");
+        }
     }
 }
