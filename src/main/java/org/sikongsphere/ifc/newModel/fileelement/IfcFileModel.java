@@ -145,6 +145,13 @@ public class IfcFileModel extends IfcFileElement implements Model {
             return ((INTEGER) o).value + "";
         } else if (SCIENTIFICNOTATION.class.isAssignableFrom(o.getClass())) {
             return ((SCIENTIFICNOTATION) o).getString();
+        } else if (o instanceof DOUBLE) {
+            double doubleValue = ((DOUBLE) o).value;
+            if(doubleValue == (int)doubleValue) {
+                return (int)doubleValue + ".";
+            } else {
+                return doubleValue + "";
+            }
         } else if (IfcAbstractClass.class.isAssignableFrom(o.getClass())) {
             if (((IfcAbstractClass) o).getStepNumber() == 0) {
                 return StringConstant.ASTERISK;
