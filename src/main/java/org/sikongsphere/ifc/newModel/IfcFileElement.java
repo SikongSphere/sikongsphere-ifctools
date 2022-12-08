@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.newModel;
 
+import org.sikongsphere.ifc.common.exception.SikongSphereException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,5 +28,17 @@ public abstract class IfcFileElement implements IfcInterface {
 
     public IfcFileElement(List<IfcInterface> params) {
         this.params = params;
+    }
+
+    @Override
+    public void check() {
+        if (!illegal()) {
+            throw new SikongSphereException("Value is illegal");
+        }
+    }
+
+    @Override
+    public boolean illegal() {
+        return true;
     }
 }

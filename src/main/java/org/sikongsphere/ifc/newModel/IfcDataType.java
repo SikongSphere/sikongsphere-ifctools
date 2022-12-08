@@ -24,10 +24,12 @@ public abstract class IfcDataType implements IfcInterface {
         return false;
     }
 
+    @Override
     public boolean illegal() {
         return true;
     }
 
+    @Override
     public void check() {
         if (!illegal()) {
             throw new SikongSphereException("Value is illegal");

@@ -16,4 +16,8 @@ package org.sikongsphere.ifc.newModel;
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
-public interface IfcInterface {}
+public interface IfcInterface {
+    void check();
+
+    boolean illegal();
+}
