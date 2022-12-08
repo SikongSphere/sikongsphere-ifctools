@@ -120,7 +120,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         String format = String.format(
             "#%s=%s(%s,%s,%s,%s,#%s,%s);",
             this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            this.getClass().getSimpleName().toUpperCase(),
             Optional.ofNullable(getContextIdentifier())
                 .map(x -> getContextIdentifier().toString())
                 .orElse(StringConstant.DOLLAR),
