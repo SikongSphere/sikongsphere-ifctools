@@ -10,8 +10,7 @@
 */
 package org.sikongsphere.ifc.sdk.worker;
 
-import org.sikongsphere.ifc.model.IfcModel;
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
+import org.sikongsphere.ifc.model.Model;
 
 /**
  * This is an interface for order
@@ -20,7 +19,7 @@ import org.sikongsphere.ifc.model.core.kernel.entity.IfcProduct;
  * @Date: 2022/11/09 11:47
  */
 public interface IWorker<T> {
-    void install(IfcModel model, T product);
+    void install(Model model, T product);
 
-    void install(IfcModel model, T product, Object... params);
+    void install(Model model, T product, Object... params);
 }

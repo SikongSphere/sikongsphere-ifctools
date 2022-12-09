@@ -10,12 +10,12 @@
 */
 package org.sikongsphere.ifc.sdk.factory;
 
-import org.sikongsphere.ifc.model.basic.STRING;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcInteger;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLogical;
-import org.sikongsphere.ifc.model.resource.proper.entity.IfcProperty;
-import org.sikongsphere.ifc.model.resource.proper.entity.IfcPropertySingleValue;
+import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcInteger;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLogical;
+import org.sikongsphere.ifc.model.schema.resource.proper.entity.IfcProperty;
+import org.sikongsphere.ifc.model.schema.resource.proper.entity.IfcPropertySingleValue;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**

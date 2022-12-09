@@ -11,12 +11,10 @@
 package org.sikongsphere.ifc.sdk;
 
 import org.junit.Test;
-import org.sikongsphere.ifc.model.IfcModel;
-import org.sikongsphere.ifc.model.resource.actor.entity.IfcPerson;
-import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPerson;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWall;
 import org.sikongsphere.ifc.sdk.factory.IfcWallFactory;
 import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
-import org.sikongsphere.ifc.sdk.worker.IfcWallWorker;
 
 import java.util.UUID;
 
@@ -27,16 +25,16 @@ import java.util.UUID;
  * @Date: 2022/11/09 11:47
  */
 public class SDKDemo {
-    public static void main(String[] args) {
-        IfcModel model = new IfcModel();
-        IfcWallOrder wallOrder = new IfcWallOrder();
-        IfcWallFactory wallFactory = new IfcWallFactory();
-        IfcWall ifcWall = wallFactory.create(wallOrder);
-
-        IfcWallWorker wallWorker = new IfcWallWorker();
-        wallWorker.install(model, ifcWall);
-        model.build();
-    }
+    // public static void main(String[] args) {
+    // IfcModel model = new IfcModel();
+    // IfcWallOrder wallOrder = new IfcWallOrder();
+    // IfcWallFactory wallFactory = new IfcWallFactory();
+    // IfcWall ifcWall = wallFactory.create(wallOrder);
+    //
+    // IfcWallWorker wallWorker = new IfcWallWorker();
+    // wallWorker.install(model, ifcWall);
+    // model.build();
+    // }
 
     @Test
     public void createWall() {

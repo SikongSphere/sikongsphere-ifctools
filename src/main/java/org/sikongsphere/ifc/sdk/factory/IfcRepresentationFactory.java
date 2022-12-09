@@ -10,16 +10,19 @@
 */
 package org.sikongsphere.ifc.sdk.factory;
 
-import org.sikongsphere.ifc.model.basic.*;
-import org.sikongsphere.ifc.model.resource.geometry.definedtypes.IfcDimensionCount;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcAxis2Placement3D;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcCartesianPoint;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.model.resource.representation.entity.IfcGeometricRepresentationContext;
-import org.sikongsphere.ifc.model.resource.representation.entity.IfcGeometricRepresentationSubContext;
-import org.sikongsphere.ifc.model.resource.representation.entity.IfcRepresentation;
-import org.sikongsphere.ifc.model.resource.representation.enumeration.IfcGeometricProjectionEnum;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcGeometricRepresentationContext;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcGeometricRepresentationSubContext;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcRepresentation;
+import org.sikongsphere.ifc.model.schema.resource.representation.enumeration.IfcGeometricProjectionEnum;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**
@@ -126,7 +129,7 @@ public class IfcRepresentationFactory extends AbstractFactory<IfcRepresentation>
         IfcLabel contextType = new IfcLabel("Model");
 
         context.setCoordinateSpaceDimension(dimensionCount);
-        context.setPrecision(precision);
+        context.setPrecision(new DOUBLE(precision));
         context.setWorldCoordinateSystem(worldCoordinateSystem);
         context.setTrueNorth(trueNorthDirection);
         context.setHasSubContexts(subContextSet);

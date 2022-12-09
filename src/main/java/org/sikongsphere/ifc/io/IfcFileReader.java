@@ -10,8 +10,8 @@
 */
 package org.sikongsphere.ifc.io;
 
-import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
-import org.sikongsphere.ifc.newModel.parser.file.IfcFileParser;
+import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.parser.file.IfcFileParser;
 
 import java.io.IOException;
 

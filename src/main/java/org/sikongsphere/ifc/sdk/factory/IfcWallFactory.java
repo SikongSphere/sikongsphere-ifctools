@@ -11,12 +11,12 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
-import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
-import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWall;
-import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWallStandardCase;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWallStandardCase;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
 

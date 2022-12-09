@@ -12,7 +12,7 @@ package org.sikongsphere.ifc.common.annotation;
 
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.newModel.fileelement.IfcLogicNode;
+import org.sikongsphere.ifc.model.fileelement.IfcLogicNode;
 
 import java.lang.annotation.*;
 

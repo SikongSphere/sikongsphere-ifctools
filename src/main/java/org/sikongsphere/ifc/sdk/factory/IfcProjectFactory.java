@@ -11,14 +11,14 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.model.IfcRoot;
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcProject;
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelAggregates;
-import org.sikongsphere.ifc.model.core.productextension.entities.IfcBuilding;
-import org.sikongsphere.ifc.model.core.productextension.entities.IfcBuildingStorey;
-import org.sikongsphere.ifc.model.core.productextension.entities.IfcSite;
-import org.sikongsphere.ifc.model.resource.actor.entity.IfcPostalAddress;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
+import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcProject;
+import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcRelAggregates;
+import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcRoot;
+import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcBuilding;
+import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcBuildingStorey;
+import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcSite;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPostalAddress;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**

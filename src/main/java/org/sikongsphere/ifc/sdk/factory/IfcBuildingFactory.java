@@ -11,16 +11,15 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.model.basic.LIST;
-import org.sikongsphere.ifc.model.basic.SET;
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcPropertySet;
-import org.sikongsphere.ifc.model.core.kernel.entity.IfcRelDefinesByProperties;
-import org.sikongsphere.ifc.model.core.productextension.entities.IfcBuilding;
-import org.sikongsphere.ifc.model.core.productextension.enumeration.IfcElementCompositionEnum;
-import org.sikongsphere.ifc.model.resource.actor.entity.IfcPostalAddress;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.model.resource.proper.entity.IfcProperty;
-import org.sikongsphere.ifc.model.resource.proper.entity.IfcPropertySingleValue;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcPropertySet;
+import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcRelDefinesByProperties;
+import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcBuilding;
+import org.sikongsphere.ifc.model.schema.core.productextension.enumeration.IfcElementCompositionEnum;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPostalAddress;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.proper.entity.IfcProperty;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**
