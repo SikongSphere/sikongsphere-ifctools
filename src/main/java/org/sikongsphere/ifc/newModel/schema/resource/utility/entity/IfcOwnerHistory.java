@@ -146,33 +146,4 @@ public class IfcOwnerHistory extends IfcAbstractClass {
     public void setCreationDate(IfcTimeStamp creationDate) {
         this.creationDate = creationDate;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(#%s,#%s,%s,.%s.,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.owningUser.getStepNumber(),
-            this.owningApplication.getStepNumber(),
-            Optional.ofNullable(this.state).map(x -> this.state).orElse(IfcStateEnum.$),
-            Optional.ofNullable(this.changeAction)
-                .map(x -> this.changeAction)
-                .orElse(IfcChangeActionEnum.$),
-            Optional.ofNullable(this.lastModifiedDate)
-                .map(x -> this.lastModifiedDate.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.lastModifyingUser)
-                .map(x -> this.lastModifyingUser.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.lastModifyingApplication)
-                .map(x -> this.lastModifyingApplication.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.creationDate)
-                .map(x -> this.creationDate.toString())
-                .orElse(StringConstant.DOLLAR)
-        );
-
-        return format;
-    }
 }

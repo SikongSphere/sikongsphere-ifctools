@@ -73,21 +73,4 @@ public class IfcColourRgb extends IfcColourSpecification {
     public void setBlue(IfcNormalisedRatioMeasure blue) {
         this.blue = blue;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s)",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            Optional.ofNullable(getName())
-                .map(x -> getName().toString())
-                .orElse(StringConstant.DOLLAR),
-            getRed(),
-            getGreen(),
-            getBlue()
-        );
-
-        return format;
-    }
 }

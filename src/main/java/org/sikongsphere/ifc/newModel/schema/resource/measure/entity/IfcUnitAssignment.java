@@ -49,29 +49,4 @@ public class IfcUnitAssignment extends IfcAbstractClass {
     public void setUnits(SET<IfcUnit> units) {
         this.units = units;
     }
-
-    @Override
-    public String toIfc() {
-        Iterator<IfcUnit> iterator = this.units.getObjects().iterator();
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while (iterator.hasNext()) {
-            IfcAbstractClass element = (IfcAbstractClass) iterator.next();
-            list.add(element.getStepNumber());
-        }
-
-        list.sort(Comparator.comparingInt(x -> x));
-        LIST<String> strings = new LIST<>();
-
-        list.forEach(x -> strings.add(StringConstant.WELL + x));
-
-        String format = String.format(
-            "#%s=%s(%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            strings
-        );
-
-        return format;
-    }
 }

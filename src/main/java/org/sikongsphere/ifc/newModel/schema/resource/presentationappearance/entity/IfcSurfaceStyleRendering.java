@@ -140,33 +140,4 @@ public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
     public void setReflectanceMethod(IfcReflectanceMethodEnum reflectanceMethod) {
         this.reflectanceMethod = reflectanceMethod;
     }
-
-    @Override
-    public String toIfc() {
-
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            StringConstant.WELL + getSurfaceColour().getStepNumber(),
-            getTransparency(),
-            Optional.ofNullable(getDiffuseColour())
-                .map(x -> getDiffuseColour().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getTransmissionColour())
-                .map(x -> getTransmissionColour().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getDiffuseTransmissionColour())
-                .map(x -> getDiffuseTransmissionColour().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getReflectionColour())
-                .map(x -> getReflectionColour().toString())
-                .orElse(StringConstant.DOLLAR),
-            getSpecularColour(),
-            getSpecularHighlight(),
-            StringConstant.DOT + getReflectanceMethod() + StringConstant.DOT
-        );
-
-        return format;
-    }
 }

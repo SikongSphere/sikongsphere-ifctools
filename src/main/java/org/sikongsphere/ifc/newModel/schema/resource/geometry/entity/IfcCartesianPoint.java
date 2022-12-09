@@ -67,16 +67,4 @@ public class IfcCartesianPoint extends IfcPoint {
             throw new Exception("The amount of coordinates is between 1 and 3");
         }
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.coordinates.toString()
-        );
-
-        return format;
-    }
 }

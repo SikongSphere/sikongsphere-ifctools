@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcFileElement;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +47,12 @@ public class IfcBody extends IfcFileElement {
         StringBuilder builder = new StringBuilder();
 
         this.elements.forEach((key, value) -> {
-            String s = value.toIfc();
+            String s = null;
+            try {
+                s = value.toIfc();
+            } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
             builder.append(s);
             builder.append(StringConstant.NEW_LINE);
         });

@@ -71,29 +71,4 @@ public class IfcSIUnit extends IfcNamedUnit {
     public void setName(IfcSIUnitName name) {
         this.name = name;
     }
-
-    @Override
-    public String toIfc() {
-
-        String dimension;
-        if (this.dimensions.isDefault()) {
-            dimension = StringConstant.ASTERISK;
-        } else dimension = this.dimensions.toString();
-
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,.%s.);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            dimension,
-            Optional.ofNullable(this.unitType)
-                .map(x -> StringConstant.DOT + this.unitType + StringConstant.DOT)
-                .orElse(StringConstant.ASTERISK),
-            Optional.ofNullable(this.prefix)
-                .map(x -> StringConstant.DOT + this.prefix + StringConstant.DOT)
-                .orElse(StringConstant.DOLLAR),
-            this.name
-        );
-
-        return format;
-    }
 }

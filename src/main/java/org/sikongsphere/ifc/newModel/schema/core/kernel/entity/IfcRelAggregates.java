@@ -47,39 +47,4 @@ public class IfcRelAggregates extends IfcRelDecomposes {
     ) {
         super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
     }
-
-    @Override
-    public String toIfc() {
-
-        Iterator<IfcObjectDefinition> iterator = getRelatedObjects().getObjects().iterator();
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while (iterator.hasNext()) {
-            IfcAbstractClass element = iterator.next();
-            list.add(element.getStepNumber());
-        }
-
-        list.sort(Comparator.comparingInt(x -> x));
-        LIST<String> strings = new LIST<>();
-
-        list.forEach(x -> strings.add(StringConstant.WELL + x));
-
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            getGlobalId(),
-            StringConstant.WELL + getOwnerHistory().getStepNumber(),
-            Optional.ofNullable(getName())
-                .map(x -> getName().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getDescription())
-                .map(x -> getDescription().toString())
-                .orElse(StringConstant.DOLLAR),
-            StringConstant.WELL + getRelatingObject().getStepNumber(),
-            strings
-        );
-
-        return format;
-    }
 }

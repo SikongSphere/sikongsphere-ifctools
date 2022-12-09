@@ -62,21 +62,4 @@ public class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
     public void setDepth(IfcPositiveLengthMeasure depth) {
         this.depth = depth;
     }
-
-    @Override
-    public String toIfc() {
-        IfcAbstractClass position = (IfcAbstractClass) getPosition();
-
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            StringConstant.WELL + getSweptArea().getStepNumber(),
-            StringConstant.WELL + position.getStepNumber(),
-            StringConstant.WELL + getExtrudedDirection().getStepNumber(),
-            getDepth()
-        );
-
-        return format;
-    }
 }

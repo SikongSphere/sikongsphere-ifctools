@@ -61,22 +61,4 @@ public class IfcLocalPlacement extends IfcObjectPlacement {
     public void setRelativePlacement(IfcAxis2Placement relativePlacement) {
         this.relativePlacement = relativePlacement;
     }
-
-    @Override
-    public String toIfc() {
-
-        IfcAbstractClass placement = (IfcAbstractClass) getRelativePlacement();
-
-        String format = String.format(
-            "#%s=%s(%s,#%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            Optional.ofNullable(getPlacementRelTo())
-                .map(x -> StringConstant.WELL + getPlacementRelTo().getStepNumber())
-                .orElse(StringConstant.DOLLAR),
-            placement.getStepNumber()
-        );
-
-        return format;
-    }
 }

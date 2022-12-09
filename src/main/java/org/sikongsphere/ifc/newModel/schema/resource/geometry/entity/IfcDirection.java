@@ -57,16 +57,4 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
         return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
     }
 
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.directionRatios.toString()
-        );
-
-        return format;
-    }
-
 }

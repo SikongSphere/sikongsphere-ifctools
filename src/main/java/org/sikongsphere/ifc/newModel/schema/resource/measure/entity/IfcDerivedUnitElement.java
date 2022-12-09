@@ -58,17 +58,4 @@ public class IfcDerivedUnitElement extends IfcAbstractClass {
     public void setExponent(INTEGER exponent) {
         this.exponent = exponent;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(#%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.unit.getStepNumber(),
-            this.exponent
-        );
-
-        return format;
-    }
 }

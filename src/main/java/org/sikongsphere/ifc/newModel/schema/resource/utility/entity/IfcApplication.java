@@ -86,18 +86,4 @@ public class IfcApplication extends IfcAbstractClass {
     public void setApplicationIdentifier(IfcIdentifier applicationIdentifier) {
         this.applicationIdentifier = applicationIdentifier;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(#%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.applicationDeveloper.getStepNumber(),
-            this.version.toString(),
-            this.applicationFullName.toString(),
-            this.applicationIdentifier.toString()
-        );
-        return format;
-    }
 }

@@ -121,34 +121,4 @@ public class IfcPostalAddress extends IfcAddress {
         Country = country;
     }
 
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            Optional.ofNullable(getPurpose())
-                .map(x -> getPurpose().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getDescription())
-                .map(x -> getDescription().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getUserDefinedPurpose())
-                .map(x -> getUserDefinedPurpose().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getInternalLocation())
-                .map(x -> getInternalLocation().toString())
-                .orElse(StringConstant.DOLLAR),
-            getAddressLines().toString(),
-            Optional.ofNullable(getPostalBox())
-                .map(x -> getPostalBox().toString())
-                .orElse(StringConstant.DOLLAR),
-            getTown(),
-            getRegion(),
-            getPostalCode(),
-            getCountry()
-        );
-
-        return format;
-    }
 }

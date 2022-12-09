@@ -43,17 +43,4 @@ public class IfcAxis2Placement2D extends IfcPlacement {
     public void setRefDirection(IfcDirection refDirection) {
         this.refDirection = refDirection;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,%s);",
-            this.getStepNumber(),
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            StringConstant.WELL + getLocation().getStepNumber(),
-            StringConstant.WELL + getRefDirection().getStepNumber()
-        );
-
-        return format;
-    }
 }

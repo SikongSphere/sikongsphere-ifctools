@@ -132,33 +132,4 @@ public class IfcPerson extends IfcAbstractClass implements IfcActorSelect {
     public void setAddresses(LIST<IfcAddress> addresses) {
         this.addresses = addresses;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            Optional.ofNullable(this.id).map(x -> this.id.toString()).orElse(StringConstant.DOLLAR),
-            this.familyName.toString(),
-            this.givenName.toString(),
-            Optional.ofNullable(this.middleName)
-                .map(x -> this.middleName.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.prefixTitles)
-                .map(x -> this.prefixTitles.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.suffixTitles)
-                .map(x -> this.suffixTitles.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.roles)
-                .map(x -> this.roles.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.addresses)
-                .map(x -> this.addresses.toString())
-                .orElse(StringConstant.DOLLAR)
-        );
-
-        return format;
-    }
 }

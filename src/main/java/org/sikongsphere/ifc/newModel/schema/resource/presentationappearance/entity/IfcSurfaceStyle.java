@@ -66,19 +66,4 @@ public class IfcSurfaceStyle extends IfcPresentationStyle {
     public void setStyles(SET<IfcSurfaceStyleElementSelect> styles) {
         this.styles = styles;
     }
-
-    @Override
-    public String toIfc() {
-
-        String format = String.format(
-            "#%s=%s(%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            getName(),
-            StringConstant.DOT + getSide() + StringConstant.DOT,
-            getStyles()
-        );
-
-        return format;
-    }
 }

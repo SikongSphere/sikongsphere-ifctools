@@ -79,35 +79,4 @@ public class IfcBuildingStorey extends IfcSpatialStructureElement {
     public void setElevation(IfcLengthMeasure elevation) {
         this.elevation = elevation;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,#%s,%s,%s,%s,#%s,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            getGlobalId(),
-            getOwnerHistory().getStepNumber(),
-            getName(),
-            Optional.ofNullable(getDescription())
-                .map(x -> getDescription().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getObjectType())
-                .map(x -> getObjectType().toString())
-                .orElse(StringConstant.DOLLAR),
-            getObjectPlacement().getStepNumber(),
-            Optional.ofNullable(getRepresentation())
-                .map(x -> getRepresentation().toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(getLongName())
-                .map(x -> getLongName().toString())
-                .orElse(StringConstant.DOLLAR),
-            StringConstant.DOT + getCompositionType() + StringConstant.DOT,
-            Optional.ofNullable(getElevation())
-                .map(x -> getElevation().toString())
-                .orElse(StringConstant.DOLLAR)
-        );
-
-        return format;
-    }
 }

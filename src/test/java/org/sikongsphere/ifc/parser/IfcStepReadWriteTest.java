@@ -17,9 +17,13 @@ import org.junit.Test;
 import org.sikongsphere.ifc.io.IfcFileReader;
 import org.sikongsphere.ifc.model.IfcModel;
 import org.sikongsphere.ifc.io.IfcFileWriter;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
+import org.sikongsphere.ifc.newModel.fileelement.IfcBody;
 import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
 
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * a test between an input IFC file
@@ -47,7 +51,8 @@ public class IfcStepReadWriteTest {
         String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
             .toString()
             .replaceAll("\\s*|\r", "");
-
+        System.out.println(ifcFileone);
+        System.out.println(ifcFiletwo);
         assert ifcFileone.equals(ifcFiletwo);
     }
 

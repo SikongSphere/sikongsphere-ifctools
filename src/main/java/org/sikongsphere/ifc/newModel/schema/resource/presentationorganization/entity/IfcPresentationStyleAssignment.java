@@ -51,16 +51,4 @@ public class IfcPresentationStyleAssignment extends IfcAbstractClass {
         this.styles = styles;
     }
 
-    @Override
-    public String toIfc() {
-
-        String format = String.format(
-            "#%s=%s(%s)",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            getStyles()
-        );
-
-        return format;
-    }
 }

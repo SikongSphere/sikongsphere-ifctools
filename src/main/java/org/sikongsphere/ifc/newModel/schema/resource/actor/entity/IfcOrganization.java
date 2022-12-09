@@ -122,27 +122,4 @@ public class IfcOrganization extends IfcAbstractClass implements IfcActorSelect 
     // public void setEngages(SET<IfcPersonAndOrganization> engages) {
     // this.engages = engages;
     // }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            Optional.ofNullable(this.id).map(x -> this.id.toString()).orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.name)
-                .map(x -> this.name.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.description)
-                .map(x -> this.description.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.roles)
-                .map(x -> this.roles.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.addresses)
-                .map(x -> this.addresses.toString())
-                .orElse(StringConstant.DOLLAR)
-        );
-        return format;
-    }
 }

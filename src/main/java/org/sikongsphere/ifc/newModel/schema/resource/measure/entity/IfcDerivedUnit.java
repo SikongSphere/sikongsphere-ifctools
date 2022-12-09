@@ -80,21 +80,4 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
     public void setUserDefinedType(IfcLabel userDefinedType) {
         this.userDefinedType = userDefinedType;
     }
-
-    @Override
-    public String toIfc() {
-
-        String format = String.format(
-            "#%s=%s(%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            getElements(),
-            StringConstant.DOT + this.unitType + StringConstant.DOT,
-            Optional.ofNullable(this.userDefinedType)
-                .map(x -> this.userDefinedType.toString())
-                .orElse(StringConstant.DOLLAR)
-        );
-
-        return format;
-    }
 }

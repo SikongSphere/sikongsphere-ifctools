@@ -59,19 +59,4 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
     public void setConversionFactor(IfcMeasureWithUnit conversionFactor) {
         this.conversionFactor = conversionFactor;
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(#%s,%s,%s,#%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.dimensions.getStepNumber(),
-            StringConstant.DOT + this.unitType + StringConstant.DOT,
-            this.name,
-            this.conversionFactor.getStepNumber()
-        );
-
-        return format;
-    }
 }

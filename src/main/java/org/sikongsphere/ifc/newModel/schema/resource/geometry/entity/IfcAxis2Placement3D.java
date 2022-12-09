@@ -74,22 +74,4 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
     public boolean isDefault() {
         return axis.isDefault() && refDirection.isDefault();
     }
-
-    @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(#%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            getLocation().getStepNumber(),
-            Optional.ofNullable(this.axis)
-                .map(x -> this.axis.toString())
-                .orElse(StringConstant.DOLLAR),
-            Optional.ofNullable(this.refDirection)
-                .map(x -> this.refDirection.toString())
-                .orElse(StringConstant.DOLLAR)
-        );
-
-        return format;
-    }
 }

@@ -178,24 +178,6 @@ public class IfcDimensionalExponents extends IfcAbstractClass {
     }
 
     @Override
-    public String toIfc() {
-        String format = String.format(
-            "#%s=%s(%s,%s,%s,%s,%s,%s,%s);",
-            this.stepNumber,
-            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            this.lengthExponent,
-            this.massExponent,
-            this.timeExponent,
-            this.electricCurrentExponent,
-            this.thermodynamicTemperatureExponent,
-            this.amountOfSubstanceExponent,
-            this.luminousIntensityExponent
-        );
-
-        return format;
-    }
-
-    @Override
     public boolean isDefault() {
         return lengthExponent.isDefault()
             && massExponent.isDefault()
