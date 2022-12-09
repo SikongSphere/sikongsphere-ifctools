@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.io;
 
-import org.sikongsphere.ifc.newModel.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 
 import java.io.*;
 

@@ -11,15 +11,15 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.exception.SikongSphereUnsupportedException;
-import org.sikongsphere.ifc.model.basic.SET;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcRatioMeasure;
-import org.sikongsphere.ifc.model.resource.measure.entity.*;
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcDerivedUnitEnum;
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIPrefix;
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcSIUnitName;
-import org.sikongsphere.ifc.model.resource.measure.enumeration.IfcUnitEnum;
-import org.sikongsphere.ifc.model.resource.measure.selecttypes.IfcUnit;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcRatioMeasure;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.*;
+import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcDerivedUnitEnum;
+import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIPrefix;
+import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIUnitName;
+import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcUnitEnum;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**

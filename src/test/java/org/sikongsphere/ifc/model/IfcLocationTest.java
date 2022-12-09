@@ -11,11 +11,11 @@
 package org.sikongsphere.ifc.model;
 
 import org.junit.Test;
-import org.sikongsphere.ifc.model.basic.LIST;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcAxis2Placement3D;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcCartesianPoint;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcDirection;
-import org.sikongsphere.ifc.model.resource.geometry.entity.IfcPolyline;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcPolyline;
 
 /**
  * This is a test suite for location

@@ -10,8 +10,8 @@
 */
 package org.sikongsphere.ifc.sdk.worker;
 
-import org.sikongsphere.ifc.model.IfcModel;
-import org.sikongsphere.ifc.model.shared.sharedbldelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.Model;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWall;
 
 /**
  * This is an worker for wall
@@ -27,7 +27,7 @@ public class IfcWallWorker implements IWorker<IfcWall> {
      * @param product   IfcWall instance
      */
     @Override
-    public void install(IfcModel model, IfcWall product) {
+    public void install(Model model, IfcWall product) {
 
     }
 
@@ -37,7 +37,7 @@ public class IfcWallWorker implements IWorker<IfcWall> {
      * @param product   IfcWall instance
      */
     @Override
-    public void install(IfcModel model, IfcWall product, Object... params) {
+    public void install(Model model, IfcWall product, Object... params) {
 
     }
 }

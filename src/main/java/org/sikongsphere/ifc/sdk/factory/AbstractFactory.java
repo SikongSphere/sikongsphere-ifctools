@@ -11,19 +11,19 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.environment.entity.*;
-import org.sikongsphere.ifc.model.basic.LIST;
-import org.sikongsphere.ifc.model.resource.actor.entity.*;
-import org.sikongsphere.ifc.model.resource.actor.enumeration.IfcAddressTypeEnum;
-import org.sikongsphere.ifc.model.resource.actor.enumeration.IfcRoleEnum;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcIdentifier;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcLabel;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcText;
-import org.sikongsphere.ifc.model.resource.measure.definedtype.IfcTimeStamp;
-import org.sikongsphere.ifc.model.resource.utility.definedtype.IfcGloballyUniqueId;
-import org.sikongsphere.ifc.model.resource.utility.entity.IfcApplication;
-import org.sikongsphere.ifc.model.resource.utility.entity.IfcOwnerHistory;
-import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcChangeActionEnum;
-import org.sikongsphere.ifc.model.resource.utility.enumeration.IfcStateEnum;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.*;
+import org.sikongsphere.ifc.model.schema.resource.actor.enumeration.IfcAddressTypeEnum;
+import org.sikongsphere.ifc.model.schema.resource.actor.enumeration.IfcRoleEnum;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcTimeStamp;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcApplication;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
+import org.sikongsphere.ifc.model.schema.resource.utility.enumeration.IfcChangeActionEnum;
+import org.sikongsphere.ifc.model.schema.resource.utility.enumeration.IfcStateEnum;
 
 import java.util.Arrays;
 import java.util.List;
