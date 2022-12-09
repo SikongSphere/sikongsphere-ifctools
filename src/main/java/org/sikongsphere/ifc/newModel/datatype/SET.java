@@ -10,10 +10,11 @@
 */
 package org.sikongsphere.ifc.newModel.datatype;
 
+import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.newModel.IfcAbstractClass;
 import org.sikongsphere.ifc.newModel.IfcDataType;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * This class is used to encapsulate set information
@@ -44,5 +45,24 @@ public class SET<E> extends IfcDataType {
 
     public Set<E> getObjects() {
         return objects;
+    }
+
+    @Override
+    public String toString() {
+
+        Iterator<IfcAbstractClass> iterator = (Iterator<IfcAbstractClass>) this.objects.iterator();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        while (iterator.hasNext()) {
+            IfcAbstractClass element = iterator.next();
+            list.add(element.getStepNumber());
+        }
+
+        list.sort(Comparator.comparingInt(x -> x));
+        LIST<Object> strings = new LIST<>();
+
+        list.forEach(x -> strings.add(StringConstant.WELL + x));
+
+        return strings.toString();
     }
 }

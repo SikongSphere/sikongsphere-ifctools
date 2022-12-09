@@ -46,18 +46,11 @@ public class IfcPolyline extends IfcBoundedCurve {
     @Override
     public String toIfc() {
 
-        List<IfcCartesianPoint> points = getPoints().getObjects();
-        LIST<Object> list = new LIST<>();
-
-        for (IfcCartesianPoint point : points) {
-            list.add(StringConstant.WELL + point.getStepNumber());
-        }
-
         String format = String.format(
             "#%s=%s(%s);",
             this.stepNumber,
             this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            list
+            getPoints()
         );
 
         return format;

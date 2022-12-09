@@ -12,12 +12,19 @@ package org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.ent
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
+import org.sikongsphere.ifc.newModel.schema.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.newModel.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.enumeration.IfcSurfaceSide;
+
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * An assignment of one or many surface style elements to a surface,
@@ -58,5 +65,20 @@ public class IfcSurfaceStyle extends IfcPresentationStyle {
 
     public void setStyles(SET<IfcSurfaceStyleElementSelect> styles) {
         this.styles = styles;
+    }
+
+    @Override
+    public String toIfc() {
+
+        String format = String.format(
+            "#%s=%s(%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getName(),
+            StringConstant.DOT + getSide() + StringConstant.DOT,
+            getStyles()
+        );
+
+        return format;
     }
 }

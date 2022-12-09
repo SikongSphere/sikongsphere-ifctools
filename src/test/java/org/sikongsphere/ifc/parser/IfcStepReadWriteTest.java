@@ -29,7 +29,7 @@ import java.io.*;
  * @date 2022/09/07 22:26
  */
 public class IfcStepReadWriteTest {
-    private final static String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
+    private final static String BLANK_INPUT_PATH = "src/test/resources/blank.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
     /**
@@ -47,8 +47,7 @@ public class IfcStepReadWriteTest {
         String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
             .toString()
             .replaceAll("\\s*|\r", "");
-        System.out.println(ifcFileone);
-        System.out.println(ifcFiletwo);
+
         assert ifcFileone.equals(ifcFiletwo);
     }
 

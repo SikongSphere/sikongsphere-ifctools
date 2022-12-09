@@ -115,20 +115,6 @@ public class IfcProject extends IfcObject {
     @Override
     public String toIfc() {
 
-        Iterator<IfcRepresentationContext> iterator = this.representationContexts.getObjects()
-            .iterator();
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while (iterator.hasNext()) {
-            IfcRepresentationContext element = iterator.next();
-            list.add(element.getStepNumber());
-        }
-
-        list.sort(Comparator.comparingInt(x -> x));
-        LIST<String> strings = new LIST<>();
-
-        list.forEach(x -> strings.add(StringConstant.WELL + x));
-
         String format = String.format(
             "#%s=%s(%s,#%s,%s,%s,%s,%s,%s,%s,#%s);",
             this.stepNumber,
@@ -148,7 +134,7 @@ public class IfcProject extends IfcObject {
             Optional.ofNullable(getPhase())
                 .map(x -> getPhase().toString())
                 .orElse(StringConstant.DOLLAR),
-            strings,
+            getRepresentationContexts(),
             getUnitsInContext().getStepNumber()
         );
 

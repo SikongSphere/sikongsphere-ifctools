@@ -12,11 +12,18 @@ package org.sikongsphere.ifc.newModel.schema.resource.presentationorganization.e
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.newModel.datatype.LIST;
 import org.sikongsphere.ifc.newModel.datatype.SET;
 import org.sikongsphere.ifc.newModel.IfcAbstractClass;
+import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.entity.IfcSurfaceStyleRendering;
 import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
+import org.sikongsphere.ifc.newModel.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
+
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * The presentation style assignment is a set of styles which are assigned to styled items
@@ -42,5 +49,18 @@ public class IfcPresentationStyleAssignment extends IfcAbstractClass {
 
     public void setStyles(SET<IfcPresentationStyleSelect> styles) {
         this.styles = styles;
+    }
+
+    @Override
+    public String toIfc() {
+
+        String format = String.format(
+            "#%s=%s(%s)",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getStyles()
+        );
+
+        return format;
     }
 }

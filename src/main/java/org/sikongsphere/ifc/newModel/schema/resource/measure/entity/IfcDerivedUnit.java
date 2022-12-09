@@ -84,24 +84,11 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
     @Override
     public String toIfc() {
 
-        Iterator<IfcDerivedUnitElement> iterator = this.elements.getObjects().iterator();
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while (iterator.hasNext()) {
-            IfcDerivedUnitElement element = iterator.next();
-            list.add(element.getStepNumber());
-        }
-
-        list.sort(Comparator.comparingInt(x -> x));
-        LIST<String> strings = new LIST<>();
-
-        list.forEach(x -> strings.add(StringConstant.WELL + x));
-
         String format = String.format(
             "#%s=%s(%s,%s,%s);",
             this.stepNumber,
             this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            strings,
+            getElements(),
             StringConstant.DOT + this.unitType + StringConstant.DOT,
             Optional.ofNullable(this.userDefinedType)
                 .map(x -> this.userDefinedType.toString())
