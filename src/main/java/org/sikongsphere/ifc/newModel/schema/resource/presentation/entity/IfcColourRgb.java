@@ -76,14 +76,17 @@ public class IfcColourRgb extends IfcColourSpecification {
 
     @Override
     public String toIfc() {
-        String format = String.format("#%s=%s(%s,%s,%s,%s)",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                Optional.ofNullable(getName()).map(x -> getName().toString()).orElse(StringConstant.DOLLAR),
-                getRed(),
-                getGreen(),
-                getBlue()
-                );
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s)",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            Optional.ofNullable(getName())
+                .map(x -> getName().toString())
+                .orElse(StringConstant.DOLLAR),
+            getRed(),
+            getGreen(),
+            getBlue()
+        );
 
         return format;
     }

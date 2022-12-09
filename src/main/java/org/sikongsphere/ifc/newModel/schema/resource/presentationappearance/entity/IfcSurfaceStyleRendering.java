@@ -106,9 +106,11 @@ public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
     }
 
     public String getSpecularColour() {
-        String format = String.format("%s(%s)",
-                specularColour.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                specularColour);
+        String format = String.format(
+            "%s(%s)",
+            specularColour.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            specularColour
+        );
 
         return format;
     }
@@ -118,9 +120,11 @@ public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
     }
 
     public String getSpecularHighlight() {
-        String format = String.format("%s(%s)",
-                specularHighlight.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                specularHighlight);
+        String format = String.format(
+            "%s(%s)",
+            specularHighlight.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            specularHighlight
+        );
 
         return format;
     }
@@ -140,18 +144,27 @@ public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
     @Override
     public String toIfc() {
 
-        String format = String.format("#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                StringConstant.WELL + getSurfaceColour().getStepNumber(),
-                getTransparency(),
-                Optional.ofNullable(getDiffuseColour()).map(x -> getDiffuseColour().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getTransmissionColour()).map(x -> getTransmissionColour().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getDiffuseTransmissionColour()).map(x -> getDiffuseTransmissionColour().toString()).orElse(StringConstant.DOLLAR),
-                Optional.ofNullable(getReflectionColour()).map(x -> getReflectionColour().toString()).orElse(StringConstant.DOLLAR),
-                getSpecularColour(),
-                getSpecularHighlight(),
-                StringConstant.DOT + getReflectanceMethod() + StringConstant.DOT
+        String format = String.format(
+            "#%s=%s(%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            StringConstant.WELL + getSurfaceColour().getStepNumber(),
+            getTransparency(),
+            Optional.ofNullable(getDiffuseColour())
+                .map(x -> getDiffuseColour().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getTransmissionColour())
+                .map(x -> getTransmissionColour().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getDiffuseTransmissionColour())
+                .map(x -> getDiffuseTransmissionColour().toString())
+                .orElse(StringConstant.DOLLAR),
+            Optional.ofNullable(getReflectionColour())
+                .map(x -> getReflectionColour().toString())
+                .orElse(StringConstant.DOLLAR),
+            getSpecularColour(),
+            getSpecularHighlight(),
+            StringConstant.DOT + getReflectanceMethod() + StringConstant.DOT
         );
 
         return format;

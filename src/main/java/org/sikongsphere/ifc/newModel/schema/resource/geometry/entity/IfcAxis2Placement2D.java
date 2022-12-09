@@ -46,11 +46,12 @@ public class IfcAxis2Placement2D extends IfcPlacement {
 
     @Override
     public String toIfc() {
-        String format = String.format("#%s=%s(%s,%s);",
-                this.getStepNumber(),
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                StringConstant.WELL + getLocation().getStepNumber(),
-                StringConstant.WELL + getRefDirection().getStepNumber()
+        String format = String.format(
+            "#%s=%s(%s,%s);",
+            this.getStepNumber(),
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            StringConstant.WELL + getLocation().getStepNumber(),
+            StringConstant.WELL + getRefDirection().getStepNumber()
         );
 
         return format;

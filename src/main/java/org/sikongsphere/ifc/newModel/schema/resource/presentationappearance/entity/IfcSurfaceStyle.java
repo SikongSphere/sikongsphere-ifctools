@@ -70,12 +70,13 @@ public class IfcSurfaceStyle extends IfcPresentationStyle {
     @Override
     public String toIfc() {
 
-        String format = String.format("#%s=%s(%s,%s,%s);",
-                this.stepNumber,
-                this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-                getName(),
-                StringConstant.DOT + getSide() + StringConstant.DOT,
-                getStyles()
+        String format = String.format(
+            "#%s=%s(%s,%s,%s);",
+            this.stepNumber,
+            this.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            getName(),
+            StringConstant.DOT + getSide() + StringConstant.DOT,
+            getStyles()
         );
 
         return format;
