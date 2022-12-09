@@ -12,12 +12,9 @@ package org.sikongsphere.ifc.infra;
 
 import org.reflections.Reflections;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcGenericType;
 import org.sikongsphere.ifc.common.constant.ConfigParameter;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.common.exception.SikongSphereException;
 
-import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -28,7 +25,7 @@ import java.util.Set;
  * There are two benefits to doing this:
  * 1> No need for multiple class loading.
  * 2> When you need to construct an instance, you only need to take out the class object and instantiate it,
- *    and the overhead is relatively low.
+ * and the overhead is relatively low.
  *
  * @author zaiyuan
  * @date 2022-09-11 16:30:00
@@ -42,39 +39,16 @@ public class IfcClassContainer {
         Reflections reflections = new Reflections(packageName);
         Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(IfcClass.class);
         typesAnnotatedWith.forEach(this::wrapTypeClass);
-        typesAnnotatedWith.forEach(this::wrapGenerics);
     }
 
     private void wrapTypeClass(Class<?> clazz) {
-        IfcClass annotation = clazz.getAnnotation(IfcClass.class);
-        // if (annotation.type() == IfcType.ENUMERATION) {
         clazzMap.put(clazz.getSimpleName().toUpperCase(Locale.ROOT), clazz);
-        // }
-    }
-
-    private void wrapGenerics(Class<?> clazz) {
-        Field[] declaredFields = clazz.getDeclaredFields();
-        for (Field declaredField : declaredFields) {
-            if (declaredField.isAnnotationPresent(IfcGenericType.class)) {
-                try {
-                    genericMap.put(
-                        clazz.getSimpleName().toUpperCase(Locale.ROOT),
-                        (Object[]) declaredField.get(null)
-                    );
-                } catch (IllegalAccessException e) {
-                    throw new SikongSphereException();
-                }
-                break;
-            }
-        }
     }
 
     /**
      * Map of Class which is annotated with IfcClass
      */
     private final Map<String, Class<?>> clazzMap = new HashMap<>();
-
-    private final Map<String, Object[]> genericMap = new HashMap<>();
 
     /**
      * private static class to hold IfcClassContainer instance
@@ -95,20 +69,8 @@ public class IfcClassContainer {
         clazzMap.remove(clazzName);
     }
 
-    public void addGeneric(Class<?> clazz, Object[] generics) {
-        genericMap.put(clazz.getName(), generics);
-    }
-
-    public void removeGeneric(String clazzName) {
-        genericMap.remove(clazzName);
-    }
-
     public Class<?> get(String clazzName) {
         return clazzMap.get(clazzName);
-    }
-
-    public Object[] getGeneric(String clazzName) {
-        return genericMap.get(clazzName);
     }
 
     public boolean contains(String clazzName) {

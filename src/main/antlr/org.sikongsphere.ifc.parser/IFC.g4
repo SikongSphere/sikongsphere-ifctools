@@ -95,7 +95,7 @@ decNumber :                               // Decimal number (positive or negativ
      ;
 
 scientificCountingNumber :
-     decNumber 'E' T_SUB intNumber
+     decNumber 'E' intNumber
      ;
 
 boolLiteral :                            // Boolean literal

@@ -60,11 +60,11 @@ public class SCIENTIFICNOTATION extends DOUBLE {
     }
 
     public String getString() {
-        return String.format("%sE-%s", mantissa, index);
+        return String.format("%sE%s%s", mantissa, index >= 0 ? "+" : "-", Math.abs(index));
     }
 
     @Override
     public String toString() {
-        return mantissa + StringConstant.SCI_NOTATION + StringConstant.DIFFER + index;
+        return getString();
     }
 }
