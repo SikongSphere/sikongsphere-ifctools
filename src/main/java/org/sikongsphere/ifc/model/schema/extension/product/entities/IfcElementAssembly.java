@@ -11,9 +11,12 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcAssemblyPlaceEnum;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementAssemblyTypeEnum;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -23,15 +26,17 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcElementAssembly extends IfcElement {
+    @IfcOptionField
+    private IfcAssemblyPlaceEnum assemblyPlace;
+    private IfcElementAssemblyTypeEnum predefinedType;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcElementAssembly(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -39,7 +44,9 @@ public abstract class IfcFeatureElement extends IfcElement {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcIdentifier tag,
+        IfcAssemblyPlaceEnum assemblyPlace,
+        IfcElementAssemblyTypeEnum predefinedType
     ) {
         super(
             globalId,
@@ -51,6 +58,29 @@ public abstract class IfcFeatureElement extends IfcElement {
             representation,
             tag
         );
+        this.assemblyPlace = assemblyPlace;
+        this.predefinedType = predefinedType;
     }
 
+    public IfcAssemblyPlaceEnum getAssemblyPlace() {
+        return assemblyPlace;
+    }
+
+    public void setAssemblyPlace(IfcAssemblyPlaceEnum assemblyPlace) {
+        this.assemblyPlace = assemblyPlace;
+    }
+
+    public IfcElementAssemblyTypeEnum getPredefinedType() {
+        return predefinedType;
+    }
+
+    public void setPredefinedType(IfcElementAssemblyTypeEnum predefinedType) {
+        this.predefinedType = predefinedType;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

@@ -14,6 +14,9 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcCoveringTypeEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelConnects;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -23,34 +26,41 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 22:49
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
+public class IfcRelCoversBldgElements extends IfcRelConnects {
+    private IfcElement relatingBuildingElement;
+    private SET<IfcCovering> relatedCoverings;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcRelCoversBldgElements(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcElement relatingBuildingElement,
+        SET<IfcCovering> relatedCoverings
     ) {
-        super(
-            globalId,
-            ownerHistory,
-            name,
-            description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag
-        );
+        super(globalId, ownerHistory, name, description);
+        this.relatingBuildingElement = relatingBuildingElement;
+        this.relatedCoverings = relatedCoverings;
     }
 
+    public IfcElement getRelatingBuildingElement() {
+        return relatingBuildingElement;
+    }
+
+    public void setRelatingBuildingElement(IfcElement relatingBuildingElement) {
+        this.relatingBuildingElement = relatingBuildingElement;
+    }
+
+    public SET<IfcCovering> getRelatedCoverings() {
+        return relatedCoverings;
+    }
+
+    public void setRelatedCoverings(SET<IfcCovering> relatedCoverings) {
+        this.relatedCoverings = relatedCoverings;
+    }
 }

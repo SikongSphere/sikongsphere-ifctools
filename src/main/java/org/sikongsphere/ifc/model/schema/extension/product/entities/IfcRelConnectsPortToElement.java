@@ -14,43 +14,48 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelConnects;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcRelConnectsPortToElement extends IfcRelConnects {
+    private IfcPort relatingPort;
+    private IfcElement relatedElement;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcRelConnectsPortToElement(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcPort relatingPort,
+        IfcElement relatedElement
     ) {
-        super(
-            globalId,
-            ownerHistory,
-            name,
-            description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag
-        );
+        super(globalId, ownerHistory, name, description);
+        this.relatingPort = relatingPort;
+        this.relatedElement = relatedElement;
     }
 
+    public IfcPort getRelatingPort() {
+        return relatingPort;
+    }
+
+    public void setRelatingPort(IfcPort relatingPort) {
+        this.relatingPort = relatingPort;
+    }
+
+    public IfcElement getRelatedElement() {
+        return relatedElement;
+    }
+
+    public void setRelatedElement(IfcElement relatedElement) {
+        this.relatedElement = relatedElement;
+    }
 }

@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcCoveringTypeEnum;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
@@ -30,6 +32,11 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcCovering extends IfcBuildingElement {
     private IfcCoveringTypeEnum predefinedType;
+
+    @IfcInverseParameter
+    private SET<IfcRelCoversSpaces> coversSpaces;
+    @IfcInverseParameter
+    private SET<IfcRelCoversBldgElements> covers;
 
     @IfcParserConstructor
     public IfcCovering(
@@ -62,5 +69,21 @@ public class IfcCovering extends IfcBuildingElement {
 
     public void setPredefinedType(IfcCoveringTypeEnum predefinedType) {
         this.predefinedType = predefinedType;
+    }
+
+    public SET<IfcRelCoversSpaces> getCoversSpaces() {
+        return coversSpaces;
+    }
+
+    public void setCoversSpaces(SET<IfcRelCoversSpaces> coversSpaces) {
+        this.coversSpaces = coversSpaces;
+    }
+
+    public SET<IfcRelCoversBldgElements> getCovers() {
+        return covers;
+    }
+
+    public void setCovers(SET<IfcRelCoversBldgElements> covers) {
+        this.covers = covers;
     }
 }

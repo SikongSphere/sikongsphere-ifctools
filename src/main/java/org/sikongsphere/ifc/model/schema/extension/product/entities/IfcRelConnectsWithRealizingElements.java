@@ -11,46 +11,65 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcConnectionGeometry;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcRelConnectsWithRealizingElements extends IfcRelConnectsElements {
+    private SET<IfcElement> realizingElements;
+    @IfcOptionField
+    private IfcLabel connectionType;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcRelConnectsWithRealizingElements(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcConnectionGeometry connectionGeometry,
+        IfcElement relatingElement,
+        IfcElement relatedElement,
+        SET<IfcElement> realizingElements,
+        IfcLabel connectionType
     ) {
         super(
             globalId,
             ownerHistory,
             name,
             description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag
+            connectionGeometry,
+            relatingElement,
+            relatedElement
         );
+        this.realizingElements = realizingElements;
+        this.connectionType = connectionType;
     }
 
+    public SET<IfcElement> getRealizingElements() {
+        return realizingElements;
+    }
+
+    public void setRealizingElements(SET<IfcElement> realizingElements) {
+        this.realizingElements = realizingElements;
+    }
+
+    public IfcLabel getConnectionType() {
+        return connectionType;
+    }
+
+    public void setConnectionType(IfcLabel connectionType) {
+        this.connectionType = connectionType;
+    }
 }

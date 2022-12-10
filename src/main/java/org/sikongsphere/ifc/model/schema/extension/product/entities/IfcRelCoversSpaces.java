@@ -11,56 +11,56 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcBuildingElementProxyTypeEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelConnects;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:58
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public class IfcOpeningElement extends IfcFeatureElementSubtraction {
-    @IfcInverseParameter
-    private SET<IfcRelFillsElement> hasFillings;
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcRelCoversSpaces extends IfcRelConnects {
+    private IfcSpace relatedSpace;
+    private SET<IfcCovering> relatedCoverings;
 
     @IfcParserConstructor
-    public IfcOpeningElement(
+    public IfcRelCoversSpaces(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcSpace relatedSpace,
+        SET<IfcCovering> relatedCoverings
     ) {
-        super(
-            globalId,
-            ownerHistory,
-            name,
-            description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag
-        );
+        super(globalId, ownerHistory, name, description);
+        this.relatedSpace = relatedSpace;
+        this.relatedCoverings = relatedCoverings;
     }
 
-    public SET<IfcRelFillsElement> getHasFillings() {
-        return hasFillings;
+    public IfcSpace getRelatedSpace() {
+        return relatedSpace;
     }
 
-    public void setHasFillings(SET<IfcRelFillsElement> hasFillings) {
-        this.hasFillings = hasFillings;
+    public void setRelatedSpace(IfcSpace relatedSpace) {
+        this.relatedSpace = relatedSpace;
+    }
+
+    public SET<IfcCovering> getRelatedCoverings() {
+        return relatedCoverings;
+    }
+
+    public void setRelatedCoverings(SET<IfcCovering> relatedCoverings) {
+        this.relatedCoverings = relatedCoverings;
     }
 }

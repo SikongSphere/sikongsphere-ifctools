@@ -12,12 +12,15 @@ package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcGridAxis;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
@@ -25,16 +28,20 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public class IfcOpeningElement extends IfcFeatureElementSubtraction {
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcGrid extends IfcProduct {
+    private LIST<IfcGridAxis> uAxes;
+    private LIST<IfcGridAxis> vAxes;
+    @IfcOptionField
+    private LIST<IfcGridAxis> wAxes;
     @IfcInverseParameter
-    private SET<IfcRelFillsElement> hasFillings;
+    private SET<IfcRelContainedInSpatialStructure> containedInStructure;
 
     @IfcParserConstructor
-    public IfcOpeningElement(
+    public IfcGrid(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -42,7 +49,9 @@ public class IfcOpeningElement extends IfcFeatureElementSubtraction {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag
+        LIST<IfcGridAxis> uAxes,
+        LIST<IfcGridAxis> vAxes,
+        LIST<IfcGridAxis> wAxes
     ) {
         super(
             globalId,
@@ -51,16 +60,50 @@ public class IfcOpeningElement extends IfcFeatureElementSubtraction {
             description,
             objectType,
             objectPlacement,
-            representation,
-            tag
+            representation
         );
+        this.uAxes = uAxes;
+        this.vAxes = vAxes;
+        this.wAxes = wAxes;
     }
 
-    public SET<IfcRelFillsElement> getHasFillings() {
-        return hasFillings;
+    public LIST<IfcGridAxis> getuAxes() {
+        return uAxes;
     }
 
-    public void setHasFillings(SET<IfcRelFillsElement> hasFillings) {
-        this.hasFillings = hasFillings;
+    public void setuAxes(LIST<IfcGridAxis> uAxes) {
+        this.uAxes = uAxes;
+    }
+
+    public LIST<IfcGridAxis> getvAxes() {
+        return vAxes;
+    }
+
+    public void setvAxes(LIST<IfcGridAxis> vAxes) {
+        this.vAxes = vAxes;
+    }
+
+    public LIST<IfcGridAxis> getwAxes() {
+        return wAxes;
+    }
+
+    public void setwAxes(LIST<IfcGridAxis> wAxes) {
+        this.wAxes = wAxes;
+    }
+
+    public SET<IfcRelContainedInSpatialStructure> getContainedInStructure() {
+        return containedInStructure;
+    }
+
+    public void setContainedInStructure(
+        SET<IfcRelContainedInSpatialStructure> containedInStructure
+    ) {
+        this.containedInStructure = containedInStructure;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

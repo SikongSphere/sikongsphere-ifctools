@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -23,15 +24,15 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:58
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcBuildingElementProxy extends IfcBuildingElement {
+    private IfcElementCompositionEnum compositionType;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcBuildingElementProxy(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -39,7 +40,8 @@ public abstract class IfcFeatureElement extends IfcElement {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcIdentifier tag,
+        IfcElementCompositionEnum compositionType
     ) {
         super(
             globalId,
@@ -51,6 +53,20 @@ public abstract class IfcFeatureElement extends IfcElement {
             representation,
             tag
         );
+        this.compositionType = compositionType;
     }
 
+    public IfcElementCompositionEnum getCompositionType() {
+        return compositionType;
+    }
+
+    public void setCompositionType(IfcElementCompositionEnum compositionType) {
+        this.compositionType = compositionType;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }
