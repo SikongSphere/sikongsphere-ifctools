@@ -33,8 +33,6 @@ import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.enumeration.If
 public class IfcStair extends IfcBuildingElement {
     private IfcStairTypeEnum shapeType;
 
-    public IfcStair() {}
-
     @IfcParserConstructor
     public IfcStair(
         IfcGloballyUniqueId globalId,

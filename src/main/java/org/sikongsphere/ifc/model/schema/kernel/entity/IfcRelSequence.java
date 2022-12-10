@@ -14,52 +14,72 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcObjectTypeEnum;
+import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcSequenceEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcTimeMeasure;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAssigns
- *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022/12/10 21:15
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcRelAssigns extends IfcRelationship {
-    private SET<IfcObjectDefinition> relatedObjects;
-    private IfcObjectTypeEnum relatedObjectsType;
+public class IfcRelSequence extends IfcRelConnects {
+    private IfcProcess relatingProcess;
+    private IfcProcess relatedProcess;
+    private IfcTimeMeasure timeLag;
+    private IfcSequenceEnum sequenceType;
 
     @IfcParserConstructor
-    public IfcRelAssigns(
+    public IfcRelSequence(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        SET<IfcObjectDefinition> relatedObjects,
-        IfcObjectTypeEnum relatedObjectsType
+        IfcProcess relatingProcess,
+        IfcProcess relatedProcess,
+        IfcTimeMeasure timeLag,
+        IfcSequenceEnum sequenceType
     ) {
         super(globalId, ownerHistory, name, description);
-        this.relatedObjects = relatedObjects;
-        this.relatedObjectsType = relatedObjectsType;
+        this.relatingProcess = relatingProcess;
+        this.relatedProcess = relatedProcess;
+        this.timeLag = timeLag;
+        this.sequenceType = sequenceType;
     }
 
-    public SET<IfcObjectDefinition> getRelatedObjects() {
-        return relatedObjects;
+    public IfcProcess getRelatingProcess() {
+        return relatingProcess;
     }
 
-    public void setRelatedObjects(SET<IfcObjectDefinition> relatedObjects) {
-        this.relatedObjects = relatedObjects;
+    public void setRelatingProcess(IfcProcess relatingProcess) {
+        this.relatingProcess = relatingProcess;
     }
 
-    public IfcObjectTypeEnum getRelatedObjectsType() {
-        return relatedObjectsType;
+    public IfcProcess getRelatedProcess() {
+        return relatedProcess;
     }
 
-    public void setRelatedObjectsType(IfcObjectTypeEnum relatedObjectsType) {
-        this.relatedObjectsType = relatedObjectsType;
+    public void setRelatedProcess(IfcProcess relatedProcess) {
+        this.relatedProcess = relatedProcess;
+    }
+
+    public IfcTimeMeasure getTimeLag() {
+        return timeLag;
+    }
+
+    public void setTimeLag(IfcTimeMeasure timeLag) {
+        this.timeLag = timeLag;
+    }
+
+    public IfcSequenceEnum getSequenceType() {
+        return sequenceType;
+    }
+
+    public void setSequenceType(IfcSequenceEnum sequenceType) {
+        this.sequenceType = sequenceType;
     }
 
     @Override

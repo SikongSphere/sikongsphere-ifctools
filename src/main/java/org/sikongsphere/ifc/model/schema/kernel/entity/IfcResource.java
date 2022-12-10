@@ -11,33 +11,42 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAggregates
- *
  * @author zaiyuan
- * @date 2022/9/1 08:15
+ * @date 2022/12/10 21:15
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcResource extends IfcObject {
+    @IfcInverseParameter
+    private SET<IfcRelAssignsToResource> resourceOf;
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRelAggregates extends IfcRelDecomposes {
     @IfcParserConstructor
-    public IfcRelAggregates(
+    public IfcResource(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcObjectDefinition relatingObject,
-        SET<IfcObjectDefinition> relatedObjects
+        IfcLabel objectType
     ) {
-        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
+        super(globalId, ownerHistory, name, description, objectType);
+    }
+
+    public SET<IfcRelAssignsToResource> getResourceOf() {
+        return resourceOf;
+    }
+
+    public void setResourceOf(SET<IfcRelAssignsToResource> resourceOf) {
+        this.resourceOf = resourceOf;
     }
 }

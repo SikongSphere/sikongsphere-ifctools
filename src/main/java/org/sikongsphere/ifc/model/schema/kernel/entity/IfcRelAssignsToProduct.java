@@ -11,8 +11,15 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcObjectTypeEnum;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * This objectified relationship IfcRelAssignsToProduct handles the assignment of objects (subtypes of IfcObject)
@@ -25,9 +32,17 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 public class IfcRelAssignsToProduct extends IfcRelAssigns {
     private IfcProduct relatingProduct;
 
-    public IfcRelAssignsToProduct() {}
-
-    public IfcRelAssignsToProduct(IfcProduct relatingProduct) {
+    @IfcParserConstructor
+    public IfcRelAssignsToProduct(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcObjectDefinition> relatedObjects,
+        IfcObjectTypeEnum relatedObjectsType,
+        IfcProduct relatingProduct
+    ) {
+        super(globalId, ownerHistory, name, description, relatedObjects, relatedObjectsType);
         this.relatingProduct = relatingProduct;
     }
 
@@ -37,5 +52,11 @@ public class IfcRelAssignsToProduct extends IfcRelAssigns {
 
     public void setRelatingProduct(IfcProduct relatingProduct) {
         this.relatingProduct = relatingProduct;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

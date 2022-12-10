@@ -29,6 +29,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcWall extends IfcBuildingElement {
+
     public IfcWall() {}
 
     @IfcParserConstructor

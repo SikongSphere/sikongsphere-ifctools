@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
@@ -29,9 +31,13 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/10/13 12:13
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public class IfcElement extends IfcProduct implements IfcObjectReferenceSelect {
+public abstract class IfcElement extends IfcProduct implements IfcObjectReferenceSelect {
+    @IfcOptionField
     private IfcIdentifier tag;
     // ToDO Inverse 属性
+    // private SET<IfcRelFillsElement> fillsVoids;
+    // private SET<IfcRelConnectsElements> connectedTo;
+    // private SET<IfcRelCov>
 
     public IfcElement() {}
 

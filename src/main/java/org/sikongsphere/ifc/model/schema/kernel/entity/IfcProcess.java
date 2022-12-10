@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -21,23 +22,50 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAggregates
- *
  * @author zaiyuan
- * @date 2022/9/1 08:15
+ * @date 2022/12/10 21:15
  */
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcProcess extends IfcObject {
+    @IfcInverseParameter
+    private SET<IfcRelAssignsToProcess> operatesOn;
+    @IfcInverseParameter
+    private SET<IfcRelSequence> isSuccessorFrom;
+    @IfcInverseParameter
+    private SET<IfcRelSequence> isPredecessorTo;
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRelAggregates extends IfcRelDecomposes {
     @IfcParserConstructor
-    public IfcRelAggregates(
+    public IfcProcess(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcObjectDefinition relatingObject,
-        SET<IfcObjectDefinition> relatedObjects
+        IfcLabel objectType
     ) {
-        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
+        super(globalId, ownerHistory, name, description, objectType);
+    }
+
+    public SET<IfcRelAssignsToProcess> getOperatesOn() {
+        return operatesOn;
+    }
+
+    public void setOperatesOn(SET<IfcRelAssignsToProcess> operatesOn) {
+        this.operatesOn = operatesOn;
+    }
+
+    public SET<IfcRelSequence> getIsSuccessorFrom() {
+        return isSuccessorFrom;
+    }
+
+    public void setIsSuccessorFrom(SET<IfcRelSequence> isSuccessorFrom) {
+        this.isSuccessorFrom = isSuccessorFrom;
+    }
+
+    public SET<IfcRelSequence> getIsPredecessorTo() {
+        return isPredecessorTo;
+    }
+
+    public void setIsPredecessorTo(SET<IfcRelSequence> isPredecessorTo) {
+        this.isPredecessorTo = isPredecessorTo;
     }
 }

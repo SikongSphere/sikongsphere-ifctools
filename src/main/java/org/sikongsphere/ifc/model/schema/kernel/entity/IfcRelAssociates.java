@@ -55,4 +55,10 @@ public class IfcRelAssociates extends IfcRelationship {
     public void setRelatedObjects(SET<IfcRoot> relatedObjects) {
         this.relatedObjects = relatedObjects;
     }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

@@ -55,4 +55,10 @@ public class IfcPropertySet extends IfcPropertySetDefinition {
     public void addProperty(IfcProperty property) {
         hasProperties.add(property);
     }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

@@ -12,60 +12,73 @@ package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcObjectTypeEnum;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Wang Bohong
- * @date 2022/10/11 21:25
+ * @author zaiyuan
+ * @date 2022/12/10 22:56
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcPropertySetDefinition extends IfcPropertyDefinition {
-
-    @IfcInverseParameter
-    private SET<IfcRelDefinesByProperties> propertyDefinitionOf = new SET<>();
-    @IfcInverseParameter
-    private SET<IfcTypeObject> definesType = new SET<>();
-
-    public IfcPropertySetDefinition() {}
+public class IfcProxy extends IfcProduct {
+    private IfcObjectTypeEnum proxyType;
+    @IfcOptionField
+    private IfcLabel tag;
 
     @IfcParserConstructor
-    public IfcPropertySetDefinition(
+    public IfcProxy(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
-        IfcText description
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcObjectTypeEnum proxyType,
+        IfcLabel tag
     ) {
-        super(globalId, ownerHistory, name, description);
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation
+        );
+        this.proxyType = proxyType;
+        this.tag = tag;
     }
 
-    public SET<IfcRelDefinesByProperties> getPropertyDefinitionOf() {
-        return propertyDefinitionOf;
+    public IfcObjectTypeEnum getProxyType() {
+        return proxyType;
     }
 
-    public void setPropertyDefinitionOf(SET<IfcRelDefinesByProperties> propertyDefinitionOf) {
-        this.propertyDefinitionOf = propertyDefinitionOf;
+    public void setProxyType(IfcObjectTypeEnum proxyType) {
+        this.proxyType = proxyType;
     }
 
-    public SET<IfcTypeObject> getDefinesType() {
-        return definesType;
+    public IfcLabel getTag() {
+        return tag;
     }
 
-    public void setDefinesType(SET<IfcTypeObject> definesType) {
-        this.definesType = definesType;
+    public void setTag(IfcLabel tag) {
+        this.tag = tag;
     }
 
-    public void addPropertyDefinitionOf(IfcRelDefinesByProperties properties) {
-        propertyDefinitionOf.add(properties);
-    }
-
-    public void addDefinesType(IfcTypeObject typeObject) {
-        definesType.add(typeObject);
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

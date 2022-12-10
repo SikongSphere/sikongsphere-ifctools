@@ -41,18 +41,6 @@ public class IfcProject extends IfcObject {
 
     public IfcProject() {}
 
-    public IfcProject(
-        IfcLabel longName,
-        IfcLabel phase,
-        SET<IfcRepresentationContext> representationContexts,
-        IfcUnitAssignment unitsInContext
-    ) {
-        this.longName = longName;
-        this.phase = phase;
-        this.representationContexts = representationContexts;
-        this.unitsInContext = unitsInContext;
-    }
-
     @IfcParserConstructor
     public IfcProject(
         IfcGloballyUniqueId globalId,

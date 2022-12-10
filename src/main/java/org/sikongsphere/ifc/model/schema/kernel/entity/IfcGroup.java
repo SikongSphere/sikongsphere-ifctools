@@ -11,8 +11,14 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcGroup
@@ -22,5 +28,25 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcGroup extends IfcObject {
+    @IfcInverseParameter
     private IfcRelAssignsToGroup isGroupedBy;
+
+    @IfcParserConstructor
+    public IfcGroup(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType
+    ) {
+        super(globalId, ownerHistory, name, description, objectType);
+    }
+
+    public IfcRelAssignsToGroup getIsGroupedBy() {
+        return isGroupedBy;
+    }
+
+    public void setIsGroupedBy(IfcRelAssignsToGroup isGroupedBy) {
+        this.isGroupedBy = isGroupedBy;
+    }
 }

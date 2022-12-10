@@ -70,4 +70,10 @@ public abstract class IfcRelDecomposes extends IfcRelationship {
     public void addRelatedObjects(SET<IfcObjectDefinition> objects) {
         objects.getObjects().forEach(relatedObjects::add);
     }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

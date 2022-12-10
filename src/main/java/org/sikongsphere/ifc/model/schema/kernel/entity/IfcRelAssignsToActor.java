@@ -11,33 +11,65 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcObjectTypeEnum;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcActorRole;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAggregates
+ * IfcRelAssignsToActor
  *
  * @author zaiyuan
- * @date 2022/9/1 08:15
+ * @date 2022/12/10 21:15
  */
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
+public class IfcRelAssignsToActor extends IfcRelAssigns {
+    private IfcActor relatingActor;
+    @IfcOptionField
+    private IfcActorRole actingRole;
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRelAggregates extends IfcRelDecomposes {
     @IfcParserConstructor
-    public IfcRelAggregates(
+    public IfcRelAssignsToActor(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcObjectDefinition relatingObject,
-        SET<IfcObjectDefinition> relatedObjects
+        SET<IfcObjectDefinition> relatedObjects,
+        IfcObjectTypeEnum relatedObjectsType,
+        IfcActor relatingActor,
+        IfcActorRole actingRole
     ) {
-        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
+        super(globalId, ownerHistory, name, description, relatedObjects, relatedObjectsType);
+        this.relatingActor = relatingActor;
+        this.actingRole = actingRole;
+    }
+
+    public IfcActor getRelatingActor() {
+        return relatingActor;
+    }
+
+    public void setRelatingActor(IfcActor relatingActor) {
+        this.relatingActor = relatingActor;
+    }
+
+    public IfcActorRole getActingRole() {
+        return actingRole;
+    }
+
+    public void setActingRole(IfcActorRole actingRole) {
+        this.actingRole = actingRole;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

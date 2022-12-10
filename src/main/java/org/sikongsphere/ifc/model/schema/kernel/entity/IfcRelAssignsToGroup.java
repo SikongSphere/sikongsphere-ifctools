@@ -11,8 +11,15 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcObjectTypeEnum;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * IfcRelAssignsToGroup
@@ -23,4 +30,32 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcRelAssignsToGroup extends IfcRelAssigns {
     private IfcGroup relatingGroup;
+
+    @IfcParserConstructor
+    public IfcRelAssignsToGroup(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcObjectDefinition> relatedObjects,
+        IfcObjectTypeEnum relatedObjectsType,
+        IfcGroup relatingGroup
+    ) {
+        super(globalId, ownerHistory, name, description, relatedObjects, relatedObjectsType);
+        this.relatingGroup = relatingGroup;
+    }
+
+    public IfcGroup getRelatingGroup() {
+        return relatingGroup;
+    }
+
+    public void setRelatingGroup(IfcGroup relatingGroup) {
+        this.relatingGroup = relatingGroup;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

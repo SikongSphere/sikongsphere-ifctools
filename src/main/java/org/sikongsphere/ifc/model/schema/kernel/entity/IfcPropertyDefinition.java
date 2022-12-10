@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
@@ -25,7 +27,8 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcPropertyDefinition extends IfcRoot {
-    // SET<IfcRelAssociates> relatedObjects;
+    @IfcInverseParameter
+    private SET<IfcRelAssociates> hasAssociations;
 
     public IfcPropertyDefinition() {}
 
@@ -39,4 +42,11 @@ public class IfcPropertyDefinition extends IfcRoot {
         super(globalId, ownerHistory, name, description);
     }
 
+    public SET<IfcRelAssociates> getHasAssociations() {
+        return hasAssociations;
+    }
+
+    public void setHasAssociations(SET<IfcRelAssociates> hasAssociations) {
+        this.hasAssociations = hasAssociations;
+    }
 }

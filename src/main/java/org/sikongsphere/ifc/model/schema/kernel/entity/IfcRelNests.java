@@ -21,23 +21,14 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAggregates
- *
  * @author zaiyuan
- * @date 2022/9/1 08:15
+ * @date 2022/12/10 21:15
  */
-
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRelAggregates extends IfcRelDecomposes {
-    @IfcParserConstructor
-    public IfcRelAggregates(
-        IfcGloballyUniqueId globalId,
-        IfcOwnerHistory ownerHistory,
-        IfcLabel name,
-        IfcText description,
-        IfcObjectDefinition relatingObject,
-        SET<IfcObjectDefinition> relatedObjects
-    ) {
-        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
+public class IfcRelNests extends IfcRelDecomposes {
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

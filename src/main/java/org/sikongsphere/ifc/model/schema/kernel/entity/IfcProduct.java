@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
@@ -31,18 +33,13 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/09/01 22:56
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public class IfcProduct extends IfcObject {
+public abstract class IfcProduct extends IfcObject {
     private IfcObjectPlacement objectPlacement;
     private IfcProductRepresentation representation;
-
-    // private SET<IfcRelAssignsToProduct> referencedBy;
+    @IfcInverseParameter
+    private SET<IfcRelAssignsToProduct> referencedBy;
 
     public IfcProduct() {}
-
-    public IfcProduct(IfcObjectPlacement objectPlacement, IfcProductRepresentation representation) {
-        this.objectPlacement = objectPlacement;
-        this.representation = representation;
-    }
 
     @IfcParserConstructor
     public IfcProduct(
@@ -75,11 +72,11 @@ public class IfcProduct extends IfcObject {
         this.representation = representation;
     }
 
-    // public SET<IfcRelAssignsToProduct> getReferencedBy() {
-    // return referencedBy;
-    // }
-    //
-    // public void setReferencedBy(SET<IfcRelAssignsToProduct> referencedBy) {
-    // this.referencedBy = referencedBy;
-    // }
+    public SET<IfcRelAssignsToProduct> getReferencedBy() {
+        return referencedBy;
+    }
+
+    public void setReferencedBy(SET<IfcRelAssignsToProduct> referencedBy) {
+        this.referencedBy = referencedBy;
+    }
 }

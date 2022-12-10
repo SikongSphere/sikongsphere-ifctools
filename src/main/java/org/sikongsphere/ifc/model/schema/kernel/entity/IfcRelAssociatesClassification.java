@@ -15,29 +15,38 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.externalreference.selectType.IfcClassificationNotationSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAggregates
- *
  * @author zaiyuan
- * @date 2022/9/1 08:15
+ * @date 2022/12/10 21:15
  */
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
+public class IfcRelAssociatesClassification extends IfcRelAssociates {
+    private IfcClassificationNotationSelect relatingClassfication;
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRelAggregates extends IfcRelDecomposes {
     @IfcParserConstructor
-    public IfcRelAggregates(
+    public IfcRelAssociatesClassification(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcObjectDefinition relatingObject,
-        SET<IfcObjectDefinition> relatedObjects
+        SET<IfcRoot> relatedObjects,
+        IfcClassificationNotationSelect relatingClassfication
     ) {
-        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
+        super(globalId, ownerHistory, name, description, relatedObjects);
+        this.relatingClassfication = relatingClassfication;
+    }
+
+    public IfcClassificationNotationSelect getRelatingClassfication() {
+        return relatingClassfication;
+    }
+
+    public void setRelatingClassfication(IfcClassificationNotationSelect relatingClassfication) {
+        this.relatingClassfication = relatingClassfication;
     }
 }

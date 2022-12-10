@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -28,8 +30,12 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcTypeObject extends IfcObjectDefinition {
+    @IfcOptionField
     private IfcLabel applicableOccurrence;
+    @IfcOptionField
     private SET<IfcPropertySetDefinition> hasPropertySets;
+    @IfcInverseParameter
+    private SET<IfcRelDefinesByType> objectTypeOf;
 
     public IfcTypeObject() {}
 
@@ -61,5 +67,19 @@ public class IfcTypeObject extends IfcObjectDefinition {
 
     public void setHasPropertySets(SET<IfcPropertySetDefinition> hasPropertySets) {
         this.hasPropertySets = hasPropertySets;
+    }
+
+    public SET<IfcRelDefinesByType> getObjectTypeOf() {
+        return objectTypeOf;
+    }
+
+    public void setObjectTypeOf(SET<IfcRelDefinesByType> objectTypeOf) {
+        this.objectTypeOf = objectTypeOf;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

@@ -31,8 +31,6 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 public class IfcCovering extends IfcBuildingElement {
     private IfcCoveringTypeEnum predefinedType;
 
-    public IfcCovering() {}
-
     @IfcParserConstructor
     public IfcCovering(
         IfcGloballyUniqueId globalId,

@@ -17,27 +17,43 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcProperty;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAggregates
- *
  * @author zaiyuan
- * @date 2022/9/1 08:15
+ * @date 2022/12/10 21:15
  */
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
+public class IfcRelOverridesProperties extends IfcRelDefinesByProperties {
+    private SET<IfcProperty> overridingProperties;
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRelAggregates extends IfcRelDecomposes {
     @IfcParserConstructor
-    public IfcRelAggregates(
+    public IfcRelOverridesProperties(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcObjectDefinition relatingObject,
-        SET<IfcObjectDefinition> relatedObjects
+        IfcObject relatedObject,
+        IfcPropertySetDefinition relatingPropertyDefinition,
+        SET<IfcProperty> overridingProperties
     ) {
-        super(globalId, ownerHistory, name, description, relatingObject, relatedObjects);
+        super(globalId, ownerHistory, name, description, relatedObject, relatingPropertyDefinition);
+        this.overridingProperties = overridingProperties;
+    }
+
+    public SET<IfcProperty> getOverridingProperties() {
+        return overridingProperties;
+    }
+
+    public void setOverridingProperties(SET<IfcProperty> overridingProperties) {
+        this.overridingProperties = overridingProperties;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

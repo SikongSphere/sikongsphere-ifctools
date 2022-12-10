@@ -11,9 +11,12 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
@@ -33,27 +36,19 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/09/01 22:57
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public class IfcSpatialStructureElement extends IfcProduct {
+public abstract class IfcSpatialStructureElement extends IfcProduct {
+    @IfcOptionField
     private IfcLabel longName;
     private IfcElementCompositionEnum compositionType;
 
-    // private SET<IfcRelReferencedInSpatialStructure> referenceElements;
-    // private SET<IfcRelServicesBuildings> servicedBySystems;
-    // private SET<IfcRelContainedInSpatialStructure> containsElements;
+    @IfcInverseParameter
+    private SET<IfcRelReferencedInSpatialStructure> referenceElements;
+    @IfcInverseParameter
+    private SET<IfcRelServicesBuildings> servicedBySystems;
+    @IfcInverseParameter
+    private SET<IfcRelContainedInSpatialStructure> containsElements;
 
     public IfcSpatialStructureElement() {}
-
-    public IfcSpatialStructureElement(IfcLabel longName, IfcElementCompositionEnum compositionType
-    // SET<IfcRelReferencedInSpatialStructure> referenceElements,
-    // SET<IfcRelServicesBuildings> servicedBySystems,
-    // SET<IfcRelContainedInSpatialStructure> containsElements
-    ) {
-        this.longName = longName;
-        this.compositionType = compositionType;
-        // this.referenceElements = referenceElements;
-        // this.servicedBySystems = servicedBySystems;
-        // this.containsElements = containsElements;
-    }
 
     @IfcParserConstructor
     public IfcSpatialStructureElement(
@@ -96,27 +91,33 @@ public class IfcSpatialStructureElement extends IfcProduct {
         this.compositionType = compositionType;
     }
 
-    // public SET<IfcRelReferencedInSpatialStructure> getReferenceElements() {
-    // return referenceElements;
-    // }
-    //
-    // public void setReferenceElements(SET<IfcRelReferencedInSpatialStructure> referenceElements) {
-    // this.referenceElements = referenceElements;
-    // }
-    //
-    // public SET<IfcRelServicesBuildings> getServicedBySystems() {
-    // return servicedBySystems;
-    // }
-    //
-    // public void setServicedBySystems(SET<IfcRelServicesBuildings> servicedBySystems) {
-    // this.servicedBySystems = servicedBySystems;
-    // }
-    //
-    // public SET<IfcRelContainedInSpatialStructure> getContainsElements() {
-    // return containsElements;
-    // }
-    //
-    // public void setContainsElements(SET<IfcRelContainedInSpatialStructure> containsElements) {
-    // this.containsElements = containsElements;
-    // }
+    public SET<IfcRelReferencedInSpatialStructure> getReferenceElements() {
+        return referenceElements;
+    }
+
+    public void setReferenceElements(SET<IfcRelReferencedInSpatialStructure> referenceElements) {
+        this.referenceElements = referenceElements;
+    }
+
+    public SET<IfcRelServicesBuildings> getServicedBySystems() {
+        return servicedBySystems;
+    }
+
+    public void setServicedBySystems(SET<IfcRelServicesBuildings> servicedBySystems) {
+        this.servicedBySystems = servicedBySystems;
+    }
+
+    public SET<IfcRelContainedInSpatialStructure> getContainsElements() {
+        return containsElements;
+    }
+
+    public void setContainsElements(SET<IfcRelContainedInSpatialStructure> containsElements) {
+        this.containsElements = containsElements;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

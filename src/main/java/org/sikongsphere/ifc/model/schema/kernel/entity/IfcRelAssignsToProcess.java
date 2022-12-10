@@ -11,55 +11,59 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.kernel.enumeration.IfcObjectTypeEnum;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcActorRole;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcMeasureWithUnit;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelAssigns
- *
  * @author zaiyuan
- * @date 2022/8/31 21:15
+ * @date 2022/12/10 21:15
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public abstract class IfcRelAssigns extends IfcRelationship {
-    private SET<IfcObjectDefinition> relatedObjects;
-    private IfcObjectTypeEnum relatedObjectsType;
+public class IfcRelAssignsToProcess extends IfcRelAssigns {
+    private IfcProcess relatingProcess;
+    @IfcOptionField
+    private IfcMeasureWithUnit quantityInProcess;
 
     @IfcParserConstructor
-    public IfcRelAssigns(
+    public IfcRelAssignsToProcess(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
         SET<IfcObjectDefinition> relatedObjects,
-        IfcObjectTypeEnum relatedObjectsType
+        IfcObjectTypeEnum relatedObjectsType,
+        IfcProcess relatingProcess,
+        IfcMeasureWithUnit quantityInProcess
     ) {
-        super(globalId, ownerHistory, name, description);
-        this.relatedObjects = relatedObjects;
-        this.relatedObjectsType = relatedObjectsType;
+        super(globalId, ownerHistory, name, description, relatedObjects, relatedObjectsType);
+        this.relatingProcess = relatingProcess;
+        this.quantityInProcess = quantityInProcess;
     }
 
-    public SET<IfcObjectDefinition> getRelatedObjects() {
-        return relatedObjects;
+    public IfcProcess getRelatingProcess() {
+        return relatingProcess;
     }
 
-    public void setRelatedObjects(SET<IfcObjectDefinition> relatedObjects) {
-        this.relatedObjects = relatedObjects;
+    public void setRelatingProcess(IfcProcess relatingProcess) {
+        this.relatingProcess = relatingProcess;
     }
 
-    public IfcObjectTypeEnum getRelatedObjectsType() {
-        return relatedObjectsType;
+    public IfcMeasureWithUnit getQuantityInProcess() {
+        return quantityInProcess;
     }
 
-    public void setRelatedObjectsType(IfcObjectTypeEnum relatedObjectsType) {
-        this.relatedObjectsType = relatedObjectsType;
+    public void setQuantityInProcess(IfcMeasureWithUnit quantityInProcess) {
+        this.quantityInProcess = quantityInProcess;
     }
 
     @Override

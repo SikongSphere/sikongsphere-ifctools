@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -30,7 +31,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public class IfcTypeProduct extends IfcTypeObject {
+    @IfcOptionField
     private LIST<IfcRepresentationMap> representationMaps;
+    @IfcOptionField
     private IfcLabel tag;
 
     public IfcTypeProduct() {}
@@ -65,5 +68,11 @@ public class IfcTypeProduct extends IfcTypeObject {
 
     public void setTag(IfcLabel tag) {
         this.tag = tag;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }
