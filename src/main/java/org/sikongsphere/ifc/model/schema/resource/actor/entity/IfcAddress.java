@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.actor.enumeration.IfcAddressTypeEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * This class is used to encapsulate address information
@@ -26,7 +27,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
  * @date 2022-08-13 11:44:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAddress extends IfcAbstractClass {
+public class IfcAddress extends IfcAbstractClass implements IfcObjectReferenceSelect {
     private IfcAddressTypeEnum purpose;
     private IfcText description;
     private IfcLabel userDefinedPurpose;

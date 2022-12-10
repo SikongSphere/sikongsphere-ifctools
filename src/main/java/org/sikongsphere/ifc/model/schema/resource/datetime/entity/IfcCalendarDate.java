@@ -18,15 +18,16 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcDayInMonthNumber;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcMonthInYearNumber;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcYearNumber;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * @author Wang Bohong
  * @date 2022/10/28 09:57
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcCalendarDate extends IfcAbstractClass {
+public class IfcCalendarDate extends IfcAbstractClass implements IfcObjectReferenceSelect {
     private IfcDayInMonthNumber dayComponent;
-    private IfcMonthInYearNumber donthComponent;
+    private IfcMonthInYearNumber monthComponent;
     private IfcYearNumber yearComponent;
 
     public IfcCalendarDate() {}
@@ -34,11 +35,11 @@ public class IfcCalendarDate extends IfcAbstractClass {
     @IfcParserConstructor
     public IfcCalendarDate(
         IfcDayInMonthNumber dayComponent,
-        IfcMonthInYearNumber donthComponent,
+        IfcMonthInYearNumber monthComponent,
         IfcYearNumber yearComponent
     ) {
         this.dayComponent = dayComponent;
-        this.donthComponent = donthComponent;
+        this.monthComponent = monthComponent;
         this.yearComponent = yearComponent;
     }
 
@@ -50,12 +51,12 @@ public class IfcCalendarDate extends IfcAbstractClass {
         this.dayComponent = dayComponent;
     }
 
-    public IfcMonthInYearNumber getDonthComponent() {
-        return donthComponent;
+    public IfcMonthInYearNumber getMonthComponent() {
+        return monthComponent;
     }
 
-    public void setDonthComponent(IfcMonthInYearNumber donthComponent) {
-        this.donthComponent = donthComponent;
+    public void setMonthComponent(IfcMonthInYearNumber monthComponent) {
+        this.monthComponent = monthComponent;
     }
 
     public IfcYearNumber getYearComponent() {

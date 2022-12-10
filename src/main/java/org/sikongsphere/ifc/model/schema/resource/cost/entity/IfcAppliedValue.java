@@ -23,6 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTim
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcMeasureWithUnit;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * An IfcAppliedValue is an abstract supertype that specifies the common attributes for cost and environmental values
@@ -32,7 +33,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcMeasureWithU
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAppliedValue extends IfcAbstractClass {
+public class IfcAppliedValue extends IfcAbstractClass implements IfcObjectReferenceSelect {
     @IfcOptionField
     private IfcLabel name;
     @IfcOptionField

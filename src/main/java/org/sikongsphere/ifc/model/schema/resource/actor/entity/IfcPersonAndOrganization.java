@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelect;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * This class is used to encapsulate actor person and organization information
@@ -25,7 +26,10 @@ import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelec
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcPersonAndOrganization extends IfcAbstractClass implements IfcActorSelect {
+public class IfcPersonAndOrganization extends IfcAbstractClass
+    implements
+        IfcActorSelect,
+        IfcObjectReferenceSelect {
 
     /**
      * @

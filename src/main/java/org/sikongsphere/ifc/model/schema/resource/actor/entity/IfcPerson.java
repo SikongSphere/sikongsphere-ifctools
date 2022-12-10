@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * This class is used to encapsulate person information
@@ -27,7 +28,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022-08-13 11:44:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcPerson extends IfcAbstractClass implements IfcActorSelect {
+public class IfcPerson extends IfcAbstractClass
+    implements
+        IfcActorSelect,
+        IfcObjectReferenceSelect {
     private IfcIdentifier id;
     private IfcLabel familyName;
     private IfcLabel givenName;

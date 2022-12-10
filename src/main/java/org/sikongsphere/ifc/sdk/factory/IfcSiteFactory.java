@@ -11,10 +11,10 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcRelAggregates;
-import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcBuilding;
-import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcSite;
-import org.sikongsphere.ifc.model.schema.core.productextension.enumeration.IfcElementCompositionEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelAggregates;
+import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcBuilding;
+import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcSite;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 

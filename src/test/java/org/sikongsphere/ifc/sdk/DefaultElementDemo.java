@@ -10,10 +10,6 @@
 */
 package org.sikongsphere.ifc.sdk;
 
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcProject;
-import org.sikongsphere.ifc.sdk.factory.IfcProjectFactory;
-import org.sikongsphere.ifc.sdk.handler.StepHandler;
-
 import java.lang.reflect.InvocationTargetException;
 
 public class DefaultElementDemo {
