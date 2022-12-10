@@ -11,9 +11,14 @@
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
+import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
  * A instance of the class is an element of product data that participates in one or more representations
@@ -23,6 +28,31 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
  * @date 2022/9/1 13:29
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRepresentationItem extends IfcAbstractClass {
-    // ToDO Inverse IfcPresentationLayerAssignment, IfcStyledItem
+public abstract class IfcRepresentationItem extends IfcAbstractClass {
+    @IfcInverseParameter
+    private SET<IfcPresentationLayerAssignment> layerAssignments;
+    @IfcInverseParameter
+    private SET<IfcStyledItem> styledByItem;
+
+    @IfcParserConstructor
+    public IfcRepresentationItem() {
+        this.layerAssignments = new SET<>();
+        this.styledByItem = new SET<>();
+    }
+
+    public SET<IfcPresentationLayerAssignment> getLayerAssignments() {
+        return layerAssignments;
+    }
+
+    public void setLayerAssignments(SET<IfcPresentationLayerAssignment> layerAssignments) {
+        this.layerAssignments = layerAssignments;
+    }
+
+    public SET<IfcStyledItem> getStyledByItem() {
+        return styledByItem;
+    }
+
+    public void setStyledByItem(SET<IfcStyledItem> styledByItem) {
+        this.styledByItem = styledByItem;
+    }
 }

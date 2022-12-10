@@ -13,13 +13,10 @@ package org.sikongsphere.ifc.model.schema.resource.topology.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
- * @author GaoSU
- * @date 2022/10/25 13:40
+ * @author zaiyuan
+ * @date 2022/12/10 13:40
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcLoop extends IfcTopologicalRepresentationItem {}
+public class IfcOpenShell extends IfcConnectedFaceSet {}

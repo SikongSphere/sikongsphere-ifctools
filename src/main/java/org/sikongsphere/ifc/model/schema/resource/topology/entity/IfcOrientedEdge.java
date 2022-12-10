@@ -14,31 +14,49 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
-import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
+import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 
 /**
- * @author GaoSU
- * @date 2022/11/01 22:44
+ * @author zaiyuan
+ * @date 2022/12/10 13:40
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcPolyLoop extends IfcLoop {
-    // TODO UNIQUE
-    private LIST<IfcCartesianPoint> polygon;
+public class IfcOrientedEdge extends IfcEdge {
+    private IfcEdge edgeElement;
+    private BOOLEAN orientation;
 
-    public IfcPolyLoop() {}
+    // TODO DERIVE
+
+    public IfcOrientedEdge(IfcVertex edgeStart, IfcVertex edgeEnd) {
+        super(edgeStart, edgeEnd);
+    }
 
     @IfcParserConstructor
-    public IfcPolyLoop(LIST<IfcCartesianPoint> polygon) {
-        this.polygon = polygon;
+    public IfcOrientedEdge(
+        IfcVertex edgeStart,
+        IfcVertex edgeEnd,
+        IfcEdge edgeElement,
+        BOOLEAN orientation
+    ) {
+        super(edgeStart, edgeEnd);
+        this.edgeElement = edgeElement;
+        this.orientation = orientation;
     }
 
-    public LIST<IfcCartesianPoint> getPolygon() {
-        return polygon;
+    public IfcEdge getEdgeElement() {
+        return edgeElement;
     }
 
-    public void setPolygon(LIST<IfcCartesianPoint> polygon) {
-        this.polygon = polygon;
+    public void setEdgeElement(IfcEdge edgeElement) {
+        this.edgeElement = edgeElement;
+    }
+
+    public BOOLEAN getOrientation() {
+        return orientation;
+    }
+
+    public void setOrientation(BOOLEAN orientation) {
+        this.orientation = orientation;
     }
 
     @Override
