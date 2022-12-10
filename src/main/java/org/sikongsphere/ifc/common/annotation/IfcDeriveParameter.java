@@ -10,30 +10,16 @@
 */
 package org.sikongsphere.ifc.common.annotation;
 
-import org.sikongsphere.ifc.common.enumeration.IfcLayer;
-import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.common.enumeration.IfcVersion;
-import org.sikongsphere.ifc.model.fileelement.IfcLogicNode;
-
 import java.lang.annotation.*;
 
 /**
- * This is an annotation demo
+ * This is an annotation for inverse Parameter
  *
  * @Author: zaiyuan
- * @Date: 2022/09/10 11:47
+ * @Date: 2022/12/10 21:47
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-public @interface IfcClass {
-    IfcLayer layer();
-
-    IfcType type();
-
-    IfcVersion version() default IfcVersion.IFC_2X3;
-
-    boolean isStepElement() default true;
-
-    Class<?> defaultClass() default IfcLogicNode.class;
+@Target(ElementType.FIELD)
+public @interface IfcDeriveParameter {
 }
