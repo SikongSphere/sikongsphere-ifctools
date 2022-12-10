@@ -23,8 +23,6 @@ import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcFaceOuterBound extends IfcFaceBound {
 
-    public IfcFaceOuterBound() {}
-
     @IfcParserConstructor
     public IfcFaceOuterBound(IfcLoop bound, BOOLEAN orientation) {
         super(bound, orientation);

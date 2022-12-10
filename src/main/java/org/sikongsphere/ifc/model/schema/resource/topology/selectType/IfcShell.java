@@ -8,18 +8,19 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.topology.entity;
+package org.sikongsphere.ifc.model.schema.resource.topology.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
- * @author GaoSU
- * @date 2022/10/25 13:40
+ * This type collects together, for reference when constructing more complex models, the subtypes which have the
+ * characteristics of a shell. A shell is a connected object of fixed dimensionality d = 0; 1; or 2, typically used to
+ * bound a region. The domain of a shell, if present, includes its bounds and 0 £ X < ¥ .
+ *
+ * @author zaiyuan
+ * @date 2022/9/2 08:15
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcLoop extends IfcTopologicalRepresentationItem {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+public interface IfcShell {}

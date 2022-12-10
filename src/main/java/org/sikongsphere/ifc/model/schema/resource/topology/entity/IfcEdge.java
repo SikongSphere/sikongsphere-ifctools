@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.topology.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
@@ -18,8 +19,33 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entit
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
- * @author GaoSU
- * @date 2022/10/25 13:40
+ * @author zaiyuan
+ * @date 2022/12/10 23:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcLoop extends IfcTopologicalRepresentationItem {}
+public class IfcEdge extends IfcTopologicalRepresentationItem {
+    private IfcVertex edgeStart;
+    private IfcVertex edgeEnd;
+
+    @IfcParserConstructor
+    public IfcEdge(IfcVertex edgeStart, IfcVertex edgeEnd) {
+        this.edgeStart = edgeStart;
+        this.edgeEnd = edgeEnd;
+    }
+
+    public IfcVertex getEdgeStart() {
+        return edgeStart;
+    }
+
+    public void setEdgeStart(IfcVertex edgeStart) {
+        this.edgeStart = edgeStart;
+    }
+
+    public IfcVertex getEdgeEnd() {
+        return edgeEnd;
+    }
+
+    public void setEdgeEnd(IfcVertex edgeEnd) {
+        this.edgeEnd = edgeEnd;
+    }
+}

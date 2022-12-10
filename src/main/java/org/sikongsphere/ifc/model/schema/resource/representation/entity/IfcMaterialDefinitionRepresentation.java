@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.material.entity.IfcMaterial;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -34,7 +35,7 @@ public class IfcMaterialDefinitionRepresentation extends IfcProductRepresentatio
     public IfcMaterialDefinitionRepresentation(
         IfcLabel name,
         IfcText description,
-        SET<IfcRepresentation> representations,
+        LIST<IfcRepresentation> representations,
         IfcMaterial representedMaterial
     ) {
         super(name, description, representations);
