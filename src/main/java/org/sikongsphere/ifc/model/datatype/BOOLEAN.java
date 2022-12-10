@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.datatype;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 /**
@@ -42,5 +43,16 @@ public class BOOLEAN extends IfcDataType {
 
     public void setValue(boolean value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        String flag;
+        if (value) {
+            flag = StringConstant.TRUE;
+        } else {
+            flag = StringConstant.FALSE;
+        }
+        return String.format(".%s.", flag);
     }
 }

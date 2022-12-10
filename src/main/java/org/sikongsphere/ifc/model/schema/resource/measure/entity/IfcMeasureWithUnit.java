@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIUnitN
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
+import java.util.Locale;
+
 /**
  * @author Gao Su
  * @date 2022/10/14 17:20
@@ -44,8 +46,14 @@ public class IfcMeasureWithUnit extends IfcAbstractClass implements IfcUnit {
         this.unitComponent = new IfcSIUnit(unitPrefix, unitName);
     }
 
-    public IfcValue getValueComponent() {
-        return valueComponent;
+    public String getValueComponent() {
+        String format = String.format(
+            "%s(%s)",
+            valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            valueComponent
+        );
+
+        return format;
     }
 
     public void setValueComponent(IfcValue valueComponent) {

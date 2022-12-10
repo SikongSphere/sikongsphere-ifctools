@@ -25,7 +25,7 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @date 2022/10/14 16:14
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcCompoundPlaneAngleMeasure {
+public class IfcCompoundPlaneAngleMeasure extends LIST<INTEGER> {
     private LIST<INTEGER> value;
 
     public LIST<INTEGER> getValue() {

@@ -14,14 +14,18 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.SCIENTIFICNOTATION;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
+
+import java.util.Optional;
 
 /**
  * A geometric representation context is a representation context
@@ -72,16 +76,26 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.trueNorth = trueNorth;
     }
 
-    public IfcDimensionCount getCoordinateSpaceDimension() {
-        return coordinateSpaceDimension;
+    public String getCoordinateSpaceDimension() {
+        String s = Optional.ofNullable(coordinateSpaceDimension.getDimensionCount())
+            .map(x -> coordinateSpaceDimension.getDimensionCount().toString())
+            .orElse(StringConstant.ASTERISK);
+
+        return s;
     }
 
     public void setCoordinateSpaceDimension(IfcDimensionCount coordinateSpaceDimension) {
         this.coordinateSpaceDimension = coordinateSpaceDimension;
     }
 
-    public DOUBLE getPrecision() {
-        return precision;
+    public String getPrecision() {
+        if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
+            return precision.toString();
+        } else if (precision.value == 0.0) {
+            return StringConstant.ASTERISK;
+        } else {
+            return String.valueOf(precision);
+        }
     }
 
     public void setPrecision(DOUBLE precision) {

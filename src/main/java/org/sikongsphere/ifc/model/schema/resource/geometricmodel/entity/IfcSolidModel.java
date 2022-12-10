@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.geometricmodel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -25,6 +26,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSolidModel extends IfcGeometricRepresentationItem {
+    @IfcInverseParameter
     private IfcDimensionCount dim;
 
     @IfcParserConstructor

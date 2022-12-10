@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
 /**
  * @author zhongqi
  * @date 2022/10/26

@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
+import java.util.Locale;
+
 /**
  * @author Wang Bohong
  * @date 2022/10/16 12:38
@@ -42,8 +44,13 @@ public class IfcPropertySingleValue extends IfcSimpleProperty {
         this.unit = unit;
     }
 
-    public IfcValue getNominalValue() {
-        return nominalValue;
+    public String getNominalValue() {
+        String format = String.format(
+            "%s(%s)",
+            nominalValue.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            nominalValue
+        );
+        return format;
     }
 
     public void setNominalValue(IfcValue nominalValue) {

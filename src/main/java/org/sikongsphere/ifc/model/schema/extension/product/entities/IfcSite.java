@@ -14,6 +14,8 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.INTEGER;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementCompositionEnum;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPostalAddress;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcLocalPlacement;
@@ -109,16 +111,16 @@ public class IfcSite extends IfcSpatialStructureElement {
         this.siteAddress = siteAddress;
     }
 
-    public IfcCompoundPlaneAngleMeasure getRefLatitude() {
-        return refLatitude;
+    public LIST<INTEGER> getRefLatitude() {
+        return refLatitude.getValue();
     }
 
     public void setRefLatitude(IfcCompoundPlaneAngleMeasure refLatitude) {
         this.refLatitude = refLatitude;
     }
 
-    public IfcCompoundPlaneAngleMeasure getRefLongitude() {
-        return refLongitude;
+    public LIST<INTEGER> getRefLongitude() {
+        return refLongitude.getValue();
     }
 
     public void setRefLongitude(IfcCompoundPlaneAngleMeasure refLongitude) {

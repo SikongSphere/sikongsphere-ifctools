@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
 
+import java.util.Locale;
+
 /**
  * A ratio measure is the value of the relation between two physical quantities that are of the same kind.
  *

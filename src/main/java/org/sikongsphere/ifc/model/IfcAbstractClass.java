@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.model;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
+import org.sikongsphere.ifc.model.datatype.LIST;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -94,7 +95,16 @@ public abstract class IfcAbstractClass implements IfcInterface {
         }
         // if IfcDataType. Such as STRING, LIST, SET.
         else if (IfcDataType.class.isAssignableFrom(o.getClass())) {
-            return o.toString();
+            if (o instanceof LIST) {
+                List<Object> objects = ((LIST<Object>) o).getObjects();
+                List<String> strings = new ArrayList<>();
+                for (Object object : objects) {
+                    strings.add(getParamString(object));
+                }
+                return String.format("(%s)", String.join(",", strings));
+            } else {
+                return o.toString();
+            }
         }
         /*
         if IfcAbstractClass, like IfcPerson. It should be judged whether it's false,
@@ -110,6 +120,8 @@ public abstract class IfcAbstractClass implements IfcInterface {
         // if Enum, like .ADDED., should be wrapped with DOT.
         else if (Enum.class.isAssignableFrom(o.getClass())) {
             return String.format(".%s.", o);
+        } else if (String.class.isAssignableFrom(o.getClass())) {
+            return o.toString();
         } else {
             throw new SikongSphereException("Unsupported Type");
         }
