@@ -14,33 +14,31 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
-import org.sikongsphere.ifc.model.schema.resource.representation.selecttype.IfcColour;
 
 /**
- * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
- * text font to be used to describe the font of a text literal.
- *
- * @author zaiyuan
- * @date 2022/9/2 08:15
+ * @author Wang Bohong
+ * @date 2022/10/21 11:52
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcColourSpecification extends IfcAbstractClass implements IfcColour {
-    private IfcLabel name;
-
-    public IfcColourSpecification() {}
-
-    public IfcLabel getName() {
-        return name;
-    }
-
-    public void setName(IfcLabel name) {
-        this.name = name;
-    }
+@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
+public class IfcTopologyRepresentation extends IfcShapeModel {
+    public IfcTopologyRepresentation() {}
 
     @IfcParserConstructor
-    public IfcColourSpecification(IfcLabel name) {
-        this.name = name;
+    public IfcTopologyRepresentation(
+        IfcRepresentationContext contextContextOfItems,
+        IfcLabel representationIdentifier,
+        IfcLabel representationType,
+        SET<IfcRepresentationItem> items
+    ) {
+        super(contextContextOfItems, representationIdentifier, representationType, items);
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

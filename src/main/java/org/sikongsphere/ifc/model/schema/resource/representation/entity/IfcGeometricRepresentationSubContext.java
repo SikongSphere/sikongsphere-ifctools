@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -34,8 +35,10 @@ import org.sikongsphere.ifc.model.schema.resource.representation.enumeration.Ifc
 public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresentationContext {
 
     private IfcGeometricRepresentationContext parentContext;
+    @IfcOptionField
     private IfcPositiveRatioMeasure targetScale;
     private IfcGeometricProjectionEnum targetView;
+    @IfcOptionField
     private IfcLabel userDefinedTargetView;
 
     public IfcGeometricRepresentationSubContext() {}

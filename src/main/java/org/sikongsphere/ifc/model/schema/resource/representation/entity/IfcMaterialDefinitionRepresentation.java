@@ -48,4 +48,10 @@ public class IfcMaterialDefinitionRepresentation extends IfcProductRepresentatio
     public void setRepresentedMaterial(IfcMaterial representedMaterial) {
         this.representedMaterial = representedMaterial;
     }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

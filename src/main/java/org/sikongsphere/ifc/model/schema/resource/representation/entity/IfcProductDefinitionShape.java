@@ -11,10 +11,13 @@
 package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
@@ -26,14 +29,35 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcProductDefinitionShape extends IfcProductRepresentation {
 
+    @IfcInverseParameter
+    private SET<IfcProduct> shapeOfProduct;
+    @IfcInverseParameter
+    private SET<IfcShapeAspect> hasShapeAspects;
+
     public IfcProductDefinitionShape() {}
 
     @IfcParserConstructor
     public IfcProductDefinitionShape(
         IfcLabel name,
         IfcText description,
-        SET<IfcRepresentation> representations
+        LIST<IfcRepresentation> representations
     ) {
         super(name, description, representations);
+    }
+
+    public SET<IfcProduct> getShapeOfProduct() {
+        return shapeOfProduct;
+    }
+
+    public void setShapeOfProduct(SET<IfcProduct> shapeOfProduct) {
+        this.shapeOfProduct = shapeOfProduct;
+    }
+
+    public SET<IfcShapeAspect> getHasShapeAspects() {
+        return hasShapeAspects;
+    }
+
+    public void setHasShapeAspects(SET<IfcShapeAspect> hasShapeAspects) {
+        this.hasShapeAspects = hasShapeAspects;
     }
 }

@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -24,9 +25,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/10/21 11:49
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcShapeModel extends IfcRepresentation {
+public abstract class IfcShapeModel extends IfcRepresentation {
 
-    // ToDO Inverse
+    @IfcInverseParameter
+    private SET<IfcShapeAspect> ofShapeAspect;
 
     public IfcShapeModel() {}
 
@@ -38,5 +40,19 @@ public class IfcShapeModel extends IfcRepresentation {
         SET<IfcRepresentationItem> items
     ) {
         super(contextContextOfItems, representationIdentifier, representationType, items);
+    }
+
+    public SET<IfcShapeAspect> getOfShapeAspect() {
+        return ofShapeAspect;
+    }
+
+    public void setOfShapeAspect(SET<IfcShapeAspect> ofShapeAspect) {
+        this.ofShapeAspect = ofShapeAspect;
+    }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
     }
 }

@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -28,9 +30,11 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcProductRepresentation extends IfcAbstractClass {
+    @IfcOptionField
     private IfcLabel name;
+    @IfcOptionField
     private IfcText description;
-    private SET<IfcRepresentation> representations;
+    private LIST<IfcRepresentation> representations;
 
     public IfcProductRepresentation() {}
 
@@ -38,7 +42,7 @@ public class IfcProductRepresentation extends IfcAbstractClass {
     public IfcProductRepresentation(
         IfcLabel name,
         IfcText description,
-        SET<IfcRepresentation> representations
+        LIST<IfcRepresentation> representations
     ) {
         this.name = name;
         this.description = description;
@@ -61,11 +65,11 @@ public class IfcProductRepresentation extends IfcAbstractClass {
         this.description = description;
     }
 
-    public SET<IfcRepresentation> getRepresentations() {
+    public LIST<IfcRepresentation> getRepresentations() {
         return representations;
     }
 
-    public void setRepresentations(SET<IfcRepresentation> representations) {
+    public void setRepresentations(LIST<IfcRepresentation> representations) {
         this.representations = representations;
     }
 }
