@@ -16,70 +16,59 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelConnects;
-import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcConnectionGeometry;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * IfcRelConnectsElements
- *
- * @author GaoSu
- * @date 2022/10/18 15:14
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
-public class IfcRelConnectsElements extends IfcRelConnects {
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcRelConnectsPorts extends IfcRelConnects {
+    private IfcPort relatingPort;
+    private IfcPort relatedPort;
     @IfcOptionField
-    private IfcConnectionGeometry connectionGeometry;
-    private IfcElement relatingElement;
-    private IfcElement relatedElement;
-
-    public IfcRelConnectsElements() {}
+    private IfcElement realizingElement;
 
     @IfcParserConstructor
-    public IfcRelConnectsElements(
+    public IfcRelConnectsPorts(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcConnectionGeometry connectionGeometry,
-        IfcElement relatingElement,
-        IfcElement relatedElement
+        IfcPort relatingPort,
+        IfcPort relatedPort,
+        IfcElement realizingElement
     ) {
         super(globalId, ownerHistory, name, description);
-        this.connectionGeometry = connectionGeometry;
-        this.relatingElement = relatingElement;
-        this.relatedElement = relatedElement;
+        this.relatingPort = relatingPort;
+        this.relatedPort = relatedPort;
+        this.realizingElement = realizingElement;
     }
 
-    public IfcConnectionGeometry getConnectionGeometry() {
-        return connectionGeometry;
+    public IfcPort getRelatingPort() {
+        return relatingPort;
     }
 
-    public void setConnectionGeometry(IfcConnectionGeometry connectionGeometry) {
-        this.connectionGeometry = connectionGeometry;
+    public void setRelatingPort(IfcPort relatingPort) {
+        this.relatingPort = relatingPort;
     }
 
-    public IfcElement getRelatingElement() {
-        return relatingElement;
+    public IfcPort getRelatedPort() {
+        return relatedPort;
     }
 
-    public void setRelatingElement(IfcElement relatingElement) {
-        this.relatingElement = relatingElement;
+    public void setRelatedPort(IfcPort relatedPort) {
+        this.relatedPort = relatedPort;
     }
 
-    public IfcElement getRelatedElement() {
-        return relatedElement;
+    public IfcElement getRealizingElement() {
+        return realizingElement;
     }
 
-    public void setRelatedElement(IfcElement relatedElement) {
-        this.relatedElement = relatedElement;
-    }
-
-    @Override
-    public boolean illegal() {
-        // TODO
-        return super.illegal();
+    public void setRealizingElement(IfcElement realizingElement) {
+        this.realizingElement = realizingElement;
     }
 }

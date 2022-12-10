@@ -66,4 +66,10 @@ public class IfcRelContainedInSpatialStructure extends IfcRelConnects {
     public void setRelatingStructure(IfcSpatialStructureElement relatingStructure) {
         this.relatingStructure = relatingStructure;
     }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

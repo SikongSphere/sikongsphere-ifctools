@@ -11,35 +11,41 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementCompositionEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPostalAddress;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 23:15
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcAnnotation extends IfcProduct {
+    @IfcInverseParameter
+    private SET<IfcRelContainedInSpatialStructure> containedInStructure;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcAnnotation(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcProductRepresentation representation
     ) {
         super(
             globalId,
@@ -48,9 +54,17 @@ public abstract class IfcFeatureElement extends IfcElement {
             description,
             objectType,
             objectPlacement,
-            representation,
-            tag
+            representation
         );
     }
 
+    public SET<IfcRelContainedInSpatialStructure> getContainedInStructure() {
+        return containedInStructure;
+    }
+
+    public void setContainedInStructure(
+        SET<IfcRelContainedInSpatialStructure> containedInStructure
+    ) {
+        this.containedInStructure = containedInStructure;
+    }
 }

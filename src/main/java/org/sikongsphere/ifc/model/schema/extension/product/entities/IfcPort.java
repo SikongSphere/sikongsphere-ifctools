@@ -14,8 +14,9 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
@@ -23,15 +24,17 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcPort extends IfcProduct {
+    private IfcRelConnectsPortToElement containedIn;
+    private SET<IfcRelConnectsPorts> connectedFrom;
+    private SET<IfcRelConnectsPorts> connectedTo;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcPort(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -39,7 +42,9 @@ public abstract class IfcFeatureElement extends IfcElement {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcRelConnectsPortToElement containedIn,
+        SET<IfcRelConnectsPorts> connectedFrom,
+        SET<IfcRelConnectsPorts> connectedTo
     ) {
         super(
             globalId,
@@ -48,9 +53,34 @@ public abstract class IfcFeatureElement extends IfcElement {
             description,
             objectType,
             objectPlacement,
-            representation,
-            tag
+            representation
         );
+        this.containedIn = containedIn;
+        this.connectedFrom = connectedFrom;
+        this.connectedTo = connectedTo;
     }
 
+    public IfcRelConnectsPortToElement getContainedIn() {
+        return containedIn;
+    }
+
+    public void setContainedIn(IfcRelConnectsPortToElement containedIn) {
+        this.containedIn = containedIn;
+    }
+
+    public SET<IfcRelConnectsPorts> getConnectedFrom() {
+        return connectedFrom;
+    }
+
+    public void setConnectedFrom(SET<IfcRelConnectsPorts> connectedFrom) {
+        this.connectedFrom = connectedFrom;
+    }
+
+    public SET<IfcRelConnectsPorts> getConnectedTo() {
+        return connectedTo;
+    }
+
+    public void setConnectedTo(SET<IfcRelConnectsPorts> connectedTo) {
+        this.connectedTo = connectedTo;
+    }
 }

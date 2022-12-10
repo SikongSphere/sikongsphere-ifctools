@@ -30,7 +30,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/10/20 15:25
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public class IfcBuildingElementType extends IfcElementType {
+public abstract class IfcBuildingElementType extends IfcElementType {
 
     public IfcBuildingElementType() {}
 

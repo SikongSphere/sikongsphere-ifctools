@@ -23,15 +23,16 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcRelProjectsElement extends IfcFeatureElement {
+    private IfcElement relatingElement;
+    private IfcFeatureElementAddition relatedFeatureElement;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcRelProjectsElement(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -39,7 +40,9 @@ public abstract class IfcFeatureElement extends IfcElement {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcIdentifier tag,
+        IfcElement relatingElement,
+        IfcFeatureElementAddition relatedFeatureElement
     ) {
         super(
             globalId,
@@ -51,6 +54,23 @@ public abstract class IfcFeatureElement extends IfcElement {
             representation,
             tag
         );
+        this.relatingElement = relatingElement;
+        this.relatedFeatureElement = relatedFeatureElement;
     }
 
+    public IfcElement getRelatingElement() {
+        return relatingElement;
+    }
+
+    public void setRelatingElement(IfcElement relatingElement) {
+        this.relatingElement = relatingElement;
+    }
+
+    public IfcFeatureElementAddition getRelatedFeatureElement() {
+        return relatedFeatureElement;
+    }
+
+    public void setRelatedFeatureElement(IfcFeatureElementAddition relatedFeatureElement) {
+        this.relatedFeatureElement = relatedFeatureElement;
+    }
 }

@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -23,12 +24,13 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public class IfcFeatureElementSubtraction extends IfcFeatureElement {
-    public IfcFeatureElementSubtraction() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcFeatureElementSubtraction extends IfcFeatureElement {
+    @IfcInverseParameter
+    private IfcRelVoidsElement voidsElements;
 
     @IfcParserConstructor
     public IfcFeatureElementSubtraction(
@@ -51,5 +53,13 @@ public class IfcFeatureElementSubtraction extends IfcFeatureElement {
             representation,
             tag
         );
+    }
+
+    public IfcRelVoidsElement getVoidsElements() {
+        return voidsElements;
+    }
+
+    public void setVoidsElements(IfcRelVoidsElement voidsElements) {
+        this.voidsElements = voidsElements;
     }
 }

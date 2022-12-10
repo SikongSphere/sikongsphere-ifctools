@@ -14,43 +14,56 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcTransportElementTypeEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public class IfcTransportElementType extends IfcElementType {
+    private IfcTransportElementTypeEnum predefinedType;
 
     @IfcParserConstructor
-    public IfcFeatureElement(
+    public IfcTransportElementType(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
         IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcLabel applicableOccurrence,
+        SET<IfcPropertySetDefinition> hasPropertySets,
+        LIST<IfcRepresentationMap> representationMaps,
+        IfcLabel tag,
+        IfcLabel elementType,
+        IfcTransportElementTypeEnum predefinedType
     ) {
         super(
             globalId,
             ownerHistory,
             name,
             description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag
+            applicableOccurrence,
+            hasPropertySets,
+            representationMaps,
+            tag,
+            elementType
         );
+        this.predefinedType = predefinedType;
     }
 
+    public IfcTransportElementTypeEnum getPredefinedType() {
+        return predefinedType;
+    }
+
+    public void setPredefinedType(IfcTransportElementTypeEnum predefinedType) {
+        this.predefinedType = predefinedType;
+    }
 }

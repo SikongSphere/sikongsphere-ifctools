@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -23,34 +24,8 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022/12/10 12:13
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
-public abstract class IfcFeatureElement extends IfcElement {
-    public IfcFeatureElement() {}
-
-    @IfcParserConstructor
-    public IfcFeatureElement(
-        IfcGloballyUniqueId globalId,
-        IfcOwnerHistory ownerHistory,
-        IfcLabel name,
-        IfcText description,
-        IfcLabel objectType,
-        IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcIdentifier tag
-    ) {
-        super(
-            globalId,
-            ownerHistory,
-            name,
-            description,
-            objectType,
-            objectPlacement,
-            representation,
-            tag
-        );
-    }
-
-}
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+public abstract class IfcFurnishingElement extends IfcElement {}
