@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLogical;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * IfcMaterialLayer
@@ -26,7 +27,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
  * @date 2022/10/16 16:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcMaterialLayer extends IfcAbstractClass implements IfcMaterialSelect {
+public class IfcMaterialLayer extends IfcAbstractClass
+    implements
+        IfcMaterialSelect,
+        IfcObjectReferenceSelect {
     private IfcMaterial material;
     private IfcPositiveLengthMeasure layerThickness;
     private IfcLogical isVentilated;

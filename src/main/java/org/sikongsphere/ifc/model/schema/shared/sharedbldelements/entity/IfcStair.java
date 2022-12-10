@@ -14,7 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcBuildingElement;
+import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcBuildingElement;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;

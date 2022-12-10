@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMaterialSelect;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * A list of the different materials that are used in an element.
@@ -24,7 +25,10 @@ import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMateria
  * @date 2022/10/25 11:50
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcMaterialList extends IfcAbstractClass implements IfcMaterialSelect {
+public class IfcMaterialList extends IfcAbstractClass
+    implements
+        IfcMaterialSelect,
+        IfcObjectReferenceSelect {
     private LIST<IfcMaterial> materials;
 
     public IfcMaterialList() {}

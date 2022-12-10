@@ -12,10 +12,10 @@ package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcObjectDefinition;
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcPropertySet;
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcRelAggregates;
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.IfcRelationship;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcObjectDefinition;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySet;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelAggregates;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelationship;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 

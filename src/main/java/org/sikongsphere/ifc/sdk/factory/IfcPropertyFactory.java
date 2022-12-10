@@ -14,8 +14,8 @@ import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcInteger;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLogical;
-import org.sikongsphere.ifc.model.schema.resource.proper.entity.IfcProperty;
-import org.sikongsphere.ifc.model.schema.resource.proper.entity.IfcPropertySingleValue;
+import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcProperty;
+import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcPropertySingleValue;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 
 /**

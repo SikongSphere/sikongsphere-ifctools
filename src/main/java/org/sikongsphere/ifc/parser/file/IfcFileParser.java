@@ -20,8 +20,8 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.model.fileelement.IfcLogicNode;
 import org.sikongsphere.ifc.infra.IfcClassFactory;
-import org.sikongsphere.ifc.model.schema.core.kernel.entity.*;
-import org.sikongsphere.ifc.model.schema.core.productextension.entities.IfcRelAssociatesMaterial;
+import org.sikongsphere.ifc.model.schema.kernel.entity.*;
+import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcRelAssociatesMaterial;
 import org.sikongsphere.ifc.parser.gen.IFCLexer;
 import org.sikongsphere.ifc.parser.gen.IFCParser;
 

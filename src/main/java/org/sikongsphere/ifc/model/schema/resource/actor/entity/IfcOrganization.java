@@ -20,6 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelec
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * This class is used to encapsulate organization information
@@ -29,7 +30,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
  */
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcOrganization extends IfcAbstractClass implements IfcActorSelect {
+public class IfcOrganization extends IfcAbstractClass
+    implements
+        IfcActorSelect,
+        IfcObjectReferenceSelect {
     private IfcIdentifier id;
     private IfcLabel name;
     private IfcText description;

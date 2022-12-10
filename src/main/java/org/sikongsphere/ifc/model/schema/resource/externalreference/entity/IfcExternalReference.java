@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
  * This class is the identification of information that is not explicitly represented in the current model or in the project database .
@@ -24,7 +25,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/9/1 16:32
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcExternalReference extends IfcAbstractClass {
+public class IfcExternalReference extends IfcAbstractClass implements IfcObjectReferenceSelect {
     @IfcOptionField
     private IfcLabel location;
     @IfcOptionField
