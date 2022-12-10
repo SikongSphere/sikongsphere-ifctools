@@ -28,7 +28,7 @@ import java.io.IOException;
  * @date 2022/09/07 22:26
  */
 public class IfcStepReadWriteTest {
-    private final static String BLANK_INPUT_PATH = "src/test/resources/blank.ifc";
+    private final static String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
     private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
     /**
@@ -49,7 +49,7 @@ public class IfcStepReadWriteTest {
         assert ifcFileone.equals(ifcFiletwo);
     }
 
-    @After
+//    @After
     public void delIfcFile() {
         File file = new File("src/test/resources/output.ifc");
         file.delete();
