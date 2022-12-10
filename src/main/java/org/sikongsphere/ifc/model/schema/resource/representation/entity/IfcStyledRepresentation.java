@@ -38,4 +38,9 @@ public class IfcStyledRepresentation extends IfcStyleModel {
         super(contextContextOfItems, representationIdentifier, representationType, items);
     }
 
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

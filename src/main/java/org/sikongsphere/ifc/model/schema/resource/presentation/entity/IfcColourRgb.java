@@ -16,7 +16,6 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcColourSpecification;
 
 /**
  * A colour rgb as a subtype of colour specifications is defined

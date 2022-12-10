@@ -13,7 +13,6 @@ package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcPresentationStyle;
 
 /**
  * An IfcCurveStyle provides the style table for presentation information assigned to geometric curves.

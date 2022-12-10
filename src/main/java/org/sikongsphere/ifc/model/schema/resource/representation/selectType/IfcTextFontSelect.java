@@ -8,21 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.representation.entity;
+package org.sikongsphere.ifc.model.schema.resource.representation.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- *An abstract generalisation of style table for presentation information
- *  assigned to geometric representation items.
+ * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
+ * text font to be used to describe the font of a text literal.
  *
- * @author stan
- * @date 2022/09/02 22:53
+ * @author zaiyuan
+ * @date 2022/9/2 08:15
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPresentationStyle {
-    private IfcLabel name;
-}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+public interface IfcTextFontSelect {}

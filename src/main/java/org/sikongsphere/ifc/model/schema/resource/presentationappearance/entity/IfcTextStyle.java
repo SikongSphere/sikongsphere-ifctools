@@ -16,7 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCharacterStyleSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcTextStyleSelect;
-import org.sikongsphere.ifc.model.schema.resource.representation.selecttype.IfcTextFontSelect;
+import org.sikongsphere.ifc.model.schema.resource.representation.selectType.IfcTextFontSelect;
 
 /**
  * @author Wang Bohong

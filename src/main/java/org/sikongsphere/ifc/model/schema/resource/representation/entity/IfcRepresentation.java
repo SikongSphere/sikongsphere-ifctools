@@ -11,13 +11,17 @@
 package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
 
 /**
  * IfcRepresentation
@@ -28,9 +32,18 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentation extends IfcAbstractClass {
     private IfcRepresentationContext contextContextOfItems;
+    @IfcOptionField
     private IfcLabel representationIdentifier;
+    @IfcOptionField
     private IfcLabel representationType;
     private SET<IfcRepresentationItem> items;
+
+    @IfcInverseParameter
+    private SET<IfcRepresentationMap> representationMap;
+    @IfcInverseParameter
+    private SET<IfcPresentationLayerAssignment> layerAssignments;
+    @IfcInverseParameter
+    private SET<IfcProductRepresentation> ofProductRepresentation;
 
     public IfcRepresentation() {}
 
@@ -77,5 +90,29 @@ public class IfcRepresentation extends IfcAbstractClass {
 
     public void setItems(SET<IfcRepresentationItem> items) {
         this.items = items;
+    }
+
+    public SET<IfcRepresentationMap> getRepresentationMap() {
+        return representationMap;
+    }
+
+    public void setRepresentationMap(SET<IfcRepresentationMap> representationMap) {
+        this.representationMap = representationMap;
+    }
+
+    public SET<IfcPresentationLayerAssignment> getLayerAssignments() {
+        return layerAssignments;
+    }
+
+    public void setLayerAssignments(SET<IfcPresentationLayerAssignment> layerAssignments) {
+        this.layerAssignments = layerAssignments;
+    }
+
+    public SET<IfcProductRepresentation> getOfProductRepresentation() {
+        return ofProductRepresentation;
+    }
+
+    public void setOfProductRepresentation(SET<IfcProductRepresentation> ofProductRepresentation) {
+        this.ofProductRepresentation = ofProductRepresentation;
     }
 }

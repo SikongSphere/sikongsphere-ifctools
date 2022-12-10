@@ -35,4 +35,10 @@ public class IfcShapeRepresentation extends IfcShapeModel {
     ) {
         super(contextContextOfItems, representationIdentifier, representationType, items);
     }
+
+    @Override
+    public boolean illegal() {
+        // TODO
+        return super.illegal();
+    }
 }

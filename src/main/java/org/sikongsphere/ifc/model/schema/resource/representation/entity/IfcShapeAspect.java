@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -27,7 +28,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcShapeAspect extends IfcAbstractClass {
     private LIST<IfcShapeModel> shapeRepresentations;
+    @IfcOptionField
     private IfcLabel name;
+    @IfcOptionField
     private IfcText description;
     private LOGICAL productDefinitional;
     private IfcProductDefinitionShape partOfProductDefinitionShape;

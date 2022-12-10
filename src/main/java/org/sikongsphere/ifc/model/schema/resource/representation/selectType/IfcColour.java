@@ -8,18 +8,17 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.representation.selecttype;
+package org.sikongsphere.ifc.model.schema.resource.representation.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
- * text font to be used to describe the font of a text literal.
+ * The colour entity defines a basic appearance of elements which shall be visualized in a picture.
  *
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcTextFontSelect {}
+public interface IfcColour {}
