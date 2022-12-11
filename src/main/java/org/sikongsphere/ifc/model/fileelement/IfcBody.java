@@ -47,9 +47,6 @@ public class IfcBody extends IfcFileElement {
         this.elements.forEach((key, value) -> {
             String s = null;
             try {
-                if (key == 1623) {
-                    System.out.println();
-                }
                 s = value.toIfc();
             } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
                 e.printStackTrace();
@@ -66,7 +63,8 @@ public class IfcBody extends IfcFileElement {
             + StringConstant.NEW_LINE
             + mkIfcBody()
             + StringConstant.END_TAG
-            + StringConstant.COLON;
+            + StringConstant.COLON
+            + StringConstant.NEW_LINE;
 
         return ifcBody;
     }

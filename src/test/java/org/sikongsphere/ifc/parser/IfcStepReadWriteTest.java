@@ -49,7 +49,7 @@ public class IfcStepReadWriteTest {
         assert ifcFileone.equals(ifcFiletwo);
     }
 
-//    @After
+    @After
     public void delIfcFile() {
         File file = new File("src/test/resources/output.ifc");
         file.delete();

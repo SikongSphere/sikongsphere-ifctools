@@ -17,8 +17,13 @@ package org.sikongsphere.ifc.common.constant;
  * @date 2022/12/03 11:11
  */
 public class IntegerConstant {
+
     /**
-     * IFC StepNumber ALTERNATIVE
+     * IFC Logical Value
      */
-    public static final Integer BACK_REFERENCE = 0; // 用于暂时替代向后引用的地方
+    public static final int TRUE = 0;
+    public static final int FALSE = 1;
+
+    public static final int UNKNOWN = 2;
+
 }

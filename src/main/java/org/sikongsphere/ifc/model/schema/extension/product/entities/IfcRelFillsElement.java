@@ -45,4 +45,20 @@ public class IfcRelFillsElement extends IfcRelConnects {
         this.relatingOpeningElement = relatingOpeningElement;
         this.relatedBuildingElement = relatedBuildingElement;
     }
+
+    public IfcOpeningElement getRelatingOpeningElement() {
+        return relatingOpeningElement;
+    }
+
+    public void setRelatingOpeningElement(IfcOpeningElement relatingOpeningElement) {
+        this.relatingOpeningElement = relatingOpeningElement;
+    }
+
+    public IfcElement getRelatedBuildingElement() {
+        return relatedBuildingElement;
+    }
+
+    public void setRelatedBuildingElement(IfcElement relatedBuildingElement) {
+        this.relatedBuildingElement = relatedBuildingElement;
+    }
 }
