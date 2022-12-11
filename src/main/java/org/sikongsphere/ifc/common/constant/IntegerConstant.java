@@ -23,7 +23,6 @@ public class IntegerConstant {
      */
     public static final int TRUE = 0;
     public static final int FALSE = 1;
-
     public static final int UNKNOWN = 2;
 
 }
