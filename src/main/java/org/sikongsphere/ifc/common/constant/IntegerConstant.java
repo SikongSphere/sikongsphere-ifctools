@@ -19,7 +19,10 @@ package org.sikongsphere.ifc.common.constant;
 public class IntegerConstant {
 
     /**
-     * IFC Logical Value
+     * IFC Logical Value，
+     * 0 symbolizes True, which means ".T." in IFC file,
+     * 1    ->  False   ->    ".F.",
+     * 2    ->  Unknown ->    ".U."
      */
     public static final int TRUE = 0;
     public static final int FALSE = 1;
