@@ -63,7 +63,8 @@ public class IfcBody extends IfcFileElement {
             + StringConstant.NEW_LINE
             + mkIfcBody()
             + StringConstant.END_TAG
-            + StringConstant.COLON;
+            + StringConstant.COLON
+            + StringConstant.NEW_LINE;
 
         return ifcBody;
     }

@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import org.sikongsphere.ifc.common.constant.IntegerConstant;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 /**
@@ -18,11 +20,11 @@ import org.sikongsphere.ifc.model.IfcDataType;
  * @date 2022/9/1 16:09
  */
 public class LOGICAL extends IfcDataType {
-    private boolean value;
+    private int value;
 
     public LOGICAL() {}
 
-    public LOGICAL(boolean value) {
+    public LOGICAL(int value) {
         this.value = value;
     }
 
@@ -30,17 +32,41 @@ public class LOGICAL extends IfcDataType {
         String str = value.value;
         if (str == null) return;
         if (str.contains("T")) {
-            this.value = true;
+            this.value = IntegerConstant.TRUE;
         } else if (str.contains("F")) {
-            this.value = false;
+            this.value = IntegerConstant.FALSE;
+        } else if (str.contains("U")) {
+            this.value = IntegerConstant.UNKNOWN;
         }
     }
 
-    public boolean isValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(boolean value) {
+    public void setValue(int value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+
+        String flag = null;
+
+        switch (value) {
+            case IntegerConstant.TRUE:
+                flag = StringConstant.TRUE;
+                break;
+
+            case IntegerConstant.FALSE:
+                flag = StringConstant.FALSE;
+                break;
+
+            case IntegerConstant.UNKNOWN:
+                flag = StringConstant.UNKNOWN;
+                break;
+        }
+
+        return String.format(".%s.", flag);
     }
 }

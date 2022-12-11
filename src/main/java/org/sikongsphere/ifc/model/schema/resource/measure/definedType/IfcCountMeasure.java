@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.schema.resource.measure.definedType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.NUMBER;
@@ -34,5 +35,14 @@ public class IfcCountMeasure extends NUMBER implements IfcValue {
     @IfcParserConstructor
     public IfcCountMeasure(STRING value) {
         super(value);
+    }
+
+    @Override
+    public String toString() {
+        double value = getValue();
+        int num = (int) value;
+        if (num - value == 0) {
+            return num + StringConstant.DOT;
+        } else return String.valueOf(value);
     }
 }

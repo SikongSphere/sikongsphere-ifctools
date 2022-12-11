@@ -50,6 +50,7 @@ public class StringConstant {
      */
     public static final String TRUE = "T";
     public static final String FALSE = "F";
+    public static final String UNKNOWN = "U";
 
     /**
      * Math Symbol
