@@ -34,7 +34,6 @@ public class IfcRelAssociatesConstraint extends IfcRelAssociates {
     private IfcLabel intent;
     private IfcConstraint relatingConstraint;
 
-    @IfcParserConstructor
     public IfcRelAssociatesConstraint(IfcLabel intent, IfcConstraint relatingConstraint) {
         this.intent = intent;
         this.relatingConstraint = relatingConstraint;
@@ -50,6 +49,7 @@ public class IfcRelAssociatesConstraint extends IfcRelAssociates {
         this.relatingConstraint = relatingConstraint;
     }
 
+    @IfcParserConstructor
     public IfcRelAssociatesConstraint(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
