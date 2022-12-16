@@ -49,7 +49,7 @@ expr :
      | exprAtom
      | T_WELL intNumber
      | T_DOT ident T_DOT
-     | T_OPEN_P expr (T_COMMA expr)* T_CLOSE_P
+     | T_OPEN_P expr? (T_COMMA expr)* T_CLOSE_P
      ;
 
 exprAtom :
