@@ -25,12 +25,16 @@ import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcRelAssoci
 import org.sikongsphere.ifc.parser.gen.IFCLexer;
 import org.sikongsphere.ifc.parser.gen.IFCParser;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 /**
  * Interface for Ifc File
@@ -54,7 +58,8 @@ public class IfcFileParser extends AbstractFileParser {
 
     @Override
     public Model parseFile(String path) throws IOException {
-        IfcFileModel ifcFileModel = parse(path);
+        String content = preProcessor(path);
+        IfcFileModel ifcFileModel = parse(content);
         Map<Integer, IfcAbstractClass> internalElements = new TreeMap<>();
         validate(ifcFileModel);
         convert(ifcFileModel, internalElements);
@@ -63,8 +68,17 @@ public class IfcFileParser extends AbstractFileParser {
         return ifcFileModel;
     }
 
-    public IfcFileModel parse(String path) throws IOException {
-        CharStream stream = CharStreams.fromFileName(path);
+    public String preProcessor(String path) throws IOException {
+        List<String> lines = Files.readAllLines(Paths.get(path));
+        String slashTag = "[SLASH]";
+        List<String> strings = lines.stream()
+            .map(i -> i.replace("\\", slashTag))
+            .collect(Collectors.toList());
+        return String.join("", strings);
+    }
+
+    public IfcFileModel parse(String content) throws IOException {
+        CharStream stream = CharStreams.fromString(content);
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext modelContext = ifcParser.ifcmodel();
