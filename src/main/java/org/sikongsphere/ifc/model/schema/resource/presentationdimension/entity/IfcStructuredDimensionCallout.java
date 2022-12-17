@@ -8,20 +8,25 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
+package org.sikongsphere.ifc.model.schema.resource.presentationdimension.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcAnnotationCurveOccurrence;
+import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcAnnotationSymbolOccurrence;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- * An annotation symbol occurrence is a symbol with a style assignment.
- *
- * @author Wang Bohong
- * @date 2022/9/2 11:40
+ * @author zaiyuan
+ * @date 2022/12/17 19:53
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAnnotationSymbolOccurrence extends IfcAnnotationOccurrence
-    implements
-        IfcDraughtingCalloutElement {}
+public class IfcStructuredDimensionCallout extends IfcDraughtingCallout {
+    @IfcParserConstructor
+    public IfcStructuredDimensionCallout(SET<IfcDraughtingCalloutElement> contents) {
+        super(contents);
+    }
+}

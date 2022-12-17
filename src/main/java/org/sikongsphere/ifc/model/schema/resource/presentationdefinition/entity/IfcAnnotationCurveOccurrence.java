@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
@@ -23,7 +24,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entit
  * @date 2022/12/11 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAnnotationCurveOccurrence extends IfcStyledItem {
+public class IfcAnnotationCurveOccurrence extends IfcStyledItem
+    implements
+        IfcDraughtingCalloutElement {
     @IfcParserConstructor
     public IfcAnnotationCurveOccurrence() {}
 }
