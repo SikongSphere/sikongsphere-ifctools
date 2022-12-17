@@ -14,8 +14,8 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcColour;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCharacterStyleSelect;
-import org.sikongsphere.ifc.model.schema.resource.representation.selectType.IfcColour;
 
 /**
  * IfcTextStyleForDefinedFont
