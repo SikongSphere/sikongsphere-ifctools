@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.model.schema.resource.approval.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -32,7 +32,12 @@ public class IfcApprovalRelationship extends IfcAbstractClass {
     private IfcLabel name;
 
     @IfcParserConstructor
-    public IfcApprovalRelationship(IfcApproval relatedApproval, IfcApproval relatingApproval, IfcText description, IfcLabel name) {
+    public IfcApprovalRelationship(
+        IfcApproval relatedApproval,
+        IfcApproval relatingApproval,
+        IfcText description,
+        IfcLabel name
+    ) {
         this.relatedApproval = relatedApproval;
         this.relatingApproval = relatingApproval;
         this.description = description;

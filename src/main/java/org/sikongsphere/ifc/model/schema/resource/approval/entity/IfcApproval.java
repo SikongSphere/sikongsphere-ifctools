@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.model.schema.resource.approval.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -49,7 +49,15 @@ public class IfcApproval extends IfcAbstractClass {
     private SET<IfcApprovalRelationship> relates;
 
     @IfcParserConstructor
-    public IfcApproval(IfcText description, IfcDateTimeSelect approvalDateTime, IfcLabel approvalStatus, IfcLabel approvalLevel, IfcText approvalQualifier, IfcLabel name, IfcIdentifier identifier) {
+    public IfcApproval(
+        IfcText description,
+        IfcDateTimeSelect approvalDateTime,
+        IfcLabel approvalStatus,
+        IfcLabel approvalLevel,
+        IfcText approvalQualifier,
+        IfcLabel name,
+        IfcIdentifier identifier
+    ) {
         this.description = description;
         this.approvalDateTime = approvalDateTime;
         this.approvalStatus = approvalStatus;

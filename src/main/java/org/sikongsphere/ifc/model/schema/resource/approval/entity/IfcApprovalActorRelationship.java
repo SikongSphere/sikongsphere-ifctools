@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.model.schema.resource.approval.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -29,7 +29,11 @@ public class IfcApprovalActorRelationship extends IfcAbstractClass {
     private IfcActorRole role;
 
     @IfcParserConstructor
-    public IfcApprovalActorRelationship(IfcActorSelect actor, IfcApproval approval, IfcActorRole role) {
+    public IfcApprovalActorRelationship(
+        IfcActorSelect actor,
+        IfcApproval approval,
+        IfcActorRole role
+    ) {
         this.actor = actor;
         this.approval = approval;
         this.role = role;
