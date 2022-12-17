@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcControl;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelAssignsToControl;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelAssociates;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRoot;
+import org.sikongsphere.ifc.model.schema.resource.approval.entity.IfcApproval;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
@@ -29,6 +31,26 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcRelAssociatesApproval extends IfcRelAssociates {
-    // private IfcApproval relatingApproval;
-    // todo
+    private IfcApproval relatingApproval;
+
+    @IfcParserConstructor
+    public IfcRelAssociatesApproval(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        SET<IfcRoot> relatedObjects,
+        IfcApproval relatingApproval
+    ) {
+        super(globalId, ownerHistory, name, description, relatedObjects);
+        this.relatingApproval = relatingApproval;
+    }
+
+    public IfcApproval getRelatingApproval() {
+        return relatingApproval;
+    }
+
+    public void setRelatingApproval(IfcApproval relatingApproval) {
+        this.relatingApproval = relatingApproval;
+    }
 }
