@@ -14,19 +14,17 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcGeometricSetSelect;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 
 /**
- * @author Yiwei
- * @date 2022/11/6
+ * @author zaiyuan
+ * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFacetedBrep extends IfcManifoldSolidBrep {
-    public IfcFacetedBrep() {}
+public class IfcHalfSpaceSolid extends IfcGeometricRepresentationItem {
 
-    @IfcParserConstructor
-    public IfcFacetedBrep(IfcClosedShell outer) {
-        super(outer);
-    }
-
+    // TODO
+    // private IfcSurface baseSurface;
 }
