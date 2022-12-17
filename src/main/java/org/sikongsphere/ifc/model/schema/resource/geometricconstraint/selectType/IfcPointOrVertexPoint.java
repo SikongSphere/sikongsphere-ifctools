@@ -8,18 +8,17 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity;
+package org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * IfcConnectionGeometry
- *
- * @author GaoSu
- * @date 2022/10/18 15:08
+ * The IfcPointOrVertexPoint provides the option to either select a geometric point (IfcPoint and subtypes) within
+ * a geometric model, or a vertex with associated point coordinates (IfcVertexPoint) within a topological model.
+ * @author zaiyuan
+ * @date 2022/12/17 08:15
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public abstract class IfcConnectionGeometry extends IfcAbstractClass {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+public interface IfcPointOrVertexPoint {}

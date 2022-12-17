@@ -8,18 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity;
+package org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * IfcConnectionGeometry
+ * The IfcCurveOrEdgeCurve provides the option to either select a geometric curve (IfcCurve and subtypes) within
+ * a geometric model, or a curve with associated geometry and coordinates (IfcEdgeCurve) within a topological model.
  *
- * @author GaoSu
- * @date 2022/10/18 15:08
+ * @author zaiyuan
+ * @date 2022/12/17 08:15
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public abstract class IfcConnectionGeometry extends IfcAbstractClass {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+public interface IfcCurveOrEdgeCurve {}
