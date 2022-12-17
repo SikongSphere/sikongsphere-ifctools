@@ -14,19 +14,26 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPreDefinedItem;
-import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.selectType.IfcDefinedSymbolSelect;
+import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
- *
- *
- * @author GaoSu
- * @date 2022/12/11 21:49
+ * @author zaiyuan
+ * @date 2022/12/17 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedSymbol extends IfcPreDefinedItem
-    implements
-        IfcDefinedSymbolSelect {
+public class IfcTextureMap extends IfcTextureCoordinate {
+    private SET<IfcVertexBasedTextureMap> textureMaps;
+
     @IfcParserConstructor
-    public IfcPreDefinedSymbol() {}
+    public IfcTextureMap(SET<IfcVertexBasedTextureMap> textureMaps) {
+        this.textureMaps = textureMaps;
+    }
+
+    public SET<IfcVertexBasedTextureMap> getTextureMaps() {
+        return textureMaps;
+    }
+
+    public void setTextureMaps(SET<IfcVertexBasedTextureMap> textureMaps) {
+        this.textureMaps = textureMaps;
+    }
 }

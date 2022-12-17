@@ -11,22 +11,12 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPreDefinedItem;
-import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.selectType.IfcDefinedSymbolSelect;
 
 /**
- *
- *
- * @author GaoSu
- * @date 2022/12/11 21:49
+ * @author zaiyuan
+ * @date 2022/12/17 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedSymbol extends IfcPreDefinedItem
-    implements
-        IfcDefinedSymbolSelect {
-    @IfcParserConstructor
-    public IfcPreDefinedSymbol() {}
-}
+public class IfcAnnotationSurfaceOccurrence extends IfcAnnotationOccurrence {}
