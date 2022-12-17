@@ -28,4 +28,29 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/12/10 12:13
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public abstract class IfcFurnishingElement extends IfcElement {}
+public class IfcFurnishingElement extends IfcElement {
+    public IfcFurnishingElement() {}
+
+    @IfcParserConstructor
+    public IfcFurnishingElement(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcIdentifier tag
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            tag
+        );
+    }
+}

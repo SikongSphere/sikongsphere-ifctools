@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.extension.product.entities;
+package org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
@@ -16,6 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcFurnishingElementType;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcAssemblyPlaceEnum;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -24,15 +26,18 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author zaiyuan
- * @date 2022/12/10 12:13
+ * @author:stan
+ * @date:2022/12/17 15:02
  */
-@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public class IfcFurnishingElementType extends IfcElementType {
-    public IfcFurnishingElementType() {}
+@IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
+public class IfcFurnitureType extends IfcFurnishingElementType {
+
+    private IfcAssemblyPlaceEnum assemblyPlace;
+
+    public IfcFurnitureType() {}
 
     @IfcParserConstructor
-    public IfcFurnishingElementType(
+    public IfcFurnitureType(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -41,7 +46,8 @@ public class IfcFurnishingElementType extends IfcElementType {
         SET<IfcPropertySetDefinition> hasPropertySets,
         LIST<IfcRepresentationMap> representationMaps,
         IfcLabel tag,
-        IfcLabel elementType
+        IfcLabel elementType,
+        IfcAssemblyPlaceEnum assemblyPlace
     ) {
         super(
             globalId,
@@ -54,5 +60,14 @@ public class IfcFurnishingElementType extends IfcElementType {
             tag,
             elementType
         );
+        this.assemblyPlace = assemblyPlace;
+    }
+
+    public IfcAssemblyPlaceEnum getAssemblyPlace() {
+        return assemblyPlace;
+    }
+
+    public void setAssemblyPlace(IfcAssemblyPlaceEnum assemblyPlace) {
+        this.assemblyPlace = assemblyPlace;
     }
 }

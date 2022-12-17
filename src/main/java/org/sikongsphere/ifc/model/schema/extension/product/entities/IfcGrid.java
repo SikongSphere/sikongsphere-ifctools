@@ -32,7 +32,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/12/10 12:13
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public abstract class IfcGrid extends IfcProduct {
+public class IfcGrid extends IfcProduct {
     private LIST<IfcGridAxis> uAxes;
     private LIST<IfcGridAxis> vAxes;
     @IfcOptionField
@@ -67,27 +67,27 @@ public abstract class IfcGrid extends IfcProduct {
         this.wAxes = wAxes;
     }
 
-    public LIST<IfcGridAxis> getuAxes() {
+    public LIST<IfcGridAxis> getUAxes() {
         return uAxes;
     }
 
-    public void setuAxes(LIST<IfcGridAxis> uAxes) {
+    public void setUAxes(LIST<IfcGridAxis> uAxes) {
         this.uAxes = uAxes;
     }
 
-    public LIST<IfcGridAxis> getvAxes() {
+    public LIST<IfcGridAxis> getVAxes() {
         return vAxes;
     }
 
-    public void setvAxes(LIST<IfcGridAxis> vAxes) {
+    public void setVAxes(LIST<IfcGridAxis> vAxes) {
         this.vAxes = vAxes;
     }
 
-    public LIST<IfcGridAxis> getwAxes() {
+    public LIST<IfcGridAxis> getWAxes() {
         return wAxes;
     }
 
-    public void setwAxes(LIST<IfcGridAxis> wAxes) {
+    public void setWAxes(LIST<IfcGridAxis> wAxes) {
         this.wAxes = wAxes;
     }
 
