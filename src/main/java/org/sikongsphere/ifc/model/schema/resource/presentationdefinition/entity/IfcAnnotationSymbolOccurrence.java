@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
  * An annotation symbol occurrence is a symbol with a style assignment.
@@ -21,4 +22,6 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/9/2 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAnnotationSymbolOccurrence extends IfcAnnotationOccurrence {}
+public class IfcAnnotationSymbolOccurrence extends IfcAnnotationOccurrence
+    implements
+        IfcDraughtingCalloutElement {}
