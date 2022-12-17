@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -26,8 +27,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @author zaiyuan
  * @date 2022/12/10 12:13
  */
-@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public abstract class IfcGridAxis extends IfcAbstractClass {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcGridAxis extends IfcAbstractClass {
+    @IfcOptionField
     private IfcLabel axisTag;
     private IfcCurve axisCurve;
     private IfcBoolean sameSense;

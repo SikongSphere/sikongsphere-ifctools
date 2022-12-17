@@ -27,7 +27,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @author Yiwei
  * @date 2022/10/22
  */
-@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
+@IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
 public class IfcWall extends IfcBuildingElement {
 
     public IfcWall() {}
