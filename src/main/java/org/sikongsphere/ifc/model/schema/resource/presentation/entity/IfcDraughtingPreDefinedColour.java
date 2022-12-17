@@ -14,33 +14,27 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
-import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcColour;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
 
 /**
- * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
- * text font to be used to describe the font of a text literal.
+ * The draughting pre defined colour is a pre defined colour for the purpose to identify a colour by name.
  *
  * @author zaiyuan
- * @date 2022/9/2 08:15
+ * @date 2022/12/17 13:18
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcColourSpecification extends IfcAbstractClass implements IfcColour {
-    private IfcLabel name;
-
-    public IfcColourSpecification() {}
-
-    public IfcLabel getName() {
-        return name;
-    }
-
-    public void setName(IfcLabel name) {
-        this.name = name;
-    }
-
-    @IfcParserConstructor
-    public IfcColourSpecification(IfcLabel name) {
-        this.name = name;
+public class IfcDraughtingPreDefinedColour extends IfcPreDefinedColour {
+    @Override
+    public boolean illegal() {
+        return "black".equalsIgnoreCase(getName().value)
+            || "red".equalsIgnoreCase(getName().value)
+            || "green".equalsIgnoreCase(getName().value)
+            || "blue".equalsIgnoreCase(getName().value)
+            || "yellow".equalsIgnoreCase(getName().value)
+            || "magenta".equalsIgnoreCase(getName().value)
+            || "cyan".equalsIgnoreCase(getName().value)
+            || "white".equalsIgnoreCase(getName().value)
+            || "by layer".equalsIgnoreCase(getName().value);
     }
 }

@@ -8,17 +8,23 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.representation.selectType;
+package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * The colour entity defines a basic appearance of elements which shall be visualized in a picture.
+ * The draughting pre defined text font is a pre defined text font for the purpose to identify a font by name.
  *
  * @author zaiyuan
- * @date 2022/9/2 08:15
+ * @date 2022/12/17 13:18
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcColour {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public class IfcDraughtingPreDefinedTextFont extends IfcPreDefinedTextFont {
+    @Override
+    public boolean illegal() {
+        return "ISO 3098-1 font A".equalsIgnoreCase(getName().value)
+            || "ISO 3098-1 font B".equalsIgnoreCase(getName().value);
+    }
+}

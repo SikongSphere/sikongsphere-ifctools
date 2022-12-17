@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.entity.IfcExternalReference;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcTextFontSelect;
 
 /**
  * The externally defined text font is an external reference to a text font
@@ -24,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/09/02 13:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcExternallyDefinedTextFont extends IfcExternalReference {
+public class IfcExternallyDefinedTextFont extends IfcExternalReference
+    implements
+        IfcTextFontSelect {
     public IfcExternallyDefinedTextFont() {}
 
     public IfcExternallyDefinedTextFont(

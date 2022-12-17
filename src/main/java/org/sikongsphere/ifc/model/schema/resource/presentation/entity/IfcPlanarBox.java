@@ -14,33 +14,34 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
-import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcColour;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
 
 /**
- * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
- * text font to be used to describe the font of a text literal.
+ * A planar box specifies an arbitrary rectangular box and its location in a two dimensional Cartesian coordinate system.
  *
  * @author zaiyuan
- * @date 2022/9/2 08:15
+ * @date 2022/12/17 13:18
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcColourSpecification extends IfcAbstractClass implements IfcColour {
-    private IfcLabel name;
-
-    public IfcColourSpecification() {}
-
-    public IfcLabel getName() {
-        return name;
-    }
-
-    public void setName(IfcLabel name) {
-        this.name = name;
-    }
+public class IfcPlanarBox extends IfcPlanarExtent {
+    private IfcAxis2Placement placement;
 
     @IfcParserConstructor
-    public IfcColourSpecification(IfcLabel name) {
-        this.name = name;
+    public IfcPlanarBox(
+        IfcLengthMeasure sizeInX,
+        IfcLengthMeasure sizeInY,
+        IfcAxis2Placement placement
+    ) {
+        super(sizeInX, sizeInY);
+        this.placement = placement;
+    }
+
+    public IfcAxis2Placement getPlacement() {
+        return placement;
+    }
+
+    public void setPlacement(IfcAxis2Placement placement) {
+        this.placement = placement;
     }
 }
