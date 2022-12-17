@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity;
+package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;

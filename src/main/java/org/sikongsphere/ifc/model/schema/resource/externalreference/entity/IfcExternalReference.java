@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLightDistributionDataSourceSelect;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
@@ -25,7 +26,10 @@ import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectR
  * @date 2022/9/1 16:32
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcExternalReference extends IfcAbstractClass implements IfcObjectReferenceSelect {
+public class IfcExternalReference extends IfcAbstractClass
+    implements
+        IfcObjectReferenceSelect,
+        IfcLightDistributionDataSourceSelect {
     @IfcOptionField
     private IfcLabel location;
     @IfcOptionField

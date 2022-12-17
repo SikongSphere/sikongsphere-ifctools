@@ -13,7 +13,7 @@ package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcStyledItem;
 
 /**
  * The annotation occurrence entity is a geometric representation item which has style for presentation.
