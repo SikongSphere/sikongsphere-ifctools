@@ -8,25 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.geometricmodel.entity;
+package org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
 
 /**
- * @author Yiwei
- * @date 2022/11/6
+ *  This type identifies the types of entity which may be selected as the root of a CSG tree including a single CSG
+ *  primitive as a special case (currently not in IFC).
+ *
+ * @author zaiyuan
+ * @date 2022/12/17 21:57
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFacetedBrep extends IfcManifoldSolidBrep {
-    public IfcFacetedBrep() {}
-
-    @IfcParserConstructor
-    public IfcFacetedBrep(IfcClosedShell outer) {
-        super(outer);
-    }
-
-}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+public interface IfcCsgSelect {}

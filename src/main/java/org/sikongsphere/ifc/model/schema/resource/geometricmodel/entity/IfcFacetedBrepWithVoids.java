@@ -14,19 +14,28 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
 
 /**
- * @author Yiwei
- * @date 2022/11/6
+ * @author zaiyuan
+ * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFacetedBrep extends IfcManifoldSolidBrep {
-    public IfcFacetedBrep() {}
+public class IfcFacetedBrepWithVoids extends IfcManifoldSolidBrep {
+    private SET<IfcClosedShell> voids;
 
     @IfcParserConstructor
-    public IfcFacetedBrep(IfcClosedShell outer) {
+    public IfcFacetedBrepWithVoids(IfcClosedShell outer, SET<IfcClosedShell> voids) {
         super(outer);
+        this.voids = voids;
     }
 
+    public SET<IfcClosedShell> getVoids() {
+        return voids;
+    }
+
+    public void setVoids(SET<IfcClosedShell> voids) {
+        this.voids = voids;
+    }
 }

@@ -14,19 +14,20 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCurve;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
- * @author Yiwei
- * @date 2022/11/6
+ * @author zaiyuan
+ * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFacetedBrep extends IfcManifoldSolidBrep {
-    public IfcFacetedBrep() {}
-
-    @IfcParserConstructor
-    public IfcFacetedBrep(IfcClosedShell outer) {
-        super(outer);
-    }
-
+public class IfcSurfaceCurveSweptAreaSolid extends IfcSweptAreaSolid {
+    private IfcCurve directrix;
+    private IfcParameterValue startParam;
+    private IfcParameterValue endParam;
+    // TODO
+    // private IfcSurface
 }
