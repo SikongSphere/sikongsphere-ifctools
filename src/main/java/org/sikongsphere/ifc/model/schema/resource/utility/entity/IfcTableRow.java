@@ -1,3 +1,13 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.model.schema.resource.utility.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
@@ -24,8 +34,8 @@ public class IfcTableRow extends IfcAbstractClass {
     private LIST<IfcValue> RowCells;
     private Boolean IsHeading;
 
-    public IfcTableRow() {
-    }
+    public IfcTableRow() {}
+
     @IfcParserConstructor
     public IfcTableRow(LIST<IfcValue> rowCells, Boolean isHeading) {
         RowCells = rowCells;
@@ -48,5 +58,3 @@ public class IfcTableRow extends IfcAbstractClass {
         IsHeading = heading;
     }
 }
-
-
