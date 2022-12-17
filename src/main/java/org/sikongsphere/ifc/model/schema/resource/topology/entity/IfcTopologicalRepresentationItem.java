@@ -14,10 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
  * @author GaoSU

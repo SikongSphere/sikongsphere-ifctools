@@ -18,7 +18,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
-import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcStyledItem;
+import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLayeredItem;
 
 /**
  * A instance of the class is an element of product data that participates in one or more representations
@@ -28,7 +29,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entit
  * @date 2022/9/1 13:29
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcRepresentationItem extends IfcAbstractClass {
+public abstract class IfcRepresentationItem extends IfcAbstractClass implements IfcLayeredItem {
     @IfcInverseParameter
     private SET<IfcPresentationLayerAssignment> layerAssignments;
     @IfcInverseParameter

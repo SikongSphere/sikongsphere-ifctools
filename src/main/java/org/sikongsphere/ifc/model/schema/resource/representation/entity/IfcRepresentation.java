@@ -22,6 +22,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentat
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcPresentationLayerAssignment;
+import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLayeredItem;
 
 /**
  * IfcRepresentation
@@ -30,7 +31,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entit
  * @date 2022/9/1 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcRepresentation extends IfcAbstractClass {
+public class IfcRepresentation extends IfcAbstractClass implements IfcLayeredItem {
     private IfcRepresentationContext contextContextOfItems;
     @IfcOptionField
     private IfcLabel representationIdentifier;

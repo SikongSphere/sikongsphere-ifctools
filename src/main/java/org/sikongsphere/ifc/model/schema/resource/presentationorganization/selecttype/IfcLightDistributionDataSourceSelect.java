@@ -8,15 +8,15 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.topology.entity;
+package org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * @author GaoSU
- * @date 2022/10/25 13:40
+ * @author zaiyuan
+ * @date 2022/12/17 23:21
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcLoop extends IfcTopologicalRepresentationItem {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
+public interface IfcLightDistributionDataSourceSelect {}
