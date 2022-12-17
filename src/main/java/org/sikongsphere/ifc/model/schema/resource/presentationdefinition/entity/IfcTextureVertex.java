@@ -14,19 +14,28 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPreDefinedItem;
-import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.selectType.IfcDefinedSymbolSelect;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
 
 /**
- *
- *
- * @author GaoSu
- * @date 2022/12/11 21:49
+ * @author zaiyuan
+ * @date 2022/12/17 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedSymbol extends IfcPreDefinedItem
-    implements
-        IfcDefinedSymbolSelect {
+public class IfcTextureVertex extends IfcAbstractClass {
+    private LIST<IfcParameterValue> coordinates;
+
     @IfcParserConstructor
-    public IfcPreDefinedSymbol() {}
+    public IfcTextureVertex(LIST<IfcParameterValue> coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public LIST<IfcParameterValue> getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(LIST<IfcParameterValue> coordinates) {
+        this.coordinates = coordinates;
+    }
 }

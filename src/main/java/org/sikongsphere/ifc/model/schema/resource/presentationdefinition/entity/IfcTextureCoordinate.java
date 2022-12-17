@@ -11,22 +11,26 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPreDefinedItem;
-import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.selectType.IfcDefinedSymbolSelect;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
- *
- *
- * @author GaoSu
- * @date 2022/12/11 21:49
+ * @author zaiyuan
+ * @date 2022/12/17 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedSymbol extends IfcPreDefinedItem
-    implements
-        IfcDefinedSymbolSelect {
-    @IfcParserConstructor
-    public IfcPreDefinedSymbol() {}
+public abstract class IfcTextureCoordinate extends IfcAbstractClass {
+    @IfcInverseParameter
+    private SET<IfcAnnotationSurface> annotatedSurface;
+
+    public SET<IfcAnnotationSurface> getAnnotatedSurface() {
+        return annotatedSurface;
+    }
+
+    public void setAnnotatedSurface(SET<IfcAnnotationSurface> annotatedSurface) {
+        this.annotatedSurface = annotatedSurface;
+    }
 }

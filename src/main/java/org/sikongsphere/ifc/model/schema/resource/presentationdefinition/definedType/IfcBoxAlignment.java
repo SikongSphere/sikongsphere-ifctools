@@ -8,24 +8,32 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
+package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.definedType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entity.IfcStyledItem;
 
 /**
- * @author GaoSu
- * @date 2022/12/11 21:03
+ * @author zaiyuan
+ * @date 2022/12/17 21:03
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAnnotationCurveOccurrence extends IfcStyledItem
-    implements
-        IfcDraughtingCalloutElement {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+public class IfcBoxAlignment extends IfcLabel {
+    public IfcBoxAlignment(String value) {
+        super(value);
+    }
 
-    @IfcParserConstructor
-    public IfcAnnotationCurveOccurrence() {}
+    public IfcBoxAlignment(STRING value) {
+        super(value);
+    }
+
+    public IfcBoxAlignment(IfcLabel value) {
+        super(value);
+    }
 }
