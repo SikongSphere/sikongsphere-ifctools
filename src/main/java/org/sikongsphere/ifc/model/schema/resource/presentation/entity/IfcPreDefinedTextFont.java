@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcTextFontSelect;
 
 /**
  * The pre defined text font determines those qualified names which can be used for fonts
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/09/02 13:13
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedTextFont extends IfcPreDefinedItem {
+public abstract class IfcPreDefinedTextFont extends IfcPreDefinedItem implements IfcTextFontSelect {
     public IfcPreDefinedTextFont() {}
 
     public IfcPreDefinedTextFont(IfcLabel name) {

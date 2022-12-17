@@ -8,20 +8,19 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
+package org.sikongsphere.ifc.model.schema.resource.presentation.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcColour;
 
 /**
- * The pre defined colour determines those qualified names
- * which can be used to identify a colour that is in scope of the current data exchange specification (in contrary to colour specification
- * which defines the colour directly by its colour components).
+ * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined text font
+ * to be used to describe the font of a text literal. The definition of the text font model is based on W3C TR Cascading
+ * Style Sheet Version 1, whereas the definition of predefined text font is based on ISO 10303.
  *
- * @author stan
- * @date 2022/09/01 23:50
+ * @author zaiyuan
+ * @date 2022/12/17 21:57
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedColour extends IfcPreDefinedItem implements IfcColour {}
+@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
+public interface IfcTextFontSelect {}
