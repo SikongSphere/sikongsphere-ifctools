@@ -8,28 +8,11 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
+package org.sikongsphere.ifc.model.schema.resource.geometry.selectType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
-/**
- * @author Yiwei
- * @date 2022/10/23
- */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcCurve extends IfcGeometricRepresentationItem {
-    @IfcDeriveParameter
-    private IfcDimensionCount dim;
-
-    public IfcDimensionCount getDim() {
-        return dim;
-    }
-
-    public void setDim(IfcDimensionCount dim) {
-        this.dim = dim;
-    }
-}
+@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
+public interface IfcTrimmingSelect {}

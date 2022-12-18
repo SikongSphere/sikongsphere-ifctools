@@ -11,10 +11,12 @@
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
@@ -28,16 +30,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianPoint extends IfcPoint {
     private LIST<IfcLengthMeasure> coordinates;
-
-    /**
-     * Record generics in a class
-     */
-    // @IfcGenericType
-    // public final static Object[][] CLASSES = { { "coordinates", IfcLengthMeasure.class } };
+    @IfcDeriveParameter
+    private IfcDimensionCount dim;
 
     public IfcCartesianPoint() {}
-
-    // toDo DERIVE
 
     @IfcParserConstructor
     public IfcCartesianPoint(LIST<IfcLengthMeasure> coordinates) throws Exception {
@@ -63,5 +59,13 @@ public class IfcCartesianPoint extends IfcPoint {
         if (coordinates.size() > 3) {
             throw new Exception("The amount of coordinates is between 1 and 3");
         }
+    }
+
+    public IfcDimensionCount getDim() {
+        return dim;
+    }
+
+    public void setDim(IfcDimensionCount dim) {
+        this.dim = dim;
     }
 }

@@ -15,43 +15,41 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
+import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
- * his entity defines a general direction vector in two or three dimensional space.
- * The actual magnitudes of the components have no effect upon the direction being defined,
- * only the ratios X:Y:Z or X:Y are significant.
- *
- * @author stan
- * @date 2022/09/01 23:59
+ * @author zaiyuan
+ * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcDirection extends IfcGeometricRepresentationItem {
-    private LIST<Double> directionRatios;// todo -> REAL
+public abstract class IfcSweptSurface extends IfcSurface {
+    private IfcProfileDef sweptCurve;
+    private IfcAxis2Placement3D position;
     @IfcDeriveParameter
     private IfcDimensionCount dim;
 
-    public IfcDirection() {}
-
     @IfcParserConstructor
-    public IfcDirection(LIST<Double> directionRatios) {
-        this.directionRatios = directionRatios;
+    public IfcSweptSurface(IfcProfileDef sweptCurve, IfcAxis2Placement3D position) {
+        this.sweptCurve = sweptCurve;
+        this.position = position;
     }
 
-    public IfcDirection(Double x, Double y, Double z) {
-        directionRatios = new LIST<>();
-        directionRatios.add(x);
-        directionRatios.add(y);
-        directionRatios.add(z);
+    public IfcProfileDef getSweptCurve() {
+        return sweptCurve;
     }
 
-    public LIST<Double> getDirectionRatios() {
-        return directionRatios;
+    public void setSweptCurve(IfcProfileDef sweptCurve) {
+        this.sweptCurve = sweptCurve;
     }
 
-    public void setDirectionRatios(LIST<Double> directionRatios) {
-        this.directionRatios = directionRatios;
+    public IfcAxis2Placement3D getPosition() {
+        return position;
+    }
+
+    public void setPosition(IfcAxis2Placement3D position) {
+        this.position = position;
     }
 
     public IfcDimensionCount getDim() {
@@ -61,10 +59,4 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
     public void setDim(IfcDimensionCount dim) {
         this.dim = dim;
     }
-
-    @Override
-    public boolean isDefault() {
-        return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
-    }
-
 }

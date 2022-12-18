@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
  * A placement entity defines the local environment for
@@ -25,6 +27,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public abstract class IfcPlacement extends IfcGeometricRepresentationItem {
     private IfcCartesianPoint location;
+    @IfcDeriveParameter
+    private IfcDimensionCount dim;
 
     public IfcPlacement() {}
 
@@ -39,5 +43,13 @@ public abstract class IfcPlacement extends IfcGeometricRepresentationItem {
 
     public void setLocation(IfcCartesianPoint location) {
         this.location = location;
+    }
+
+    public IfcDimensionCount getDim() {
+        return dim;
+    }
+
+    public void setDim(IfcDimensionCount dim) {
+        this.dim = dim;
     }
 }

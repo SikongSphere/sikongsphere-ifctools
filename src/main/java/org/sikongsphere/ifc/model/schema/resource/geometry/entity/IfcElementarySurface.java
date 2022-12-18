@@ -12,28 +12,41 @@ package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
- * A Cartesian transformation operator 2d
- * defines a geometric transformation in two-dimensional space composed of
- * translation, rotation, mirroring and uniform scaling.
- *
- * @author stan
- * @date 2022/09/02 13:24
+ * @author zaiyuan
+ * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcCartesianTransformationOperator2D extends IfcCartesianTransformationOperator {
-    @IfcDeriveParameter
-    private LIST<IfcDirection> u;
+public abstract class IfcElementarySurface extends IfcSurface {
 
-    public LIST<IfcDirection> getU() {
-        return u;
+    private IfcAxis2Placement3D position;
+    @IfcDeriveParameter
+    private IfcDimensionCount dim;
+
+    @IfcParserConstructor
+    public IfcElementarySurface(IfcAxis2Placement3D position) {
+        this.position = position;
     }
 
-    public void setU(LIST<IfcDirection> u) {
-        this.u = u;
+    public IfcAxis2Placement3D getPosition() {
+        return position;
+    }
+
+    public void setPosition(IfcAxis2Placement3D position) {
+        this.position = position;
+    }
+
+    public IfcDimensionCount getDim() {
+        return dim;
+    }
+
+    public void setDim(IfcDimensionCount dim) {
+        this.dim = dim;
     }
 }
