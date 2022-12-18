@@ -41,7 +41,7 @@ public class IfcCartesianTransformationOperator3DnonUniform extends
         IfcDirection axis1,
         IfcDirection axis2,
         IfcCartesianPoint localOrigin,
-        DOUBLE scale,
+        REAL scale,
         IfcDirection axis3,
         REAL scale2,
         REAL scale3
