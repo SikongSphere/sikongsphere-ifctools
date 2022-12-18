@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.sdk.order;
 
-import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.entity.IfcWall;
 
 /**
  * This is an order for wall
