@@ -14,7 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.presentation.definedType.IfcPresentableText;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPlanarExtent;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.definedType.IfcBoxAlignment;

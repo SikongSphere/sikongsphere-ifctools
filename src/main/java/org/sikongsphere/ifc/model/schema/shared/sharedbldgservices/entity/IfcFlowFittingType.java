@@ -8,23 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.measure.selectTypes;
+package org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * This select type collects together both versions of the placement
- * as used in two dimensional or in three dimensional Cartesian space.
- *
- * @author stan
- * @date 2022/09/02 21:57
+ * @author zaiyuan
+ * @date 2022/12/17 11:40
  */
-@IfcClass(
-    layer = IfcLayer.RESOURCE,
-    type = IfcType.SELECT_TYPE,
-    defaultClass = IfcAxis2Placement3D.class
-)
-public interface IfcAxis2Placement {}
+@IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
+public class IfcFlowFittingType extends IfcDistributionFlowElementType {
+
+}
