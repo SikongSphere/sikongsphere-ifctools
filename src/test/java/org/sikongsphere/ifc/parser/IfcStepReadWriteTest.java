@@ -52,6 +52,6 @@ public class IfcStepReadWriteTest {
     @After
     public void delIfcFile() {
         File file = new File("src/test/resources/output.ifc");
-        // file.delete();
+        file.delete();
     }
 }
