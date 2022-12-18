@@ -15,8 +15,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentif
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWall;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldelements.entity.IfcWallStandardCase;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.entity.IfcWallStandardCase;
 import org.sikongsphere.ifc.sdk.order.IOrder;
 import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
 
