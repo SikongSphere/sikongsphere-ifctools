@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model;
 
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
@@ -55,6 +56,7 @@ public abstract class IfcAbstractClass implements IfcInterface {
         while (superClass != null) {
             List<Field> fields1 = Arrays.stream(superClass.getDeclaredFields())
                 .filter(i -> !i.isAnnotationPresent(IfcInverseParameter.class))
+                .filter(i -> !i.isAnnotationPresent(IfcDeriveParameter.class))
                 .filter(i -> !"stepNumber".equals(i.getName()))
                 .collect(Collectors.toList());
             objects.add(fields1);

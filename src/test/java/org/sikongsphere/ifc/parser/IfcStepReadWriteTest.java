@@ -28,14 +28,51 @@ import java.io.IOException;
  * @date 2022/09/07 22:26
  */
 public class IfcStepReadWriteTest {
-    private final static String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
-    private final static String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
-    /**
-     * Test whether both of them are as the same.
-     */
     @Test
     public void blankFile() throws IOException {
+
+        String BLANK_INPUT_PATH = "src/test/resources/blank.ifc";
+        String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
+
+        IfcFileModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
+        IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);
+
+        String ifcFileone = CharStreams.fromFileName(BLANK_INPUT_PATH)
+            .toString()
+            .replaceAll("\\s*|\r", "");
+
+        String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
+            .toString()
+            .replaceAll("\\s*|\r", "");
+        assert ifcFileone.equals(ifcFiletwo);
+    }
+
+    @Test
+    public void basicFile() throws IOException {
+
+        String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
+        String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
+
+        IfcFileModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
+        IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);
+
+        String ifcFileone = CharStreams.fromFileName(BLANK_INPUT_PATH)
+            .toString()
+            .replaceAll("\\s*|\r", "");
+
+        String ifcFiletwo = CharStreams.fromFileName(BLANK_OUTPUT_PATH)
+            .toString()
+            .replaceAll("\\s*|\r", "");
+        assert ifcFileone.equals(ifcFiletwo);
+    }
+
+    @Test
+    public void complexFile() throws IOException {
+
+        String BLANK_INPUT_PATH = "src/test/resources/complex.ifc";
+        String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
+
         IfcFileModel model = IfcFileReader.readFile(BLANK_INPUT_PATH);
         IfcFileWriter.writeFile(model, BLANK_OUTPUT_PATH);
 
