@@ -147,7 +147,7 @@ public class IfcFileVisitor extends IFCBaseVisitor<IfcInterface> {
         if (firstChild instanceof BoolLiteralContext) {
             return new BOOLEAN(Boolean.parseBoolean(firstChild.getText()));
         } else if (firstChild instanceof IdentContext || firstChild instanceof StringContext) {
-            return new STRING(StringUtil.dropQuota(ctx.getText()));
+            return new STRING(StringUtil.dropQuota(ctx.getText()).replace("[SLASH]", "\\"));
         } else if (firstChild instanceof DecNumberContext) {
             return new DOUBLE(Double.parseDouble(firstChild.getText()));
         } else if (firstChild instanceof IntNumberContext) {
