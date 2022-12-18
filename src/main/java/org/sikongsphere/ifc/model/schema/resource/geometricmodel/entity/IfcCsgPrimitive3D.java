@@ -17,11 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
-import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
-import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
  * Abstract supertype of all three dimensional primitives used as either tree root item, or as Boolean results within

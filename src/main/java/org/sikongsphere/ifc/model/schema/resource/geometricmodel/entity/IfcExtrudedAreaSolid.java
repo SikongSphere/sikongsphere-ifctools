@@ -16,11 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Target;
 
 /**
  * @author zhongqi

@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 
 import java.util.Optional;
 

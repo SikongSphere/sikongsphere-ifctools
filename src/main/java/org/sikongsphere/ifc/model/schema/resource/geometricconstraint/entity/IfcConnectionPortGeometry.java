@@ -15,8 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
