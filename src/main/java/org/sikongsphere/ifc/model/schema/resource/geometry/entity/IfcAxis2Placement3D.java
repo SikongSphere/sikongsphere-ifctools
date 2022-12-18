@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 
 /**
@@ -28,6 +30,9 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
 
     private IfcDirection axis;
     private IfcDirection refDirection;
+
+    @IfcDeriveParameter
+    private LIST<IfcDirection> p;
 
     public IfcAxis2Placement3D() {}
 
@@ -64,6 +69,14 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
 
     public void setRefDirection(IfcDirection refDirection) {
         this.refDirection = refDirection;
+    }
+
+    public LIST<IfcDirection> getP() {
+        return p;
+    }
+
+    public void setP(LIST<IfcDirection> p) {
+        this.p = p;
     }
 
     @Override

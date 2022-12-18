@@ -19,4 +19,4 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/10/23
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcBoundedCurve extends IfcCurve {}
+public abstract class IfcBoundedCurve extends IfcCurve {}

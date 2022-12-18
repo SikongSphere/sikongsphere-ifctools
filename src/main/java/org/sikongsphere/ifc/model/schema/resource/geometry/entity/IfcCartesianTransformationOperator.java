@@ -11,9 +11,11 @@
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.REAL;
+import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
  * A Cartesian transformation operator
@@ -27,7 +29,12 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
     private IfcDirection axis1;
     private IfcDirection axis2;
     private IfcCartesianPoint localOrigin;
-    private DOUBLE scale;// todo -> REAL
+    private REAL scale;
+
+    @IfcDeriveParameter
+    private REAL scl;
+    @IfcDeriveParameter
+    private IfcDimensionCount dim;
 
     public IfcCartesianTransformationOperator() {}
 
@@ -35,7 +42,7 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
         IfcDirection axis1,
         IfcDirection axis2,
         IfcCartesianPoint localOrigin,
-        DOUBLE scale
+        REAL scale
     ) {
         this.axis1 = axis1;
         this.axis2 = axis2;
@@ -67,11 +74,27 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
         this.localOrigin = localOrigin;
     }
 
-    public DOUBLE getScale() {
+    public REAL getScale() {
         return scale;
     }
 
-    public void setScale(DOUBLE scale) {
+    public void setScale(REAL scale) {
         this.scale = scale;
+    }
+
+    public REAL getScl() {
+        return scl;
+    }
+
+    public void setScl(REAL scl) {
+        this.scl = scl;
+    }
+
+    public IfcDimensionCount getDim() {
+        return dim;
+    }
+
+    public void setDim(IfcDimensionCount dim) {
+        this.dim = dim;
     }
 }

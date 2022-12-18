@@ -15,43 +15,55 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
- * his entity defines a general direction vector in two or three dimensional space.
- * The actual magnitudes of the components have no effect upon the direction being defined,
- * only the ratios X:Y:Z or X:Y are significant.
- *
- * @author stan
- * @date 2022/09/01 23:59
+ * @author zaiyuan
+ * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcDirection extends IfcGeometricRepresentationItem {
-    private LIST<Double> directionRatios;// todo -> REAL
+public class IfcCurveBoundedPlane extends IfcBoundedSurface {
+    private IfcPlane basisSurface;
+    private IfcCurve outerBoundary;
+    private SET<IfcCurve> innerBoundaries;
     @IfcDeriveParameter
     private IfcDimensionCount dim;
 
-    public IfcDirection() {}
-
     @IfcParserConstructor
-    public IfcDirection(LIST<Double> directionRatios) {
-        this.directionRatios = directionRatios;
+    public IfcCurveBoundedPlane(
+        IfcPlane basisSurface,
+        IfcCurve outerBoundary,
+        SET<IfcCurve> innerBoundaries
+    ) {
+        this.basisSurface = basisSurface;
+        this.outerBoundary = outerBoundary;
+        this.innerBoundaries = innerBoundaries;
     }
 
-    public IfcDirection(Double x, Double y, Double z) {
-        directionRatios = new LIST<>();
-        directionRatios.add(x);
-        directionRatios.add(y);
-        directionRatios.add(z);
+    public IfcPlane getBasisSurface() {
+        return basisSurface;
     }
 
-    public LIST<Double> getDirectionRatios() {
-        return directionRatios;
+    public void setBasisSurface(IfcPlane basisSurface) {
+        this.basisSurface = basisSurface;
     }
 
-    public void setDirectionRatios(LIST<Double> directionRatios) {
-        this.directionRatios = directionRatios;
+    public IfcCurve getOuterBoundary() {
+        return outerBoundary;
+    }
+
+    public void setOuterBoundary(IfcCurve outerBoundary) {
+        this.outerBoundary = outerBoundary;
+    }
+
+    public SET<IfcCurve> getInnerBoundaries() {
+        return innerBoundaries;
+    }
+
+    public void setInnerBoundaries(SET<IfcCurve> innerBoundaries) {
+        this.innerBoundaries = innerBoundaries;
     }
 
     public IfcDimensionCount getDim() {
@@ -61,10 +73,4 @@ public class IfcDirection extends IfcGeometricRepresentationItem {
     public void setDim(IfcDimensionCount dim) {
         this.dim = dim;
     }
-
-    @Override
-    public boolean isDefault() {
-        return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
-    }
-
 }

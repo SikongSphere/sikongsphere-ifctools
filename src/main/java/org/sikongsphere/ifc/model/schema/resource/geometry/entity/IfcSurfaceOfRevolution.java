@@ -15,41 +15,43 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
+import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
- * IfcAxis2Placement2D
- *
- * @author GaoSu
- * @date 2022/10/16 16:04
+ * @author zaiyuan
+ * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAxis2Placement2D extends IfcPlacement {
-    private IfcDirection refDirection;
+public class IfcSurfaceOfRevolution extends IfcSweptSurface {
+    private IfcAxis2Placement axisPosition;
     @IfcDeriveParameter
-    private LIST<IfcDirection> p;
-
-    public IfcAxis2Placement2D() {}
+    private IfcLine axisLine;
 
     @IfcParserConstructor
-    public IfcAxis2Placement2D(IfcCartesianPoint location, IfcDirection refDirection) {
-        super(location);
-        this.refDirection = refDirection;
+    public IfcSurfaceOfRevolution(
+        IfcProfileDef sweptCurve,
+        IfcAxis2Placement3D position,
+        IfcAxis2Placement axisPosition
+    ) {
+        super(sweptCurve, position);
+        this.axisPosition = axisPosition;
     }
 
-    public IfcDirection getRefDirection() {
-        return refDirection;
+    public IfcAxis2Placement getAxisPosition() {
+        return axisPosition;
     }
 
-    public void setRefDirection(IfcDirection refDirection) {
-        this.refDirection = refDirection;
+    public void setAxisPosition(IfcAxis2Placement axisPosition) {
+        this.axisPosition = axisPosition;
     }
 
-    public LIST<IfcDirection> getP() {
-        return p;
+    public IfcLine getAxisLine() {
+        return axisLine;
     }
 
-    public void setP(LIST<IfcDirection> p) {
-        this.p = p;
+    public void setAxisLine(IfcLine axisLine) {
+        this.axisLine = axisLine;
     }
 }

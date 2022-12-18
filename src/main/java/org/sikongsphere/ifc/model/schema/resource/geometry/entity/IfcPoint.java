@@ -21,4 +21,4 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/9/1 15:52
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcPoint extends IfcGeometricRepresentationItem {}
+public abstract class IfcPoint extends IfcGeometricRepresentationItem {}

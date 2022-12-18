@@ -12,28 +12,40 @@ package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * A Cartesian transformation operator 2d
- * defines a geometric transformation in two-dimensional space composed of
- * translation, rotation, mirroring and uniform scaling.
- *
- * @author stan
- * @date 2022/09/02 13:24
+ * @author zaiyuan
+ * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcCartesianTransformationOperator2D extends IfcCartesianTransformationOperator {
+public class IfcAxis1Placement extends IfcPlacement {
+    private IfcDirection axis;
     @IfcDeriveParameter
-    private LIST<IfcDirection> u;
+    private IfcDirection z;
 
-    public LIST<IfcDirection> getU() {
-        return u;
+    @IfcParserConstructor
+    public IfcAxis1Placement(IfcCartesianPoint location, IfcDirection axis) {
+        super(location);
+        this.axis = axis;
     }
 
-    public void setU(LIST<IfcDirection> u) {
-        this.u = u;
+    public IfcDirection getAxis() {
+        return axis;
+    }
+
+    public void setAxis(IfcDirection axis) {
+        this.axis = axis;
+    }
+
+    public IfcDirection getZ() {
+        return z;
+    }
+
+    public void setZ(IfcDirection z) {
+        this.z = z;
     }
 }
