@@ -15,7 +15,15 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.domain.electrical.enumeration.IfcLampTypeEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcFlowTerminalType;
 
 /**
@@ -27,7 +35,29 @@ public class IfcLampType extends IfcFlowTerminalType {
     private IfcLampTypeEnum predefinedType;
 
     @IfcParserConstructor
-    public IfcLampType(IfcLampTypeEnum predefinedType) {
+    public IfcLampType(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel applicableOccurrence,
+        SET<IfcPropertySetDefinition> hasPropertySets,
+        LIST<IfcRepresentationMap> representationMaps,
+        IfcLabel tag,
+        IfcLabel elementType,
+        IfcLampTypeEnum predefinedType
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            applicableOccurrence,
+            hasPropertySets,
+            representationMaps,
+            tag,
+            elementType
+        );
         this.predefinedType = predefinedType;
     }
 

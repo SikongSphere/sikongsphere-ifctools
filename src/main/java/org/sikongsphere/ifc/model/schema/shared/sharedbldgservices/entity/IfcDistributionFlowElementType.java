@@ -11,10 +11,19 @@
 package org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcDistributionElementType;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * @author zaiyuan
@@ -22,5 +31,28 @@ import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcDistribut
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
 public abstract class IfcDistributionFlowElementType extends IfcDistributionElementType {
-
+    @IfcParserConstructor
+    public IfcDistributionFlowElementType(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel applicableOccurrence,
+        SET<IfcPropertySetDefinition> hasPropertySets,
+        LIST<IfcRepresentationMap> representationMaps,
+        IfcLabel tag,
+        IfcLabel elementType
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            applicableOccurrence,
+            hasPropertySets,
+            representationMaps,
+            tag,
+            elementType
+        );
+    }
 }

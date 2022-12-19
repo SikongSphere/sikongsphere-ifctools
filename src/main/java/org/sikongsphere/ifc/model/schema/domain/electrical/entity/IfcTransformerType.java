@@ -15,7 +15,15 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.domain.electrical.enumeration.IfcTransformerTypeEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcEnergyConversionDeviceType;
 
 /**
@@ -27,7 +35,29 @@ public class IfcTransformerType extends IfcEnergyConversionDeviceType {
     private IfcTransformerTypeEnum predefinedType;
 
     @IfcParserConstructor
-    public IfcTransformerType(IfcTransformerTypeEnum predefinedType) {
+    public IfcTransformerType(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel applicableOccurrence,
+        SET<IfcPropertySetDefinition> hasPropertySets,
+        LIST<IfcRepresentationMap> representationMaps,
+        IfcLabel tag,
+        IfcLabel elementType,
+        IfcTransformerTypeEnum predefinedType
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            applicableOccurrence,
+            hasPropertySets,
+            representationMaps,
+            tag,
+            elementType
+        );
         this.predefinedType = predefinedType;
     }
 
