@@ -8,11 +8,21 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
+package org.sikongsphere.ifc.model.schema.domain.architecture.enumeration;
+
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * TODO this class is not belong to this module
- * @author Yiwei
- * @date 2022/10/25
+ * @author zaiyuan
+ * @date 2022-12-19 20:30:00
  */
-public class IfcShapeAspect {}
+@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
+public enum IfcPermeableCoveringOperationEnum {
+    GRILL,
+    LOUVER,
+    SCREEN,
+    USERDEFINED,
+    NOTDEFINED
+}

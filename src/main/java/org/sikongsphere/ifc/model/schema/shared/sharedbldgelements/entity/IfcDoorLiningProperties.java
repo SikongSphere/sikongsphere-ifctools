@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcShapeAspect;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeAspect;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
