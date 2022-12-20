@@ -18,6 +18,7 @@
         <snakeyaml.version>1.29</snakeyaml.version>
         <spotless-maven-plugin.version>2.22.5</spotless-maven-plugin.version>
         <maven-surefire.version>2.5</maven-surefire.version>
+        <commons-io.version>2.11.0</commons-io.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -47,6 +48,11 @@
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <version>${snakeyaml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
     </dependencies>
 

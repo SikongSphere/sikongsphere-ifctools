@@ -25,8 +25,8 @@ params:
 
 import re
 
-file = "../../../test/resources/mass_blank.ifc"
-outfile = "../../../test/resources/sorted_blank.ifc"
+file = "../../../test/resources/steel/171210AISC_Sculpture_brep.ifc"
+outfile = "../../../test/resources/steel/171210AISC_Sculpture_brep.ifc"
 
 def read_ifc(ifc_file: str) -> tuple:
     with open(ifc_file) as f:
