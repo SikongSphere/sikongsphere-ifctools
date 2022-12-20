@@ -10,11 +10,13 @@
 */
 package org.sikongsphere.ifc.parser;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.BLANK_OUTPUT_PATH;
 import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.ioTest;
@@ -28,11 +30,14 @@ import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.ioTest;
  */
 public class BasicIfcFileIOTest {
 
+    String BLANK_INPUT_PATH = "src/test/resources/temp.ifc";
 
     @Test
     public void blankFile() throws IOException {
 
-        String BLANK_INPUT_PATH = "src/test/resources/blank.ifc";
+        URL url = new URL("http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/blank.ifc?op=OPEN");
+        File file = new File(BLANK_INPUT_PATH);
+        FileUtils.copyURLToFile(url, file);
 
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
@@ -55,7 +60,11 @@ public class BasicIfcFileIOTest {
 
     @After
     public void delIfcFile() {
-        File file = new File(BLANK_OUTPUT_PATH);
-        file.delete();
+
+        File inputFile = new File(BLANK_INPUT_PATH);
+        inputFile.delete();
+
+        File outputFile = new File(BLANK_OUTPUT_PATH);
+        outputFile.delete();
     }
 }

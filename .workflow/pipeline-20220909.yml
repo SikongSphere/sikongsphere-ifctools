@@ -74,6 +74,8 @@ stages:
         jdkVersion: '8'
         mavenVersion: 3.3.9
         commands:
+          - '设置域名解析'
+          - echo '47.93.12.57 SiKongSphere-Web' >> /etc/hosts
           - '# Maven单元测试默认命令'
           - mvn -B test -Dmaven.test.failure.ignore=false
           - mvn surefire-report:report-only
