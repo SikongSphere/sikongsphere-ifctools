@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
@@ -24,12 +25,12 @@ import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSweptAreaSolid extends IfcSolidModel {
     private IfcProfileDef sweptArea;
-    private IfcAxis2Placement position;
+    private IfcAxis2Placement3D position;
 
     public IfcSweptAreaSolid() {}
 
     @IfcParserConstructor
-    public IfcSweptAreaSolid(IfcProfileDef sweptArea, IfcAxis2Placement position) {
+    public IfcSweptAreaSolid(IfcProfileDef sweptArea, IfcAxis2Placement3D position) {
         this.sweptArea = sweptArea;
         this.position = position;
     }
@@ -46,7 +47,7 @@ public class IfcSweptAreaSolid extends IfcSolidModel {
         return position;
     }
 
-    public void setPosition(IfcAxis2Placement position) {
+    public void setPosition(IfcAxis2Placement3D position) {
         this.position = position;
     }
 }
