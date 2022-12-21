@@ -29,13 +29,9 @@ public class IfcFileIOTestUtils {
         IfcFileModel model = IfcFileReader.readFile(input);
         IfcFileWriter.writeFile(model, output);
 
-        String ifcFileOne = CharStreams.fromFileName(input)
-                .toString()
-                .replaceAll("\\s*|\r", "");
+        String ifcFileOne = CharStreams.fromFileName(input).toString().replaceAll("\\s*|\r", "");
 
-        String ifcFileTwo = CharStreams.fromFileName(output)
-                .toString().
-                replaceAll("\\s*|\r", "");
+        String ifcFileTwo = CharStreams.fromFileName(output).toString().replaceAll("\\s*|\r", "");
 
         assert ifcFileOne.equals(ifcFileTwo);
     }
