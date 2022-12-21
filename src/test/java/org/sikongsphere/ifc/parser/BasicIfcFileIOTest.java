@@ -10,16 +10,13 @@
 */
 package org.sikongsphere.ifc.parser;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
-import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.BLANK_OUTPUT_PATH;
-import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.ioTest;
+import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.*;
 
 /**
  * a test between an input IFC file
@@ -30,31 +27,27 @@ import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.ioTest;
  */
 public class BasicIfcFileIOTest {
 
-    String BLANK_INPUT_PATH = "src/test/resources/temp.ifc";
-
     @Test
     public void blankFile() throws IOException {
+        String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/blank.ifc?op=OPEN";
 
-        URL url = new URL("http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/blank.ifc?op=OPEN");
-        File file = new File(BLANK_INPUT_PATH);
-        FileUtils.copyURLToFile(url, file);
-
+        getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
     @Test
     public void basicFile() throws IOException {
+        String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/basic_0.ifc?op=OPEN";
 
-        String BLANK_INPUT_PATH = "src/test/resources/basic_0.ifc";
-
+        getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
     @Test
     public void complexFile() throws IOException {
+        String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/complex.ifc?op=OPEN";
 
-        String BLANK_INPUT_PATH = "src/test/resources/complex.ifc";
-
+        getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
