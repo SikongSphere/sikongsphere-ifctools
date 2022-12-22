@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.datatype;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 /**
@@ -41,5 +42,13 @@ public class NUMBER extends IfcDataType {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        int num = (int) value;
+        if (num - value == 0) {
+            return num + StringConstant.DOT;
+        } else return String.valueOf(value);
     }
 }

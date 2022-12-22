@@ -10,8 +10,10 @@
 */
 package org.sikongsphere.ifc.parser;
 
+import org.junit.After;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.*;
@@ -24,10 +26,20 @@ public class SteelIfcFileIOTest {
 
     @Test
     public void sculptureBrepFile() throws IOException {
-        // String url =
-        // "http://sikongsphere-web:9870/webhdfs/v1/steel/171210AISC_Sculpture_brep.ifc?op=OPEN";
+        String url =
+            "http://sikongsphere-web:9870/webhdfs/v1/steel/171210AISC_Sculpture_brep.ifc?op=OPEN";
 
-        // getIfcFile(url);
+        getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
+    @After
+    public void delIfcFile() {
+
+        File inputFile = new File(BLANK_INPUT_PATH);
+        inputFile.delete();
+
+        File outputFile = new File(BLANK_OUTPUT_PATH);
+        outputFile.delete();
     }
 }
