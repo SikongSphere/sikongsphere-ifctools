@@ -76,7 +76,7 @@ public abstract class IfcAbstractClass implements IfcInterface {
                 try {
                     o = object.getClass().getMethod(getFunction).invoke(object);
                 } catch (Exception e) {
-                    System.out.println();
+                    e.printStackTrace();
                 }
 
                 strings.add(getParamString(o));
