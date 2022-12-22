@@ -174,19 +174,24 @@ public class IfcFileParser extends AbstractFileParser {
                     List<IfcInterface> objects = ((LIST<IfcInterface>) arg).getObjects();
                     for (int j = 0; j < objects.size(); j++) {
                         IfcInterface objClass = objects.get(j);
-                        if (objClass instanceof IfcAbstractClass) {
+                        if (objClass instanceof IfcAbstractClass
+                            && ((IfcAbstractClass) objClass).getStepNumber() != 0) {
                             IfcAbstractClass aClass = convertItem(
                                 (IfcAbstractClass) objects.get(j),
                                 myElements
                             );
                             objects.set(j, aClass);
                             myElements.put(((IfcAbstractClass) objClass).getStepNumber(), aClass);
-                        }
+                        } else if (objClass instanceof IfcAbstractClass
+                            && ((IfcAbstractClass) objClass).getStepNumber() == 0) {
+                                IfcInterface ifcClass = IfcClassFactory.getIfcClass(
+                                    ((IfcLogicNode) objClass).getIfcClassName(),
+                                    ((IfcLogicNode) objClass).getArgs().toArray()
+                                );
+                                objects.set(j, ifcClass);
+                            }
                     }
                 }
-            }
-            if (node.getStepNumber() == 0) {
-                System.out.println();
             }
             IfcInterface ifcClass = IfcClassFactory.getIfcClass(
                 ((IfcLogicNode) node).getIfcClassName(),

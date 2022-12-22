@@ -72,7 +72,13 @@ public abstract class IfcAbstractClass implements IfcInterface {
                     name.substring(0, 1).toUpperCase(),
                     name.substring(1)
                 );
-                Object o = object.getClass().getMethod(getFunction).invoke(object);
+                Object o = null;
+                try {
+                    o = object.getClass().getMethod(getFunction).invoke(object);
+                } catch (Exception e) {
+                    System.out.println();
+                }
+
                 strings.add(getParamString(o));
             }
         }
