@@ -37,6 +37,7 @@ import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcFlo
 public class IfcBuildingElementComponent extends IfcBuildingElement {
 
     public IfcBuildingElementComponent() {}
+
     @IfcParserConstructor
     public IfcBuildingElementComponent(
         IfcGloballyUniqueId globalId,
