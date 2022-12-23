@@ -16,8 +16,11 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCurve;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcSurface;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
+import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
  * @author zaiyuan
@@ -28,6 +31,55 @@ public class IfcSurfaceCurveSweptAreaSolid extends IfcSweptAreaSolid {
     private IfcCurve directrix;
     private IfcParameterValue startParam;
     private IfcParameterValue endParam;
-    // TODO
-    // private IfcSurface
+    private IfcSurface referenceSurface;
+
+    public IfcSurfaceCurveSweptAreaSolid() {}
+
+    @IfcParserConstructor
+    public IfcSurfaceCurveSweptAreaSolid(
+        IfcProfileDef sweptArea,
+        IfcAxis2Placement3D position,
+        IfcCurve directrix,
+        IfcParameterValue startParam,
+        IfcParameterValue endParam,
+        IfcSurface referenceSurface
+    ) {
+        super(sweptArea, position);
+        this.directrix = directrix;
+        this.startParam = startParam;
+        this.endParam = endParam;
+        this.referenceSurface = referenceSurface;
+    }
+
+    public IfcCurve getDirectrix() {
+        return directrix;
+    }
+
+    public void setDirectrix(IfcCurve directrix) {
+        this.directrix = directrix;
+    }
+
+    public IfcParameterValue getStartParam() {
+        return startParam;
+    }
+
+    public void setStartParam(IfcParameterValue startParam) {
+        this.startParam = startParam;
+    }
+
+    public IfcParameterValue getEndParam() {
+        return endParam;
+    }
+
+    public void setEndParam(IfcParameterValue endParam) {
+        this.endParam = endParam;
+    }
+
+    public IfcSurface getReferenceSurface() {
+        return referenceSurface;
+    }
+
+    public void setReferenceSurface(IfcSurface referenceSurface) {
+        this.referenceSurface = referenceSurface;
+    }
 }

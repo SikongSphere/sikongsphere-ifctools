@@ -22,6 +22,7 @@
 
 import re
 import argparse
+from tqdm import trange
 
 def read_ifc(ifc_file: str) -> tuple:
 
@@ -31,6 +32,7 @@ def read_ifc(ifc_file: str) -> tuple:
     items = data.split("ENDSEC;")
 
     return items
+
 
 def extract_step_number(step_element: str) -> int:
     extract = re.findall(r"#(.+?)=", step_element)
@@ -43,22 +45,23 @@ def sort_element(body: list) -> list:
     temp = []
     elements = body.split(";\n")
 
-    for element in elements:
+    for element in trange(len(elements),desc='processing token'):
 
-        if element == "":
+        token = elements[element]
+
+        if token == "":
             continue
 
-        processed = element.replace("\n","") + ";\n"
+        processed = token.replace("\n","") + ";\n"
         temp.append(processed)
 
     temp_sort = {}
 
-    for item in temp[1:]:
-        stepNumber = extract_step_number(item)
-        temp_sort[stepNumber] = item
+    data_item = temp[1:]
 
-        print('\r' + "sorting" + ' %.2f%%\t' % (temp.index(item) / len(temp) * 100), end='')
-        print('[' + '>' * int(temp.index(item) / len(temp) * 100) + '-' * int(100 - temp.index(item) / len(temp) * 100) + ']', end='')
+    for item in trange(len(data_item), desc='sorting ifc file'):
+        stepNumber = extract_step_number(data_item[item])
+        temp_sort[stepNumber] = data_item[item]
 
     result = sorted(temp_sort.items())
     result = [i[1] for i in result]

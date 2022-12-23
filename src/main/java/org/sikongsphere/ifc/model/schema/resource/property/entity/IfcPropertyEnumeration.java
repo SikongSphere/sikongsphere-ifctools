@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.model.schema.resource.property.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -21,6 +22,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * A collection of simple or measure values that define a prescribed set of alternatives from which 'enumeration values'
@@ -56,8 +61,22 @@ public class IfcPropertyEnumeration extends IfcAbstractClass {
         this.name = name;
     }
 
-    public LIST<IfcValue> getEnumerationValues() {
-        return enumerationValues;
+    public String getEnumerationValues() {
+        List<IfcValue> list = enumerationValues.getObjects();
+
+        ArrayList<Object> arrayList = new ArrayList<>();
+
+        for (IfcValue ifcValue : list) {
+            String format = String.format(
+                "%s(%s)",
+                ifcValue.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                ifcValue.toString()
+            );
+            arrayList.add(format);
+        }
+        String s = arrayList.toString();
+
+        return String.format("(%s)", s.substring(1, s.length() - 1));
     }
 
     public void setEnumerationValues(LIST<IfcValue> enumerationValues) {

@@ -12,9 +12,11 @@ package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.REAL;
 
 /**
  * A Cartesian transformation operator 2d
@@ -28,6 +30,18 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 public class IfcCartesianTransformationOperator2D extends IfcCartesianTransformationOperator {
     @IfcDeriveParameter
     private LIST<IfcDirection> u;
+
+    public IfcCartesianTransformationOperator2D() {}
+
+    @IfcParserConstructor
+    public IfcCartesianTransformationOperator2D(
+        IfcDirection axis1,
+        IfcDirection axis2,
+        IfcCartesianPoint localOrigin,
+        REAL scale
+    ) {
+        super(axis1, axis2, localOrigin, scale);
+    }
 
     public LIST<IfcDirection> getU() {
         return u;

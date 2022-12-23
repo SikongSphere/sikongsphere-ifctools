@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
@@ -34,7 +35,7 @@ public class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
     @IfcParserConstructor
     public IfcExtrudedAreaSolid(
         IfcProfileDef sweptArea,
-        IfcAxis2Placement position,
+        IfcAxis2Placement3D position,
         IfcDirection extrudedDirection,
         IfcPositiveLengthMeasure depth
     ) {
