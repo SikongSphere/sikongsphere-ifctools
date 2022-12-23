@@ -31,6 +31,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 public class IfcBuildingElementPart extends IfcBuildingElementComponent {
 
     public IfcBuildingElementPart() {}
+
     @IfcParserConstructor
     public IfcBuildingElementPart(
         IfcGloballyUniqueId globalId,
