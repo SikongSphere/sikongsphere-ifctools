@@ -12,6 +12,8 @@ package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
@@ -25,10 +27,17 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
  * @date 2022/09/02 13:24
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcCartesianTransformationOperator extends IfcGeometricRepresentationItem {
+public class IfcCartesianTransformationOperator extends IfcGeometricRepresentationItem {
+
+    @IfcOptionField
     private IfcDirection axis1;
+
+    @IfcOptionField
     private IfcDirection axis2;
+
     private IfcCartesianPoint localOrigin;
+
+    @IfcOptionField
     private REAL scale;
 
     @IfcDeriveParameter
@@ -38,6 +47,7 @@ public abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
 
     public IfcCartesianTransformationOperator() {}
 
+    @IfcParserConstructor
     public IfcCartesianTransformationOperator(
         IfcDirection axis1,
         IfcDirection axis2,

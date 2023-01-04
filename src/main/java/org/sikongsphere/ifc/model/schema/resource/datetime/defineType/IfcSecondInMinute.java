@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.NUMBER;
 import org.sikongsphere.ifc.model.datatype.STRING;
 
@@ -25,13 +26,13 @@ import org.sikongsphere.ifc.model.datatype.STRING;
 public class IfcSecondInMinute extends NUMBER {
 
     @IfcParserConstructor
-    public IfcSecondInMinute(STRING value) {
-        super(value);
+    public IfcSecondInMinute(DOUBLE value) {
+        super(value.getValue());
         check();
     }
 
     @Override
     public boolean illegal() {
-        return getValue() >= 1 && getValue() <= 12;
+        return getValue() >= 0 && getValue() <= 60;
     }
 }

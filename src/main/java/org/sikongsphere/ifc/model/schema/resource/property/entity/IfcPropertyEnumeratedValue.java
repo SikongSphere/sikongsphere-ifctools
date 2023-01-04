@@ -21,6 +21,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 /**
  * A property with an enumerated value (IfcPropertyEnumeratedValue) defines a property object which has a value
  * assigned which is chosen from an enumeration. It defines a property - value combination for which the property name,
@@ -47,8 +51,22 @@ public class IfcPropertyEnumeratedValue extends IfcSimpleProperty {
         this.enumerationReference = enumerationReference;
     }
 
-    public LIST<IfcValue> getEnumerationValues() {
-        return enumerationValues;
+    public String getEnumerationValues() {
+        List<IfcValue> list = enumerationValues.getObjects();
+
+        ArrayList<Object> arrayList = new ArrayList<>();
+
+        for (IfcValue ifcValue : list) {
+            String format = String.format(
+                "%s(%s)",
+                ifcValue.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                ifcValue.toString()
+            );
+            arrayList.add(format);
+        }
+        String s = arrayList.toString();
+
+        return String.format("(%s)", s.substring(1, s.length() - 1));
     }
 
     public void setEnumerationValues(LIST<IfcValue> enumerationValues) {

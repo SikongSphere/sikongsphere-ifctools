@@ -118,6 +118,9 @@ public class IfcSite extends IfcSpatialStructureElement {
     }
 
     public LIST<INTEGER> getRefLatitude() {
+        if (refLatitude == null) {
+            return null;
+        }
         return refLatitude.getValue();
     }
 
@@ -126,6 +129,9 @@ public class IfcSite extends IfcSpatialStructureElement {
     }
 
     public LIST<INTEGER> getRefLongitude() {
+        if (refLongitude == null) {
+            return null;
+        }
         return refLongitude.getValue();
     }
 

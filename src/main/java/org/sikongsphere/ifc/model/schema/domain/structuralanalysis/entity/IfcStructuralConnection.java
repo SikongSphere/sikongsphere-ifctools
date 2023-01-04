@@ -8,32 +8,36 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.domain.structuralelements.entity;
+package org.sikongsphere.ifc.model.schema.domain.structuralanalysis.entity;
 
-import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
-import org.sikongsphere.ifc.common.enumeration.IfcLayer;
-import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcBuildingElement;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
+import org.sikongsphere.ifc.model.schema.resource.structuralload.entity.IfcBoundaryCondition;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * @author yiwei
- * @date 2022/12/19 21:40
+ * @author Yiwei
+ * @date 2022/12/23
  */
-@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENTITY)
-public class IfcBuildingElementPart extends IfcBuildingElementComponent {
+public class IfcStructuralConnection extends IfcStructuralItem {
+    @IfcOptionField
+    private IfcBoundaryCondition appliedCondition;
+    @IfcInverseParameter
+    private SET<IfcRelConnectsStructuralMember> connectsStructuralMembers;
 
-    public IfcBuildingElementPart() {}
+    public IfcStructuralConnection(IfcBoundaryCondition appliedCondition) {
+        this.appliedCondition = appliedCondition;
+    }
 
     @IfcParserConstructor
-    public IfcBuildingElementPart(
+    public IfcStructuralConnection(
         IfcGloballyUniqueId globalId,
         IfcOwnerHistory ownerHistory,
         IfcLabel name,
@@ -41,7 +45,7 @@ public class IfcBuildingElementPart extends IfcBuildingElementComponent {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcIdentifier tag
+        IfcBoundaryCondition appliedCondition
     ) {
         super(
             globalId,
@@ -50,8 +54,26 @@ public class IfcBuildingElementPart extends IfcBuildingElementComponent {
             description,
             objectType,
             objectPlacement,
-            representation,
-            tag
+            representation
         );
+        this.appliedCondition = appliedCondition;
+    }
+
+    public IfcBoundaryCondition getAppliedCondition() {
+        return appliedCondition;
+    }
+
+    public void setAppliedCondition(IfcBoundaryCondition appliedCondition) {
+        this.appliedCondition = appliedCondition;
+    }
+
+    public SET<IfcRelConnectsStructuralMember> getConnectsStructuralMembers() {
+        return connectsStructuralMembers;
+    }
+
+    public void setConnectsStructuralMembers(
+        SET<IfcRelConnectsStructuralMember> connectsStructuralMembers
+    ) {
+        this.connectsStructuralMembers = connectsStructuralMembers;
     }
 }
