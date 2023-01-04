@@ -76,4 +76,8 @@ public class IfcClassContainer {
     public boolean contains(String clazzName) {
         return clazzMap.containsKey(clazzName);
     }
+
+    public Map<String, Class<?>> getClazzMap() {
+        return clazzMap;
+    }
 }

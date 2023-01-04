@@ -14,8 +14,17 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import org.sikongsphere.ifc.infra.IfcClassContainer;
+import org.sikongsphere.ifc.infra.IfcClassDictionary;
 
 public class SomeClassSerializer extends Serializer<SomeClass> {
+
+    public static void main(String[] args) {
+        IfcClassContainer container = IfcClassContainer.getInstance();
+        IfcClassDictionary dictionary = IfcClassDictionary.getInstance();
+        dictionary.init(container.getClazzMap());
+        System.out.println();
+    }
 
     @Override
     public void write(Kryo kryo, Output output, SomeClass someClass) {
