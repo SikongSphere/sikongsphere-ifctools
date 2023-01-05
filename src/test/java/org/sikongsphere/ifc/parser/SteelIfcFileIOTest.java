@@ -33,11 +33,16 @@ public class SteelIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
+    @Test
+    public void sculptureParamFile() throws IOException {
+        ioTest("src/test/resources/171210AISC_Sculpture_param.ifc", BLANK_OUTPUT_PATH);
+    }
+
     @After
     public void delIfcFile() {
 
-        File inputFile = new File(BLANK_INPUT_PATH);
-        inputFile.delete();
+//        File inputFile = new File(BLANK_INPUT_PATH);
+//        inputFile.delete();
 
         File outputFile = new File(BLANK_OUTPUT_PATH);
         outputFile.delete();

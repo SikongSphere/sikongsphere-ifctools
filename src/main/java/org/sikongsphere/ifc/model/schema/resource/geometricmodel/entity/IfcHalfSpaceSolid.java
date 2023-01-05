@@ -11,12 +11,16 @@
 package org.sikongsphere.ifc.model.schema.resource.geometricmodel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcGeometricSetSelect;
+import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcSurface;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean;
 
 /**
  * @author zaiyuan
@@ -25,6 +29,39 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcHalfSpaceSolid extends IfcGeometricRepresentationItem {
 
-    // TODO
-    // private IfcSurface baseSurface;
+    private IfcSurface baseSurface;
+    private IfcBoolean agreementFlag;
+
+    @IfcDeriveParameter
+    private IfcDimensionCount dim;
+
+    @IfcParserConstructor
+    public IfcHalfSpaceSolid(IfcSurface baseSurface, IfcBoolean agreementFlag) {
+        this.baseSurface = baseSurface;
+        this.agreementFlag = agreementFlag;
+    }
+
+    public IfcSurface getBaseSurface() {
+        return baseSurface;
+    }
+
+    public void setBaseSurface(IfcSurface baseSurface) {
+        this.baseSurface = baseSurface;
+    }
+
+    public IfcBoolean getAgreementFlag() {
+        return agreementFlag;
+    }
+
+    public void setAgreementFlag(IfcBoolean agreementFlag) {
+        this.agreementFlag = agreementFlag;
+    }
+
+    public IfcDimensionCount getDim() {
+        return dim;
+    }
+
+    public void setDim(IfcDimensionCount dim) {
+        this.dim = dim;
+    }
 }

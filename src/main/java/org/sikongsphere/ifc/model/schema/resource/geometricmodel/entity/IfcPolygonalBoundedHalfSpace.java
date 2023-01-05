@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcBoundedCurve;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcSurface;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean;
 
 /**
  * @author zaiyuan
@@ -28,11 +30,10 @@ public class IfcPolygonalBoundedHalfSpace extends IfcHalfSpaceSolid {
     private IfcAxis2Placement3D position;
     private IfcBoundedCurve polygonalBoundary;
 
+
     @IfcParserConstructor
-    public IfcPolygonalBoundedHalfSpace(
-        IfcAxis2Placement3D position,
-        IfcBoundedCurve polygonalBoundary
-    ) {
+    public IfcPolygonalBoundedHalfSpace(IfcSurface baseSurface, IfcBoolean agreementFlag, IfcAxis2Placement3D position, IfcBoundedCurve polygonalBoundary) {
+        super(baseSurface, agreementFlag);
         this.position = position;
         this.polygonalBoundary = polygonalBoundary;
     }
