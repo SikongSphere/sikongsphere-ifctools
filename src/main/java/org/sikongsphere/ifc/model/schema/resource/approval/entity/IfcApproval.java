@@ -24,6 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
+ * An IfcApproval represents information about approval processes for a plan, a design, a proposal, a change order, etc, in a construction or facilities management project. IfcApproval is referenced by IfcRelAssociatesApproval in IfcControlExtension schema, and thereby can be related to all subtypes of IfcRoot.
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

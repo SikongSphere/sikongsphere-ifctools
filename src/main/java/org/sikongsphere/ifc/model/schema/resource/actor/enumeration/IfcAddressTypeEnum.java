@@ -15,16 +15,32 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * This enumeration is used to tag different address
+ * Identifies the logical location of the address.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcAddressTypeEnum {
+    /**
+     * An office address.
+     */
     OFFICE,
+    /**
+     * A site address.
+     */
     SITE,
+    /**
+     * A home address.
+     */
     HOME,
+    /**
+     * A postal distribution point address.
+     */
     DISTRIBUTIONPOINT,
+    /**
+     * A user defined address type to be provided.
+     */
     USERDEFINED
 }

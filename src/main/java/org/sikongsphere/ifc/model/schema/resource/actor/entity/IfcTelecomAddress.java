@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -26,10 +27,15 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcTelecomAddress extends IfcAddress {
 
+    @IfcOptionField
     private LIST<IfcLabel> telephoneNumbers;
+    @IfcOptionField
     private LIST<IfcLabel> facsimileNumbers;
+    @IfcOptionField
     private IfcLabel pagerNumber;
+    @IfcOptionField
     private LIST<IfcLabel> electronicMailAddresses;
+    @IfcOptionField
     private IfcLabel wWWHomePageURL;
 
     public IfcTelecomAddress() {}

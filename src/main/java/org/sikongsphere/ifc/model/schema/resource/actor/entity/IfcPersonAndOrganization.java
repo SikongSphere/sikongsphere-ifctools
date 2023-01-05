@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -20,7 +21,7 @@ import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelec
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
- * This class is used to encapsulate actor person and organization information
+ * Identification of a person within an organization.
  *
  * @author zaiyuan
  * @date 2022-08-28 18:30:00
@@ -31,11 +32,9 @@ public class IfcPersonAndOrganization extends IfcAbstractClass
         IfcActorSelect,
         IfcObjectReferenceSelect {
 
-    /**
-     * @
-     */
     private IfcPerson thePerson;
     private IfcOrganization theOrganization;
+    @IfcOptionField
     private LIST<IfcActorRole> roles;
 
     public IfcPersonAndOrganization() {}

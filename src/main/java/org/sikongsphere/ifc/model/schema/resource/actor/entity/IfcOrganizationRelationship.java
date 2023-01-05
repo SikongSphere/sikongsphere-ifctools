@@ -11,41 +11,32 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
- * This class is used to encapsulate organization relationship information
+ * IfcOrganizationRelationship establishes an association between one relating organization, and one or more related organizations.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022-08-30 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcOrganizationRelationship {
+public class IfcOrganizationRelationship extends IfcAbstractClass {
     private IfcLabel name;
+    @IfcOptionField
     private IfcText description;
     private IfcOrganization relatingOrganization;
     private SET<IfcOrganization> relatedOrganizations;
 
-    public IfcOrganizationRelationship(
-        IfcLabel name,
-        IfcOrganization relatingOrganization,
-        SET<IfcOrganization> relatedOrganizations
-    ) {
-        this.name = name;
-        this.relatingOrganization = relatingOrganization;
-        this.relatedOrganizations = relatedOrganizations;
-    }
-
-    public IfcOrganizationRelationship(
-        IfcLabel name,
-        IfcText description,
-        IfcOrganization relatingOrganization,
-        SET<IfcOrganization> relatedOrganizations
-    ) {
+    @IfcParserConstructor
+    public IfcOrganizationRelationship(IfcLabel name, IfcText description, IfcOrganization relatingOrganization, SET<IfcOrganization> relatedOrganizations) {
         this.name = name;
         this.description = description;
         this.relatingOrganization = relatingOrganization;
