@@ -15,9 +15,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * This enumeration is used to tag different role
+ * Roles which may be played by an actor.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
@@ -44,5 +45,8 @@ public enum IfcRoleEnum {
     CONSTRUCTIONMANAGER,
     FIELDCONSTRUCTIONMANAGER,
     RESELLER,
+    /**
+     * User defined value to be provided.
+     */
     USERDEFINED
 }

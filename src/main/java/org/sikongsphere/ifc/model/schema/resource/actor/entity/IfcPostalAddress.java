@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -20,20 +21,28 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
- * IfcPostalAddress
+ * The address for delivery of paper based mail.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022/9/1 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPostalAddress extends IfcAddress {
 
+    @IfcOptionField
     private IfcLabel internalLocation;
+    @IfcOptionField
     private LIST<IfcLabel> AddressLines;
+    @IfcOptionField
     private IfcLabel PostalBox;
+    @IfcOptionField
     private IfcLabel Town;
+    @IfcOptionField
     private IfcLabel Region;
+    @IfcOptionField
     private IfcLabel PostalCode;
+    @IfcOptionField
     private IfcLabel Country;
 
     public IfcPostalAddress() {}

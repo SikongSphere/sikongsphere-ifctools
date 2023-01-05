@@ -11,11 +11,14 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -23,7 +26,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
- * This class is used to encapsulate organization information
+ * A named and structured grouping with a corporate identity.
  *
  * @author zaiyuan
  * @date 2022-08-30 18:30:00
@@ -34,15 +37,22 @@ public class IfcOrganization extends IfcAbstractClass
     implements
         IfcActorSelect,
         IfcObjectReferenceSelect {
+    @IfcOptionField
     private IfcIdentifier id;
     private IfcLabel name;
+    @IfcOptionField
     private IfcText description;
+    @IfcOptionField
     private LIST<IfcActorRole> roles;
+    @IfcOptionField
     private LIST<IfcAddress> addresses;
 
-    // private SET<IfcOrganizationRelationship> isRelatedBy;
-    // private SET<IfcOrganizationRelationship> relates;
-    // private SET<IfcPersonAndOrganization> engages;
+    @IfcInverseParameter
+    private SET<IfcOrganizationRelationship> isRelatedBy;
+    @IfcInverseParameter
+    private SET<IfcOrganizationRelationship> relates;
+    @IfcInverseParameter
+    private SET<IfcPersonAndOrganization> engages;
 
     @IfcParserConstructor
     public IfcOrganization(
@@ -99,27 +109,27 @@ public class IfcOrganization extends IfcAbstractClass
         this.addresses = addresses;
     }
 
-    // public SET<IfcOrganizationRelationship> getIsRelatedBy() {
-    // return isRelatedBy;
-    // }
+    public SET<IfcOrganizationRelationship> getIsRelatedBy() {
+        return isRelatedBy;
+    }
 
-    // public void setIsRelatedBy(SET<IfcOrganizationRelationship> isRelatedBy) {
-    // this.isRelatedBy = isRelatedBy;
-    // }
+    public void setIsRelatedBy(SET<IfcOrganizationRelationship> isRelatedBy) {
+        this.isRelatedBy = isRelatedBy;
+    }
 
-    // public SET<IfcOrganizationRelationship> getRelates() {
-    // return relates;
-    // }
+    public SET<IfcOrganizationRelationship> getRelates() {
+        return relates;
+    }
 
-    // public void setRelates(SET<IfcOrganizationRelationship> relates) {
-    // this.relates = relates;
-    // }
+    public void setRelates(SET<IfcOrganizationRelationship> relates) {
+        this.relates = relates;
+    }
 
-    // public SET<IfcPersonAndOrganization> getEngages() {
-    // return engages;
-    // }
+    public SET<IfcPersonAndOrganization> getEngages() {
+        return engages;
+    }
 
-    // public void setEngages(SET<IfcPersonAndOrganization> engages) {
-    // this.engages = engages;
-    // }
+    public void setEngages(SET<IfcPersonAndOrganization> engages) {
+        this.engages = engages;
+    }
 }
