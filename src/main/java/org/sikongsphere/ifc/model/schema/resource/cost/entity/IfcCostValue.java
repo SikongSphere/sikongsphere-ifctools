@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.cost.selectType.IfcAppliedValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTimeSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -25,10 +26,11 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcMeasureWithU
  * An IfcCostValue is an amount of money or a value that affects an amount of money.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022/9/1 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcCostValue extends IfcAppliedValue {
+public class IfcCostValue extends IfcAppliedValue implements IfcMetricValueSelect {
     private IfcLabel costType;
     @IfcOptionField
     private IfcText condition;

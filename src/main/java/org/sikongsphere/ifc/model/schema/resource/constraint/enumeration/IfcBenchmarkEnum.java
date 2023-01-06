@@ -23,10 +23,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcBenchmarkEnum {
+    /**
+     * Identifies that a value must be greater than that set by the constraint.
+     */
     GREATERTHAN,
+    /**
+     *	Identifies that a value must be either greater than or equal to that set by the constraint.
+     */
     GREATERTHANOREQUALTO,
+    /**
+     * Identifies that a value must be less than that set by the constraint.
+     */
     LESSTHAN,
+    /**
+     * Identifies that a value must be either less than or equal to that set by the constraint.
+     */
     LESSTHANOREQUALTO,
+    /**
+     * Identifies that a value must be equal to that set by the constraint.
+     */
     EQUALTO,
+    /**
+     *	Identifies that a value must be not equal to that set by the constraint.
+     */
     NOTEQUALTO
 }

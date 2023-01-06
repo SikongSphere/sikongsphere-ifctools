@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTimeSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
@@ -32,7 +33,7 @@ import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcTime
  * @date 2022/11/01 23:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcTimeSeries extends IfcAbstractClass {
+public class IfcTimeSeries extends IfcAbstractClass implements IfcMetricValueSelect {
     private IfcLabel name;
     @IfcOptionField
     private IfcText description;

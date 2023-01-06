@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcSimpleValue;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
@@ -25,7 +26,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcText extends STRING implements IfcValue, IfcSimpleValue {
+public class IfcText extends STRING implements IfcValue, IfcSimpleValue, IfcMetricValueSelect {
     /**
      * Construction Function
      */
