@@ -23,11 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcObjectiveEnum {
+    /**
+     *A constraint whose objective is to ensure satisfaction of a code compliance provision.
+     */
     CODECOMPLIANCE,
+    /**
+     *A constraint whose objective is to ensure satisfaction of a design intent provision.
+     */
     DESIGNINTENT,
+    /**
+     *A constraint whose objective is to ensure satisfaction of a health and safety provision.
+     */
     HEALTHANDSAFETY,
+    /**
+     *A constraint whose objective is to ensure satisfaction of a project requirement provision.
+     */
     REQUIREMENT,
+    /**
+     *A constraint whose objective is to ensure satisfaction of a specification provision.
+     */
     SPECIFICATION,
+    /**
+     *A constraint whose objective is to indicate a limiting value beyond which the condition of an object requires a particular form of attention.
+     */
     TRIGGERCONDITION,
     USERDEFINED,
     NOTDEFINED

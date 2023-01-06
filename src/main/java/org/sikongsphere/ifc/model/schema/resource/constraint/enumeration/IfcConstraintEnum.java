@@ -22,8 +22,17 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcConstraintEnum {
+    /**
+     *	Qualifies a constraint such that it must be followed rigidly within or at the values set.
+     */
     HARD,
+    /**
+     * Qualifies a constraint such that it should be followed within or at the values set.
+     */
     SOFT,
+    /**
+     * Qualifies a constraint such that it is advised that it is followed within or at the values set.
+     */
     ADVISORY,
     USERDEFINED,
     NOTDEFINED

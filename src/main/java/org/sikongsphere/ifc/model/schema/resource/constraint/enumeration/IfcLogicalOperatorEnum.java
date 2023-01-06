@@ -23,6 +23,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcLogicalOperatorEnum {
+    /**
+     * Defines a relationship between constraints whereby the provisions of all constraints must be satisfied simultaneously (e.g. constraint A AND constraint B must both be satisfied for the constraint as a whole to be satisfied).
+     */
     LOGICALAND,
+    /**
+     * Defines a relationship between constraints whereby the provisions of at least one of the constraints must be satisfied (e.g. constraint A OR constraint B or the provisions of both may be satisfied for the constraint as a whole to be satisfied).
+     */
     LOGICALOR
 }

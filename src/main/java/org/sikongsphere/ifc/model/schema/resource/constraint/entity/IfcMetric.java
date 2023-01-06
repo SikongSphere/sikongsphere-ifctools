@@ -26,6 +26,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
+ * An IfcMetric is used to capture quantitative resultant metrics that can be applied to objectives.
+ *
  * @author zaiyuan
  * @date 2022/12/10 21:15
  */

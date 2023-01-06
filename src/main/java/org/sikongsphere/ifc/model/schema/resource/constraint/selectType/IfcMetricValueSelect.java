@@ -15,6 +15,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * An IfcMetricValueSelect is a select type that enables selection of the data type for the value component of an IfcMetric.
+ *
  * @author zaiyuan
  * @date 2022-12-05 21:44:00
  */

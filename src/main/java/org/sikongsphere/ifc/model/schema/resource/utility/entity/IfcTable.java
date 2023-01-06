@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
@@ -30,7 +31,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022/12/11 13:30
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcTable extends IfcAbstractClass {
+public class IfcTable extends IfcAbstractClass implements IfcMetricValueSelect {
     private String name;
     private LIST<IfcTableRow> rows;
 
