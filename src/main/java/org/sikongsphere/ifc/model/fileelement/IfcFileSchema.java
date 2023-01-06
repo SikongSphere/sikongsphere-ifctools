@@ -25,7 +25,6 @@ public class IfcFileSchema extends IfcFileElement {
     @Override
     public String toString() {
         IfcInterface ifcInterface = params.get(0);
-
         return ifcInterface.toString();
     }
 }
