@@ -48,10 +48,10 @@ public class IfcFileParser extends AbstractFileParser {
         InvocationTargetException, IllegalAccessException {
         IfcFileParser fileParser = new IfcFileParser();
         Model model = fileParser.parseFile(
-            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\blank.ifc"
+            "src/test/resources/blank.ifc"
         );
         ((IfcFileModel) model).printFile(
-            "F:\\workspace\\idea\\sikongsphere-ifctools\\src\\test\\resources\\new_blank.ifc"
+            "src/test/resources/new_blank.ifc"
         );
         System.out.println();
     }
