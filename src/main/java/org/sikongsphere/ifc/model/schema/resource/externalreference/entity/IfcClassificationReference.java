@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.externalreference.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -19,9 +20,12 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentif
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * An IfcExternalReference is the identification of information that is not explicitly represented in the current model
- * or in the project database
+ * An IfcClassificationReference is a reference into a classification system or source (see IfcClassification).
+ * An optional inherited ItemReference key is also provided to allow more specific references to classification items
+ * (or tables) by type. The inherited Name attribute allows for a human interpretable designation of a classification
+ * notation (or code) - see use definition of "Lightweight Classification".
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022/12/06
  */
 
@@ -29,12 +33,29 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 public class IfcClassificationReference extends IfcExternalReference
     implements
         IfcClassificationNotationSelect {
+    @IfcOptionField
+    private IfcClassification referencedSource;
+
     @IfcParserConstructor
+    public IfcClassificationReference(IfcClassification referencedSource) {
+        this.referencedSource = referencedSource;
+    }
+
     public IfcClassificationReference(
         IfcLabel location,
         IfcIdentifier itemReference,
-        IfcLabel name
+        IfcLabel name,
+        IfcClassification referencedSource
     ) {
         super(location, itemReference, name);
+        this.referencedSource = referencedSource;
+    }
+
+    public IfcClassification getReferencedSource() {
+        return referencedSource;
+    }
+
+    public void setReferencedSource(IfcClassification referencedSource) {
+        this.referencedSource = referencedSource;
     }
 }

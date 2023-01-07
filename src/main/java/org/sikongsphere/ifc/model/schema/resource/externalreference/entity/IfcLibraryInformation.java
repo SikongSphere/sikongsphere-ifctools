@@ -22,11 +22,14 @@ import org.sikongsphere.ifc.model.schema.resource.externalreference.selectType.I
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * An IfcLibraryInformation is a class that describes a library where a library is a structured store of information,
+ * normally organized in a manner which allows information lookup through an index or reference value.
+ * IfcLibraryInformation provides the library name and optional version, version date and publisher attributes.
  * @author zaiyuan
  * @date 2022/10/26
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcLibraryInformation extends IfcExternalReference implements IfcLibrarySelect {
+public class IfcLibraryInformation implements IfcLibrarySelect {
     private IfcLabel name;
     @IfcOptionField
     private IfcLabel version;
@@ -52,12 +55,10 @@ public class IfcLibraryInformation extends IfcExternalReference implements IfcLi
         this.libraryReference = libraryReference;
     }
 
-    @Override
     public IfcLabel getName() {
         return name;
     }
 
-    @Override
     public void setName(IfcLabel name) {
         this.name = name;
     }

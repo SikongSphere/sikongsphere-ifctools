@@ -11,15 +11,21 @@
 package org.sikongsphere.ifc.model.schema.resource.externalreference.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.datetime.entity.IfcCalendarDate;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * An IfcClassification is used for the arrangement of objects into a class or category according to a common purpose
+ * or their possession of common characteristics.
  * @author zhongqi
+ * @modify yiwei
  * @date 2022/10/26
  */
 
@@ -27,8 +33,11 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 public class IfcClassification extends IfcAbstractClass {
     private IfcLabel source;
     private IfcLabel edition;
+    @IfcOptionField
     private IfcCalendarDate editionDate;
     private IfcLabel name;
+    @IfcInverseParameter
+    private SET<IfcClassificationItem> contains;
 
     public IfcClassification() {}
 
@@ -75,5 +84,13 @@ public class IfcClassification extends IfcAbstractClass {
 
     public void setName(IfcLabel name) {
         this.name = name;
+    }
+
+    public SET<IfcClassificationItem> getContains() {
+        return contains;
+    }
+
+    public void setContains(SET<IfcClassificationItem> contains) {
+        this.contains = contains;
     }
 }
