@@ -26,12 +26,14 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcMonetaryUnit
  * particular time and as published by a particular source.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022/12/07 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCurrencyRelationship extends IfcAbstractClass {
     private IfcMonetaryUnit relatingMonetaryUnit;
-    private IfcPositiveRatioMeasure relatedMonetaryUnit;
+    private IfcMonetaryUnit relatedMonetaryUnit;
+    private IfcPositiveRatioMeasure exchangeRate;
     private IfcDateAndTime rateDateTime;
     @IfcOptionField
     private IfcLibraryInformation rateSource;
@@ -39,12 +41,14 @@ public class IfcCurrencyRelationship extends IfcAbstractClass {
     @IfcParserConstructor
     public IfcCurrencyRelationship(
         IfcMonetaryUnit relatingMonetaryUnit,
-        IfcPositiveRatioMeasure relatedMonetaryUnit,
+        IfcMonetaryUnit relatedMonetaryUnit,
+        IfcPositiveRatioMeasure exchangeRate,
         IfcDateAndTime rateDateTime,
         IfcLibraryInformation rateSource
     ) {
         this.relatingMonetaryUnit = relatingMonetaryUnit;
         this.relatedMonetaryUnit = relatedMonetaryUnit;
+        this.exchangeRate = exchangeRate;
         this.rateDateTime = rateDateTime;
         this.rateSource = rateSource;
     }
@@ -57,12 +61,20 @@ public class IfcCurrencyRelationship extends IfcAbstractClass {
         this.relatingMonetaryUnit = relatingMonetaryUnit;
     }
 
-    public IfcPositiveRatioMeasure getRelatedMonetaryUnit() {
+    public IfcMonetaryUnit getRelatedMonetaryUnit() {
         return relatedMonetaryUnit;
     }
 
-    public void setRelatedMonetaryUnit(IfcPositiveRatioMeasure relatedMonetaryUnit) {
+    public void setRelatedMonetaryUnit(IfcMonetaryUnit relatedMonetaryUnit) {
         this.relatedMonetaryUnit = relatedMonetaryUnit;
+    }
+
+    public IfcPositiveRatioMeasure getExchangeRate() {
+        return exchangeRate;
+    }
+
+    public void setExchangeRate(IfcPositiveRatioMeasure exchangeRate) {
+        this.exchangeRate = exchangeRate;
     }
 
     public IfcDateAndTime getRateDateTime() {

@@ -20,6 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcDayligh
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcHourInDay;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcMinuteInHour;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcSecondInMinute;
+import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTimeSelect;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
@@ -27,7 +28,10 @@ import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectR
  * @date 2022/12/06 19:57
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcLocalTime extends IfcAbstractClass implements IfcObjectReferenceSelect {
+public class IfcLocalTime extends IfcAbstractClass
+    implements
+        IfcObjectReferenceSelect,
+        IfcDateTimeSelect {
     private IfcHourInDay hourComponent;
     @IfcOptionField
     private IfcMinuteInHour minuteComponent;

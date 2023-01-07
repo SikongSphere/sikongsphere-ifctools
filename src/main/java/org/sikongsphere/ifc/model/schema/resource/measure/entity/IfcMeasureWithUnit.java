@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
+import org.sikongsphere.ifc.model.schema.resource.cost.selectType.IfcAppliedValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcRatioMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIPrefix;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIUnitName;
@@ -30,7 +31,11 @@ import java.util.Locale;
  * @date 2022/10/14 17:20
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMeasureWithUnit extends IfcAbstractClass implements IfcUnit, IfcMetricValueSelect {
+public class IfcMeasureWithUnit extends IfcAbstractClass
+    implements
+        IfcUnit,
+        IfcMetricValueSelect,
+        IfcAppliedValueSelect {
     private IfcValue valueComponent;
 
     private IfcUnit unitComponent;

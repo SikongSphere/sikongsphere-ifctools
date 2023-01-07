@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcDayInMonthNumber;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcMonthInYearNumber;
 import org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcYearNumber;
+import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTimeSelect;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
@@ -25,7 +26,10 @@ import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectR
  * @date 2022/10/28 09:57
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcCalendarDate extends IfcAbstractClass implements IfcObjectReferenceSelect {
+public class IfcCalendarDate extends IfcAbstractClass
+    implements
+        IfcObjectReferenceSelect,
+        IfcDateTimeSelect {
     private IfcDayInMonthNumber dayComponent;
     private IfcMonthInYearNumber monthComponent;
     private IfcYearNumber yearComponent;

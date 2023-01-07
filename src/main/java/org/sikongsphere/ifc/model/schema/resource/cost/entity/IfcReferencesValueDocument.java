@@ -31,7 +31,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcReferencesValueDocument extends IfcAbstractClass {
     private IfcDocumentSelect referencedDocument;
-    private SET<IfcAppliedValue> referencingValue;
+    private SET<IfcAppliedValue> referencingValues;
     @IfcOptionField
     private IfcLabel name;
     @IfcOptionField
@@ -45,7 +45,7 @@ public class IfcReferencesValueDocument extends IfcAbstractClass {
         IfcText description
     ) {
         this.referencedDocument = referencedDocument;
-        this.referencingValue = referencingValue;
+        this.referencingValues = referencingValue;
         this.name = name;
         this.description = description;
     }
@@ -59,11 +59,11 @@ public class IfcReferencesValueDocument extends IfcAbstractClass {
     }
 
     public SET<IfcAppliedValue> getReferencingValue() {
-        return referencingValue;
+        return referencingValues;
     }
 
     public void setReferencingValue(SET<IfcAppliedValue> referencingValue) {
-        this.referencingValue = referencingValue;
+        this.referencingValues = referencingValue;
     }
 
     public IfcLabel getName() {
