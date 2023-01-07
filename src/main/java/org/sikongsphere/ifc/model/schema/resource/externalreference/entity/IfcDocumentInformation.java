@@ -37,6 +37,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 public class IfcDocumentInformation extends IfcAbstractClass implements IfcDocumentSelect {
     private IfcIdentifier documentId;
     private IfcLabel name;
+    @IfcOptionField
     private IfcText description;
     @IfcOptionField
     private SET<IfcDocumentReference> documentReferences;
