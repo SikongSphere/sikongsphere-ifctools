@@ -36,7 +36,12 @@ public class IfcOrganizationRelationship extends IfcAbstractClass {
     private SET<IfcOrganization> relatedOrganizations;
 
     @IfcParserConstructor
-    public IfcOrganizationRelationship(IfcLabel name, IfcText description, IfcOrganization relatingOrganization, SET<IfcOrganization> relatedOrganizations) {
+    public IfcOrganizationRelationship(
+        IfcLabel name,
+        IfcText description,
+        IfcOrganization relatingOrganization,
+        SET<IfcOrganization> relatedOrganizations
+    ) {
         this.name = name;
         this.description = description;
         this.relatingOrganization = relatingOrganization;
