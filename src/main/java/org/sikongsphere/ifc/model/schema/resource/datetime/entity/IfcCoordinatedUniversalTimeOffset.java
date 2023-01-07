@@ -28,17 +28,17 @@ import org.sikongsphere.ifc.model.schema.resource.datetime.enumeration.IfcAheadO
 public class IfcCoordinatedUniversalTimeOffset extends IfcAbstractClass {
     private IfcHourInDay hourInDay;
     @IfcOptionField
-    private org.sikongsphere.ifc.model.schema.resource.datetime.defineType.IfcMinuteInHour minuteInHour;
+    private IfcMinuteInHour minuteOffset;
     private IfcAheadOrBehind sense;
 
     @IfcParserConstructor
     public IfcCoordinatedUniversalTimeOffset(
         IfcHourInDay hourInDay,
-        IfcMinuteInHour minuteInHour,
+        IfcMinuteInHour minuteOffset,
         IfcAheadOrBehind sense
     ) {
         this.hourInDay = hourInDay;
-        this.minuteInHour = minuteInHour;
+        this.minuteOffset = minuteOffset;
         this.sense = sense;
     }
 
@@ -50,12 +50,12 @@ public class IfcCoordinatedUniversalTimeOffset extends IfcAbstractClass {
         this.hourInDay = hourInDay;
     }
 
-    public IfcMinuteInHour getMinuteInHour() {
-        return minuteInHour;
+    public IfcMinuteInHour getMinuteOffset() {
+        return minuteOffset;
     }
 
-    public void setMinuteInHour(IfcMinuteInHour minuteInHour) {
-        this.minuteInHour = minuteInHour;
+    public void setMinuteOffset(IfcMinuteInHour minuteOffset) {
+        this.minuteOffset = minuteOffset;
     }
 
     public IfcAheadOrBehind getSense() {

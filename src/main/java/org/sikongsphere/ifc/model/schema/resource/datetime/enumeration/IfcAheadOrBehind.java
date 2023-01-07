@@ -22,6 +22,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcAheadOrBehind {
+    /**
+     * The time is ahead of coordinated universal time.
+     */
     AHEAD,
+    /**
+     * The time is behind of coordinated universal time
+     */
     BEHIND
 }
