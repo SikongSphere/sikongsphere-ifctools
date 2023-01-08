@@ -28,7 +28,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
  * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcCsgPrimitive3D extends IfcGeometricRepresentationItem implements IfcBooleanOperand {
+public abstract class IfcCsgPrimitive3D extends IfcGeometricRepresentationItem
+    implements
+        IfcBooleanOperand {
     private IfcAxis2Placement3D position;
     @IfcDeriveParameter
     private IfcDimensionCount dim;

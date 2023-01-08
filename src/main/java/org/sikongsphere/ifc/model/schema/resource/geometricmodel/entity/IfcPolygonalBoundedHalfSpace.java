@@ -30,9 +30,13 @@ public class IfcPolygonalBoundedHalfSpace extends IfcHalfSpaceSolid {
     private IfcAxis2Placement3D position;
     private IfcBoundedCurve polygonalBoundary;
 
-
     @IfcParserConstructor
-    public IfcPolygonalBoundedHalfSpace(IfcSurface baseSurface, IfcBoolean agreementFlag, IfcAxis2Placement3D position, IfcBoundedCurve polygonalBoundary) {
+    public IfcPolygonalBoundedHalfSpace(
+        IfcSurface baseSurface,
+        IfcBoolean agreementFlag,
+        IfcAxis2Placement3D position,
+        IfcBoundedCurve polygonalBoundary
+    ) {
         super(baseSurface, agreementFlag);
         this.position = position;
         this.polygonalBoundary = polygonalBoundary;

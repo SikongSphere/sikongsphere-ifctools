@@ -45,8 +45,8 @@ public class SteelIfcFileIOTest {
     @After
     public void delIfcFile() {
 
-//        File inputFile = new File(BLANK_INPUT_PATH);
-//        inputFile.delete();
+        // File inputFile = new File(BLANK_INPUT_PATH);
+        // inputFile.delete();
 
         File outputFile = new File(BLANK_OUTPUT_PATH);
         outputFile.delete();
