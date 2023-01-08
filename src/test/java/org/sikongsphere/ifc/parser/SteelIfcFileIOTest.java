@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.parser;
 
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -24,7 +25,10 @@ import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.*;
  */
 public class SteelIfcFileIOTest {
 
-    @Test
+    @Ignore
+    /**
+     * todo 需要寻找一个云存储的解决方案，并将IFC文件上传，通过URL下载
+     */
     public void sculptureBrepFile() throws IOException {
         String url =
             "http://sikongsphere-web:9870/webhdfs/v1/steel/171210AISC_Sculpture_brep.ifc?op=OPEN";
@@ -41,8 +45,8 @@ public class SteelIfcFileIOTest {
     @After
     public void delIfcFile() {
 
-//        File inputFile = new File(BLANK_INPUT_PATH);
-//        inputFile.delete();
+        File inputFile = new File(BLANK_INPUT_PATH);
+        inputFile.delete();
 
         File outputFile = new File(BLANK_OUTPUT_PATH);
         outputFile.delete();

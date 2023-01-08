@@ -63,6 +63,6 @@ public class SET<E> extends IfcDataType {
 
         list.forEach(x -> strings.add(StringConstant.WELL + x));
 
-        return strings.toString();
+        return strings.toString().replace(StringConstant.WHITE_SPACE, "");
     }
 }

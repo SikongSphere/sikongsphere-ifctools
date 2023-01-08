@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcBooleanOperand;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
@@ -27,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
  * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcCsgPrimitive3D extends IfcGeometricRepresentationItem {
+public abstract class IfcCsgPrimitive3D extends IfcGeometricRepresentationItem implements IfcBooleanOperand {
     private IfcAxis2Placement3D position;
     @IfcDeriveParameter
     private IfcDimensionCount dim;
