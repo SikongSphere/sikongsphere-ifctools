@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.parser;
 
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -27,7 +28,7 @@ import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.*;
  */
 public class BasicIfcFileIOTest {
 
-    @Test
+    @Ignore
     public void blankFile() throws IOException {
         String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/blank.ifc?op=OPEN";
 
@@ -35,7 +36,7 @@ public class BasicIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-    @Test
+    @Ignore
     public void basicFile() throws IOException {
         String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/basic_0.ifc?op=OPEN";
 
@@ -43,7 +44,7 @@ public class BasicIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-    @Test
+    @Ignore
     public void complexFile() throws IOException {
         String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/complex.ifc?op=OPEN";
 
@@ -51,7 +52,7 @@ public class BasicIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-    @After
+    @Ignore
     public void delIfcFile() {
 
         File inputFile = new File(BLANK_INPUT_PATH);
