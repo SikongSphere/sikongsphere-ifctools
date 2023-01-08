@@ -28,31 +28,31 @@ import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.*;
  */
 public class BasicIfcFileIOTest {
 
-    @Ignore
+    @Test
     public void blankFile() throws IOException {
-        String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/blank.ifc?op=OPEN";
+        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/basic-ifc/blank.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-    @Ignore
+    @Test
     public void basicFile() throws IOException {
-        String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/basic_0.ifc?op=OPEN";
+        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/basic-ifc/basic_0.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-    @Ignore
+    @Test
     public void complexFile() throws IOException {
-        String url = "http://sikongsphere-web:9870/webhdfs/v1/basic-ifc/complex.ifc?op=OPEN";
+        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/basic-ifc/complex.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-    @Ignore
+    @After
     public void delIfcFile() {
 
         File inputFile = new File(BLANK_INPUT_PATH);
