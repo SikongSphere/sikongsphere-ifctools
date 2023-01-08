@@ -130,6 +130,7 @@ public class IfcClassFactory {
             }
 
             if (args[i].getClass() != parameterTypes[i] && parameterTypes[i].isInterface()) {
+                args[i] = parameterTypes[i].cast(args[i]);
                 continue;
             }
 

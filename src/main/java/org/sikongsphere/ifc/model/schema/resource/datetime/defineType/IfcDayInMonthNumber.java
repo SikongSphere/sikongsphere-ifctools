@@ -31,6 +31,9 @@ public class IfcDayInMonthNumber extends INTEGER {
 
     @Override
     public boolean illegal() {
-        return value >= 1 && value <= 12;
+        /**
+         * todo 需要检验每个月的天数
+         */
+        return value >= 1 && value <= 31;
     }
 }
