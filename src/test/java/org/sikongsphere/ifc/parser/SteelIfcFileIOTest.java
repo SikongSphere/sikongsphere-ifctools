@@ -26,8 +26,15 @@ public class SteelIfcFileIOTest {
 
     @Test
     public void sculptureBrepFile() throws IOException {
-        String url =
-            "http://sikongsphere-web:9870/webhdfs/v1/steel/171210AISC_Sculpture_brep.ifc?op=OPEN";
+        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/steel/171210AISC_Sculpture_brep.ifc";
+
+        getIfcFile(url);
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
+    @Test
+    public void sculptureParamFile() throws IOException {
+        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/steel/171210AISC_Sculpture_param.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);

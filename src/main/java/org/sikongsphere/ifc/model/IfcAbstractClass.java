@@ -145,7 +145,7 @@ public abstract class IfcAbstractClass implements IfcInterface {
      */
     public String toIfc() throws InvocationTargetException, NoSuchMethodException,
         IllegalAccessException {
-        String format = String.format("#%s=%s", this.stepNumber, getFileItem(this));
+        String format = String.format("#%s= %s", this.stepNumber, getFileItem(this));
 
         return format;
     }

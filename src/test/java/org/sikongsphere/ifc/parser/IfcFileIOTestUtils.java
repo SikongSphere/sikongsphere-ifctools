@@ -22,7 +22,7 @@ import java.net.URL;
 
 public class IfcFileIOTestUtils {
 
-    public static final String BLANK_INPUT_PATH = "src/test/resources/temp.ifc";
+    public static final String BLANK_INPUT_PATH = "src/test/resources/input.ifc";
     public static final String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
     public static void ioTest(String input, String output) throws IOException {
