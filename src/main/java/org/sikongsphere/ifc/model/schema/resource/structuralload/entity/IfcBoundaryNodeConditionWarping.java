@@ -33,8 +33,8 @@ public class IfcBoundaryNodeConditionWarping extends IfcBoundaryNodeCondition {
     private IfcWarpingMomentMeasure warpingStiffness;
 
     @IfcParserConstructor
-
     public IfcBoundaryNodeConditionWarping(
+        IfcLabel name,
         IfcLinearStiffnessMeasure linearStiffnessX,
         IfcLinearStiffnessMeasure linearStiffnessY,
         IfcLinearStiffnessMeasure linearStiffnessZ,
@@ -44,6 +44,7 @@ public class IfcBoundaryNodeConditionWarping extends IfcBoundaryNodeCondition {
         IfcWarpingMomentMeasure warpingStiffness
     ) {
         super(
+            name,
             linearStiffnessX,
             linearStiffnessY,
             linearStiffnessZ,

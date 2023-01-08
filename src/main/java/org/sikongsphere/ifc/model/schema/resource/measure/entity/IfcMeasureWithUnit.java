@@ -29,8 +29,8 @@ import java.util.Locale;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcMeasureWithUnit extends IfcAbstractClass implements IfcUnit {
-    private IfcValue valueComponent;
 
+    private IfcValue valueComponent;
     private IfcUnit unitComponent;
 
     public IfcMeasureWithUnit() {}
