@@ -28,12 +28,11 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcRotatio
  * @date 2022-08-28 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcBoundaryNodeCondition extends IfcAbstractClass {
+public class IfcBoundaryNodeCondition extends IfcBoundaryCondition {
     @IfcOptionField
     private IfcLinearStiffnessMeasure linearStiffnessX;
     @IfcOptionField
     private IfcLinearStiffnessMeasure linearStiffnessY;
-
     @IfcOptionField
     private IfcLinearStiffnessMeasure linearStiffnessZ;
     @IfcOptionField
@@ -45,6 +44,7 @@ public class IfcBoundaryNodeCondition extends IfcAbstractClass {
 
     @IfcParserConstructor
     public IfcBoundaryNodeCondition(
+        IfcLabel name,
         IfcLinearStiffnessMeasure linearStiffnessX,
         IfcLinearStiffnessMeasure linearStiffnessY,
         IfcLinearStiffnessMeasure linearStiffnessZ,
@@ -52,6 +52,7 @@ public class IfcBoundaryNodeCondition extends IfcAbstractClass {
         IfcRotationalStiffnessMeasure rotationalStiffnessY,
         IfcRotationalStiffnessMeasure rotationalStiffnessZ
     ) {
+        super(name);
         this.linearStiffnessX = linearStiffnessX;
         this.linearStiffnessY = linearStiffnessY;
         this.linearStiffnessZ = linearStiffnessZ;

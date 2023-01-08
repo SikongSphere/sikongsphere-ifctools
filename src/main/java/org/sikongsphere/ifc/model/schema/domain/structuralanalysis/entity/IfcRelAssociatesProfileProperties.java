@@ -43,28 +43,6 @@ public class IfcRelAssociatesProfileProperties extends IfcRelAssociates {
     @IfcOptionField
     private IfcOrientationSelect profileOrientation;
 
-    public IfcRelAssociatesProfileProperties(
-        IfcProfileProperties relatingProfileProperties,
-        IfcShapeAspect profileSectionLocation,
-        IfcOrientationSelect profileOrientation
-    ) {
-        this.relatingProfileProperties = relatingProfileProperties;
-        this.profileSectionLocation = profileSectionLocation;
-        this.profileOrientation = profileOrientation;
-    }
-
-    public IfcRelAssociatesProfileProperties(
-        SET<IfcRoot> relatedObjects,
-        IfcProfileProperties relatingProfileProperties,
-        IfcShapeAspect profileSectionLocation,
-        IfcOrientationSelect profileOrientation
-    ) {
-        super(relatedObjects);
-        this.relatingProfileProperties = relatingProfileProperties;
-        this.profileSectionLocation = profileSectionLocation;
-        this.profileOrientation = profileOrientation;
-    }
-
     @IfcParserConstructor
     public IfcRelAssociatesProfileProperties(
         IfcGloballyUniqueId globalId,
