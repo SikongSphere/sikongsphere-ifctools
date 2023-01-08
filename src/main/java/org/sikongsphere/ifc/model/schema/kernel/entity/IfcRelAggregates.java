@@ -23,11 +23,12 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 /**
  * IfcRelAggregates
  *
+ * @modify Wangbohong
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
 
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcRelAggregates extends IfcRelDecomposes {
     @IfcParserConstructor
     public IfcRelAggregates(

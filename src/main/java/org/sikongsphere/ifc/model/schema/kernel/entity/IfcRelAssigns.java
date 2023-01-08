@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -24,12 +25,14 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 /**
  * IfcRelAssigns
  *
+ * @modify Wangbohong
  * @author zaiyuan
  * @date 2022/8/31 21:15
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.CORE)
 public abstract class IfcRelAssigns extends IfcRelationship {
     private SET<IfcObjectDefinition> relatedObjects;
+    @IfcOptionField
     private IfcObjectTypeEnum relatedObjectsType;
 
     @IfcParserConstructor
