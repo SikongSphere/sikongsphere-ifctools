@@ -13,23 +13,21 @@ package org.sikongsphere.ifc.model.schema.domain.structuralanalysis.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.domain.plumbingfireprotection.enumeration.IfcFireSuppressionTerminalTypeEnum;
 import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.selectType.IfcOrientationSelect;
-import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelAssociates;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRoot;
-import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.profileproperty.entity.IfcProfileProperties;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeAspect;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcFlowTerminalType;
+
+import java.util.Locale;
 
 /**
  * @author yiwei
@@ -76,8 +74,18 @@ public class IfcRelAssociatesProfileProperties extends IfcRelAssociates {
         this.profileSectionLocation = profileSectionLocation;
     }
 
-    public IfcOrientationSelect getProfileOrientation() {
-        return profileOrientation;
+    public String getProfileOrientation() {
+        if (this.profileOrientation == null) {
+            return StringConstant.DOLLAR;
+        } else {
+            String format = String.format(
+                "%s(%s)",
+                profileOrientation.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+                this.profileOrientation
+            );
+
+            return format;
+        }
     }
 
     public void setProfileOrientation(IfcOrientationSelect profileOrientation) {

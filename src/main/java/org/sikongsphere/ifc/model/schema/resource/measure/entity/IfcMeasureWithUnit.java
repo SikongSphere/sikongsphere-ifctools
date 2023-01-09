@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -57,9 +58,8 @@ public class IfcMeasureWithUnit extends IfcAbstractClass
         String format = String.format(
             "%s(%s)",
             valueComponent.getClass().getSimpleName().toUpperCase(Locale.ROOT),
-            valueComponent
+            this.valueComponent
         );
-
         return format;
     }
 

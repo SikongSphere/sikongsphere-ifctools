@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 
+import java.util.Locale;
+
 /**
  * A measure of energy required or used.
  * @author zaiyuan
