@@ -64,10 +64,6 @@ public class IfcBuildingStorey extends IfcSpatialStructureElement {
         this.elevation = elevation;
     }
 
-    public IfcBuildingStorey(IfcLengthMeasure elevation) {
-        this.elevation = elevation;
-    }
-
     public IfcLengthMeasure getElevation() {
         return elevation;
     }

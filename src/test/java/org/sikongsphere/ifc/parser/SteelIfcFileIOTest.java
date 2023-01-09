@@ -40,6 +40,15 @@ public class SteelIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
+    @Test
+    public void analysisBrepFile() throws IOException {
+        String url =
+            "https://ifc-file.gd2.qingstor.com/input.ifc?expires=1673930272&signature=AXX9kopx84wsnyBFUCuY%2BWguseIzBEyBJPXJrFw3o5Q%3D&access_key_id=FZLWAIQXQOXTOQIJDLJO";
+
+        getIfcFile(url);
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
     @After
     public void delIfcFile() {
 

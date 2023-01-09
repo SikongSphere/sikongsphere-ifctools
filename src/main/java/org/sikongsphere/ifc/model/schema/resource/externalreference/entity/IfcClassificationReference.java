@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.externalreference.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -29,12 +30,27 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 public class IfcClassificationReference extends IfcExternalReference
     implements
         IfcClassificationNotationSelect {
+
+    @IfcOptionField
+    private IfcClassification referencedSource;
+
     @IfcParserConstructor
+
     public IfcClassificationReference(
         IfcLabel location,
         IfcIdentifier itemReference,
-        IfcLabel name
+        IfcLabel name,
+        IfcClassification referencedSource
     ) {
         super(location, itemReference, name);
+        this.referencedSource = referencedSource;
+    }
+
+    public IfcClassification getReferencedSource() {
+        return referencedSource;
+    }
+
+    public void setReferencedSource(IfcClassification referencedSource) {
+        this.referencedSource = referencedSource;
     }
 }
