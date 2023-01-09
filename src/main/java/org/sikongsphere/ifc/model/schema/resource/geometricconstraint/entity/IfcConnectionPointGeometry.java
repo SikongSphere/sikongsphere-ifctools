@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcPointOrVertexPoint;
 
 /**
+ * The IfcConnectionPointGeometry is used to describe the geometric constraints that facilitate the physical connection
+ * of two objects at a point (here IfcCartesianPoint) or at an vertex with point coordinates associated.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

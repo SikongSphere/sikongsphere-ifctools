@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcSurfaceOrFaceSurface;
 
 /**
+ * The IfcConnectionSurfaceGeometry is used to describe the geometric constraints that facilitate the physical
+ * connection of two objects at a surface or at a face with surface geometry associated.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

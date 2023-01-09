@@ -20,7 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
-/**
+/**The extruded area solid (IfcExtrudedAreaSolid) is defined by sweeping a bounded planar surface.
+ *
  * @author zhongqi
  * @date 2022/10/26
  */

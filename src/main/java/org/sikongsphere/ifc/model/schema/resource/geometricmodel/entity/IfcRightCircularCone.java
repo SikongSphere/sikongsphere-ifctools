@@ -18,6 +18,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placem
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
+ * A right circular cone is a CSG primitive in the form of a cone. It is defined by an axis, a point on the axis, (...)
+ * and a distance giving the location along the axis from the point to the base of the cone.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

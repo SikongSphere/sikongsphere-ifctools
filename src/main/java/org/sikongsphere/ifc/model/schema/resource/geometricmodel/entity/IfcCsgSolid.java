@@ -22,6 +22,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
+ * A solid represented as a CSG model is defined by a collection of so-called primitive solids, combined using
+ * regularized Boolean operations.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

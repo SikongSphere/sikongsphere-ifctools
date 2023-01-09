@@ -23,6 +23,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
+ *  A surface curve swept area solid is a type of swept area solid which is the result of sweeping a face along a
+ *  Directrix lying on a ReferenceSurface.
  * @author zaiyuan
  * @date 2022/12/17
  */

@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcSurfaceOrFaceSurface;
 import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcCsgSelect;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
@@ -26,7 +27,9 @@ import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcConnectedFa
  * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem {
+public class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem
+    implements
+        IfcSurfaceOrFaceSurface {
     private SET<IfcConnectedFaceSet> fbsmFaces;
     @IfcDeriveParameter
     private IfcDimensionCount dim;

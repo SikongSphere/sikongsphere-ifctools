@@ -22,7 +22,16 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcBooleanOperator {
+    /**
+     * The operation of constructing the regularized set theoretic union of the volumes defined by two solids.
+     */
     UNION,
+    /**
+     * The set theoretic difference between volumes defined by two solids.
+     */
     INTERSECTION,
+    /**
+     * The operation of constructing the regularized set theoretic intersection of the volumes defined by two solids.
+     */
     DIFFERENCE
 }

@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcBoundedCurv
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
+ * A rectangular pyramid is a solid pyramid with a rectangular base. The apex of the pyramid is directly above the
+ * centre point of the base.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

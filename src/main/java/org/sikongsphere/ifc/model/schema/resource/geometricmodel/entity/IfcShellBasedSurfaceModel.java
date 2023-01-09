@@ -23,6 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.topology.selectType.IfcShell;
 
 /**
+ * A shell based surface model is described by a set of open or closed shells of dimensionality 2.
  * @author zaiyuan
  * @date 2022/12/17
  */
