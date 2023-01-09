@@ -20,6 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParamet
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
+ * A swept disk solid is the solid produced by sweeping a circular disk along a three dimensional curve.
  * @author zaiyuan
  * @date 2022/12/17
  */

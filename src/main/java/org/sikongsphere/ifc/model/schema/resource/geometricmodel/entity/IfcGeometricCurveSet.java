@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 
 /**
+ * A geometric curve set is a collection of two or three dimensional points and curves.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

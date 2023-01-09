@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
 
 /**
+ * The IfcFacetedBrepWithVoids is a specialization of a faceted B-rep which contains one or more voids in its interior.
  * @author zaiyuan
  * @date 2022/12/17
  */

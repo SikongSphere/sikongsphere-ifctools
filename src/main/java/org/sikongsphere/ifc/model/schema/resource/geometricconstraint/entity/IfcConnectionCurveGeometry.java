@@ -19,6 +19,10 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcCurveOrEdgeCurve;
 
 /**
+ * The IfcConnectionCurveGeometry is used to describe the geometric constraints that facilitate the physical connection
+ * of two objects at a curve or at an edge with curve geometry associated. It is envisioned as a control that applies
+ * to the element connection relationships.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

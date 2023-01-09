@@ -14,12 +14,17 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcSurfaceOrFaceSurface;
+import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcGeometricSetSelect;
 
 /**
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcSurface extends IfcGeometricRepresentationItem {
+public abstract class IfcSurface extends IfcGeometricRepresentationItem
+    implements
+        IfcSurfaceOrFaceSurface,
+        IfcGeometricSetSelect {
 
 }

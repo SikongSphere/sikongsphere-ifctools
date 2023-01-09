@@ -16,7 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * IfcConnectionGeometry
+ * The IfcConnectionGeometry is used to describe the geometric and topological constraints that facilitate the physical
+ * connection of two objects. It is envisioned as a control that applies to the element connection relationships.
  *
  * @author GaoSu
  * @date 2022/10/18 15:08

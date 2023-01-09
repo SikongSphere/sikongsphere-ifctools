@@ -17,6 +17,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
 
 /**
+ * A faceted brep is a simple form of boundary representation model in which all faces are planar and all edges are
+ * straight lines.
+ *
  * @author Yiwei
  * @date 2022/11/6
  */

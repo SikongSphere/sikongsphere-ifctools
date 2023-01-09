@@ -22,6 +22,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
 import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
 
 /**
+ * This entity is intended for the transfer of models when a topological structure is not available.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

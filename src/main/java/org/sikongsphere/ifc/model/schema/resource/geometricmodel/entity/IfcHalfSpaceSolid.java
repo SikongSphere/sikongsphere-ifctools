@@ -24,6 +24,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcSurface;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean;
 
 /**
+ * A half space solid is defined by the half space which is the regular subset of the domain which lies on one side of
+ * an unbounded surface.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

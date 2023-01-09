@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcPointOrVertexPoint;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcPoint;
 
 /**
@@ -21,7 +22,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcPoint;
  * @date 2022/12/10 23:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcVertexPoint extends IfcVertex {
+public class IfcVertexPoint extends IfcVertex implements IfcPointOrVertexPoint {
     private IfcPoint vertexGeometry;
 
     @IfcParserConstructor

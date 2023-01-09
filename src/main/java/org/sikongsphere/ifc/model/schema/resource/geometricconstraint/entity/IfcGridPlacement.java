@@ -18,6 +18,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
+ * The IfcGridPlacement provides a specialization of IfcObjectPlacement in which the placement and axis direction of
+ * the object coordinate system is defined by a reference to the design grid.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

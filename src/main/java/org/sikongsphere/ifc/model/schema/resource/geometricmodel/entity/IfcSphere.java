@@ -23,6 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.topology.selectType.IfcShell;
 
 /**
+ *  A sphere is a CSG primitive with a spherical shape defined by a centre and a radius.
  * @author zaiyuan
  * @date 2022/12/17
  */

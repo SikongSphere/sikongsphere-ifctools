@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placem
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 
 /**
+ * A right circular cylinder is a CSG primitive in the form of a solid cylinder of finite height.
  * @author zaiyuan
  * @date 2022/12/17
  */
