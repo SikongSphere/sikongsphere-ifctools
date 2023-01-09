@@ -15,8 +15,12 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.selectType.IfcOrientationSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
+
+import java.util.Locale;
 
 /**
  * A plane angle measure is the value of an angle in a plane.
@@ -25,7 +29,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022/09/02 00:02
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcPlaneAngleMeasure extends DOUBLE implements IfcValue {
+public class IfcPlaneAngleMeasure extends REAL implements IfcOrientationSelect {
 
     public IfcPlaneAngleMeasure() {}
 

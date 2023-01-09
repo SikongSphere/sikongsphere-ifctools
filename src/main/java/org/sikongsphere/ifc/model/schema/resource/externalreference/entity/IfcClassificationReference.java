@@ -45,4 +45,12 @@ public class IfcClassificationReference extends IfcExternalReference
         super(location, itemReference, name);
         this.referencedSource = referencedSource;
     }
+
+    public IfcClassification getReferencedSource() {
+        return referencedSource;
+    }
+
+    public void setReferencedSource(IfcClassification referencedSource) {
+        this.referencedSource = referencedSource;
+    }
 }
