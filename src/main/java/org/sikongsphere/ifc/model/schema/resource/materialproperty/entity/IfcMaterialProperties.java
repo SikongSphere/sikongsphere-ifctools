@@ -8,35 +8,34 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.measure.definedType;
+package org.sikongsphere.ifc.model.schema.resource.materialproperty.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.DOUBLE;
-import org.sikongsphere.ifc.model.datatype.REAL;
-import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.material.entity.IfcMaterial;
 
 /**
- * A measure of the quantity of a medium acting on a unit area.
- * @author zaiyuan
- * @date 2022/12/07 21:38
+ * @author:stan
+ * @date:2023/1/10 21:23
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcPressureMeasure extends REAL {
-    public IfcPressureMeasure() {}
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public abstract class IfcMaterialProperties extends IfcAbstractClass {
 
-    public IfcPressureMeasure(double value) {
-        super(value);
-    }
+    private IfcMaterial material;
 
     @IfcParserConstructor
-    public IfcPressureMeasure(STRING value) {
-        super(value);
+    public IfcMaterialProperties(IfcMaterial material) {
+        this.material = material;
     }
 
-    public IfcPressureMeasure(DOUBLE value) {
-        super(value);
+    public IfcMaterial getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(IfcMaterial material) {
+        this.material = material;
     }
 }

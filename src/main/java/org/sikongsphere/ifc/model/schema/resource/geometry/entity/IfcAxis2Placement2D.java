@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 
 /**
  * IfcAxis2Placement2D
@@ -24,7 +25,7 @@ import org.sikongsphere.ifc.model.datatype.LIST;
  * @date 2022/10/16 16:04
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAxis2Placement2D extends IfcPlacement {
+public class IfcAxis2Placement2D extends IfcPlacement implements IfcAxis2Placement {
     private IfcDirection refDirection;
     @IfcDeriveParameter
     private LIST<IfcDirection> p;
