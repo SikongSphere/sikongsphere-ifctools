@@ -37,10 +37,10 @@ public class IfcClassificationReference extends IfcExternalReference
     @IfcOptionField
     private IfcClassification referencedSource;
 
-    
     public IfcClassificationReference(IfcClassification referencedSource) {
         this.referencedSource = referencedSource;
     }
+
     @IfcParserConstructor
     public IfcClassificationReference(
         IfcLabel location,

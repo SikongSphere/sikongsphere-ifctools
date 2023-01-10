@@ -34,8 +34,11 @@ import java.util.Locale;
  * @date 2022/10/14 17:20
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMeasureWithUnit extends IfcAbstractClass 
-    implements IfcMetricValueSelect,IfcAppliedValueSelect,IfcUnit{
+public class IfcMeasureWithUnit extends IfcAbstractClass
+    implements
+        IfcMetricValueSelect,
+        IfcAppliedValueSelect,
+        IfcUnit {
 
     private IfcValue valueComponent;
     private IfcUnit unitComponent;
