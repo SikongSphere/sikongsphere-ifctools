@@ -193,9 +193,7 @@ public class IfcFileParser extends AbstractFileParser {
                     }
                 }
             }
-            if (node.getStepNumber() == 22586) {
-                System.out.println();
-            }
+
             IfcInterface ifcClass = IfcClassFactory.getIfcClass(
                 ((IfcLogicNode) node).getIfcClassName(),
                 args.toArray()
