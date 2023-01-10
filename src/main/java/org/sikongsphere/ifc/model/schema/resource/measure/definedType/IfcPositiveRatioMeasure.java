@@ -13,6 +13,8 @@ package org.sikongsphere.ifc.model.schema.resource.measure.definedType;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.STRING;
 
 /**
  * A positive ratio measure is a ratio measure that is greater than zero.
@@ -21,20 +23,18 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/09/01 23:44
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcPositiveRatioMeasure {
-    private IfcRatioMeasure positiveRatioMeasure;
-
+public class IfcPositiveRatioMeasure extends IfcRatioMeasure {
     public IfcPositiveRatioMeasure() {}
 
-    public IfcPositiveRatioMeasure(IfcRatioMeasure positiveRatioMeasure) {
-        this.positiveRatioMeasure = positiveRatioMeasure;
+    public IfcPositiveRatioMeasure(double value) {
+        super(value);
     }
 
-    public IfcRatioMeasure getPositiveRatioMeasure() {
-        return positiveRatioMeasure;
+    public IfcPositiveRatioMeasure(STRING value) {
+        super(value);
     }
 
-    public void setPositiveRatioMeasure(IfcRatioMeasure positiveRatioMeasure) {
-        this.positiveRatioMeasure = positiveRatioMeasure;
+    public IfcPositiveRatioMeasure(DOUBLE value) {
+        super(value.getValue());
     }
 }
