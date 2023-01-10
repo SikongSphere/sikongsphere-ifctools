@@ -48,6 +48,22 @@ public class SteelIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
+    @Test
+    public void analysisParamFile() throws IOException {
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210analysis_param.ifc";
+        getIfcFile(url);
+
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
+    @Test
+    public void cadStudioBrepFile() throws IOException {
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210CADstudio_brep.ifc";
+        getIfcFile(url);
+
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
     @After
     public void delIfcFile() {
 

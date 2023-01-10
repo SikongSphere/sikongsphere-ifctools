@@ -8,33 +8,34 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.model.schema.resource.topology.entity;
+package org.sikongsphere.ifc.model.schema.resource.materialproperty.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcPointOrVertexPoint;
-import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcPoint;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.material.entity.IfcMaterial;
 
 /**
- * @author zaiyuan
- * @date 2022/12/10 23:09
+ * @author:stan
+ * @date:2023/1/10 21:23
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcVertexPoint extends IfcVertex implements IfcPointOrVertexPoint {
-    private IfcPoint vertexGeometry;
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
+public abstract class IfcMaterialProperties extends IfcAbstractClass {
+
+    private IfcMaterial material;
 
     @IfcParserConstructor
-    public IfcVertexPoint(IfcPoint vertexGeometry) {
-        this.vertexGeometry = vertexGeometry;
+    public IfcMaterialProperties(IfcMaterial material) {
+        this.material = material;
     }
 
-    public IfcPoint getVertexGeometry() {
-        return vertexGeometry;
+    public IfcMaterial getMaterial() {
+        return material;
     }
 
-    public void setVertexGeometry(IfcPoint vertexGeometry) {
-        this.vertexGeometry = vertexGeometry;
+    public void setMaterial(IfcMaterial material) {
+        this.material = material;
     }
 }
