@@ -64,7 +64,7 @@ public class SteelIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
-     @After
+    @After
     public void delIfcFile() {
 
         File inputFile = new File(BLANK_INPUT_PATH);
