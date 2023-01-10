@@ -29,7 +29,7 @@ public class BasicIfcFileIOTest {
 
     @Test
     public void blankFile() throws IOException {
-        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/basic-ifc/blank.ifc";
+        String url = "https://ifc-file.gd2.qingstor.com/basic-ifc/blank.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
@@ -37,7 +37,7 @@ public class BasicIfcFileIOTest {
 
     @Test
     public void basicFile() throws IOException {
-        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/basic-ifc/basic_0.ifc";
+        String url = "https://ifc-file.gd2.qingstor.com/basic-ifc/basic_0.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
@@ -45,7 +45,7 @@ public class BasicIfcFileIOTest {
 
     @Test
     public void complexFile() throws IOException {
-        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/basic-ifc/complex.ifc";
+        String url = "https://ifc-file.gd2.qingstor.com/basic-ifc/complex.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
