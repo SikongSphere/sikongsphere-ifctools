@@ -29,6 +29,7 @@ public class StringConstant {
     public static final String BLANK_ROW = "\n";
     public static final String WELL = "#";
     public static final String WHITE_SPACE = " ";
+    public static final String NOTHING = "";
     public static final String EQUALS = "=";
     public static final String COMMA = ",";
     public static final String DOLLAR = "$";

@@ -27,7 +27,7 @@ public class SteelIfcFileIOTest {
 
     @Test
     public void sculptureBrepFile() throws IOException {
-        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/steel/171210AISC_Sculpture_brep.ifc";
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210AISC_Sculpture_brep.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
@@ -35,7 +35,15 @@ public class SteelIfcFileIOTest {
 
     @Test
     public void sculptureParamFile() throws IOException {
-        String url = "http://ro5jgppm5.sabkt.gdipper.com/ifc/steel/171210AISC_Sculpture_param.ifc";
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210AISC_Sculpture_param.ifc";
+
+        getIfcFile(url);
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
+    @Test
+    public void analysisBrepFile() throws IOException {
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210analysis_brep.ifc";
 
         getIfcFile(url);
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);

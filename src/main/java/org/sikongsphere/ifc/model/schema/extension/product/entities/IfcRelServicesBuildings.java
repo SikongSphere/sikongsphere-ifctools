@@ -11,10 +11,15 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelConnects;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * An objectified relationship that
@@ -30,10 +35,16 @@ public class IfcRelServicesBuildings extends IfcRelConnects {
 
     public IfcRelServicesBuildings() {}
 
+    @IfcParserConstructor
     public IfcRelServicesBuildings(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
         IfcSystem relatingSystem,
         SET<IfcSpatialStructureElement> relatedBuildings
     ) {
+        super(globalId, ownerHistory, name, description);
         this.relatingSystem = relatingSystem;
         this.relatedBuildings = relatedBuildings;
     }

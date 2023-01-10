@@ -13,12 +13,13 @@ package org.sikongsphere.ifc.model.datatype;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcDataType;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * @author zaiyuan
  * @date 2022/12/07 21:45
  */
-public class REAL extends IfcDataType {
+public class REAL extends IfcDataType implements IfcValue {
     private double value;
 
     public REAL() {}
