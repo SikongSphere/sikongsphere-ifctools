@@ -20,6 +20,9 @@ import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcElement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
+ * The IfcVirtualGridIntersection defines the derived location of the intersection between two grid axes. Offset values
+ * may be given to set an offset distance to the grid axis for the calculation of the virtual grid intersection.
+ *
  * @author zaiyuan
  * @date 2022/12/10 12:13
  */

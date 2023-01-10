@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcSurface;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean;
 
 /**
+ * The polygonal bounded half space is a special subtype of a half space solid, where the material of the half space
+ * used in Boolean expressions is bounded by a polygonal boundary.
+ *
  * @author zaiyuan
  * @date 2022/12/17
  */

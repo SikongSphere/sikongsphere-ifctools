@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Pl
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
+ * The IfcConnectionPortGeometry is used to describe the geometric constraints that facilitate the physical connection
+ * of two objects at a port having a profile geometry (here IfcProfile).
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

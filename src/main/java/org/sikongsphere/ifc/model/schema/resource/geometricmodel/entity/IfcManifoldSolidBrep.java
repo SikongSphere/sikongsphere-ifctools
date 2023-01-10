@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcClosedShell;
 
 /**
+ * A manifold solid B-rep is a finite, arcwise connected volume bounded by one or more surfaces, each of which is a
+ * connected, oriented, finite, closed 2-manifold.
  * @author Yiwei
  * @date 2022/11/6
  */

@@ -23,9 +23,21 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDocumentConfidentialityEnum {
+    /**
+     *	Document is publicly available.
+     */
     PUBLIC,
+    /**
+     *	Document availability is restricted.
+     */
     RESTRICTED,
+    /**
+     *	Document is confidential and its contents should not be revealed without permission.
+     */
     CONFIDENTIAL,
+    /**
+     *	Document is personal to the author.
+     */
     PERSONAL,
     USERDEFINED,
     NOTDEFINED

@@ -23,15 +23,18 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
+ * An IfcObjective captures qualitative information for an objective-based constraint.
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022/12/10 21:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcObjective extends IfcConstraint {
     @IfcOptionField
     private IfcMetric benchmarkValues;
-    private IfcMetric resultValues;
     @IfcOptionField
+    private IfcMetric resultValues;
+
     private IfcObjectiveEnum objectiveQualifier;
     @IfcOptionField
     private IfcLabel userDefinedQualifier;

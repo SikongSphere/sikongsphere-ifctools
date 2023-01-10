@@ -11,20 +11,24 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.actor.selectType.IfcActorSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
- * This class is used to encapsulate person information
+ * An individual human being.
  *
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022-08-13 11:44:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
@@ -32,13 +36,21 @@ public class IfcPerson extends IfcAbstractClass
     implements
         IfcActorSelect,
         IfcObjectReferenceSelect {
+    @IfcOptionField
     private IfcIdentifier id;
+    @IfcOptionField
     private IfcLabel familyName;
+    @IfcOptionField
     private IfcLabel givenName;
+    @IfcOptionField
     private LIST<IfcLabel> middleName;
+    @IfcOptionField
     private LIST<IfcLabel> prefixTitles;
+    @IfcOptionField
     private LIST<IfcLabel> suffixTitles;
+    @IfcOptionField
     private LIST<IfcActorRole> roles;
+    @IfcOptionField
     private LIST<IfcAddress> addresses;
 
     public IfcPerson() {}
@@ -64,10 +76,8 @@ public class IfcPerson extends IfcAbstractClass
         this.addresses = addresses;
     }
 
-    /**
-     * Inverse
-     */
-    // private SET<IfcPersonAndOrganization> engagedIn;
+    @IfcInverseParameter
+    private SET<IfcPersonAndOrganization> engagedIn;
 
     public IfcIdentifier getId() {
         return id;
@@ -131,5 +141,13 @@ public class IfcPerson extends IfcAbstractClass
 
     public void setAddresses(LIST<IfcAddress> addresses) {
         this.addresses = addresses;
+    }
+
+    public SET<IfcPersonAndOrganization> getEngagedIn() {
+        return engagedIn;
+    }
+
+    public void setEngagedIn(SET<IfcPersonAndOrganization> engagedIn) {
+        this.engagedIn = engagedIn;
     }
 }

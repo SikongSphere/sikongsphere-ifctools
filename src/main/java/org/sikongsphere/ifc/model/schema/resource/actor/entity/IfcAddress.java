@@ -11,29 +11,37 @@
 package org.sikongsphere.ifc.model.schema.resource.actor.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.actor.enumeration.IfcAddressTypeEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
- * This class is used to encapsulate address information
+ * An abstract entity type for various kinds of postal and telecom addresses.
  *
  * @author zaiyuan
  * @date 2022-08-13 11:44:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAddress extends IfcAbstractClass implements IfcObjectReferenceSelect {
+    @IfcOptionField
     private IfcAddressTypeEnum purpose;
+    @IfcOptionField
     private IfcText description;
+    @IfcOptionField
     private IfcLabel userDefinedPurpose;
 
-    // private SET<IfcPerson> ofPerson;
-    // private SET<IfcOrganization> ofOrganization;
+    @IfcInverseParameter
+    private SET<IfcPerson> ofPerson;
+    @IfcInverseParameter
+    private SET<IfcOrganization> ofOrganization;
 
     public IfcAddress() {}
 
@@ -59,6 +67,22 @@ public class IfcAddress extends IfcAbstractClass implements IfcObjectReferenceSe
 
     public void setUserDefinedPurpose(IfcLabel userDefinedPurpose) {
         this.userDefinedPurpose = userDefinedPurpose;
+    }
+
+    public SET<IfcPerson> getOfPerson() {
+        return ofPerson;
+    }
+
+    public void setOfPerson(SET<IfcPerson> ofPerson) {
+        this.ofPerson = ofPerson;
+    }
+
+    public SET<IfcOrganization> getOfOrganization() {
+        return ofOrganization;
+    }
+
+    public void setOfOrganization(SET<IfcOrganization> ofOrganization) {
+        this.ofOrganization = ofOrganization;
     }
 
     @IfcParserConstructor

@@ -24,6 +24,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * An individual axis, the IfcGridAxis, is defined in the context of a design grid. The axis definition is based on a
+ * curve of dimensionality 2.
+ *
  * @author zaiyuan
  * @date 2022/12/10 12:13
  */

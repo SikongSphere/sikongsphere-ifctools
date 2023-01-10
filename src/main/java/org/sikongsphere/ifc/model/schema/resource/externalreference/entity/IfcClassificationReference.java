@@ -20,9 +20,12 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentif
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * An IfcExternalReference is the identification of information that is not explicitly represented in the current model
- * or in the project database
+ * An IfcClassificationReference is a reference into a classification system or source (see IfcClassification).
+ * An optional inherited ItemReference key is also provided to allow more specific references to classification items
+ * (or tables) by type. The inherited Name attribute allows for a human interpretable designation of a classification
+ * notation (or code) - see use definition of "Lightweight Classification".
  * @author zaiyuan
+ * @modify yiwei
  * @date 2022/12/06
  */
 
@@ -34,8 +37,11 @@ public class IfcClassificationReference extends IfcExternalReference
     @IfcOptionField
     private IfcClassification referencedSource;
 
-    @IfcParserConstructor
+    public IfcClassificationReference(IfcClassification referencedSource) {
+        this.referencedSource = referencedSource;
+    }
 
+    @IfcParserConstructor
     public IfcClassificationReference(
         IfcLabel location,
         IfcIdentifier itemReference,

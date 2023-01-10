@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Pl
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
+ * The swept area solid entity collects the entities which are defined procedurally by sweeping action on planar bounded surfaces.
  * @author Wang Bohong
  * @date 2022/10/28 10:32
  */

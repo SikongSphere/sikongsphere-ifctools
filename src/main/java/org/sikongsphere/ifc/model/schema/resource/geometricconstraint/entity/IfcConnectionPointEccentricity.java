@@ -20,6 +20,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
+ * The IfcConnectionPointEccentricity is used to describe the geometric constraints that facilitate the physical
+ * connection of two objects at a point or vertex point with associated point coordinates.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

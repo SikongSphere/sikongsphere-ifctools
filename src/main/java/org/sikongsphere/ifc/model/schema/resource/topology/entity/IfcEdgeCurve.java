@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.BOOLEAN;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcCurveOrEdgeCurve;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCurve;
 
 /**
@@ -22,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCurve;
  * @date 2022/12/10 23:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcEdgeCurve extends IfcEdge {
+public class IfcEdgeCurve extends IfcEdge implements IfcCurveOrEdgeCurve {
     private IfcCurve edgeGeometry;
     private BOOLEAN sameSense;
 

@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTimeSelect;
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
@@ -22,7 +23,10 @@ import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectR
  * @date 2022/12/06 19:57
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcDateAndTime extends IfcAbstractClass implements IfcObjectReferenceSelect {
+public class IfcDateAndTime extends IfcAbstractClass
+    implements
+        IfcObjectReferenceSelect,
+        IfcDateTimeSelect {
     private IfcCalendarDate dateComponent;
     private IfcLocalTime timeComponent;
 

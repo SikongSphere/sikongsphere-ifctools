@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcGeometricSetSelect;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
@@ -21,7 +22,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
  * @date 2022/10/23
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcCurve extends IfcGeometricRepresentationItem {
+public abstract class IfcCurve extends IfcGeometricRepresentationItem
+    implements
+        IfcGeometricSetSelect {
     @IfcDeriveParameter
     private IfcDimensionCount dim;
 

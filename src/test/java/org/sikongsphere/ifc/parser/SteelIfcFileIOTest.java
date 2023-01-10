@@ -21,6 +21,7 @@ import static org.sikongsphere.ifc.parser.IfcFileIOTestUtils.*;
 /**
  * @author:stan
  * @date:2022/12/21 21:37
+ * test ifc file with cloud platform
  */
 public class SteelIfcFileIOTest {
 

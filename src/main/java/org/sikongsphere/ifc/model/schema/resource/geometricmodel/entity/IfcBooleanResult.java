@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometricmodel.enumeration.IfcBooleanOperator;
 import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcBooleanOperand;
+import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcCsgSelect;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
@@ -29,7 +30,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
  * @date 2022/12/17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcBooleanResult extends IfcGeometricRepresentationItem implements IfcBooleanOperand {
+public class IfcBooleanResult extends IfcGeometricRepresentationItem
+    implements
+        IfcBooleanOperand,
+        IfcCsgSelect {
     private IfcBooleanOperator operator;
     private IfcBooleanOperand firstOperand;
     private IfcBooleanOperand secondOperand;
