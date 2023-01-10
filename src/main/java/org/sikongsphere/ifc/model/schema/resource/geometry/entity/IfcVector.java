@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcVectorOrDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
@@ -23,12 +25,13 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
  * @date 2022/09/01 23:56
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcVector extends IfcGeometricRepresentationItem {
+public class IfcVector extends IfcGeometricRepresentationItem implements IfcVectorOrDirection {
     private IfcDirection orientation;
     private IfcLengthMeasure magnitude;
 
     public IfcVector() {}
 
+    @IfcParserConstructor
     public IfcVector(IfcDirection orientation, IfcLengthMeasure magnitude) {
         this.orientation = orientation;
         this.magnitude = magnitude;

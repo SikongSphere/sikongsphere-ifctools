@@ -50,11 +50,18 @@ public class SteelIfcFileIOTest {
     }
 
     @Test
-    public void analysisBrepFile() throws IOException {
-        String url =
-            "https://ifc-file.gd2.qingstor.com/input.ifc?expires=1673930272&signature=AXX9kopx84wsnyBFUCuY%2BWguseIzBEyBJPXJrFw3o5Q%3D&access_key_id=FZLWAIQXQOXTOQIJDLJO";
-
+    public void analysisParamFile() throws IOException {
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210analysis_param.ifc";
         getIfcFile(url);
+
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
+    @Test
+    public void cadStudioBrepFile() throws IOException {
+        String url = "https://ifc-file.gd2.qingstor.com/steel/171210CADstudio_brep.ifc";
+        getIfcFile(url);
+
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 

@@ -33,14 +33,15 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 public class IfcClassificationReference extends IfcExternalReference
     implements
         IfcClassificationNotationSelect {
+
     @IfcOptionField
     private IfcClassification referencedSource;
 
-    @IfcParserConstructor
     public IfcClassificationReference(IfcClassification referencedSource) {
         this.referencedSource = referencedSource;
     }
 
+    @IfcParserConstructor
     public IfcClassificationReference(
         IfcLabel location,
         IfcIdentifier itemReference,
