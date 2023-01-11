@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSymbolStyleSelect;
 
 /**
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSymbolStyle extends IfcPresentationStyle {
+public class IfcSymbolStyle extends IfcPresentationStyle implements IfcPresentationStyleSelect {
     private IfcSymbolStyleSelect styleOfSymbol;
 
     @IfcParserConstructor

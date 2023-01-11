@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCurveFontOrScaledCurveFontSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCurveStyleFontSelect;
 
 /**
@@ -25,7 +26,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:42
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcCurveStyleFontAndScaling {
+public class IfcCurveStyleFontAndScaling implements IfcCurveFontOrScaledCurveFontSelect {
     private IfcLabel name;
     private IfcCurveStyleFontSelect curveFont;
     private IfcPositiveRatioMeasure curveFontScaling;

@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPreDefinedItem;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCurveStyleFontSelect;
 
 /**
  * The predefined curve font type is an abstract supertype provided to
@@ -24,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcPreDefi
  * @date 2022/09/01 23:36
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedCurveFont extends IfcPreDefinedItem {
+public abstract class IfcPreDefinedCurveFont extends IfcPreDefinedItem
+    implements
+        IfcCurveStyleFontSelect {
     public IfcPreDefinedCurveFont() {}
 
     public IfcPreDefinedCurveFont(IfcLabel name) {

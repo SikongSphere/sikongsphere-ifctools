@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.entity.IfcExternalReference;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcFillStyleSelect;
 
 /**
  * The externally defined hatch style is an entity which makes an external reference to a hatching style.
@@ -24,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/9/2 11:42
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcExternallyDefinedHatchStyle extends IfcExternalReference {
+public class IfcExternallyDefinedHatchStyle extends IfcExternalReference
+    implements
+        IfcFillStyleSelect {
 
     public IfcExternallyDefinedHatchStyle() {}
 

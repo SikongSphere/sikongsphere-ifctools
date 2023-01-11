@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.cost.selectType.IfcAppliedValueSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
 import java.util.Locale;
 
@@ -29,7 +30,11 @@ import java.util.Locale;
  * @date 2022/09/01 23:45
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcRatioMeasure extends DOUBLE implements IfcMeasureValue, IfcAppliedValueSelect {
+public class IfcRatioMeasure extends DOUBLE
+    implements
+        IfcMeasureValue,
+        IfcAppliedValueSelect,
+        IfcSizeSelect {
     public IfcRatioMeasure() {}
 
     public IfcRatioMeasure(double value) {

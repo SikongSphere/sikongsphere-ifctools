@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.enumeration.IfcTrimmingPreference;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean;
 
 /**
  * A trimmed curve is a bounded curve which is created by taking a selected portion,
@@ -32,7 +33,7 @@ public class IfcTrimmedCurve extends IfcBoundedCurve {
     private IfcCurve basisCurve;
     private SET<IfcTrimmingSelect> trim1;
     private SET<IfcTrimmingSelect> trim2;
-    private BOOLEAN senseAgreement;
+    private IfcBoolean senseAgreement;
     private IfcTrimmingPreference masterRepresentation;
 
     @IfcParserConstructor
@@ -40,7 +41,7 @@ public class IfcTrimmedCurve extends IfcBoundedCurve {
         IfcCurve basisCurve,
         SET<IfcTrimmingSelect> trim1,
         SET<IfcTrimmingSelect> trim2,
-        BOOLEAN senseAgreement,
+        IfcBoolean senseAgreement,
         IfcTrimmingPreference masterRepresentation
     ) {
         this.basisCurve = basisCurve;
@@ -78,7 +79,7 @@ public class IfcTrimmedCurve extends IfcBoundedCurve {
         return senseAgreement;
     }
 
-    public void setSenseAgreement(BOOLEAN senseAgreement) {
+    public void setSenseAgreement(IfcBoolean senseAgreement) {
         this.senseAgreement = senseAgreement;
     }
 

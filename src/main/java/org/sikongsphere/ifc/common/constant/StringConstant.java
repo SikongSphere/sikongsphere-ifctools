@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.common.constant;
 
+import com.sun.org.apache.bcel.internal.generic.PUSH;
+
 /**
  * some constant used in an IFC file
  *
@@ -36,6 +38,7 @@ public class StringConstant {
     public static final String DOT = ".";
     public static final String QUOTE = "'";
     public static final String ASTERISK = "*";
+    public static final String NONE = "NONE";
 
     /**
      * IFC Tag

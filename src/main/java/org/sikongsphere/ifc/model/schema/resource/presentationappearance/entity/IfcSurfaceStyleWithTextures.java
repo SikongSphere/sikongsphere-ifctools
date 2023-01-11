@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 
 /**
  * The entity IfcSurfaceStyleWithTextures allows for the assignment of image textures to surface styles.
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
  * @date 2022/09/02 13:21
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyleWithTextures {
+public class IfcSurfaceStyleWithTextures implements IfcSurfaceStyleElementSelect {
     private SET<IfcSurfaceTexture> textures;
 
     public IfcSurfaceStyleWithTextures() {}

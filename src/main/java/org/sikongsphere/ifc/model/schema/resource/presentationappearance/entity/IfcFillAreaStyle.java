@@ -11,10 +11,13 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcFillStyleSelect;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
 
 /**
  * An IfcFillAreaStyle provides the style table for presentation information assigned
@@ -24,10 +27,12 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:51
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFillAreaStyle extends IfcPresentationStyle {
+public class IfcFillAreaStyle extends IfcPresentationStyle implements IfcPresentationStyleSelect {
     private SET<IfcFillStyleSelect> fillStyles;
 
-    public IfcFillAreaStyle(SET<IfcFillStyleSelect> fillStyles) {
+    @IfcParserConstructor
+    public IfcFillAreaStyle(IfcLabel name, SET<IfcFillStyleSelect> fillStyles) {
+        super(name);
         this.fillStyles = fillStyles;
     }
 

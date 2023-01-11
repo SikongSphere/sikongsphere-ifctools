@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
 /**
  * A descriptive measure is a human interpretable definition of a quantifiable value.
@@ -22,7 +23,7 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @date 2022/09/01 23:46
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcDescriptiveMeasure {
+public class IfcDescriptiveMeasure implements IfcSizeSelect {
     private STRING descriptiveMeasure;
 
     public IfcDescriptiveMeasure() {}

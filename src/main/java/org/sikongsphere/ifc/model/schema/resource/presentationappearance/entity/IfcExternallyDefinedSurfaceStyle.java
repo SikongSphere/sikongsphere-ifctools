@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.entity.IfcExternalReference;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 
 /**
  * Definition of a surface style through referencing an external source.
@@ -24,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/9/1 16:46
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference {
+public class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference
+    implements
+        IfcSurfaceStyleElementSelect {
 
     public IfcExternallyDefinedSurfaceStyle(
         IfcLabel location,

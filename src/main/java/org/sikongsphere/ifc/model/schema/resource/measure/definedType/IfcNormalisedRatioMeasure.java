@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcColourOrFactor;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
 /**
  * Dimensionless measure to express ratio values ranging from 0.0 to 1.0
@@ -25,7 +26,10 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:47
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcNormalisedRatioMeasure extends IfcRatioMeasure implements IfcColourOrFactor {
+public class IfcNormalisedRatioMeasure extends IfcRatioMeasure
+    implements
+        IfcColourOrFactor,
+        IfcSizeSelect {
     public IfcNormalisedRatioMeasure() {}
 
     public IfcNormalisedRatioMeasure(double value) {
