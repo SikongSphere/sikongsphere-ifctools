@@ -193,7 +193,6 @@ public class IfcFileParser extends AbstractFileParser {
                     }
                 }
             }
-
             IfcInterface ifcClass = IfcClassFactory.getIfcClass(
                 ((IfcLogicNode) node).getIfcClassName(),
                 args.toArray()

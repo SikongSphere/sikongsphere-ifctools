@@ -16,16 +16,19 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.NUMBER;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
+
+import java.util.Locale;
 
 /**
  * A parameter value is the value which specifies the amount of a parameter in some parameter space.
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcParameterValue extends NUMBER implements IfcTrimmingSelect {
+@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
+public class IfcParameterValue extends REAL implements IfcTrimmingSelect {
     public IfcParameterValue() {}
 
     public IfcParameterValue(double value) {
@@ -33,7 +36,7 @@ public class IfcParameterValue extends NUMBER implements IfcTrimmingSelect {
     }
 
     public IfcParameterValue(DOUBLE value) {
-        super(value.value);
+        super(value);
     }
 
     @IfcParserConstructor

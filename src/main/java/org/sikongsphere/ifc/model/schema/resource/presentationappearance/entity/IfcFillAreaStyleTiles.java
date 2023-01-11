@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcFillAreaStyleTileShapeSelect;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcFillStyleSelect;
 
 /**
  * The fill area style tiles defines a two dimensional tile
@@ -26,7 +27,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/9/2 11:25
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFillAreaStyleTiles extends IfcGeometricRepresentationItem {
+public class IfcFillAreaStyleTiles extends IfcGeometricRepresentationItem
+    implements
+        IfcFillStyleSelect {
     private IfcOneDirectionRepeatFactor tilingPattern;
     private SET<IfcFillAreaStyleTileShapeSelect> tiles;
     private IfcPositiveRatioMeasure tilingScale;

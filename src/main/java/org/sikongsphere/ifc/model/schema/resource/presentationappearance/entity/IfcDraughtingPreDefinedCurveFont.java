@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
  * @author zaiyuan
@@ -20,5 +22,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDraughtingPreDefinedCurveFont extends IfcPreDefinedCurveFont {
+
+    @IfcParserConstructor
+    public IfcDraughtingPreDefinedCurveFont(IfcLabel name) {
+        super(name);
+    }
 
 }

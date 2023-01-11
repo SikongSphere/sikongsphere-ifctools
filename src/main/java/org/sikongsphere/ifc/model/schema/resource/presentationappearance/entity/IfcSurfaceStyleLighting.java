@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 
 /**
  * IfcSurfaceStyleLighting is a container class
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourR
  * @date 2022/09/02 13:20
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyleLighting {
+public class IfcSurfaceStyleLighting implements IfcSurfaceStyleElementSelect {
     private IfcColourRgb diffusetransmissionColor;
     private IfcColourRgb diffuseReflectionColour;
     private IfcColourRgb transmissionColour;

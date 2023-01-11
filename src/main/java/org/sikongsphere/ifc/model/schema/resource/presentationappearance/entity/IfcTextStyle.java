@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcTextFontSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCharacterStyleSelect;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcTextStyleSelect;
 
 /**
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/9/2 11:44
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcTextStyle extends IfcPresentationStyle {
+public class IfcTextStyle extends IfcPresentationStyle implements IfcPresentationStyleSelect {
     private IfcCharacterStyleSelect textCharacterAppearance;
     private IfcTextStyleSelect textStyle;
     private IfcTextFontSelect textFontStyle;

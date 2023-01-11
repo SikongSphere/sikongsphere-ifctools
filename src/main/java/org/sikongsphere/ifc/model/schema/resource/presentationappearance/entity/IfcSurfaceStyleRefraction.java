@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcReal;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 
 /**
  * IfcSurfaceStyleRefraction extends the surface style lighting, or the surface style rendering definition
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcReal;
  * @date 2022/09/02 13:26
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyleRefraction {
+public class IfcSurfaceStyleRefraction implements IfcSurfaceStyleElementSelect {
     private IfcReal refractionIndex;
     private IfcReal dispersionFactor;
 

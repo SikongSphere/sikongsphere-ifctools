@@ -24,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/12/17 14:27
  */
 @IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
-public class IfcSpecularRoughness extends REAL {
+public class IfcSpecularRoughness extends REAL implements IfcSpecularHighlightSelect {
 
     public IfcSpecularRoughness() {}
 

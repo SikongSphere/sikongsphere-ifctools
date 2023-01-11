@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcVector;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcHatchLineDistanceSelect;
 
 /**
  * A one time repeat factor is a vector used in the fill area style hatching
@@ -24,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcVector;
  * @date 2022/09/01 23:55
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcOneDirectionRepeatFactor extends IfcGeometricRepresentationItem {
+public class IfcOneDirectionRepeatFactor extends IfcGeometricRepresentationItem
+    implements
+        IfcHatchLineDistanceSelect {
     private IfcVector repeatFactor;
 
     public IfcOneDirectionRepeatFactor() {}

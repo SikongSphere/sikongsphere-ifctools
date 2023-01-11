@@ -11,10 +11,15 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCurveStyleFontSelect;
 
 /**
  * A curve style font combines several curve style font pattern entities
@@ -25,13 +30,15 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  * @date 2022/09/10 23:37
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcCurveStyleFont {
+public class IfcCurveStyleFont extends IfcAbstractClass implements IfcCurveStyleFontSelect {
+
+    @IfcOptionField
     private IfcLabel name;
-    private SET<IfcCurveStyleFontPattern> patternList;
 
-    public IfcCurveStyleFont() {}
+    private LIST<IfcCurveStyleFontPattern> patternList;
 
-    public IfcCurveStyleFont(IfcLabel name, SET<IfcCurveStyleFontPattern> patternList) {
+    @IfcParserConstructor
+    public IfcCurveStyleFont(IfcLabel name, LIST<IfcCurveStyleFontPattern> patternList) {
         this.name = name;
         this.patternList = patternList;
     }
@@ -44,11 +51,11 @@ public class IfcCurveStyleFont {
         this.name = name;
     }
 
-    public SET<IfcCurveStyleFontPattern> getPatternList() {
+    public LIST<IfcCurveStyleFontPattern> getPatternList() {
         return patternList;
     }
 
-    public void setPatternList(SET<IfcCurveStyleFontPattern> patternList) {
+    public void setPatternList(LIST<IfcCurveStyleFontPattern> patternList) {
         this.patternList = patternList;
     }
 }

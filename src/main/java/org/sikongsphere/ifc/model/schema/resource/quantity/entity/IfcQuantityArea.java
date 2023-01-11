@@ -31,10 +31,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcNamedUnit;
 public class IfcQuantityArea extends IfcPhysicalSimpleQuantity {
     private IfcAreaMeasure areaValue;
 
-    public IfcQuantityArea(IfcLabel name, IfcText description, IfcNamedUnit unit) {
-        super(name, description, unit);
-    }
-
     @IfcParserConstructor
     public IfcQuantityArea(
         IfcLabel name,

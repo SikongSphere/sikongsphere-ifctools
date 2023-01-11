@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcPresentationStyleSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumeration.IfcSurfaceSide;
 
@@ -27,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumera
  * @date 2022/09/02 13:16
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyle extends IfcPresentationStyle {
+public class IfcSurfaceStyle extends IfcPresentationStyle implements IfcPresentationStyleSelect {
     private IfcSurfaceSide side;
     private SET<IfcSurfaceStyleElementSelect> styles;
 

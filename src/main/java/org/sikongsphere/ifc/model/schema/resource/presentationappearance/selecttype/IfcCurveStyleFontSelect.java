@@ -22,4 +22,4 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/09/01
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.SELECT_TYPE)
-public interface IfcCurveStyleFontSelect {}
+public interface IfcCurveStyleFontSelect extends IfcCurveFontOrScaledCurveFontSelect {}

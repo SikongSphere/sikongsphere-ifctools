@@ -11,12 +11,17 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPlaneAngleMeasure;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcFillStyleSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcHatchLineDistanceSelect;
+
+import java.util.Locale;
 
 /**
  * The IfcFillAreaStyleHatching is used to define simple,
@@ -26,15 +31,25 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:53
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem {
+public class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem
+    implements
+        IfcFillStyleSelect {
+
     private IfcCurveStyle hatchLineAppearance;
+
     private IfcHatchLineDistanceSelect startOfNextHatchLine;
+
+    @IfcOptionField
     private IfcCartesianPoint pointOfReferenceHatchLine;
+
+    @IfcOptionField
     private IfcCartesianPoint patternStart;
+
     private IfcPlaneAngleMeasure hatchLineAngle;
 
     public IfcFillAreaStyleHatching() {}
 
+    @IfcParserConstructor
     public IfcFillAreaStyleHatching(
         IfcCurveStyle hatchLineAppearance,
         IfcHatchLineDistanceSelect startOfNextHatchLine,
@@ -57,8 +72,14 @@ public class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem {
         this.hatchLineAppearance = hatchLineAppearance;
     }
 
-    public IfcHatchLineDistanceSelect getStartOfNextHatchLine() {
-        return startOfNextHatchLine;
+    public String getStartOfNextHatchLine() {
+        String format = String.format(
+            "%s(%s)",
+            startOfNextHatchLine.getClass().getSimpleName().toUpperCase(Locale.ROOT),
+            startOfNextHatchLine
+        );
+
+        return format;
     }
 
     public void setStartOfNextHatchLine(IfcHatchLineDistanceSelect startOfNextHatchLine) {

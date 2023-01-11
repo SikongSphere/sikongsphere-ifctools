@@ -30,6 +30,10 @@ public class IfcAreaMeasure extends DOUBLE implements IfcValue {
         super(value);
     }
 
+    public IfcAreaMeasure(DOUBLE value) {
+        super(value);
+    }
+
     @IfcParserConstructor
     public IfcAreaMeasure(STRING value) {
         super(value);

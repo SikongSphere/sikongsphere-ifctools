@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 
 /**
  * The surface style rendering allows the realistic visualization of surfaces
@@ -24,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourR
  * @date 2022/09/02 13:17
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyleShading extends IfcAbstractClass {
+public class IfcSurfaceStyleShading extends IfcAbstractClass
+    implements
+        IfcSurfaceStyleElementSelect {
     private IfcColourRgb surfaceColour;
 
     public IfcSurfaceStyleShading() {}

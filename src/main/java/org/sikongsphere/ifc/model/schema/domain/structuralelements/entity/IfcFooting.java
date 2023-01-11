@@ -32,4 +32,36 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 public class IfcFooting extends IfcBuildingElement {
     private IfcFootingTypeEnum predefinedType;
 
+    @IfcParserConstructor
+    public IfcFooting(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcIdentifier tag,
+        IfcFootingTypeEnum predefinedType
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            tag
+        );
+        this.predefinedType = predefinedType;
+    }
+
+    public IfcFootingTypeEnum getPredefinedType() {
+        return predefinedType;
+    }
+
+    public void setPredefinedType(IfcFootingTypeEnum predefinedType) {
+        this.predefinedType = predefinedType;
+    }
 }

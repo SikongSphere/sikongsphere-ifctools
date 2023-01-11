@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcHatchLineDistanceSelect;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
 /**
  * A positive length measure is a length measure that is greater than zero.
@@ -25,7 +27,11 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022/09/01 23:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcPositiveLengthMeasure extends DOUBLE implements IfcValue {
+public class IfcPositiveLengthMeasure extends DOUBLE
+    implements
+        IfcHatchLineDistanceSelect,
+        IfcSizeSelect,
+        IfcValue {
 
     public IfcPositiveLengthMeasure() {}
 
@@ -33,11 +39,11 @@ public class IfcPositiveLengthMeasure extends DOUBLE implements IfcValue {
         super(value);
     }
 
+    @IfcParserConstructor
     public IfcPositiveLengthMeasure(DOUBLE value) {
         super(value);
     }
 
-    @IfcParserConstructor
     public IfcPositiveLengthMeasure(STRING value) {
         super(value);
     }

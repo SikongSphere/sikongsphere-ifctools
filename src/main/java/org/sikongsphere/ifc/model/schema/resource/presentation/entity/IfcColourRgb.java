@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcColourOrFactor;
 
 /**
  * A colour rgb as a subtype of colour specifications is defined
@@ -25,7 +26,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormali
  * @date 2022/09/02 13:18
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcColourRgb extends IfcColourSpecification {
+public class IfcColourRgb extends IfcColourSpecification implements IfcColourOrFactor {
     private IfcNormalisedRatioMeasure red;
     private IfcNormalisedRatioMeasure green;
     private IfcNormalisedRatioMeasure blue;
