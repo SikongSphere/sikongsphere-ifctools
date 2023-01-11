@@ -19,7 +19,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Pl
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcRepresentation;
 
 /**
- * IfcRepresentationMap
+ * A representation map is the identification of a representation and a representation item in that
+ * representation for the purpose of mapping.
  *
  * @author GaoSu
  * @date 2022/10/20 15:18

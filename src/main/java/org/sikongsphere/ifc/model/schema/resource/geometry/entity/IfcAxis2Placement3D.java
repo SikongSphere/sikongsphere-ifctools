@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -23,12 +24,15 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Pl
  * of three mutually perpendicular axes.
  *
  * @author stan
+ * @modifu yiwei
  * @date 2022/09/01 21:34
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placement {
 
+    @IfcOptionField
     private IfcDirection axis;
+    @IfcOptionField
     private IfcDirection refDirection;
 
     @IfcDeriveParameter
@@ -36,13 +40,18 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
 
     public IfcAxis2Placement3D() {}
 
+    public IfcAxis2Placement3D(IfcDirection axis, IfcDirection refDirection) {
+        this.axis = axis;
+        this.refDirection = refDirection;
+    }
+
     @IfcParserConstructor
     public IfcAxis2Placement3D(
-        IfcCartesianPoint point,
+        IfcCartesianPoint location,
         IfcDirection axis,
         IfcDirection refDirection
     ) {
-        setLocation(point);
+        super(location);
         this.axis = axis;
         this.refDirection = refDirection;
     }

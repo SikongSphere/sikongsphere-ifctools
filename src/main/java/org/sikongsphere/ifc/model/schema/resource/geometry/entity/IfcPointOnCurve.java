@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
 
 /**
+ * A point on curve is a point which lies on a curve.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

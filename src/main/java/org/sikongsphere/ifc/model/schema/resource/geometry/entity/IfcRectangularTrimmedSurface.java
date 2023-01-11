@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
 
 /**
+ * The trimmed surface is a simple bounded surface in which the boundaries are the constant parametric
+ * lines u1 = u1, u2 = u2, v1 = v1 and v2 = v2.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

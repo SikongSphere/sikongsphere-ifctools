@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.LOGICAL;
 
 /**
+ * A composite curve (IfcCompositeCurve) is a collection of curves joined end-to-end.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

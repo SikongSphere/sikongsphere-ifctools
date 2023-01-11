@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
+ * This surface is a simple swept surface or a generalised cylinder obtained by sweeping a curve in a given direction.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

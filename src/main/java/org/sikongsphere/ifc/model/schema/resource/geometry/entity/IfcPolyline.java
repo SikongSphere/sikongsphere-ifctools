@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 
 /**
+ * An IfcPolyline is a bounded curve of n -1 linear segments, defined by a list of n points, P1, P2 ... Pn.
+ *
  * @author Yiwei
  * @date 2022/10/23
  */

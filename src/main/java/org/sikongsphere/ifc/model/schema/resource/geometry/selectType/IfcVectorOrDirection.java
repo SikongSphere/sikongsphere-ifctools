@@ -14,5 +14,11 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
+/**
+ * This type is used to identify the types of entity which can participate in vector computations.
+ *
+ * @author yiwei
+ * @date 2022/09/02 21:57
+ */
 @IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
 public interface IfcVectorOrDirection {}

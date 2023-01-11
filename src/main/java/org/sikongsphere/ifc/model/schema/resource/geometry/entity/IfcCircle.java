@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Pl
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 
 /**
+ * An IfcCircle is defined by a radius and the location and orientation of the circle.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

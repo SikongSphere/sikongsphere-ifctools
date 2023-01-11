@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
+ * An elementary surface (IfcElementarySurface) is a simple analytic surface with defined parametric representation.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

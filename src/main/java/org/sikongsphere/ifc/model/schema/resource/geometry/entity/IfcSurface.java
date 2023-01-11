@@ -18,6 +18,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType
 import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcGeometricSetSelect;
 
 /**
+ * A surface can be envisioned as a set of connected points in 3-dimensional space which is always locally
+ * 2-dimensional, but need not be a manifold.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

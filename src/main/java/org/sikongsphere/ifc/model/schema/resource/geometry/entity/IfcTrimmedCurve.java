@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.enumeration.IfcTrimmi
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
 
 /**
+ * A trimmed curve is a bounded curve which is created by taking a selected portion,
+ * between two identified points, of the associated basis curve.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

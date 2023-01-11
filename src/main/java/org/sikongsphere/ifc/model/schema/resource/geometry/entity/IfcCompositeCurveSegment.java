@@ -23,6 +23,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
 import org.sikongsphere.ifc.model.schema.resource.geometry.enumeration.IfcTransitionCode;
 
 /**
+ *  A composite curve segment (IfcCompositeCurveSegment) is a bounded curve together with transition information
+ *  which is used to construct a composite curve (IfcCompositeCurve).
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

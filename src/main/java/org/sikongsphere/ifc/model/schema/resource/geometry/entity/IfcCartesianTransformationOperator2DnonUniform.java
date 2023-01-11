@@ -20,6 +20,9 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.REAL;
 
 /**
+ * A Cartesian transformation operator 2d non uniform defines a geometric transformation in two-dimensional space
+ * composed of translation, rotation, mirroring and non uniform scaling.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
@@ -31,8 +34,19 @@ public class IfcCartesianTransformationOperator2DnonUniform extends
     @IfcDeriveParameter
     private REAL scl2;
 
-    @IfcParserConstructor
     public IfcCartesianTransformationOperator2DnonUniform(REAL scale2) {
+        this.scale2 = scale2;
+    }
+
+    @IfcParserConstructor
+    public IfcCartesianTransformationOperator2DnonUniform(
+        IfcDirection axis1,
+        IfcDirection axis2,
+        IfcCartesianPoint localOrigin,
+        REAL scale,
+        REAL scale2
+    ) {
+        super(axis1, axis2, localOrigin, scale);
         this.scale2 = scale2;
     }
 

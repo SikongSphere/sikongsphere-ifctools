@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.datatype.LOGICAL;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
+ *  An offset curve 3d is a curve at a constant distance from a basis curve in three-dimensional space.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

@@ -14,5 +14,12 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
+/**
+ * This select type identifies the two possible ways of trimming a parametric curve; by a Cartesian point on the curve,
+ * or by a REAL number defining a parameter value within the parametric range of the curve.
+ *
+ * @author yiwei
+ * @date 2022/09/02 21:57
+ */
 @IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
 public interface IfcTrimmingSelect {}

@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.datatype.LOGICAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.enumeration.IfcBSplineCurveForm;
 
 /**
+ * This is a special type of curve which can be represented as a type of B-spline curve in which the knots are evenly
+ * spaced and have high multiplicities.
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
