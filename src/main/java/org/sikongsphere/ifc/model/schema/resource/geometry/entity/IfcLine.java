@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
+ * A line is an unbounded curve with constant tangent direction.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

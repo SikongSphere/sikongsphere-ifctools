@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
 
 /**
+ *  A point on surface is a point which lies on a parametric surface.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 
 /**
+ * A Cartesian transformation operator 3d non uniform defines a geometric transformation in three-dimensional space
+ * composed of translation, rotation, mirroring and non uniform scaling.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

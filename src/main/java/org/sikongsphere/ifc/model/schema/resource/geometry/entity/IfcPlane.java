@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
+ *  A plane is an unbounded surface with a constant normal.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

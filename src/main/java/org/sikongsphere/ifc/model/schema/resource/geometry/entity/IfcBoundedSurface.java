@@ -16,6 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
+ * A bounded surface is a surface of finite area with identifiable boundaries.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

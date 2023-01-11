@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimen
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
+ *  A swept surface is one that is constructed by sweeping a curve along another curve.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

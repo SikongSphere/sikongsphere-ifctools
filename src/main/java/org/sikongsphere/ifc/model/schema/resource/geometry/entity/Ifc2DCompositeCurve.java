@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.LOGICAL;
 
 /**
+ * An Ifc2DCompositeCurve is an IfcCompositeCurve that is defined within the coordinate space of an IfcPlane.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

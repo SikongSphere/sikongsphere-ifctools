@@ -22,6 +22,8 @@ import org.sikongsphere.ifc.model.datatype.LOGICAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.enumeration.IfcBSplineCurveForm;
 
 /**
+ * A B-spline curve is a piecewise parametric polynominal or rational curve described in terms of control points and
+ * basis functions.
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

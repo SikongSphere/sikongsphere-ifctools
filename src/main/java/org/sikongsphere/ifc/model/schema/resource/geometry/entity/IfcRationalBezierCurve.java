@@ -23,6 +23,8 @@ import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.enumeration.IfcBSplineCurveForm;
 
 /**
+ * A rational Bezier curve is a B-spline curve described in terms of control points and basic functions.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

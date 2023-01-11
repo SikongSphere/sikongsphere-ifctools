@@ -16,6 +16,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * A mapped item is the use of an existing representation (the mapping source - mapped representation) as a
+ * representation item in a second representation.
+ *
  * @author zhongqi
  * @date 2022/11/1
  */

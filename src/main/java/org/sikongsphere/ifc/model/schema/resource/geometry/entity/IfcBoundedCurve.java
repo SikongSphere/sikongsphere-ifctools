@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcCurveOrEdgeCurve;
 
 /**
+ * A bounded curve is a curve of finite arc length with identifiable end points.
+ *
  * @author Yiwei
  * @date 2022/10/23
  */

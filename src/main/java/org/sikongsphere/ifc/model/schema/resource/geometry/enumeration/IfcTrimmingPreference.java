@@ -22,7 +22,16 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcTrimmingPreference {
+    /**
+     * Indicates that trimming by Cartesian point is preferred.
+     */
     CARTESIAN,
+    /**
+     * Indicates the preference for the parameter value.
+     */
     PARAMETER,
+    /**
+     * Indicates that no preference is communicated.
+     */
     UNSPECIFIED
 }

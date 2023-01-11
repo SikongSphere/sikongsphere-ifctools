@@ -36,10 +36,7 @@ public abstract class IfcRepresentationItem extends IfcAbstractClass implements 
     private SET<IfcStyledItem> styledByItem;
 
     @IfcParserConstructor
-    public IfcRepresentationItem() {
-        this.layerAssignments = new SET<>();
-        this.styledByItem = new SET<>();
-    }
+    public IfcRepresentationItem() {}
 
     public SET<IfcPresentationLayerAssignment> getLayerAssignments() {
         return layerAssignments;

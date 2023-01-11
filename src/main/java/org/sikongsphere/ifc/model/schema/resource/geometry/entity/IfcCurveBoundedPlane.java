@@ -20,6 +20,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
+ * The curve bounded surface is a parametric surface with curved boundaries defined by one or more boundary curves.
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

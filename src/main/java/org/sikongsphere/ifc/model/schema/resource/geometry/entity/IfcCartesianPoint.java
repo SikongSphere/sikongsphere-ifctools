@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
+import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
@@ -28,7 +29,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
  * @date 2022/9/1 15:52
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcCartesianPoint extends IfcPoint {
+public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
     private LIST<IfcLengthMeasure> coordinates;
     @IfcDeriveParameter
     private IfcDimensionCount dim;

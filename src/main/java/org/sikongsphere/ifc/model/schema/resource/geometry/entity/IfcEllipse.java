@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Pl
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 
 /**
+ *  An ellipse (IfcEllipse) is a conic section defined by the lengths of the semi-major and semi-minor diameters
+ *  and the position (center or mid point of the line joining the foci) and orientation of the curve.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

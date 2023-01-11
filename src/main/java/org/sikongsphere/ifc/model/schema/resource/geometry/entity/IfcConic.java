@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 
 /**
+ * A conic (IfcConic) is a planar curve which could be produced by intersecting a plane with a cone.
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

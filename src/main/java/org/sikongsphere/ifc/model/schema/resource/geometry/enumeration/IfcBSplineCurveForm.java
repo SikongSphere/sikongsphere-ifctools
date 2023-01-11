@@ -22,10 +22,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcBSplineCurveForm {
+    /**
+     * A connected sequence of line segments represented by degree 1 B-spline basis functions.
+     */
     POLYLINE_FORM,
+    /**
+     * An arc of a circle, or a complete circle represented by a B-spline curve.
+     */
     CIRCULAR_ARC,
+    /**
+     * An arc of an ellipse, or a complete ellipse, represented by a B-spline curve.
+     */
     ELLIPTIC_ARC,
+    /**
+     * An arc of finite length of a parabola represented by a B-spline curve.
+     */
     PARABOLIC_ARC,
+    /**
+     * An arc of finite length of one branch of a hyperbola represented by a B-spline curve.
+     */
     HYPERBOLIC_ARC,
+    /**
+     * A B-spline curve for which no particular form is specified.
+     */
     UNSPECIFIED
 }

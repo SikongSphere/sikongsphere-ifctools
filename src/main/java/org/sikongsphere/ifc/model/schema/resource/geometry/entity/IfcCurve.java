@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometricmodel.selectType.IfcG
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 
 /**
+ *  A curve can be envisioned as the path of a point moving in its coordinate space.
+ *
  * @author Yiwei
  * @date 2022/10/23
  */
