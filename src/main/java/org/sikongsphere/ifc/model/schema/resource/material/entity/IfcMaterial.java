@@ -11,14 +11,19 @@
 package org.sikongsphere.ifc.model.schema.resource.material.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation;
 
 /**
+ * A homogenious substance that can be used to form elements.
+ *
  * @author Gao Su
  * @date 2022/10/14 22:24
  */
@@ -26,6 +31,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 public class IfcMaterial extends IfcAbstractClass implements IfcMaterialSelect {
 
     private IfcLabel name;
+    @IfcInverseParameter
+    private SET<IfcMaterialDefinitionRepresentation> hasRepresentation;
+    @IfcInverseParameter
+    private SET<IfcMaterialClassificationRelationship> classifiedAs;
 
     public IfcMaterial() {}
 
@@ -40,5 +49,21 @@ public class IfcMaterial extends IfcAbstractClass implements IfcMaterialSelect {
 
     public void setName(IfcLabel name) {
         this.name = name;
+    }
+
+    public SET<IfcMaterialDefinitionRepresentation> getHasRepresentation() {
+        return hasRepresentation;
+    }
+
+    public void setHasRepresentation(SET<IfcMaterialDefinitionRepresentation> hasRepresentation) {
+        this.hasRepresentation = hasRepresentation;
+    }
+
+    public SET<IfcMaterialClassificationRelationship> getClassifiedAs() {
+        return classifiedAs;
+    }
+
+    public void setClassifiedAs(SET<IfcMaterialClassificationRelationship> classifiedAs) {
+        this.classifiedAs = classifiedAs;
     }
 }

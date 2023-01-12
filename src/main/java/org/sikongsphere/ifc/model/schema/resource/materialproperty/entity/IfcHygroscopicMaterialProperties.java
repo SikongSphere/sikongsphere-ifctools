@@ -22,6 +22,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcVaporPermeabilityMeasure;
 
 /**
+ * A container class with material hygroscopic properties defined in IFC specification.
+ *
  * @author:stan
  * @date:2023/1/10 21:45
  */

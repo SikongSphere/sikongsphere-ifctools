@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcMolecul
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
 
 /**
+ * A container class with general material properties defined in IFC specification.
+ *
  * @author:stan
  * @date:2023/1/10 21:34
  */

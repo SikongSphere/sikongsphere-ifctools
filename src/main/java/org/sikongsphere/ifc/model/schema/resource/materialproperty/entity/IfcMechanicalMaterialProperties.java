@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.*;
 import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcProperty;
 
 /**
+ * This is a collection of mechanical material properties normally used for structural analysis purpose.
+ *
  * @author:stan
  * @date:2023/1/10 21:26
  */

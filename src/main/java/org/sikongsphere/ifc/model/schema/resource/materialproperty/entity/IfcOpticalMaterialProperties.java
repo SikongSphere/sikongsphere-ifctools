@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.schema.resource.material.entity.IfcMaterial;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveRatioMeasure;
 
 /**
+ * A container class with material optical properties defined in IFC specification.
+ *
  * @author:stan
  * @date:2023/1/10 21:57
  */
@@ -35,6 +37,9 @@ public class IfcOpticalMaterialProperties extends IfcMaterialProperties {
     private IfcPositiveRatioMeasure thermalIrTransmittance;
 
     @IfcOptionField
+    private IfcPositiveRatioMeasure thermalIrEmissivityBack;
+
+    @IfcOptionField
     private IfcPositiveRatioMeasure thermalIrEmissivityFront;
 
     @IfcOptionField
@@ -47,7 +52,7 @@ public class IfcOpticalMaterialProperties extends IfcMaterialProperties {
     private IfcPositiveRatioMeasure solarReflectanceFront;
 
     @IfcOptionField
-    private IfcPositiveRatioMeasure soloarReflectanceBack;
+    private IfcPositiveRatioMeasure solarReflectanceBack;
 
     @IfcParserConstructor
     public IfcOpticalMaterialProperties(
@@ -55,21 +60,23 @@ public class IfcOpticalMaterialProperties extends IfcMaterialProperties {
         IfcPositiveRatioMeasure visibleTransmittance,
         IfcPositiveRatioMeasure solarTransmittance,
         IfcPositiveRatioMeasure thermalIrTransmittance,
+        IfcPositiveRatioMeasure thermalIrEmissivityBack,
         IfcPositiveRatioMeasure thermalIrEmissivityFront,
         IfcPositiveRatioMeasure visibleReflectanceBack,
         IfcPositiveRatioMeasure visibleReflectanceFront,
         IfcPositiveRatioMeasure solarReflectanceFront,
-        IfcPositiveRatioMeasure soloarReflectanceBack
+        IfcPositiveRatioMeasure solarReflectanceBack
     ) {
         super(material);
         this.visibleTransmittance = visibleTransmittance;
         this.solarTransmittance = solarTransmittance;
         this.thermalIrTransmittance = thermalIrTransmittance;
+        this.thermalIrEmissivityBack = thermalIrEmissivityBack;
         this.thermalIrEmissivityFront = thermalIrEmissivityFront;
         this.visibleReflectanceBack = visibleReflectanceBack;
         this.visibleReflectanceFront = visibleReflectanceFront;
         this.solarReflectanceFront = solarReflectanceFront;
-        this.soloarReflectanceBack = soloarReflectanceBack;
+        this.solarReflectanceBack = solarReflectanceBack;
     }
 
     public IfcPositiveRatioMeasure getVisibleTransmittance() {
@@ -128,11 +135,19 @@ public class IfcOpticalMaterialProperties extends IfcMaterialProperties {
         this.solarReflectanceFront = solarReflectanceFront;
     }
 
-    public IfcPositiveRatioMeasure getSoloarReflectanceBack() {
-        return soloarReflectanceBack;
+    public IfcPositiveRatioMeasure getThermalIrEmissivityBack() {
+        return thermalIrEmissivityBack;
     }
 
-    public void setSoloarReflectanceBack(IfcPositiveRatioMeasure soloarReflectanceBack) {
-        this.soloarReflectanceBack = soloarReflectanceBack;
+    public void setThermalIrEmissivityBack(IfcPositiveRatioMeasure thermalIrEmissivityBack) {
+        this.thermalIrEmissivityBack = thermalIrEmissivityBack;
+    }
+
+    public IfcPositiveRatioMeasure getSolarReflectanceBack() {
+        return solarReflectanceBack;
+    }
+
+    public void setSolarReflectanceBack(IfcPositiveRatioMeasure solarReflectanceBack) {
+        this.solarReflectanceBack = solarReflectanceBack;
     }
 }

@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.material.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -21,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 
 /**
- * IfcMaterialLayer
+ * A single and identifiable part of an element which is constructed of a number of layers (one or more).
  *
  * @author GaoSu
  * @date 2022/10/16 16:09
@@ -31,14 +33,17 @@ public class IfcMaterialLayer extends IfcAbstractClass
     implements
         IfcMaterialSelect,
         IfcObjectReferenceSelect {
+    @IfcOptionField
     private IfcMaterial material;
     private IfcPositiveLengthMeasure layerThickness;
+    @IfcOptionField
     private IfcLogical isVentilated;
+    @IfcInverseParameter
+    private IfcMaterialLayerSet toMaterialLayerSet;
 
     public IfcMaterialLayer() {}
 
     @IfcParserConstructor
-
     public IfcMaterialLayer(
         IfcMaterial material,
         IfcPositiveLengthMeasure layerThickness,
@@ -71,5 +76,13 @@ public class IfcMaterialLayer extends IfcAbstractClass
 
     public void setIsVentilated(IfcLogical isVentilated) {
         this.isVentilated = isVentilated;
+    }
+
+    public IfcMaterialLayerSet getToMaterialLayerSet() {
+        return toMaterialLayerSet;
+    }
+
+    public void setToMaterialLayerSet(IfcMaterialLayerSet toMaterialLayerSet) {
+        this.toMaterialLayerSet = toMaterialLayerSet;
     }
 }

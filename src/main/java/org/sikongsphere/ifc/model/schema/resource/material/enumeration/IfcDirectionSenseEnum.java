@@ -22,6 +22,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcDirectionSenseEnum {
+    /**
+     * Direction defined to be positive.
+     */
     POSITIVE,
+    /**
+     * Direction defined to be negative.
+     */
     NEGATIVE
 }

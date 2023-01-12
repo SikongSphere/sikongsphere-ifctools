@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.INTEGER;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * IfcTimeStamp
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @date 2022/8/31 21:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcTimeStamp extends INTEGER {
+public class IfcTimeStamp extends INTEGER implements IfcDerivedMeasureValue {
 
     private Long timestamp;
 
