@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -33,6 +34,8 @@ import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.enumeration.I
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
 public class IfcDistributionPort extends IfcPort {
+
+    @IfcOptionField
     private IfcFlowDirectionEnum flowDirection;
 
     @IfcParserConstructor
@@ -44,9 +47,6 @@ public class IfcDistributionPort extends IfcPort {
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
-        IfcRelConnectsPortToElement containedIn,
-        SET<IfcRelConnectsPorts> connectedFrom,
-        SET<IfcRelConnectsPorts> connectedTo,
         IfcFlowDirectionEnum flowDirection
     ) {
         super(
@@ -56,10 +56,7 @@ public class IfcDistributionPort extends IfcPort {
             description,
             objectType,
             objectPlacement,
-            representation,
-            containedIn,
-            connectedFrom,
-            connectedTo
+            representation
         );
         this.flowDirection = flowDirection;
     }

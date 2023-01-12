@@ -17,6 +17,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.entity.IfcRelConnectsStructuralElement;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
@@ -35,7 +36,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 public abstract class IfcElement extends IfcProduct implements IfcObjectReferenceSelect {
     @IfcOptionField
     private IfcIdentifier tag;
-    // ToDO Inverse 属性
+
     @IfcInverseParameter
     private SET<IfcRelFillsElement> fillsVoids;
     @IfcInverseParameter
@@ -44,7 +45,22 @@ public abstract class IfcElement extends IfcProduct implements IfcObjectReferenc
     private SET<IfcRelCoversBldgElements> hasCoverings;
     @IfcInverseParameter
     private SET<IfcRelProjectsElement> hasProjections;
-    // private SET<IfcRelConnect>
+    @IfcInverseParameter
+    private SET<IfcRelConnectsStructuralElement> hasStructuralMember;
+    @IfcInverseParameter
+    private SET<IfcRelReferencedInSpatialStructure> referencedInStructures;
+    @IfcInverseParameter
+    private SET<IfcRelConnectsPortToElement> hasPorts;
+    @IfcInverseParameter
+    private SET<IfcRelVoidsElement> hasOpenings;
+    @IfcInverseParameter
+    private SET<IfcRelConnectsWithRealizingElements> isConnectionRealization;
+    @IfcInverseParameter
+    private SET<IfcRelSpaceBoundary> providesBoundaries;
+    @IfcInverseParameter
+    private SET<IfcRelConnectsElements> connectedFrom;
+    @IfcInverseParameter
+    private SET<IfcRelContainedInSpatialStructure> containedInStructure;
 
     public IfcElement() {}
 

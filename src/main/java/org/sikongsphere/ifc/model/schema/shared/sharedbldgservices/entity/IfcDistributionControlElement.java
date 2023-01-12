@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -32,6 +33,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
 public class IfcDistributionControlElement extends IfcDistributionElement {
+    @IfcOptionField
     private IfcIdentifier controlElmentId;
     @IfcInverseParameter
     private SET<IfcRelFlowControlElements> assignedToFlowElement;
@@ -46,8 +48,7 @@ public class IfcDistributionControlElement extends IfcDistributionElement {
         IfcObjectPlacement objectPlacement,
         IfcProductRepresentation representation,
         IfcIdentifier tag,
-        IfcIdentifier controlElmentId,
-        SET<IfcRelFlowControlElements> assignedToFlowElement
+        IfcIdentifier controlElmentId
     ) {
         super(
             globalId,
@@ -60,7 +61,6 @@ public class IfcDistributionControlElement extends IfcDistributionElement {
             tag
         );
         this.controlElmentId = controlElmentId;
-        this.assignedToFlowElement = assignedToFlowElement;
     }
 
     public IfcIdentifier getControlElmentId() {
@@ -69,13 +69,5 @@ public class IfcDistributionControlElement extends IfcDistributionElement {
 
     public void setControlElmentId(IfcIdentifier controlElmentId) {
         this.controlElmentId = controlElmentId;
-    }
-
-    public SET<IfcRelFlowControlElements> getAssignedToFlowElement() {
-        return assignedToFlowElement;
-    }
-
-    public void setAssignedToFlowElement(SET<IfcRelFlowControlElements> assignedToFlowElement) {
-        this.assignedToFlowElement = assignedToFlowElement;
     }
 }

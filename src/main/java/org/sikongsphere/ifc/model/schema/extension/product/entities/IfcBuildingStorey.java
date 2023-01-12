@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -33,6 +34,8 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcBuildingStorey extends IfcSpatialStructureElement {
+
+    @IfcOptionField
     private IfcLengthMeasure elevation;
 
     public IfcBuildingStorey() {}

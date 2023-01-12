@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.extension.product.entities;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -29,8 +30,14 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public abstract class IfcPort extends IfcProduct {
+
+    @IfcInverseParameter
     private IfcRelConnectsPortToElement containedIn;
+
+    @IfcInverseParameter
     private SET<IfcRelConnectsPorts> connectedFrom;
+
+    @IfcInverseParameter
     private SET<IfcRelConnectsPorts> connectedTo;
 
     @IfcParserConstructor
@@ -41,10 +48,7 @@ public abstract class IfcPort extends IfcProduct {
         IfcText description,
         IfcLabel objectType,
         IfcObjectPlacement objectPlacement,
-        IfcProductRepresentation representation,
-        IfcRelConnectsPortToElement containedIn,
-        SET<IfcRelConnectsPorts> connectedFrom,
-        SET<IfcRelConnectsPorts> connectedTo
+        IfcProductRepresentation representation
     ) {
         super(
             globalId,
@@ -55,9 +59,6 @@ public abstract class IfcPort extends IfcProduct {
             objectPlacement,
             representation
         );
-        this.containedIn = containedIn;
-        this.connectedFrom = connectedFrom;
-        this.connectedTo = connectedTo;
     }
 
     public IfcRelConnectsPortToElement getContainedIn() {
@@ -66,21 +67,5 @@ public abstract class IfcPort extends IfcProduct {
 
     public void setContainedIn(IfcRelConnectsPortToElement containedIn) {
         this.containedIn = containedIn;
-    }
-
-    public SET<IfcRelConnectsPorts> getConnectedFrom() {
-        return connectedFrom;
-    }
-
-    public void setConnectedFrom(SET<IfcRelConnectsPorts> connectedFrom) {
-        this.connectedFrom = connectedFrom;
-    }
-
-    public SET<IfcRelConnectsPorts> getConnectedTo() {
-        return connectedTo;
-    }
-
-    public void setConnectedTo(SET<IfcRelConnectsPorts> connectedTo) {
-        this.connectedTo = connectedTo;
     }
 }

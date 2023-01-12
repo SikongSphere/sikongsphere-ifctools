@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.SCIENTIFICNOTATION;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
@@ -44,4 +45,7 @@ public class IfcLengthMeasure extends DOUBLE implements IfcValue, IfcSizeSelect,
         super(value);
     }
 
+    public IfcLengthMeasure(SCIENTIFICNOTATION value) {
+        super(value);
+    }
 }
