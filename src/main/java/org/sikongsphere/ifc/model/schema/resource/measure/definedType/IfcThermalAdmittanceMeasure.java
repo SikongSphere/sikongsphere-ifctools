@@ -16,14 +16,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * The measure of the ability of a surface to smooth out temperature variations.
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcThermalAdmittanceMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcThermalAdmittanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcThermalAdmittanceMeasure() {}
 
     public IfcThermalAdmittanceMeasure(double value) {

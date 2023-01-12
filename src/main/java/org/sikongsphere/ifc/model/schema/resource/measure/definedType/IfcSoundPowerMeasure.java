@@ -16,14 +16,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  *  A sound power measure is a measure of total radiated noise with units of decibels with a reference value of picowatts.
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcSoundPowerMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcSoundPowerMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSoundPowerMeasure() {}
 
     public IfcSoundPowerMeasure(double value) {

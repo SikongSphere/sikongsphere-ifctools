@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 import java.util.Locale;
 
@@ -24,8 +25,8 @@ import java.util.Locale;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcForceMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcForceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcForceMeasure() {}
 
     public IfcForceMeasure(double value) {

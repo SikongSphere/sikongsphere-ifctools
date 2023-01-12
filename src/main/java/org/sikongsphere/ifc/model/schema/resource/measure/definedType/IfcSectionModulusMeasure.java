@@ -16,14 +16,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A measure for the resistance of a cross section against bending or torsional moment. It is usually measured in m^3.
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcSectionModulusMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcSectionModulusMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSectionModulusMeasure() {}
 
     public IfcSectionModulusMeasure(double value) {

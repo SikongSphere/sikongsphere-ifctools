@@ -16,14 +16,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.INTEGER;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A measure of the integer number of units flowing per unit time.
  * @author zaiyuan
  * @date 2022/11/9 13:27
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcIntegerCountRateMeasure extends INTEGER {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcIntegerCountRateMeasure extends INTEGER implements IfcDerivedMeasureValue {
 
     public IfcIntegerCountRateMeasure(Integer value) {
         super(value);

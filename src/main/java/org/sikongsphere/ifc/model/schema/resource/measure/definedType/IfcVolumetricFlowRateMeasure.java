@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcVolumetricFlowRateMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcVolumetricFlowRateMeasure() {}
 

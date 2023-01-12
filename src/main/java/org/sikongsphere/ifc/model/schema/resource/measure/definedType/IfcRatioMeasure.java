@@ -29,7 +29,7 @@ import java.util.Locale;
  * @author stan
  * @date 2022/09/01 23:45
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcRatioMeasure extends DOUBLE
     implements
         IfcMeasureValue,

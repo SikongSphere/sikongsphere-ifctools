@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.*;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
 
 import java.util.Locale;
 
@@ -24,8 +25,9 @@ import java.util.Locale;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE)
-public class IfcParameterValue extends REAL implements IfcTrimmingSelect {
+@IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE, isStepElement = false)
+public class IfcParameterValue extends REAL implements IfcTrimmingSelect, IfcMeasureValue {
+
     public IfcParameterValue() {}
 
     public IfcParameterValue(double value) {

@@ -16,14 +16,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A measure of the number of cycles that an item revolves in unit time.
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcRotationalFrequencyMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcRotationalFrequencyMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcRotationalFrequencyMeasure() {}
 
     public IfcRotationalFrequencyMeasure(double value) {

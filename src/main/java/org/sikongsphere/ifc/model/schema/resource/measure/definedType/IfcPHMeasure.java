@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A measure of the molar hydrogen ion concentration in a liquid (usually defined as the measure of acidity) in a range
@@ -23,8 +24,8 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcPHMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcPHMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcPHMeasure() {}
 
     public IfcPHMeasure(double value) {

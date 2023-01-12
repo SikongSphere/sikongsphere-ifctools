@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcLuminousFluxMeasure extends REAL {
     public IfcLuminousFluxMeasure() {}
 

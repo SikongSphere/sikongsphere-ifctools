@@ -14,5 +14,12 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
+/**
+ * A select type for selecting between more specialised select types IfcSimpleValue, IfcMeasureValue and
+ * IfcDerivedMeasureValue.
+ *
+ * @author Wang Bohong
+ * @date 2022/9/1 13:14
+ */
 @IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
 public interface IfcValue {}

@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A measure for modulus of linear subgrade reaction, which expresses the elastic bedding of a linear structural element
@@ -23,8 +24,10 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcModulusOfLinearSubgradeReactionMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcModulusOfLinearSubgradeReactionMeasure extends REAL
+    implements
+        IfcDerivedMeasureValue {
     public IfcModulusOfLinearSubgradeReactionMeasure() {}
 
     public IfcModulusOfLinearSubgradeReactionMeasure(double value) {

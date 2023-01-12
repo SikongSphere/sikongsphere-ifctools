@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @author stan
  * @date 2022/09/01 23:44
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcPositiveRatioMeasure extends IfcRatioMeasure implements IfcSizeSelect {
     public IfcPositiveRatioMeasure() {}
 

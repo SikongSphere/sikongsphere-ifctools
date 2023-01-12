@@ -17,14 +17,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.NUMBER;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * @author Wang Bohong
  * @date 2022/11/13 11:47
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcCountMeasure extends NUMBER implements IfcValue {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcCountMeasure extends NUMBER implements IfcValue, IfcMeasureValue {
 
     public IfcCountMeasure() {}
 

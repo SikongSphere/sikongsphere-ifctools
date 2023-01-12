@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A sound pressure measure is a measure of the pressure fluctuations superimposed over the ambient pressure level with
@@ -23,8 +24,8 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcSoundPressureMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcSoundPressureMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSoundPressureMeasure() {}
 
     public IfcSoundPressureMeasure(double value) {
