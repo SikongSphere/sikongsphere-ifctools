@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.selectType.IfcOrientationSelect;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 import java.util.Locale;
@@ -28,8 +29,8 @@ import java.util.Locale;
  * @author stan
  * @date 2022/09/02 00:02
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcPlaneAngleMeasure extends REAL implements IfcOrientationSelect {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcPlaneAngleMeasure extends REAL implements IfcOrientationSelect, IfcMeasureValue {
 
     public IfcPlaneAngleMeasure() {}
 

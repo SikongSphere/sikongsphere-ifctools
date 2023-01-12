@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.measure.selectTypes;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * A measure value is a value as defined in ISO 31-0 (clause 2).
  *
  * @author Wang Bohong
  * @date 2022/11/1 13:21
  */
+@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
 public interface IfcMeasureValue extends IfcValue {
 
 }

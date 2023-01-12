@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
 /**
@@ -22,8 +23,8 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @author stan
  * @date 2022/09/01 23:46
  */
-@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
-public class IfcDescriptiveMeasure implements IfcSizeSelect {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcDescriptiveMeasure implements IfcSizeSelect, IfcMeasureValue {
     private STRING descriptiveMeasure;
 
     public IfcDescriptiveMeasure() {}

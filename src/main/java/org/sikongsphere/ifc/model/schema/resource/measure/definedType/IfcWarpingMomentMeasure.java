@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * The warping moment measure is a measure for the warping moment, which occurs in warping torsional analysis. It is
@@ -23,8 +24,8 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcWarpingMomentMeasure extends REAL {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcWarpingMomentMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcWarpingMomentMeasure() {}
 
     public IfcWarpingMomentMeasure(double value) {

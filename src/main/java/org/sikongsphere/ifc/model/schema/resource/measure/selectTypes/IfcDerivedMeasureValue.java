@@ -10,12 +10,17 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.measure.selectTypes;
 
+import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.enumeration.IfcLayer;
+import org.sikongsphere.ifc.common.enumeration.IfcType;
+
 /**
  * A select type for selecting between derived measure types.
  *
  * @author zaiyuan
  * @date 2022/12/18 13:21
  */
+@IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
 public interface IfcDerivedMeasureValue extends IfcValue {
 
 }

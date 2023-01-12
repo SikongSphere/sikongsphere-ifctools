@@ -17,14 +17,18 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.cost.selectType.IfcAppliedValueSelect;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A monetary measure is the value of an amount of money without regard to its currency.
  * @author zaiyuan
  * @date 2022/12/07 21:38
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcMonetaryMeasure extends REAL implements IfcAppliedValueSelect {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcMonetaryMeasure extends REAL
+    implements
+        IfcAppliedValueSelect,
+        IfcDerivedMeasureValue {
     public IfcMonetaryMeasure() {}
 
     public IfcMonetaryMeasure(double value) {

@@ -15,4 +15,4 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 @IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
-public interface IfcSimpleValue {}
+public interface IfcSimpleValue extends IfcValue {}

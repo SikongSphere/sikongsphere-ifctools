@@ -19,13 +19,14 @@ import org.sikongsphere.ifc.model.IfcDataType;
 import org.sikongsphere.ifc.model.datatype.INTEGER;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * @author Wang Bohong
  * @date 2022/10/14 16:14
  */
-@IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcCompoundPlaneAngleMeasure extends LIST<INTEGER> {
+@IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
+public class IfcCompoundPlaneAngleMeasure extends LIST<INTEGER> implements IfcDerivedMeasureValue {
     private LIST<INTEGER> value;
 
     public LIST<INTEGER> getValue() {
