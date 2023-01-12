@@ -47,7 +47,7 @@ public class HouseIfcFileIOTest {
             "https://ifc-file.gd2.qingstor.com/living-house/Duplex_M_20110505_IssuesAlternate.ifc";
         getIfcFile(url);
 
-        ioTest(BLANK_OUTPUT_PATH, BLANK_OUTPUT_PATH);
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
     @After
