@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcProperty;
 
 /**
+ * A container class for user defined properties of associated material.
+ *
  * @author:stan
  * @date:2023/1/10 23:17
  */

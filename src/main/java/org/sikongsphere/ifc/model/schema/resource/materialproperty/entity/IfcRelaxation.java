@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormalisedRatioMeasure;
 
 /**
+ * Measure of the decrease in stress over long time interval resulting from plastic flow.
+ *
  * @author:stan
  * @date:2023/1/10 21:55
  */

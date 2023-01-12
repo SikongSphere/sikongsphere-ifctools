@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcThermal
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcThermodynamicTemperatureMeasure;
 
 /**
+ * A container class with material thermal properties defined in IFC specification.
+ *
  * @author:stan
  * @date:2023/1/10 22:40
  */

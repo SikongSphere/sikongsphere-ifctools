@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.material.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -18,9 +20,11 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
- * IfcMaterialLayerSet
+ * A designation by which materials of an element constructed of a number of material layers is known and through
+ * which the relative positioning of individual layers can be expressed.
  *
  * @author GaoSu
  * @date 2022/10/16 16:11
@@ -28,7 +32,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcMaterialLayerSet extends IfcAbstractClass implements IfcMaterialSelect {
     private LIST<IfcMaterialLayer> materialLayers;
+    @IfcOptionField
     private IfcLabel layerSetName;
+    @IfcDeriveParameter
+    private IfcLengthMeasure totalThickness;
 
     public IfcMaterialLayerSet() {}
 
@@ -52,5 +59,13 @@ public class IfcMaterialLayerSet extends IfcAbstractClass implements IfcMaterial
 
     public void setLayerSetName(IfcLabel layerSetName) {
         this.layerSetName = layerSetName;
+    }
+
+    public IfcLengthMeasure getTotalThickness() {
+        return totalThickness;
+    }
+
+    public void setTotalThickness(IfcLengthMeasure totalThickness) {
+        this.totalThickness = totalThickness;
     }
 }

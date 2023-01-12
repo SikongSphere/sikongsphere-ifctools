@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
  * A measure of the volume of a medium flowing per unit time.
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.datatype.STRING;
  * @date 2022/12/07 21:38
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcVolumetricFlowRateMeasure extends REAL {
+public class IfcVolumetricFlowRateMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcVolumetricFlowRateMeasure() {}
 
     public IfcVolumetricFlowRateMeasure(double value) {

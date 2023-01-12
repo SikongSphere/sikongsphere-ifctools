@@ -18,6 +18,9 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.material.entity.IfcMaterial;
 
 /**
+ *  Abstract supertype of all container classes with material properties, both those defined in IFC
+ *  specification and those defined by users as extended material properties.
+ *
  * @author:stan
  * @date:2023/1/10 21:23
  */

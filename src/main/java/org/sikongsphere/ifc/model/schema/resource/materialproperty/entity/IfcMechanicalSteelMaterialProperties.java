@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.*;
 import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcProperty;
 
 /**
+ * This is a collection of mechanical properties related to steel (or other metallic and isotropic) materials.
+ *
  * @author:stan
  * @date:2023/1/10 21:50
  */

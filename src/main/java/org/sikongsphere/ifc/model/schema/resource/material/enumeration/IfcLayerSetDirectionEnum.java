@@ -22,7 +22,16 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcLayerSetDirectionEnum {
+    /**
+     * Usually x-axis.
+     */
     AXIS1,
+    /**
+     * Usually y-axis.
+     */
     AXIS2,
+    /**
+     * Usually z-axis.
+     */
     AXIS3
 }

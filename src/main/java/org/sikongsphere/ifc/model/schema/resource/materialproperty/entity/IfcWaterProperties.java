@@ -22,6 +22,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormali
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPHMeasure;
 
 /**
+ * Common definition to capture the properties of water typically used within the context of building services
+ * and flow distribution systems.
+ *
  * @author:stan
  * @date:2023/1/10 22:47
  */
@@ -44,7 +47,7 @@ public class IfcWaterProperties extends IfcMaterialProperties {
     private IfcNormalisedRatioMeasure impuritiesContent;
 
     @IfcOptionField
-    private IfcPHMeasure phLevel;
+    private IfcPHMeasure pHLevel;
 
     @IfcOptionField
     private IfcNormalisedRatioMeasure dissolvedSolidsContent;
@@ -66,7 +69,7 @@ public class IfcWaterProperties extends IfcMaterialProperties {
         this.alkalinityConcentration = alkalinityConcentration;
         this.acidityConcentration = acidityConcentration;
         this.impuritiesContent = impuritiesContent;
-        this.phLevel = phLevel;
+        this.pHLevel = phLevel;
         this.dissolvedSolidsContent = dissolvedSolidsContent;
     }
 
@@ -111,11 +114,11 @@ public class IfcWaterProperties extends IfcMaterialProperties {
     }
 
     public IfcPHMeasure getPhLevel() {
-        return phLevel;
+        return pHLevel;
     }
 
     public void setPhLevel(IfcPHMeasure phLevel) {
-        this.phLevel = phLevel;
+        this.pHLevel = phLevel;
     }
 
     public IfcNormalisedRatioMeasure getDissolvedSolidsContent() {

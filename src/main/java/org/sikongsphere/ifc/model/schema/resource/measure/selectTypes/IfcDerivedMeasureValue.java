@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.measure.selectTypes;
 
 /**
+ * A select type for selecting between derived measure types.
+ *
  * @author zaiyuan
  * @date 2022/12/18 13:21
  */
