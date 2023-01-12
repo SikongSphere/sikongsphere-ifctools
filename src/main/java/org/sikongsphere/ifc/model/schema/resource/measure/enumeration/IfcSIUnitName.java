@@ -15,7 +15,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * An enumeration type for allowed SI units.
+ * An SI unit name is the name of an SI unit. The definitions of the names of SI units
+ * are specified in ISO 1000 (clause 2).
  *
  * @author zaiyuan
  * @date 2022/8/31 19:27

@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcThermodynamicTemperatureMeasure;
 
 /**
+ * Common definition to capture the properties of fuel energy typically used within the context of building
+ * services and flow distribution systems.
+ *
  * @author:stan
  * @date:2023/1/10 21:29
  */

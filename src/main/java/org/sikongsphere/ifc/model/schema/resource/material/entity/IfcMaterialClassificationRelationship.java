@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.selectType.IfcClassificationNotationSelect;
 
 /**
+ * Relationship assigning classifications to materials.
+ *
  * @author Gao Su
  * @date 2022/10/14 22:24
  */

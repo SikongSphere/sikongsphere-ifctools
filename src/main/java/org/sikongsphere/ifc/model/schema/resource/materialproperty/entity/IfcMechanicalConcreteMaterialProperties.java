@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.*;
 import org.sikongsphere.ifc.model.schema.resource.property.entity.IfcProperty;
 
 /**
+ * Mechanical material properties for concrete.
+ *
  * @author:stan
  * @date:2023/1/10 21:37
  */
@@ -32,6 +34,9 @@ public class IfcMechanicalConcreteMaterialProperties extends IfcMechanicalMateri
 
     @IfcOptionField
     private IfcPositiveLengthMeasure maxAggregateSize;
+
+    @IfcOptionField
+    private IfcText admixturesDescription;
 
     @IfcOptionField
     private IfcText workAbility;
@@ -52,6 +57,7 @@ public class IfcMechanicalConcreteMaterialProperties extends IfcMechanicalMateri
         IfcThermalExpansionCoefficientMeasure thermalExpansionCoefficient,
         IfcPressureMeasure compressiveStrength,
         IfcPositiveLengthMeasure maxAggregateSize,
+        IfcText admixturesDescription,
         IfcText workAbility,
         IfcNormalisedRatioMeasure protectivePoreRatio,
         IfcText waterImpermeability
@@ -66,6 +72,7 @@ public class IfcMechanicalConcreteMaterialProperties extends IfcMechanicalMateri
         );
         this.compressiveStrength = compressiveStrength;
         this.maxAggregateSize = maxAggregateSize;
+        this.admixturesDescription = admixturesDescription;
         this.workAbility = workAbility;
         this.protectivePoreRatio = protectivePoreRatio;
         this.waterImpermeability = waterImpermeability;
@@ -109,5 +116,13 @@ public class IfcMechanicalConcreteMaterialProperties extends IfcMechanicalMateri
 
     public void setWaterImpermeability(IfcText waterImpermeability) {
         this.waterImpermeability = waterImpermeability;
+    }
+
+    public IfcText getAdmixturesDescription() {
+        return admixturesDescription;
+    }
+
+    public void setAdmixturesDescription(IfcText admixturesDescription) {
+        this.admixturesDescription = admixturesDescription;
     }
 }

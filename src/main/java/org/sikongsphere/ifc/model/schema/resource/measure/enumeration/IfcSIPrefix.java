@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * An enumeration type for allowed SI prefixes.
+ * An SI prefix is the name of a prefix that may be associated with an SI unit.
  *
  * @author zaiyuan
  * @date 2022/8/31 19:27

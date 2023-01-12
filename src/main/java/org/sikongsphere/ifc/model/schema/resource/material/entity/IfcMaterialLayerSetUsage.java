@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMateria
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
+ * Determines the usage of IfcMaterialLayerSet in terms of its location and orientation relative to
+ * the associated element geometry.
+ *
  * @author Wang Bohong
  * @date 2022/10/17 15:42
  */
