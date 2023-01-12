@@ -16,9 +16,17 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.domain.electrical.enumeration.IfcElectricDistributionPointFunctionEnum;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcFlowController;
+import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcRelFlowControlElements;
 
 /**
  * @author zaiyuan
@@ -32,9 +40,27 @@ public class IfcElectricDistributionPoint extends IfcFlowController {
 
     @IfcParserConstructor
     public IfcElectricDistributionPoint(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcIdentifier tag,
         IfcElectricDistributionPointFunctionEnum distributionPointFunction,
         IfcLabel userDefinedFunction
     ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            tag
+        );
         this.distributionPointFunction = distributionPointFunction;
         this.userDefinedFunction = userDefinedFunction;
     }

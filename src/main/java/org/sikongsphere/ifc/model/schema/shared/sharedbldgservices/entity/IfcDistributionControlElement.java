@@ -18,7 +18,13 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcDistributionElement;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
  * @author zaiyuan
@@ -31,8 +37,30 @@ public class IfcDistributionControlElement extends IfcDistributionElement {
     private SET<IfcRelFlowControlElements> assignedToFlowElement;
 
     @IfcParserConstructor
-    public IfcDistributionControlElement(IfcIdentifier controlElmentId) {
+    public IfcDistributionControlElement(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcIdentifier tag,
+        IfcIdentifier controlElmentId,
+        SET<IfcRelFlowControlElements> assignedToFlowElement
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            tag
+        );
         this.controlElmentId = controlElmentId;
+        this.assignedToFlowElement = assignedToFlowElement;
     }
 
     public IfcIdentifier getControlElmentId() {

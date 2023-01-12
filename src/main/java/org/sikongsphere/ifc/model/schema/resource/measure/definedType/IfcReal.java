@@ -14,9 +14,11 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcSimpleValue;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * A defined type of simple data type REAL (required since a select type, i.e. IfcSimpleValue,
@@ -26,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcSimpleV
  * @date 2022/09/02 22:35
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcReal extends REAL implements IfcSimpleValue {
+public class IfcReal extends REAL implements IfcSimpleValue, IfcValue {
 
     public IfcReal() {}
 
@@ -35,6 +37,10 @@ public class IfcReal extends REAL implements IfcSimpleValue {
     }
 
     @IfcParserConstructor
+    public IfcReal(DOUBLE value) {
+        super(value);
+    }
+
     public IfcReal(STRING value) {
         super(value);
     }
