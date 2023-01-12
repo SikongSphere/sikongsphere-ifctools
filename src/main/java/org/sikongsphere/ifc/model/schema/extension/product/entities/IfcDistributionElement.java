@@ -30,4 +30,28 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/12/10 12:13
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
-public class IfcDistributionElement extends IfcElement {}
+public class IfcDistributionElement extends IfcElement {
+
+    @IfcParserConstructor
+    public IfcDistributionElement(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        IfcLabel name,
+        IfcText description,
+        IfcLabel objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        IfcIdentifier tag
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            name,
+            description,
+            objectType,
+            objectPlacement,
+            representation,
+            tag
+        );
+    }
+}

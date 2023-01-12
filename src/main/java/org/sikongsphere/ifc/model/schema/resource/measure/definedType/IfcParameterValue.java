@@ -14,10 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.DOUBLE;
-import org.sikongsphere.ifc.model.datatype.NUMBER;
-import org.sikongsphere.ifc.model.datatype.REAL;
-import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.datatype.*;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
 
 import java.util.Locale;
@@ -41,6 +38,10 @@ public class IfcParameterValue extends REAL implements IfcTrimmingSelect {
 
     @IfcParserConstructor
     public IfcParameterValue(STRING value) {
+        super(value);
+    }
+
+    public IfcParameterValue(SCIENTIFICNOTATION value) {
         super(value);
     }
 }
