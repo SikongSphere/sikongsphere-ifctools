@@ -50,6 +50,23 @@ public class HouseIfcFileIOTest {
         ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
     }
 
+    @Test
+    public void duplexMepFile() throws IOException {
+        String url = "https://ifc-file.gd2.qingstor.com/living-house/Duplex_MEP_20110505.ifc";
+        getIfcFile(url);
+
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
+    @Test
+    public void duplexIssuesAlternateFile() throws IOException {
+        String url =
+            "https://ifc-file.gd2.qingstor.com/living-house/Duplex_P_20110505_IssuesAlternate.ifc";
+        getIfcFile(url);
+
+        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+    }
+
     @After
     public void delIfcFile() {
 
