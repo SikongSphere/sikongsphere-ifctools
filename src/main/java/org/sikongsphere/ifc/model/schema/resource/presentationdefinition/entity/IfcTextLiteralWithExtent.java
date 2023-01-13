@@ -21,6 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.defined
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.enumeration.IfcTextPath;
 
 /**
+ * The text literal with extent is a text literal with the additional explicit information of the planar extent
+ * (or surrounding text box).
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

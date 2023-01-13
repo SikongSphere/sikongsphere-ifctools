@@ -11,8 +11,13 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcPresentationStyleAssignment;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
@@ -24,4 +29,15 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selectty
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcAnnotationSymbolOccurrence extends IfcAnnotationOccurrence
     implements
-        IfcDraughtingCalloutElement {}
+        IfcDraughtingCalloutElement {
+    public IfcAnnotationSymbolOccurrence() {}
+
+    @IfcParserConstructor
+    public IfcAnnotationSymbolOccurrence(
+        IfcRepresentationItem item,
+        SET<IfcPresentationStyleAssignment> styles,
+        IfcLabel name
+    ) {
+        super(item, styles, name);
+    }
+}

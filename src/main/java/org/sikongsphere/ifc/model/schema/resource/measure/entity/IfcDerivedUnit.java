@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -21,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcDerived
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
- * This class is used to encapsulate derived unit information
+ * A derived unit is an expression of units.
  *
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
@@ -30,7 +32,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
     private SET<IfcDerivedUnitElement> elements;
     private IfcDerivedUnitEnum unitType;
+    @IfcOptionField
     private IfcLabel userDefinedType;
+    @IfcDeriveParameter
+    private IfcDimensionalExponents dimensions;
 
     public IfcDerivedUnit(SET<IfcDerivedUnitElement> elements, IfcDerivedUnitEnum unitType) {
         this.elements = elements;
@@ -47,11 +52,6 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
         this.unitType = unitType;
         this.userDefinedType = userDefinedType;
     }
-
-    /** TODO
-     * DERIVE
-     * Dimensions	 : 	IfcDimensionalExponents :=  IfcDeriveDimensionalExponents(SELF);
-     */
 
     public SET<IfcDerivedUnitElement> getElements() {
         return elements;
@@ -75,5 +75,13 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
 
     public void setUserDefinedType(IfcLabel userDefinedType) {
         this.userDefinedType = userDefinedType;
+    }
+
+    public IfcDimensionalExponents getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(IfcDimensionalExponents dimensions) {
+        this.dimensions = dimensions;
     }
 }

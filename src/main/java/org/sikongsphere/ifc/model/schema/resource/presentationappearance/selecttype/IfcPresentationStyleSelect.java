@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * he presentation style select is a selection of one of many kinds of styles, a different one for
+ * The presentation style select is a selection of one of many kinds of styles, a different one for
  * each kind of geometric representation item to be styled.
  *
  * @author zaiyuan

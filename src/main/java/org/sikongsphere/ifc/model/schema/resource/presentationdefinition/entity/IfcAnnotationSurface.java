@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 
 /**
+ * An IfcAnnotationSurface is a surface or solid with texture coordinates assigned.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

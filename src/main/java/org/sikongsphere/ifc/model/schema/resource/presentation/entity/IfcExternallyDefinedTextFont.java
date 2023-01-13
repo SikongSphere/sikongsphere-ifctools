@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.entity.IfcExternalReference;
@@ -30,6 +31,7 @@ public class IfcExternallyDefinedTextFont extends IfcExternalReference
         IfcTextFontSelect {
     public IfcExternallyDefinedTextFont() {}
 
+    @IfcParserConstructor
     public IfcExternallyDefinedTextFont(
         IfcLabel location,
         IfcIdentifier itemReference,

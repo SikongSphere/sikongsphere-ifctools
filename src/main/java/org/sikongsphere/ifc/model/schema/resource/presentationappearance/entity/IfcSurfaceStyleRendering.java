@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -23,17 +24,26 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 import java.util.Locale;
 
 /**
+ * IfcSurfaceStyleRendering holds the properties for visualization related to a particular surface side style.
+ *
  * @author Yiwei
  * @date 2022/10/23
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
+    @IfcOptionField
     private IfcNormalisedRatioMeasure transparency;
+    @IfcOptionField
     private IfcColourOrFactor diffuseColour;
+    @IfcOptionField
     private IfcColourOrFactor transmissionColour;
+    @IfcOptionField
     private IfcColourOrFactor diffuseTransmissionColour;
+    @IfcOptionField
     private IfcColourOrFactor reflectionColour;
+    @IfcOptionField
     private IfcColourOrFactor specularColour;
+    @IfcOptionField
     private IfcSpecularHighlightSelect specularHighlight;
     private IfcReflectanceMethodEnum reflectanceMethod;
 

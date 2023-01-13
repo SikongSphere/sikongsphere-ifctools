@@ -22,6 +22,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentif
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumeration.IfcSurfaceTextureEnum;
 
 /**
+ *  An IfcBlobTexture provides a 2-dimensional distribution of the lighting parameters of a surface onto
+ *  which it is mapped.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
@@ -30,10 +33,15 @@ public class IfcBlobTexture extends IfcSurfaceTexture {
     private IfcIdentifier rasterFormat;
     private BOOLEAN rasterCode;
 
+    public IfcBlobTexture(IfcIdentifier rasterFormat, BOOLEAN rasterCode) {
+        this.rasterFormat = rasterFormat;
+        this.rasterCode = rasterCode;
+    }
+
     @IfcParserConstructor
     public IfcBlobTexture(
-        LOGICAL repeatS,
-        LOGICAL repeatT,
+        BOOLEAN repeatS,
+        BOOLEAN repeatT,
         IfcSurfaceTextureEnum textureType,
         IfcCartesianTransformationOperator2D textureTransform,
         IfcIdentifier rasterFormat,

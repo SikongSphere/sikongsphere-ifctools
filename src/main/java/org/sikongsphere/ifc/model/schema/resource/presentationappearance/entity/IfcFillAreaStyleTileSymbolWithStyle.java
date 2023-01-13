@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
@@ -31,6 +32,7 @@ public class IfcFillAreaStyleTileSymbolWithStyle extends IfcGeometricRepresentat
 
     public IfcFillAreaStyleTileSymbolWithStyle() {}
 
+    @IfcParserConstructor
     public IfcFillAreaStyleTileSymbolWithStyle(IfcAnnotationSymbolOccurrence symbol) {
         Symbol = symbol;
     }

@@ -11,8 +11,11 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSurfaceStyleElementSelect;
 
@@ -24,20 +27,23 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/02 13:21
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcSurfaceStyleWithTextures implements IfcSurfaceStyleElementSelect {
-    private SET<IfcSurfaceTexture> textures;
+public class IfcSurfaceStyleWithTextures extends IfcAbstractClass
+    implements
+        IfcSurfaceStyleElementSelect {
+    private LIST<IfcSurfaceTexture> textures;
 
     public IfcSurfaceStyleWithTextures() {}
 
-    public IfcSurfaceStyleWithTextures(SET<IfcSurfaceTexture> textures) {
+    @IfcParserConstructor
+    public IfcSurfaceStyleWithTextures(LIST<IfcSurfaceTexture> textures) {
         this.textures = textures;
     }
 
-    public SET<IfcSurfaceTexture> getTextures() {
+    public LIST<IfcSurfaceTexture> getTextures() {
         return textures;
     }
 
-    public void setTextures(SET<IfcSurfaceTexture> textures) {
+    public void setTextures(LIST<IfcSurfaceTexture> textures) {
         this.textures = textures;
     }
 }

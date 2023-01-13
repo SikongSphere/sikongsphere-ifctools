@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcSimpleValue;
 
 /**
+ * The IfcTextureCoordinateGenerator describes a procedurally defined mapping function with input parameter to
+ * map 2D texture coordinates to 3D geometry vertices.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

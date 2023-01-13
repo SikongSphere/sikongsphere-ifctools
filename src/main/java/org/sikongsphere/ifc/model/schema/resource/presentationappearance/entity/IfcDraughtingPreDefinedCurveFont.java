@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * : The draughting predefined curve font type defines a selection of widely used curve fonts for draughting purposes by name.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

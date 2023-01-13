@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.BINARY;
+import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.LOGICAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianTransformationOperator2D;
@@ -23,6 +24,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcInteger
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumeration.IfcSurfaceTextureEnum;
 
 /**
+ * An IfcPixelTexture provides a 2D image-based texture map as an explicit array of pixel values (image field).
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
@@ -33,10 +36,22 @@ public class IfcPixelTexture extends IfcSurfaceTexture {
     private IfcInteger colourComponents;
     private LIST<BINARY> pixel;
 
+    public IfcPixelTexture(
+        IfcInteger width,
+        IfcInteger height,
+        IfcInteger colourComponents,
+        LIST<BINARY> pixel
+    ) {
+        this.width = width;
+        this.height = height;
+        this.colourComponents = colourComponents;
+        this.pixel = pixel;
+    }
+
     @IfcParserConstructor
     public IfcPixelTexture(
-        LOGICAL repeatS,
-        LOGICAL repeatT,
+        BOOLEAN repeatS,
+        BOOLEAN repeatT,
         IfcSurfaceTextureEnum textureType,
         IfcCartesianTransformationOperator2D textureTransform,
         IfcInteger width,

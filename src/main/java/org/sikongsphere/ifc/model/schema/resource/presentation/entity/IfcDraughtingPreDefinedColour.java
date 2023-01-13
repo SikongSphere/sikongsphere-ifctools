@@ -25,6 +25,14 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormali
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDraughtingPreDefinedColour extends IfcPreDefinedColour {
+
+    public IfcDraughtingPreDefinedColour() {}
+
+    @IfcParserConstructor
+    public IfcDraughtingPreDefinedColour(IfcLabel name) {
+        super(name);
+    }
+
     @Override
     public boolean illegal() {
         return "black".equalsIgnoreCase(getName().value)

@@ -11,8 +11,13 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcPresentationStyleAssignment;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcStyledItem;
 
 /**
@@ -22,4 +27,15 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.
  * @date 2022/9/2 11:39
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAnnotationOccurrence extends IfcStyledItem {}
+public class IfcAnnotationOccurrence extends IfcStyledItem {
+    public IfcAnnotationOccurrence() {}
+
+    @IfcParserConstructor
+    public IfcAnnotationOccurrence(
+        IfcRepresentationItem item,
+        SET<IfcPresentationStyleAssignment> styles,
+        IfcLabel name
+    ) {
+        super(item, styles, name);
+    }
+}

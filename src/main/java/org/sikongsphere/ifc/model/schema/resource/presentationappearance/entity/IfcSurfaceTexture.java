@@ -11,8 +11,11 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 import org.sikongsphere.ifc.model.datatype.LOGICAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianTransformationOperator2D;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumeration.IfcSurfaceTextureEnum;
@@ -26,17 +29,19 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumera
  * @date 2022/09/02 13:22
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcSurfaceTexture {
-    private LOGICAL repeatS;// todo -> BOOLEAN
-    private LOGICAL repeatT;// todo -> BOOLEAN
+public class IfcSurfaceTexture {
+    private BOOLEAN repeatS;
+    private BOOLEAN repeatT;
     private IfcSurfaceTextureEnum textureType;
+    @IfcOptionField
     private IfcCartesianTransformationOperator2D textureTransform;
 
     public IfcSurfaceTexture() {}
 
+    @IfcParserConstructor
     public IfcSurfaceTexture(
-        LOGICAL repeatS,
-        LOGICAL repeatT,
+        BOOLEAN repeatS,
+        BOOLEAN repeatT,
         IfcSurfaceTextureEnum textureType,
         IfcCartesianTransformationOperator2D textureTransform
     ) {
@@ -46,19 +51,19 @@ public abstract class IfcSurfaceTexture {
         this.textureTransform = textureTransform;
     }
 
-    public LOGICAL getRepeatS() {
+    public BOOLEAN getRepeatS() {
         return repeatS;
     }
 
-    public void setRepeatS(LOGICAL repeatS) {
+    public void setRepeatS(BOOLEAN repeatS) {
         this.repeatS = repeatS;
     }
 
-    public LOGICAL getRepeatT() {
+    public BOOLEAN getRepeatT() {
         return repeatT;
     }
 
-    public void setRepeatT(LOGICAL repeatT) {
+    public void setRepeatT(BOOLEAN repeatT) {
         this.repeatT = repeatT;
     }
 

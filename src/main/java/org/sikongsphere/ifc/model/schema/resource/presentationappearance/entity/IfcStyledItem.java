@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -27,8 +28,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcStyledItem extends IfcRepresentationItem {
+    @IfcOptionField
     private IfcRepresentationItem item;
     private SET<IfcPresentationStyleAssignment> styles;
+    @IfcOptionField
     private IfcLabel name;
 
     public IfcStyledItem() {}

@@ -11,16 +11,33 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.entity.IfcExternalReference;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.selectType.IfcDefinedSymbolSelect;
 
 /**
+ * An externally defined symbol is a symbol that gets its shape information by an agreed
+ * reference to an external source.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcExternallyDefinedSymbol extends IfcExternalReference
     implements
-        IfcDefinedSymbolSelect {}
+        IfcDefinedSymbolSelect {
+    public IfcExternallyDefinedSymbol() {}
+
+    @IfcParserConstructor
+    public IfcExternallyDefinedSymbol(
+        IfcLabel location,
+        IfcIdentifier itemReference,
+        IfcLabel name
+    ) {
+        super(location, itemReference, name);
+    }
+}

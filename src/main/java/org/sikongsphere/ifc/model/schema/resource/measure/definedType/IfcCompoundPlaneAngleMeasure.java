@@ -22,6 +22,8 @@ import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 
 /**
+ * A compound measure of plane angle in degrees minutes and seconds of arc.
+ *
  * @author Wang Bohong
  * @date 2022/10/14 16:14
  */

@@ -15,7 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * An enumeration of the international abbreviations of surface side.
+ * Denotion of whether negative, positive or both sides of a surface are being referenced.
  *
  * @author zaiyuan
  * @date 2022/8/31 21:24

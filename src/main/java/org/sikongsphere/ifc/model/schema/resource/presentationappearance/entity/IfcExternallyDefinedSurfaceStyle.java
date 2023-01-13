@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.externalreference.entity.IfcExternalReference;
@@ -28,7 +29,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 public class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference
     implements
         IfcSurfaceStyleElementSelect {
-
+    @IfcParserConstructor
     public IfcExternallyDefinedSurfaceStyle(
         IfcLabel location,
         IfcIdentifier itemReference,

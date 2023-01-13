@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcColour;
 
 /**
@@ -24,4 +26,11 @@ import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcCol
  * @date 2022/09/01 23:50
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public abstract class IfcPreDefinedColour extends IfcPreDefinedItem implements IfcColour {}
+public abstract class IfcPreDefinedColour extends IfcPreDefinedItem implements IfcColour {
+    public IfcPreDefinedColour() {}
+
+    @IfcParserConstructor
+    public IfcPreDefinedColour(IfcLabel name) {
+        super(name);
+    }
+}

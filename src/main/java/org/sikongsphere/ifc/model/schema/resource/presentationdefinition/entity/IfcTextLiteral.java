@@ -20,6 +20,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentation.definedType.IfcPr
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.enumeration.IfcTextPath;
 
 /**
+ * The text literal is a geometric representation item which describes a text string using a string literal and
+ * additional position, and path information.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

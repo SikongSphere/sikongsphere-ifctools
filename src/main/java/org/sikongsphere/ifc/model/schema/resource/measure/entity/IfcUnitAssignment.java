@@ -19,7 +19,8 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
- * This class contains a set of units which may be assigned.
+ * A set of units which may be assigned.
+ *
  * @author Wang Bohong
  * @date 2022/9/1 13:10
  */

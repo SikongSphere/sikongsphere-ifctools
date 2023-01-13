@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -19,21 +21,21 @@ import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIUnitN
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcUnitEnum;
 
 /**
- * This class is used to encapsulate SI Unit information
+ * An SI unit is the fixed quantity used as a standard in terms of which items are measured as defined
+ * by ISO 1000 (clause 2).
  *
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSIUnit extends IfcNamedUnit {
+    @IfcOptionField
     private IfcSIPrefix prefix;
     private IfcSIUnitName name;
 
-    /**
-     * TODO
-     * DERIVE
-     * SELF\IfcNamedUnit.Dimensions	 : 	IfcDimensionalExponents :=  IfcDimensionsForSiUnit (SELF.Name);
-     */
+    // todo
+    //
+    // SELF\IfcNamedUnit.Dimensions : IfcDimensionalExponents := IfcDimensionsForSiUnit (SELF.Name);
 
     public IfcSIUnit(IfcSIPrefix prefix, IfcSIUnitName name) {
         this.prefix = prefix;

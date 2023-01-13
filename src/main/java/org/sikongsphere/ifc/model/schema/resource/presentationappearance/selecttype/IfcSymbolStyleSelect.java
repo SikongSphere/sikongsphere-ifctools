@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ *The symbol style select allows for the selection of styles to be assigned to an annotated symbol.
  *
  * @author zaiyuan
  * @date 2022/12/17 08:15

@@ -19,6 +19,8 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
 
 /**
+ * An IfcTextureVertex is a list of 2 (S, T) texture coordinates.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

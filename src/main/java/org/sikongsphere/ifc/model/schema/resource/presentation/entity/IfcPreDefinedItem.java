@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -30,6 +31,7 @@ public abstract class IfcPreDefinedItem extends IfcAbstractClass {
 
     public IfcPreDefinedItem() {}
 
+    @IfcParserConstructor
     public IfcPreDefinedItem(IfcLabel name) {
         this.name = name;
     }

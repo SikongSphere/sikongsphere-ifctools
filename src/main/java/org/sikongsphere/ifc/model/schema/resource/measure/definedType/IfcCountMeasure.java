@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
+ * A count measure is the value of a count.
+ *
  * @author Wang Bohong
  * @date 2022/11/13 11:47
  */
