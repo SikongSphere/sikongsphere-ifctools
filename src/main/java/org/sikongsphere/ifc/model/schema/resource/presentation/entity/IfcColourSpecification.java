@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -19,14 +20,14 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcColour;
 
 /**
- * The IfcTextFontSelect alows for either a predefined text font, a text font model or an externally defined
- * text font to be used to describe the font of a text literal.
+ *  The colour specification entity contains a direct colour definition.
  *
  * @author zaiyuan
  * @date 2022/9/2 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcColourSpecification extends IfcAbstractClass implements IfcColour {
+    @IfcOptionField
     private IfcLabel name;
 
     public IfcColourSpecification() {}

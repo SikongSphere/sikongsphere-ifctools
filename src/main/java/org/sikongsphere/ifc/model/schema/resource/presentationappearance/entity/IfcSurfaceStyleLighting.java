@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
@@ -25,31 +26,24 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcSurfaceStyleLighting implements IfcSurfaceStyleElementSelect {
-    private IfcColourRgb diffusetransmissionColor;
+    private IfcColourRgb diffuseTransmissionColour;
     private IfcColourRgb diffuseReflectionColour;
     private IfcColourRgb transmissionColour;
     private IfcColourRgb reflectanceColour;
 
     public IfcSurfaceStyleLighting() {}
 
+    @IfcParserConstructor
     public IfcSurfaceStyleLighting(
-        IfcColourRgb diffusetransmissionColor,
+        IfcColourRgb diffuseTransmissionColour,
         IfcColourRgb diffuseReflectionColour,
         IfcColourRgb transmissionColour,
         IfcColourRgb reflectanceColour
     ) {
-        this.diffusetransmissionColor = diffusetransmissionColor;
+        this.diffuseTransmissionColour = diffuseTransmissionColour;
         this.diffuseReflectionColour = diffuseReflectionColour;
         this.transmissionColour = transmissionColour;
         this.reflectanceColour = reflectanceColour;
-    }
-
-    public IfcColourRgb getDiffusetransmissionColor() {
-        return diffusetransmissionColor;
-    }
-
-    public void setDiffusetransmissionColor(IfcColourRgb diffusetransmissionColor) {
-        this.diffusetransmissionColor = diffusetransmissionColor;
     }
 
     public IfcColourRgb getDiffuseReflectionColour() {
@@ -74,5 +68,13 @@ public class IfcSurfaceStyleLighting implements IfcSurfaceStyleElementSelect {
 
     public void setReflectanceColour(IfcColourRgb reflectanceColour) {
         this.reflectanceColour = reflectanceColour;
+    }
+
+    public IfcColourRgb getDiffuseTransmissionColour() {
+        return diffuseTransmissionColour;
+    }
+
+    public void setDiffuseTransmissionColour(IfcColourRgb diffuseTransmissionColour) {
+        this.diffuseTransmissionColour = diffuseTransmissionColour;
     }
 }

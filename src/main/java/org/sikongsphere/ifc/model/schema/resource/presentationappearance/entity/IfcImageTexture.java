@@ -15,12 +15,15 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 import org.sikongsphere.ifc.model.datatype.LOGICAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianTransformationOperator2D;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumeration.IfcSurfaceTextureEnum;
 
 /**
+ * An IfcImageTexture provides a 2-dimensional distribution of the lighting parameters of a surface onto which it is mapped.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
@@ -28,10 +31,14 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.enumera
 public class IfcImageTexture extends IfcSurfaceTexture {
     private IfcIdentifier urlReference;
 
+    public IfcImageTexture(IfcIdentifier urlReference) {
+        this.urlReference = urlReference;
+    }
+
     @IfcParserConstructor
     public IfcImageTexture(
-        LOGICAL repeatS,
-        LOGICAL repeatT,
+        BOOLEAN repeatS,
+        BOOLEAN repeatT,
         IfcSurfaceTextureEnum textureType,
         IfcCartesianTransformationOperator2D textureTransform,
         IfcIdentifier urlReference

@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSymbolStyleSelect;
 
 /**
+ * The symbol style is the presentation style that indicates the presentation of annotation symbols.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

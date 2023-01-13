@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * This class is used to encapsulate dimension exponents information
+ *  The dimensionality of any quantity can be expressed as a product of powers of the dimensions of base quantities.
  *
  * @author zaiyuan
  * @date 2022-08-31 18:30:00

@@ -11,8 +11,10 @@
 package org.sikongsphere.ifc.model.schema.resource.presentation.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
  * The draughting pre defined text font is a pre defined text font for the purpose to identify a font by name.
@@ -22,6 +24,13 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcDraughtingPreDefinedTextFont extends IfcPreDefinedTextFont {
+    public IfcDraughtingPreDefinedTextFont() {}
+
+    @IfcParserConstructor
+    public IfcDraughtingPreDefinedTextFont(IfcLabel name) {
+        super(name);
+    }
+
     @Override
     public boolean illegal() {
         return "ISO 3098-1 font A".equalsIgnoreCase(getName().value)

@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -20,17 +22,22 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcTextStyleSelect;
 
 /**
+ * The text style is a presentation style for annotation text..
+ *
  * @author Wang Bohong
  * @date 2022/9/2 11:44
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcTextStyle extends IfcPresentationStyle implements IfcPresentationStyleSelect {
+    @IfcOptionField
     private IfcCharacterStyleSelect textCharacterAppearance;
+    @IfcOptionField
     private IfcTextStyleSelect textStyle;
     private IfcTextFontSelect textFontStyle;
 
     public IfcTextStyle() {}
 
+    @IfcParserConstructor
     public IfcTextStyle(
         IfcLabel name,
         IfcCharacterStyleSelect textCharacterAppearance,

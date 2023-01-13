@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -20,7 +22,8 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcTextStyleSelect;
 
 /**
- * IfcTextStyleWithBoxCharacteristics
+ * The text style with box characteristics allows the presentation of annotated text by specifying
+ * the characteristics of the character boxes of the text and the spacing between the character boxes.
  *
  * @author zaiyuan
  * @date 2022/9/2 19:15
@@ -29,9 +32,69 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 public class IfcTextStyleWithBoxCharacteristics extends IfcAbstractClass
     implements
         IfcTextStyleSelect {
+    @IfcOptionField
     private IfcPositiveLengthMeasure boxHeight;
+    @IfcOptionField
     private IfcPositiveLengthMeasure boxWidth;
+    @IfcOptionField
     private IfcPlaneAngleMeasure boxSlantAngle;
+    @IfcOptionField
     private IfcPlaneAngleMeasure boxRotateAngle;
+    @IfcOptionField
     private IfcSizeSelect characterSpacing;
+
+    @IfcParserConstructor
+    public IfcTextStyleWithBoxCharacteristics(
+        IfcPositiveLengthMeasure boxHeight,
+        IfcPositiveLengthMeasure boxWidth,
+        IfcPlaneAngleMeasure boxSlantAngle,
+        IfcPlaneAngleMeasure boxRotateAngle,
+        IfcSizeSelect characterSpacing
+    ) {
+        this.boxHeight = boxHeight;
+        this.boxWidth = boxWidth;
+        this.boxSlantAngle = boxSlantAngle;
+        this.boxRotateAngle = boxRotateAngle;
+        this.characterSpacing = characterSpacing;
+    }
+
+    public IfcPositiveLengthMeasure getBoxHeight() {
+        return boxHeight;
+    }
+
+    public void setBoxHeight(IfcPositiveLengthMeasure boxHeight) {
+        this.boxHeight = boxHeight;
+    }
+
+    public IfcPositiveLengthMeasure getBoxWidth() {
+        return boxWidth;
+    }
+
+    public void setBoxWidth(IfcPositiveLengthMeasure boxWidth) {
+        this.boxWidth = boxWidth;
+    }
+
+    public IfcPlaneAngleMeasure getBoxSlantAngle() {
+        return boxSlantAngle;
+    }
+
+    public void setBoxSlantAngle(IfcPlaneAngleMeasure boxSlantAngle) {
+        this.boxSlantAngle = boxSlantAngle;
+    }
+
+    public IfcPlaneAngleMeasure getBoxRotateAngle() {
+        return boxRotateAngle;
+    }
+
+    public void setBoxRotateAngle(IfcPlaneAngleMeasure boxRotateAngle) {
+        this.boxRotateAngle = boxRotateAngle;
+    }
+
+    public IfcSizeSelect getCharacterSpacing() {
+        return characterSpacing;
+    }
+
+    public void setCharacterSpacing(IfcSizeSelect characterSpacing) {
+        this.characterSpacing = characterSpacing;
+    }
 }

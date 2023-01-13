@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcUnitEnum;
 
 /**
+ *  A conversion based unit is a unit that is defined based on a measure with unit.
+ *
  * @author zhongqi
  * @date 2022/10/15
  */

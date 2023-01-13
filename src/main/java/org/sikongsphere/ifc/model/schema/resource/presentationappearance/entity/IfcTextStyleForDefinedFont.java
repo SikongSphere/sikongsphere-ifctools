@@ -11,6 +11,8 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -18,7 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentation.selectType.IfcCol
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcCharacterStyleSelect;
 
 /**
- * IfcTextStyleForDefinedFont
+ * A text style for defined font is a character glyph style for pre-defined or externally defined text fonts.
  *
  * @author zaiyuan
  * @date 2022/9/2 19:15
@@ -28,5 +30,28 @@ public class IfcTextStyleForDefinedFont extends IfcAbstractClass
     implements
         IfcCharacterStyleSelect {
     private IfcColour colour;
+    @IfcOptionField
     private IfcColour backgroundColour;
+
+    @IfcParserConstructor
+    public IfcTextStyleForDefinedFont(IfcColour colour, IfcColour backgroundColour) {
+        this.colour = colour;
+        this.backgroundColour = backgroundColour;
+    }
+
+    public IfcColour getColour() {
+        return colour;
+    }
+
+    public void setColour(IfcColour colour) {
+        this.colour = colour;
+    }
+
+    public IfcColour getBackgroundColour() {
+        return backgroundColour;
+    }
+
+    public void setBackgroundColour(IfcColour backgroundColour) {
+        this.backgroundColour = backgroundColour;
+    }
 }

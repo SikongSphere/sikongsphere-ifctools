@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ *The defined symbol select is a selection between a predefined symbol and an externally defined symbol.
  *
  * @author zaiyuan
  * @date 2022/12/17 19:53

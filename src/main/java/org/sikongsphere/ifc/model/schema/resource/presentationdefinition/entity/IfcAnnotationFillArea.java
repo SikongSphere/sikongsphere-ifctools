@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCurve;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRepresentationItem;
 
 /**
+ * An annotation fill area is a set of curves that may be filled with hatching, colour or tiling.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

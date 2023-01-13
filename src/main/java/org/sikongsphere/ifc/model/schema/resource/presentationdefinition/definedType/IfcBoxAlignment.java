@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * The box alignment specifies the alignment of the text box relative to its position.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

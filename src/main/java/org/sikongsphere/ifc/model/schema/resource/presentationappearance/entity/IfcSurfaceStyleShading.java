@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -32,6 +33,7 @@ public class IfcSurfaceStyleShading extends IfcAbstractClass
 
     public IfcSurfaceStyleShading() {}
 
+    @IfcParserConstructor
     public IfcSurfaceStyleShading(IfcColourRgb surfaceColour) {
         this.surfaceColour = surfaceColour;
     }

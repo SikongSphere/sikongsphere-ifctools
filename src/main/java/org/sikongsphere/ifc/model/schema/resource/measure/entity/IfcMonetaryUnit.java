@@ -11,18 +11,33 @@
 package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcCurrencyEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
- * This class is used to encapsulate monetary unit information
+ * IfcMonetaryUnit is a unit to define currency for money.
  *
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMonetaryUnit implements IfcUnit {
+public class IfcMonetaryUnit extends IfcAbstractClass implements IfcUnit {
     private IfcCurrencyEnum currency;
+
+    @IfcParserConstructor
+    public IfcMonetaryUnit(IfcCurrencyEnum currency) {
+        this.currency = currency;
+    }
+
+    public IfcCurrencyEnum getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(IfcCurrencyEnum currency) {
+        this.currency = currency;
+    }
 }

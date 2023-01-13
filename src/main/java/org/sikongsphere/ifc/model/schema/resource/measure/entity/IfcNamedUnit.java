@@ -10,22 +10,24 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcUnitEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 
 /**
- * This class is used to encapsulate named unit information
+ * A named unit is a unit quantity associated with the word, or group of words, by which the unit is identified.
  *
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
 public abstract class IfcNamedUnit extends IfcAbstractClass implements IfcUnit {
-    protected IfcDimensionalExponents dimensions;
-    protected IfcUnitEnum unitType;
+    private IfcDimensionalExponents dimensions;
+    private IfcUnitEnum unitType;
 
     public IfcNamedUnit() {}
 
+    @IfcParserConstructor
     public IfcNamedUnit(IfcDimensionalExponents dimensions, IfcUnitEnum unitType) {
         this.dimensions = dimensions;
         this.unitType = unitType;

@@ -18,7 +18,7 @@ import org.sikongsphere.ifc.model.datatype.INTEGER;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 
 /**
- * This class is used to encapsulate derived unit element information
+ * A derived unit element is one of the unit quantities which makes up a derived unit.
  *
  * @author zaiyuan
  * @date 2022-08-31 18:30:00

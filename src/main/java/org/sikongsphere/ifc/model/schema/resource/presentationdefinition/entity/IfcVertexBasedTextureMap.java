@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
 
 /**
+ * An IfcVertexBasedTextureMap provides the mapping of the 2-dimensional texture coordinates (S, T) to the vertices
+ * of a single surface onto which it is mapped.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

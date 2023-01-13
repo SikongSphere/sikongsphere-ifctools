@@ -14,32 +14,20 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.INTEGER;
+import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
- * An area measure is the value of the extent of a surface.
- * Usually measured in square metre (m2).
- *
- * @author Wang Bohong
- * @date 2022/11/13 11:38
+ * Representation of a complex number expressed as an array with two elements.
+ * @author yiwei
+ * @date 2023/1/13 21:38
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcAreaMeasure extends DOUBLE implements IfcValue, IfcMeasureValue {
-    public IfcAreaMeasure() {}
+public class IfcComplexNumber extends LIST<REAL> implements IfcMeasureValue {
+    // todo
+    // TYPE IfcComplexNumber = ARRAY [1:2] OF REAL;
 
-    public IfcAreaMeasure(double value) {
-        super(value);
-    }
-
-    public IfcAreaMeasure(DOUBLE value) {
-        super(value);
-    }
-
-    @IfcParserConstructor
-    public IfcAreaMeasure(STRING value) {
-        super(value);
-    }
 }

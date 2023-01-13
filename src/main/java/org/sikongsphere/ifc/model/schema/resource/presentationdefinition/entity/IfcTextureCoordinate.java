@@ -12,12 +12,15 @@ package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
+ * he IfcTextureCoordinate a an abstract supertype of the different kinds to apply texture coordinates to geometries.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */
@@ -25,6 +28,9 @@ import org.sikongsphere.ifc.model.datatype.SET;
 public abstract class IfcTextureCoordinate extends IfcAbstractClass {
     @IfcInverseParameter
     private SET<IfcAnnotationSurface> annotatedSurface;
+
+    @IfcParserConstructor
+    public IfcTextureCoordinate() {}
 
     public SET<IfcAnnotationSurface> getAnnotatedSurface() {
         return annotatedSurface;

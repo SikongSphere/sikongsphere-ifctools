@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.selectType.IfcDefinedSymbolSelect;
 
 /**
+ * A defined symbol is a symbolic representation that gets its shape information by an established convention,
+ * either through a predefined symbol, or an externally defined symbol.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */

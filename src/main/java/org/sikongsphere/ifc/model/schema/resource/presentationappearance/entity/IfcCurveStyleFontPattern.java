@@ -28,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCurveStyleFontPattern extends IfcAbstractClass {
     private IfcLengthMeasure visibleSegmentLength;
-    private IfcPositiveLengthMeasure invisiblesegmentLength;
+    private IfcPositiveLengthMeasure invisibleSegmentLength;
 
     public IfcCurveStyleFontPattern() {}
 
@@ -38,7 +38,7 @@ public class IfcCurveStyleFontPattern extends IfcAbstractClass {
         IfcPositiveLengthMeasure invisiblesegmentLength
     ) {
         this.visibleSegmentLength = visibleSegmentLength;
-        this.invisiblesegmentLength = invisiblesegmentLength;
+        this.invisibleSegmentLength = invisiblesegmentLength;
     }
 
     public IfcLengthMeasure getVisibleSegmentLength() {
@@ -49,11 +49,11 @@ public class IfcCurveStyleFontPattern extends IfcAbstractClass {
         this.visibleSegmentLength = visibleSegmentLength;
     }
 
-    public IfcPositiveLengthMeasure getInvisiblesegmentLength() {
-        return invisiblesegmentLength;
+    public IfcPositiveLengthMeasure getInvisibleSegmentLength() {
+        return invisibleSegmentLength;
     }
 
-    public void setInvisiblesegmentLength(IfcPositiveLengthMeasure invisiblesegmentLength) {
-        this.invisiblesegmentLength = invisiblesegmentLength;
+    public void setInvisibleSegmentLength(IfcPositiveLengthMeasure invisibleSegmentLength) {
+        this.invisibleSegmentLength = invisibleSegmentLength;
     }
 }

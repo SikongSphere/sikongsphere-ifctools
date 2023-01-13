@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
+ * An IfcTextureMap provides the mapping of the 2-dimensional texture coordinates to the surface onto which it is mapped.
+ *
  * @author zaiyuan
  * @date 2022/12/17 21:03
  */
