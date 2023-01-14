@@ -18,6 +18,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentif
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
+ * A generalization of a single property object. The various subtypes of IfcSimpleProperty establish different
+ * ways in which a property value can be set.
+ *
  * @author Wang Bohong
  * @date 2022/10/16 12:37
  */

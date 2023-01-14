@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentat
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * The IfcTopologyRepresentation represents the concept of a particular topological representation of a product
+ * or a product component within a representation context.
+ *
  * @author Wang Bohong
  * @date 2022/10/21 11:52
  */

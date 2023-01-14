@@ -25,7 +25,8 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entit
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLayeredItem;
 
 /**
- * IfcRepresentation
+ * A representation is one or more representation items that are related in a specified representation context
+ * as the representation of some concept.
  *
  * @author zaiyuan
  * @date 2022/9/1 08:15

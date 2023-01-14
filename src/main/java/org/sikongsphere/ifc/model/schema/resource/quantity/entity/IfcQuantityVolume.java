@@ -28,24 +28,24 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcNamedUnit;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcQuantityVolume extends IfcPhysicalSimpleQuantity {
-    private IfcVolumeMeasure volumneValue;
+    private IfcVolumeMeasure volumeValue;
 
     @IfcParserConstructor
     public IfcQuantityVolume(
         IfcLabel name,
         IfcText description,
         IfcNamedUnit unit,
-        IfcVolumeMeasure volumneValue
+        IfcVolumeMeasure volumeValue
     ) {
         super(name, description, unit);
-        this.volumneValue = volumneValue;
+        this.volumeValue = volumeValue;
     }
 
-    public IfcVolumeMeasure getVolumneValue() {
-        return volumneValue;
+    public IfcVolumeMeasure getVolumeValue() {
+        return volumeValue;
     }
 
-    public void setVolumneValue(IfcVolumeMeasure volumneValue) {
-        this.volumneValue = volumneValue;
+    public void setVolumeValue(IfcVolumeMeasure volumeValue) {
+        this.volumeValue = volumeValue;
     }
 }

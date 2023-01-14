@@ -19,6 +19,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.material.selectType.IfcMaterialSelect;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcMaterialDefinitionRepresentation;
 
 /**
@@ -28,7 +29,10 @@ import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcMater
  * @date 2022/10/14 22:24
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcMaterial extends IfcAbstractClass implements IfcMaterialSelect {
+public class IfcMaterial extends IfcAbstractClass
+    implements
+        IfcMaterialSelect,
+        IfcObjectReferenceSelect {
 
     private IfcLabel name;
     @IfcInverseParameter

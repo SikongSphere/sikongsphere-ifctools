@@ -22,6 +22,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
+ * The IfcShapeAspect allows for grouping of shape representation items that represent aspects (or components)
+ * of the shape of a product. Thereby shape representations of components of the product shape represent a distinctive
+ * part to a product that can be explicitly addressed.
+ *
  * @author Wang Bohong
  * @date 2022/10/25 13:30
  */

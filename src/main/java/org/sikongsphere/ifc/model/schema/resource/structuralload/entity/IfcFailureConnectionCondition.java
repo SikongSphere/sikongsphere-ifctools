@@ -18,7 +18,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.*;
 
 /**
- * This class is used to encapsulate actor role information
+ *  Instances of the entity IfcFailureConnectionCondition shall be used to describe connection properties
+ *  needed to specify the failure of a connection.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

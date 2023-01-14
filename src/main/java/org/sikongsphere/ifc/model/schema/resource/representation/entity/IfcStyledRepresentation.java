@@ -19,7 +19,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentat
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * IfcStyledRepresentation
+ * The IfcStyledRepresentation represents the concept of a styled presentation being a representation of a product
+ * or a product component, like material. within a representation context.
  *
  * @author GaoSu
  * @date 2022/10/16 14:08

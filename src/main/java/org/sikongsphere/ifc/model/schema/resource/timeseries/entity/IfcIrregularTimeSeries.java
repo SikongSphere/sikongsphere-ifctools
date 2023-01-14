@@ -25,6 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcData
 import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcTimeSeriesDataTypeEnum;
 
 /**
+ * In an irregular time series, unpredictable bursts of data arrive at unspecified points in time, or most time stamps
+ * cannot be characterized by a repeating pattern.
+ *
  * @author yiwei
  * @date 2022/11/01 23:09
  */

@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.externalreference.selectType.I
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
+ * Relationship assigning documentation references to time series.
+ *
  * @author yiwei
  * @date 2022/11/01 23:09
  */

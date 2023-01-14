@@ -35,6 +35,7 @@ public class IfcPropertyBoundedValue extends IfcSimpleProperty {
     private IfcValue upperBoundValue;
     @IfcOptionField
     private IfcValue lowerBoundValue;
+    @IfcOptionField
     private IfcUnit unit;
 
     @IfcParserConstructor

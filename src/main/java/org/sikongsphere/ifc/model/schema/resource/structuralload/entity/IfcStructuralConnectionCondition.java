@@ -16,6 +16,9 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
+ * Instances of the entity IfcStructuralConnectionCondition or its respective subclasses shall be used to describe
+ * more rarely needed connection properties.
+ *
  * @author Yiwei
  * @date 2022/12/13
  */

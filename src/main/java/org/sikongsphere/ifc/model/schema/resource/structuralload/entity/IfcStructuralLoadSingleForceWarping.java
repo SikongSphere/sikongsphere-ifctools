@@ -21,7 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcTorqueM
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcWarpingMomentMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * Instances of the entity IfcStructuralLoadSingleForceWarping, as a subtype of IfcStructuralLoadSingleForce,
+ * shall be used to define an action opertion on a single point. In addition to forces and moments defined by
+ * its supertype a warping moment can be defined.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00
