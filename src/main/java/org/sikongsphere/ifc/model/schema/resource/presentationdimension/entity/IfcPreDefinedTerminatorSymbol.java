@@ -14,16 +14,22 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcPreDefinedSymbol;
 
 /**
- *
+ * The pre defined terminator symbol is a pre defined symbol for the purpose to identify a terminator by name.
  *
  * @author GaoSu
  * @date 2022/12/11 21:51
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPreDefinedTerminatorSymbol extends IfcPreDefinedSymbol {
-    @IfcParserConstructor
+
     public IfcPreDefinedTerminatorSymbol() {}
+
+    @IfcParserConstructor
+    public IfcPreDefinedTerminatorSymbol(IfcLabel name) {
+        super(name);
+    }
 }

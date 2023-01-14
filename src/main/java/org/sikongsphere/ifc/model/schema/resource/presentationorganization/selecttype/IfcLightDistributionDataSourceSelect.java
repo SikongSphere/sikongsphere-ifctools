@@ -15,6 +15,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * A goniometric light gets its intensity distribution function (how much light goes in any one direction) from
+ * one of two sources: (i) an industry-standard file, (ii) from distribution data passed directly via
+ * the IfcLightIntensityDistribution.
+ *
  * @author zaiyuan
  * @date 2022/12/17 23:21
  */

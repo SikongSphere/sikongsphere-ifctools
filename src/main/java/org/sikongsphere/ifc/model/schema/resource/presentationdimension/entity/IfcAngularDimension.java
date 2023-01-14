@@ -19,16 +19,19 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
+import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLayeredItem;
 
 /**
- *
+ * The angular dimension is a draughting callout that presents the plane angle measure between two non parallel orientations.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAngularDimension extends IfcAbstractClass {
+public class IfcAngularDimension extends IfcDimensionCurveDirectedCallout {
     @IfcParserConstructor
-    public IfcAngularDimension() {}
+    public IfcAngularDimension(SET<IfcDraughtingCalloutElement> contents) {
+        super(contents);
+    }
 }

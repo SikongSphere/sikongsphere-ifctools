@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfileTypeEnum;
 
 /**
+ * The parameterized profile definition defines a 2D position coordinate system to which the parameters of the
+ * different profiles relate to.
+ *
  * @author GaoSu
  * @date 2022/11/01 23:04
  */

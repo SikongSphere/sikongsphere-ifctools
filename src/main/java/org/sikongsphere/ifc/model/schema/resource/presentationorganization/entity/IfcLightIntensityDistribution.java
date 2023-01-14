@@ -22,6 +22,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.enume
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLightDistributionDataSourceSelect;
 
 /**
+ * The IfcLightIntensityDistribution defines the the luminous intensity of a light source that changes according to
+ * the direction of the ray.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

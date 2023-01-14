@@ -24,6 +24,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcReal;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
 
 /**
+ * The Spot light node defines a light source that emits light from a specific point along a specific direction vector and constrained within a solid angle.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
@@ -42,7 +44,7 @@ public class IfcLightSourceSpot extends IfcLightSourcePositional {
         IfcNormalisedRatioMeasure ambientIntensity,
         IfcNormalisedRatioMeasure intensity,
         IfcCartesianPoint position,
-        IfcPositiveLengthMeasure redius,
+        IfcPositiveLengthMeasure radius,
         IfcReal constantAttenuation,
         IfcReal distanceAttenuation,
         IfcReal quadricAttenuation,
@@ -57,7 +59,7 @@ public class IfcLightSourceSpot extends IfcLightSourcePositional {
             ambientIntensity,
             intensity,
             position,
-            redius,
+            radius,
             constantAttenuation,
             distanceAttenuation,
             quadricAttenuation

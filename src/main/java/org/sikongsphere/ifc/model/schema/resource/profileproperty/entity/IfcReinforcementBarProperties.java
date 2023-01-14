@@ -21,7 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.IfcReinforcingBarSurfaceEnum;
 
 /**
- *
+ * An IfcReinforcementProperties defines the set of properties for a specific combination of reinforcement bar
+ * steel grade, bar type and effective depth.
  *
  * @author GaoSu
  * @date 2022/12/18 13:29

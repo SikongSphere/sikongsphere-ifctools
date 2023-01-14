@@ -22,6 +22,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcReinforcingBarSurfaceEnum {
+    /**
+     * The reinforcing bar surface is plain.
+     */
     PLAIN,
+    /**
+     * The reinforcing bar surface is textured (ribbed).
+     */
     TEXTURED
 }

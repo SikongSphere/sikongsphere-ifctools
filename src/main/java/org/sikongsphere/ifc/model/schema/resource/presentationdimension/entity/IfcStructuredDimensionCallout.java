@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
+ * The structured dimension callout represents a special type of a draughting callout, which identifies the various components of the dimension text.
+ *
  * @author zaiyuan
  * @date 2022/12/17 19:53
  */

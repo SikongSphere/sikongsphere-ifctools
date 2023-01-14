@@ -22,6 +22,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
+ * The IfcLightDistributionData defines the luminous intensity of a light source given at a particular
+ * main plane angle.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

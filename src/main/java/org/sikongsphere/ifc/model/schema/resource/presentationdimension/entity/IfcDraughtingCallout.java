@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcGeometricRe
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
+ * A draughing callout is a collection of annotated curves, symbols and text that presents some product shape or
+ * definition properties within a drawing.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53

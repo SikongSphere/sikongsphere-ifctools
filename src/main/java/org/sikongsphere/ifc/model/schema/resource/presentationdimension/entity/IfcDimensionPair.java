@@ -20,7 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.enumeration.IfcDimensionExtentUsage;
 
 /**
- *
+ * A dimension pair relationship is a relationship between two draughting callouts.
  *
  * @author GaoSu
  * @date 2022/12/11 21:41

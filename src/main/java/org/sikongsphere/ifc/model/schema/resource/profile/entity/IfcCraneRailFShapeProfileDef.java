@@ -31,7 +31,7 @@ import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfile
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCraneRailFShapeProfileDef extends IfcParameterizedProfileDef {
-    private IfcPositiveLengthMeasure overalHeight;
+    private IfcPositiveLengthMeasure overallHeight;
     private IfcPositiveLengthMeasure headWidth;
     @IfcOptionField
     private IfcPositiveLengthMeasure radius;
@@ -48,7 +48,7 @@ public class IfcCraneRailFShapeProfileDef extends IfcParameterizedProfileDef {
         IfcProfileTypeEnum profileType,
         IfcLabel profileName,
         IfcAxis2Placement2D position,
-        IfcPositiveLengthMeasure overalHeight,
+        IfcPositiveLengthMeasure overallHeight,
         IfcPositiveLengthMeasure headWidth,
         IfcPositiveLengthMeasure radius,
         IfcPositiveLengthMeasure headDepth2,
@@ -59,7 +59,7 @@ public class IfcCraneRailFShapeProfileDef extends IfcParameterizedProfileDef {
         IfcPositiveLengthMeasure centreOfGravityInY
     ) {
         super(profileType, profileName, position);
-        this.overalHeight = overalHeight;
+        this.overallHeight = overallHeight;
         this.headWidth = headWidth;
         this.radius = radius;
         this.headDepth2 = headDepth2;
@@ -70,12 +70,12 @@ public class IfcCraneRailFShapeProfileDef extends IfcParameterizedProfileDef {
         this.centreOfGravityInY = centreOfGravityInY;
     }
 
-    public IfcPositiveLengthMeasure getOveralHeight() {
-        return overalHeight;
+    public IfcPositiveLengthMeasure getOverallHeight() {
+        return overallHeight;
     }
 
-    public void setOveralHeight(IfcPositiveLengthMeasure overalHeight) {
-        this.overalHeight = overalHeight;
+    public void setOverallHeight(IfcPositiveLengthMeasure overallHeight) {
+        this.overallHeight = overallHeight;
     }
 
     public IfcPositiveLengthMeasure getHeadWidth() {

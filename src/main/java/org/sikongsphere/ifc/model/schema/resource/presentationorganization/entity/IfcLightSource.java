@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormali
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
 
 /**
+ * The light source entity is determined by the reflectance specified in the surface style rendering.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

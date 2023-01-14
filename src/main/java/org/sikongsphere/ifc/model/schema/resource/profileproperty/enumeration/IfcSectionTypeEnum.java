@@ -22,6 +22,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 public enum IfcSectionTypeEnum {
+    /**
+     * The section is uniform in longitudinal direction.
+     */
     UNIFORM,
+    /**
+     * The section is tapered in longitudinal direction.
+     */
     TAPERED
 }

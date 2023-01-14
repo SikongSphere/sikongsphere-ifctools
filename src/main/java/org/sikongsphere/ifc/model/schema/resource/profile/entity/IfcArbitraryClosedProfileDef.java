@@ -19,6 +19,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfileTypeEnum;
 
 /**
+ *  The closed profile IfcArbitraryClosedProfileDef defines an arbitrary two-dimensional profile for the use
+ *  within the swept surface geometry, the swept area solid or a sectioned spine.
+ *
  * @author GaoSU
  * @date 2022/10/25 13:27
  */

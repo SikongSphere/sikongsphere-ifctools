@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcPresentationStyleAssignment;
+import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
  * An annotation text occurrence is a text with a style assignment.
@@ -26,7 +27,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.
  * @date 2022/12/17 21:03
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcAnnotationTextOccurrence extends IfcAnnotationOccurrence {
+public class IfcAnnotationTextOccurrence extends IfcAnnotationOccurrence
+    implements
+        IfcDraughtingCalloutElement {
     public IfcAnnotationTextOccurrence() {}
 
     @IfcParserConstructor
