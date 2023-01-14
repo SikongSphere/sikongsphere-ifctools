@@ -23,7 +23,8 @@ import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.If
 import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.IfcSectionTypeEnum;
 
 /**
- *
+ *  An IfcSectionReinforcementProperties defines the cross section properties of reinforcement for a single
+ *  longitudinal piece of a cross section with a specific reinforcement usage type.
  *
  * @author GaoSu
  * @date 2022/12/18 14:51

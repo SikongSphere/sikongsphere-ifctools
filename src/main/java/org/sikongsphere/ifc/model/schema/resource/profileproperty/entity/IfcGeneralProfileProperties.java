@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 
 /**
- *
+ * This is a collection of properties applicable to all linear structural members having a profile definition.
  *
  * @author GaoSu
  * @date 2022/12/18 13:29

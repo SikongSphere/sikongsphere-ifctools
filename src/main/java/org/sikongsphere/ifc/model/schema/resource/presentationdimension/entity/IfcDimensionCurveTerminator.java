@@ -15,12 +15,15 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcPresentationStyleAssignment;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcAnnotationCurveOccurrence;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.enumeration.IfcDimensionExtentUsage;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * A dimension curve terminator is an annotated symbol, which is used at a dimension curve.
  *
  * @author GaoSu
  * @date 2022/12/11 21:41
@@ -29,12 +32,23 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selectty
 public class IfcDimensionCurveTerminator extends IfcTerminatorSymbol {
     private IfcDimensionExtentUsage role;
 
-    @IfcParserConstructor
     public IfcDimensionCurveTerminator(
         IfcAnnotationCurveOccurrence annotatedCurve,
         IfcDimensionExtentUsage role
     ) {
         super(annotatedCurve);
+        this.role = role;
+    }
+
+    @IfcParserConstructor
+    public IfcDimensionCurveTerminator(
+        IfcRepresentationItem item,
+        SET<IfcPresentationStyleAssignment> styles,
+        IfcLabel name,
+        IfcAnnotationCurveOccurrence annotatedCurve,
+        IfcDimensionExtentUsage role
+    ) {
+        super(item, styles, name, annotatedCurve);
         this.role = role;
     }
 

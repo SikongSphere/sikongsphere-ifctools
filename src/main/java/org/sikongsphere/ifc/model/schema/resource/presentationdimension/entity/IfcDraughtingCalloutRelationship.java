@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * The draughting callout relationship establishes a logical relationship between two draughting callouts.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53

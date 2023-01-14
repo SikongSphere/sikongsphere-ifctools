@@ -34,18 +34,18 @@ import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfile
 public class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
     private IfcPositiveLengthMeasure depth;
     @IfcOptionField
-    private IfcPositiveLengthMeasure Width;
-    private IfcPositiveLengthMeasure Thickness;
+    private IfcPositiveLengthMeasure width;
+    private IfcPositiveLengthMeasure thickness;
     @IfcOptionField
-    private IfcPositiveLengthMeasure FilletRadius;
+    private IfcPositiveLengthMeasure filletRadius;
     @IfcOptionField
-    private IfcPositiveLengthMeasure EdgeRadius;
+    private IfcPositiveLengthMeasure edgeRadius;
     @IfcOptionField
-    private IfcPositiveLengthMeasure LegSlope;
+    private IfcPositiveLengthMeasure legSlope;
     @IfcOptionField
-    private IfcPositiveLengthMeasure CentreOfGravityInX;
+    private IfcPositiveLengthMeasure centreOfGravityInX;
     @IfcOptionField
-    private IfcPositiveLengthMeasure CentreOfGravityInY;
+    private IfcPositiveLengthMeasure centreOfGravityInY;
 
     @IfcParserConstructor
     public IfcLShapeProfileDef(
@@ -63,13 +63,13 @@ public class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
     ) {
         super(profileType, profileName, position);
         this.depth = depth;
-        Width = width;
-        Thickness = thickness;
-        FilletRadius = filletRadius;
-        EdgeRadius = edgeRadius;
-        LegSlope = legSlope;
-        CentreOfGravityInX = centreOfGravityInX;
-        CentreOfGravityInY = centreOfGravityInY;
+        this.width = width;
+        this.thickness = thickness;
+        this.filletRadius = filletRadius;
+        this.edgeRadius = edgeRadius;
+        this.legSlope = legSlope;
+        this.centreOfGravityInX = centreOfGravityInX;
+        this.centreOfGravityInY = centreOfGravityInY;
     }
 
     public IfcPositiveLengthMeasure getDepth() {
@@ -81,59 +81,59 @@ public class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
     }
 
     public IfcPositiveLengthMeasure getWidth() {
-        return Width;
+        return width;
     }
 
     public void setWidth(IfcPositiveLengthMeasure width) {
-        Width = width;
+        this.width = width;
     }
 
     public IfcPositiveLengthMeasure getThickness() {
-        return Thickness;
+        return thickness;
     }
 
     public void setThickness(IfcPositiveLengthMeasure thickness) {
-        Thickness = thickness;
+        this.thickness = thickness;
     }
 
     public IfcPositiveLengthMeasure getFilletRadius() {
-        return FilletRadius;
+        return filletRadius;
     }
 
     public void setFilletRadius(IfcPositiveLengthMeasure filletRadius) {
-        FilletRadius = filletRadius;
+        this.filletRadius = filletRadius;
     }
 
     public IfcPositiveLengthMeasure getEdgeRadius() {
-        return EdgeRadius;
+        return edgeRadius;
     }
 
     public void setEdgeRadius(IfcPositiveLengthMeasure edgeRadius) {
-        EdgeRadius = edgeRadius;
+        this.edgeRadius = edgeRadius;
     }
 
     public IfcPositiveLengthMeasure getLegSlope() {
-        return LegSlope;
+        return legSlope;
     }
 
     public void setLegSlope(IfcPositiveLengthMeasure legSlope) {
-        LegSlope = legSlope;
+        this.legSlope = legSlope;
     }
 
     public IfcPositiveLengthMeasure getCentreOfGravityInX() {
-        return CentreOfGravityInX;
+        return centreOfGravityInX;
     }
 
     public void setCentreOfGravityInX(IfcPositiveLengthMeasure centreOfGravityInX) {
-        CentreOfGravityInX = centreOfGravityInX;
+        this.centreOfGravityInX = centreOfGravityInX;
     }
 
     public IfcPositiveLengthMeasure getCentreOfGravityInY() {
-        return CentreOfGravityInY;
+        return centreOfGravityInY;
     }
 
     public void setCentreOfGravityInY(IfcPositiveLengthMeasure centreOfGravityInY) {
-        CentreOfGravityInY = centreOfGravityInY;
+        this.centreOfGravityInY = centreOfGravityInY;
     }
 
     @Override

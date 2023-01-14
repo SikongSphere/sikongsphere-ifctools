@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiv
 import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfileTypeEnum;
 
 /**
+ * The IfcRectangleProfileDef defines a rectangle as the profile definition used by the swept surface geometry or the swept area solid.
+ *
  * @author GaoSu
  * @date 2022/11/01 23:07
  */

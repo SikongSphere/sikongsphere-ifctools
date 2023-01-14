@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.If
 import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.IfcSectionTypeEnum;
 
 /**
- *
+ * An IfcSectionProperties defines the cross section properties for a single longitudinal piece of a cross section.
  *
  * @author GaoSu
  * @date 2022/12/18 14:51

@@ -15,17 +15,23 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcPreDefinedSymbol;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * The pre defined dimension symbol is a pre defined symbol for the purpose to identify a dimension symbol by name.
  *
  * @author GaoSu
  * @date 2022/12/11 21:44
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPreDefinedDimensionSymbol extends IfcPreDefinedSymbol {
-    @IfcParserConstructor
+
     public IfcPreDefinedDimensionSymbol() {}
+
+    @IfcParserConstructor
+    public IfcPreDefinedDimensionSymbol(IfcLabel name) {
+        super(name);
+    }
 }

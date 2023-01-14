@@ -16,11 +16,15 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcPresentationStyleAssignment;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcAnnotationCurveOccurrence;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * A dimension curve is an annotated curve within a dimension that has the dimension text and may have
+ * terminator symbols assigned.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53
@@ -30,8 +34,18 @@ public class IfcDimensionCurve extends IfcAnnotationCurveOccurrence {
     @IfcInverseParameter
     private SET<IfcTerminatorSymbol> annotatedBySymbols;
 
-    @IfcParserConstructor
     public IfcDimensionCurve(SET<IfcTerminatorSymbol> annotatedBySymbols) {
+        this.annotatedBySymbols = annotatedBySymbols;
+    }
+
+    @IfcParserConstructor
+    public IfcDimensionCurve(
+        IfcRepresentationItem item,
+        SET<IfcPresentationStyleAssignment> styles,
+        IfcLabel name,
+        SET<IfcTerminatorSymbol> annotatedBySymbols
+    ) {
+        super(item, styles, name);
         this.annotatedBySymbols = annotatedBySymbols;
     }
 

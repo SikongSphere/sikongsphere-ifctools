@@ -20,6 +20,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfileTypeEnum;
 
 /**
+ * The IfcArbitraryProfileDefWithVoids defines an arbitrary closed two-dimensional profile with
+ * holes defined for the use for the swept area solid or a sectioned spine.
+ *
  * @author Yiwei
  * @date 2022/11/6
  */

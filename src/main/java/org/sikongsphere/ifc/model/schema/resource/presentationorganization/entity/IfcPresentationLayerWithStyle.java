@@ -24,6 +24,9 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLayeredItem;
 
 /**
+ * An IfcPresentationLayerAssignmentWithStyle extends the presentation layer assignment with capabilities to
+ * define visibility control, access control and common style information.
+ * 
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

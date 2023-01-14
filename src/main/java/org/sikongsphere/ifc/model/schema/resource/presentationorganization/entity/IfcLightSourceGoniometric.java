@@ -26,6 +26,8 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.enume
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLightDistributionDataSourceSelect;
 
 /**
+ * The IfcLightSourceGoniometric defines a light source for which exact lighting data is available.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

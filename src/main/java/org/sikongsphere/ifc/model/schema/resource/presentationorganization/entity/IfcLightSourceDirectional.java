@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcNormali
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
 
 /**
+ * The light source directional is a subtype of light source.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */

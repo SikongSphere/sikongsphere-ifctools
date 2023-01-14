@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ *The draughting callout elements can either be annotated curves, symbols or text.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53

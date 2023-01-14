@@ -20,7 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
- *
+ * A dimension callout relationship is a relationship between two draughting callouts.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53

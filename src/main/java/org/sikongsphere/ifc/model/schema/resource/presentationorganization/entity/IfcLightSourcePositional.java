@@ -23,13 +23,15 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcReal;
 import org.sikongsphere.ifc.model.schema.resource.presentation.entity.IfcColourRgb;
 
 /**
+ * The light source positional entity is a subtype of light source.
+ *
  * @author zaiyuan
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcLightSourcePositional extends IfcLightSource {
     private IfcCartesianPoint position;
-    private IfcPositiveLengthMeasure redius;
+    private IfcPositiveLengthMeasure radius;
     private IfcReal constantAttenuation;
     private IfcReal distanceAttenuation;
     private IfcReal quadricAttenuation;
@@ -41,14 +43,14 @@ public class IfcLightSourcePositional extends IfcLightSource {
         IfcNormalisedRatioMeasure ambientIntensity,
         IfcNormalisedRatioMeasure intensity,
         IfcCartesianPoint position,
-        IfcPositiveLengthMeasure redius,
+        IfcPositiveLengthMeasure radius,
         IfcReal constantAttenuation,
         IfcReal distanceAttenuation,
         IfcReal quadricAttenuation
     ) {
         super(name, lightColour, ambientIntensity, intensity);
         this.position = position;
-        this.redius = redius;
+        this.radius = radius;
         this.constantAttenuation = constantAttenuation;
         this.distanceAttenuation = distanceAttenuation;
         this.quadricAttenuation = quadricAttenuation;
@@ -62,12 +64,12 @@ public class IfcLightSourcePositional extends IfcLightSource {
         this.position = position;
     }
 
-    public IfcPositiveLengthMeasure getRedius() {
-        return redius;
+    public IfcPositiveLengthMeasure getRadius() {
+        return radius;
     }
 
-    public void setRedius(IfcPositiveLengthMeasure redius) {
-        this.redius = redius;
+    public void setRadius(IfcPositiveLengthMeasure radius) {
+        this.radius = radius;
     }
 
     public IfcReal getConstantAttenuation() {

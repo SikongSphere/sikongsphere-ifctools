@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.If
 import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.IfcRibPlateDirectionEnum;
 
 /**
- *
+ * Instances of the entity IfcRibPlateProfileProperties shall be used for a parameterized definition of rib plates.
  *
  * @author GaoSu
  * @date 2022/12/18 13:29

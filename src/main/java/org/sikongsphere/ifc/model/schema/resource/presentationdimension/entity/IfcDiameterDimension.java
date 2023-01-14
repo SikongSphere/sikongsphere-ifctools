@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * The diameter dimension is a draughting callout that presents the diameter extent of a conic element.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53

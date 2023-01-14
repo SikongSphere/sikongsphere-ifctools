@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * The radial dimension is a draughting callout that presents the radial length of a conic element.
  *
  * @author GaoSu
  * @date 2022/12/11 21:55

@@ -14,16 +14,22 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcPreDefinedSymbol;
 
 /**
- *
+ * The pre defined point marker symbol is a pre defined symbol for the purpose to identify a point marker by name.
  *
  * @author GaoSu
  * @date 2022/12/11 21:51
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcPreDefinedPointMarkerSymbol extends IfcPreDefinedSymbol {
-    @IfcParserConstructor
+
     public IfcPreDefinedPointMarkerSymbol() {}
+
+    @IfcParserConstructor
+    public IfcPreDefinedPointMarkerSymbol(IfcLabel name) {
+        super(name);
+    }
 }

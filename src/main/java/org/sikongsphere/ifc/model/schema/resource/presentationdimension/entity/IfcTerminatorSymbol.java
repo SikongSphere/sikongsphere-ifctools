@@ -16,6 +16,9 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.presentationappearance.entity.IfcPresentationStyleAssignment;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcAnnotationCurveOccurrence;
 import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.IfcAnnotationSymbolOccurrence;
 
@@ -29,8 +32,18 @@ import org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity.
 public class IfcTerminatorSymbol extends IfcAnnotationSymbolOccurrence {
     private IfcAnnotationCurveOccurrence annotatedCurve;
 
-    @IfcParserConstructor
     public IfcTerminatorSymbol(IfcAnnotationCurveOccurrence annotatedCurve) {
+        this.annotatedCurve = annotatedCurve;
+    }
+
+    @IfcParserConstructor
+    public IfcTerminatorSymbol(
+        IfcRepresentationItem item,
+        SET<IfcPresentationStyleAssignment> styles,
+        IfcLabel name,
+        IfcAnnotationCurveOccurrence annotatedCurve
+    ) {
+        super(item, styles, name);
         this.annotatedCurve = annotatedCurve;
     }
 

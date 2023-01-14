@@ -22,7 +22,7 @@ import org.sikongsphere.ifc.model.schema.resource.profile.entity.IfcProfileDef;
 import org.sikongsphere.ifc.model.schema.resource.profileproperty.enumeration.IfcReinforcingBarRoleEnum;
 
 /**
- *
+ * This is a collection of structural properties applicable to all linear structural members having a profile definition.
  *
  * @author GaoSu
  * @date 2022/12/18 14:51

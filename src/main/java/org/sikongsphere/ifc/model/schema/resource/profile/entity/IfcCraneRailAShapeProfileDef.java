@@ -31,10 +31,11 @@ import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfile
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCraneRailAShapeProfileDef extends IfcParameterizedProfileDef {
-    private IfcPositiveLengthMeasure overalHeight;
+    private IfcPositiveLengthMeasure overallHeight;
     private IfcPositiveLengthMeasure BaseWidth2;
     @IfcOptionField
     private IfcPositiveLengthMeasure Radius;
+    private IfcPositiveLengthMeasure headWidth;
     private IfcPositiveLengthMeasure HeadDepth2;
     private IfcPositiveLengthMeasure HeadDepth3;
     private IfcPositiveLengthMeasure WebThickness;
@@ -45,14 +46,11 @@ public class IfcCraneRailAShapeProfileDef extends IfcParameterizedProfileDef {
     @IfcOptionField
     private IfcPositiveLengthMeasure CentreOfGravityInY;
 
-    @IfcParserConstructor
     public IfcCraneRailAShapeProfileDef(
-        IfcProfileTypeEnum profileType,
-        IfcLabel profileName,
-        IfcAxis2Placement2D position,
-        IfcPositiveLengthMeasure overalHeight,
+        IfcPositiveLengthMeasure overallHeight,
         IfcPositiveLengthMeasure baseWidth2,
         IfcPositiveLengthMeasure radius,
+        IfcPositiveLengthMeasure headWidth,
         IfcPositiveLengthMeasure headDepth2,
         IfcPositiveLengthMeasure headDepth3,
         IfcPositiveLengthMeasure webThickness,
@@ -62,10 +60,10 @@ public class IfcCraneRailAShapeProfileDef extends IfcParameterizedProfileDef {
         IfcPositiveLengthMeasure baseDepth3,
         IfcPositiveLengthMeasure centreOfGravityInY
     ) {
-        super(profileType, profileName, position);
-        this.overalHeight = overalHeight;
+        this.overallHeight = overallHeight;
         BaseWidth2 = baseWidth2;
         Radius = radius;
+        this.headWidth = headWidth;
         HeadDepth2 = headDepth2;
         HeadDepth3 = headDepth3;
         WebThickness = webThickness;
@@ -76,12 +74,53 @@ public class IfcCraneRailAShapeProfileDef extends IfcParameterizedProfileDef {
         CentreOfGravityInY = centreOfGravityInY;
     }
 
-    public IfcPositiveLengthMeasure getOveralHeight() {
-        return overalHeight;
+    @IfcParserConstructor
+    public IfcCraneRailAShapeProfileDef(
+        IfcProfileTypeEnum profileType,
+        IfcLabel profileName,
+        IfcAxis2Placement2D position,
+        IfcPositiveLengthMeasure overallHeight,
+        IfcPositiveLengthMeasure baseWidth2,
+        IfcPositiveLengthMeasure radius,
+        IfcPositiveLengthMeasure headWidth,
+        IfcPositiveLengthMeasure headDepth2,
+        IfcPositiveLengthMeasure headDepth3,
+        IfcPositiveLengthMeasure webThickness,
+        IfcPositiveLengthMeasure baseWidth4,
+        IfcPositiveLengthMeasure baseDepth1,
+        IfcPositiveLengthMeasure baseDepth2,
+        IfcPositiveLengthMeasure baseDepth3,
+        IfcPositiveLengthMeasure centreOfGravityInY
+    ) {
+        super(profileType, profileName, position);
+        this.overallHeight = overallHeight;
+        BaseWidth2 = baseWidth2;
+        Radius = radius;
+        this.headWidth = headWidth;
+        HeadDepth2 = headDepth2;
+        HeadDepth3 = headDepth3;
+        WebThickness = webThickness;
+        BaseWidth4 = baseWidth4;
+        BaseDepth1 = baseDepth1;
+        BaseDepth2 = baseDepth2;
+        BaseDepth3 = baseDepth3;
+        CentreOfGravityInY = centreOfGravityInY;
     }
 
-    public void setOveralHeight(IfcPositiveLengthMeasure overalHeight) {
-        this.overalHeight = overalHeight;
+    public IfcPositiveLengthMeasure getOverallHeight() {
+        return overallHeight;
+    }
+
+    public void setOverallHeight(IfcPositiveLengthMeasure overallHeight) {
+        this.overallHeight = overallHeight;
+    }
+
+    public IfcPositiveLengthMeasure getHeadWidth() {
+        return headWidth;
+    }
+
+    public void setHeadWidth(IfcPositiveLengthMeasure headWidth) {
+        this.headWidth = headWidth;
     }
 
     public IfcPositiveLengthMeasure getBaseWidth2() {

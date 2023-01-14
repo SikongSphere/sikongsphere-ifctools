@@ -18,7 +18,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * The dimension curve directed callout is a dimension callout, which includes a dimension line.
  *
  * @author GaoSu
  * @date 2022/12/11 19:53

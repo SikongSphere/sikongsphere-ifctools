@@ -20,7 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.presentationdimension.selecttype.IfcDraughtingCalloutElement;
 
 /**
- *
+ * The linear dimension is a draughting callout that presents the length (or distance) between two points along a linear curve.
  *
  * @author GaoSu
  * @date 2022/12/11 21:44

@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.profile.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -19,12 +20,15 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfileTypeEnum;
 
 /**
+ * The IfcProfileDef is the supertype of all definitions of standard and arbitrary profiles within IFC.
+ *
  * @author Wang Bohong
  * @date 2022/10/28 10:33
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcProfileDef extends IfcAbstractClass {
     private IfcProfileTypeEnum profileType;
+    @IfcOptionField
     private IfcLabel profileName;
 
     public IfcProfileDef() {}

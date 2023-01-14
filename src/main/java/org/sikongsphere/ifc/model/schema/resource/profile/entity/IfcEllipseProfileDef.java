@@ -29,35 +29,35 @@ import org.sikongsphere.ifc.model.schema.resource.profile.enumeration.IfcProfile
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcEllipseProfileDef extends IfcParameterizedProfileDef {
-    private IfcPositiveLengthMeasure simiAxis1;
-    private IfcPositiveLengthMeasure simiAxis2;
+    private IfcPositiveLengthMeasure semiAxis1;
+    private IfcPositiveLengthMeasure semiAxis2;
 
     @IfcParserConstructor
     public IfcEllipseProfileDef(
         IfcProfileTypeEnum profileType,
         IfcLabel profileName,
         IfcAxis2Placement2D position,
-        IfcPositiveLengthMeasure simiAxis1,
-        IfcPositiveLengthMeasure simiAxis2
+        IfcPositiveLengthMeasure semiAxis1,
+        IfcPositiveLengthMeasure semiAxis2
     ) {
         super(profileType, profileName, position);
-        this.simiAxis1 = simiAxis1;
-        this.simiAxis2 = simiAxis2;
+        this.semiAxis1 = semiAxis1;
+        this.semiAxis2 = semiAxis2;
     }
 
-    public IfcPositiveLengthMeasure getSimiAxis1() {
-        return simiAxis1;
+    public IfcPositiveLengthMeasure getSemiAxis1() {
+        return semiAxis1;
     }
 
-    public void setSimiAxis1(IfcPositiveLengthMeasure simiAxis1) {
-        this.simiAxis1 = simiAxis1;
+    public void setSemiAxis1(IfcPositiveLengthMeasure semiAxis1) {
+        this.semiAxis1 = semiAxis1;
     }
 
-    public IfcPositiveLengthMeasure getSimiAxis2() {
-        return simiAxis2;
+    public IfcPositiveLengthMeasure getSemiAxis2() {
+        return semiAxis2;
     }
 
-    public void setSimiAxis2(IfcPositiveLengthMeasure simiAxis2) {
-        this.simiAxis2 = simiAxis2;
+    public void setSemiAxis2(IfcPositiveLengthMeasure semiAxis2) {
+        this.semiAxis2 = semiAxis2;
     }
 }
