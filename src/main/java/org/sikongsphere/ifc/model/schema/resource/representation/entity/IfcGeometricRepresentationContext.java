@@ -18,6 +18,7 @@ import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.SCIENTIFICNOTATION;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
@@ -33,12 +34,14 @@ import java.util.Optional;
  *
  * @author stan
  * @date 2022/09/01 22:10
+ * @modified stan
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
+
     private IfcDimensionCount coordinateSpaceDimension;
     @IfcOptionField
-    private DOUBLE precision;
+    private REAL precision;
     private IfcAxis2Placement worldCoordinateSystem;
     @IfcOptionField
     private IfcDirection trueNorth;
@@ -48,24 +51,12 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
 
     public IfcGeometricRepresentationContext() {}
 
-    public IfcGeometricRepresentationContext(
-        IfcDimensionCount coordinateSpaceDimension,
-        DOUBLE precision,
-        IfcAxis2Placement worldCoordinateSystem,
-        IfcDirection trueNorth
-    ) {
-        this.coordinateSpaceDimension = coordinateSpaceDimension;
-        this.precision = precision;
-        this.worldCoordinateSystem = worldCoordinateSystem;
-        this.trueNorth = trueNorth;
-    }
-
     @IfcParserConstructor
     public IfcGeometricRepresentationContext(
         IfcLabel contextIdentifier,
         IfcLabel contextType,
         IfcDimensionCount coordinateSpaceDimension,
-        DOUBLE precision,
+        REAL precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth
     ) {
@@ -91,14 +82,14 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     public String getPrecision() {
         if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
             return precision.toString();
-        } else if (precision.value == 0.0) {
+        } else if (precision.getValue() == 0.0) {
             return StringConstant.ASTERISK;
         } else {
             return String.valueOf(precision);
         }
     }
 
-    public void setPrecision(DOUBLE precision) {
+    public void setPrecision(REAL precision) {
         this.precision = precision;
     }
 

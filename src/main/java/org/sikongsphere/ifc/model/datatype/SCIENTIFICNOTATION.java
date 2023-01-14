@@ -17,7 +17,7 @@ import org.sikongsphere.ifc.common.constant.StringConstant;
  * @author Wang Bohong
  * @date 2022/10/25 12:08
  */
-public class SCIENTIFICNOTATION extends DOUBLE {
+public class SCIENTIFICNOTATION extends REAL {
     private double mantissa;
     private int index;
 

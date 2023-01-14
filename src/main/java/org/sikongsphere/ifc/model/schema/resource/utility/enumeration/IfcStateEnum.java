@@ -19,38 +19,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  *
  * @author Wang Bohong
  * @date 2022/08/29 15:14
+ * @modified stan
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENUMERATION)
 
 public enum IfcStateEnum {
     /**
-     * Object is in a Read-Write state.
+     * Object is in a Read-Write state. It may be modified by an application.
      * @author Wang Bohong
      */
     READWRITE,
     /**
-     * Object is in a Read-Write state.
+     * Object is in a Read-Only state. It may be viewed but not modified by an application.
      * @author Wang Bohong
      */
     READONLY,
     /**
-     * Object is in a Locked state.
+     * Object is in a Locked state. It may not be accessed by an application.
      * @author Wang Bohong
      */
     LOCKED,
     /**
-     * Object is in a Read-Write-Locked state.
+     * Object is in a Read-Write-Locked state. It may not be accessed by an application.
      * @author Wang Bohong
      */
     READWRITELOCKED,
     /**
-     * Object is in a Read-Write-Locked state.
+     * Object is in a Read-Only-Locked state. It may not be accessed by an application.
      * @author Wang Bohong
      */
-    READONLYLOCKED,
-    /**
-     * Constant of Enum which is null
-     * @author stan
-     */
-    $
+    READONLYLOCKED
 }

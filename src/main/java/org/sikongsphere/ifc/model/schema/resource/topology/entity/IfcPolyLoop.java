@@ -26,8 +26,6 @@ public class IfcPolyLoop extends IfcLoop {
     // TODO UNIQUE
     private LIST<IfcCartesianPoint> polygon;
 
-    public IfcPolyLoop() {}
-
     @IfcParserConstructor
     public IfcPolyLoop(LIST<IfcCartesianPoint> polygon) {
         this.polygon = polygon;

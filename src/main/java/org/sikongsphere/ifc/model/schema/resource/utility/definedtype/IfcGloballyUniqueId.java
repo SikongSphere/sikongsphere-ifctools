@@ -16,10 +16,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.STRING;
 
 /**
- * This class is for globally id
+ * Holds an identifier that is unique throughout the software world.
+ * This is also known as a Globally Unique Identifier (GUID) or Universal Unique Identifier (UUID) by the Open Group.
+ * The identifier is generated using an algorithm published by the Object Management Group.
+ * The algorithm is explained at the open group website.
+ * The Microsoft Foundation Class (MFC) function "CoCreateGuid", which is an implementation of the above algorithm, has been used by many IFC implementers to create an identifier.
  *
  * @author zaiyuan
  * @date 2022/8/31 21:24
+ * @modified stan
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE)
 public class IfcGloballyUniqueId extends STRING {
