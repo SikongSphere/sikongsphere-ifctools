@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @author zaiyuan
  * @date 2022/12/07 21:45
  */
-public class REAL extends IfcDataType implements IfcValue {
+public class REAL extends DOUBLE implements IfcValue {
     private double value;
 
     public REAL() {}
@@ -30,6 +30,10 @@ public class REAL extends IfcDataType implements IfcValue {
 
     public REAL(DOUBLE value) {
         this.value = value.value;
+    }
+
+    public REAL(SCIENTIFICNOTATION value) {
+        this.value = value.getValue();
     }
 
     @IfcParserConstructor

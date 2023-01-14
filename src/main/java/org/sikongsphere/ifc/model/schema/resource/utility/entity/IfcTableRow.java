@@ -11,12 +11,15 @@
 package org.sikongsphere.ifc.model.schema.resource.utility.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcBoolean;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
@@ -28,16 +31,18 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  *
  * @author tianyu
  * @date 2022/12/11 13:30
+ * @modified stan
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcTableRow extends IfcAbstractClass {
     private LIST<IfcValue> RowCells;
-    private Boolean IsHeading;
+    private BOOLEAN IsHeading;
 
-    public IfcTableRow() {}
+    @IfcInverseParameter
+    private IfcLabel ofTable;
 
     @IfcParserConstructor
-    public IfcTableRow(LIST<IfcValue> rowCells, Boolean isHeading) {
+    public IfcTableRow(LIST<IfcValue> rowCells, BOOLEAN isHeading) {
         RowCells = rowCells;
         IsHeading = isHeading;
     }
@@ -50,11 +55,11 @@ public class IfcTableRow extends IfcAbstractClass {
         RowCells = rowCells;
     }
 
-    public Boolean getHeading() {
+    public BOOLEAN getHeading() {
         return IsHeading;
     }
 
-    public void setHeading(Boolean heading) {
+    public void setHeading(BOOLEAN heading) {
         IsHeading = heading;
     }
 }

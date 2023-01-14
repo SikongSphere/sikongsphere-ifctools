@@ -20,11 +20,12 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentif
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * This class holds the information about an IFC compliant application developed by an application developer
- * who is a member of the IAI.
+ * IfcApplication holds the information about an IFC compliant application developed by an application developer who is a member of the IAI.
+ * The IfcApplication utilizes a short identifying name as provided by the application developer.
  *
  * @author Wang Bohong
  * @date 2022/8/31 18:44
+ * @modified stan
  */
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
@@ -37,8 +38,6 @@ public class IfcApplication extends IfcAbstractClass {
     private IfcLabel applicationFullName;
 
     private IfcIdentifier applicationIdentifier;
-
-    public IfcApplication() {}
 
     @IfcParserConstructor
     public IfcApplication(
