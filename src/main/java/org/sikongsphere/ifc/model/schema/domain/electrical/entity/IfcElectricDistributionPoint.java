@@ -15,8 +15,6 @@ import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.IfcAbstractClass;
-import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.domain.electrical.enumeration.IfcElectricDistributionPointFunctionEnum;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
@@ -25,8 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcProductRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcFlowController;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcRelFlowControlElements;
+import org.sikongsphere.ifc.model.schema.shared.bldgservices.entity.IfcFlowController;
 
 /**
  * @author zaiyuan

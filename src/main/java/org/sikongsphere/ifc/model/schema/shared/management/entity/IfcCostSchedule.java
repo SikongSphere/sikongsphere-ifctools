@@ -46,7 +46,7 @@ public class IfcCostSchedule extends IfcControl {
     private SET<IfcActorSelect> targetUsers;
     @IfcOptionField
     private IfcDateTimeSelect updateDate;
-    private IfcIdentifier iD;
+    private IfcIdentifier ID;
     private IfcCostScheduleTypeEnum predefinedType;
 
     @IfcParserConstructor
@@ -63,7 +63,7 @@ public class IfcCostSchedule extends IfcControl {
         IfcLabel status,
         SET<IfcActorSelect> targetUsers,
         IfcDateTimeSelect updateDate,
-        IfcIdentifier iD,
+        IfcIdentifier ID,
         IfcCostScheduleTypeEnum predefinedType
     ) {
         super(globalId, ownerHistory, name, description, objectType, controls);
@@ -73,7 +73,7 @@ public class IfcCostSchedule extends IfcControl {
         this.status = status;
         this.targetUsers = targetUsers;
         this.updateDate = updateDate;
-        this.iD = iD;
+        this.ID = ID;
         this.predefinedType = predefinedType;
     }
 
@@ -125,12 +125,12 @@ public class IfcCostSchedule extends IfcControl {
         this.updateDate = updateDate;
     }
 
-    public IfcIdentifier getiD() {
-        return iD;
+    public IfcIdentifier getID() {
+        return ID;
     }
 
-    public void setiD(IfcIdentifier iD) {
-        this.iD = iD;
+    public void setID(IfcIdentifier ID) {
+        this.ID = ID;
     }
 
     public IfcCostScheduleTypeEnum getPredefinedType() {

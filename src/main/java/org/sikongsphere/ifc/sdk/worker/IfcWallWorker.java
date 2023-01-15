@@ -11,7 +11,7 @@
 package org.sikongsphere.ifc.sdk.worker;
 
 import org.sikongsphere.ifc.model.Model;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;
 
 /**
  * This is an worker for wall

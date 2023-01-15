@@ -11,24 +11,19 @@
 package org.sikongsphere.ifc.model.schema.domain.buildingcontrols.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.domain.architecture.enumeration.IfcPermeableCoveringOperationEnum;
 import org.sikongsphere.ifc.model.schema.domain.buildingcontrols.enumeration.IfcActuatorTypeEnum;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPositiveLengthMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeAspect;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.enumeration.IfcWindowPanelPositionEnum;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcDistributionControlElementType;
+import org.sikongsphere.ifc.model.schema.shared.bldgservices.entity.IfcDistributionControlElementType;
 
 /**
  * @author yiwei
