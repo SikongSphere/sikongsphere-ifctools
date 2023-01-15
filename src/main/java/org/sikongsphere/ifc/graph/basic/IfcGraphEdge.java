@@ -10,11 +10,15 @@
  */
 package org.sikongsphere.ifc.graph.basic;
 
-public abstract class IFCGraphVertex {
-    private IFCObject ifcObject;
-    private List<IFCBaseGraphEdge> edgeList;
-    private String graphLayer;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelationship;
+
+public abstract class IfcGraphEdge {
+    private IfcRelationship relationShip;
+    private IfcGraphVertex graphA;
+    private IfcGraphVertex graphB;
     private String graphId;
+
+    private String graphLayer;
 
     public String getGraphId() {
         return graphId;
@@ -24,20 +28,28 @@ public abstract class IFCGraphVertex {
         this.graphId = graphId;
     }
 
-    public IFCObject getIfcObject() {
-        return ifcObject;
+    public IfcRelationship getRelationShip() {
+        return relationShip;
     }
 
-    public void setIfcObject(IFCObject ifcObject) {
-        this.ifcObject = ifcObject;
+    public void setRelationShip(IfcRelationship relationShip) {
+        this.relationShip = relationShip;
     }
 
-    public List<IFCBaseGraphEdge> getEdgeList() {
-        return edgeList;
+    public IfcGraphVertex getGraphA() {
+        return graphA;
     }
 
-    public void setEdgeList(List<IFCBaseGraphEdge> edgeList) {
-        this.edgeList = edgeList;
+    public void setGraphA(IfcGraphVertex graphA) {
+        this.graphA = graphA;
+    }
+
+    public IfcGraphVertex getGraphB() {
+        return graphB;
+    }
+
+    public void setGraphB(IfcGraphVertex graphB) {
+        this.graphB = graphB;
     }
 
     public String getGraphLayer() {

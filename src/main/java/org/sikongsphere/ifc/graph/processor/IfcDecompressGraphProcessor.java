@@ -8,15 +8,22 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.basic;
+package org.sikongsphere.ifc.graph.processor;
 
-public class IFCStandardGraph extends IFCGraph {
-    public IFCStandardGraph() {
+import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
 
+public class IfcDecompressGraphProcessor implements IfcGraphProcessor {
+    public IfcDecompressGraphProcessor() {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
+    public IfcGraph Process(IfcGraph graph) {
+        return null;
+    }
+
+    @Override
+    public IfcGraphLayer ProcessLayer(IfcGraphLayer ifcGraphLayer) {
+        return null;
     }
 }

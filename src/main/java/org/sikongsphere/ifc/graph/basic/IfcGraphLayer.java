@@ -10,9 +10,22 @@
  */
 package org.sikongsphere.ifc.graph.basic;
 
-import java.util.Map;
+import java.util.List;
 
-public abstract class IFCGraph {
-    private Map<LayerType, IFCGraphLayer> layerMap;
+public abstract class IfcGraphLayer {
+    private List<IfcGraphVertex> vertexList;
+    private List<IfcGraphEdge> edgeList;
+    private IfcGraphVertex startVertex;
+    private LayerType layerType;
+    private String layerId;
+    private String graphId;
 
+
+    public void DFSInfo() {
+
+    }
+
+    public void BFSInfo() {
+
+    }
 }

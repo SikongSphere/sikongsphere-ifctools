@@ -10,20 +10,21 @@
  */
 package org.sikongsphere.ifc.graph.processor;
 
-import org.sikongsphere.ifc.graph.basic.IFCGraph;
-import org.sikongsphere.ifc.graph.basic.IFCGraphLayer;
+import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
 
-public class IFCPredictGraphProcessor implements IFCGraphProcessor{
-    public IFCPredictGraphProcessor() {
+public class IfcClassificationGraphProcessor implements IfcGraphProcessor {
+    public IfcClassificationGraphProcessor() {
+
     }
 
     @Override
-    public IFCGraph Process(IFCGraph graph) {
+    public IfcGraph Process(IfcGraph graph) {
         return null;
     }
 
     @Override
-    public IFCGraphLayer ProcessLayer(IFCGraphLayer ifcGraphLayer) {
+    public IfcGraphLayer ProcessLayer(IfcGraphLayer ifcGraphLayer) {
         return null;
     }
 }

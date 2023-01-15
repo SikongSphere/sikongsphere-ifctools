@@ -8,22 +8,11 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.processor;
+package org.sikongsphere.ifc.graph.basic;
 
-import org.sikongsphere.ifc.graph.basic.IFCGraph;
-import org.sikongsphere.ifc.graph.basic.IFCGraphLayer;
+import java.util.Map;
 
-public class IFCCompressGraphProcessor implements IFCGraphProcessor{
-    public IFCCompressGraphProcessor() {
-    }
+public abstract class IfcGraph {
+    private Map<LayerType, IfcGraphLayer> layerMap;
 
-    @Override
-    public IFCGraph Process(IFCGraph graph) {
-        return null;
-    }
-
-    @Override
-    public IFCGraphLayer ProcessLayer(IFCGraphLayer ifcGraphLayer) {
-        return null;
-    }
 }

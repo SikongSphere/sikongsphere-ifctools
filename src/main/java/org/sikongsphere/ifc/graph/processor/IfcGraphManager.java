@@ -10,11 +10,8 @@
  */
 package org.sikongsphere.ifc.graph.processor;
 
-import org.sikongsphere.ifc.graph.basic.IFCGraph;
-import org.sikongsphere.ifc.graph.basic.IFCGraphLayer;
+import org.sikongsphere.ifc.graph.basic.IfcGraph;
 
-public interface IFCGraphProcessor {
-    public IFCGraph Process(IFCGraph graph);
-
-    public IFCGraphLayer ProcessLayer(IFCGraphLayer ifcGraphLayer);
+public interface IfcGraphManager {
+    public IfcGraph Process(IfcGraph graph, IfcGraphProcessor processor);
 }

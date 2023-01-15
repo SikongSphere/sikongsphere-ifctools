@@ -10,8 +10,13 @@
  */
 package org.sikongsphere.ifc.graph.basic;
 
-public class IFCStructureGraphLayer extends IFCGraphLayer{
-    public IFCStructureGraphLayer() {
+public class IfcStandardGraph extends IfcGraph {
+    public IfcStandardGraph() {
 
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

@@ -8,19 +8,10 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.io;
+package org.sikongsphere.ifc.graph.basic;
 
-import org.sikongsphere.ifc.graph.basic.IFCGraph;
+public class IfcStructureGraphLayer extends IfcGraphLayer{
+    public IfcStructureGraphLayer() {
 
-public class IFCGraphJsonReader implements IFCGraphReader{
-
-    @Override
-    public IFCGraph ReadGraph(String path) {
-        return null;
-    }
-
-    @Override
-    public IFCGraph ReadLayer(String path, Enum LayerType) {
-        return null;
     }
 }

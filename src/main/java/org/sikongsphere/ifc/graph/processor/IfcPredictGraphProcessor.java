@@ -8,24 +8,22 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.basic;
+package org.sikongsphere.ifc.graph.processor;
 
-import java.util.List;
+import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
 
-public abstract class IFCGraphLayer {
-    private List<IFCGraphVertex> vertexList;
-    private List<IFCGraphEdge> edgeList;
-    private IFCGraphVertex startVertex;
-    private LayerType layerType;
-    private String layerId;
-    private String graphId;
-
-
-    public void DFSInfo() {
-
+public class IfcPredictGraphProcessor implements IfcGraphProcessor {
+    public IfcPredictGraphProcessor() {
     }
 
-    public void BFSInfo() {
+    @Override
+    public IfcGraph Process(IfcGraph graph) {
+        return null;
+    }
 
+    @Override
+    public IfcGraphLayer ProcessLayer(IfcGraphLayer ifcGraphLayer) {
+        return null;
     }
 }

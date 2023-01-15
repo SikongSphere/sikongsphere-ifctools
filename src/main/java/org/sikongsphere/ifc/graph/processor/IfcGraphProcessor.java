@@ -8,11 +8,13 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.basic;
+package org.sikongsphere.ifc.graph.processor;
 
-public class IFCArchGraphLayer extends IFCGraphLayer {
-    public IFCArchGraphLayer() {
+import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
 
-    }
+public interface IfcGraphProcessor {
+    public IfcGraph Process(IfcGraph graph);
 
+    public IfcGraphLayer ProcessLayer(IfcGraphLayer ifcGraphLayer);
 }

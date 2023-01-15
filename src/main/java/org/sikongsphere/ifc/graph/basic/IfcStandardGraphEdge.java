@@ -8,11 +8,10 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.io;
+package org.sikongsphere.ifc.graph.basic;
 
-import org.sikongsphere.ifc.graph.basic.IFCGraph;
+public class IfcStandardGraphEdge extends IfcGraphEdge {
+    public IfcStandardGraphEdge() {
 
-public interface IFCGraphReader {
-    public IFCGraph ReadGraph(String path);
-    public IFCGraph ReadLayer(String path, Enum LayerType);
+    }
 }

@@ -8,10 +8,20 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  */
-package org.sikongsphere.ifc.graph.basic;
+package org.sikongsphere.ifc.graph.io;
 
-public class IFCStandardGraphVertex extends IFCGraphVertex {
-    public IFCStandardGraphVertex() {
+import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.basic.LayerType;
+
+public class IfcStandardGraphWriter implements IfcGraphWriter {
+
+    @Override
+    public void WriteGraph(String path, IfcGraph graph) {
+
+    }
+
+    @Override
+    public void WriteGraphLayer(String path, IfcGraph graph, LayerType layerType) {
 
     }
 }
