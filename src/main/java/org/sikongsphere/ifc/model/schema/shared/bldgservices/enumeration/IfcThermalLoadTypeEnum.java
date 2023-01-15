@@ -15,11 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * This enumeration defines the type of thermal load for spaces or zones, as derived from various use cases:
- * SENSIBLE: Energy added or removed from air that affects its temperature.
- * LATENT: Energy added or removed from air that affects its humidity or concentration of water vapor.
- * RADIANT: Electromagnetic energy added or removed by emmission or absorption.
- * NOTDEFINED: Undefined thermal load type.
+ * This enumeration defines the type of thermal load for spaces or zones, as derived from various use cases.
  * @author zaiyuan
  * @modify GaoSu
  * @date 2022/12/18 15:34

@@ -15,10 +15,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
- * This enumeration defines the different types of available electrical current:
- * ALTERNATING: Alternating current (AC).
- * DIRECT: Direct current (DC).
- * NOTDEFINED: Undefined electrical current.
+ * This enumeration defines the different types of available electrical current.
  * @author zaiyuan
  * @modify GaoSu
  * @date 2022/12/18 15:34
