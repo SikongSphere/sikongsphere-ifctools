@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 
 /**
+ * A face bound is a loop which is intended to be used for bounding a face.
+ *
  * @author GaoSU
  * @date 2022/10/25 13:41
  */

@@ -18,6 +18,8 @@ import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcPoint;
 
 /**
+ * A vertex point is a vertex which has its geometry defined as a point.
+ *
  * @author zaiyuan
  * @date 2022/12/10 23:09
  */

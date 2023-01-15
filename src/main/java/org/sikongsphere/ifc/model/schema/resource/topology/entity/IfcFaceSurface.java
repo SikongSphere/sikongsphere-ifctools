@@ -13,13 +13,16 @@ package org.sikongsphere.ifc.model.schema.resource.topology.entity;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType.IfcSurfaceOrFaceSurface;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcSurface;
 
 /**
+ *  A face surface (IfcFaceSurface) is a subtype of face in which the geometry is defined by an associated surface.
+ *
  * @author:stan
  * @date:2023/1/15 0:26
  */
-public class IfcFaceSurface extends IfcFace {
+public class IfcFaceSurface extends IfcFace implements IfcSurfaceOrFaceSurface {
 
     private IfcSurface faceSurface;
 
