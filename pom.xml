@@ -86,4 +86,81 @@
             </plugin>
         </plugins>
     </build>
+    <developers>
+        <developer>
+            <name>Junwen Liu</name>
+            <email>zaiyuanljw@gmail.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member Chair</role>
+                <role>Java Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+            <id>在渊</id>
+        </developer>
+        <developer>
+            <name>Chao Liang</name>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+                <role>Tester</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+            <id>阿超</id>
+        </developer>
+        <developer>
+            <name>Bohong Wang</name>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Ziniu Luo</name>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Yiwei Sun</name>
+            <roles>
+                <role>Documentation</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Su Gao</name>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Tianyu Kuang</name>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Qi Zhong</name>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
 </project>
