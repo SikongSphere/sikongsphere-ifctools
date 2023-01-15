@@ -111,6 +111,18 @@
         </developer>
         <developer>
             <name>Bohong Wang</name>
+            <email>bohong_wang@hotmail.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+            <id>beecorn</id>
+        </developer>
+        <developer>
+            <name>Shang Liu</name>
             <roles>
                 <role>SikongSphere Project Management Committee (PMC) Member</role>
                 <role>Module Maintainer</role>
@@ -121,6 +133,7 @@
         </developer>
         <developer>
             <name>Ziniu Luo</name>
+            <email>luozn15@qq.com</email>
             <roles>
                 <role>SikongSphere Project Management Committee (PMC) Member</role>
                 <role>Module Maintainer</role>
@@ -131,6 +144,7 @@
         </developer>
         <developer>
             <name>Yiwei Sun</name>
+            <email>sun736178452@iCloud.com</email>
             <roles>
                 <role>Documentation</role>
                 <role>Java Developer</role>
@@ -148,6 +162,7 @@
         </developer>
         <developer>
             <name>Tianyu Kuang</name>
+            <email>tianyuk0309@126.com</email>
             <roles>
                 <role>Java Developer</role>
             </roles>
