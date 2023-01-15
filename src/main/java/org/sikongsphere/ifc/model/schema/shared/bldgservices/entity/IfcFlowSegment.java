@@ -23,7 +23,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
+ * The distribution flow element IfcFlowSegment defines the occurrence of a segment of a flow distribution system that is typically straight, contiguous and has two ports (e.g., a section of pipe or duct).
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

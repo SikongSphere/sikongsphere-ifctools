@@ -28,7 +28,9 @@ import org.sikongsphere.ifc.model.schema.shared.bldgservices.enumeration.IfcTher
 import org.sikongsphere.ifc.model.schema.shared.bldgservices.enumeration.IfcThermalLoadTypeEnum;
 
 /**
+ * he space thermal load IfcSpaceThermalLoadProperties defines all thermal losses and gains occurring within a space or zone. Those losses or gains can either be requirements (desired values) or criteria (actual values). The thermal load source attribute defines an enumeration of possible sources of the thermal load. The maximum, minimum, time series and applicable value ratio values are all interpreted according to the source. The maximum and minimum values should not be used if time series values are provided.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

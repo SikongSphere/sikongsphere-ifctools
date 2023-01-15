@@ -23,7 +23,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 import org.sikongsphere.ifc.model.schema.shared.bldgservices.enumeration.IfcEnergySequenceEnum;
 
 /**
+ * Common definition to capture the properties of an energy source typically used within the context of building services.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

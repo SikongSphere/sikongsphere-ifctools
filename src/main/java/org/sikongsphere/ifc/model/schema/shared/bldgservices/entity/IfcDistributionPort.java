@@ -25,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 import org.sikongsphere.ifc.model.schema.shared.bldgservices.enumeration.IfcFlowDirectionEnum;
 
 /**
+ * The product IfcDistributionPort defines the occurrence of a specialized port for use within the context of distribution elements. Its type is defined by IfcDistributionPortType or its subtypes.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
