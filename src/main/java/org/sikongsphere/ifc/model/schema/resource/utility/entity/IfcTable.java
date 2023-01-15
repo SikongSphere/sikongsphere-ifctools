@@ -11,17 +11,13 @@
 package org.sikongsphere.ifc.model.schema.resource.utility.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
-import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
  * A data structure for the provision of information in the form of rows and columns. Each instance may have a heading
@@ -29,23 +25,24 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  *
  * @author tianyu
  * @date 2022/12/11 13:30
+ * @modified stan
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcTable extends IfcAbstractClass implements IfcMetricValueSelect {
-    private String name;
+    private STRING name;
     private LIST<IfcTableRow> rows;
 
     @IfcParserConstructor
-    public IfcTable(String name, LIST<IfcTableRow> rows) {
+    public IfcTable(STRING name, LIST<IfcTableRow> rows) {
         this.name = name;
         this.rows = rows;
     }
 
-    public String getName() {
+    public STRING getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(STRING name) {
         this.name = name;
     }
 

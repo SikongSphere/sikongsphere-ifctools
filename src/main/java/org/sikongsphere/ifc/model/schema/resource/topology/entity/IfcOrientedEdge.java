@@ -25,12 +25,6 @@ public class IfcOrientedEdge extends IfcEdge {
     private IfcEdge edgeElement;
     private BOOLEAN orientation;
 
-    // TODO DERIVE
-
-    public IfcOrientedEdge(IfcVertex edgeStart, IfcVertex edgeEnd) {
-        super(edgeStart, edgeEnd);
-    }
-
     @IfcParserConstructor
     public IfcOrientedEdge(
         IfcVertex edgeStart,
