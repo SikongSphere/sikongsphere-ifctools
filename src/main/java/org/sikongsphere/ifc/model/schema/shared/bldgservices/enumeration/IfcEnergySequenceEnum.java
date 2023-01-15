@@ -22,10 +22,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcEnergySequenceEnum {
+    /**
+     * Primary energy source.
+     */
     PRIMARY,
+    /**
+     * Secondary energy source.
+     */
     SECONDARY,
+    /**
+     * Tertiary energy source.
+     */
     TERTIARY,
+    /**
+     * Auxiliary.
+     */
     AUXILIARY,
+    /**
+     * User-defined energy sequence.
+     */
     USERDEFINED,
+    /**
+     * Undefined energy sequence.
+     */
     NOTDEFINED
 }

@@ -24,11 +24,32 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcSoundScaleEnum {
+    /**
+     * Decibels in an A-wieghted scale.
+     */
     DBA,
+    /**
+     * Decibels in an B-wieghted scale.
+     */
     DBB,
+    /**
+     * Decibels in an C-wieghted scale.
+     */
     DBC,
+    /**
+     * Noise criteria.
+     */
     NC,
+    /**
+     * Noise rating.
+     */
     NR,
+    /**
+     * User-defined sound scale.
+     */
     USERDEFINED,
+    /**
+     * Undefined sound scale.
+     */
     NOTDEFINED
 }

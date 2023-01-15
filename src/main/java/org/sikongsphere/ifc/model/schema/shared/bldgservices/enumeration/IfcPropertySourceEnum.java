@@ -22,13 +22,40 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcPropertySourceEnum {
+    /**
+     * Properties are all design values.
+     */
     DESIGN,
+    /**
+     * Properties are all maximum design values.
+     */
     DESIGNMAXIMUM,
+    /**
+     * Properties are all minimum design values.
+     */
     DESIGNMINIMUM,
+    /**
+     * Property values are all the results of a simulation.
+     */
     SIMULATED,
+    /**
+     * Properties are all AS-BUILT values.
+     */
     ASBUILT,
+    /**
+     * Properties are all commissioning values.
+     */
     COMMISSIONING,
+    /**
+     * Property values are all the results of a measurement device, either automated or manual.
+     */
     MEASURED,
+    /**
+     * Property values are defined by the user.
+     */
     USERDEFINED,
+    /**
+     * Property values are not defined.
+     */
     NOTKNOWN
 }

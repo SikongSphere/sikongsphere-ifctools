@@ -22,8 +22,20 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcThermalLoadTypeEnum {
+    /**
+     * Energy added or removed from air that affects its temperature.
+     */
     SENSIBLE,
+    /**
+     * Energy added or removed from air that affects its humidity or concentration of water vapor.
+     */
     LATENT,
+    /**
+     * Electromagnetic energy added or removed by emmission or absorption.
+     */
     RADIANT,
+    /**
+     * Undefined thermal load type.
+     */
     NOTDEFINED
 }

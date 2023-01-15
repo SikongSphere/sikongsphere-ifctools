@@ -22,17 +22,56 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcThermalLoadSourceEnum {
+    /**
+     * Heat gains and losses from people.
+     */
     PEOPLE,
+    /**
+     * Lighting loads.
+     */
     LIGHTING,
+    /**
+     * Heat gains and losses from equipment.
+     */
     EQUIPMENT,
+    /**
+     * Ventilation loads from indoor air.
+     */
     VENTILATIONINDOORAIR,
+    /**
+     * Ventilation loads from outside air.
+     */
     VENTILATIONOUTSIDEAIR,
+    /**
+     * Loads from recirculated air.
+     */
     RECIRCULATEDAIR,
+    /**
+     * Loads from exhaust air.
+     */
     EXHAUSTAIR,
+    /**
+     * Loads from the air exchange rate.
+     */
     AIREXCHANGERATE,
+    /**
+     * Loads from the dry bulb temperature.
+     */
     DRYBULBTEMPERATURE,
+    /**
+     * Loads from the relative humidity.
+     */
     RELATIVEHUMIDITY,
+    /**
+     * Heat gains and losses from infiltration.
+     */
     INFILTRATION,
+    /**
+     * User-defined thermal load type.
+     */
     USERDEFINED,
+    /**
+     * Undefined thermal load type.
+     */
     NOTDEFINED
 }

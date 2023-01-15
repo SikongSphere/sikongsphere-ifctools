@@ -22,7 +22,16 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)
 public enum IfcElectricCurrentEnum {
+    /**
+     * Alternating current (AC).
+     */
     ALTERNATING,
+    /**
+     * Direct current (DC).
+     */
     DIRECT,
+    /**
+     * Undefined electrical current.
+     */
     NOTDEFINED
 }
