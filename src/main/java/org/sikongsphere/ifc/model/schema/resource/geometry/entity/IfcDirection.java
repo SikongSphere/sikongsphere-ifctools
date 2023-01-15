@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.selectType.IfcOrientationSelect;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcVectorOrDirection;
 
@@ -28,7 +29,10 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcVectorO
  * @date 2022/09/01 23:59
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
-public class IfcDirection extends IfcGeometricRepresentationItem implements IfcVectorOrDirection {
+public class IfcDirection extends IfcGeometricRepresentationItem
+    implements
+        IfcVectorOrDirection,
+        IfcOrientationSelect {
     private LIST<Double> directionRatios;// todo -> REAL
     @IfcDeriveParameter
     private IfcDimensionCount dim;

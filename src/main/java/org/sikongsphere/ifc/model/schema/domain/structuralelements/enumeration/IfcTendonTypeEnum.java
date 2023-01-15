@@ -22,28 +22,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcTendonTypeEnum {
-    STRAND,
     /**
      * The tendon is a strand.
      */
-    WIRE,
+    STRAND,
     /**
      * The tendon is a wire.
      */
-    BAR,
+    WIRE,
     /**
      * The tendon is configured as a bar.
      */
-    COATED,
+    BAR,
     /**
      * The tendon is coated.
      */
-    USERDEFINED,
+    COATED,
     /**
      * The type of tendon is user defined.
      */
-    NOTDEFINED
+    USERDEFINED,
     /**
      * The type of tendon is not defined.
      */
+    NOTDEFINED
+
 }
