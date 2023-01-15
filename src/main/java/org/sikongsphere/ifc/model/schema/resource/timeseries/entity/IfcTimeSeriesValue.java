@@ -22,6 +22,8 @@ import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcConnectedFa
 import org.sikongsphere.ifc.model.schema.resource.topology.entity.IfcFace;
 
 /**
+ * A time series value is a list of values that comprise the time series. At least one value must be supplied.
+ *
  * @author yiwei
  * @date 2022/11/01 23:09
  */

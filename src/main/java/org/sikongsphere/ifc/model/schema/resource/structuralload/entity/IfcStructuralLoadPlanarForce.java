@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPlanarForceMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * An instance of the entity IfcStructuralLoadPlanarForce shall be used to define actions on faces.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

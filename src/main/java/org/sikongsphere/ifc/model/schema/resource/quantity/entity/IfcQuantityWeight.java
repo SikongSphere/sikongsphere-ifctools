@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcMassMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcNamedUnit;
 
@@ -28,28 +29,24 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcNamedUnit;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcQuantityWeight extends IfcPhysicalSimpleQuantity {
-    private IfcQuantityWeight weightValue;
-
-    public IfcQuantityWeight(IfcLabel name, IfcText description, IfcNamedUnit unit) {
-        super(name, description, unit);
-    }
+    private IfcMassMeasure weightValue;
 
     @IfcParserConstructor
     public IfcQuantityWeight(
         IfcLabel name,
         IfcText description,
         IfcNamedUnit unit,
-        IfcQuantityWeight weightValue
+        IfcMassMeasure weightValue
     ) {
         super(name, description, unit);
         this.weightValue = weightValue;
     }
 
-    public IfcQuantityWeight getWeightValue() {
+    public IfcMassMeasure getWeightValue() {
         return weightValue;
     }
 
-    public void setWeightValue(IfcQuantityWeight weightValue) {
+    public void setWeightValue(IfcMassMeasure weightValue) {
         this.weightValue = weightValue;
     }
 }

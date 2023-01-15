@@ -22,7 +22,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcRotatio
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcWarpingMomentMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * IfcBoundaryNodeConditionWarping inherits all attributes from IfcBoundaryNodeCondition and includes additionally
+ * the possibility to define a value describing the warping stiffness.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

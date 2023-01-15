@@ -20,7 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcTorqueMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * Instances of the entity IfcStructuralLoadSingleForce shall be used to define the forces and moments of an
+ * action operating on a single point.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

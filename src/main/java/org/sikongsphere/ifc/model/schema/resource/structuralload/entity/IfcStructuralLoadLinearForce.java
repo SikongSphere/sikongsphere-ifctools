@@ -20,7 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLinearF
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLinearMomentMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ *  An instance of the entity IfcStructuralLoadLinearForce shall be used to define actions on curves.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

@@ -20,6 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.datetime.selectType.IfcDateTim
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 /**
+ * The IfcIrregularTimeSeriesValue describes a value (or set of values) at a particular time point.
+ *
  * @author yiwei
  * @date 2022/11/01 23:09
  */

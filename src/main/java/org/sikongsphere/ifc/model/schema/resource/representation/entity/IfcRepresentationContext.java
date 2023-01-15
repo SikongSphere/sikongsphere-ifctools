@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * IfcRepresentationContext
+ * The IfcRepresentationContext defines the context to which the IfcRepresentation of a product is related.
  *
  * @author zaiyuan
  * @date 2022/9/1 08:15
