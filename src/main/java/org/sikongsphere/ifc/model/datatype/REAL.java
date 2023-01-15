@@ -36,6 +36,10 @@ public class REAL extends DOUBLE implements IfcValue {
         this.value = value.getValue();
     }
 
+    public REAL(INTEGER value) {
+        this.value = value.getValue();
+    }
+
     @IfcParserConstructor
     public REAL(STRING value) {
         String str = value.value;

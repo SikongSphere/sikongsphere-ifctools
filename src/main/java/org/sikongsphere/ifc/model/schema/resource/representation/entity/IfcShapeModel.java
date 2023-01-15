@@ -30,8 +30,6 @@ public abstract class IfcShapeModel extends IfcRepresentation {
     @IfcInverseParameter
     private SET<IfcShapeAspect> ofShapeAspect;
 
-    public IfcShapeModel() {}
-
     @IfcParserConstructor
     public IfcShapeModel(
         IfcRepresentationContext contextContextOfItems,

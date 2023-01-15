@@ -30,6 +30,10 @@ public class IfcInteger extends INTEGER implements IfcValue, IfcSimpleValue {
         super(value);
     }
 
+    public IfcInteger(INTEGER value) {
+        super(value);
+    }
+
     @IfcParserConstructor
     public IfcInteger(STRING value) {
         super(value);

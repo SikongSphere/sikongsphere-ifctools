@@ -32,6 +32,10 @@ public class IfcLinearStiffnessMeasure extends REAL implements IfcDerivedMeasure
         super(value);
     }
 
+    public IfcLinearStiffnessMeasure(STRING value) {
+        super(value);
+    }
+
     @IfcParserConstructor
     public IfcLinearStiffnessMeasure(DOUBLE value) {
         super(value);

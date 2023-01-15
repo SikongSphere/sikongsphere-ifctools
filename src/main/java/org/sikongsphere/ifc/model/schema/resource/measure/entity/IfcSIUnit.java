@@ -33,15 +33,6 @@ public class IfcSIUnit extends IfcNamedUnit {
     private IfcSIPrefix prefix;
     private IfcSIUnitName name;
 
-    // todo
-    //
-    // SELF\IfcNamedUnit.Dimensions : IfcDimensionalExponents := IfcDimensionsForSiUnit (SELF.Name);
-
-    public IfcSIUnit(IfcSIPrefix prefix, IfcSIUnitName name) {
-        this.prefix = prefix;
-        this.name = name;
-    }
-
     @IfcParserConstructor
     public IfcSIUnit(
         IfcDimensionalExponents dimensions,

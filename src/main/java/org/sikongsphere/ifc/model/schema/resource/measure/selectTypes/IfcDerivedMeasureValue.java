@@ -21,6 +21,4 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  * @date 2022/12/18 13:21
  */
 @IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
-public interface IfcDerivedMeasureValue extends IfcValue {
-
-}
+public interface IfcDerivedMeasureValue extends IfcValue {}

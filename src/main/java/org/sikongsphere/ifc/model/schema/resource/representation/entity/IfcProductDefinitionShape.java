@@ -31,10 +31,9 @@ public class IfcProductDefinitionShape extends IfcProductRepresentation {
 
     @IfcInverseParameter
     private SET<IfcProduct> shapeOfProduct;
+
     @IfcInverseParameter
     private SET<IfcShapeAspect> hasShapeAspects;
-
-    public IfcProductDefinitionShape() {}
 
     @IfcParserConstructor
     public IfcProductDefinitionShape(
