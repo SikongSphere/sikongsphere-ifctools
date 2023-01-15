@@ -23,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeAspect;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.enumeration.IfcWindowPanelPositionEnum;
+import org.sikongsphere.ifc.model.schema.shared.building.enumeration.IfcWindowPanelPositionEnum;
 
 /**
  * @author zaiyuan

@@ -31,7 +31,7 @@ import org.sikongsphere.ifc.model.schema.shared.management.enumeration.IfcProjec
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.SHARED)
 public class IfcProjectOrder extends IfcControl {
-    private IfcIdentifier iD;
+    private IfcIdentifier ID;
     private IfcProjectOrderTypeEnum predefinedType;
     private IfcLabel status;
 
@@ -43,22 +43,22 @@ public class IfcProjectOrder extends IfcControl {
         IfcText description,
         IfcLabel objectType,
         SET<IfcRelAssignsToControl> controls,
-        IfcIdentifier iD,
+        IfcIdentifier ID,
         IfcProjectOrderTypeEnum predefinedType,
         IfcLabel status
     ) {
         super(globalId, ownerHistory, name, description, objectType, controls);
-        this.iD = iD;
+        this.ID = ID;
         this.predefinedType = predefinedType;
         this.status = status;
     }
 
-    public IfcIdentifier getiD() {
-        return iD;
+    public IfcIdentifier getID() {
+        return ID;
     }
 
-    public void setiD(IfcIdentifier iD) {
-        this.iD = iD;
+    public void setID(IfcIdentifier iD) {
+        this.ID = ID;
     }
 
     public IfcProjectOrderTypeEnum getPredefinedType() {

@@ -12,7 +12,7 @@ package org.sikongsphere.ifc.sdk;
 
 import org.junit.Test;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPerson;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgelements.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;
 import org.sikongsphere.ifc.sdk.factory.IfcWallFactory;
 import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
 
