@@ -25,6 +25,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcLogical extends LOGICAL implements IfcValue, IfcSimpleValue {
+
     public IfcLogical(int value) {
         super(value);
     }

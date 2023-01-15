@@ -27,9 +27,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcMaterialDefinitionRepresentation extends IfcProductRepresentation {
-    private IfcMaterial representedMaterial;
 
-    public IfcMaterialDefinitionRepresentation() {}
+    private IfcMaterial representedMaterial;
 
     @IfcParserConstructor
     public IfcMaterialDefinitionRepresentation(

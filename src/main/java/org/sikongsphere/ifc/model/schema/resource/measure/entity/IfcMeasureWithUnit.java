@@ -43,17 +43,10 @@ public class IfcMeasureWithUnit extends IfcAbstractClass
     private IfcValue valueComponent;
     private IfcUnit unitComponent;
 
-    public IfcMeasureWithUnit() {}
-
     @IfcParserConstructor
     public IfcMeasureWithUnit(IfcValue valueComponent, IfcUnit unitComponent) {
         this.valueComponent = valueComponent;
         this.unitComponent = unitComponent;
-    }
-
-    public IfcMeasureWithUnit(Double value, IfcSIPrefix unitPrefix, IfcSIUnitName unitName) {
-        this.valueComponent = new IfcRatioMeasure(value);
-        this.unitComponent = new IfcSIUnit(unitPrefix, unitName);
     }
 
     public String getValueComponent() {

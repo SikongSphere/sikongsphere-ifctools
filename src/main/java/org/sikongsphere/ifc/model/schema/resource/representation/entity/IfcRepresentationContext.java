@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.model.schema.resource.representation.entity;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
@@ -27,8 +28,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentationContext extends IfcAbstractClass {
+
     @IfcOptionField
     private IfcLabel contextIdentifier;
+
     @IfcOptionField
     private IfcLabel contextType;
 
@@ -37,6 +40,7 @@ public class IfcRepresentationContext extends IfcAbstractClass {
 
     public IfcRepresentationContext() {}
 
+    @IfcParserConstructor
     public IfcRepresentationContext(IfcLabel contextIdentifier, IfcLabel contextType) {
         this.contextIdentifier = contextIdentifier;
         this.contextType = contextType;

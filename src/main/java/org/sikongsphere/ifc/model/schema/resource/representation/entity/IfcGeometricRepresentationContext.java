@@ -40,9 +40,12 @@ import java.util.Optional;
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
 
     private IfcDimensionCount coordinateSpaceDimension;
+
     @IfcOptionField
     private REAL precision;
+
     private IfcAxis2Placement worldCoordinateSystem;
+
     @IfcOptionField
     private IfcDirection trueNorth;
 

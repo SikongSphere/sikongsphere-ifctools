@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.NUMBER;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
@@ -29,6 +30,10 @@ public class IfcNumericMeasure extends NUMBER implements IfcMeasureValue {
 
     public IfcNumericMeasure(double value) {
         super(value);
+    }
+
+    public IfcNumericMeasure(DOUBLE value) {
+        super(value.value);
     }
 
     @IfcParserConstructor

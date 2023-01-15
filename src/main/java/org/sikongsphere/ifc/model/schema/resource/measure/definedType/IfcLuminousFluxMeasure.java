@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 
@@ -27,6 +28,10 @@ public class IfcLuminousFluxMeasure extends REAL {
     public IfcLuminousFluxMeasure() {}
 
     public IfcLuminousFluxMeasure(double value) {
+        super(value);
+    }
+
+    public IfcLuminousFluxMeasure(DOUBLE value) {
         super(value);
     }
 

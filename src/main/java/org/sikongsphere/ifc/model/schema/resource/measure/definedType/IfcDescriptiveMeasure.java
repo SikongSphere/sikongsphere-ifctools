@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.measure.definedType;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.STRING;
@@ -24,13 +25,18 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:46
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcDescriptiveMeasure implements IfcSizeSelect, IfcMeasureValue {
+public class IfcDescriptiveMeasure extends STRING implements IfcSizeSelect, IfcMeasureValue {
     private STRING descriptiveMeasure;
 
     public IfcDescriptiveMeasure() {}
 
+    @IfcParserConstructor
     public IfcDescriptiveMeasure(STRING descriptiveMeasure) {
         this.descriptiveMeasure = descriptiveMeasure;
+    }
+
+    public IfcDescriptiveMeasure(String descriptiveMeasure) {
+        this.descriptiveMeasure = new STRING(descriptiveMeasure);
     }
 
     public STRING getDescriptiveMeasure() {

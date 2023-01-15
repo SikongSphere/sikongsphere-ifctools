@@ -29,8 +29,6 @@ public class IfcUnitAssignment extends IfcAbstractClass {
 
     private SET<IfcUnit> units;
 
-    public IfcUnitAssignment() {}
-
     @IfcParserConstructor
     public IfcUnitAssignment(SET<IfcUnit> units) {
         this.units = units;
