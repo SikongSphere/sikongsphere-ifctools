@@ -33,21 +33,25 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selec
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentation extends IfcAbstractClass implements IfcLayeredItem {
+
     private IfcRepresentationContext contextContextOfItems;
+
     @IfcOptionField
     private IfcLabel representationIdentifier;
+
     @IfcOptionField
     private IfcLabel representationType;
+
     private SET<IfcRepresentationItem> items;
 
     @IfcInverseParameter
     private SET<IfcRepresentationMap> representationMap;
+
     @IfcInverseParameter
     private SET<IfcPresentationLayerAssignment> layerAssignments;
+
     @IfcInverseParameter
     private SET<IfcProductRepresentation> ofProductRepresentation;
-
-    public IfcRepresentation() {}
 
     @IfcParserConstructor
     public IfcRepresentation(

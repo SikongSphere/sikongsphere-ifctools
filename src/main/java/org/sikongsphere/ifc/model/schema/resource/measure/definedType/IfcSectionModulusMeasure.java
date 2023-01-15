@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
@@ -28,6 +29,10 @@ public class IfcSectionModulusMeasure extends REAL implements IfcDerivedMeasureV
     public IfcSectionModulusMeasure() {}
 
     public IfcSectionModulusMeasure(double value) {
+        super(value);
+    }
+
+    public IfcSectionModulusMeasure(DOUBLE value) {
         super(value);
     }
 

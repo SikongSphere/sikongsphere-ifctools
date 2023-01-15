@@ -42,7 +42,6 @@ public class IfcStructuralLoadSingleDisplacement extends IfcStructuralLoadStatic
     private IfcPlaneAngleMeasure rotationalDisplacementRZ;
 
     @IfcParserConstructor
-
     public IfcStructuralLoadSingleDisplacement(
         IfcLabel name,
         IfcLengthMeasure displacementX,

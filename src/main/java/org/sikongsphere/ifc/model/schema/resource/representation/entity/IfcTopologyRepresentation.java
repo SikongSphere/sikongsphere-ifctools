@@ -27,7 +27,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcTopologyRepresentation extends IfcShapeModel {
-    public IfcTopologyRepresentation() {}
 
     @IfcParserConstructor
     public IfcTopologyRepresentation(

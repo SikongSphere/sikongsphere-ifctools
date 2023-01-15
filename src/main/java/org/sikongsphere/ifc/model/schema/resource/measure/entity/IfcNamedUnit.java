@@ -25,8 +25,6 @@ public abstract class IfcNamedUnit extends IfcAbstractClass implements IfcUnit {
     private IfcDimensionalExponents dimensions;
     private IfcUnitEnum unitType;
 
-    public IfcNamedUnit() {}
-
     @IfcParserConstructor
     public IfcNamedUnit(IfcDimensionalExponents dimensions, IfcUnitEnum unitType) {
         this.dimensions = dimensions;

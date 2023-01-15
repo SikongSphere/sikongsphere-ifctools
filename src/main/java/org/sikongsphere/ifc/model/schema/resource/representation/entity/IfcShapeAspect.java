@@ -31,15 +31,18 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcShapeAspect extends IfcAbstractClass {
+
     private LIST<IfcShapeModel> shapeRepresentations;
+
     @IfcOptionField
     private IfcLabel name;
+
     @IfcOptionField
     private IfcText description;
-    private LOGICAL productDefinitional;
-    private IfcProductDefinitionShape partOfProductDefinitionShape;
 
-    public IfcShapeAspect() {}
+    private LOGICAL productDefinitional;
+
+    private IfcProductDefinitionShape partOfProductDefinitionShape;
 
     @IfcParserConstructor
     public IfcShapeAspect(

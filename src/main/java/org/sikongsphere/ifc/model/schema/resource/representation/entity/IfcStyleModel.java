@@ -28,7 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public abstract class IfcStyleModel extends IfcRepresentation {
-    public IfcStyleModel() {}
 
     @IfcParserConstructor
     public IfcStyleModel(

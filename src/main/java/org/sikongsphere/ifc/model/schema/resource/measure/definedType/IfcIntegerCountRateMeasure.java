@@ -30,6 +30,10 @@ public class IfcIntegerCountRateMeasure extends INTEGER implements IfcDerivedMea
         super(value);
     }
 
+    public IfcIntegerCountRateMeasure(INTEGER value) {
+        super(value);
+    }
+
     @IfcParserConstructor
     public IfcIntegerCountRateMeasure(STRING value) {
         super(value);

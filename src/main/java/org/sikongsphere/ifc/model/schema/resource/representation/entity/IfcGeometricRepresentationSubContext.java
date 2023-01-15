@@ -36,13 +36,14 @@ import org.sikongsphere.ifc.model.schema.resource.representation.enumeration.Ifc
 public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresentationContext {
 
     private IfcGeometricRepresentationContext parentContext;
+
     @IfcOptionField
     private IfcPositiveRatioMeasure targetScale;
+
     private IfcGeometricProjectionEnum targetView;
+
     @IfcOptionField
     private IfcLabel userDefinedTargetView;
-
-    public IfcGeometricRepresentationSubContext() {}
 
     @IfcParserConstructor
     public IfcGeometricRepresentationSubContext(

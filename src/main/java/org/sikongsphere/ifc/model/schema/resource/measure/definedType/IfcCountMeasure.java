@@ -37,7 +37,7 @@ public class IfcCountMeasure extends NUMBER implements IfcValue, IfcMeasureValue
     }
 
     public IfcCountMeasure(DOUBLE value) {
-        super(value.value);
+        super(value.getValue());
     }
 
     @IfcParserConstructor

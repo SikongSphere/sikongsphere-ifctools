@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
@@ -28,6 +29,10 @@ public class IfcPlanarForceMeasure extends REAL implements IfcDerivedMeasureValu
     public IfcPlanarForceMeasure() {}
 
     public IfcPlanarForceMeasure(double value) {
+        super(value);
+    }
+
+    public IfcPlanarForceMeasure(DOUBLE value) {
         super(value);
     }
 

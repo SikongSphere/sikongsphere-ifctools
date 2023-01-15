@@ -28,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcPositiveLengthMeasure extends DOUBLE
+public class IfcPositiveLengthMeasure extends IfcLengthMeasure
     implements
         IfcHatchLineDistanceSelect,
         IfcSizeSelect,
