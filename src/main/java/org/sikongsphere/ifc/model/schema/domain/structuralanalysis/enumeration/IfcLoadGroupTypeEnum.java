@@ -22,22 +22,22 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcLoadGroupTypeEnum {
-    LOAD_GROUP,
     /**
      *LOAD_GROUP groups instances of IfcStructuralAction or its subclasses. It shall be used as a container for loads grouped together for specific purposes. Optionally, an overall load factor can be assigned.
      */
-    LOAD_CASE,
+    LOAD_GROUP,
     /**
      *LOAD_CASE groups LOAD_GROUPs and instances of IfcStructuralAction or its subclasses. It shall be used as a container for loads with the same origin, and to assign a common load factor.
      */
-    LOAD_COMBINATION_GROUP,
+    LOAD_CASE,
     /**
      *LOAD_COMBINATION_GROUP shall be used to group LOAD_CASEs and to assign a common load combination factor. The grouping of LOAD_GROUPs and instances of IfcStructuralAction or its subclasses is also possible, but off the traditional way.
      */
-    LOAD_COMBINATION,
+    LOAD_COMBINATION_GROUP,
     /**
      * LOAD_COMBINATION shall be used to group all loads belonging to a specific load combination. Normally only LOAD_COMBINATION_GROUPs with all needed load factors are used to create load combinations.
      */
+    LOAD_COMBINATION,
     USERDEFINED,
     NOTDEFINED
 }

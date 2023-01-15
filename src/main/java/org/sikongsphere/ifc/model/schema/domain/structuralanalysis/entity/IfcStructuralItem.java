@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.selectType.IfcStructuralActivityAssignmentSelect;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProduct;
 import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcObjectPlacement;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -29,7 +30,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
  * @date 2022/12/23 21:40
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENTITY)
-public class IfcStructuralItem extends IfcProduct {
+public class IfcStructuralItem extends IfcProduct implements IfcStructuralActivityAssignmentSelect {
     @IfcInverseParameter
     private SET<IfcRelConnectsStructuralActivity> assignedStructuralActivity;
 
