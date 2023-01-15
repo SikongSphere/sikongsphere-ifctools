@@ -15,6 +15,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * A loop is a topological entity constructed from a single vertex, or by stringing together connected (oriented)
+ * edges, or linear segments beginning and ending at the same vertex.
+ *
  * @author GaoSU
  * @date 2022/10/25 13:40
  */

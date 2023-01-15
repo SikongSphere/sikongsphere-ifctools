@@ -16,6 +16,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * A vertex_loop is a loop of zero genus consisting of a single vertex. A vertex can exist independently of a vertex loop.
+ *
  * @author zaiyuan
  * @date 2022/12/10 23:09
  */

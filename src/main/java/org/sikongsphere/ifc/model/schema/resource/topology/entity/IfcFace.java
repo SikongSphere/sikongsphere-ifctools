@@ -17,6 +17,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
+ *  A face is a topological entity of dimensionality 2 corresponding to the intuitive notion of a piece of surface
+ *  bounded by loops.
+ *
  * @author GaoSU
  * @date 2022/10/25 13:26
  */

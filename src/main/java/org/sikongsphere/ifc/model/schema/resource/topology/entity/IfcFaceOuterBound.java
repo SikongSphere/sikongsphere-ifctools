@@ -17,6 +17,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 
 /**
+ * A face outer bound is a special subtype of face bound which carries the additional semantics of defining
+ * an outer boundary on the face. No more than one boundary of a face shall be of this type.
+ *
  * @author zhongqi
  * @date 2022/10/28
  */
