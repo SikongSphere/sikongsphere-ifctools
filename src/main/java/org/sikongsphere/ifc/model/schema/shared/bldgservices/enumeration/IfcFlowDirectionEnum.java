@@ -15,7 +15,13 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * This enumeration defines the flow direction at a connection point as either a Source, Sink, or both SourceAndSink:
+ * SOURCE: A source of flow (e.g., it flows out of the connection)
+ * SINK: A flow sink (e.g., it flows into the connection)
+ * SOURCEANDSINK: Both a source and sink (e.g., it flows both into and out of the connection simultaneously)
+ * NOTDEFINED: Undefined flow direction
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/18 15:34
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)

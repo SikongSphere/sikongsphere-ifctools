@@ -15,7 +15,15 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * This enumeration is used to identify the sequence of usage of the energy source. The IfcEnergySequenceEnum contains the following:
+ * PRIMARY: Primary energy source.
+ * SECONDARY: Secondary energy source.
+ * TERTIARY: Tertiary energy source.
+ * AUXILIARY: Auxiliary.
+ * USERDEFINED: User-defined energy sequence.
+ * NOTDEFINED: Undefined energy sequence.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/18 15:34
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)

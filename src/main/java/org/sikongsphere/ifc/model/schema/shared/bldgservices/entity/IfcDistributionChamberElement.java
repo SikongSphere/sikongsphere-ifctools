@@ -23,7 +23,10 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
+ * The IfcDistributionChamberElement defines a place at which distribution systems and their constituent elements may be
+ * inspected or through which they may travel.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

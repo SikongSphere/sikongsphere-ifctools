@@ -23,7 +23,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
+ * The distribution flow element IfcFlowMovingDevice defines the occurrence of an apparatus used to distribute, circulate or perform conveyance of fluids, including liquids and gases, and typically participates in a flow distribution system (e.g., pump, fan). Its type is defined by IfcFlowMovingDeviceType or its subtypes.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

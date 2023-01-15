@@ -23,7 +23,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
+ * The distribution flow element IfcFlowTerminal defines the occurrence of a permanently attached element that acts as a terminus or beginning of a distribution system (e.g., air outlet, drain, water closet, sink, etc.). A terminal is typically a point at which a system interfaces with an external environment. Its type is defined by IfcFlowTerminalType or its subtypes.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

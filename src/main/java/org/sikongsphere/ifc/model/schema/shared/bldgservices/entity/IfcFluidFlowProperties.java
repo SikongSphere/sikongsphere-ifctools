@@ -25,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 import org.sikongsphere.ifc.model.schema.shared.bldgservices.enumeration.IfcPropertySourceEnum;
 
 /**
+ * Common definition to capture the basic flow properties of a fluid typically used within a flow distribution system.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

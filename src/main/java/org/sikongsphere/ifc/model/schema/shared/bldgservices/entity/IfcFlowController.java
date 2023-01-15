@@ -23,7 +23,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
+ * The distribution flow element IfcFlowController defines the occurrence of elements of a distribution system that are used to regulate flow through a distribution system (e.g., damper, valve, switch, relay, etc.). Its type is defined by IfcFlowControllerType or its subtypes.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)

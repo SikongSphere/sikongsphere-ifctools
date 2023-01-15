@@ -15,7 +15,16 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * This enumeration defines the different sound scales:
+ * DBA: Decibels in an A-wieghted scale
+ * DBB: Decibels in an B-wieghted scale
+ * DBC: Decibels in an C-wieghted scale
+ * NC: Noise criteria
+ * NR: Noise rating
+ * USERDEFINED: User-defined sound scale
+ * NOTDEFINED: Undefined sound scale
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/18 15:34
  */
 @IfcClass(type = IfcType.ENUMERATION, layer = IfcLayer.SHARED)

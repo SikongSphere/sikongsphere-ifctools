@@ -25,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 import org.sikongsphere.ifc.model.schema.shared.bldgservices.enumeration.IfcSoundScaleEnum;
 
 /**
+ * Common definition to capture the properties of sound typically used within the context of building services and flow distribution systems. Sound properties are sound power or pressure levels across eight octave bands specifying the amount of sound generation or sound attenuation.
  * @author zaiyuan
+ * @modify GaoSu
  * @date 2022/12/17 11:40
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENTITY)
