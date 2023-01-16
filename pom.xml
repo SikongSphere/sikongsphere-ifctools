@@ -6,7 +6,19 @@
 
     <groupId>org.sikongsphere</groupId>
     <artifactId>sikongsphere-ifctools</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>
+        Sikongsphere-ifctools is an open source project, which is the first to implement
+        IFC (Industry Foundation Classes) standard thoroughly in China, and aims to
+        consolidate the field of Architecture and Urban Planning. As for the IFC, it
+        can be read on the official website of buildingSMART.
+    </description>
+    <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
+    <scm>
+        <connection>https://github.com/SikongSphere/sikongsphere-ifctools.git</connection>
+        <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
+    </scm>
 
     <properties>
         <antlr.version>4.9.2</antlr.version>
@@ -20,6 +32,11 @@
         <spotless-maven-plugin.version>2.22.5</spotless-maven-plugin.version>
         <maven-surefire.version>2.5</maven-surefire.version>
         <commons-io.version>2.11.0</commons-io.version>
+        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
+        <maven-release-plugin.version>2.5.1</maven-release-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -84,6 +101,186 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven-gpg-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <fork>true</fork>
+                    <verbose>true</verbose>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+            </plugin>
         </plugins>
     </build>
+
+    <licenses>
+        <license>
+            <name>GPL-3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Junwen Liu</name>
+            <email>zaiyuanljw@gmail.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member Chair</role>
+                <role>Java Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+            <id>在渊</id>
+        </developer>
+        <developer>
+            <name>Chao Liang</name>
+            <email>liangc0427@gmail.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+                <role>Tester</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+            <id>阿超</id>
+        </developer>
+        <developer>
+            <name>Bohong Wang</name>
+            <email>bohong_wang@hotmail.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+            <id>beecorn</id>
+        </developer>
+        <developer>
+            <name>Shang Liu</name>
+            <email>LS1995516@gmail.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Ziniu Luo</name>
+            <email>luozn15@qq.com</email>
+            <roles>
+                <role>SikongSphere Project Management Committee (PMC) Member</role>
+                <role>Module Maintainer</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Yiwei Sun</name>
+            <email>sun736178452@iCloud.com</email>
+            <roles>
+                <role>Documentation</role>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Su Gao</name>
+            <email>785313020@qq.com</email>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Tianyu Kuang</name>
+            <email>tianyuk0309@126.com</email>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Qi Zhong</name>
+            <email>1939945349@qq.com</email>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
 </project>
