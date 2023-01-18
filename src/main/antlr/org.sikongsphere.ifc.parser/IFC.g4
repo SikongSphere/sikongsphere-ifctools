@@ -49,7 +49,7 @@ expr :
      | exprAtom
      | T_WELL intNumber
      | T_DOT ident T_DOT
-     | T_OPEN_P expr (T_COMMA expr)* T_CLOSE_P
+     | T_OPEN_P expr? (T_COMMA expr)* T_CLOSE_P
      ;
 
 exprAtom :
@@ -95,7 +95,7 @@ decNumber :                               // Decimal number (positive or negativ
      ;
 
 scientificCountingNumber :
-     decNumber 'E' T_SUB intNumber
+     decNumber 'E' intNumber
      ;
 
 boolLiteral :                            // Boolean literal
@@ -155,7 +155,8 @@ L_S_STRING  : '\'' (('\'' '\'') | ('\\' '\'') | ~('\''))* '\''         // Single
 L_D_STRING  : '"' (L_STR_ESC_D | .)*? '"'                              // Double quoted string literal
             ;
 L_INT       : L_DIGIT+ ;                                               // Integer
-L_DEC       : L_DIGIT+ '.' ~'.' L_DIGIT*                               // Decimal number
+L_DEC       :
+            L_DIGIT+ '.' L_DIGIT*                               // Decimal number
             | '.' L_DIGIT+
             | L_DIGIT '.'
             ;

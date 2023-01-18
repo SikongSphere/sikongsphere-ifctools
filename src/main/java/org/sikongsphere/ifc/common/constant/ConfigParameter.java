@@ -22,6 +22,8 @@ public class ConfigParameter {
      * Key
      */
     public final static String SIKONGSPHERE_CONFIG_PROPERTIES_PATH_KEY = "sikongsphere.config.path";
+    public final static String SIKONGSPHERE_APPLICATION_CONFIG_PATH_KEY =
+        "sikongsphere.application.config.path";
     public final static String IFC_MODEL_PATH_KEY = "sikongsphere.ifc.model.path";
 
     /**
@@ -29,4 +31,6 @@ public class ConfigParameter {
      */
     public final static String SIKONGSPHERE_CONFIG_PROPERTIES_DEFAULT_PATH =
         "/sikongsphere.properties";
+    public final static String SIKONGSPHERE_APPLICATION_CONFIG_DEFAULT_PATH =
+        "/sikongsphere-application.yml";
 }

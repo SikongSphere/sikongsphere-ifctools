@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.common.constant;
 
+import com.sun.org.apache.bcel.internal.generic.PUSH;
+
 /**
  * some constant used in an IFC file
  *
@@ -29,12 +31,14 @@ public class StringConstant {
     public static final String BLANK_ROW = "\n";
     public static final String WELL = "#";
     public static final String WHITE_SPACE = " ";
+    public static final String NOTHING = "";
     public static final String EQUALS = "=";
     public static final String COMMA = ",";
     public static final String DOLLAR = "$";
     public static final String DOT = ".";
-
+    public static final String QUOTE = "'";
     public static final String ASTERISK = "*";
+    public static final String NONE = "NONE";
 
     /**
      * IFC Tag
@@ -44,4 +48,17 @@ public class StringConstant {
     public static final String BODY_TAG = "DATA";
     public static final String BEGIN_ISO = "ISO-10303-21";
     public static final String INVERSE_TAG = "SET";
+
+    /**
+     * Bool Constant
+     */
+    public static final String TRUE = "T";
+    public static final String FALSE = "F";
+    public static final String UNKNOWN = "U";
+
+    /**
+     * Math Symbol
+     */
+    public static final String SCI_NOTATION = "E";
+    public static final String DIFFER = "-"; // May be another nickname.
 }
