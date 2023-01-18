@@ -1,6 +1,16 @@
 # sikongsphere-ifctools
 
-#### [![2022-10-08-14-44-44.png](https://i.postimg.cc/zf58kGVg/2022-10-08-14-44-44.png)](https://postimg.cc/tsrKqydq)
+[![2022-10-08-14-44-44.png](https://i.postimg.cc/zf58kGVg/2022-10-08-14-44-44.png)](https://postimg.cc/tsrKqydq)
+
+## 概述
+
+SikongSphere-ifctools旨在构建基于工业基础类（Industry Foundation Class，简称IFC）标准的建筑信息模型开源生态。它关注如何对IFC标准进行实现和功能接口的扩展，扮演了核心工具库的角色，而非某一种具体数据产品。
+
+标准、多样性、业务友好性是SikongSphere-ifctools的核心理念。
+
+- 标准：作为建筑行业内BIM标准的参编单位，SikongSphere将遵循行业标准来进行代码实现。同样，sikongsphere-ifctools作为Sikongsphere的核心工具库，也会严格遵循国际标准，兼容现有的技术生态。
+- 多样性：本项目提供了大量的接口，其中会支持例如文件解析、文件格式转换、建筑模型生成、数据模型的序列化反序列化、压缩解压以及加密等多种功能，涵盖了数据产品需要用到的方方面面的功能。
+- 业务友好性：本项目的功能接口在设计时，在设计思想层面上，会兼容装配式建筑的建筑和管理模式，而不是完全照搬现有的纯软件设计的思路。一方面会方便用户理解其中逻辑，另一方面也会优化BIM数据管理逻辑。
 
 #### 介绍
 
@@ -16,7 +26,6 @@ Sikongsphere-ifctools是司空学社组织的开源项目，是国内第一个�
 
 - 扩展层：一些扩展功能模块
 
-[![2022-10-08-15.07.26.md.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.07.26.md.png)](https://www.imagehub.cc/image/GCZPk9)
 #### 参与贡献🚀🧑‍💻
 
 搭建开发环境和贡献者指南，请参考：
@@ -37,8 +46,3 @@ Version 0.0.1：已发布🎉
 2.  新建 Feat_xxx 分支
 3.  提交代码
 4.  新建 Pull Request
-
-
-#### 线路图
-
-[![2022-10-08-15.20.11.md.png](https://s1.imagehub.cc/images/2022/10/08/2022-10-08-15.20.11.md.png)](https://www.imagehub.cc/image/GCZcAv)
