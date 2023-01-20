@@ -4,17 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- =========================================================== -->
+    <!--     Project Description                                     -->
+    <!-- =========================================================== -->
     <groupId>org.sikongsphere</groupId>
     <artifactId>sikongsphere-ifctools</artifactId>
     <version>0.1.0-beta</version>
     <name>${project.groupId}:${project.artifactId}</name>
+    <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
+
     <description>
         Sikongsphere-ifctools is an open source project, which is the first to implement
         IFC (Industry Foundation Classes) standard thoroughly in China, and aims to
         consolidate the field of Architecture and Urban Planning. As for the IFC, it
         can be read on the official website of buildingSMART.
     </description>
-    <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
+    <inceptionYear>2023</inceptionYear>
+
+    <organization>
+        <name>SikongSphere</name>
+        <url>https://github.com/SikongSphere</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GPL-3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <scm>
         <connection>https://github.com/SikongSphere/sikongsphere-ifctools.git</connection>
         <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
@@ -168,12 +187,7 @@
         </plugins>
     </build>
 
-    <licenses>
-        <license>
-            <name>GPL-3.0</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
-        </license>
-    </licenses>
+
 
     <developers>
         <developer>
