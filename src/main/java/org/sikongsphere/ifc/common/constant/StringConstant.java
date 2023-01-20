@@ -35,7 +35,8 @@ public class StringConstant {
     public static final String EQUALS = "=";
     public static final String COMMA = ",";
     public static final String DOLLAR = "$";
-    public static final String DOT = ".";
+    public static final String DOT_T = "\\.";
+    public static final String DOT_U = ".";
     public static final String QUOTE = "'";
     public static final String ASTERISK = "*";
     public static final String NONE = "NONE";
@@ -61,4 +62,6 @@ public class StringConstant {
      */
     public static final String SCI_NOTATION = "E";
     public static final String DIFFER = "-"; // May be another nickname.
+
+    public static final String ZERO_DOUBLE = "0.";
 }

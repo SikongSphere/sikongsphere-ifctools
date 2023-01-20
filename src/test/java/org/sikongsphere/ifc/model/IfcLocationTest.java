@@ -11,11 +11,14 @@
 package org.sikongsphere.ifc.model;
 
 import org.junit.Test;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcPolyline;
+
+import java.math.BigDecimal;
 
 /**
  * This is a test suite for location
@@ -27,36 +30,73 @@ public class IfcLocationTest {
 
     @Test
     public void createPoint() {
-        IfcCartesianPoint ifcCartesianPoint = new IfcCartesianPoint(20.0, 30.0, 40.0);
-        assert ifcCartesianPoint.getCoordinates().get(0).getValue() == 20.0;
-        assert ifcCartesianPoint.getCoordinates().get(1).getValue() == 30.0;
-        assert ifcCartesianPoint.getCoordinates().get(2).getValue() == 40.0;
+        IfcCartesianPoint ifcCartesianPoint = new IfcCartesianPoint(
+            DOUBLE.parseValue(20.0),
+            DOUBLE.parseValue(30.0),
+            DOUBLE.parseValue(40.0)
+        );
+        assert ifcCartesianPoint.getCoordinates()
+            .get(0)
+            .getValue()
+            .compareTo(BigDecimal.valueOf(20.0)) == 0;
+        assert ifcCartesianPoint.getCoordinates()
+            .get(1)
+            .getValue()
+            .compareTo(BigDecimal.valueOf(30.0)) == 0;
+        assert ifcCartesianPoint.getCoordinates()
+            .get(2)
+            .getValue()
+            .compareTo(BigDecimal.valueOf(40.0)) == 0;
     }
 
     @Test
     public void create3DAxis() {
-        IfcAxis2Placement3D ifcAxis2Placement3D = new IfcAxis2Placement3D(20.0, 30.0, 40.0);
+        IfcAxis2Placement3D ifcAxis2Placement3D = new IfcAxis2Placement3D(
+            DOUBLE.parseValue(20.0),
+            DOUBLE.parseValue(30.0),
+            DOUBLE.parseValue(40.0)
+        );
         IfcCartesianPoint location = ifcAxis2Placement3D.getLocation();
-        assert location.getCoordinates().get(0).getValue() == 20.0;
-        assert location.getCoordinates().get(1).getValue() == 30.0;
-        assert location.getCoordinates().get(2).getValue() == 40.0;
+        assert location.getCoordinates().get(0).getValue().compareTo(BigDecimal.valueOf(20.0)) == 0;
+        assert location.getCoordinates().get(1).getValue().compareTo(BigDecimal.valueOf(30.0)) == 0;
+        assert location.getCoordinates().get(2).getValue().compareTo(BigDecimal.valueOf(40.0)) == 0;
     }
 
     @Test
     public void createPolylin() {
-        IfcCartesianPoint startPoint = new IfcCartesianPoint(10.0, 10.0, 10.0);
-        IfcCartesianPoint endPoint = new IfcCartesianPoint(10.0, 30.0, 20.0);
+        IfcCartesianPoint startPoint = new IfcCartesianPoint(
+            DOUBLE.parseValue(10.0),
+            DOUBLE.parseValue(10.0),
+            DOUBLE.parseValue(10.0)
+        );
+        IfcCartesianPoint endPoint = new IfcCartesianPoint(
+            DOUBLE.parseValue(10.0),
+            DOUBLE.parseValue(30.0),
+            DOUBLE.parseValue(20.0)
+        );
         LIST<IfcCartesianPoint> pointList = new LIST<>();
         pointList.add(startPoint);
         pointList.add(endPoint);
         IfcPolyline ifcPolyline = new IfcPolyline(pointList);
 
-        assert ifcPolyline.getPoints().get(0).getCoordinates().get(1).getValue() == 10.0;
+        assert ifcPolyline.getPoints()
+            .get(0)
+            .getCoordinates()
+            .get(1)
+            .getValue()
+            .compareTo(BigDecimal.valueOf(10.0)) == 0;
     }
 
     @Test
     public void createDirection() {
-        IfcDirection direction = new IfcDirection(10.0, 20.0, 30.0);
-        assert direction.getDirectionRatios().get(0) == 10.0;
+        IfcDirection direction = new IfcDirection(
+            DOUBLE.parseValue(10.0),
+            DOUBLE.parseValue(20.0),
+            DOUBLE.parseValue(30.0)
+        );
+        assert direction.getDirectionRatios()
+            .get(0)
+            .getValue()
+            .compareTo(BigDecimal.valueOf(10.0)) == 0;
     }
 }

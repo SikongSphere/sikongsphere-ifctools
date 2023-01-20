@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcSpecificHeatCapacityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSpecificHeatCapacityMeasure() {}
 
-    public IfcSpecificHeatCapacityMeasure(double value) {
-        super(value);
-    }
-
     public IfcSpecificHeatCapacityMeasure(DOUBLE value) {
         super(value);
     }

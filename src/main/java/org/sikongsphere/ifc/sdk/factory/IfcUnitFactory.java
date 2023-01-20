@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.sdk.factory;
 
 import org.sikongsphere.ifc.common.exception.SikongSphereUnsupportedException;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcRatioMeasure;
@@ -303,12 +304,16 @@ public class IfcUnitFactory extends AbstractFactory<IfcUnit> {
      * create measure unit
      */
     public IfcMeasureWithUnit createPlanerAngleMeasureUnit() {
-        IfcRatioMeasure ratioMeasure = new IfcRatioMeasure(IFC_DEFAULT_RATIO_MESASURE);
+        IfcRatioMeasure ratioMeasure = new IfcRatioMeasure(
+            DOUBLE.parseValue(IFC_DEFAULT_RATIO_MESASURE)
+        );
         return new IfcMeasureWithUnit(ratioMeasure, createPlaneAngleUnit());
     }
 
     public IfcMeasureWithUnit createPlanerAngleMeasureUnit(IfcSIUnit siUnit) {
-        IfcRatioMeasure ratioMeasure = new IfcRatioMeasure(IFC_DEFAULT_RATIO_MESASURE);
+        IfcRatioMeasure ratioMeasure = new IfcRatioMeasure(
+            DOUBLE.parseValue(IFC_DEFAULT_RATIO_MESASURE)
+        );
         return new IfcMeasureWithUnit(ratioMeasure, siUnit);
     }
 

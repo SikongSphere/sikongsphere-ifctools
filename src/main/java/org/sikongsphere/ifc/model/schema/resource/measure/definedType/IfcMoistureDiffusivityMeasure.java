@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMoistureDiffusivityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMoistureDiffusivityMeasure() {}
 
-    public IfcMoistureDiffusivityMeasure(double value) {
-        super(value);
-    }
-
     public IfcMoistureDiffusivityMeasure(DOUBLE value) {
         super(value);
     }

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMolecularWeightMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMolecularWeightMeasure() {}
 
-    public IfcMolecularWeightMeasure(double value) {
-        super(value);
-    }
-
     public IfcMolecularWeightMeasure(DOUBLE value) {
         super(value);
     }

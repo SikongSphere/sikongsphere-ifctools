@@ -30,10 +30,6 @@ public class IfcParameterValue extends REAL implements IfcTrimmingSelect, IfcMea
 
     public IfcParameterValue() {}
 
-    public IfcParameterValue(double value) {
-        super(value);
-    }
-
     public IfcParameterValue(DOUBLE value) {
         super(value);
     }

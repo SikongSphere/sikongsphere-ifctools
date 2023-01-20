@@ -157,8 +157,5 @@ public class IfcTShapeProfileDef extends IfcParameterizedProfileDef {
         this.centreOfGravityInY = centreOfGravityInY;
     }
 
-    @Override
-    public boolean illegal() {
-        return (flangeThickness.value < depth.value) && (webThickness.value < flangeWidth.value);
-    }
+    // TODO 校验合法
 }

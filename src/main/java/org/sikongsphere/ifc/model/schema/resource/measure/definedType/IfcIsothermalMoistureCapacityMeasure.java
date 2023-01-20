@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcIsothermalMoistureCapacityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcIsothermalMoistureCapacityMeasure() {}
 
-    public IfcIsothermalMoistureCapacityMeasure(double value) {
-        super(value);
-    }
-
     public IfcIsothermalMoistureCapacityMeasure(DOUBLE value) {
         super(value);
     }

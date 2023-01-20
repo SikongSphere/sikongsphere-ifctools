@@ -29,10 +29,10 @@ public class BasicIfcFileIOTest {
 
     @Test
     public void blankFile() throws IOException {
-        String url = "https://ifc-file.gd2.qingstor.com/basic-ifc/blank.ifc";
+        // String url = "https://ifc-file.gd2.qingstor.com/basic-ifc/blank.ifc";
 
-        getIfcFile(url);
-        ioTest(BLANK_INPUT_PATH, BLANK_OUTPUT_PATH);
+        // getIfcFile(url);
+        ioTest("src/test/resources/blank.ifc", BLANK_OUTPUT_PATH);
     }
 
     @Test

@@ -31,15 +31,11 @@ public class IfcPositiveRatioMeasure extends IfcRatioMeasure
         IfcMeasureValue {
     public IfcPositiveRatioMeasure() {}
 
-    public IfcPositiveRatioMeasure(double value) {
-        super(value);
-    }
-
     public IfcPositiveRatioMeasure(STRING value) {
         super(value);
     }
 
     public IfcPositiveRatioMeasure(DOUBLE value) {
-        super(value.getValue());
+        super(value);
     }
 }

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcPositivePlaneAngleMeasure extends REAL implements IfcMeasureValue {
     public IfcPositivePlaneAngleMeasure() {}
 
-    public IfcPositivePlaneAngleMeasure(double value) {
-        super(value);
-    }
-
     public IfcPositivePlaneAngleMeasure(DOUBLE value) {
         super(value);
     }
@@ -41,8 +37,5 @@ public class IfcPositivePlaneAngleMeasure extends REAL implements IfcMeasureValu
         super(value);
     }
 
-    @Override
-    public boolean illegal() {
-        return getValue() > 0.0;
-    }
+    // TODO 校验合法
 }

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcLinearMomentMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcLinearMomentMeasure() {}
 
-    public IfcLinearMomentMeasure(double value) {
-        super(value);
-    }
-
     public IfcLinearMomentMeasure(DOUBLE value) {
         super(value);
     }

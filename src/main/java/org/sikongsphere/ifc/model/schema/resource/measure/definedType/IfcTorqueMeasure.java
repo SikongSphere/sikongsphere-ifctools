@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcTorqueMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcTorqueMeasure() {}
 
-    public IfcTorqueMeasure(double value) {
-        super(value);
-    }
-
     public IfcTorqueMeasure(DOUBLE value) {
         super(value);
     }

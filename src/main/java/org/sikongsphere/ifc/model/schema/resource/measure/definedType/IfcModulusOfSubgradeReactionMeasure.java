@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcModulusOfSubgradeReactionMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcModulusOfSubgradeReactionMeasure() {}
 
-    public IfcModulusOfSubgradeReactionMeasure(double value) {
-        super(value);
-    }
-
     public IfcModulusOfSubgradeReactionMeasure(DOUBLE value) {
         super(value);
     }

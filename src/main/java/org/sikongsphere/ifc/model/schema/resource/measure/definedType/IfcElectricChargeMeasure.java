@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcElectricChargeMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcElectricChargeMeasure() {}
 
-    public IfcElectricChargeMeasure(double value) {
-        super(value);
-    }
-
     public IfcElectricChargeMeasure(DOUBLE value) {
         super(value);
     }

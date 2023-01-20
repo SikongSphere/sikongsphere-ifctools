@@ -38,10 +38,6 @@ public class IfcRatioMeasure extends REAL
         IfcSizeSelect {
     public IfcRatioMeasure() {}
 
-    public IfcRatioMeasure(double value) {
-        super(value);
-    }
-
     public IfcRatioMeasure(DOUBLE value) {
         super(value);
     }

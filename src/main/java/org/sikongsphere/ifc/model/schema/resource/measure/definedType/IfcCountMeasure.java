@@ -32,25 +32,12 @@ public class IfcCountMeasure extends NUMBER implements IfcValue, IfcMeasureValue
 
     public IfcCountMeasure() {}
 
-    public IfcCountMeasure(double value) {
-        super(value);
-    }
-
     public IfcCountMeasure(DOUBLE value) {
-        super(value.getValue());
+        super(value);
     }
 
     @IfcParserConstructor
     public IfcCountMeasure(STRING value) {
         super(value);
-    }
-
-    @Override
-    public String toString() {
-        double value = getValue();
-        int num = (int) value;
-        if (num - value == 0) {
-            return num + StringConstant.DOT;
-        } else return String.valueOf(value);
     }
 }

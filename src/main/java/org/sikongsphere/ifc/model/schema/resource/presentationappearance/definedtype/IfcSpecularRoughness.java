@@ -28,7 +28,7 @@ public class IfcSpecularRoughness extends REAL implements IfcSpecularHighlightSe
 
     public IfcSpecularRoughness() {}
 
-    public IfcSpecularRoughness(double value) {
+    public IfcSpecularRoughness(DOUBLE value) {
         super(value);
     }
 

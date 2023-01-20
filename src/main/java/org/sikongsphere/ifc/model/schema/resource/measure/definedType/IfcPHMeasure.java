@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcPHMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcPHMeasure() {}
 
-    public IfcPHMeasure(double value) {
-        super(value);
-    }
-
     public IfcPHMeasure(DOUBLE value) {
         super(value);
     }
@@ -42,8 +38,5 @@ public class IfcPHMeasure extends REAL implements IfcDerivedMeasureValue {
         super(value);
     }
 
-    @Override
-    public boolean illegal() {
-        return getValue() >= 0.0 && getValue() <= 14.0;
-    }
+    // TODO 校验合法
 }

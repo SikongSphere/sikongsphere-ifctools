@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcTemperatureGradientMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcTemperatureGradientMeasure() {}
 
-    public IfcTemperatureGradientMeasure(double value) {
-        super(value);
-    }
-
     public IfcTemperatureGradientMeasure(DOUBLE value) {
         super(value);
     }

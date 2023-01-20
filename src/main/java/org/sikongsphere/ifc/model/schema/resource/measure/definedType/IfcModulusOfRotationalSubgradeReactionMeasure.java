@@ -31,10 +31,6 @@ public class IfcModulusOfRotationalSubgradeReactionMeasure extends REAL
         IfcDerivedMeasureValue {
     public IfcModulusOfRotationalSubgradeReactionMeasure() {}
 
-    public IfcModulusOfRotationalSubgradeReactionMeasure(double value) {
-        super(value);
-    }
-
     public IfcModulusOfRotationalSubgradeReactionMeasure(DOUBLE value) {
         super(value);
     }

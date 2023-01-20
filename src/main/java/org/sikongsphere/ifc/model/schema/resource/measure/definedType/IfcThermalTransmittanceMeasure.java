@@ -32,10 +32,6 @@ public class IfcThermalTransmittanceMeasure extends REAL
 
     public IfcThermalTransmittanceMeasure() {}
 
-    public IfcThermalTransmittanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcThermalTransmittanceMeasure(DOUBLE value) {
         super(value);
     }

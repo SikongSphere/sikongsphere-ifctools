@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcThermalConductivityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcThermalConductivityMeasure() {}
 
-    public IfcThermalConductivityMeasure(double value) {
-        super(value);
-    }
-
     public IfcThermalConductivityMeasure(DOUBLE value) {
         super(value);
     }

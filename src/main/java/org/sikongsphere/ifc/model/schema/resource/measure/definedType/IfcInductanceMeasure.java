@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcInductanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcInductanceMeasure() {}
 
-    public IfcInductanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcInductanceMeasure(DOUBLE value) {
         super(value);
     }

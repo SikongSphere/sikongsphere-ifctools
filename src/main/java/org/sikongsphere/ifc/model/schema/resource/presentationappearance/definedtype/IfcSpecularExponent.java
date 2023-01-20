@@ -27,7 +27,7 @@ public class IfcSpecularExponent extends DOUBLE implements IfcSpecularHighlightS
 
     public IfcSpecularExponent() {}
 
-    public IfcSpecularExponent(double value) {
+    public IfcSpecularExponent(DOUBLE value) {
         super(value);
     }
 

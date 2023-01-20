@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcElectricCapacitanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcElectricCapacitanceMeasure() {}
 
-    public IfcElectricCapacitanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcElectricCapacitanceMeasure(DOUBLE value) {
         super(value);
     }

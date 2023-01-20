@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcElectricConductanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcElectricConductanceMeasure() {}
 
-    public IfcElectricConductanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcElectricConductanceMeasure(DOUBLE value) {
         super(value);
     }

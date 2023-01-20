@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcRadioActivityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcRadioActivityMeasure() {}
 
-    public IfcRadioActivityMeasure(double value) {
-        super(value);
-    }
-
     public IfcRadioActivityMeasure(DOUBLE value) {
         super(value);
     }

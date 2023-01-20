@@ -41,12 +41,12 @@ public class IfcRepresentationFactory extends AbstractFactory<IfcRepresentation>
      * create presentation item
      */
 
-    public IfcCartesianPoint createCartesianPoint(double x, double y, double z) {
+    public IfcCartesianPoint createCartesianPoint(DOUBLE x, DOUBLE y, DOUBLE z) {
         return new IfcCartesianPoint(x, y, z);
     }
 
-    public IfcDirection createDirection(double x, double y) {
-        LIST<Double> list = new LIST<>();
+    public IfcDirection createDirection(DOUBLE x, DOUBLE y) {
+        LIST<DOUBLE> list = new LIST<>();
         list.add(x);
         list.add(y);
         return new IfcDirection(list);
@@ -57,11 +57,22 @@ public class IfcRepresentationFactory extends AbstractFactory<IfcRepresentation>
      */
 
     public IfcDirection createDefaultTrueNorthDirection() {
-        return createDirection(DEFAULT_TRUE_NORTH_X, DEFAULT_TRUE_NORTH_Y);
+        return createDirection(
+            DOUBLE.parseValue(DEFAULT_TRUE_NORTH_X),
+            DOUBLE.parseValue(DEFAULT_TRUE_NORTH_Y)
+        );
     }
 
     public IfcAxis2Placement3D createDefaultWorldCoordinateSystem() {
-        return new IfcAxis2Placement3D(createCartesianPoint(0.0, 0.0, 0.0), null, null);
+        return new IfcAxis2Placement3D(
+            createCartesianPoint(
+                DOUBLE.parseValue(0.0),
+                DOUBLE.parseValue(0.0),
+                DOUBLE.parseValue(0.0)
+            ),
+            null,
+            null
+        );
     }
 
     public IfcGeometricRepresentationSubContext createGeometricRepresentationSubContext(
