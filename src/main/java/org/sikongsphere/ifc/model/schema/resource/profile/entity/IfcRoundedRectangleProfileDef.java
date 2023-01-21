@@ -53,9 +53,5 @@ public class IfcRoundedRectangleProfileDef extends IfcRectangleProfileDef {
         this.roundingRadius = roundingRadius;
     }
 
-    @Override
-    public boolean illegal() {
-        return roundingRadius.value <= (getXDim().value / 2)
-            && roundingRadius.value <= (getYDim().value / 2);
-    }
+    // TODO 校验合法
 }

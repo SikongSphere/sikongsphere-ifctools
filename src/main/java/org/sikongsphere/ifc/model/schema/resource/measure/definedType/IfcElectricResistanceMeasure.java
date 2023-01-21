@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcElectricResistanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcElectricResistanceMeasure() {}
 
-    public IfcElectricResistanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcElectricResistanceMeasure(DOUBLE value) {
         super(value);
     }

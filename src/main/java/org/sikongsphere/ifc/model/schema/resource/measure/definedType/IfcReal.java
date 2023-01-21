@@ -32,10 +32,6 @@ public class IfcReal extends REAL implements IfcSimpleValue, IfcValue {
 
     public IfcReal() {}
 
-    public IfcReal(double value) {
-        super(value);
-    }
-
     @IfcParserConstructor
     public IfcReal(DOUBLE value) {
         super(value);

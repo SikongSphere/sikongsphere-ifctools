@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcLuminousIntensityMeasure extends REAL implements IfcMeasureValue {
     public IfcLuminousIntensityMeasure() {}
 
-    public IfcLuminousIntensityMeasure(double value) {
-        super(value);
-    }
-
     public IfcLuminousIntensityMeasure(DOUBLE value) {
         super(value);
     }

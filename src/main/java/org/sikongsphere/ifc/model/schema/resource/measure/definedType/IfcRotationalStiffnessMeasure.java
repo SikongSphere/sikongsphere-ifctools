@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcRotationalStiffnessMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcRotationalStiffnessMeasure() {}
 
-    public IfcRotationalStiffnessMeasure(double value) {
-        super(value);
-    }
-
     @IfcParserConstructor
     public IfcRotationalStiffnessMeasure(DOUBLE value) {
         super(value);

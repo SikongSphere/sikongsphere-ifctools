@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMassDensityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMassDensityMeasure() {}
 
-    public IfcMassDensityMeasure(double value) {
-        super(value);
-    }
-
     public IfcMassDensityMeasure(DOUBLE value) {
         super(value);
     }

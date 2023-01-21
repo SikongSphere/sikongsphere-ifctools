@@ -14,41 +14,43 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcDataType;
 
+import java.math.BigDecimal;
+
 /**
  * @author Wang Bohong
  * @date 2022/11/13 11:45
  */
 public class NUMBER extends IfcDataType {
-    private double value;
+    private BigDecimal value = new BigDecimal("0.0");
 
     public NUMBER() {}
 
-    public NUMBER(double value) {
-        this.value = value;
+    public NUMBER(DOUBLE value) {
+        this.value = value.getValue();
     }
 
     @IfcParserConstructor
     public NUMBER(STRING value) {
-        String str = value.value;
-        if (str != null && str.charAt(str.length() - 1) == '.') {
-            str = str.substring(0, str.length() - 1);
-        }
-        this.value = (str == null) ? 0.0 : Double.parseDouble(str);
+        this.value = DOUBLE.parseValue(value);
     }
 
-    public double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
     @Override
     public String toString() {
-        int num = (int) value;
-        if (num - value == 0) {
-            return num + StringConstant.DOT;
-        } else return String.valueOf(value);
+        String str = this.value.toString();
+        if (str.contains(StringConstant.DOT_U)) {
+            String[] split = str.split(StringConstant.DOT_T);
+
+            if (Double.parseDouble(split[1]) == 0) {
+                return split[0] + StringConstant.DOT_U;
+            } else return str;
+        } else return str;
     }
 }

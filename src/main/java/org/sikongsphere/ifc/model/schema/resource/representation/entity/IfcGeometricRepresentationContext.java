@@ -85,7 +85,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     public String getPrecision() {
         if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
             return precision.toString();
-        } else if (precision.getValue() == 0.0) {
+        } else if (precision.isDefault()) {
             return StringConstant.ASTERISK;
         } else {
             return String.valueOf(precision);

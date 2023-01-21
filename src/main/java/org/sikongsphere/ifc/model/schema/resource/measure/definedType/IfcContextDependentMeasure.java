@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcContextDependentMeasure extends REAL implements IfcMeasureValue {
     public IfcContextDependentMeasure() {}
 
-    public IfcContextDependentMeasure(double value) {
-        super(value);
-    }
-
     @IfcParserConstructor
     public IfcContextDependentMeasure(STRING value) {
         super(value);

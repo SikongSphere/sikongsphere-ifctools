@@ -30,10 +30,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcThermalExpansionCoefficientMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcThermalExpansionCoefficientMeasure() {}
 
-    public IfcThermalExpansionCoefficientMeasure(double value) {
-        super(value);
-    }
-
     public IfcThermalExpansionCoefficientMeasure(DOUBLE value) {
         super(value);
     }

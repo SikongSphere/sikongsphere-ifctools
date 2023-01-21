@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcHeatFluxDensityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcHeatFluxDensityMeasure() {}
 
-    public IfcHeatFluxDensityMeasure(double value) {
-        super(value);
-    }
-
     public IfcHeatFluxDensityMeasure(DOUBLE value) {
         super(value);
     }

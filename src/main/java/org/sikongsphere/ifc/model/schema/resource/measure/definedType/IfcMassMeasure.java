@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcMassMeasure extends REAL implements IfcMeasureValue {
     public IfcMassMeasure() {}
 
-    public IfcMassMeasure(double value) {
-        super(value);
-    }
-
     public IfcMassMeasure(DOUBLE value) {
         super(value);
     }

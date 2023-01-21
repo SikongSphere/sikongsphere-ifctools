@@ -34,10 +34,6 @@ public class IfcPlaneAngleMeasure extends REAL implements IfcOrientationSelect, 
 
     public IfcPlaneAngleMeasure() {}
 
-    public IfcPlaneAngleMeasure(double value) {
-        super(value);
-    }
-
     public IfcPlaneAngleMeasure(DOUBLE value) {
         super(value);
     }

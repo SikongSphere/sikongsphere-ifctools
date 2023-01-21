@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcLinearVelocityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcLinearVelocityMeasure() {}
 
-    public IfcLinearVelocityMeasure(double value) {
-        super(value);
-    }
-
     public IfcLinearVelocityMeasure(DOUBLE value) {
         super(value);
     }

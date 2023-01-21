@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcSoundPowerMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSoundPowerMeasure() {}
 
-    public IfcSoundPowerMeasure(double value) {
-        super(value);
-    }
-
     public IfcSoundPowerMeasure(DOUBLE value) {
         super(value);
     }

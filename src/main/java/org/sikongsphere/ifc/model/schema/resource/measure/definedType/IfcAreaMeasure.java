@@ -32,10 +32,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 public class IfcAreaMeasure extends REAL implements IfcValue, IfcMeasureValue {
     public IfcAreaMeasure() {}
 
-    public IfcAreaMeasure(double value) {
-        super(value);
-    }
-
     public IfcAreaMeasure(DOUBLE value) {
         super(value);
     }

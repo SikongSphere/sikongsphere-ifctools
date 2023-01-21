@@ -31,10 +31,6 @@ public class IfcModulusOfLinearSubgradeReactionMeasure extends REAL
         IfcDerivedMeasureValue {
     public IfcModulusOfLinearSubgradeReactionMeasure() {}
 
-    public IfcModulusOfLinearSubgradeReactionMeasure(double value) {
-        super(value);
-    }
-
     public IfcModulusOfLinearSubgradeReactionMeasure(DOUBLE value) {
         super(value);
     }

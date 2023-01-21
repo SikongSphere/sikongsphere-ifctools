@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcRotationalFrequencyMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcRotationalFrequencyMeasure() {}
 
-    public IfcRotationalFrequencyMeasure(double value) {
-        super(value);
-    }
-
     public IfcRotationalFrequencyMeasure(DOUBLE value) {
         super(value);
     }

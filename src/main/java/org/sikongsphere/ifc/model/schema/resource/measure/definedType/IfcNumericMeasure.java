@@ -28,12 +28,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcNumericMeasure extends NUMBER implements IfcMeasureValue {
     public IfcNumericMeasure() {}
 
-    public IfcNumericMeasure(double value) {
-        super(value);
-    }
-
     public IfcNumericMeasure(DOUBLE value) {
-        super(value.value);
+        super(value);
     }
 
     @IfcParserConstructor

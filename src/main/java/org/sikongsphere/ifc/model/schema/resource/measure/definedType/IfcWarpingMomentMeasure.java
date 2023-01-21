@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcWarpingMomentMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcWarpingMomentMeasure() {}
 
-    public IfcWarpingMomentMeasure(double value) {
-        super(value);
-    }
-
     public IfcWarpingMomentMeasure(DOUBLE value) {
         super(value);
     }

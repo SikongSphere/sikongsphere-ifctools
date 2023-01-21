@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMagneticFluxMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMagneticFluxMeasure() {}
 
-    public IfcMagneticFluxMeasure(double value) {
-        super(value);
-    }
-
     public IfcMagneticFluxMeasure(DOUBLE value) {
         super(value);
     }

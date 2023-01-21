@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcAxis2Placement;
 
@@ -60,7 +61,7 @@ public class IfcAxis2Placement3D extends IfcPlacement implements IfcAxis2Placeme
         setLocation(location);
     }
 
-    public IfcAxis2Placement3D(Double x, Double y, Double z) {
+    public IfcAxis2Placement3D(DOUBLE x, DOUBLE y, DOUBLE z) {
         setLocation(new IfcCartesianPoint(x, y, z));
     }
 

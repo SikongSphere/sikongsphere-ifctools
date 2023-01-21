@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcPressureMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcPressureMeasure() {}
 
-    public IfcPressureMeasure(double value) {
-        super(value);
-    }
-
     @IfcParserConstructor
     public IfcPressureMeasure(STRING value) {
         super(value);

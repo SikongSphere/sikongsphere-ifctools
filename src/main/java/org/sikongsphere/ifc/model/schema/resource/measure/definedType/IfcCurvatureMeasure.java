@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcCurvatureMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcCurvatureMeasure() {}
 
-    public IfcCurvatureMeasure(double value) {
-        super(value);
-    }
-
     @IfcParserConstructor
     public IfcCurvatureMeasure(STRING value) {
         super(value);

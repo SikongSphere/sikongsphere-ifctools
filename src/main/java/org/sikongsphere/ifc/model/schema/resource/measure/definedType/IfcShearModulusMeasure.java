@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcShearModulusMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcShearModulusMeasure() {}
 
-    public IfcShearModulusMeasure(double value) {
-        super(value);
-    }
-
     public IfcShearModulusMeasure(DOUBLE value) {
         super(value);
     }

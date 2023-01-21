@@ -61,8 +61,5 @@ public class IfcCircleHollowProfileDef extends IfcCircleProfileDef {
         this.wallThickness = wallThickness;
     }
 
-    @Override
-    public boolean illegal() {
-        return wallThickness.value < getRadius().value;
-    }
+    // TODO 校验合法
 }

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcVaporPermeabilityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcVaporPermeabilityMeasure() {}
 
-    public IfcVaporPermeabilityMeasure(double value) {
-        super(value);
-    }
-
     public IfcVaporPermeabilityMeasure(DOUBLE value) {
         super(value);
     }

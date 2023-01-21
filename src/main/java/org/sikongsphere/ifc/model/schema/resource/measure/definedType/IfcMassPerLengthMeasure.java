@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMassPerLengthMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMassPerLengthMeasure() {}
 
-    public IfcMassPerLengthMeasure(double value) {
-        super(value);
-    }
-
     public IfcMassPerLengthMeasure(DOUBLE value) {
         super(value);
     }

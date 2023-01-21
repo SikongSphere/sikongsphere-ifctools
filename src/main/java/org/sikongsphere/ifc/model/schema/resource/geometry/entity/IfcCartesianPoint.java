@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.selectType.IfcTrimmingSelect;
@@ -44,7 +45,7 @@ public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
         }
     }
 
-    public IfcCartesianPoint(Double x, Double y, Double z) {
+    public IfcCartesianPoint(DOUBLE x, DOUBLE y, DOUBLE z) {
         coordinates = new LIST<>();
         coordinates.add(new IfcLengthMeasure(x));
         coordinates.add(new IfcLengthMeasure(y));

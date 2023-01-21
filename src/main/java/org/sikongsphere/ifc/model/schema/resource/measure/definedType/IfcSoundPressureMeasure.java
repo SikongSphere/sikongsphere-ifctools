@@ -29,10 +29,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcSoundPressureMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSoundPressureMeasure() {}
 
-    public IfcSoundPressureMeasure(double value) {
-        super(value);
-    }
-
     public IfcSoundPressureMeasure(DOUBLE value) {
         super(value);
     }

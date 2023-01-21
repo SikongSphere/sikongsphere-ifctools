@@ -32,10 +32,6 @@ public class IfcMonetaryMeasure extends REAL
         IfcDerivedMeasureValue {
     public IfcMonetaryMeasure() {}
 
-    public IfcMonetaryMeasure(double value) {
-        super(value);
-    }
-
     public IfcMonetaryMeasure(DOUBLE value) {
         super(value);
     }
