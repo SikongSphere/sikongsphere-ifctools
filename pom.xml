@@ -51,6 +51,7 @@
         <spotless-maven-plugin.version>2.22.5</spotless-maven-plugin.version>
         <maven-surefire.version>2.5</maven-surefire.version>
         <commons-io.version>2.11.0</commons-io.version>
+        <jackson.version>2.9.1</jackson.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -95,6 +96,11 @@
             <groupId>com.esotericsoftware</groupId>
             <artifactId>kryo</artifactId>
             <version>${kryo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 

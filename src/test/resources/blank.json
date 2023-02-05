@@ -1,0 +1,213 @@
+{
+  "type": "ifcJSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC2X3",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.7.0",
+  "timeStamp": "2023-02-03T20:51:45",
+  "data": [
+    {
+      "type": "IfcProject",
+      "globalId": "a689e2dc-2d86-4cf7-8f91-2a3d67607e39",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "adab036f-50af-4f41-bbd0-229c0f4d6e3d"
+      },
+      "name": "Default Project",
+      "description": "Description of Default Project",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "9aa45217-a18a-48ba-9b41-a451bff98da2"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "PLANEANGLEUNIT",
+            "name": "RADIAN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents"
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": 1
+            }
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "ad9d3706-6f3b-4bd3-8f81-d7e872fc5e33"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuilding",
+      "globalId": "d28971b7-78f8-4021-8990-177a644abb49",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "adab036f-50af-4f41-bbd0-229c0f4d6e3d"
+      },
+      "name": "Default Building",
+      "description": "Description",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "9e2b638f-88f9-4b9c-8266-1f0bdd6197a3"
+        }
+      ],
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "ad9d3706-6f3b-4bd3-8f81-d7e872fc5e33"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuildingStorey",
+      "globalId": "307e6ec4-68c8-4d86-9a0f-4af357409f5c",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "adab036f-50af-4f41-bbd0-229c0f4d6e3d"
+      },
+      "name": "Default Building Storey",
+      "description": "Description",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "9e2b638f-88f9-4b9c-8266-1f0bdd6197a3"
+        }
+      ]
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "familyName": "unknown",
+          "givenName": "user"
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "ifctoolsproject.com"
+        }
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "ifctoolsproject.com"
+        },
+        "version": "1.0",
+        "applicationFullName": "ifctoolsproject.com",
+        "applicationIdentifier": "ifctoolsproject.com"
+      },
+      "changeAction": "ADDED",
+      "creationDate": 1660128237,
+      "globalId": "adab036f-50af-4f41-bbd0-229c0f4d6e3d"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 1e-05,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "globalId": "9aa45217-a18a-48ba-9b41-a451bff98da2"
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "ad9d3706-6f3b-4bd3-8f81-d7e872fc5e33",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "adab036f-50af-4f41-bbd0-229c0f4d6e3d"
+      },
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "a689e2dc-2d86-4cf7-8f91-2a3d67607e39"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "d28971b7-78f8-4021-8990-177a644abb49"
+        }
+      ]
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "9e2b638f-88f9-4b9c-8266-1f0bdd6197a3",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "adab036f-50af-4f41-bbd0-229c0f4d6e3d"
+      },
+      "relatingObject": {
+        "type": "IfcBuilding",
+        "ref": "d28971b7-78f8-4021-8990-177a644abb49"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuildingStorey",
+          "ref": "307e6ec4-68c8-4d86-9a0f-4af357409f5c"
+        }
+      ]
+    }
+  ]
+}
