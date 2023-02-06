@@ -14,7 +14,6 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
-import static org.sikongsphere.ifc.io.converter.UnitConstant.DIMENSIONALEXPONENTS;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -143,22 +142,22 @@ public class CvtUtils {
                 dimensions.put("LengthExponent", dimExps.get(0));
             }
             if (!(dimExps.get(1).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(1));
+                dimensions.put("MassExponent", dimExps.get(1));
             }
             if (!(dimExps.get(2).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(2));
+                dimensions.put("TimeExponent", dimExps.get(2));
             }
             if (!(dimExps.get(3).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(3));
+                dimensions.put("ElectricCurrentExponent", dimExps.get(3));
             }
             if (!(dimExps.get(4).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(4));
+                dimensions.put("ThermodynamicTemperatureExponent", dimExps.get(4));
             }
             if (!(dimExps.get(5).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(5));
+                dimensions.put("AmountOfSubstanceExponent", dimExps.get(5));
             }
             if (!(dimExps.get(6).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(6));
+                dimensions.put("LuminousIntensityExponent", dimExps.get(6));
             }
         }
 

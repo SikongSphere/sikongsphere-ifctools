@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
@@ -31,7 +35,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
+
+    @JsonUnwrapped
     private LIST<IfcLengthMeasure> coordinates;
+
     @IfcDeriveParameter
     private IfcDimensionCount dim;
 

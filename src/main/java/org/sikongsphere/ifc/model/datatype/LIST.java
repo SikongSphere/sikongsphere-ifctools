@@ -10,6 +10,10 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcDataType;
 
@@ -23,6 +27,8 @@ import java.util.List;
  * @date 2022-08-11 18:30:00
  */
 public class LIST<E> extends IfcDataType {
+
+    @JsonProperty(value = "coordinates")
     private List<E> objects = new ArrayList<>();
 
     public LIST(List<E> objects) {
