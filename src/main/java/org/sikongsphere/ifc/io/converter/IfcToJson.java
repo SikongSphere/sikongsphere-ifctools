@@ -140,7 +140,9 @@ public class IfcToJson {
      * @param entityAttributes
      * @return
      */
-    public LinkedHashMap<Object, Object> createFullObject(LinkedHashMap<Object, Object> entityAttributes) {
+    public LinkedHashMap<Object, Object> createFullObject(
+        LinkedHashMap<Object, Object> entityAttributes
+    ) {
         LinkedHashMap<Object, Object> fullObject = new LinkedHashMap<>();
         for (Object attr : entityAttributes.keySet()) {
 
@@ -166,7 +168,7 @@ public class IfcToJson {
         getSeparateRelationship();
         getRootObjects();
 
-        LinkedHashMap<String, Object> map = new LinkedHashMap<String,Object>();
+        LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
         map.put("type", "ifcJSON");
         map.put("organization", "sikongsphere");
         map.put("version", "ifctools-0.1.0-beta");

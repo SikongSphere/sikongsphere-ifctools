@@ -37,10 +37,8 @@ public class IfcToJsonTest {
         IfcFileModel ifcFileModel = IfcFileReader.readFile(IFC_FILE);
         IfcToJson ifcToJson = new IfcToJson(ifcFileModel);
         LinkedHashMap<String, Object> map = ifcToJson.transform();
-        ObjectMapper mapper = new ObjectMapper()
-                .enable(SerializationFeature.INDENT_OUTPUT)
-                .configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY,false)
-                ;
+        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
+            .configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, false);
         String s = mapper.writeValueAsString(map);
         System.out.println(s);
     }
