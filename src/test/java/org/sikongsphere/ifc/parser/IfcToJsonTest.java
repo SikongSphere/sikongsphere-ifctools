@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.parser;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Test;
@@ -20,6 +21,8 @@ import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 /**
  * @author:stan
@@ -33,8 +36,11 @@ public class IfcToJsonTest {
     public void blankIfcTest() throws IOException {
         IfcFileModel ifcFileModel = IfcFileReader.readFile(IFC_FILE);
         IfcToJson ifcToJson = new IfcToJson(ifcFileModel);
-        HashMap<String, Object> map = ifcToJson.transform();
-        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+        LinkedHashMap<String, Object> map = ifcToJson.transform();
+        ObjectMapper mapper = new ObjectMapper()
+                .enable(SerializationFeature.INDENT_OUTPUT)
+                .configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY,false)
+                ;
         String s = mapper.writeValueAsString(map);
         System.out.println(s);
     }

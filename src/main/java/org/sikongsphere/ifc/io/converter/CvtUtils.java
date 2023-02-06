@@ -115,8 +115,8 @@ public class CvtUtils {
      *
      * @return
      */
-    public static HashMap<Object, Object> jsonifyEntity(IfcAbstractClass entity) {
-        HashMap<Object, Object> map = new HashMap<>();
+    public static LinkedHashMap<Object, Object> jsonifyEntity(IfcAbstractClass entity) {
+        LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
         map.put("type", entity.getClass().getSimpleName());
 
         Field[] fields = getFields(entity.getClass());
@@ -133,8 +133,8 @@ public class CvtUtils {
 
     }
 
-    public static HashMap<String, Object> getDimensionsForSiUnit(IfcAbstractClass entity) {
-        HashMap<String, Object> dimensions = new HashMap<>();
+    public static LinkedHashMap<String, Object> getDimensionsForSiUnit(IfcAbstractClass entity) {
+        LinkedHashMap<String, Object> dimensions = new LinkedHashMap<>();
         dimensions.put("type", "IfcDimensionalExponents");
 
         if (UnitConstant.DIMENSIONALEXPONENTS.containsKey(entity.getClass().getSimpleName())) {
@@ -171,10 +171,10 @@ public class CvtUtils {
      * @param entityAttributes
      * @return
      */
-    public static HashMap<Object, Object> createReferencedObject(
-        HashMap<Object, Object> entityAttributes
+    public static LinkedHashMap<Object, Object> createReferencedObject(
+        LinkedHashMap<Object, Object> entityAttributes
     ) {
-        HashMap<Object, Object> ref = new HashMap<>();
+        LinkedHashMap<Object, Object> ref = new LinkedHashMap<>();
         ref.put("type", entityAttributes.get("type"));
         ref.put("ref", entityAttributes.get("globalId"));
 

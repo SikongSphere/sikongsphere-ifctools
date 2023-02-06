@@ -10,8 +10,6 @@
 */
 package org.sikongsphere.ifc.io.converter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.sikongsphere.ifc.io.IfcFileReader;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
@@ -22,7 +20,6 @@ import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcGeome
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
-import java.io.IOException;
 import java.util.*;
 
 import static org.sikongsphere.ifc.io.converter.CvtUtils.*;
@@ -35,7 +32,7 @@ public class IfcToJson {
 
     private ArrayList<Object> jsonObjects = new ArrayList<>();
     private ArrayList<IfcAbstractClass> relationShips = new ArrayList<>();
-    private HashMap<Integer, Object> rootObjects = new HashMap<>();
+    private LinkedHashMap<Integer, Object> rootObjects = new LinkedHashMap<>();
     private IfcFileModel ifcFileModel;
 
     public IfcToJson(IfcFileModel ifcFileModel) {
@@ -81,7 +78,7 @@ public class IfcToJson {
     private void getRootObjects() {
         this.rootObjects.forEach((key, value) -> {
             IfcAbstractClass entity = CvtUtils.getEntityByStepNumber(this.ifcFileModel, key);
-            HashMap<Object, Object> entityAttributes = CvtUtils.jsonifyEntity(entity);
+            LinkedHashMap<Object, Object> entityAttributes = CvtUtils.jsonifyEntity(entity);
 
             entityAttributes.put("globalId", this.rootObjects.get(entity.getStepNumber()));
             this.jsonObjects.add(this.createFullObject(entityAttributes));
@@ -102,7 +99,7 @@ public class IfcToJson {
             jsonValue = null;
         } else if (value instanceof IfcAbstractClass) {
             IfcAbstractClass entity = (IfcAbstractClass) value;
-            HashMap<Object, Object> entityAttributes = jsonifyEntity(entity);
+            LinkedHashMap<Object, Object> entityAttributes = jsonifyEntity(entity);
 
             // ToDo remove empty properties
 
@@ -143,8 +140,8 @@ public class IfcToJson {
      * @param entityAttributes
      * @return
      */
-    public HashMap<Object, Object> createFullObject(HashMap<Object, Object> entityAttributes) {
-        HashMap<Object, Object> fullObject = new HashMap<>();
+    public LinkedHashMap<Object, Object> createFullObject(LinkedHashMap<Object, Object> entityAttributes) {
+        LinkedHashMap<Object, Object> fullObject = new LinkedHashMap<>();
         for (Object attr : entityAttributes.keySet()) {
 
             if (attr.equals("id")) {
@@ -163,13 +160,13 @@ public class IfcToJson {
         return fullObject;
     }
 
-    public HashMap<String, Object> transform() {
+    public LinkedHashMap<String, Object> transform() {
         getAllEntityContainsglobalId();
         getSeparateEntity();
         getSeparateRelationship();
         getRootObjects();
 
-        HashMap<String, Object> map = new HashMap<>();
+        LinkedHashMap<String, Object> map = new LinkedHashMap<String,Object>();
         map.put("type", "ifcJSON");
         map.put("organization", "sikongsphere");
         map.put("version", "ifctools-0.1.0-beta");
