@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.io.converter;
 
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.io.constant.UnitConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 
@@ -135,7 +136,7 @@ public class CvtUtils {
     public static LinkedHashMap<String, Object> getDimensionsForSiUnit(IfcAbstractClass entity) {
         LinkedHashMap<String, Object> dimensions = new LinkedHashMap<>();
         dimensions.put("type", "IfcDimensionalExponents");
-
+        //Todo 检查正确性
         if (UnitConstant.DIMENSIONALEXPONENTS.containsKey(entity.getClass().getSimpleName())) {
             List dimExps = UnitConstant.DIMENSIONALEXPONENTS.get(entity.getClass().getSimpleName());
             if (!(dimExps.get(0).equals(0))) {
@@ -182,6 +183,7 @@ public class CvtUtils {
 
     /**
      * 获取本类及父类的所有字段
+     * Todo 调整顺序，使得能够自顶向下
      * @param clazz
      * @return
      */

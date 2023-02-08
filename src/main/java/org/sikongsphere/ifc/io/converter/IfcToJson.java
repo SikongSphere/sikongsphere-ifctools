@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.io.converter;
 
+import org.sikongsphere.ifc.io.constant.MetaConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
@@ -169,9 +170,9 @@ public class IfcToJson {
         getRootObjects();
 
         LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
-        map.put("type", "ifcJSON");
-        map.put("organization", "sikongsphere");
-        map.put("version", "ifctools-0.1.0-beta");
+        map.put("type", MetaConstant.IFC_TOOLS_NAME);
+        map.put("organization", MetaConstant.ORG_NAME);
+        map.put("version", MetaConstant.TOOLS_VERSION);
         map.put("data", this.jsonObjects);
 
         return map;

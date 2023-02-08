@@ -28,7 +28,6 @@ import java.util.*;
  */
 public class SET<E> extends IfcDataType {
 
-    @JsonProperty(value = "coordinates")
     private Set<E> objects = new HashSet<>();
 
     public SET() {}

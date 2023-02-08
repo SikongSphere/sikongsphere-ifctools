@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.constant.StringConstant;
@@ -40,10 +41,12 @@ public abstract class IfcAbstractClass implements IfcInterface {
         return stepNumber;
     }
 
+    @JsonIgnore
     public void setStepNumber(int stepNumber) {
         this.stepNumber = stepNumber;
     }
 
+    @JsonIgnore
     public boolean isDefault() {
         return false;
     }
