@@ -81,7 +81,10 @@ public class IfcToJson {
             IfcAbstractClass entity = CvtUtils.getEntityByStepNumber(this.ifcFileModel, key);
             LinkedHashMap<Object, Object> entityAttributes = CvtUtils.jsonifyEntity(entity);
 
-            entityAttributes.put("globalId", this.rootObjects.get(entity.getStepNumber()));
+            entityAttributes.put(
+                MetaConstant.GLOBAL_ID,
+                this.rootObjects.get(entity.getStepNumber())
+            );
             this.jsonObjects.add(this.createFullObject(entityAttributes));
         });
     }
@@ -96,7 +99,7 @@ public class IfcToJson {
     private Object getAttributeValue(Object value) {
         Object jsonValue = null;
 
-        if (value == null | value == "") {
+        if (value == null | value == MetaConstant.BLANK) {
             jsonValue = null;
         } else if (value instanceof IfcAbstractClass) {
             IfcAbstractClass entity = (IfcAbstractClass) value;
@@ -105,17 +108,20 @@ public class IfcToJson {
             // ToDo remove empty properties
 
             if (isBelongTo(entity, IfcSIUnit.class)) {
-                entityAttributes.put("dimensions", getDimensionsForSiUnit(entity));
+                entityAttributes.put(MetaConstant.DIM, getDimensionsForSiUnit(entity));
             }
 
             if (this.rootObjects.containsKey(entity.getStepNumber())) {
-                entityAttributes.put("globalId", this.rootObjects.get(entity.getStepNumber()));
+                entityAttributes.put(
+                    MetaConstant.GLOBAL_ID,
+                    this.rootObjects.get(entity.getStepNumber())
+                );
                 return CvtUtils.createReferencedObject(entityAttributes);
             } else {
-                if (entityAttributes.containsKey("globalId")) {
+                if (entityAttributes.containsKey(MetaConstant.GLOBAL_ID)) {
                     IfcRoot ifcRoot = (IfcRoot) entity;
                     entityAttributes.put(
-                        "globalId",
+                        MetaConstant.GLOBAL_ID,
                         Guid.split(Guid.expand(ifcRoot.getGlobalId().getValue()))
                     );
                 }
@@ -147,12 +153,12 @@ public class IfcToJson {
         LinkedHashMap<Object, Object> fullObject = new LinkedHashMap<>();
         for (Object attr : entityAttributes.keySet()) {
 
-            if (attr.equals("id")) {
+            if (attr.equals(MetaConstant.ID)) {
                 continue;
             }
 
-            if (attr.equals("warppedValue")) {
-                attr = "value";
+            if (attr.equals(MetaConstant.WRAPPED_VALUE)) {
+                attr = MetaConstant.VALUE;
             }
 
             Object jsonValue = this.getAttributeValue(entityAttributes.get(attr));
@@ -170,10 +176,10 @@ public class IfcToJson {
         getRootObjects();
 
         LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
-        map.put("type", MetaConstant.IFC_TOOLS_NAME);
-        map.put("organization", MetaConstant.ORG_NAME);
-        map.put("version", MetaConstant.TOOLS_VERSION);
-        map.put("data", this.jsonObjects);
+        map.put(MetaConstant.TYPE, MetaConstant.IFC_TOOLS_NAME);
+        map.put(MetaConstant.ORG, MetaConstant.ORG_NAME);
+        map.put(MetaConstant.VERSION, MetaConstant.TOOLS_VERSION);
+        map.put(MetaConstant.DATA, this.jsonObjects);
 
         return map;
     }

@@ -22,7 +22,7 @@ public class UnitConstant {
 
     private static HashMap<String, List> setDimensionalExponents() {
         HashMap<String, List> DIMENSIONALEXPONENTS = new HashMap<>();
-        DIMENSIONALEXPONENTS.put("METER", Arrays.asList(1, 0, 0, 0, 0, 0, 0));
+        DIMENSIONALEXPONENTS.put("METRE", Arrays.asList(1, 0, 0, 0, 0, 0, 0));
         DIMENSIONALEXPONENTS.put("RADIAN", Arrays.asList(0, 0, 0, 0, 0, 0, 0));
         DIMENSIONALEXPONENTS.put("SECOND", Arrays.asList(0, 0, 1, 0, 0, 0, 0));
 

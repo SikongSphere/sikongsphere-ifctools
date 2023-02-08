@@ -12,9 +12,12 @@ package org.sikongsphere.ifc.io.converter;
 
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
+import org.sikongsphere.ifc.io.constant.MetaConstant;
 import org.sikongsphere.ifc.io.constant.UnitConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcDimensionalExponents;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcSIUnit;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -117,7 +120,7 @@ public class CvtUtils {
      */
     public static LinkedHashMap<Object, Object> jsonifyEntity(IfcAbstractClass entity) {
         LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
-        map.put("type", entity.getClass().getSimpleName());
+        map.put(MetaConstant.TYPE, entity.getClass().getSimpleName());
 
         Field[] fields = getFields(entity.getClass());
         for (Field field : fields) {
@@ -135,30 +138,31 @@ public class CvtUtils {
 
     public static LinkedHashMap<String, Object> getDimensionsForSiUnit(IfcAbstractClass entity) {
         LinkedHashMap<String, Object> dimensions = new LinkedHashMap<>();
-        dimensions.put("type", "IfcDimensionalExponents");
-        //Todo 检查正确性
-        if (UnitConstant.DIMENSIONALEXPONENTS.containsKey(entity.getClass().getSimpleName())) {
-            List dimExps = UnitConstant.DIMENSIONALEXPONENTS.get(entity.getClass().getSimpleName());
+        dimensions.put(MetaConstant.TYPE, IfcDimensionalExponents.class.getSimpleName());
+        IfcSIUnit unitEntity = (IfcSIUnit) entity;
+
+        if (UnitConstant.DIMENSIONALEXPONENTS.containsKey(unitEntity.getName().name())) {
+            List dimExps = UnitConstant.DIMENSIONALEXPONENTS.get(unitEntity.getName().name());
             if (!(dimExps.get(0).equals(0))) {
-                dimensions.put("LengthExponent", dimExps.get(0));
+                dimensions.put(MetaConstant.LENGTH_EXPONENT, dimExps.get(0));
             }
             if (!(dimExps.get(1).equals(0))) {
-                dimensions.put("MassExponent", dimExps.get(1));
+                dimensions.put(MetaConstant.MASS_EXPONENT, dimExps.get(1));
             }
             if (!(dimExps.get(2).equals(0))) {
-                dimensions.put("TimeExponent", dimExps.get(2));
+                dimensions.put(MetaConstant.TIME_EXPONENT, dimExps.get(2));
             }
             if (!(dimExps.get(3).equals(0))) {
-                dimensions.put("ElectricCurrentExponent", dimExps.get(3));
+                dimensions.put(MetaConstant.ELECTRIC_CURRENT_EXPONENT, dimExps.get(3));
             }
             if (!(dimExps.get(4).equals(0))) {
-                dimensions.put("ThermodynamicTemperatureExponent", dimExps.get(4));
+                dimensions.put(MetaConstant.THERMODYNAMIC_TEMPERATURE_EXPONENT, dimExps.get(4));
             }
             if (!(dimExps.get(5).equals(0))) {
-                dimensions.put("AmountOfSubstanceExponent", dimExps.get(5));
+                dimensions.put(MetaConstant.AMOUNT_OF_SUBSTANCE_EXPONENT, dimExps.get(5));
             }
             if (!(dimExps.get(6).equals(0))) {
-                dimensions.put("LuminousIntensityExponent", dimExps.get(6));
+                dimensions.put(MetaConstant.LUMINOUS_INTENSITY_EXPONENT, dimExps.get(6));
             }
         }
 
@@ -175,29 +179,31 @@ public class CvtUtils {
         LinkedHashMap<Object, Object> entityAttributes
     ) {
         LinkedHashMap<Object, Object> ref = new LinkedHashMap<>();
-        ref.put("type", entityAttributes.get("type"));
-        ref.put("ref", entityAttributes.get("globalId"));
+        ref.put(MetaConstant.TYPE, entityAttributes.get(MetaConstant.TYPE));
+        ref.put(MetaConstant.REF, entityAttributes.get(MetaConstant.GLOBAL_ID));
 
         return ref;
     }
 
     /**
-     * 获取本类及父类的所有字段
-     * Todo 调整顺序，使得能够自顶向下
+     * 获取本类及父类的所有字段并以自顶向下的顺序进行排序
      * @param clazz
      * @return
      */
     private static Field[] getFields(Class clazz) {
         ArrayList<Object> fieldList = new ArrayList<>();
         while (clazz != null) {
+            ArrayList<Object> list = new ArrayList<>();
+
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
                 if (!field.isAnnotationPresent(IfcDeriveParameter.class)
                     && !field.isAnnotationPresent(IfcInverseParameter.class)
                     && field.getModifiers() == Modifier.PRIVATE) {
-                    fieldList.add(field);
+                    list.add(field);
                 }
             }
+            fieldList.addAll(0, list);
             clazz = clazz.getSuperclass();
         }
         Field[] f = new Field[fieldList.size()];

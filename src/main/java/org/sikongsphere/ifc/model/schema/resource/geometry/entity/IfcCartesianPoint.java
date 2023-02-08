@@ -35,7 +35,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
 
-    @JsonSerialize(using = LISTSerializer.class)
     private LIST<IfcLengthMeasure> coordinates = new LIST<>();
 
     @IfcDeriveParameter
