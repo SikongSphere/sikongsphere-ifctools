@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.io.converter;
 
+import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 import org.sikongsphere.ifc.io.constant.MetaConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
@@ -23,7 +24,7 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 
 import java.util.*;
 
-import static org.sikongsphere.ifc.io.converter.CvtUtils.*;
+import static org.sikongsphere.ifc.io.converter.ConvertUtils.*;
 
 /**
  * @author:stan
@@ -41,45 +42,47 @@ public class IfcToJson {
     }
 
     private void getAllEntityContainsglobalId() {
-        CvtUtils.getAllChildNodesFrom(this.ifcFileModel, IfcRoot.class).forEach(x -> {
+        ConvertUtils.getAllChildNodesFrom(this.ifcFileModel, IfcRoot.class).forEach(x -> {
             if (isBelongTo(x, IfcRelationship.class)) this.relationShips.add(x);
             else {
                 IfcRoot entity = (IfcRoot) x;
                 this.rootObjects.put(
                     x.getStepNumber(),
-                    Guid.split(Guid.expand(entity.getGlobalId().getValue()))
+                    GlobalUniqueID.split(GlobalUniqueID.expand(entity.getGlobalId().getValue()))
                 );
             }
         });
     }
 
     private void getSeparateEntity() {
-        CvtUtils.getAllChildNodesFrom(this.ifcFileModel, IfcShapeRepresentation.class)
+        ConvertUtils.getAllChildNodesFrom(this.ifcFileModel, IfcShapeRepresentation.class)
             .forEach(
                 x -> { this.rootObjects.put(x.getStepNumber(), UUID.randomUUID().toString()); }
             );
-        CvtUtils.getAllChildNodesFrom(this.ifcFileModel, IfcOwnerHistory.class)
+        ConvertUtils.getAllChildNodesFrom(this.ifcFileModel, IfcOwnerHistory.class)
             .forEach(
                 x -> { this.rootObjects.put(x.getStepNumber(), UUID.randomUUID().toString()); }
             );
-        CvtUtils.getAllChildNodesFrom(this.ifcFileModel, IfcGeometricRepresentationContext.class)
-            .forEach(
-                x -> { this.rootObjects.put(x.getStepNumber(), UUID.randomUUID().toString()); }
-            );
+        ConvertUtils.getAllChildNodesFrom(
+            this.ifcFileModel,
+            IfcGeometricRepresentationContext.class
+        ).forEach(x -> { this.rootObjects.put(x.getStepNumber(), UUID.randomUUID().toString()); });
     }
 
     private void getSeparateRelationship() {
         this.relationShips.forEach(x -> {
             IfcRelationship entity = (IfcRelationship) x;
-            String split = Guid.split(Guid.expand(entity.getGlobalId().getValue()));
+            String split = GlobalUniqueID.split(
+                GlobalUniqueID.expand(entity.getGlobalId().getValue())
+            );
             this.rootObjects.put(entity.getStepNumber(), split);
         });
     }
 
     private void getRootObjects() {
         this.rootObjects.forEach((key, value) -> {
-            IfcAbstractClass entity = CvtUtils.getEntityByStepNumber(this.ifcFileModel, key);
-            LinkedHashMap<Object, Object> entityAttributes = CvtUtils.jsonifyEntity(entity);
+            IfcAbstractClass entity = ConvertUtils.getEntityByStepNumber(this.ifcFileModel, key);
+            LinkedHashMap<Object, Object> entityAttributes = ConvertUtils.jsonifyEntity(entity);
 
             entityAttributes.put(
                 MetaConstant.GLOBAL_ID,
@@ -116,13 +119,15 @@ public class IfcToJson {
                     MetaConstant.GLOBAL_ID,
                     this.rootObjects.get(entity.getStepNumber())
                 );
-                return CvtUtils.createReferencedObject(entityAttributes);
+                return ConvertUtils.createReferencedObject(entityAttributes);
             } else {
                 if (entityAttributes.containsKey(MetaConstant.GLOBAL_ID)) {
                     IfcRoot ifcRoot = (IfcRoot) entity;
                     entityAttributes.put(
                         MetaConstant.GLOBAL_ID,
-                        Guid.split(Guid.expand(ifcRoot.getGlobalId().getValue()))
+                        GlobalUniqueID.split(
+                            GlobalUniqueID.expand(ifcRoot.getGlobalId().getValue())
+                        )
                     );
                 }
             }

@@ -22,12 +22,15 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcSIUnit;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
+ * ifc转json的一些辅助方法
+ *
  * @author:stan
  * @date:2023/2/5 10:02
  */
-public class CvtUtils {
+public class ConvertUtils {
 
     /**
      * 获取ifcBody中满足step名称的实体
@@ -39,16 +42,17 @@ public class CvtUtils {
         IfcFileModel ifcFileModel,
         String stepEntityName
     ) {
-        Map<Integer, IfcAbstractClass> elements = ifcFileModel.getBody().getElements();
-        ArrayList<IfcAbstractClass> list = new ArrayList<>();
-
-        elements.forEach((key, value) -> {
-            if (value.getClass().getSimpleName().equalsIgnoreCase(stepEntityName)) {
-                list.add(value);
-            }
-        });
-
-        return list;
+        return (ArrayList<IfcAbstractClass>) ifcFileModel.getBody()
+            .getElements()
+            .values()
+            .stream()
+            .map(
+                ifcAbstractClass -> ifcAbstractClass.getClass()
+                    .getSimpleName()
+                    .equalsIgnoreCase(stepEntityName) ? ifcAbstractClass : null
+            )
+            .filter(Objects::isNull)
+            .collect(Collectors.toList());
     }
 
     /**
@@ -105,9 +109,7 @@ public class CvtUtils {
      * @return
      */
     public static boolean isBelongTo(IfcAbstractClass childNode, Class<?> parentNode) {
-        if (parentNode.isAssignableFrom(childNode.getClass())) {
-            return true;
-        } else return false;
+        return parentNode.isAssignableFrom(childNode.getClass());
     }
 
     /**

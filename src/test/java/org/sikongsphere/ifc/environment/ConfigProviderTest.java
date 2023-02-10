@@ -11,12 +11,6 @@
 package org.sikongsphere.ifc.environment;
 
 import org.junit.Test;
-import org.sikongsphere.ifc.common.constant.ConfigParameter;
-import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.common.environment.entity.Application;
-import org.yaml.snakeyaml.Yaml;
-
-import java.io.FileReader;
 
 public class ConfigProviderTest {
 

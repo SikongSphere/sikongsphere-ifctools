@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.io.converter;
+package org.sikongsphere.ifc.common.algorithm;
 
 import org.sikongsphere.ifc.common.constant.StringConstant;
 
@@ -21,7 +21,7 @@ import java.util.*;
  * @date:2023/2/5 14:43
  *
  */
-public class Guid {
+public class GlobalUniqueID {
 
     /**
      * 字符加密 原理为利用reduce进行累加

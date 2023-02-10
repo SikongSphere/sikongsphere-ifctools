@@ -11,9 +11,10 @@
 package org.sikongsphere.ifc.parser;
 
 import org.junit.Test;
-import org.sikongsphere.ifc.io.IfcFileReader;
+import org.sikongsphere.ifc.io.handler.ifc.IfcFileReader;
 import org.sikongsphere.ifc.io.converter.IfcToJson;
 import org.sikongsphere.ifc.io.constant.IfcJsonSerializerMapper;
+import org.sikongsphere.ifc.io.handler.json.JsonFileWriter;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 
 import java.io.IOException;
@@ -26,14 +27,13 @@ import java.util.LinkedHashMap;
 public class IfcToJsonTest {
 
     private final String IFC_FILE = "src/test/resources/blank.ifc";
+    private final String IFC_TO_JSON_FILE = "src/test/resources/blank_sikongsphere.json";
 
     @Test
     public void blankIfcTest() throws IOException {
         IfcFileModel ifcFileModel = IfcFileReader.readFile(IFC_FILE);
         IfcToJson ifcToJson = new IfcToJson(ifcFileModel);
         LinkedHashMap<String, Object> map = ifcToJson.transform();
-
-        String s = IfcJsonSerializerMapper.map.writeValueAsString(map);
-        System.out.println(s);
+        JsonFileWriter.writeFile(map, IFC_TO_JSON_FILE);
     }
 }

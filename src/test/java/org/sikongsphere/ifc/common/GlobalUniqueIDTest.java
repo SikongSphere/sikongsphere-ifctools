@@ -8,23 +8,23 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.parser;
+package org.sikongsphere.ifc.common;
 
 import org.junit.Test;
-import org.sikongsphere.ifc.io.converter.Guid;
+import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 
 /**
  * @author:stan
  * @date:2023/2/5 16:18
  */
-public class GuidTest {
+public class GlobalUniqueIDTest {
 
     public final String globalId = "2cYUBSBOPCzu_HAZrdO7uv";
     public final String hexString = "a689e2dc-2d86-4cf7-8f91-2a3d67607e39";
 
     @Test
     public void guidTest() {
-        String split = Guid.split(Guid.expand(globalId));
+        String split = GlobalUniqueID.split(GlobalUniqueID.expand(globalId));
         assert split.equals(hexString);
     }
 }

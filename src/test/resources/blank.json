@@ -26,29 +26,29 @@
         "units": [
           {
             "type": "IfcSIUnit",
-            "unitType": "LENGTHUNIT",
-            "name": "METRE",
-            "dimensions": {
-              "type": "IfcDimensionalExponents",
-              "LengthExponent": 1
-            }
-          },
-          {
-            "type": "IfcSIUnit",
-            "unitType": "PLANEANGLEUNIT",
-            "name": "RADIAN",
             "dimensions": {
               "type": "IfcDimensionalExponents"
-            }
+            },
+            "unitType": "PLANEANGLEUNIT",
+            "name": "RADIAN"
           },
           {
             "type": "IfcSIUnit",
-            "unitType": "TIMEUNIT",
-            "name": "SECOND",
             "dimensions": {
               "type": "IfcDimensionalExponents",
               "TimeExponent": 1
-            }
+            },
+            "unitType": "TIMEUNIT",
+            "name": "SECOND"
+          },
+          {
+            "type": "IfcSIUnit",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            },
+            "unitType": "LENGTHUNIT",
+            "name": "METRE"
           }
         ]
       },
