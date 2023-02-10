@@ -10,6 +10,8 @@
 */
 package org.sikongsphere.ifc.io.constant;
 
+import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIUnitName;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -20,14 +22,15 @@ import java.util.List;
  */
 public class UnitConstant {
 
-    private static HashMap<String, List> setDimensionalExponents() {
-        HashMap<String, List> DIMENSIONALEXPONENTS = new HashMap<>();
-        DIMENSIONALEXPONENTS.put("METRE", Arrays.asList(1, 0, 0, 0, 0, 0, 0));
-        DIMENSIONALEXPONENTS.put("RADIAN", Arrays.asList(0, 0, 0, 0, 0, 0, 0));
-        DIMENSIONALEXPONENTS.put("SECOND", Arrays.asList(0, 0, 1, 0, 0, 0, 0));
+    private static HashMap<String, List<Integer>> setDimensionalExponents() {
+        HashMap<String, List<Integer>> dimensionalExponents = new HashMap<>();
+        dimensionalExponents.put(IfcSIUnitName.METRE.name(), Arrays.asList(1, 0, 0, 0, 0, 0, 0));
+        dimensionalExponents.put(IfcSIUnitName.RADIAN.name(), Arrays.asList(0, 0, 0, 0, 0, 0, 0));
+        dimensionalExponents.put(IfcSIUnitName.SECOND.name(), Arrays.asList(0, 0, 1, 0, 0, 0, 0));
 
-        return DIMENSIONALEXPONENTS;
+        return dimensionalExponents;
     }
 
-    public static final HashMap<String, List> DIMENSIONALEXPONENTS = setDimensionalExponents();
+    public static final HashMap<String, List<Integer>> DIMENSIONALEXPONENTS =
+        setDimensionalExponents();
 }
