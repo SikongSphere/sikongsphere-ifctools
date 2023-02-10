@@ -36,6 +36,8 @@ public class MetaConstant {
     public static String BLANK = "";
     public static String DIM = "dimensions";
     public static String REF = "ref";
+    public static String IS_DECOMPOSED_BY = "isDecomposedBy";
+    public static String DECOMPOSES = "decomposes";
 
     // exponents
     public static String LENGTH_EXPONENT = "LengthExpoent";

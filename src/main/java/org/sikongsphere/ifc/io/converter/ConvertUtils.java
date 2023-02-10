@@ -203,7 +203,11 @@ public class ConvertUtils {
                     && !field.isAnnotationPresent(IfcInverseParameter.class)
                     && field.getModifiers() == Modifier.PRIVATE) {
                     list.add(field);
-                }
+                } else if (field.getName().equalsIgnoreCase(MetaConstant.IS_DECOMPOSED_BY) | field
+                    .getName()
+                    .equalsIgnoreCase(MetaConstant.DECOMPOSES)) {
+                        list.add(field);
+                    }
             }
             fieldList.addAll(0, list);
             clazz = clazz.getSuperclass();

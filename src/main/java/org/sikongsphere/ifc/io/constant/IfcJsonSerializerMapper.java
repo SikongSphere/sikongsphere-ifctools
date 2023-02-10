@@ -22,7 +22,7 @@ public class IfcJsonSerializerMapper {
 
     private static ObjectMapper objectMapper() {
         return new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
-            .setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            .setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
     }
 
     public static final ObjectMapper map = objectMapper();

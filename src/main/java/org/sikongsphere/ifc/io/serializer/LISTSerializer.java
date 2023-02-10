@@ -34,6 +34,7 @@ public class LISTSerializer extends JsonSerializer<LIST<IfcDataType>> {
         SerializerProvider serializerProvider
     ) throws IOException {
         List<IfcDataType> dataTypeList = ifcDataTypeLIST.getObjects();
+
         double[] doubles = new double[dataTypeList.size()];
 
         for (int i = 0; i < dataTypeList.size(); i++) {
