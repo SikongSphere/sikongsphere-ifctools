@@ -10,8 +10,6 @@
 */
 package org.sikongsphere.ifc.io.constant;
 
-import com.sun.org.apache.bcel.internal.generic.PUSH;
-
 /**
  * 用于存储描述信息的数据
  *
@@ -29,7 +27,6 @@ public class MetaConstant {
     // desc
     public static String IFC_TOOLS_NAME = "IfcJSON";
     public static String ORG_NAME = "SikongSphere";
-    public static String TOOLS_VERSION = "IfcTools-0.1.0-beta";
 
     // token
     public static String ID = "id";

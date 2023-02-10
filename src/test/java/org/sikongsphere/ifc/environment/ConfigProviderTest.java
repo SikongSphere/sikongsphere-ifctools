@@ -11,6 +11,9 @@
 package org.sikongsphere.ifc.environment;
 
 import org.junit.Test;
+import org.sikongsphere.ifc.common.constant.ConfigParameter;
+import org.sikongsphere.ifc.common.environment.ConfigProvider;
+import org.sikongsphere.ifc.common.environment.entity.Application;
 
 public class ConfigProviderTest {
 
@@ -24,5 +27,10 @@ public class ConfigProviderTest {
     public void applicationTest() {
         Application application = ConfigProvider.getApplication();
         assert application.getFullName().equals("sikongsphere-ifctools");
+    }
+
+    @Test
+    public void versionTest() {
+        assert ConfigProvider.getVersion().equals("0.1.0-beta");
     }
 }

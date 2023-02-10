@@ -48,4 +48,8 @@ public class ConfigProvider {
         return new Yaml().loadAs(ConfigProvider.class.getResourceAsStream(s), Application.class);
     }
 
+    public static String getVersion() {
+        return getProperty(ConfigParameter.SIKONGSPHERE_VERSION);
+    }
+
 }
