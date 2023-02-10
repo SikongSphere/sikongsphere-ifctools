@@ -10,13 +10,10 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.IfcDataType;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 import java.util.*;
 
