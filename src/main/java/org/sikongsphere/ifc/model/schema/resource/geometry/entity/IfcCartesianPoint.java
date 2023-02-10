@@ -10,11 +10,14 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.geometry.entity;
 
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.io.serializer.LISTSerializer;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
@@ -31,7 +34,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
-    private LIST<IfcLengthMeasure> coordinates;
+
+    private LIST<IfcLengthMeasure> coordinates = new LIST<>();
+
     @IfcDeriveParameter
     private IfcDimensionCount dim;
 
@@ -46,7 +51,7 @@ public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
     }
 
     public IfcCartesianPoint(DOUBLE x, DOUBLE y, DOUBLE z) {
-        coordinates = new LIST<>();
+
         coordinates.add(new IfcLengthMeasure(x));
         coordinates.add(new IfcLengthMeasure(y));
         coordinates.add(new IfcLengthMeasure(z));

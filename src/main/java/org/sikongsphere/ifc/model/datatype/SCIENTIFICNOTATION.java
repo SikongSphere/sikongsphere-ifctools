@@ -10,8 +10,10 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.serializer.SCIENTIFICNOTATIONSerializer;
 
 import java.math.BigDecimal;
 
@@ -19,6 +21,7 @@ import java.math.BigDecimal;
  * @author Wang Bohong
  * @date 2022/10/25 12:08
  */
+@JsonSerialize(using = SCIENTIFICNOTATIONSerializer.class)
 public class SCIENTIFICNOTATION extends REAL {
     private BigDecimal mantissa;
     private Integer index;

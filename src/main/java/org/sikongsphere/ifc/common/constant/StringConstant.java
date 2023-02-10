@@ -64,4 +64,7 @@ public class StringConstant {
     public static final String DIFFER = "-"; // May be another nickname.
 
     public static final String ZERO_DOUBLE = "0.";
+
+    public static final String GUID_CHARS =
+        "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$";
 }

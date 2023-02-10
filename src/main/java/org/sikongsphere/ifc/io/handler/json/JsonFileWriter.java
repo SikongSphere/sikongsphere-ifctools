@@ -8,31 +8,27 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.io;
+package org.sikongsphere.ifc.io.handler.json;
 
-import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.io.constant.IfcJsonSerializerMapper;
 
 import java.io.*;
+import java.util.LinkedHashMap;
 
 /**
- * a static method used to save IFC file,
- * which is as the same as the input file.
- *
  * @author stan
- * @date 2022/09/07 22:25
+ * @date 2023/02/10 12:46
  */
-public class IfcFileWriter {
+public class JsonFileWriter {
 
-    public static void writeFile(IfcFileModel model, String path) {
-        try (
+    public static void writeFile(LinkedHashMap map, String path) {
+        try {
             BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(new FileOutputStream(path))
-            )
-        ) {
-            writer.write(model.toString());
+            );
+            IfcJsonSerializerMapper.map.writeValue(writer, map);
         } catch (IOException e) {
-            // TODO Our Own Exception System
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
