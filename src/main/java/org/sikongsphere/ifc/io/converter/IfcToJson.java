@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.io.converter;
 
 import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
+import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.io.constant.MetaConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.SET;
@@ -183,7 +184,7 @@ public class IfcToJson {
         LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
         map.put(MetaConstant.TYPE, MetaConstant.IFC_TOOLS_NAME);
         map.put(MetaConstant.ORG, MetaConstant.ORG_NAME);
-        map.put(MetaConstant.VERSION, MetaConstant.TOOLS_VERSION);
+        map.put(MetaConstant.VERSION, ConfigProvider.getVersion());
         map.put(MetaConstant.DATA, this.jsonObjects);
 
         return map;
