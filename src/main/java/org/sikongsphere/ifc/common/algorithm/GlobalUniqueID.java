@@ -50,7 +50,7 @@ public class GlobalUniqueID {
      * @return
      */
     public static String expand(String globalId) {
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         Integer value = b64(globalId.substring(0, 2));
         list.add(value);
 
@@ -68,7 +68,7 @@ public class GlobalUniqueID {
             hexStringList.add(hexString);
         });
 
-        return String.join("", hexStringList);
+        return String.join(StringConstant.NOTHING, hexStringList);
 
     }
 

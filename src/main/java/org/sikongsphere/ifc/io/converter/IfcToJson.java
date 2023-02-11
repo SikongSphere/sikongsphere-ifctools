@@ -11,10 +11,11 @@
 package org.sikongsphere.ifc.io.converter;
 
 import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
-import org.sikongsphere.ifc.io.constant.MetaConstant;
+import org.sikongsphere.ifc.io.constant.IfcJSONStringConstant;
+import org.sikongsphere.ifc.io.enumeration.DataFormatEnum;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
-import org.sikongsphere.ifc.model.IfcInterface;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.datatype.STRING;
@@ -26,6 +27,7 @@ import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcGeome
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
+import java.sql.Timestamp;
 import java.util.*;
 
 import static org.sikongsphere.ifc.io.converter.ConvertUtils.*;
@@ -47,8 +49,9 @@ public class IfcToJson {
 
     private void getAllEntityContainsglobalId() {
         ConvertUtils.getAllChildNodesFrom(this.ifcFileModel, IfcRoot.class).forEach(x -> {
-            if (isBelongTo(x, IfcRelationship.class)) this.relationShips.add(x);
-            else {
+            if (isBelongTo(x, IfcRelationship.class)) {
+                this.relationShips.add(x);
+            } else {
                 IfcRoot entity = (IfcRoot) x;
                 this.rootObjects.put(
                     x.getStepNumber(),
@@ -89,7 +92,7 @@ public class IfcToJson {
             LinkedHashMap<Object, Object> entityAttributes = ConvertUtils.jsonifyEntity(entity);
 
             entityAttributes.put(
-                MetaConstant.GLOBAL_ID,
+                StringConstant.GLOBAL_ID,
                 this.rootObjects.get(entity.getStepNumber())
             );
             this.jsonObjects.add(this.createFullObject(entityAttributes));
@@ -106,7 +109,7 @@ public class IfcToJson {
     private Object getAttributeValue(Object value) {
         Object jsonValue = null;
 
-        if (value == null | value == MetaConstant.BLANK) {
+        if (value == null | value == StringConstant.NOTHING) {
             jsonValue = null;
         } else if (value instanceof IfcAbstractClass) {
             IfcAbstractClass entity = (IfcAbstractClass) value;
@@ -115,20 +118,20 @@ public class IfcToJson {
             // ToDo remove empty properties
 
             if (isBelongTo(entity, IfcSIUnit.class)) {
-                entityAttributes.put(MetaConstant.DIM, getDimensionsForSiUnit(entity));
+                entityAttributes.put(IfcJSONStringConstant.DIM, getDimensionsForSiUnit(entity));
             }
 
             if (this.rootObjects.containsKey(entity.getStepNumber())) {
                 entityAttributes.put(
-                    MetaConstant.GLOBAL_ID,
+                    StringConstant.GLOBAL_ID,
                     this.rootObjects.get(entity.getStepNumber())
                 );
                 return ConvertUtils.createReferencedObject(entityAttributes);
             } else {
-                if (entityAttributes.containsKey(MetaConstant.GLOBAL_ID)) {
+                if (entityAttributes.containsKey(StringConstant.GLOBAL_ID)) {
                     IfcRoot ifcRoot = (IfcRoot) entity;
                     entityAttributes.put(
-                        MetaConstant.GLOBAL_ID,
+                        StringConstant.GLOBAL_ID,
                         GlobalUniqueID.split(
                             GlobalUniqueID.expand(ifcRoot.getGlobalId().getValue())
                         )
@@ -162,12 +165,12 @@ public class IfcToJson {
         LinkedHashMap<Object, Object> fullObject = new LinkedHashMap<>();
         for (Object attr : entityAttributes.keySet()) {
 
-            if (attr.equals(MetaConstant.ID)) {
+            if (attr.equals(StringConstant.ID)) {
                 continue;
             }
 
-            if (attr.equals(MetaConstant.WRAPPED_VALUE)) {
-                attr = MetaConstant.VALUE;
+            if (attr.equals(IfcJSONStringConstant.WRAPPED_VALUE)) {
+                attr = StringConstant.VALUE;
             }
 
             Object jsonValue = this.getAttributeValue(entityAttributes.get(attr));
@@ -189,17 +192,21 @@ public class IfcToJson {
         STRING value = (STRING) o.getObjects().get(0);
 
         LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
-        map.put(MetaConstant.TYPE, MetaConstant.IFC_TOOLS_NAME);
-        map.put(MetaConstant.ORG, MetaConstant.ORG_NAME);
-        map.put(MetaConstant.SCHEMA_IDENTIFIER, value.getValue());
-        map.put(MetaConstant.VERSION, ConfigProvider.getVersion());
+        map.put(StringConstant.TYPE, DataFormatEnum.IFC_JSON);
+        map.put(StringConstant.ORGANIZATION, ConfigProvider.getOrganization());
+        map.put(IfcJSONStringConstant.SCHEMA_IDENTIFIER, value.getValue());
+        map.put(StringConstant.VERSION, ConfigProvider.getVersion());
         map.put(
-            MetaConstant.ORIGINATING_SYSTEM,
-            MetaConstant.PROCESSOR_SYSTEM + ConfigProvider.getVersion()
+            IfcJSONStringConstant.ORIGINATING_SYSTEM,
+            DataFormatEnum.IFC_TO_JSON_PROSSESOR_SYSTEM + StringConstant.WHITE_SPACE
+                + ConfigProvider.getVersion()
         );
-        map.put(MetaConstant.PREPROCESSOR_VERSION, MetaConstant.PROCESSOR_NAME);
-        map.put(MetaConstant.TIME_STAMP, ConfigProvider.getUTCTime());
-        map.put(MetaConstant.DATA, this.jsonObjects);
+        map.put(IfcJSONStringConstant.PREPROCESSOR_VERSION, ConfigProvider.getArtifactId());
+        map.put(
+            Timestamp.class.getSimpleName().toUpperCase(Locale.ROOT),
+            ConfigProvider.getUTCTime()
+        );
+        map.put(StringConstant.DATA, this.jsonObjects);
 
         return map;
     }

@@ -12,7 +12,8 @@ package org.sikongsphere.ifc.io.converter;
 
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
-import org.sikongsphere.ifc.io.constant.MetaConstant;
+import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.constant.IfcJSONStringConstant;
 import org.sikongsphere.ifc.io.constant.UnitConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
@@ -122,7 +123,7 @@ public class ConvertUtils {
      */
     public static LinkedHashMap<Object, Object> jsonifyEntity(IfcAbstractClass entity) {
         LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
-        map.put(MetaConstant.TYPE, entity.getClass().getSimpleName());
+        map.put(StringConstant.TYPE, entity.getClass().getSimpleName());
 
         Field[] fields = getFields(entity.getClass());
         for (Field field : fields) {
@@ -140,31 +141,34 @@ public class ConvertUtils {
 
     public static LinkedHashMap<String, Object> getDimensionsForSiUnit(IfcAbstractClass entity) {
         LinkedHashMap<String, Object> dimensions = new LinkedHashMap<>();
-        dimensions.put(MetaConstant.TYPE, IfcDimensionalExponents.class.getSimpleName());
+        dimensions.put(StringConstant.TYPE, IfcDimensionalExponents.class.getSimpleName());
         IfcSIUnit unitEntity = (IfcSIUnit) entity;
 
         if (UnitConstant.DIMENSIONALEXPONENTS.containsKey(unitEntity.getName().name())) {
             List dimExps = UnitConstant.DIMENSIONALEXPONENTS.get(unitEntity.getName().name());
             if (!(dimExps.get(0).equals(0))) {
-                dimensions.put(MetaConstant.LENGTH_EXPONENT, dimExps.get(0));
+                dimensions.put(IfcJSONStringConstant.LENGTH_EXPONENT, dimExps.get(0));
             }
             if (!(dimExps.get(1).equals(0))) {
-                dimensions.put(MetaConstant.MASS_EXPONENT, dimExps.get(1));
+                dimensions.put(IfcJSONStringConstant.MASS_EXPONENT, dimExps.get(1));
             }
             if (!(dimExps.get(2).equals(0))) {
-                dimensions.put(MetaConstant.TIME_EXPONENT, dimExps.get(2));
+                dimensions.put(IfcJSONStringConstant.TIME_EXPONENT, dimExps.get(2));
             }
             if (!(dimExps.get(3).equals(0))) {
-                dimensions.put(MetaConstant.ELECTRIC_CURRENT_EXPONENT, dimExps.get(3));
+                dimensions.put(IfcJSONStringConstant.ELECTRIC_CURRENT_EXPONENT, dimExps.get(3));
             }
             if (!(dimExps.get(4).equals(0))) {
-                dimensions.put(MetaConstant.THERMODYNAMIC_TEMPERATURE_EXPONENT, dimExps.get(4));
+                dimensions.put(
+                    IfcJSONStringConstant.THERMODYNAMIC_TEMPERATURE_EXPONENT,
+                    dimExps.get(4)
+                );
             }
             if (!(dimExps.get(5).equals(0))) {
-                dimensions.put(MetaConstant.AMOUNT_OF_SUBSTANCE_EXPONENT, dimExps.get(5));
+                dimensions.put(IfcJSONStringConstant.AMOUNT_OF_SUBSTANCE_EXPONENT, dimExps.get(5));
             }
             if (!(dimExps.get(6).equals(0))) {
-                dimensions.put(MetaConstant.LUMINOUS_INTENSITY_EXPONENT, dimExps.get(6));
+                dimensions.put(IfcJSONStringConstant.LUMINOUS_INTENSITY_EXPONENT, dimExps.get(6));
             }
         }
 
@@ -181,8 +185,8 @@ public class ConvertUtils {
         LinkedHashMap<Object, Object> entityAttributes
     ) {
         LinkedHashMap<Object, Object> ref = new LinkedHashMap<>();
-        ref.put(MetaConstant.TYPE, entityAttributes.get(MetaConstant.TYPE));
-        ref.put(MetaConstant.REF, entityAttributes.get(MetaConstant.GLOBAL_ID));
+        ref.put(StringConstant.TYPE, entityAttributes.get(StringConstant.TYPE));
+        ref.put(IfcJSONStringConstant.REF, entityAttributes.get(StringConstant.GLOBAL_ID));
 
         return ref;
     }
@@ -203,9 +207,9 @@ public class ConvertUtils {
                     && !field.isAnnotationPresent(IfcInverseParameter.class)
                     && field.getModifiers() == Modifier.PRIVATE) {
                     list.add(field);
-                } else if (field.getName().equalsIgnoreCase(MetaConstant.IS_DECOMPOSED_BY) | field
+                } else if (field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY) | field
                     .getName()
-                    .equalsIgnoreCase(MetaConstant.DECOMPOSES)) {
+                    .equalsIgnoreCase(StringConstant.DECOMPOSES)) {
                         list.add(field);
                     }
             }
