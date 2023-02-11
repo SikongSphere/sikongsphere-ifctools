@@ -11,14 +11,13 @@
 package org.sikongsphere.ifc.common.environment;
 
 import org.sikongsphere.ifc.common.constant.ConfigParameter;
+import org.sikongsphere.ifc.common.constant.DateConstant;
 import org.sikongsphere.ifc.common.environment.entity.Application;
 import org.sikongsphere.ifc.common.exception.SikongSphereConfigException;
-import org.sikongsphere.ifc.io.constant.MetaConstant;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Properties;
 import java.util.TimeZone;
@@ -57,9 +56,17 @@ public class ConfigProvider {
         return getProperty(ConfigParameter.SIKONGSPHERE_VERSION);
     }
 
+    public static String getOrganization() {
+        return getProperty(ConfigParameter.SIKONGSPHERE_ORGANIZATION);
+    }
+
+    public static String getArtifactId() {
+        return getProperty(ConfigParameter.SIKONGSPHERE_ARTIFACTID);
+    }
+
     public static String getUTCTime() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(MetaConstant.TIME_FORMAT);
-        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DateConstant.TIME_FORMAT);
+        dateFormat.setTimeZone(TimeZone.getTimeZone(DateConstant.UTC));
 
         return dateFormat.format(new Date());
     }

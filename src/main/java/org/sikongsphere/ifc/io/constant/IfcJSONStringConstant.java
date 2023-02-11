@@ -16,34 +16,17 @@ package org.sikongsphere.ifc.io.constant;
  * @author:stan
  * @date:2023/2/8 22:32
  */
-public class MetaConstant {
+public class IfcJSONStringConstant {
 
     // tag
-    public static String TYPE = "type";
-    public static String ORG = "organization";
-    public static String VERSION = "version";
-    public static String DATA = "data";
     public static String SCHEMA_IDENTIFIER = "schemaIdentifier";
     public static String ORIGINATING_SYSTEM = "originatingSystem";
     public static String PREPROCESSOR_VERSION = "preprocessorVersion";
-    public static String TIME_STAMP = "timeStamp";
-
-    // desc
-    public static String IFC_TOOLS_NAME = "IfcJSON";
-    public static String ORG_NAME = "SikongSphere";
-    public static String PROCESSOR_SYSTEM = "IFC2JSON_Java Version ";
-    public static String PROCESSOR_NAME = "SikongSphere-IfcTools";
 
     // token
-    public static String ID = "id";
     public static String WRAPPED_VALUE = "wrappedValue";
-    public static String VALUE = "value";
-    public static String GLOBAL_ID = "globalId";
-    public static String BLANK = "";
     public static String DIM = "dimensions";
     public static String REF = "ref";
-    public static String IS_DECOMPOSED_BY = "isDecomposedBy";
-    public static String DECOMPOSES = "decomposes";
 
     // exponents
     public static String LENGTH_EXPONENT = "LengthExpoent";
@@ -53,7 +36,4 @@ public class MetaConstant {
     public static String THERMODYNAMIC_TEMPERATURE_EXPONENT = "ThermodynamicTemperatureExponent";
     public static String AMOUNT_OF_SUBSTANCE_EXPONENT = "AmountOfSubstanceExponent";
     public static String LUMINOUS_INTENSITY_EXPONENT = "LuminousIntensityExponent";
-
-    // format
-    public static String TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
 }

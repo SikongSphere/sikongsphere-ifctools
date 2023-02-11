@@ -26,6 +26,8 @@ public class ConfigParameter {
         "sikongsphere.application.config.path";
     public final static String IFC_MODEL_PATH_KEY = "sikongsphere.ifc.model.path";
     public final static String SIKONGSPHERE_VERSION = "sikongsphere.version";
+    public final static String SIKONGSPHERE_ORGANIZATION = "sikongsphere.organization";
+    public final static String SIKONGSPHERE_ARTIFACTID = "sikongsphere.artifactId";
 
     /**
      * Value

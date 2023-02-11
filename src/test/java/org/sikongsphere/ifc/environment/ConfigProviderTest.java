@@ -33,4 +33,14 @@ public class ConfigProviderTest {
     public void versionTest() {
         assert ConfigProvider.getVersion().equals("0.1.0-beta");
     }
+
+    @Test
+    public void organizationTest() {
+        assert ConfigProvider.getOrganization().equals("SikongSphere");
+    }
+
+    @Test
+    public void artifactIdTest() {
+        assert ConfigProvider.getArtifactId().equals("sikongsphere-ifctools");
+    }
 }
