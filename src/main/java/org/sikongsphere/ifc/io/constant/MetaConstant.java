@@ -23,10 +23,16 @@ public class MetaConstant {
     public static String ORG = "organization";
     public static String VERSION = "version";
     public static String DATA = "data";
+    public static String SCHEMA_IDENTIFIER = "schemaIdentifier";
+    public static String ORIGINATING_SYSTEM = "originatingSystem";
+    public static String PREPROCESSOR_VERSION = "preprocessorVersion";
+    public static String TIME_STAMP = "timeStamp";
 
     // desc
     public static String IFC_TOOLS_NAME = "IfcJSON";
     public static String ORG_NAME = "SikongSphere";
+    public static String PROCESSOR_SYSTEM = "IFC2JSON_Java Version ";
+    public static String PROCESSOR_NAME = "SikongSphere-IfcTools";
 
     // token
     public static String ID = "id";
@@ -47,4 +53,7 @@ public class MetaConstant {
     public static String THERMODYNAMIC_TEMPERATURE_EXPONENT = "ThermodynamicTemperatureExponent";
     public static String AMOUNT_OF_SUBSTANCE_EXPONENT = "AmountOfSubstanceExponent";
     public static String LUMINOUS_INTENSITY_EXPONENT = "LuminousIntensityExponent";
+
+    // format
+    public static String TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
 }

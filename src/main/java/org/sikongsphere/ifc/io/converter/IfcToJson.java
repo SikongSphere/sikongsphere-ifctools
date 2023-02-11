@@ -14,7 +14,10 @@ import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.io.constant.MetaConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.IfcInterface;
+import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelationship;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRoot;
@@ -175,16 +178,27 @@ public class IfcToJson {
         return fullObject;
     }
 
-    public LinkedHashMap<String, Object> transform() {
+    public LinkedHashMap<String, Object> transform(IfcFileModel ifcFileModel) {
         getAllEntityContainsglobalId();
         getSeparateEntity();
         getSeparateRelationship();
         getRootObjects();
 
+        LIST list = (LIST) ifcFileModel.getHeader().getFileSchema().getParams().get(0);
+        LIST o = (LIST) list.getObjects().get(0);
+        STRING value = (STRING) o.getObjects().get(0);
+
         LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
         map.put(MetaConstant.TYPE, MetaConstant.IFC_TOOLS_NAME);
         map.put(MetaConstant.ORG, MetaConstant.ORG_NAME);
+        map.put(MetaConstant.SCHEMA_IDENTIFIER, value.getValue());
         map.put(MetaConstant.VERSION, ConfigProvider.getVersion());
+        map.put(
+            MetaConstant.ORIGINATING_SYSTEM,
+            MetaConstant.PROCESSOR_SYSTEM + ConfigProvider.getVersion()
+        );
+        map.put(MetaConstant.PREPROCESSOR_VERSION, MetaConstant.PROCESSOR_NAME);
+        map.put(MetaConstant.TIME_STAMP, ConfigProvider.getUTCTime());
         map.put(MetaConstant.DATA, this.jsonObjects);
 
         return map;

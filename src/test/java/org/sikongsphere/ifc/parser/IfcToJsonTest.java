@@ -33,7 +33,7 @@ public class IfcToJsonTest {
     public void blankIfcTest() throws IOException {
         IfcFileModel ifcFileModel = IfcFileReader.readFile(IFC_FILE);
         IfcToJson ifcToJson = new IfcToJson(ifcFileModel);
-        LinkedHashMap<String, Object> map = ifcToJson.transform();
+        LinkedHashMap<String, Object> map = ifcToJson.transform(ifcFileModel);
         JsonFileWriter.writeFile(map, IFC_TO_JSON_FILE);
     }
 }
