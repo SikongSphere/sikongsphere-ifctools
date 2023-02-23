@@ -8,15 +8,15 @@
    - [1.1 目标](#objectives)
    - [1.2 发展战略](#strategy)
 -  [二、ifcJSON 文档规范](#spec)
-  - <a href="#key">2.1 必需的对象、键或实体</a>
-  - <a href="#value">2.2 空值、'userdefined' 值和'notdefined' 值</a>
-  - <a href="#header">2.3 表头</a>
-  - <a href="#identifier">2.4 标识符</a>
-  - <a href="#tree">2.5 树结构</a>
-  - <a href="#name">2.6 camelCase、CamelCaps 或 snake_case名命名方式</a>
-  - <a href="#extension">2.7 PredefinedTypes和ObjectTypes and Types</a>
-  - <a href="#geom">2.8 几何</a>
-  - <a href="#attr">2.9 属性和属性集</a>
+   - <a href="#key">2.1 必需的对象、键或实体</a>
+   - <a href="#value">2.2 空值、'userdefined' 值和'notdefined' 值</a>
+   - <a href="#header">2.3 表头</a>
+   - <a href="#identifier">2.4 标识符</a>
+   - <a href="#tree">2.5 树结构</a>
+   - <a href="#name">2.6 camelCase、CamelCaps 或 snake_case名命名方式</a>
+   - <a href="#extension">2.7 PredefinedTypes和ObjectTypes and Types</a>
+   - <a href="#geom">2.8 几何</a>
+   - <a href="#attr">2.9 属性和属性集</a>
 
 - <a href="#schema">三、ifcJSON模式</a>
 
