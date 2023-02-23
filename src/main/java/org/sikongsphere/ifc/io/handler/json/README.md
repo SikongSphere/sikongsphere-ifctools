@@ -4,7 +4,7 @@
 
 ## 目录
 
--  [一、概述](#intro)
+-  <a href="#一概述">一、概述</a>
    - [1.1 目标](#objectives)
    - [1.2 发展战略](#strategy)
 -  [二、ifcJSON 文档规范](#spec)
