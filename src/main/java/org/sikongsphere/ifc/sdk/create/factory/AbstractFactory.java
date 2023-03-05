@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.factory;
+package org.sikongsphere.ifc.sdk.create.factory;
 
 import org.sikongsphere.ifc.common.environment.entity.*;
 import org.sikongsphere.ifc.model.datatype.LIST;

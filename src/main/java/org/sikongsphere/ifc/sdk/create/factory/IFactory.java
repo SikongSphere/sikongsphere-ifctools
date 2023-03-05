@@ -8,9 +8,9 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.factory;
+package org.sikongsphere.ifc.sdk.create.factory;
 
-import org.sikongsphere.ifc.sdk.order.IOrder;
+import org.sikongsphere.ifc.sdk.create.order.IOrder;
 
 /**
  * This is an interface for order

@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.factory;
+package org.sikongsphere.ifc.sdk.create.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcIdentifier;
@@ -17,8 +17,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWallStandardCase;
-import org.sikongsphere.ifc.sdk.order.IOrder;
-import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
+import org.sikongsphere.ifc.sdk.create.order.IOrder;
+import org.sikongsphere.ifc.sdk.create.order.IfcWallOrder;
 
 /**
  * This is an factory for IfcWall
