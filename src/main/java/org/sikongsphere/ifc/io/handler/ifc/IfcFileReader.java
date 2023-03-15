@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.io.handler.ifc;
 
+import org.sikongsphere.ifc.common.exception.SikongSphereException;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.parser.file.IfcFileParser;
 
@@ -23,9 +24,14 @@ import java.io.IOException;
  */
 public class IfcFileReader {
 
-    public static IfcFileModel readFile(String path) throws IOException {
+    public static IfcFileModel readFile(String path) {
         IfcFileParser ifcFileParser = new IfcFileParser();
-        IfcFileModel model = (IfcFileModel) ifcFileParser.parseFile(path);
+        IfcFileModel model;
+        try {
+            model = (IfcFileModel) ifcFileParser.parseFile(path);
+        } catch (IOException e) {
+            throw new SikongSphereException("File Not Found");
+        }
 
         return model;
     }

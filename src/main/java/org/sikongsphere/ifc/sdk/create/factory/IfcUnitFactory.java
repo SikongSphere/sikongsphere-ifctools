@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.factory;
+package org.sikongsphere.ifc.sdk.create.factory;
 
 import org.sikongsphere.ifc.common.exception.SikongSphereUnsupportedException;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIPrefi
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcSIUnitName;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcUnitEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
-import org.sikongsphere.ifc.sdk.order.IOrder;
+import org.sikongsphere.ifc.sdk.create.order.IOrder;
 
 /**
  * This is an factory for IfcUnit

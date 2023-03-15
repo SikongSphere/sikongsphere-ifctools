@@ -8,9 +8,9 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.worker;
+package org.sikongsphere.ifc.sdk.create.factory;
 
-import org.sikongsphere.ifc.model.Model;
+import org.sikongsphere.ifc.sdk.create.order.IOrder;
 
 /**
  * This is an interface for order
@@ -18,8 +18,6 @@ import org.sikongsphere.ifc.model.Model;
  * @Author: zaiyuan
  * @Date: 2022/11/09 11:47
  */
-public interface IWorker<T> {
-    void install(Model model, T product);
-
-    void install(Model model, T product, Object... params);
+public interface IFactory<T> {
+    T create(IOrder<T> order);
 }

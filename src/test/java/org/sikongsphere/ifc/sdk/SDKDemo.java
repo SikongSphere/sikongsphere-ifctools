@@ -13,8 +13,8 @@ package org.sikongsphere.ifc.sdk;
 import org.junit.Test;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPerson;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;
-import org.sikongsphere.ifc.sdk.factory.IfcWallFactory;
-import org.sikongsphere.ifc.sdk.order.IfcWallOrder;
+import org.sikongsphere.ifc.sdk.create.factory.IfcWallFactory;
+import org.sikongsphere.ifc.sdk.create.order.IfcWallOrder;
 
 import java.util.UUID;
 

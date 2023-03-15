@@ -8,7 +8,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.worker;
+package org.sikongsphere.ifc.sdk.create.worker;
 
 import org.sikongsphere.ifc.model.Model;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;

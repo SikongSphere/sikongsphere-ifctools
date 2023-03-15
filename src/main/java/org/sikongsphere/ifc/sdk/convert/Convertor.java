@@ -8,16 +8,16 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.sdk.factory;
-
-import org.sikongsphere.ifc.sdk.order.IOrder;
+package org.sikongsphere.ifc.sdk.convert;
 
 /**
- * This is an interface for order
+ * Convertor Interface
  *
- * @Author: zaiyuan
- * @Date: 2022/11/09 11:47
+ * @author zaiyuan
+ * @date 2023-03-15 20:44:00
  */
-public interface IFactory<T> {
-    T create(IOrder<T> order);
+public interface Convertor<T> {
+    T readFile(String path);
+
+    void writeFile(T model, String path);
 }
