@@ -21,7 +21,7 @@ import java.util.List;
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
-public abstract class IfcFileElement implements IfcInterface, Model {
+public abstract class IfcFileElement implements IfcInterface {
     protected List<IfcInterface> params = new ArrayList<>();
 
     public IfcFileElement() {}
