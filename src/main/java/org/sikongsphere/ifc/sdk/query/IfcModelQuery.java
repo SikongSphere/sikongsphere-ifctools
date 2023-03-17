@@ -31,7 +31,7 @@ public class IfcModelQuery extends AbstractQuery<IfcFileModel> {
             .getElements()
             .values()
             .stream()
-            .map(ifcAbstractClass -> match(ifcAbstractClass, clazz))
+            .map(i -> match(i, clazz))
             .filter(Objects::nonNull)
             .collect(Collectors.toList());
     }
