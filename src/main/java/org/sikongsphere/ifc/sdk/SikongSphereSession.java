@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.sdk;
 
 import org.sikongsphere.ifc.infra.IfcClassContainer;
+import org.sikongsphere.ifc.sdk.convert.AbstractConvertor;
 
 /**
  * SikongSphere Session Class
@@ -29,7 +30,11 @@ public class SikongSphereSession {
         private static final SikongSphereSession INSTANCE = new SikongSphereSession();
     }
 
-    public SikongSphereSession getOrCreate() {
+    public static SikongSphereSession getOrCreate() {
         return SingleTonHolder.INSTANCE;
+    }
+
+    public AbstractConvertor<?> convertor(Class<?> clazz) {
+        return AbstractConvertor.convert(clazz);
     }
 }

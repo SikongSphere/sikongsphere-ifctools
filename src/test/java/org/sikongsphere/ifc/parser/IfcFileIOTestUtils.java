@@ -15,6 +15,9 @@ import org.apache.commons.io.FileUtils;
 import org.sikongsphere.ifc.io.handler.ifc.IfcFileReader;
 import org.sikongsphere.ifc.io.handler.ifc.IfcFileWriter;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
+import org.sikongsphere.ifc.sdk.SikongSphereSession;
+import org.sikongsphere.ifc.sdk.convert.AbstractConvertor;
+import org.sikongsphere.ifc.sdk.convert.IfcModelConvertor;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,8 +29,13 @@ public class IfcFileIOTestUtils {
     public static final String BLANK_OUTPUT_PATH = "src/test/resources/output.ifc";
 
     public static void ioTest(String input, String output) throws IOException {
-        IfcFileModel model = IfcFileReader.readFile(input);
-        IfcFileWriter.writeFile(model, output);
+        SikongSphereSession sikongSphereSession = SikongSphereSession.getOrCreate();
+        IfcModelConvertor convertor = (IfcModelConvertor) sikongSphereSession.convertor(
+            IfcFileModel.class
+        );
+
+        IfcFileModel model = convertor.readFile(input);
+        convertor.writeFile(model, output);
 
         String ifcFileOne = CharStreams.fromFileName(input).toString().replaceAll("\\s*|\r", "");
 

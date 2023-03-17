@@ -26,7 +26,7 @@ public abstract class AbstractConvertor<T> implements Convertor<T> {
      * @param clazz Class
      * @return Convertor Instance
      */
-    public AbstractConvertor<?> convert(Class<T> clazz) {
+    public static AbstractConvertor<?> convert(Class<?> clazz) {
         if (clazz == IfcFileModel.class) {
             return new IfcModelConvertor();
         }
