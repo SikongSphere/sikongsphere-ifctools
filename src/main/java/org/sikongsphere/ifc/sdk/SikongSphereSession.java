@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.sdk;
 
 import org.sikongsphere.ifc.infra.IfcClassContainer;
 import org.sikongsphere.ifc.sdk.convert.AbstractConvertor;
+import org.sikongsphere.ifc.sdk.query.AbstractQuery;
 
 /**
  * SikongSphere Session Class
@@ -24,6 +25,7 @@ public class SikongSphereSession {
 
     private SikongSphereSession() {
         // TODO init environment
+        ifcClassContainer = IfcClassContainer.getInstance();
     }
 
     private static class SingleTonHolder {
@@ -36,5 +38,9 @@ public class SikongSphereSession {
 
     public AbstractConvertor<?> convertor(Class<?> clazz) {
         return AbstractConvertor.convert(clazz);
+    }
+
+    public AbstractQuery<?> query(Class<?> clazz) {
+        return AbstractQuery.query(clazz);
     }
 }
