@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class IfcModelQuery extends AbstractQuery<IfcFileModel> {
 
     @Override
-    public List<?> filterByClass(IfcFileModel model, Class<?> clazz) {
+    public List<IfcAbstractClass> filterByClass(IfcFileModel model, Class<?> clazz) {
         return model.getBody()
             .getElements()
             .values()
@@ -36,7 +36,7 @@ public class IfcModelQuery extends AbstractQuery<IfcFileModel> {
             .collect(Collectors.toList());
     }
 
-    public Object match(IfcAbstractClass obj, Class<?> clazz) {
+    public IfcAbstractClass match(IfcAbstractClass obj, Class<?> clazz) {
         if (obj.getClass() == clazz) {
             return obj;
         } else {
