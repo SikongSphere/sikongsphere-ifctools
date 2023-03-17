@@ -12,11 +12,8 @@ package org.sikongsphere.ifc.parser;
 
 import org.antlr.v4.runtime.CharStreams;
 import org.apache.commons.io.FileUtils;
-import org.sikongsphere.ifc.io.handler.ifc.IfcFileReader;
-import org.sikongsphere.ifc.io.handler.ifc.IfcFileWriter;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.sdk.SikongSphereSession;
-import org.sikongsphere.ifc.sdk.convert.AbstractConvertor;
 import org.sikongsphere.ifc.sdk.convert.IfcModelConvertor;
 
 import java.io.File;
