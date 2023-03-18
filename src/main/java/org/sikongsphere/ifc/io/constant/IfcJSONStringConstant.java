@@ -22,6 +22,8 @@ public class IfcJSONStringConstant {
     public static String SCHEMA_IDENTIFIER = "schemaIdentifier";
     public static String ORIGINATING_SYSTEM = "originatingSystem";
     public static String PREPROCESSOR_VERSION = "preprocessorVersion";
+    public static String VIEW_DEFINITION = "ViewDefinition [CoordinationView_V2.0]";
+    public static String DESC_VERSION = "2;1";
 
     // token
     public static String WRAPPED_VALUE = "wrappedValue";
