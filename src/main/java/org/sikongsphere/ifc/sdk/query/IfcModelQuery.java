@@ -13,7 +13,9 @@ package org.sikongsphere.ifc.sdk.query;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -27,20 +29,57 @@ public class IfcModelQuery extends AbstractQuery<IfcFileModel> {
 
     @Override
     public List<IfcAbstractClass> filterByClass(IfcFileModel model, Class<?> clazz) {
-        return model.getBody()
-            .getElements()
-            .values()
-            .stream()
-            .map(i -> match(i, clazz))
-            .filter(Objects::nonNull)
-            .collect(Collectors.toList());
+        List<IfcAbstractClass> result = new ArrayList<>();
+        for (IfcAbstractClass value : model.getBody().getElements().values()) {
+            if (value.getClass() == clazz) {
+                result.add(value);
+            }
+        }
+        return result;
     }
 
-    public IfcAbstractClass match(IfcAbstractClass obj, Class<?> clazz) {
-        if (obj.getClass() == clazz) {
-            return obj;
-        } else {
-            return null;
+    /**
+     * filter equal step number
+     *
+     * @param model   Ifc model
+     * @param stepNum step number
+     * @return IfcAbstractClass
+     */
+    public IfcAbstractClass filterEqualStepNum(IfcFileModel model, Integer stepNum) {
+        return model.getBody().getElements().get(stepNum);
+    }
+
+    /**
+     * filter less than step number
+     *
+     * @param model   ifc model
+     * @param stepNum step number
+     * @return IfcAbstractClass List
+     */
+    public List<IfcAbstractClass> filterLessThanStepNum(IfcFileModel model, Integer stepNum) {
+        List<IfcAbstractClass> result = new ArrayList<>();
+        for (IfcAbstractClass value : model.getBody().getElements().values()) {
+            if (value.getStepNumber() < stepNum) {
+                result.add(value);
+            }
         }
+        return result;
+    }
+
+    /**
+     * filter less than step number
+     *
+     * @param model   ifc model
+     * @param stepNum step number
+     * @return IfcAbstractClass List
+     */
+    public List<IfcAbstractClass> filterGreaterThanStepNum(IfcFileModel model, Integer stepNum) {
+        List<IfcAbstractClass> result = new ArrayList<>();
+        for (IfcAbstractClass value : model.getBody().getElements().values()) {
+            if (value.getStepNumber() > stepNum) {
+                result.add(value);
+            }
+        }
+        return result;
     }
 }
