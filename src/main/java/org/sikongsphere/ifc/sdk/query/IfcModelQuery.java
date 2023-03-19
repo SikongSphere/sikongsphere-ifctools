@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.sdk.query;
 
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
@@ -37,9 +37,12 @@ public class IfcModelQuery extends AbstractQuery<IfcFileModel> {
     @Override
     public List<?> filterByClassName(IfcFileModel model, String className) {
         if (!IfcClassContainer.getInstance().contains(className.toUpperCase(Locale.ROOT))) {
-            throw new SikongSphereException(String.format("%s is not supported", className.toUpperCase(Locale.ROOT)));
+            throw new SikongSphereException(
+                String.format("%s is not supported", className.toUpperCase(Locale.ROOT))
+            );
         } else {
-            Class<?> clazz = IfcClassContainer.getInstance().get(className.toUpperCase(Locale.ROOT));
+            Class<?> clazz = IfcClassContainer.getInstance()
+                .get(className.toUpperCase(Locale.ROOT));
             return filterByClass(model, clazz);
         }
     }
