@@ -10,7 +10,6 @@
 */
 package org.sikongsphere.ifc.sdk.create;
 
-import org.sikongsphere.ifc.sdk.create.factory.AbstractFactory;
 import org.sikongsphere.ifc.sdk.create.factory.IFactory;
 import org.sikongsphere.ifc.sdk.create.order.IOrder;
 import org.sikongsphere.ifc.sdk.create.worker.IWorker;

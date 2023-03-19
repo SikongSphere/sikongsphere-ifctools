@@ -11,7 +11,6 @@
 package org.sikongsphere.ifc.sdk.create;
 
 import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcBuilding;
-import org.sikongsphere.ifc.sdk.create.factory.AbstractFactory;
 import org.sikongsphere.ifc.sdk.create.factory.IFactory;
 import org.sikongsphere.ifc.sdk.create.factory.IfcBuildingFactory;
 import org.sikongsphere.ifc.sdk.create.order.IOrder;
