@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
-*/
+ */
 package org.sikongsphere.ifc.sdk.query;
 
 import java.util.List;
@@ -19,5 +19,7 @@ import java.util.List;
  * @date 2023-03-17 20:44:00
  */
 public interface Query<T> {
+    List<?> filterByClassName(T model, String className);
+
     List<?> filterByClass(T model, Class<?> clazz);
 }
