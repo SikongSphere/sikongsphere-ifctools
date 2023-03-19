@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.graph.processor;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
@@ -16,6 +16,7 @@ public class IfcStandardGraphManager implements IfcGraphManager {
     public IfcStandardGraphManager() {
 
     }
+
     @Override
     public IfcGraph Process(IfcGraph graph, IfcGraphProcessor processor) {
         return null;

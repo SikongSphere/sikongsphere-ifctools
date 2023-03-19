@@ -7,7 +7,7 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.graph.processor;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
@@ -15,8 +15,7 @@ import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
 
 public class IfcTrimGraphProcessor implements IfcGraphProcessor {
 
-    public IfcTrimGraphProcessor() {
-    }
+    public IfcTrimGraphProcessor() {}
 
     @Override
     public IfcGraph Process(IfcGraph graph) {

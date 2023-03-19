@@ -7,12 +7,13 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- */
+*/
 package org.sikongsphere.ifc.graph.io;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
 
 public interface IfcGraphReader {
     public IfcGraph ReadGraph(String path);
+
     public IfcGraph ReadLayer(String path, Enum LayerType);
 }
