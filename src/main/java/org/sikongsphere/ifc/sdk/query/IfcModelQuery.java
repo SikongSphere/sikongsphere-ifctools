@@ -10,14 +10,14 @@
 */
 package org.sikongsphere.ifc.sdk.query;
 
+import org.sikongsphere.ifc.common.exception.SikongSphereException;
+import org.sikongsphere.ifc.infra.IfcClassContainer;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import java.util.Locale;
 
 /**
  * Query Interface
@@ -26,6 +26,26 @@ import java.util.stream.Collectors;
  * @date 2023-03-15 20:44:00
  */
 public class IfcModelQuery extends AbstractQuery<IfcFileModel> {
+
+    /**
+     * filter ifc model with class name
+     *
+     * @param model     ifc model
+     * @param className class name
+     * @return List of Ifc Entity
+     */
+    @Override
+    public List<?> filterByClassName(IfcFileModel model, String className) {
+        if (!IfcClassContainer.getInstance().contains(className.toUpperCase(Locale.ROOT))) {
+            throw new SikongSphereException(
+                String.format("%s is not supported", className.toUpperCase(Locale.ROOT))
+            );
+        } else {
+            Class<?> clazz = IfcClassContainer.getInstance()
+                .get(className.toUpperCase(Locale.ROOT));
+            return filterByClass(model, clazz);
+        }
+    }
 
     @Override
     public List<IfcAbstractClass> filterByClass(IfcFileModel model, Class<?> clazz) {

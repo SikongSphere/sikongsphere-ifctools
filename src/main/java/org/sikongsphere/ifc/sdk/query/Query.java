@@ -19,5 +19,7 @@ import java.util.List;
  * @date 2023-03-17 20:44:00
  */
 public interface Query<T> {
+    List<?> filterByClassName(T model, String className);
+
     List<?> filterByClass(T model, Class<?> clazz);
 }

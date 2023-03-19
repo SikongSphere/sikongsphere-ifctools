@@ -29,9 +29,17 @@ public class QueryDemo {
     IfcFileModel model = convertor.readFile(BLANK_INPUT_PATH);
 
     @Test
-    public void queryList() {
+    public void queryByClass() {
         IfcModelQuery query = (IfcModelQuery) sikongSphereSession.query(IfcFileModel.class);
         List<?> objects = query.filterByClass(model, IfcSIUnit.class);
+
+        assert objects.size() == 3;
+    }
+
+    @Test
+    public void queryByClassName() {
+        IfcModelQuery query = (IfcModelQuery) sikongSphereSession.query(IfcFileModel.class);
+        List<?> objects = query.filterByClassName(model, "IfcSIUnit");
 
         assert objects.size() == 3;
     }
