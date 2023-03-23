@@ -24,6 +24,10 @@ public class REAL extends DOUBLE implements IfcValue {
 
     public REAL() {}
 
+    public REAL(double value) {
+        super(value);
+    }
+
     public REAL(BigDecimal value) {
         super(value);
     }

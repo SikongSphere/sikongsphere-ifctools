@@ -11,6 +11,9 @@
 package org.sikongsphere.ifc.sdk.create.factory;
 
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
+import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.schema.extension.product.enumeration.IfcElementCompositionEnum;
+import org.sikongsphere.ifc.model.schema.kernel.entity.IfcObjectDefinition;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcProject;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelAggregates;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRoot;
@@ -18,7 +21,15 @@ import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcBuilding;
 import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcBuildingStorey;
 import org.sikongsphere.ifc.model.schema.extension.product.entities.IfcSite;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPostalAddress;
+import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.entity.IfcLocalPlacement;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcAxis2Placement3D;
+import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcSIUnit;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcUnitAssignment;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcGeometricRepresentationContext;
+import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcRepresentationContext;
+import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 import org.sikongsphere.ifc.sdk.create.order.IOrder;
 
 /**
@@ -42,6 +53,76 @@ public class IfcProjectFactory extends AbstractFactory<IfcRoot> {
         IfcProject ifcProject = new IfcProject();
 
         return ifcProject;
+    }
+
+    public IfcProject createBlankProject() {
+        IfcOwnerHistory ownerHistory = getOwnerHistory(ConfigProvider.getApplication());
+
+        IfcAxis2Placement3D axis2Placement3D = new IfcAxis2Placement3D(
+            new IfcCartesianPoint(0, 0, 0)
+        );
+        IfcGeometricRepresentationContext geometricRepresentationContext =
+            new IfcGeometricRepresentationContext(null, "Model", 3, 1.0e-5, axis2Placement3D, null);
+
+        // Unit
+        IfcUnitFactory unitFactory = new IfcUnitFactory();
+        IfcSIUnit lengthUnit = unitFactory.createLengthUnit();
+        IfcSIUnit planeAngleUnit = unitFactory.createPlaneAngleUnit();
+        IfcSIUnit timeUnit = unitFactory.createTimeUnit();
+        IfcUnitAssignment assignment = new IfcUnitAssignment(lengthUnit, planeAngleUnit, timeUnit);
+
+        IfcLocalPlacement localPlacement = new IfcLocalPlacement(null, axis2Placement3D);
+
+        SET<IfcRepresentationContext> representationContextSET = new SET<>();
+        representationContextSET.add(geometricRepresentationContext);
+        IfcProject project = new IfcProject(
+            createUniqueId(),
+            ownerHistory,
+            "Default Project",
+            "Description of Default Project",
+            null,
+            null,
+            null,
+            representationContextSET,
+            assignment
+        );
+
+        // IfcBuildingElement
+        IfcBuilding ifcBuilding = new IfcBuilding(
+            createUniqueId(),
+            ownerHistory,
+            "Default Building",
+            "Description",
+            null,
+            localPlacement,
+            null,
+            null,
+            IfcElementCompositionEnum.ELEMENT,
+            null,
+            null,
+            null
+        );
+        IfcBuildingStorey ifcBuildingStorey = new IfcBuildingStorey(
+            createUniqueId(),
+            ownerHistory,
+            "Default Building Storey",
+            "Description",
+            null,
+            localPlacement,
+            null,
+            null,
+            IfcElementCompositionEnum.ELEMENT,
+            null
+        );
+        // IfcRelations
+        SET<IfcObjectDefinition> objectSET01 = new SET<>();
+        objectSET01.add(ifcBuilding);
+        new IfcRelAggregates(createUniqueId(), ownerHistory, null, null, project, objectSET01);
+
+        SET<IfcObjectDefinition> objectSET02 = new SET<>();
+        objectSET02.add(ifcBuildingStorey);
+        new IfcRelAggregates(createUniqueId(), ownerHistory, null, null, ifcBuilding, objectSET02);
+        return project;
     }
 
     public IfcProject createArchitectTemplateProject(String longName, String phase) {
