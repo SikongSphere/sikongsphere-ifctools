@@ -58,8 +58,7 @@ public class IfcFileParser extends AbstractFileParser {
 
     @Override
     public Model parseFile(String path) throws IOException {
-        String content = preProcessor(path);
-        IfcFileModel ifcFileModel = parse(content);
+        IfcFileModel ifcFileModel = parse(path);
         Map<Integer, IfcAbstractClass> internalElements = new TreeMap<>();
         validate(ifcFileModel);
         convert(ifcFileModel, internalElements);
@@ -68,17 +67,8 @@ public class IfcFileParser extends AbstractFileParser {
         return ifcFileModel;
     }
 
-    public String preProcessor(String path) throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get(path));
-        String slashTag = "[SLASH]";
-        List<String> strings = lines.stream()
-            .map(i -> i.replace("\\", slashTag))
-            .collect(Collectors.toList());
-        return String.join("", strings);
-    }
-
     public IfcFileModel parse(String content) throws IOException {
-        CharStream stream = CharStreams.fromString(content);
+        CharStream stream = CharStreams.fromFileName(content);
         IFCLexer ifcLexer = new IFCLexer(stream);
         IFCParser ifcParser = new IFCParser(new CommonTokenStream(ifcLexer));
         IFCParser.IfcmodelContext modelContext = ifcParser.ifcmodel();
