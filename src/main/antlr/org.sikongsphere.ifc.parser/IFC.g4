@@ -150,8 +150,14 @@ T_WELL         : '#' ;
 
 L_ID        : L_ID_PART                                                // Identifier
             ;
-L_S_STRING  : '\'' (('\'' '\'') | ('\\' '\'') | ~('\''))* '\''         // Single quoted string literal
-            ;
+//L_S_STRING  : '\'' (('\'' '\'') | ('\\' '\'') | ~('\''))* '\''         // Single quoted string literal
+//            ;
+
+// Resolve the problem of parsing backslashes in strings
+L_S_STRING : '\'' .*? '\''
+           | '"' .*? '"'
+           ;
+
 L_D_STRING  : '"' (L_STR_ESC_D | .)*? '"'                              // Double quoted string literal
             ;
 L_INT       : L_DIGIT+ ;                                               // Integer
