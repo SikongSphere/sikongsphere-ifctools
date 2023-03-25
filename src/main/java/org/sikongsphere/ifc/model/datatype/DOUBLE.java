@@ -28,6 +28,10 @@ public class DOUBLE extends IfcDataType {
 
     public DOUBLE() {}
 
+    public DOUBLE(double value) {
+        this.value = new BigDecimal(value);
+    }
+
     public DOUBLE(DOUBLE value) {
         this.value = value.value;
     }

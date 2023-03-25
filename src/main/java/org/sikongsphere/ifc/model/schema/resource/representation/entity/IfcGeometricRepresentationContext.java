@@ -54,6 +54,21 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
 
     public IfcGeometricRepresentationContext() {}
 
+    public IfcGeometricRepresentationContext(
+        String contextIdentifier,
+        String contextType,
+        int coordinateSpaceDimension,
+        double precision,
+        IfcAxis2Placement worldCoordinateSystem,
+        IfcDirection trueNorth
+    ) {
+        super(new IfcLabel(contextIdentifier), new IfcLabel(contextType));
+        this.coordinateSpaceDimension = new IfcDimensionCount(coordinateSpaceDimension);
+        this.precision = new REAL(precision);
+        this.worldCoordinateSystem = worldCoordinateSystem;
+        this.trueNorth = trueNorth;
+    }
+
     @IfcParserConstructor
     public IfcGeometricRepresentationContext(
         IfcLabel contextIdentifier,

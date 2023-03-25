@@ -51,10 +51,15 @@ public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
     }
 
     public IfcCartesianPoint(DOUBLE x, DOUBLE y, DOUBLE z) {
-
         coordinates.add(new IfcLengthMeasure(x));
         coordinates.add(new IfcLengthMeasure(y));
         coordinates.add(new IfcLengthMeasure(z));
+    }
+
+    public IfcCartesianPoint(double x, double y, double z) {
+        coordinates.add(new IfcLengthMeasure(new DOUBLE(x)));
+        coordinates.add(new IfcLengthMeasure(new DOUBLE(y)));
+        coordinates.add(new IfcLengthMeasure(new DOUBLE(z)));
     }
 
     public LIST<IfcLengthMeasure> getCoordinates() {
