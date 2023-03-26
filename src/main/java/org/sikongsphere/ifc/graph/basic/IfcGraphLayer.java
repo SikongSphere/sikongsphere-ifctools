@@ -10,7 +10,9 @@
 */
 package org.sikongsphere.ifc.graph.basic;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public abstract class IfcGraphLayer {
     private List<IfcGraphVertex> vertexList;
@@ -21,10 +23,10 @@ public abstract class IfcGraphLayer {
     private String graphId;
 
     public void DFSInfo() {
-
+        IfcGraphDfsHelper.dfs(startVertex);
     }
 
     public void BFSInfo() {
-
+        IfcGraphBfsHelper.bfs(startVertex);
     }
 }

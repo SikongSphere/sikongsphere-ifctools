@@ -20,6 +20,16 @@ public abstract class IfcGraphVertex {
     private String graphLayer;
     private String graphId;
 
+    private boolean visited;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
     public String getGraphId() {
         return graphId;
     }
