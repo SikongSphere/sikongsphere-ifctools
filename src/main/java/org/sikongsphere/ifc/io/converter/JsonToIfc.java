@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.io.converter;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.xml.internal.ws.util.StringUtils;
 import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
@@ -26,6 +27,7 @@ import org.sikongsphere.ifc.model.fileelement.IfcFileDescription;
 import org.sikongsphere.ifc.model.fileelement.IfcFileName;
 import org.sikongsphere.ifc.model.fileelement.IfcFileSchema;
 import org.sikongsphere.ifc.model.fileelement.IfcHeader;
+import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +35,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author:stan
@@ -139,7 +142,7 @@ public class JsonToIfc {
     /**
      * create data entity
      */
-    private void createDataEntity() throws IOException {
+    private void createDataEntity() throws IOException, InstantiationException, IllegalAccessException {
         ArrayList list = (ArrayList) this.jsonData.get(StringConstant.DATA);
         IfcClassContainer container = IfcClassContainer.getInstance();
 
@@ -148,18 +151,32 @@ public class JsonToIfc {
 
             // 创建空的对象
             String className = (String) map.get(StringConstant.TYPE);
-            Class<?> ifcEntityClass = container.get(className.toUpperCase(Locale.ROOT));
+            Object instance = container.get(className.toUpperCase(Locale.ROOT)).newInstance();
+
             map.remove(StringConstant.TYPE);
-            Method[] methods = ConvertUtils.getSetMethods(ifcEntityClass);
+            Method[] methods = ConvertUtils.getSetMethods(instance.getClass());
 
             // 遍历每一行数据，利用反射调用set方法
             map.forEach((key, value) -> {
                 // todo 解析实例
+                List<Method> collect = Arrays.stream(methods)
+                        .filter(method -> method.getName().contains(StringUtils.capitalize(String.valueOf(key))))
+                        .collect(Collectors.toList());
+                try {
+                    if (StringConstant.GLOBAL_ID.equals(key)) {
+                        collect.get(0).invoke(
+                                instance,
+                                new IfcGloballyUniqueId(GlobalUniqueID.compress(GlobalUniqueID.merge(String.valueOf(value)))));
+                    }
+
+                } catch (IllegalAccessException | InvocationTargetException e) {
+                    throw new RuntimeException(e);
+                }
             });
         }
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         JsonToIfc jsonToIfc = new JsonToIfc("src/test/resources/blank_sikongsphere.json");
         jsonToIfc.setWriteToIfcPath("src/test/resources/blank_ifc_sikongsphere.ifc");
         IfcHeader ifcHeader = jsonToIfc.createIfcHeader();
