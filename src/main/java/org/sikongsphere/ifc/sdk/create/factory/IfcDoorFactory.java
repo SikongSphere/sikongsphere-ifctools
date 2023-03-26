@@ -62,7 +62,7 @@ public class IfcDoorFactory extends AbstractFactory<IfcDoor> {
      * @param order order
      * @return  IfcDoorStandardCase
      */
-//    public IfcDoorStandardCase createStandardDoor(IOrder<IfcDoor> order) {
-//        return null;
-//    }
+    // public IfcDoorStandardCase createStandardDoor(IOrder<IfcDoor> order) {
+    // return null;
+    // }
 }
