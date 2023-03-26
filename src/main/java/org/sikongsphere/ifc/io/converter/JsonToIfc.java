@@ -1,8 +1,24 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.io.converter;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
+import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
+import org.sikongsphere.ifc.infra.IfcClassContainer;
+import org.sikongsphere.ifc.infra.IfcClassFactory;
 import org.sikongsphere.ifc.io.constant.IfcJSONStringConstant;
+import org.sikongsphere.ifc.io.constant.IfcJsonSerializerMapper;
 import org.sikongsphere.ifc.model.IfcInterface;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.STRING;
@@ -13,9 +29,10 @@ import org.sikongsphere.ifc.model.fileelement.IfcHeader;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * @author:stan
@@ -35,8 +52,7 @@ public class JsonToIfc {
 
     public JsonToIfc(String jsonFile) throws IOException {
         this.jsonFile = jsonFile;
-        this.jsonData = new ObjectMapper()
-                .readValue(new File(jsonFile), Map.class);
+        this.jsonData = new ObjectMapper().readValue(new File(jsonFile), Map.class);
     }
 
     /**
@@ -76,10 +92,12 @@ public class JsonToIfc {
         list.add(new LIST<>());
 
         // related version
-        list.add(new STRING((String) this.jsonData.get(IfcJSONStringConstant.PREPROCESSOR_VERSION)));
+        list.add(
+            new STRING((String) this.jsonData.get(IfcJSONStringConstant.PREPROCESSOR_VERSION))
+        );
         list.add(new STRING(ConfigProvider.getVersion()));
 
-        //unknown data
+        // unknown data
         list.add(new STRING());
 
         List<IfcInterface> wrapper = new ArrayList<>();
@@ -112,23 +130,40 @@ public class JsonToIfc {
      */
     private IfcHeader createIfcHeader() {
         return new IfcHeader(
-                this.createFileName(),
-                this.createFileDescription(),
-                this.createFileSchema()
+            this.createFileName(),
+            this.createFileDescription(),
+            this.createFileSchema()
         );
     }
 
     /**
      * create data entity
      */
-    private void createDataEntity() {
+    private void createDataEntity() throws IOException {
+        ArrayList list = (ArrayList) this.jsonData.get(StringConstant.DATA);
+        IfcClassContainer container = IfcClassContainer.getInstance();
 
+        for (Object object : list) {
+            LinkedHashMap map = (LinkedHashMap) object;
+
+            // 创建空的对象
+            String className = (String) map.get(StringConstant.TYPE);
+            Class<?> ifcEntityClass = container.get(className.toUpperCase(Locale.ROOT));
+            map.remove(StringConstant.TYPE);
+            Method[] methods = ConvertUtils.getSetMethods(ifcEntityClass);
+
+            // 遍历每一行数据，利用反射调用set方法
+            map.forEach((key, value) -> {
+                // todo 解析实例
+            });
+        }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         JsonToIfc jsonToIfc = new JsonToIfc("src/test/resources/blank_sikongsphere.json");
         jsonToIfc.setWriteToIfcPath("src/test/resources/blank_ifc_sikongsphere.ifc");
         IfcHeader ifcHeader = jsonToIfc.createIfcHeader();
+        jsonToIfc.createDataEntity();
         System.out.println(ifcHeader);
     }
 }

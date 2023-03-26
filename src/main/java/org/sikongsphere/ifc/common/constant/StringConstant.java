@@ -78,4 +78,9 @@ public class StringConstant {
 
     public static final String GUID_CHARS =
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$";
+
+    /**
+     * method
+     */
+    public static final String SET_METHOD = "set";
 }

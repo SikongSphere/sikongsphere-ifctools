@@ -1,8 +1,20 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.io.converter;
 
+import org.sikongsphere.ifc.infra.IfcClassContainer;
 import org.sikongsphere.ifc.infra.IfcClassFactory;
 import org.sikongsphere.ifc.model.IfcInterface;
 import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPerson;
 
 import java.util.ArrayList;
 
@@ -12,20 +24,8 @@ import java.util.ArrayList;
  */
 public class script {
     public static void main(String[] args) {
-        ArrayList<Object> list = new ArrayList<>();
-        list.add(null);
-        list.add(new STRING("unknown"));
-        list.add(new STRING("user"));
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-
-        IfcInterface ifcPerson = IfcClassFactory.getIfcClass(
-                "IfcPerson",
-                list.toArray()
-        );
-        System.out.println(ifcPerson);
+        IfcClassContainer instance = IfcClassContainer.getInstance();
+        Class<?> ifcPerson = instance.get("IfcPerson".toUpperCase());
+        System.out.println();
     }
 }
