@@ -12,8 +12,11 @@ package org.sikongsphere.ifc.sdk;
 
 import org.junit.Test;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPerson;
+import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcDoor;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;
+import org.sikongsphere.ifc.sdk.create.factory.IfcDoorFactory;
 import org.sikongsphere.ifc.sdk.create.factory.IfcWallFactory;
+import org.sikongsphere.ifc.sdk.create.order.IfcDoorOrder;
 import org.sikongsphere.ifc.sdk.create.order.IfcWallOrder;
 
 import java.util.UUID;
@@ -49,6 +52,24 @@ public class SDKDemo {
         IfcPerson thePerson = ifcWall.getOwnerHistory().getLastModifyingUser().getThePerson();
 
         assert ifcWall.getName().value.equals("niubility wall");
+        assert thePerson.getFamilyName().value.equals("Ma");
+        assert thePerson.getMiddleName().get(0).value.equals("Da");
+        assert thePerson.getGivenName().value.equals("Shuai");
+    }
+
+    @Test
+    public void createDoor() {
+        IfcDoorOrder doorlOrder = new IfcDoorOrder();
+        doorlOrder.setGlobalId(UUID.randomUUID().toString());
+        doorlOrder.setName("default door");
+        doorlOrder.setDescription("一扇平平无奇的门");
+        doorlOrder.setObjectType("ifc door");
+
+        IfcDoorFactory doorFactory = new IfcDoorFactory();
+        IfcDoor ifcDoor = doorFactory.create(doorlOrder);
+        IfcPerson thePerson = ifcDoor.getOwnerHistory().getLastModifyingUser().getThePerson();
+
+        assert ifcDoor.getName().value.equals("default door");
         assert thePerson.getFamilyName().value.equals("Ma");
         assert thePerson.getMiddleName().get(0).value.equals("Da");
         assert thePerson.getGivenName().value.equals("Shuai");
