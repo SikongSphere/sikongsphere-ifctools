@@ -10,32 +10,30 @@
 */
 package org.sikongsphere.ifc.io.converter;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.xml.internal.ws.util.StringUtils;
 import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.infra.IfcClassContainer;
-import org.sikongsphere.ifc.infra.IfcClassFactory;
 import org.sikongsphere.ifc.io.constant.IfcJSONStringConstant;
-import org.sikongsphere.ifc.io.constant.IfcJsonSerializerMapper;
+import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.IfcDataType;
 import org.sikongsphere.ifc.model.IfcInterface;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.datatype.STRING;
-import org.sikongsphere.ifc.model.fileelement.IfcFileDescription;
-import org.sikongsphere.ifc.model.fileelement.IfcFileName;
-import org.sikongsphere.ifc.model.fileelement.IfcFileSchema;
-import org.sikongsphere.ifc.model.fileelement.IfcHeader;
+import org.sikongsphere.ifc.model.fileelement.*;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author:stan
@@ -47,7 +45,13 @@ public class JsonToIfc {
 
     private String jsonFile;
     private Map jsonData;
+    private LinkedHashMap<Integer, IfcAbstractClass> ifcBody = new LinkedHashMap<
+        Integer,
+        IfcAbstractClass>();
     private String writeToIfcPath;
+    private IfcClassContainer container = IfcClassContainer.getInstance();
+    private IfcAbstractClass instance;
+    private List<LinkedHashMap> list;
 
     public void setWriteToIfcPath(String writeToIfcPath) {
         this.writeToIfcPath = writeToIfcPath;
@@ -56,6 +60,7 @@ public class JsonToIfc {
     public JsonToIfc(String jsonFile) throws IOException {
         this.jsonFile = jsonFile;
         this.jsonData = new ObjectMapper().readValue(new File(jsonFile), Map.class);
+        this.list = (List) this.jsonData.get(StringConstant.DATA);
     }
 
     /**
@@ -139,48 +144,114 @@ public class JsonToIfc {
         );
     }
 
-    /**
-     * create data entity
-     */
-    private void createDataEntity() throws IOException, InstantiationException, IllegalAccessException {
-        ArrayList list = (ArrayList) this.jsonData.get(StringConstant.DATA);
-        IfcClassContainer container = IfcClassContainer.getInstance();
+    private IfcBody createIfcBody() throws InstantiationException, IllegalAccessException {
 
-        for (Object object : list) {
-            LinkedHashMap map = (LinkedHashMap) object;
+        for (int i = 0; i < this.list.size(); i++) {
+            String className = (String) this.list.get(i).get(StringConstant.TYPE);
+            IfcAbstractClass ifcClass = (IfcAbstractClass) container.get(
+                className.toUpperCase(Locale.ROOT)
+            ).newInstance();
 
-            // 创建空的对象
-            String className = (String) map.get(StringConstant.TYPE);
-            Object instance = container.get(className.toUpperCase(Locale.ROOT)).newInstance();
-
-            map.remove(StringConstant.TYPE);
-            Method[] methods = ConvertUtils.getSetMethods(instance.getClass());
-
-            // 遍历每一行数据，利用反射调用set方法
-            map.forEach((key, value) -> {
-                // todo 解析实例
-                List<Method> collect = Arrays.stream(methods)
-                        .filter(method -> method.getName().contains(StringUtils.capitalize(String.valueOf(key))))
-                        .collect(Collectors.toList());
-                try {
-                    if (StringConstant.GLOBAL_ID.equals(key)) {
-                        collect.get(0).invoke(
-                                instance,
-                                new IfcGloballyUniqueId(GlobalUniqueID.compress(GlobalUniqueID.merge(String.valueOf(value)))));
-                    }
-
-                } catch (IllegalAccessException | InvocationTargetException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+            this.ifcBody.put(i, ifcClass);
         }
+        this.ifcBody.forEach(
+                (key, value) -> this.fillEntity(value, this.list.get(key))
+        );
+
+        return new IfcBody(this.ifcBody);
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    private void fillEntity(
+        IfcAbstractClass ifcAbstractClass,
+        LinkedHashMap<String, Object> attributeData
+    ) {
+        Method[] methods = ConvertUtils.getSetMethods(ifcAbstractClass.getClass());
+        attributeData.forEach((key, value) -> {
+            if (StringConstant.TYPE.equalsIgnoreCase(key)) {} else {
+                Method targetMethod = Arrays.stream(methods)
+                    .filter(
+                        method -> method.getName()
+                            .equals("set" + StringUtils.capitalize(String.valueOf(key)))
+                    )
+                    .collect(Collectors.toList())
+                    .get(0);
+
+                try {
+                    if (StringConstant.GLOBAL_ID.equalsIgnoreCase(key)) {
+                        targetMethod.invoke(
+                            ifcAbstractClass,
+                            new IfcGloballyUniqueId(
+                                GlobalUniqueID.compress(GlobalUniqueID.merge(String.valueOf(value)))
+                            )
+                        );
+                    } else {
+                        Object data = getAttributeData(value,targetMethod);
+                        targetMethod.invoke(ifcAbstractClass, data);
+                    }
+                } catch (InvocationTargetException | IllegalAccessException | InstantiationException |
+                         NoSuchMethodException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    private Object getAttributeData(Object attributeData, Method method) throws InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Object ifcClass = null;
+
+        if (LinkedHashMap.class.isAssignableFrom(attributeData.getClass())) {
+            ifcClass = this.dealWithMap((LinkedHashMap) attributeData);
+        }
+        else if (String.class.isAssignableFrom(attributeData.getClass())) {
+            ifcClass = this.dealWithString((String) attributeData, method);
+        }
+        else if (ArrayList.class.isAssignableFrom(attributeData.getClass())) {
+            SET<Object> set = new SET<>();
+            for (int i = 0; i < ((ArrayList<?>) attributeData).size(); i++) {
+                Object o = ((ArrayList<?>) attributeData).get(i);
+                Object data = this.getAttributeData(o, method);
+                set.add(data);
+            }
+            ifcClass = set;
+        }
+        return ifcClass;
+    }
+
+
+    private IfcAbstractClass dealWithMap(LinkedHashMap value) throws InstantiationException,
+        IllegalAccessException {
+        String ifcClassName = (String) ((LinkedHashMap<?, ?>) value).get(StringConstant.TYPE);
+        IfcAbstractClass ifcClass = (IfcAbstractClass) this.container.get(
+            ifcClassName.toUpperCase(Locale.ROOT)
+        ).newInstance();
+
+        if (value.containsKey("ref")) {
+        }
+        else {
+            this.ifcBody.put(this.ifcBody.size(), ifcClass);
+        }
+        return ifcClass;
+    }
+
+    private IfcDataType dealWithString(String value, Method method) throws NoSuchMethodException,
+        InvocationTargetException, InstantiationException, IllegalAccessException {
+        IfcDataType ifcClass = null;
+
+        Class<?>[] parameterTypes = method.getParameterTypes();
+        for (Class<?> parameterType : parameterTypes) {
+            ifcClass = (IfcDataType) parameterType.getDeclaredConstructor(STRING.class)
+                .newInstance(new STRING(value));
+        }
+
+        return ifcClass;
+    }
+
+    public static void main(String[] args) throws IOException, InstantiationException,
+        IllegalAccessException {
         JsonToIfc jsonToIfc = new JsonToIfc("src/test/resources/blank_sikongsphere.json");
         jsonToIfc.setWriteToIfcPath("src/test/resources/blank_ifc_sikongsphere.ifc");
         IfcHeader ifcHeader = jsonToIfc.createIfcHeader();
-        jsonToIfc.createDataEntity();
-        System.out.println(ifcHeader);
+        IfcBody ifcBody = jsonToIfc.createIfcBody();
+        System.out.println(ifcBody);
     }
 }

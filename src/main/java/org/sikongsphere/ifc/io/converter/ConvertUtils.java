@@ -206,13 +206,17 @@ public class ConvertUtils {
             for (Field field : fields) {
                 if (!field.isAnnotationPresent(IfcDeriveParameter.class)
                     && !field.isAnnotationPresent(IfcInverseParameter.class)
-                    && field.getModifiers() == Modifier.PRIVATE) {
+                    && field.getModifiers() == Modifier.PRIVATE
+                    && !field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY)
+                    && !field.getName().equalsIgnoreCase(StringConstant.DECOMPOSES)) {
                     list.add(field);
-                } else if (field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY) | field
-                    .getName()
-                    .equalsIgnoreCase(StringConstant.DECOMPOSES)) {
-                        list.add(field);
-                    }
+                }
+                // else if (!field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY) &&
+                // !field
+                // .getName()
+                // .equalsIgnoreCase(StringConstant.DECOMPOSES)) {
+                // list.add(field);
+                // }
             }
             fieldList.addAll(0, list);
             clazz = clazz.getSuperclass();

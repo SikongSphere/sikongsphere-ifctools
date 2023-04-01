@@ -71,7 +71,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     public String getCoordinateSpaceDimension() {
-        String s = Optional.ofNullable(coordinateSpaceDimension.getDimensionCount())
+        String s = Optional.ofNullable(coordinateSpaceDimension)
             .map(x -> coordinateSpaceDimension.getDimensionCount().toString())
             .orElse(StringConstant.ASTERISK);
 
@@ -83,7 +83,10 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     public String getPrecision() {
-        if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
+
+        if (precision == null) {
+            return StringConstant.ASTERISK;
+        } else if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
             return precision.toString();
         } else if (precision.isDefault()) {
             return StringConstant.ASTERISK;

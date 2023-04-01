@@ -5,23 +5,19 @@
   "version" : "0.1.0-beta",
   "originatingSystem" : "IFC_TO_JSON_PROSSESOR_SYSTEM 0.1.0-beta",
   "preprocessorVersion" : "sikongsphere-ifctools",
-  "TIMESTAMP" : "2023-03-18T06:38:45",
+  "TIMESTAMP" : "2023-03-31T15:52:40",
   "data" : [ {
     "type" : "IfcProject",
     "globalId" : "a689e2dc-2d86-4cf7-8f91-2a3d67607e39",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "3256d105-f138-4d72-a16a-852308046caa"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "name" : "Default Project",
     "description" : "Description of Default Project",
-    "isDecomposedBy" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33"
-    } ],
     "representationContexts" : [ {
       "type" : "IfcGeometricRepresentationContext",
-      "ref" : "ced864cc-6d80-40f2-a0e5-d7f98a09eb2f"
+      "ref" : "f0f11b3f-8934-40e8-8733-6f32a2618406"
     } ],
     "unitsInContext" : {
       "type" : "IfcUnitAssignment",
@@ -55,18 +51,10 @@
     "globalId" : "d28971b7-78f8-4021-8990-177a644abb49",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "3256d105-f138-4d72-a16a-852308046caa"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "name" : "Default Building",
     "description" : "Description",
-    "isDecomposedBy" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3"
-    } ],
-    "decomposes" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33"
-    } ],
     "objectPlacement" : {
       "type" : "IfcLocalPlacement",
       "relativePlacement" : {
@@ -83,14 +71,10 @@
     "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "3256d105-f138-4d72-a16a-852308046caa"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "name" : "Default Building Storey",
     "description" : "Description",
-    "decomposes" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3"
-    } ],
     "objectPlacement" : {
       "type" : "IfcLocalPlacement",
       "relativePlacement" : {
@@ -128,7 +112,7 @@
     },
     "changeAction" : "ADDED",
     "creationDate" : 1660128237,
-    "globalId" : "3256d105-f138-4d72-a16a-852308046caa"
+    "globalId" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
   }, {
     "type" : "IfcGeometricRepresentationContext",
     "contextType" : "Model",
@@ -141,13 +125,13 @@
         "coordinates" : [ 0.0, 0.0, 0.0 ]
       }
     },
-    "globalId" : "ced864cc-6d80-40f2-a0e5-d7f98a09eb2f"
+    "globalId" : "f0f11b3f-8934-40e8-8733-6f32a2618406"
   }, {
     "type" : "IfcRelAggregates",
     "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "3256d105-f138-4d72-a16a-852308046caa"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "relatingObject" : {
       "type" : "IfcProject",
@@ -162,7 +146,7 @@
     "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "3256d105-f138-4d72-a16a-852308046caa"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "relatingObject" : {
       "type" : "IfcBuilding",
