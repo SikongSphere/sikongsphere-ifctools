@@ -154,9 +154,10 @@ public class JsonToIfc {
 
             this.ifcBody.put(i, ifcClass);
         }
-        this.ifcBody.forEach(
-                (key, value) -> this.fillEntity(value, this.list.get(key))
-        );
+        //Todo 完成对实体的解析
+//        this.ifcBody.forEach(
+//                (key, value) -> this.fillEntity(value, this.list.get(key))
+//        );
 
         return new IfcBody(this.ifcBody);
     }
