@@ -18,19 +18,16 @@ import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.common.exception.SikongSphereParseException;
 import org.sikongsphere.ifc.infra.IfcClassContainer;
 import org.sikongsphere.ifc.io.constant.IfcJSONStringConstant;
-import org.sikongsphere.ifc.io.handler.ifc.IfcFileWriter;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
-import org.sikongsphere.ifc.model.IfcDataType;
 import org.sikongsphere.ifc.model.IfcInterface;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.fileelement.*;
+import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcDimensionalExponents;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
-
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -239,7 +236,9 @@ public class JsonToIfcV2 {
         IfcAbstractClass ifcObject;
         try {
             ifcObject = (IfcAbstractClass) container.get(ifcClassName.toUpperCase(Locale.ROOT)).newInstance();
-            this.ifcBody.put(this.ifcBody.size(), ifcObject);
+            if (!(ifcObject instanceof IfcDimensionalExponents)) {
+                this.ifcBody.put(this.ifcBody.size(), ifcObject);
+            }
         } catch (Exception e) {
             throw new SikongSphereParseException(String.format("Class for %s does not instantiated successfully.", ifcClassName));
         }
@@ -279,8 +278,7 @@ public class JsonToIfcV2 {
                     throw new RuntimeException("unknown type: " + propertyValue.getClass().getName());
                 }
             } catch (Exception e) {
-                e.printStackTrace();
-                throw new IllegalStateException("初始化失败！");
+                throw new IllegalStateException("初始化失败！", e);
             }
 
         });
