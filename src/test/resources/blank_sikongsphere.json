@@ -40,7 +40,7 @@
         "type" : "IfcSIUnit",
         "dimensions" : {
           "type" : "IfcDimensionalExponents",
-          "LengthExpoent" : 1
+          "lengthExponent" : 1
         },
         "unitType" : "LENGTHUNIT",
         "name" : "METRE"
@@ -68,7 +68,7 @@
     "compositionType" : "ELEMENT"
   }, {
     "type" : "IfcBuildingStorey",
-    "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c",
+    "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c2",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
       "ref" : "8cd9c60d-ca35-4e32-93fa-b64403908c4f"
@@ -128,7 +128,7 @@
     "globalId" : "4b2244e6-1e3d-4934-b682-d61a2bb6550c"
   }, {
     "type" : "IfcRelAggregates",
-    "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33",
+    "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e332",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
       "ref" : "8cd9c60d-ca35-4e32-93fa-b64403908c4f"
@@ -143,7 +143,7 @@
     } ]
   }, {
     "type" : "IfcRelAggregates",
-    "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3",
+    "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a32",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
       "ref" : "8cd9c60d-ca35-4e32-93fa-b64403908c4f"
@@ -154,7 +154,7 @@
     },
     "relatedObjects" : [ {
       "type" : "IfcBuildingStorey",
-      "ref" : "307e6ec4-68c8-4d86-9af4-af357409f5c"
+      "ref" : "307e6ec4-68c8-4d86-9af4-af357409f5c2"
     } ]
   } ]
 }

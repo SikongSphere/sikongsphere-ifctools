@@ -17,10 +17,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.DOUBLE;
-import org.sikongsphere.ifc.model.datatype.REAL;
-import org.sikongsphere.ifc.model.datatype.SCIENTIFICNOTATION;
-import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.datatype.*;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -86,11 +83,10 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     public String getCoordinateSpaceDimension() {
-        String s = Optional.ofNullable(coordinateSpaceDimension.getDimensionCount())
-            .map(x -> coordinateSpaceDimension.getDimensionCount().toString())
-            .orElse(StringConstant.ASTERISK);
-
-        return s;
+        return Optional.ofNullable(coordinateSpaceDimension)
+                .map(IfcDimensionCount::getDimensionCount)
+                .map(INTEGER::toString)
+                .orElse(StringConstant.ASTERISK);
     }
 
     public void setCoordinateSpaceDimension(IfcDimensionCount coordinateSpaceDimension) {
