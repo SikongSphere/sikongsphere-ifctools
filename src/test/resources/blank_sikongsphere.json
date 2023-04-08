@@ -5,27 +5,30 @@
   "version" : "0.1.0-beta",
   "originatingSystem" : "IFC_TO_JSON_PROSSESOR_SYSTEM 0.1.0-beta",
   "preprocessorVersion" : "sikongsphere-ifctools",
-  "TIMESTAMP" : "2023-03-24T12:47:52",
+  "TIMESTAMP" : "2023-03-31T15:52:40",
   "data" : [ {
     "type" : "IfcProject",
     "globalId" : "a689e2dc-2d86-4cf7-8f91-2a3d67607e39",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "a558322e-7ab6-4d60-9cbe-17e903c0d7e6"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "name" : "Default Project",
     "description" : "Description of Default Project",
-    "isDecomposedBy" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33"
-    } ],
     "representationContexts" : [ {
       "type" : "IfcGeometricRepresentationContext",
-      "ref" : "d49609e6-db7e-4aad-9168-ae1972432c17"
+      "ref" : "f0f11b3f-8934-40e8-8733-6f32a2618406"
     } ],
     "unitsInContext" : {
       "type" : "IfcUnitAssignment",
       "units" : [ {
+        "type" : "IfcSIUnit",
+        "dimensions" : {
+          "type" : "IfcDimensionalExponents"
+        },
+        "unitType" : "PLANEANGLEUNIT",
+        "name" : "RADIAN"
+      }, {
         "type" : "IfcSIUnit",
         "dimensions" : {
           "type" : "IfcDimensionalExponents",
@@ -37,17 +40,10 @@
         "type" : "IfcSIUnit",
         "dimensions" : {
           "type" : "IfcDimensionalExponents",
-          "LengthExpoent" : 1
+          "lengthExponent" : 1
         },
         "unitType" : "LENGTHUNIT",
         "name" : "METRE"
-      }, {
-        "type" : "IfcSIUnit",
-        "dimensions" : {
-          "type" : "IfcDimensionalExponents"
-        },
-        "unitType" : "PLANEANGLEUNIT",
-        "name" : "RADIAN"
       } ]
     }
   }, {
@@ -55,18 +51,10 @@
     "globalId" : "d28971b7-78f8-4021-8990-177a644abb49",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "a558322e-7ab6-4d60-9cbe-17e903c0d7e6"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "name" : "Default Building",
     "description" : "Description",
-    "isDecomposedBy" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3"
-    } ],
-    "decomposes" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33"
-    } ],
     "objectPlacement" : {
       "type" : "IfcLocalPlacement",
       "relativePlacement" : {
@@ -80,17 +68,13 @@
     "compositionType" : "ELEMENT"
   }, {
     "type" : "IfcBuildingStorey",
-    "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c",
+    "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c2",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "a558322e-7ab6-4d60-9cbe-17e903c0d7e6"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "name" : "Default Building Storey",
     "description" : "Description",
-    "decomposes" : [ {
-      "type" : "IfcRelAggregates",
-      "ref" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3"
-    } ],
     "objectPlacement" : {
       "type" : "IfcLocalPlacement",
       "relativePlacement" : {
@@ -128,7 +112,7 @@
     },
     "changeAction" : "ADDED",
     "creationDate" : 1660128237,
-    "globalId" : "a558322e-7ab6-4d60-9cbe-17e903c0d7e6"
+    "globalId" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
   }, {
     "type" : "IfcGeometricRepresentationContext",
     "contextType" : "Model",
@@ -141,13 +125,13 @@
         "coordinates" : [ 0.0, 0.0, 0.0 ]
       }
     },
-    "globalId" : "d49609e6-db7e-4aad-9168-ae1972432c17"
+    "globalId" : "f0f11b3f-8934-40e8-8733-6f32a2618406"
   }, {
     "type" : "IfcRelAggregates",
-    "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33",
+    "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e333",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "a558322e-7ab6-4d60-9cbe-17e903c0d7e6"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "relatingObject" : {
       "type" : "IfcProject",
@@ -159,10 +143,10 @@
     } ]
   }, {
     "type" : "IfcRelAggregates",
-    "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3",
+    "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a33",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "a558322e-7ab6-4d60-9cbe-17e903c0d7e6"
+      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
     },
     "relatingObject" : {
       "type" : "IfcBuilding",
@@ -170,7 +154,7 @@
     },
     "relatedObjects" : [ {
       "type" : "IfcBuildingStorey",
-      "ref" : "307e6ec4-68c8-4d86-9af4-af357409f5c"
+      "ref" : "307e6ec4-68c8-4d86-9af4-af357409f5c2"
     } ]
   } ]
 }

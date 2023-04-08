@@ -10,13 +10,20 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
+import org.jetbrains.annotations.NotNull;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.LIST;
+import org.sikongsphere.ifc.model.datatype.STRING;
+import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * An IfcTextureVertex is a list of 2 (S, T) texture coordinates.
@@ -39,5 +46,11 @@ public class IfcTextureVertex extends IfcAbstractClass {
 
     public void setCoordinates(LIST<IfcParameterValue> coordinates) {
         this.coordinates = coordinates;
+    }
+
+    public void setCoordinates(List<String> coordinates) {
+        LIST<IfcParameterValue> ifcLengthMeasureLIST = new LIST<>(coordinates.stream()
+                .map(v -> new IfcParameterValue(new STRING(v))).collect(Collectors.toList()));
+        this.coordinates = ifcLengthMeasureLIST;
     }
 }

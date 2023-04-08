@@ -21,6 +21,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcDimensionalE
 import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcSIUnit;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -192,11 +193,11 @@ public class ConvertUtils {
     }
 
     /**
-     * 获取本类及父类的所有字段并以自顶向下的顺序进行排序
+     * 获取本类及父类的所有成员属性并以自顶向下的顺序进行排序
      * @param clazz
      * @return
      */
-    private static Field[] getFields(Class clazz) {
+    public static Field[] getFields(Class clazz) {
         ArrayList<Object> fieldList = new ArrayList<>();
         while (clazz != null) {
             ArrayList<Object> list = new ArrayList<>();
@@ -205,18 +206,47 @@ public class ConvertUtils {
             for (Field field : fields) {
                 if (!field.isAnnotationPresent(IfcDeriveParameter.class)
                     && !field.isAnnotationPresent(IfcInverseParameter.class)
-                    && field.getModifiers() == Modifier.PRIVATE) {
+                    && field.getModifiers() == Modifier.PRIVATE
+                    && !field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY)
+                    && !field.getName().equalsIgnoreCase(StringConstant.DECOMPOSES)) {
                     list.add(field);
-                } else if (field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY) | field
-                    .getName()
-                    .equalsIgnoreCase(StringConstant.DECOMPOSES)) {
-                        list.add(field);
-                    }
+                }
+                // else if (!field.getName().equalsIgnoreCase(StringConstant.IS_DECOMPOSED_BY) &&
+                // !field
+                // .getName()
+                // .equalsIgnoreCase(StringConstant.DECOMPOSES)) {
+                // list.add(field);
+                // }
             }
             fieldList.addAll(0, list);
             clazz = clazz.getSuperclass();
         }
         Field[] f = new Field[fieldList.size()];
         return fieldList.toArray(f);
+    }
+
+    /**
+     * 获取本类及父类的所有set方法并以自顶向下的顺序进行排序
+     *
+     * @param clazz
+     * @return
+     */
+    public static Method[] getSetMethods(Class clazz) {
+        ArrayList<Object> methodList = new ArrayList<>();
+        while (clazz != null) {
+            ArrayList<Object> list = new ArrayList<>();
+
+            Method[] methods = clazz.getDeclaredMethods();
+            for (Method method : methods) {
+                if (method.getModifiers() == Modifier.PUBLIC
+                    && method.getName().contains(StringConstant.SET_METHOD)) {
+                    list.add(method);
+                } else continue;
+            }
+            methodList.addAll(0, list);
+            clazz = clazz.getSuperclass();
+        }
+        Method[] f = new Method[methodList.size()];
+        return methodList.toArray(f);
     }
 }
