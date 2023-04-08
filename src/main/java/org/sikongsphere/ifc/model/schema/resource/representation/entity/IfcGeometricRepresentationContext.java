@@ -86,7 +86,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     public String getCoordinateSpaceDimension() {
-        String s = Optional.ofNullable(coordinateSpaceDimension)
+        String s = Optional.ofNullable(coordinateSpaceDimension.getDimensionCount())
             .map(x -> coordinateSpaceDimension.getDimensionCount().toString())
             .orElse(StringConstant.ASTERISK);
 
