@@ -39,6 +39,10 @@ public class STRING extends IfcDataType {
         this.value = value.getValue() + "";
     }
 
+    public STRING(SCIENTIFICNOTATION value) {
+        this.value = value.getValue().toString();
+    }
+
     public STRING(STRING value) {
         this.value = value.value;
     }
