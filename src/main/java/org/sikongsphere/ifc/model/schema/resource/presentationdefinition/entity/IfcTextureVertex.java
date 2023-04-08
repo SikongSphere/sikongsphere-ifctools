@@ -10,7 +10,6 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.presentationdefinition.entity;
 
-import org.jetbrains.annotations.NotNull;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
@@ -49,8 +48,11 @@ public class IfcTextureVertex extends IfcAbstractClass {
     }
 
     public void setCoordinates(List<String> coordinates) {
-        LIST<IfcParameterValue> ifcLengthMeasureLIST = new LIST<>(coordinates.stream()
-                .map(v -> new IfcParameterValue(new STRING(v))).collect(Collectors.toList()));
+        LIST<IfcParameterValue> ifcLengthMeasureLIST = new LIST<>(
+            coordinates.stream()
+                .map(v -> new IfcParameterValue(new STRING(v)))
+                .collect(Collectors.toList())
+        );
         this.coordinates = ifcLengthMeasureLIST;
     }
 }

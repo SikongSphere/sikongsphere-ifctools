@@ -78,8 +78,11 @@ public class IfcCartesianPoint extends IfcPoint implements IfcTrimmingSelect {
     }
 
     public void setCoordinates(List<String> coordinates) throws Exception {
-        LIST<IfcLengthMeasure> ifcLengthMeasureLIST = new LIST<>(coordinates.stream()
-                .map(v -> new IfcLengthMeasure(new STRING(v))).collect(Collectors.toList()));
+        LIST<IfcLengthMeasure> ifcLengthMeasureLIST = new LIST<>(
+            coordinates.stream()
+                .map(v -> new IfcLengthMeasure(new STRING(v)))
+                .collect(Collectors.toList())
+        );
         this.coordinates = ifcLengthMeasureLIST;
         if (ifcLengthMeasureLIST.size() > 3) {
             throw new Exception("The amount of coordinates is between 1 and 3");

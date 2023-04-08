@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
+import com.sun.org.apache.bcel.internal.generic.PUSH;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.datatype.STRING;
