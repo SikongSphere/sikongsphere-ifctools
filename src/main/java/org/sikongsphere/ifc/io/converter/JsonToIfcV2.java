@@ -150,7 +150,7 @@ public class JsonToIfcV2 {
 
     private IfcBody createIfcBody() {
         this.list.forEach(this::fillEntity);
-        this.ifcBody.forEach((k,v) -> v.setStepNumber(k));
+        this.ifcBody.forEach((k,v) -> v.setStepNumber(k+1));
         return new IfcBody(this.ifcBody);
     }
 
@@ -310,7 +310,7 @@ public class JsonToIfcV2 {
     }
 
     private Object dealWithList(ArrayList value, List<Method> methods) throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
-        SET<Object> set = new SET<>();
+        List<Object> set = new ArrayList<>();
         if (value.stream().anyMatch(v -> v instanceof Map)) {
             for (int i = 0; i < ((ArrayList<?>) value).size(); i++) {
                 Object o = ((ArrayList<?>) value).get(i);
@@ -321,6 +321,8 @@ public class JsonToIfcV2 {
         }
 
         // todo: 对于json中的list怎么初始化对象
+        // 这里直接转string，不过大概率是有问题的
+        return value.stream().map(String::valueOf).collect(Collectors.toList());
         /*if (method.getParameterCount() != 1) {
             throw new IllegalArgumentException("参数数量不匹配！");
         }
@@ -335,7 +337,7 @@ public class JsonToIfcV2 {
             set.add(ifcClass);
         }*/
 //        method.get
-        return set;
+//        return set;
     }
 
     public static void main(String[] args) throws IOException, InstantiationException,
