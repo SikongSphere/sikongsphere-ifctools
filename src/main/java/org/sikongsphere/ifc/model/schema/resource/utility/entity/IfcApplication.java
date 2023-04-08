@@ -52,6 +52,8 @@ public class IfcApplication extends IfcAbstractClass {
         this.applicationIdentifier = applicationIdentifier;
     }
 
+    public IfcApplication() {}
+
     public IfcOrganization getApplicationDeveloper() {
         return applicationDeveloper;
     }

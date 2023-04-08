@@ -11,7 +11,7 @@
 package org.sikongsphere.ifc.io.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.xml.internal.ws.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
