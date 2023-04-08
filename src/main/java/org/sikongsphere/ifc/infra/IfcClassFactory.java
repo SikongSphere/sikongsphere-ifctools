@@ -83,6 +83,13 @@ public class IfcClassFactory {
             }
 
             if (args[i] instanceof SCIENTIFICNOTATION) {
+                if (parameterTypes[i].isAssignableFrom(args[i].getClass())) {
+                    continue;
+                }
+                if (!parameterTypes[i].isInterface()) {
+                    Constructor<?> con = parameterTypes[i].getConstructor(args[i].getClass());
+                    args[i] = con.newInstance(args[i]);
+                }
                 continue;
             }
 
