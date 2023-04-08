@@ -5,30 +5,23 @@
   "version" : "0.1.0-beta",
   "originatingSystem" : "IFC_TO_JSON_PROSSESOR_SYSTEM 0.1.0-beta",
   "preprocessorVersion" : "sikongsphere-ifctools",
-  "TIMESTAMP" : "2023-03-31T15:52:40",
+  "TIMESTAMP" : "2023-04-08T13:03:47",
   "data" : [ {
     "type" : "IfcProject",
     "globalId" : "a689e2dc-2d86-4cf7-8f91-2a3d67607e39",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
+      "ref" : "dc1e3db4-a9c7-4ca5-8b2b-b73ab84eb19e"
     },
     "name" : "Default Project",
     "description" : "Description of Default Project",
     "representationContexts" : [ {
       "type" : "IfcGeometricRepresentationContext",
-      "ref" : "f0f11b3f-8934-40e8-8733-6f32a2618406"
+      "ref" : "770f1352-339f-4832-9b62-4b69c438b6af"
     } ],
     "unitsInContext" : {
       "type" : "IfcUnitAssignment",
       "units" : [ {
-        "type" : "IfcSIUnit",
-        "dimensions" : {
-          "type" : "IfcDimensionalExponents"
-        },
-        "unitType" : "PLANEANGLEUNIT",
-        "name" : "RADIAN"
-      }, {
         "type" : "IfcSIUnit",
         "dimensions" : {
           "type" : "IfcDimensionalExponents",
@@ -39,8 +32,15 @@
       }, {
         "type" : "IfcSIUnit",
         "dimensions" : {
+          "type" : "IfcDimensionalExponents"
+        },
+        "unitType" : "PLANEANGLEUNIT",
+        "name" : "RADIAN"
+      }, {
+        "type" : "IfcSIUnit",
+        "dimensions" : {
           "type" : "IfcDimensionalExponents",
-          "lengthExponent" : 1
+          "LengthExpoent" : 1
         },
         "unitType" : "LENGTHUNIT",
         "name" : "METRE"
@@ -51,7 +51,7 @@
     "globalId" : "d28971b7-78f8-4021-8990-177a644abb49",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
+      "ref" : "dc1e3db4-a9c7-4ca5-8b2b-b73ab84eb19e"
     },
     "name" : "Default Building",
     "description" : "Description",
@@ -68,10 +68,10 @@
     "compositionType" : "ELEMENT"
   }, {
     "type" : "IfcBuildingStorey",
-    "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c2",
+    "globalId" : "307e6ec4-68c8-4d86-9af4-af357409f5c",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
+      "ref" : "dc1e3db4-a9c7-4ca5-8b2b-b73ab84eb19e"
     },
     "name" : "Default Building Storey",
     "description" : "Description",
@@ -112,7 +112,7 @@
     },
     "changeAction" : "ADDED",
     "creationDate" : 1660128237,
-    "globalId" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
+    "globalId" : "dc1e3db4-a9c7-4ca5-8b2b-b73ab84eb19e"
   }, {
     "type" : "IfcGeometricRepresentationContext",
     "contextType" : "Model",
@@ -125,13 +125,13 @@
         "coordinates" : [ 0.0, 0.0, 0.0 ]
       }
     },
-    "globalId" : "f0f11b3f-8934-40e8-8733-6f32a2618406"
+    "globalId" : "770f1352-339f-4832-9b62-4b69c438b6af"
   }, {
     "type" : "IfcRelAggregates",
-    "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e333",
+    "globalId" : "ad9d3766-f3b4-bd38-f81d-7e872fc5e33",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
+      "ref" : "dc1e3db4-a9c7-4ca5-8b2b-b73ab84eb19e"
     },
     "relatingObject" : {
       "type" : "IfcProject",
@@ -143,10 +143,10 @@
     } ]
   }, {
     "type" : "IfcRelAggregates",
-    "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a33",
+    "globalId" : "9e2b638f-88f9-4b9c-8266-1fbdd6197a3",
     "ownerHistory" : {
       "type" : "IfcOwnerHistory",
-      "ref" : "d8607f08-48fd-4b9c-9201-d04d1e3ec143"
+      "ref" : "dc1e3db4-a9c7-4ca5-8b2b-b73ab84eb19e"
     },
     "relatingObject" : {
       "type" : "IfcBuilding",
@@ -154,7 +154,7 @@
     },
     "relatedObjects" : [ {
       "type" : "IfcBuildingStorey",
-      "ref" : "307e6ec4-68c8-4d86-9af4-af357409f5c2"
+      "ref" : "307e6ec4-68c8-4d86-9af4-af357409f5c"
     } ]
   } ]
 }
