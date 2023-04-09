@@ -1,3 +1,13 @@
+/*
+ * Copyright 2022 SikongSphere
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+*/
 package org.sikongsphere.ifc.graph.basic;
 
 import java.util.ArrayList;
@@ -9,7 +19,7 @@ public class IfcGraphDfsHelper {
         Stack<IfcGraphVertex> stack = new Stack<>();
         stack.push(startVertex);
 
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             IfcGraphVertex currentVertex = stack.pop();
             currentVertex.setVisited(true);
 
@@ -17,8 +27,8 @@ public class IfcGraphDfsHelper {
 
             List<IfcGraphVertex> neighbors = getNeighbors(currentVertex);
 
-            for(IfcGraphVertex neighbor : neighbors) {
-                if(!neighbor.isVisited()) {
+            for (IfcGraphVertex neighbor : neighbors) {
+                if (!neighbor.isVisited()) {
                     stack.push(neighbor);
                 }
             }
@@ -30,9 +40,9 @@ public class IfcGraphDfsHelper {
         List<IfcGraphEdge> connectedEdges = vertex.getEdgeList();
 
         List<IfcGraphVertex> neighbors = new ArrayList<>();
-        for(IfcGraphEdge edge : connectedEdges) {
+        for (IfcGraphEdge edge : connectedEdges) {
             IfcGraphVertex neighbor = getNeighbor(vertex, edge);
-            if(neighbor != null) {
+            if (neighbor != null) {
                 neighbors.add(neighbor);
             }
         }
@@ -41,9 +51,9 @@ public class IfcGraphDfsHelper {
     }
 
     private static IfcGraphVertex getNeighbor(IfcGraphVertex vertex, IfcGraphEdge edge) {
-        if(edge.getSource().equals(vertex)) {
+        if (edge.getSource().equals(vertex)) {
             return edge.getDestination();
-        } else if(edge.getDestination().equals(vertex)) {
+        } else if (edge.getDestination().equals(vertex)) {
             return edge.getSource();
         } else {
             return null;

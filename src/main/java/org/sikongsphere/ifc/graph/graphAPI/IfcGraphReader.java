@@ -8,12 +8,12 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.graph.io;
+package org.sikongsphere.ifc.graph.graphAPI;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
 
 public interface IfcGraphReader {
-    public IfcGraph ReadGraph(String path);
+    public IfcGraph readGraph(String path);
 
-    public IfcGraph ReadLayer(String path, Enum LayerType);
+    public IfcGraph readLayer(String path, Enum LayerType);
 }

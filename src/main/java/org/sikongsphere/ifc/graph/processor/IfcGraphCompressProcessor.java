@@ -11,7 +11,19 @@
 package org.sikongsphere.ifc.graph.processor;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphProcessor;
 
-public interface IfcGraphManager {
-    public IfcGraph Process(IfcGraph graph, IfcGraphProcessor processor);
+public class IfcGraphCompressProcessor implements IfcGraphProcessor {
+    public IfcGraphCompressProcessor() {}
+
+    @Override
+    public IfcGraph process(IfcGraph graph) {
+        return null;
+    }
+
+    @Override
+    public IfcGraphLayer processLayer(IfcGraphLayer ifcGraphLayer) {
+        return null;
+    }
 }

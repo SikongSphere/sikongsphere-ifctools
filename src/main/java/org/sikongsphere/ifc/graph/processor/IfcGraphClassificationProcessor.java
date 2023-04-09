@@ -8,13 +8,24 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.graph.io;
+package org.sikongsphere.ifc.graph.processor;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
-import org.sikongsphere.ifc.graph.basic.LayerType;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphProcessor;
 
-public interface IfcGraphWriter {
-    public void WriteGraph(String path, IfcGraph graph);
+public class IfcGraphClassificationProcessor implements IfcGraphProcessor {
+    public IfcGraphClassificationProcessor() {
 
-    void WriteGraphLayer(String path, IfcGraph graph, LayerType layerType);
+    }
+
+    @Override
+    public IfcGraph process(IfcGraph graph) {
+        return null;
+    }
+
+    @Override
+    public IfcGraphLayer processLayer(IfcGraphLayer ifcGraphLayer) {
+        return null;
+    }
 }

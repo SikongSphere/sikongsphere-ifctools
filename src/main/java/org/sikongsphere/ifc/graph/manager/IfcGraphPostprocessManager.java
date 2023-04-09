@@ -7,22 +7,19 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
-*/
-package org.sikongsphere.ifc.graph.processor;
+ */
+package org.sikongsphere.ifc.graph.manager;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
-import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphManager;
 
-public class IfcDecompressGraphProcessor implements IfcGraphProcessor {
-    public IfcDecompressGraphProcessor() {}
+public class IfcGraphPostprocessManager implements IfcGraphManager {
+    public IfcGraphPostprocessManager() {
 
-    @Override
-    public IfcGraph Process(IfcGraph graph) {
-        return null;
     }
 
     @Override
-    public IfcGraphLayer ProcessLayer(IfcGraphLayer ifcGraphLayer) {
+    public IfcGraph process(IfcGraph graph) {
         return null;
     }
 }
