@@ -24,7 +24,13 @@ public class GlobalUniqueIDTest {
 
     @Test
     public void guidTest() {
-        String split = GlobalUniqueID.split(GlobalUniqueID.expand(globalId));
-        assert split.equals(hexString);
+        String uuid = GlobalUniqueID.split(GlobalUniqueID.expand(globalId));
+        assert uuid.equals(hexString);
+    }
+
+    @Test
+    public void uuidTest() {
+        String guid = GlobalUniqueID.compress(GlobalUniqueID.merge(hexString));
+        assert guid.equals(globalId);
     }
 }

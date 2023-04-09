@@ -73,10 +73,6 @@ public abstract class IfcRoot extends IfcAbstractClass {
         this.name = name;
     }
 
-    public void setName(String name) {
-        this.name = new IfcLabel(name);
-    }
-
     public IfcText getDescription() {
         return description;
     }
@@ -85,7 +81,4 @@ public abstract class IfcRoot extends IfcAbstractClass {
         this.description = description;
     }
 
-    public void setDescription(String description) {
-        this.description = new IfcText(description);
-    }
 }

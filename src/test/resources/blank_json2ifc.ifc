@@ -1,0 +1,35 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [CoordinationView_V2.0]'), '2;1');
+FILE_NAME('src/test/resources/blank_json2ifc.ifc', '2023-04-09T02:26:33', (), (), 'sikongsphere-ifctools', '0.1.0-beta', '');
+FILE_SCHEMA(('IFC2X3'));
+ENDSEC;
+
+DATA;
+#1= IFCPROJECT('2cYUBSBOPCzu_HAZrdO7uv',#2,'Default Project','Description of Default Project',$,$,$,(#3),#4);
+#2= IFCOWNERHISTORY(#16,#19,$,.ADDED.,$,$,$,$);
+#3= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',*,0.000010,#21,$);
+#4= IFCUNITASSIGNMENT($);
+#5= IFCSIUNIT(*,.LENGTHUNIT.,$,.METRE.);
+#6= IFCSIUNIT(*,.PLANEANGLEUNIT.,$,.RADIAN.);
+#7= IFCSIUNIT(*,.TIMEUNIT.,$,.SECOND.);
+#8= IFCBUILDING('3IYN6tUFX08OcG5tfaIhj9',#2,'Default Building','Description',$,#9,$,$,.ELEMENT.,$,$,$);
+#9= IFCLOCALPLACEMENT($,#10);
+#10= IFCAXIS2PLACEMENT3D(#11,$,$);
+#11= IFCCARTESIANPOINT((0.,0.,0.));
+#12= IFCBUILDINGSTOREY('0mVcx4QCXDXfeFIlDNG9zS',#2,'Default Building Storey','Description',$,#13,$,$,.ELEMENT.,$);
+#13= IFCLOCALPLACEMENT($,#14);
+#14= IFCAXIS2PLACEMENT3D(#15,$,$);
+#15= IFCCARTESIANPOINT((0.,0.,0.));
+#16= IFCPERSONANDORGANIZATION(#17,#18,$);
+#17= IFCPERSON($,'unknown','user',$,$,$,$,$);
+#18= IFCORGANIZATION($,'ifctoolsproject.com',$,$,$);
+#19= IFCAPPLICATION(#20,'1.0','ifctoolsproject.com','ifctoolsproject.com');
+#20= IFCORGANIZATION($,'ifctoolsproject.com',$,$,$);
+#21= IFCAXIS2PLACEMENT3D(#22,$,$);
+#22= IFCCARTESIANPOINT((0.,0.,0.));
+#23= IFCRELAGGREGATES('2jdJS6RpjBqu_1r_Xo$5up',#2,$,$,#1,(#8));
+#24= IFCRELAGGREGATES('2UAsEFYFbBd89c7mlTOPUZ',#2,$,$,#8,(#12));
+ENDSEC;
+
+END-ISO-10303-21;

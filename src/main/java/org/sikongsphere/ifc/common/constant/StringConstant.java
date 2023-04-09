@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.common.constant;
 
-import com.sun.org.apache.bcel.internal.generic.PUSH;
+//import com.sun.org.apache.bcel.internal.generic.PUSH;
 
 /**
  * some constant used in an IFC file
@@ -66,6 +66,7 @@ public class StringConstant {
     public static final String ZERO_DOUBLE = "0.";
 
     public static final String TYPE = "type";
+    public static final String REF = "ref";
     public static final String ORGANIZATION = "organization";
     public static final String VERSION = "version";
     public static final String DATA = "data";
@@ -78,4 +79,9 @@ public class StringConstant {
 
     public static final String GUID_CHARS =
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$";
+
+    /**
+     * method
+     */
+    public static final String SET_METHOD = "set";
 }

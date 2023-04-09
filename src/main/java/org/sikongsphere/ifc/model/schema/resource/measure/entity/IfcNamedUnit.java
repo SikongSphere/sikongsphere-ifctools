@@ -12,6 +12,7 @@ package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.enumeration.IfcUnitEnum;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 
@@ -31,6 +32,8 @@ public abstract class IfcNamedUnit extends IfcAbstractClass implements IfcUnit {
         this.unitType = unitType;
     }
 
+    public IfcNamedUnit() {};
+
     public IfcDimensionalExponents getDimensions() {
         return dimensions;
     }
@@ -45,5 +48,9 @@ public abstract class IfcNamedUnit extends IfcAbstractClass implements IfcUnit {
 
     public void setUnitType(IfcUnitEnum unitType) {
         this.unitType = unitType;
+    }
+
+    public void setUnitType(STRING unitType) {
+        this.unitType = IfcUnitEnum.valueOf(unitType.value);
     }
 }

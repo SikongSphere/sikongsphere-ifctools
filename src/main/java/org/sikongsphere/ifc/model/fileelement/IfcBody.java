@@ -47,9 +47,6 @@ public class IfcBody extends IfcFileElement {
         this.elements.forEach((key, value) -> {
             String s = null;
             try {
-                if (key == 5) {
-                    System.out.println();
-                }
                 s = value.toIfc();
             } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
                 e.printStackTrace();
