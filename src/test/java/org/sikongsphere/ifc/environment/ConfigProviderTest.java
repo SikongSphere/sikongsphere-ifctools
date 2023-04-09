@@ -31,7 +31,7 @@ public class ConfigProviderTest {
 
     @Test
     public void versionTest() {
-        assert ConfigProvider.getVersion().equals("0.1.0-beta");
+        assert ConfigProvider.getVersion().equals("0.2.0-beta");
     }
 
     @Test
