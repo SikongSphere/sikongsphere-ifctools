@@ -9,7 +9,7 @@
     <!-- =========================================================== -->
     <groupId>org.sikongsphere</groupId>
     <artifactId>sikongsphere-ifctools</artifactId>
-    <version>0.1.0-beta</version>
+    <version>0.2.0-beta</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
 
@@ -301,6 +301,15 @@
         <developer>
             <name>Qi Zhong</name>
             <email>1939945349@qq.com</email>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Kun Luo</name>
+            <email>archdanter@gmail.com</email>
             <roles>
                 <role>Java Developer</role>
             </roles>

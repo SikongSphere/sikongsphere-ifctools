@@ -2,7 +2,7 @@
 
 ### New Features
 
-- Added the ability to convert IFC files to IFCJSON files
+- Added the ability to convert IFC files to IFCJSON files and convert IFCJSON to IFC file
 
 - Added experimental API
 
@@ -64,6 +64,8 @@
   AbstractQuery <|-- CityGMLQuery
   ```
 
+- Added experimental graph API
+
 - Added several Query API
 
   - filter by class name
@@ -75,3 +77,4 @@
 ### Fix Bugs
 
 - Fixed an issue where backslashes in strings could not be parsed
+- Fixed scientific notation parsing bug
