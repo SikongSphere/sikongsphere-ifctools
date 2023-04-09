@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcThermalResistanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcThermalResistanceMeasure() {}
 
-    public IfcThermalResistanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcThermalResistanceMeasure(DOUBLE value) {
         super(value);
     }

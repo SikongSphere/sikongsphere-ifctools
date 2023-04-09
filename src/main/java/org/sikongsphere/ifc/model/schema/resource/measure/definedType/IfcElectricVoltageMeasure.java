@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcElectricVoltageMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcElectricVoltageMeasure() {}
 
-    public IfcElectricVoltageMeasure(double value) {
-        super(value);
-    }
-
     public IfcElectricVoltageMeasure(DOUBLE value) {
         super(value);
     }

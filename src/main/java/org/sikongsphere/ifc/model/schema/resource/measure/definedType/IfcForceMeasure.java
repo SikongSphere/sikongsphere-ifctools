@@ -30,10 +30,6 @@ import java.util.Locale;
 public class IfcForceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcForceMeasure() {}
 
-    public IfcForceMeasure(double value) {
-        super(value);
-    }
-
     public IfcForceMeasure(DOUBLE value) {
         super(value);
     }

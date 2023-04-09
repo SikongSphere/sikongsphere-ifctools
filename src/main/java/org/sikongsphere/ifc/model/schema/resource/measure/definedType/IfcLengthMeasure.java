@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
+import java.math.BigDecimal;
+
 /**
  * A length measure is the value of a distance.
  * @author Wang Bohong
@@ -32,7 +34,7 @@ public class IfcLengthMeasure extends DOUBLE implements IfcValue, IfcSizeSelect,
 
     public IfcLengthMeasure() {}
 
-    public IfcLengthMeasure(double value) {
+    public IfcLengthMeasure(BigDecimal value) {
         super(value);
     }
 
@@ -42,7 +44,7 @@ public class IfcLengthMeasure extends DOUBLE implements IfcValue, IfcSizeSelect,
 
     @IfcParserConstructor
     public IfcLengthMeasure(STRING value) {
-        super(value);
+        super(DOUBLE.parseValue(value));
     }
 
     public IfcLengthMeasure(SCIENTIFICNOTATION value) {

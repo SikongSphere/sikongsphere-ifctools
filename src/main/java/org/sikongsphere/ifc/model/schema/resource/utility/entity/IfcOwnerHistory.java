@@ -50,6 +50,8 @@ public class IfcOwnerHistory extends IfcAbstractClass {
 
     private IfcTimeStamp creationDate;
 
+    public IfcOwnerHistory() {}
+
     @IfcParserConstructor
     public IfcOwnerHistory(
         IfcPersonAndOrganization owningUser,

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcVolumetricFlowRateMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcVolumetricFlowRateMeasure() {}
 
-    public IfcVolumetricFlowRateMeasure(double value) {
-        super(value);
-    }
-
     public IfcVolumetricFlowRateMeasure(DOUBLE value) {
         super(value);
     }

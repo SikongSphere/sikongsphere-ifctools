@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcIonConcentrationMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcIonConcentrationMeasure() {}
 
-    public IfcIonConcentrationMeasure(double value) {
-        super(value);
-    }
-
     public IfcIonConcentrationMeasure(DOUBLE value) {
         super(value);
     }

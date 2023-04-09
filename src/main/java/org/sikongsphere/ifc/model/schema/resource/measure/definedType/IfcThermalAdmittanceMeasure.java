@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcThermalAdmittanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcThermalAdmittanceMeasure() {}
 
-    public IfcThermalAdmittanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcThermalAdmittanceMeasure(DOUBLE value) {
         super(value);
     }

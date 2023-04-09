@@ -31,10 +31,6 @@ public class IfcLuminousIntensityDistributionMeasure extends REAL
         IfcDerivedMeasureValue {
     public IfcLuminousIntensityDistributionMeasure() {}
 
-    public IfcLuminousIntensityDistributionMeasure(double value) {
-        super(value);
-    }
-
     public IfcLuminousIntensityDistributionMeasure(DOUBLE value) {
         super(value);
     }

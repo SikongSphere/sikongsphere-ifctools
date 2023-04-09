@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcThermodynamicTemperatureMeasure extends REAL implements IfcMeasureValue {
     public IfcThermodynamicTemperatureMeasure() {}
 
-    public IfcThermodynamicTemperatureMeasure(double value) {
-        super(value);
-    }
-
     public IfcThermodynamicTemperatureMeasure(DOUBLE value) {
         super(value);
     }

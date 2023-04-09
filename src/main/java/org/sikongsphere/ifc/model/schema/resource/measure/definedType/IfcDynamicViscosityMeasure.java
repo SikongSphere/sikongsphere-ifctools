@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcDynamicViscosityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcDynamicViscosityMeasure() {}
 
-    public IfcDynamicViscosityMeasure(double value) {
-        super(value);
-    }
-
     public IfcDynamicViscosityMeasure(DOUBLE value) {
         super(value);
     }

@@ -10,7 +10,10 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.serializer.LISTSerializer;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 import java.util.ArrayList;
@@ -22,7 +25,10 @@ import java.util.List;
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonSerialize(using = LISTSerializer.class)
 public class LIST<E> extends IfcDataType {
+
     private List<E> objects = new ArrayList<>();
 
     public LIST(List<E> objects) {

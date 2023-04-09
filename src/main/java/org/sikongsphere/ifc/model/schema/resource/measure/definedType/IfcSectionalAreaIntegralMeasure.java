@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcSectionalAreaIntegralMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcSectionalAreaIntegralMeasure() {}
 
-    public IfcSectionalAreaIntegralMeasure(double value) {
-        super(value);
-    }
-
     public IfcSectionalAreaIntegralMeasure(DOUBLE value) {
         super(value);
     }

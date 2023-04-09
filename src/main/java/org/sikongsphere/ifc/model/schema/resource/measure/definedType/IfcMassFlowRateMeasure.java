@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMassFlowRateMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMassFlowRateMeasure() {}
 
-    public IfcMassFlowRateMeasure(double value) {
-        super(value);
-    }
-
     public IfcMassFlowRateMeasure(DOUBLE value) {
         super(value);
     }

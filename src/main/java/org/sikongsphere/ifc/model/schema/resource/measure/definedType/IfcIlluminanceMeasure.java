@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcIlluminanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcIlluminanceMeasure() {}
 
-    public IfcIlluminanceMeasure(double value) {
-        super(value);
-    }
-
     public IfcIlluminanceMeasure(DOUBLE value) {
         super(value);
     }

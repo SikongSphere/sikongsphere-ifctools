@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcMomentOfInertiaMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcMomentOfInertiaMeasure() {}
 
-    public IfcMomentOfInertiaMeasure(double value) {
-        super(value);
-    }
-
     public IfcMomentOfInertiaMeasure(DOUBLE value) {
         super(value);
     }

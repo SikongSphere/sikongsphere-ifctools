@@ -29,6 +29,15 @@ public class IfcUnitAssignment extends IfcAbstractClass {
 
     private SET<IfcUnit> units;
 
+    public IfcUnitAssignment(IfcUnit... unitArray) {
+        this.units = new SET<>();
+        for (IfcUnit ifcUnit : unitArray) {
+            units.add(ifcUnit);
+        }
+    }
+
+    public IfcUnitAssignment() {}
+
     @IfcParserConstructor
     public IfcUnitAssignment(SET<IfcUnit> units) {
         this.units = units;

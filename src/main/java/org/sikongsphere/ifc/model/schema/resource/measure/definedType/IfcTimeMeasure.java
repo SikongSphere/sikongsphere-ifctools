@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcTimeMeasure extends REAL implements IfcMeasureValue {
     public IfcTimeMeasure() {}
 
-    public IfcTimeMeasure(double value) {
-        super(value);
-    }
-
     public IfcTimeMeasure(DOUBLE value) {
         super(value);
     }

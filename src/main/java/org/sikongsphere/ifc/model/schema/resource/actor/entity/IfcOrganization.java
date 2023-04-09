@@ -69,6 +69,8 @@ public class IfcOrganization extends IfcAbstractClass
         this.addresses = addresses;
     }
 
+    public IfcOrganization() {}
+
     public IfcIdentifier getId() {
         return id;
     }

@@ -23,6 +23,7 @@ import org.sikongsphere.ifc.parser.gen.IFCBaseVisitor;
 import org.sikongsphere.ifc.parser.gen.IFCParser;
 import org.sikongsphere.ifc.parser.gen.IFCParser.*;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -149,13 +150,13 @@ public class IfcFileVisitor extends IFCBaseVisitor<IfcInterface> {
         } else if (firstChild instanceof IdentContext || firstChild instanceof StringContext) {
             return new STRING(StringUtil.dropQuota(ctx.getText()).replace("[SLASH]", "\\"));
         } else if (firstChild instanceof DecNumberContext) {
-            return new DOUBLE(Double.parseDouble(firstChild.getText()));
+            return new DOUBLE(DOUBLE.parseValue(firstChild.getText()));
         } else if (firstChild instanceof IntNumberContext) {
             return new INTEGER(Integer.parseInt(ctx.getText()));
         } else if (firstChild instanceof NullConstContext) {
             return new NULL();
         } else if (firstChild instanceof ScientificCountingNumberContext) {
-            double mantissa = Double.parseDouble(
+            BigDecimal mantissa = DOUBLE.parseValue(
                 ((ScientificCountingNumberContext) firstChild).decNumber().getText()
             );
             int index = Integer.parseInt(

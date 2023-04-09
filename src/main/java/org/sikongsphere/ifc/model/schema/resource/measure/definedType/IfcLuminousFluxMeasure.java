@@ -27,10 +27,6 @@ import org.sikongsphere.ifc.model.datatype.STRING;
 public class IfcLuminousFluxMeasure extends REAL {
     public IfcLuminousFluxMeasure() {}
 
-    public IfcLuminousFluxMeasure(double value) {
-        super(value);
-    }
-
     public IfcLuminousFluxMeasure(DOUBLE value) {
         super(value);
     }

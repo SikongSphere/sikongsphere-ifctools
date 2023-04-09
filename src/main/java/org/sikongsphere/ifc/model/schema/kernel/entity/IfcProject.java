@@ -41,6 +41,30 @@ public class IfcProject extends IfcObject {
 
     public IfcProject() {}
 
+    public IfcProject(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        String name,
+        String description,
+        String objectType,
+        String longName,
+        String phase,
+        SET<IfcRepresentationContext> representationContexts,
+        IfcUnitAssignment unitsInContext
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            new IfcLabel(name),
+            new IfcText(description),
+            new IfcLabel(objectType)
+        );
+        this.longName = new IfcLabel(longName);
+        this.phase = new IfcLabel(phase);
+        this.representationContexts = representationContexts;
+        this.unitsInContext = unitsInContext;
+    }
+
     @IfcParserConstructor
     public IfcProject(
         IfcGloballyUniqueId globalId,

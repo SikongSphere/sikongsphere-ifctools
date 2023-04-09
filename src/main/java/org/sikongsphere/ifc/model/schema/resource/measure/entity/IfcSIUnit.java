@@ -45,6 +45,8 @@ public class IfcSIUnit extends IfcNamedUnit {
         this.name = name;
     }
 
+    public IfcSIUnit() {}
+
     public IfcSIPrefix getPrefix() {
         return prefix;
     }

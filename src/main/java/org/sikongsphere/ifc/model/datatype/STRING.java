@@ -10,7 +10,9 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.serializer.STRINGSerializer;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 /**
@@ -19,6 +21,7 @@ import org.sikongsphere.ifc.model.IfcDataType;
  * @author zaiyuan
  * @date 2022-08-11 18:30:00
  */
+@JsonSerialize(using = STRINGSerializer.class)
 public class STRING extends IfcDataType {
     public String value = "";
 
@@ -34,6 +37,10 @@ public class STRING extends IfcDataType {
 
     public STRING(INTEGER value) {
         this.value = value.getValue() + "";
+    }
+
+    public STRING(SCIENTIFICNOTATION value) {
+        this.value = value.getValue().toString();
     }
 
     public STRING(STRING value) {

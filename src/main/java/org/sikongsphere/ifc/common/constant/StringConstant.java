@@ -10,7 +10,7 @@
 */
 package org.sikongsphere.ifc.common.constant;
 
-import com.sun.org.apache.bcel.internal.generic.PUSH;
+//import com.sun.org.apache.bcel.internal.generic.PUSH;
 
 /**
  * some constant used in an IFC file
@@ -35,7 +35,8 @@ public class StringConstant {
     public static final String EQUALS = "=";
     public static final String COMMA = ",";
     public static final String DOLLAR = "$";
-    public static final String DOT = ".";
+    public static final String DOT_T = "\\.";
+    public static final String DOT_U = ".";
     public static final String QUOTE = "'";
     public static final String ASTERISK = "*";
     public static final String NONE = "NONE";
@@ -61,4 +62,26 @@ public class StringConstant {
      */
     public static final String SCI_NOTATION = "E";
     public static final String DIFFER = "-"; // May be another nickname.
+
+    public static final String ZERO_DOUBLE = "0.";
+
+    public static final String TYPE = "type";
+    public static final String REF = "ref";
+    public static final String ORGANIZATION = "organization";
+    public static final String VERSION = "version";
+    public static final String DATA = "data";
+
+    public static final String ID = "id";
+    public static String VALUE = "value";
+    public static String GLOBAL_ID = "globalId";
+    public static String IS_DECOMPOSED_BY = "isDecomposedBy";
+    public static String DECOMPOSES = "decomposes";
+
+    public static final String GUID_CHARS =
+        "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$";
+
+    /**
+     * method
+     */
+    public static final String SET_METHOD = "set";
 }

@@ -10,11 +10,10 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.IfcDataType;
-import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcParameterValue;
-import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 import java.util.*;
 
@@ -25,6 +24,7 @@ import java.util.*;
  * @date 2022-08-11 18:30:00
  */
 public class SET<E> extends IfcDataType {
+
     private Set<E> objects = new HashSet<>();
 
     public SET() {}

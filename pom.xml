@@ -4,17 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- =========================================================== -->
+    <!--     Project Description                                     -->
+    <!-- =========================================================== -->
     <groupId>org.sikongsphere</groupId>
     <artifactId>sikongsphere-ifctools</artifactId>
-    <version>0.1.0-beta</version>
+    <version>0.2.0-beta</version>
     <name>${project.groupId}:${project.artifactId}</name>
+    <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
+
     <description>
         Sikongsphere-ifctools is an open source project, which is the first to implement
         IFC (Industry Foundation Classes) standard thoroughly in China, and aims to
         consolidate the field of Architecture and Urban Planning. As for the IFC, it
         can be read on the official website of buildingSMART.
     </description>
-    <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
+    <inceptionYear>2023</inceptionYear>
+
+    <organization>
+        <name>SikongSphere</name>
+        <url>https://github.com/SikongSphere</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GPL-3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <scm>
         <connection>https://github.com/SikongSphere/sikongsphere-ifctools.git</connection>
         <url>https://github.com/SikongSphere/sikongsphere-ifctools</url>
@@ -32,6 +51,7 @@
         <spotless-maven-plugin.version>2.22.5</spotless-maven-plugin.version>
         <maven-surefire.version>2.5</maven-surefire.version>
         <commons-io.version>2.11.0</commons-io.version>
+        <jackson.version>2.9.1</jackson.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -77,9 +97,31 @@
             <artifactId>kryo</artifactId>
             <version>${kryo.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
@@ -168,12 +210,7 @@
         </plugins>
     </build>
 
-    <licenses>
-        <license>
-            <name>GPL-3.0</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
-        </license>
-    </licenses>
+
 
     <developers>
         <developer>
@@ -264,6 +301,15 @@
         <developer>
             <name>Qi Zhong</name>
             <email>1939945349@qq.com</email>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
+            <organization>SikongSphere</organization>
+            <timezone>+8</timezone>
+        </developer>
+        <developer>
+            <name>Kun Luo</name>
+            <email>archdanter@gmail.com</email>
             <roles>
                 <role>Java Developer</role>
             </roles>

@@ -27,12 +27,9 @@ public class IfcSecondInMinute extends NUMBER {
 
     @IfcParserConstructor
     public IfcSecondInMinute(DOUBLE value) {
-        super(value.getValue());
+        super(value);
         check();
     }
 
-    @Override
-    public boolean illegal() {
-        return getValue() >= 0 && getValue() <= 60;
-    }
+    // TODO 校验合法性
 }

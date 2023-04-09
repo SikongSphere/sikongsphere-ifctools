@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.domain.structuralanalysis.selectType.IfcOrientationSelect;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
@@ -33,29 +34,29 @@ public class IfcDirection extends IfcGeometricRepresentationItem
     implements
         IfcVectorOrDirection,
         IfcOrientationSelect {
-    private LIST<Double> directionRatios;// todo -> REAL
+    private LIST<DOUBLE> directionRatios;// todo -> REAL
     @IfcDeriveParameter
     private IfcDimensionCount dim;
 
     public IfcDirection() {}
 
     @IfcParserConstructor
-    public IfcDirection(LIST<Double> directionRatios) {
+    public IfcDirection(LIST<DOUBLE> directionRatios) {
         this.directionRatios = directionRatios;
     }
 
-    public IfcDirection(Double x, Double y, Double z) {
+    public IfcDirection(DOUBLE x, DOUBLE y, DOUBLE z) {
         directionRatios = new LIST<>();
         directionRatios.add(x);
         directionRatios.add(y);
         directionRatios.add(z);
     }
 
-    public LIST<Double> getDirectionRatios() {
+    public LIST<DOUBLE> getDirectionRatios() {
         return directionRatios;
     }
 
-    public void setDirectionRatios(LIST<Double> directionRatios) {
+    public void setDirectionRatios(LIST<DOUBLE> directionRatios) {
         this.directionRatios = directionRatios;
     }
 
@@ -67,9 +68,9 @@ public class IfcDirection extends IfcGeometricRepresentationItem
         this.dim = dim;
     }
 
-    @Override
-    public boolean isDefault() {
-        return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
-    }
+    // @Override
+    // public boolean isDefault() {
+    // return directionRatios.getObjects().stream().allMatch(i -> i == 0.0);
+    // }
 
 }

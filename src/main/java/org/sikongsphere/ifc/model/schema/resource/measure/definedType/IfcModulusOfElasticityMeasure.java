@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcModulusOfElasticityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcModulusOfElasticityMeasure() {}
 
-    public IfcModulusOfElasticityMeasure(double value) {
-        super(value);
-    }
-
     public IfcModulusOfElasticityMeasure(DOUBLE value) {
         super(value);
     }

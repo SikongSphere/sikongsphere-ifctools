@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcDoseEquivalentMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcDoseEquivalentMeasure() {}
 
-    public IfcDoseEquivalentMeasure(double value) {
-        super(value);
-    }
-
     public IfcDoseEquivalentMeasure(DOUBLE value) {
         super(value);
     }

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcElectricCurrentMeasure extends REAL implements IfcMeasureValue {
     public IfcElectricCurrentMeasure() {}
 
-    public IfcElectricCurrentMeasure(double value) {
-        super(value);
-    }
-
     public IfcElectricCurrentMeasure(DOUBLE value) {
         super(value);
     }

@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcSolidAngleMeasure extends REAL implements IfcMeasureValue {
     public IfcSolidAngleMeasure() {}
 
-    public IfcSolidAngleMeasure(double value) {
-        super(value);
-    }
-
     public IfcSolidAngleMeasure(DOUBLE value) {
         super(value);
     }

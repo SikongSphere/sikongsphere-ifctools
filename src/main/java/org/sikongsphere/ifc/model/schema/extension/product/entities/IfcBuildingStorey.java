@@ -40,6 +40,32 @@ public class IfcBuildingStorey extends IfcSpatialStructureElement {
 
     public IfcBuildingStorey() {}
 
+    public IfcBuildingStorey(
+        IfcGloballyUniqueId globalId,
+        IfcOwnerHistory ownerHistory,
+        String name,
+        String description,
+        String objectType,
+        IfcObjectPlacement objectPlacement,
+        IfcProductRepresentation representation,
+        String longName,
+        IfcElementCompositionEnum compositionType,
+        IfcLengthMeasure elevation
+    ) {
+        super(
+            globalId,
+            ownerHistory,
+            new IfcLabel(name),
+            new IfcText(description),
+            new IfcLabel(objectType),
+            objectPlacement,
+            representation,
+            new IfcLabel(longName),
+            compositionType
+        );
+        this.elevation = elevation;
+    }
+
     @IfcParserConstructor
     public IfcBuildingStorey(
         IfcGloballyUniqueId globalId,
