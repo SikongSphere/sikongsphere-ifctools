@@ -8,20 +8,14 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.graph.io;
+package org.sikongsphere.ifc.graph.generator;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
-import org.sikongsphere.ifc.graph.basic.LayerType;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphGenerator;
 
-public class IfcStandardGraphWriter implements IfcGraphWriter {
-
+public class IfcGraphStandardGenerator implements IfcGraphGenerator {
     @Override
-    public void WriteGraph(String path, IfcGraph graph) {
-
-    }
-
-    @Override
-    public void WriteGraphLayer(String path, IfcGraph graph, LayerType layerType) {
-
+    public IfcGraph generate(IfcGraph src) {
+        return null;
     }
 }

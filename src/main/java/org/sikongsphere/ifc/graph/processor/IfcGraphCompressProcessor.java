@@ -8,20 +8,22 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.graph.io;
+package org.sikongsphere.ifc.graph.processor;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
-import org.sikongsphere.ifc.graph.graphAPI.IfcGraphReader;
+import org.sikongsphere.ifc.graph.basic.IfcGraphLayer;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphProcessor;
 
-public class IfcGraphJsonReader implements IfcGraphReader {
+public class IfcGraphCompressProcessor implements IfcGraphProcessor {
+    public IfcGraphCompressProcessor() {}
 
     @Override
-    public IfcGraph readGraph(String path) {
+    public IfcGraph process(IfcGraph graph) {
         return null;
     }
 
     @Override
-    public IfcGraph readLayer(String path, Enum LayerType) {
+    public IfcGraphLayer processLayer(IfcGraphLayer ifcGraphLayer) {
         return null;
     }
 }

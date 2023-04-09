@@ -36,7 +36,7 @@ public abstract class IfcGraphEdge {
         this.relationShip = relationShip;
     }
 
-    public IfcGraphVertex getGraphA() {
+    public IfcGraphVertex getSource() {
         return graphA;
     }
 
@@ -44,7 +44,7 @@ public abstract class IfcGraphEdge {
         this.graphA = graphA;
     }
 
-    public IfcGraphVertex getGraphB() {
+    public IfcGraphVertex getDestination() {
         return graphB;
     }
 

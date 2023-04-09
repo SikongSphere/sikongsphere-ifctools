@@ -11,15 +11,16 @@
 package org.sikongsphere.ifc.graph.io;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphReader;
 
 public class IfcGraphStandardReader implements IfcGraphReader {
     @Override
-    public IfcGraph ReadGraph(String path) {
+    public IfcGraph readGraph(String path) {
         return null;
     }
 
     @Override
-    public IfcGraph ReadLayer(String path, Enum LayerType) {
+    public IfcGraph readLayer(String path, Enum LayerType) {
         return null;
     }
 }

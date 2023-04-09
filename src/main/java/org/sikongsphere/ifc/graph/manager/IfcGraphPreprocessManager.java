@@ -8,10 +8,18 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
 */
-package org.sikongsphere.ifc.graph.processor;
+package org.sikongsphere.ifc.graph.manager;
 
 import org.sikongsphere.ifc.graph.basic.IfcGraph;
+import org.sikongsphere.ifc.graph.graphAPI.IfcGraphManager;
 
-public interface IfcGraphManager {
-    public IfcGraph Process(IfcGraph graph, IfcGraphProcessor processor);
+public class IfcGraphPreprocessManager implements IfcGraphManager {
+    public IfcGraphPreprocessManager() {
+
+    }
+
+    @Override
+    public IfcGraph process(IfcGraph graph) {
+        return null;
+    }
 }
