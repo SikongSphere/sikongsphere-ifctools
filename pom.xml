@@ -6,7 +6,7 @@
 
     <groupId>org.sikongsphere</groupId>
     <artifactId>sikongsphere-ifctools</artifactId>
-    <version>0.1.0-beta</version>
+    <version>0.1.0-release</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>
         Sikongsphere-ifctools is an open source project, which is the first to implement
