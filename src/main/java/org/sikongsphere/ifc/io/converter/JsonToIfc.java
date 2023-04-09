@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.io.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jdk.nashorn.internal.parser.Token;
 import org.apache.commons.lang3.StringUtils;
 import org.sikongsphere.ifc.common.algorithm.GlobalUniqueID;
 import org.sikongsphere.ifc.common.constant.StringConstant;
@@ -18,6 +19,7 @@ import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.common.exception.SikongSphereParseException;
 import org.sikongsphere.ifc.infra.IfcClassContainer;
 import org.sikongsphere.ifc.io.constant.IfcJSONStringConstant;
+import org.sikongsphere.ifc.io.constant.TokenConstant;
 import org.sikongsphere.ifc.io.handler.ifc.IfcFileWriter;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.IfcInterface;
@@ -36,7 +38,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
- * @author:stan & yese
+ * @author: stan & yese
  * @date:2023/3/16 22:49
  *
  * 用于将IfcJSON转换为IFC格式的工具类
@@ -155,7 +157,7 @@ public class JsonToIfc {
     private void fillEntity(LinkedHashMap<String, Object> attributeData) {
         Object globalIdObject = attributeData.get(StringConstant.GLOBAL_ID);
         if (null == globalIdObject) {
-            throw new SikongSphereParseException("globalId is must!");
+            throw new SikongSphereParseException(TokenConstant.WARNING_GLOBAL_ID);
         }
         String globalId = globalIdObject.toString();
         String className = (String) attributeData.get(StringConstant.TYPE);
@@ -168,12 +170,17 @@ public class JsonToIfc {
             }
             List<Method> collect = methods.stream()
                 .filter(
-                    v -> v.getName().equals("set" + StringUtils.capitalize(String.valueOf(key)))
+                    v -> v.getName()
+                        .equals(
+                            StringConstant.SET_METHOD + StringUtils.capitalize(String.valueOf(key))
+                        )
                 )
                 .collect(Collectors.toList());
 
             if (collect.size() == 0) {
-                // todo: 部分对象没有globalId的属性。这个因该是错误情况
+                // todo: 部分对象没有globalId的属性。这个应该是错误情况
+                // answer by stan:
+                // 按照定义来说是每个物体都有globalID的，但是根据ifcJSON标准的定义，省略了非实体（或其他，需要在讨论）的globalID
                 return;
             }
             Method targetMethod = collect.get(0);
@@ -268,7 +275,8 @@ public class JsonToIfc {
             }
             List<Method> targetMethods = methods.stream()
                 .filter(
-                    method -> method.getName().equals("set" + StringUtils.capitalize(propertyName))
+                    method -> method.getName()
+                        .equals(StringConstant.SET_METHOD + StringUtils.capitalize(propertyName))
                 )
                 .collect(Collectors.toList());
             try {
@@ -317,11 +325,11 @@ public class JsonToIfc {
                         }
                     } else {
                         throw new RuntimeException(
-                            "unknown type: " + propertyValue.getClass().getName()
+                            TokenConstant.WARNING_UNKNOWN_CLASS + propertyValue.getClass().getName()
                         );
                     }
             } catch (Exception e) {
-                throw new IllegalStateException("初始化失败！", e);
+                throw new IllegalStateException(TokenConstant.WARNING_INIT_FAIL, e);
             }
 
         });

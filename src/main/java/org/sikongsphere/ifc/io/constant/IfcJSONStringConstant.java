@@ -31,7 +31,7 @@ public class IfcJSONStringConstant {
     public static String REF = "ref";
 
     // exponents
-    public static String LENGTH_EXPONENT = "LengthExpoent";
+    public static String LENGTH_EXPONENT = "LengthExponent";
     public static String MASS_EXPONENT = "MassExponent";
     public static String TIME_EXPONENT = "TimeExponent";
     public static String ELECTRIC_CURRENT_EXPONENT = "ElectricCurrentExponent";

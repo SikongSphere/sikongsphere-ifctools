@@ -31,17 +31,8 @@ public class GlobalUniqueID {
      */
     private static Integer b64Encoding(String voc) {
 
-        ArrayList<Integer> list = new ArrayList<>();
-
-        for (int i = 0; i < voc.length(); i++) {
-            char c = voc.charAt(i);
-            int index = StringConstant.GUID_CHARS.indexOf(c);
-            list.add(index);
-        }
-        Optional<Integer> reduce = list.stream().reduce((x, y) -> x * 64 + y);
-
-        return reduce.get();
-
+        return voc.chars()
+            .reduce(0, (a, b) -> a * 64 + StringConstant.GUID_CHARS.indexOf((char) b));
     }
 
     private static String b64Decoding(Integer voc, Integer length) {
@@ -62,26 +53,20 @@ public class GlobalUniqueID {
      * @return
      */
     public static String expand(String globalId) {
-        List<Integer> list = new ArrayList<>();
-        Integer value = b64Encoding(globalId.substring(0, 2));
-        list.add(value);
-
+        ArrayList<Integer> bs = new ArrayList<>(
+            Arrays.asList(b64Encoding(globalId.substring(0, 2)))
+        );
         for (int i = 0; i < 5; i++) {
-            Integer tempValue = b64Encoding(globalId.substring(2 + 4 * i, 6 + 4 * i));
-
-            for (int j = 0; j < 3; j++) {
-                list.add((tempValue >> (8 * (2 - j))) % 256);
-            }
+            int d = b64Encoding(globalId.substring(2 + 4 * i, 6 + 4 * i));
+            bs.add((d >> 16) & 0xFF);
+            bs.add((d >> 8) & 0xFF);
+            bs.add(d & 0xFF);
         }
-        List<String> hexStringList = new ArrayList<>();
-
-        list.forEach(x -> {
-            String hexString = Integer.toHexString(x);
-            hexStringList.add(hexString);
-        });
-
-        return String.join(StringConstant.NOTHING, hexStringList);
-
+        StringBuilder result = new StringBuilder();
+        for (int b : bs) {
+            result.append(String.format("%02x", b));
+        }
+        return result.toString();
     }
 
     /**
