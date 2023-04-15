@@ -28,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcLinearStiffnessMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcLinearStiffnessMeasure() {}
 
-    public IfcLinearStiffnessMeasure(double value) {
+    public IfcLinearStiffnessMeasure(STRING value) {
         super(value);
     }
 

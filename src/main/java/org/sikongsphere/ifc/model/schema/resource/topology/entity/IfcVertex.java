@@ -15,6 +15,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 
 /**
+ * A vertex is the topological construct corresponding to a point. It has dimensionality 0 and extent 0.
+ * The domain of a vertex, if present, is a point in m dimensional real space RM; this is represented
+ * by the vertex point subtype.
+ *
  * @author zaiyuan
  * @date 2022/12/10 23:09
  */

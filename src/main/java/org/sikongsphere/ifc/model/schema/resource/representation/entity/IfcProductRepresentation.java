@@ -30,13 +30,14 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcProductRepresentation extends IfcAbstractClass {
+
     @IfcOptionField
     private IfcLabel name;
+
     @IfcOptionField
     private IfcText description;
-    private LIST<IfcRepresentation> representations;
 
-    public IfcProductRepresentation() {}
+    private LIST<IfcRepresentation> representations;
 
     @IfcParserConstructor
     public IfcProductRepresentation(

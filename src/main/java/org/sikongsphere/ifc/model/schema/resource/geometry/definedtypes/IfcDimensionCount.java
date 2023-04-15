@@ -36,11 +36,6 @@ public class IfcDimensionCount extends INTEGER {
         this.dimensionCount = dimensionCount;
     }
 
-    public IfcDimensionCount(SCIENTIFICNOTATION dimensionCount) {
-        super(dimensionCount.getInteger());
-        this.dimensionCount = new INTEGER(dimensionCount.getInteger());
-    }
-
     public IfcDimensionCount(Integer dimensionCount) {
         super(dimensionCount);
         this.dimensionCount = new INTEGER(dimensionCount);

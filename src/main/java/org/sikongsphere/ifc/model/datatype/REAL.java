@@ -12,48 +12,43 @@ package org.sikongsphere.ifc.model.datatype;
 
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
-import org.sikongsphere.ifc.model.IfcDataType;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
+
+import java.math.BigDecimal;
 
 /**
  * @author zaiyuan
  * @date 2022/12/07 21:45
  */
-public class REAL extends IfcDataType implements IfcValue {
-    private double value;
+public class REAL extends DOUBLE implements IfcValue {
 
     public REAL() {}
 
     public REAL(double value) {
-        this.value = value;
+        super(value);
+    }
+
+    public REAL(BigDecimal value) {
+        super(value);
+    }
+
+    // todo init with scientificnotation
+
+    public REAL(INTEGER value) {
+        super(DOUBLE.parseValue(value));
     }
 
     public REAL(DOUBLE value) {
-        this.value = value.value;
+        super(value);
+    }
+
+    public REAL(String value) {
+        super(DOUBLE.parseValue(value));
     }
 
     @IfcParserConstructor
     public REAL(STRING value) {
-        String str = value.value;
-        if (str != null && str.charAt(str.length() - 1) == '.') {
-            str = str.substring(0, str.length() - 1);
-        }
-        this.value = (str == null) ? 0.0 : Double.parseDouble(str);
+        super(DOUBLE.parseValue(value));
     }
 
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        int num = (int) value;
-        if (num - value == 0) {
-            return num + StringConstant.DOT;
-        } else return String.valueOf(value);
-    }
 }

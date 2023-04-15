@@ -17,9 +17,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
-import org.sikongsphere.ifc.model.datatype.DOUBLE;
-import org.sikongsphere.ifc.model.datatype.SCIENTIFICNOTATION;
-import org.sikongsphere.ifc.model.datatype.SET;
+import org.sikongsphere.ifc.model.datatype.*;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -33,13 +31,18 @@ import java.util.Optional;
  *
  * @author stan
  * @date 2022/09/01 22:10
+ * @modified stan
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcGeometricRepresentationContext extends IfcRepresentationContext {
+
     private IfcDimensionCount coordinateSpaceDimension;
+
     @IfcOptionField
-    private DOUBLE precision;
+    private REAL precision;
+
     private IfcAxis2Placement worldCoordinateSystem;
+
     @IfcOptionField
     private IfcDirection trueNorth;
 
@@ -49,13 +52,16 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     public IfcGeometricRepresentationContext() {}
 
     public IfcGeometricRepresentationContext(
-        IfcDimensionCount coordinateSpaceDimension,
-        DOUBLE precision,
+        String contextIdentifier,
+        String contextType,
+        int coordinateSpaceDimension,
+        double precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth
     ) {
-        this.coordinateSpaceDimension = coordinateSpaceDimension;
-        this.precision = precision;
+        super(new IfcLabel(contextIdentifier), new IfcLabel(contextType));
+        this.coordinateSpaceDimension = new IfcDimensionCount(coordinateSpaceDimension);
+        this.precision = new REAL(precision);
         this.worldCoordinateSystem = worldCoordinateSystem;
         this.trueNorth = trueNorth;
     }
@@ -65,7 +71,7 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         IfcLabel contextIdentifier,
         IfcLabel contextType,
         IfcDimensionCount coordinateSpaceDimension,
-        DOUBLE precision,
+        REAL precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth
     ) {
@@ -77,11 +83,10 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     public String getCoordinateSpaceDimension() {
-        String s = Optional.ofNullable(coordinateSpaceDimension.getDimensionCount())
-            .map(x -> coordinateSpaceDimension.getDimensionCount().toString())
+        return Optional.ofNullable(coordinateSpaceDimension)
+            .map(IfcDimensionCount::getDimensionCount)
+            .map(INTEGER::toString)
             .orElse(StringConstant.ASTERISK);
-
-        return s;
     }
 
     public void setCoordinateSpaceDimension(IfcDimensionCount coordinateSpaceDimension) {
@@ -89,16 +94,19 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
     }
 
     public String getPrecision() {
-        if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
+
+        if (precision == null) {
+            return StringConstant.ASTERISK;
+        } else if (SCIENTIFICNOTATION.class.isAssignableFrom(precision.getClass())) {
             return precision.toString();
-        } else if (precision.value == 0.0) {
+        } else if (precision.isDefault()) {
             return StringConstant.ASTERISK;
         } else {
             return String.valueOf(precision);
         }
     }
 
-    public void setPrecision(DOUBLE precision) {
+    public void setPrecision(REAL precision) {
         this.precision = precision;
     }
 

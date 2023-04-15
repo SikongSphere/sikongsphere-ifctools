@@ -18,6 +18,11 @@ import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPoint;
 
 /**
+ * A poly loop is a loop with straight edges bounding a planar region in space. A poly loop is a loop of genus 1
+ * where the loop is represented by an ordered coplanar collection of points forming the vertices of the loop.
+ * The loop is composed of straight line segments joining a point in the collection to the succeeding point in
+ * the collection. The closing segment is from the last to the first point in the collection.
+ *
  * @author GaoSU
  * @date 2022/11/01 22:44
  */
@@ -25,8 +30,6 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCartesianPo
 public class IfcPolyLoop extends IfcLoop {
     // TODO UNIQUE
     private LIST<IfcCartesianPoint> polygon;
-
-    public IfcPolyLoop() {}
 
     @IfcParserConstructor
     public IfcPolyLoop(LIST<IfcCartesianPoint> polygon) {

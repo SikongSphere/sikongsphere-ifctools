@@ -25,15 +25,21 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcUnit;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
+import org.sikongsphere.ifc.model.schema.resource.property.selectType.IfcObjectReferenceSelect;
 import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcDataOriginEnum;
 import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcTimeSeriesDataTypeEnum;
 
 /**
+ * A time series is a set of a time-stamped data entries.
+ *
  * @author yiwei
  * @date 2022/11/01 23:09
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
-public class IfcTimeSeries extends IfcAbstractClass implements IfcMetricValueSelect {
+public class IfcTimeSeries extends IfcAbstractClass
+    implements
+        IfcMetricValueSelect,
+        IfcObjectReferenceSelect {
     private IfcLabel name;
     @IfcOptionField
     private IfcText description;

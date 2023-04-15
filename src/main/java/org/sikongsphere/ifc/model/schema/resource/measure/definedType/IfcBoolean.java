@@ -25,7 +25,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022/11/12 20:13
  */
 @IfcClass(type = IfcType.DEFINED_TYPE, layer = IfcLayer.RESOURCE, isStepElement = false)
-public class IfcBoolean extends BOOLEAN implements IfcValue, IfcSimpleValue {
+public class IfcBoolean extends BOOLEAN implements IfcSimpleValue {
     public IfcBoolean() {}
 
     public IfcBoolean(boolean value) {

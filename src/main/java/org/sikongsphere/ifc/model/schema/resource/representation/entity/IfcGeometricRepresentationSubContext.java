@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.schema.resource.geometry.definedtypes.IfcDimensionCount;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcDirection;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
@@ -35,20 +36,21 @@ import org.sikongsphere.ifc.model.schema.resource.representation.enumeration.Ifc
 public class IfcGeometricRepresentationSubContext extends IfcGeometricRepresentationContext {
 
     private IfcGeometricRepresentationContext parentContext;
+
     @IfcOptionField
     private IfcPositiveRatioMeasure targetScale;
+
     private IfcGeometricProjectionEnum targetView;
+
     @IfcOptionField
     private IfcLabel userDefinedTargetView;
-
-    public IfcGeometricRepresentationSubContext() {}
 
     @IfcParserConstructor
     public IfcGeometricRepresentationSubContext(
         IfcLabel contextIdentifier,
         IfcLabel contextType,
         IfcDimensionCount coordinateSpaceDimension,
-        DOUBLE precision,
+        REAL precision,
         IfcAxis2Placement worldCoordinateSystem,
         IfcDirection trueNorth,
         IfcGeometricRepresentationContext parentContext,

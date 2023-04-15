@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcThermodynamicTemperatureMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * An instance of the entity IfcStructuralLoadTemperature shall be used to define actions which are caused by a temperature change.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

@@ -16,7 +16,6 @@ import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
-import org.sikongsphere.ifc.model.schema.domain.buildingcontrols.enumeration.IfcAlarmTypeEnum;
 import org.sikongsphere.ifc.model.schema.domain.buildingcontrols.enumeration.IfcControllerTypeEnum;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcPropertySetDefinition;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
@@ -24,7 +23,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
-import org.sikongsphere.ifc.model.schema.shared.sharedbldgservices.entity.IfcDistributionControlElementType;
+import org.sikongsphere.ifc.model.schema.shared.bldgservices.entity.IfcDistributionControlElementType;
 
 /**
  * @author yiwei

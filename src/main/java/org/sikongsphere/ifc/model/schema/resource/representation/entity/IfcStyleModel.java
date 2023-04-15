@@ -19,14 +19,15 @@ import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentat
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * IfcStyleModel
+ *  The IfcStyleModel represents the concept of a particular presentation style defined for a material
+ *  (or other characteristic) of a product or a product component within a representation context.
+ *  This representation context may (but has not to be) a geometric representation context.
  *
  * @author GaoSu
  * @date 2022/10/16 14:08
  */
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public abstract class IfcStyleModel extends IfcRepresentation {
-    public IfcStyleModel() {}
 
     @IfcParserConstructor
     public IfcStyleModel(

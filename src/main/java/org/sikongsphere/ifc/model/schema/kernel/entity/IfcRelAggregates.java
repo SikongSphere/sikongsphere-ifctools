@@ -30,6 +30,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory
 
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY)
 public class IfcRelAggregates extends IfcRelDecomposes {
+
+    public IfcRelAggregates() {}
+
     @IfcParserConstructor
     public IfcRelAggregates(
         IfcGloballyUniqueId globalId,

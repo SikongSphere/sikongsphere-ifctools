@@ -21,7 +21,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcModulus
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcModulusOfSubgradeReactionMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * The entity IfcBoundaryFaceCondition describes boundary conditions that can be applied to structural face connections,
+ * either directly for the connection (e.g. the connecting face) or for the relation between a structural member
+ * and the connection.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

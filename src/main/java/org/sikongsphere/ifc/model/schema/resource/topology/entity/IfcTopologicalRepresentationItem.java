@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationItem;
 
 /**
+ * The topological representation item is the supertype for all the topological representation items in the geometry resource.
+ *
  * @author GaoSU
  * @date 2022/10/25 13:40
  */

@@ -32,12 +32,8 @@ public class IfcNormalisedRatioMeasure extends IfcRatioMeasure
         IfcSizeSelect {
     public IfcNormalisedRatioMeasure() {}
 
-    public IfcNormalisedRatioMeasure(double value) {
-        super(value);
-    }
-
     public IfcNormalisedRatioMeasure(DOUBLE value) {
-        super(value.value);
+        super(value);
     }
 
     @IfcParserConstructor

@@ -14,9 +14,6 @@ import org.junit.Test;
 import org.sikongsphere.ifc.common.constant.ConfigParameter;
 import org.sikongsphere.ifc.common.environment.ConfigProvider;
 import org.sikongsphere.ifc.common.environment.entity.Application;
-import org.yaml.snakeyaml.Yaml;
-
-import java.io.FileReader;
 
 public class ConfigProviderTest {
 
@@ -30,5 +27,20 @@ public class ConfigProviderTest {
     public void applicationTest() {
         Application application = ConfigProvider.getApplication();
         assert application.getFullName().equals("sikongsphere-ifctools");
+    }
+
+    @Test
+    public void versionTest() {
+        assert ConfigProvider.getVersion().equals("0.2.0-beta");
+    }
+
+    @Test
+    public void organizationTest() {
+        assert ConfigProvider.getOrganization().equals("SikongSphere");
+    }
+
+    @Test
+    public void artifactIdTest() {
+        assert ConfigProvider.getArtifactId().equals("sikongsphere-ifctools");
     }
 }

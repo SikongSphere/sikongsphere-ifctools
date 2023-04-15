@@ -20,7 +20,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthM
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcPlaneAngleMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * Instances of the entity IfcStructuralLoadSingleDisplacement shall be used to define the displacements of an action
+ * operating on a single point.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00
@@ -41,7 +42,6 @@ public class IfcStructuralLoadSingleDisplacement extends IfcStructuralLoadStatic
     private IfcPlaneAngleMeasure rotationalDisplacementRZ;
 
     @IfcParserConstructor
-
     public IfcStructuralLoadSingleDisplacement(
         IfcLabel name,
         IfcLengthMeasure displacementX,

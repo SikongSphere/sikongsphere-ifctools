@@ -109,8 +109,5 @@ public class IfcZShapeProfileDef extends IfcParameterizedProfileDef {
         this.edgeRadius = edgeRadius;
     }
 
-    @Override
-    public boolean illegal() {
-        return flangeThickness.value < (depth.value / 2);
-    }
+    // TODO 校验合法
 }

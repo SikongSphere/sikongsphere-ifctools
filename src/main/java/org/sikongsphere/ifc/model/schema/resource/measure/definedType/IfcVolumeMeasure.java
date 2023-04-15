@@ -28,10 +28,6 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
 public class IfcVolumeMeasure extends REAL implements IfcMeasureValue {
     public IfcVolumeMeasure() {}
 
-    public IfcVolumeMeasure(double value) {
-        super(value);
-    }
-
     @IfcParserConstructor
     public IfcVolumeMeasure(STRING value) {
         super(value);

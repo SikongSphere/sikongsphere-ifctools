@@ -11,6 +11,7 @@
 package org.sikongsphere.ifc.model.schema.resource.utility.entity;
 
 import org.sikongsphere.ifc.common.annotation.IfcClass;
+import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
@@ -21,10 +22,11 @@ import org.sikongsphere.ifc.model.schema.resource.utility.enumeration.IfcChangeA
 import org.sikongsphere.ifc.model.schema.resource.utility.enumeration.IfcStateEnum;
 
 /**
- * This class defines all history and identification related information.
+ * IfcOwnerHistory defines all history and identification related information. In order to provide fast access it is directly attached to all independent objects, relationships and properties.
  *
  * @author Wang Bohong
  * @date 2022/8/31 21:07
+ * @modified stan
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcOwnerHistory extends IfcAbstractClass {
@@ -32,31 +34,23 @@ public class IfcOwnerHistory extends IfcAbstractClass {
 
     private IfcApplication owningApplication;
 
+    @IfcOptionField
     private IfcStateEnum state;
 
     private IfcChangeActionEnum changeAction;
 
+    @IfcOptionField
     private IfcTimeStamp lastModifiedDate;
 
+    @IfcOptionField
     private IfcPersonAndOrganization lastModifyingUser;
 
+    @IfcOptionField
     private IfcApplication lastModifyingApplication;
 
     private IfcTimeStamp creationDate;
 
     public IfcOwnerHistory() {}
-
-    public IfcOwnerHistory(
-        IfcPersonAndOrganization owningUser,
-        IfcApplication owningApplication,
-        IfcChangeActionEnum changeAction,
-        IfcTimeStamp creationDate
-    ) {
-        this.owningUser = owningUser;
-        this.owningApplication = owningApplication;
-        this.changeAction = changeAction;
-        this.creationDate = creationDate;
-    }
 
     @IfcParserConstructor
     public IfcOwnerHistory(

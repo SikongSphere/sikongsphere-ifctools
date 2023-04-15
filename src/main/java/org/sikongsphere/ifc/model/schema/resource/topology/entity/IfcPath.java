@@ -17,6 +17,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.LIST;
 
 /**
+ * A path is a topological entity consisting of an ordered collection of oriented edges, such that the edge start
+ * vertex of each edge coincides with the edge end of its predecessor.
+ *
  * @author zaiyuan
  * @date 2022/12/10 13:40
  */

@@ -13,6 +13,7 @@ package org.sikongsphere.ifc.model.schema.resource.datetime.selectType;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.schema.resource.constraint.selectType.IfcMetricValueSelect;
 
 @IfcClass(type = IfcType.SELECT_TYPE, layer = IfcLayer.RESOURCE)
-public interface IfcDateTimeSelect {}
+public interface IfcDateTimeSelect extends IfcMetricValueSelect {}

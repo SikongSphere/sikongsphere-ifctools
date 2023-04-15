@@ -17,6 +17,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.SET;
 
 /**
+ * A connected_face_set is a set of faces such that the domain of faces together with their bounding edges and vertices is connected.
+ *
  * @author GaoSU
  * @date 2022/11/01 23:09
  */

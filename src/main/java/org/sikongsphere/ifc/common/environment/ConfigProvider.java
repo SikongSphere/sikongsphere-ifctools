@@ -11,12 +11,16 @@
 package org.sikongsphere.ifc.common.environment;
 
 import org.sikongsphere.ifc.common.constant.ConfigParameter;
+import org.sikongsphere.ifc.common.constant.DateConstant;
 import org.sikongsphere.ifc.common.environment.entity.Application;
 import org.sikongsphere.ifc.common.exception.SikongSphereConfigException;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
+import java.util.TimeZone;
 
 /**
  * Config Provider
@@ -46,6 +50,25 @@ public class ConfigProvider {
             ConfigParameter.SIKONGSPHERE_APPLICATION_CONFIG_DEFAULT_PATH
         );
         return new Yaml().loadAs(ConfigProvider.class.getResourceAsStream(s), Application.class);
+    }
+
+    public static String getVersion() {
+        return getProperty(ConfigParameter.SIKONGSPHERE_VERSION);
+    }
+
+    public static String getOrganization() {
+        return getProperty(ConfigParameter.SIKONGSPHERE_ORGANIZATION);
+    }
+
+    public static String getArtifactId() {
+        return getProperty(ConfigParameter.SIKONGSPHERE_ARTIFACTID);
+    }
+
+    public static String getUTCTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DateConstant.TIME_FORMAT);
+        dateFormat.setTimeZone(TimeZone.getTimeZone(DateConstant.UTC));
+
+        return dateFormat.format(new Date());
     }
 
 }

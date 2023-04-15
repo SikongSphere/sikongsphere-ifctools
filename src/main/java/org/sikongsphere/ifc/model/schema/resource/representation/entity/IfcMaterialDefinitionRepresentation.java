@@ -21,15 +21,16 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 
 /**
+ * The IfcMaterialDefinitionRepresentation defines presentation information relating to IfcMaterial.
+ *
  * @author zhongqi
  * @date 2022/10/26
  */
 
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcMaterialDefinitionRepresentation extends IfcProductRepresentation {
-    private IfcMaterial representedMaterial;
 
-    public IfcMaterialDefinitionRepresentation() {}
+    private IfcMaterial representedMaterial;
 
     @IfcParserConstructor
     public IfcMaterialDefinitionRepresentation(

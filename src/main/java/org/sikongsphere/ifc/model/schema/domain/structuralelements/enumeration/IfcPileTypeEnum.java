@@ -22,24 +22,25 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION)
 public enum IfcPileTypeEnum {
-    COHESION,
     /**
      * A cohesion pile.
      */
-    FRICTION,
+    COHESION,
     /**
      * A friction pile.
      */
-    SUPPORT,
+    FRICTION,
     /**
      * A support pile.
      */
-    USERDEFINED,
+    SUPPORT,
     /**
      * The type of pile function is user defined.
      */
-    NOTDEFINED
+    USERDEFINED,
     /**
      * The type of pile function is not defined.
      */
+    NOTDEFINED
+
 }

@@ -10,40 +10,45 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.serializer.SCIENTIFICNOTATIONSerializer;
+
+import java.math.BigDecimal;
 
 /**
  * @author Wang Bohong
  * @date 2022/10/25 12:08
  */
-public class SCIENTIFICNOTATION extends DOUBLE {
-    private double mantissa;
-    private int index;
+@JsonSerialize(using = SCIENTIFICNOTATIONSerializer.class)
+public class SCIENTIFICNOTATION extends REAL {
+    private BigDecimal mantissa;
+    private Integer index;
 
     public SCIENTIFICNOTATION() {}
 
     @IfcParserConstructor
     public SCIENTIFICNOTATION(STRING value) {
         String[] es = value.getValue().split(StringConstant.SCI_NOTATION);
-        this.mantissa = Double.parseDouble(es[0].trim());
+        this.mantissa = DOUBLE.parseValue(es[0].trim());
         this.index = Integer.parseInt(es[1].trim());
     }
 
-    public SCIENTIFICNOTATION(double mantissa, int index) {
+    public SCIENTIFICNOTATION(BigDecimal mantissa, int index) {
         this.mantissa = mantissa;
         this.index = index;
     }
 
-    public double getMantissa() {
+    public BigDecimal getMantissa() {
         return mantissa;
     }
 
-    public void setMantissa(double mantissa) {
+    public void setMantissa(BigDecimal mantissa) {
         this.mantissa = mantissa;
     }
 
-    public int getIndex() {
+    public Integer getIndex() {
         return index;
     }
 
@@ -51,20 +56,15 @@ public class SCIENTIFICNOTATION extends DOUBLE {
         this.index = index;
     }
 
-    public Integer getInteger() {
-        return (int) (mantissa * Math.pow(10, index));
-    }
+    public BigDecimal getValue() {
 
-    public Double getDouble() {
-        return mantissa * Math.pow(10, index);
-    }
-
-    public String getString() {
-        return String.format("%sE%s%s", mantissa, index >= 0 ? "+" : "-", Math.abs(index));
+        return mantissa.multiply(BigDecimal.valueOf(Math.pow(10, index)));
     }
 
     @Override
     public String toString() {
-        return getString();
+        String format = String.format("%sE%s%s", mantissa, index >= 0 ? "+" : "-", Math.abs(index));
+
+        return format;
     }
 }

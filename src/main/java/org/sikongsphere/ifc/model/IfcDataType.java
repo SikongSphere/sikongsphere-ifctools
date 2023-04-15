@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.sikongsphere.ifc.common.exception.SikongSphereException;
 
 /**
@@ -20,6 +21,7 @@ import org.sikongsphere.ifc.common.exception.SikongSphereException;
  */
 public abstract class IfcDataType implements IfcInterface {
 
+    @JsonIgnore
     public boolean isDefault() {
         return false;
     }

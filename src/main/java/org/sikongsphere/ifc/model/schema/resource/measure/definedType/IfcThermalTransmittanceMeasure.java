@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
@@ -24,14 +25,14 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022/11/13 11:30
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcThermalTransmittanceMeasure extends DOUBLE
+public class IfcThermalTransmittanceMeasure extends REAL
     implements
         IfcValue,
         IfcDerivedMeasureValue {
 
     public IfcThermalTransmittanceMeasure() {}
 
-    public IfcThermalTransmittanceMeasure(double value) {
+    public IfcThermalTransmittanceMeasure(DOUBLE value) {
         super(value);
     }
 

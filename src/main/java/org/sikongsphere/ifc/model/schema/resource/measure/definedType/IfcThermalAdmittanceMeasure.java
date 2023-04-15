@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
@@ -27,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcThermalAdmittanceMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcThermalAdmittanceMeasure() {}
 
-    public IfcThermalAdmittanceMeasure(double value) {
+    public IfcThermalAdmittanceMeasure(DOUBLE value) {
         super(value);
     }
 

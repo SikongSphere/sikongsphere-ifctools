@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
@@ -27,7 +28,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcKinematicViscosityMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcKinematicViscosityMeasure() {}
 
-    public IfcKinematicViscosityMeasure(double value) {
+    public IfcKinematicViscosityMeasure(DOUBLE value) {
         super(value);
     }
 

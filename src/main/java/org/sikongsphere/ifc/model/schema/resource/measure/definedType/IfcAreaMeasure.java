@@ -15,6 +15,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
+import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.SCIENTIFICNOTATION;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasureValue;
@@ -28,12 +29,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  * @date 2022/11/13 11:38
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcAreaMeasure extends DOUBLE implements IfcValue, IfcMeasureValue {
+public class IfcAreaMeasure extends REAL implements IfcValue, IfcMeasureValue {
     public IfcAreaMeasure() {}
-
-    public IfcAreaMeasure(double value) {
-        super(value);
-    }
 
     public IfcAreaMeasure(DOUBLE value) {
         super(value);

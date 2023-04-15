@@ -25,7 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloball
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
 
 /**
- * This class is used to encapsulate actor role information
+ * The abstract entity IfcBoundaryCondition is the supertype of all boundary conditions that can be applied to
+ * structural connection definitions, either directly for the connection (e.g. the joint) or for the relation
+ * between a structural member and the connection.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

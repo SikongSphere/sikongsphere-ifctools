@@ -25,28 +25,33 @@ import org.sikongsphere.ifc.model.schema.resource.presentationorganization.entit
 import org.sikongsphere.ifc.model.schema.resource.presentationorganization.selecttype.IfcLayeredItem;
 
 /**
- * IfcRepresentation
+ * A representation is one or more representation items that are related in a specified representation context
+ * as the representation of some concept.
  *
  * @author zaiyuan
  * @date 2022/9/1 08:15
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.ENTITY)
 public class IfcRepresentation extends IfcAbstractClass implements IfcLayeredItem {
+
     private IfcRepresentationContext contextContextOfItems;
+
     @IfcOptionField
     private IfcLabel representationIdentifier;
+
     @IfcOptionField
     private IfcLabel representationType;
+
     private SET<IfcRepresentationItem> items;
 
     @IfcInverseParameter
     private SET<IfcRepresentationMap> representationMap;
+
     @IfcInverseParameter
     private SET<IfcPresentationLayerAssignment> layerAssignments;
+
     @IfcInverseParameter
     private SET<IfcProductRepresentation> ofProductRepresentation;
-
-    public IfcRepresentation() {}
 
     @IfcParserConstructor
     public IfcRepresentation(

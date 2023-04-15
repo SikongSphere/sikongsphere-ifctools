@@ -19,6 +19,10 @@ import org.sikongsphere.ifc.model.schema.resource.geometricconstraint.selectType
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcCurve;
 
 /**
+ * An edge curve is a special subtype of edge which has its geometry fully defined.
+ * The geometry is defined by associating the edge with a curve which may be unbounded.
+ * As the topological and geometric directions may be opposed, an indicator (same sense) is used to identify whether the edge and curve directions agree or are opposed. The Boolean value indicates whether the curve direction agrees with (TRUE) or is in the opposite direction (FALSE) to the edge direction. Any geometry associated with the vertices of the edge shall be consistent with the edge geometry.
+ *
  * @author zaiyuan
  * @date 2022/12/10 23:09
  */

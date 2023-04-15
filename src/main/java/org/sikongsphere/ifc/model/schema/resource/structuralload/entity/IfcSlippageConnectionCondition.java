@@ -20,7 +20,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLengthMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * Instances of the entity IfcSlippageConnectionCondition shall be used to describe connection properties needed to specify slippage.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

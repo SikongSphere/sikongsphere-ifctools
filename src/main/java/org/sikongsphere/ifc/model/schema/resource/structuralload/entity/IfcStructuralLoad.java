@@ -22,7 +22,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcRotatio
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcWarpingMomentMeasure;
 
 /**
- * This class is used to encapsulate actor role information
+ * The abstract entity IfcStructuralLoad is the supertype of all loads which can be defined
+ * (actions or reactions, as well as dynamic or static).
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

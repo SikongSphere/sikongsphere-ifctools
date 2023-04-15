@@ -17,6 +17,9 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 
 /**
+ * A subedge is an edge whose domain is a connected portion of the domain of an existing edge.
+ * The topological constraints on a subedge are the same as those on an edge.
+ *
  * @author zaiyuan
  * @date 2022/12/10 13:40
  */

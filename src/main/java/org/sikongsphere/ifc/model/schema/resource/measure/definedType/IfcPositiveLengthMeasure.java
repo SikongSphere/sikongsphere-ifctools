@@ -21,6 +21,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcHatchLineDistanceSelect;
 import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selecttype.IfcSizeSelect;
 
+import java.math.BigDecimal;
+
 /**
  * A positive length measure is a length measure that is greater than zero.
  *
@@ -28,7 +30,7 @@ import org.sikongsphere.ifc.model.schema.resource.presentationappearance.selectt
  * @date 2022/09/01 23:40
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
-public class IfcPositiveLengthMeasure extends DOUBLE
+public class IfcPositiveLengthMeasure extends IfcLengthMeasure
     implements
         IfcHatchLineDistanceSelect,
         IfcSizeSelect,
@@ -37,7 +39,7 @@ public class IfcPositiveLengthMeasure extends DOUBLE
 
     public IfcPositiveLengthMeasure() {}
 
-    public IfcPositiveLengthMeasure(double value) {
+    public IfcPositiveLengthMeasure(BigDecimal value) {
         super(value);
     }
 

@@ -23,6 +23,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 import java.util.Locale;
 
 /**
+ * A property with a single value (IfcPropertySingleValue) defines a property object which has a single
+ * (numeric or descriptive) value assigned. It defines a property - single value combination for which
+ * the property name, the value with measure type (and optionally the unit) is given.
+ *
  * @author Wang Bohong
  * @date 2022/10/16 12:38
  */

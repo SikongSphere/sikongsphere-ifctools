@@ -48,10 +48,6 @@ public enum IfcTimeSeriesDataTypeEnum {
      */
     PIECEWISECONTINUOUS,
     /**
-     * The time series data is user defined.
-     */
-    USERDEFINED,
-    /**
      * The time series data is not defined.
      */
     NOTDEFINED

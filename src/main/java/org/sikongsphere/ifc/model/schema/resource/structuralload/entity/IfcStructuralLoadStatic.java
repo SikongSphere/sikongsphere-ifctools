@@ -19,7 +19,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 
 /**
- * This class is used to encapsulate actor role information
+ * The abstract entity IfcStructuralLoadStatic is the supertype of all static loads (actions or reactions) which can be defined.
  *
  * @author yiwei
  * @date 2022-08-28 18:30:00

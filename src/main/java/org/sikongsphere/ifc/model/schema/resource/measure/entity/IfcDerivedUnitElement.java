@@ -28,8 +28,6 @@ public class IfcDerivedUnitElement extends IfcAbstractClass {
     private IfcNamedUnit unit;
     private INTEGER exponent;
 
-    public IfcDerivedUnitElement() {}
-
     @IfcParserConstructor
     public IfcDerivedUnitElement(IfcNamedUnit unit, INTEGER exponent) {
         this.unit = unit;

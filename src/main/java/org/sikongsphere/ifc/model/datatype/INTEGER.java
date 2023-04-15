@@ -10,6 +10,9 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import org.sikongsphere.ifc.io.serializer.INTEGERSerializer;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 /**
@@ -18,6 +21,7 @@ import org.sikongsphere.ifc.model.IfcDataType;
  * @author zaiyuan
  * @date 2022-08-31 18:30:00
  */
+@JsonSerialize(using = INTEGERSerializer.class)
 public class INTEGER extends IfcDataType {
     public Integer value = 0;
 

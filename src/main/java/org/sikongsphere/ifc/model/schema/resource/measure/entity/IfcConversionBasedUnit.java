@@ -29,8 +29,6 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
     private IfcLabel name;
     private IfcMeasureWithUnit conversionFactor;
 
-    public IfcConversionBasedUnit() {}
-
     @IfcParserConstructor
     public IfcConversionBasedUnit(
         IfcDimensionalExponents dimensions,

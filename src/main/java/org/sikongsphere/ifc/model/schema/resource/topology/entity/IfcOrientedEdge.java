@@ -17,6 +17,10 @@ import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 
 /**
+ * An oriented edge is an edge constructed from another edge and contains a BOOLEAN direction flag to indicate
+ * whether or not the orientation of the constructed edge agrees with the orientation of the original edge.
+ * Except for perhaps orientation, the oriented edge is equivalent to the original edge.
+ *
  * @author zaiyuan
  * @date 2022/12/10 13:40
  */
@@ -24,12 +28,6 @@ import org.sikongsphere.ifc.model.datatype.BOOLEAN;
 public class IfcOrientedEdge extends IfcEdge {
     private IfcEdge edgeElement;
     private BOOLEAN orientation;
-
-    // TODO DERIVE
-
-    public IfcOrientedEdge(IfcVertex edgeStart, IfcVertex edgeEnd) {
-        super(edgeStart, edgeEnd);
-    }
 
     @IfcParserConstructor
     public IfcOrientedEdge(

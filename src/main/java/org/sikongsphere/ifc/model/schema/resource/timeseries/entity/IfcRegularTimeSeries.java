@@ -24,6 +24,8 @@ import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcData
 import org.sikongsphere.ifc.model.schema.resource.timeseries.enumeration.IfcTimeSeriesDataTypeEnum;
 
 /**
+ * In a regular time series, the data arrives predictably at predefined intervals.
+ *
  * @author yiwei
  * @date 2022/11/01 23:09
  */

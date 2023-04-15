@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.REAL;
 import org.sikongsphere.ifc.model.datatype.STRING;
 import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerivedMeasureValue;
@@ -28,7 +29,7 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcDerived
 public class IfcPHMeasure extends REAL implements IfcDerivedMeasureValue {
     public IfcPHMeasure() {}
 
-    public IfcPHMeasure(double value) {
+    public IfcPHMeasure(DOUBLE value) {
         super(value);
     }
 
@@ -37,8 +38,5 @@ public class IfcPHMeasure extends REAL implements IfcDerivedMeasureValue {
         super(value);
     }
 
-    @Override
-    public boolean illegal() {
-        return getValue() >= 0.0 && getValue() <= 14.0;
-    }
+    // TODO 校验合法
 }

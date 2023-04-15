@@ -14,6 +14,7 @@ import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.model.IfcDataType;
 import org.sikongsphere.ifc.model.datatype.INTEGER;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.REAL;
@@ -27,7 +28,20 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcMeasure
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcComplexNumber extends LIST<REAL> implements IfcMeasureValue {
-    // todo
-    // TYPE IfcComplexNumber = ARRAY [1:2] OF REAL;
 
+    private LIST<REAL> value;
+
+    @IfcParserConstructor
+    public IfcComplexNumber(LIST<IfcDataType> objs) {
+        LIST<REAL> list = new LIST<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (objs.get(i) instanceof STRING) {
+                list.add(new REAL((STRING) objs.get(i)));
+            } else if (objs.get(i) instanceof INTEGER) {
+                list.add(new REAL((INTEGER) objs.get(i)));
+            }
+        }
+
+        this.value = list;
+    }
 }
