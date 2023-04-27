@@ -93,6 +93,10 @@ public class IfcGeometricRepresentationContext extends IfcRepresentationContext 
         this.coordinateSpaceDimension = coordinateSpaceDimension;
     }
 
+    public void setCoordinateSpaceDimension(INTEGER coordinateSpaceDimension) {
+        this.coordinateSpaceDimension = new IfcDimensionCount(coordinateSpaceDimension);
+    }
+
     public String getPrecision() {
 
         if (precision == null) {

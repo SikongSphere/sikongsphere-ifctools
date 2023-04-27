@@ -58,6 +58,12 @@ public class IfcTypeProduct extends IfcTypeObject {
         return representationMaps;
     }
 
+    public void setRepresentationMaps(SET<IfcRepresentationMap> representationMaps) {
+        LIST<IfcRepresentationMap> objectLIST = new LIST<>();
+        objectLIST.addAll(representationMaps);
+        this.representationMaps = objectLIST;
+    }
+
     public void setRepresentationMaps(LIST<IfcRepresentationMap> representationMaps) {
         this.representationMaps = representationMaps;
     }

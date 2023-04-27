@@ -41,6 +41,15 @@ public class BOOLEAN extends IfcDataType {
         return value;
     }
 
+    public void setValue(STRING value) {
+        String str = value.value;
+        if (str != null) {
+            if (str.contains("T")) {
+                this.value = true;
+            }
+        }
+    }
+
     public void setValue(boolean value) {
         this.value = value;
     }

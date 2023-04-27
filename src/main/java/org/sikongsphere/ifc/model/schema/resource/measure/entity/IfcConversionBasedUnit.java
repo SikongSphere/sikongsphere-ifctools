@@ -41,6 +41,8 @@ public class IfcConversionBasedUnit extends IfcNamedUnit {
         this.conversionFactor = conversionFactor;
     }
 
+    public IfcConversionBasedUnit() {}
+
     public IfcLabel getName() {
         return name;
     }

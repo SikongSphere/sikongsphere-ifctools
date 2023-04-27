@@ -44,6 +44,8 @@ public class IfcProductDefinitionShape extends IfcProductRepresentation {
         super(name, description, representations);
     }
 
+    public IfcProductDefinitionShape() {super();}
+
     public SET<IfcProduct> getShapeOfProduct() {
         return shapeOfProduct;
     }

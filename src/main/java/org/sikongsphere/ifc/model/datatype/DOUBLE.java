@@ -54,6 +54,10 @@ public class DOUBLE extends IfcDataType {
         this.value = value;
     }
 
+    public void setValue(STRING value) {
+        this.value = DOUBLE.parseValue(value);
+    }
+
     @Override
     public boolean isDefault() {
         int compare = this.value.compareTo(BigDecimal.ZERO);

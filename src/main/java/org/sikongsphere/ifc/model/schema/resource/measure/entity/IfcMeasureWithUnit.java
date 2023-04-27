@@ -49,6 +49,8 @@ public class IfcMeasureWithUnit extends IfcAbstractClass
         this.unitComponent = unitComponent;
     }
 
+    public IfcMeasureWithUnit() {}
+
     public String getValueComponent() {
         String format = String.format(
             "%s(%s)",

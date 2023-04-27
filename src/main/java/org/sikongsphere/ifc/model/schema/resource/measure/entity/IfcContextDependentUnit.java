@@ -36,6 +36,8 @@ public class IfcContextDependentUnit extends IfcNamedUnit {
         this.name = name;
     }
 
+    public IfcContextDependentUnit() {}
+
     public IfcLabel getName() {
         return name;
     }

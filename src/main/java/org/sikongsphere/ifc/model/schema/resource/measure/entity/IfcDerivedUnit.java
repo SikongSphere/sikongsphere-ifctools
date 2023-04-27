@@ -53,6 +53,8 @@ public class IfcDerivedUnit extends IfcAbstractClass implements IfcUnit {
         this.userDefinedType = userDefinedType;
     }
 
+    public IfcDerivedUnit() {}
+
     public SET<IfcDerivedUnitElement> getElements() {
         return elements;
     }

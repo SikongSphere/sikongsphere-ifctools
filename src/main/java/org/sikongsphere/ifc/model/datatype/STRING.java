@@ -54,6 +54,9 @@ public class STRING extends IfcDataType {
     public void setValue(String value) {
         this.value = value;
     }
+    public void setValue(STRING value) {
+        this.value = value.value;
+    }
 
     @Override
     public String toString() {

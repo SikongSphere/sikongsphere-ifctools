@@ -27,6 +27,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcLabel extends STRING implements IfcValue, IfcSimpleValue {
 
+    public IfcLabel() {
+        super();
+    }
     /**
      * Construction Function
      * @param value

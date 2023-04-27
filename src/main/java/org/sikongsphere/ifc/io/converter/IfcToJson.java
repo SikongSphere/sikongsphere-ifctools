@@ -23,6 +23,7 @@ import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRelationship;
 import org.sikongsphere.ifc.model.schema.kernel.entity.IfcRoot;
 import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcSIUnit;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcGeometricRepresentationContext;
 import org.sikongsphere.ifc.model.schema.resource.representation.entity.IfcShapeRepresentation;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
@@ -148,7 +149,14 @@ public class IfcToJson {
                 list.add(attributeValue);
             }
             jsonValue = list;
-        } else jsonValue = value;
+        } else if (IfcValue.class.isAssignableFrom(value.getClass())) {
+            LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
+            map.put(StringConstant.TYPE, value.getClass().getSimpleName());
+            map.put("value", value.toString());
+            jsonValue = map;
+        } else {
+            jsonValue = value;
+        };
 
         return jsonValue;
     }

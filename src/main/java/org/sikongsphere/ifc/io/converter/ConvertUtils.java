@@ -249,4 +249,20 @@ public class ConvertUtils {
         Method[] f = new Method[methodList.size()];
         return methodList.toArray(f);
     }
+
+    /**
+     * 获取指定属性的指定入参的set函数
+     * @param clazz
+     * @param paramClass
+     * @return
+     */
+    public static Method getSetMethod(Class clazz, String propertySetMethodName, Class paramClass) {
+        while (clazz != null) {
+            try {
+                return clazz.getDeclaredMethod(propertySetMethodName, paramClass);
+            } catch (NoSuchMethodException ignore) {}
+            clazz = clazz.getSuperclass();
+        }
+        return null;
+    }
 }
