@@ -33,6 +33,12 @@ public class SET<E> extends IfcDataType {
         this.objects = objects;
     }
 
+    public SET(E... objects){
+        for(E object : objects) {
+            add(object);
+        }
+    }
+
     public void add(E object) {
         objects.add(object);
     }
