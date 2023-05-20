@@ -149,15 +149,9 @@ public class IfcToJson {
                 list.add(attributeValue);
             }
             jsonValue = list;
-        } else if (IfcValue.class.isAssignableFrom(value.getClass())) {
-            LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
-            map.put(StringConstant.TYPE, value.getClass().getSimpleName());
-            map.put("value", value.toString());
-            jsonValue = map;
         } else {
             jsonValue = value;
-        };
-
+        }
         return jsonValue;
     }
 
