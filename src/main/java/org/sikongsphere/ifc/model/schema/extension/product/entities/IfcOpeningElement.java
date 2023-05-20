@@ -56,6 +56,8 @@ public class IfcOpeningElement extends IfcFeatureElementSubtraction {
         );
     }
 
+    public IfcOpeningElement() {}
+
     public SET<IfcRelFillsElement> getHasFillings() {
         return hasFillings;
     }

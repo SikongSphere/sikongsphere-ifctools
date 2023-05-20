@@ -45,8 +45,6 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-
-
 /**
  * @author: stan & yese
  * @date:2023/3/16 22:49
@@ -58,7 +56,6 @@ public class JsonToIfc {
     private final LinkedHashMap<Integer, IfcAbstractClass> ifcBody;
     private final IfcClassContainer container = IfcClassContainer.getInstance();
     private final Map<String, Object> singletonObjects;
-
 
     public JsonToIfc() {
         this.singletonObjects = new ConcurrentHashMap<>();
@@ -146,8 +143,12 @@ public class JsonToIfc {
             if (StringConstant.TYPE.equalsIgnoreCase(key)) {
                 return;
             }
-            String propertySetMethodName = StringConstant.SET_METHOD + StringUtils.capitalize(String.valueOf(key));
-            List<Method> propertySetMethods = methods.stream().filter(v -> v.getName().equals(propertySetMethodName)).collect(Collectors.toList());
+            String propertySetMethodName = StringConstant.SET_METHOD + StringUtils.capitalize(
+                String.valueOf(key)
+            );
+            List<Method> propertySetMethods = methods.stream()
+                .filter(v -> v.getName().equals(propertySetMethodName))
+                .collect(Collectors.toList());
 
             if (propertySetMethods.size() == 0) {
                 return;
@@ -175,13 +176,18 @@ public class JsonToIfc {
                 } else if (Integer.class.isAssignableFrom(value.getClass())) {
                     ifcClass = new INTEGER(Integer.valueOf(value.toString()));
                 }
-                Method matchSetMethod = ConvertUtils.getSetMethod(ifcObject.getClass(), propertySetMethodName, ifcClass.getClass());
+                Method matchSetMethod = ConvertUtils.getSetMethod(
+                    ifcObject.getClass(),
+                    propertySetMethodName,
+                    ifcClass.getClass()
+                );
                 if (null != matchSetMethod) {
                     matchSetMethod.invoke(ifcObject, ifcClass);
                 } else {
                     defaultSetMethod.invoke(ifcObject, ifcClass);
                 }
-            } catch (InvocationTargetException | IllegalAccessException | InstantiationException | NoSuchMethodException e) {
+            } catch (IllegalArgumentException | InvocationTargetException | IllegalAccessException
+                | InstantiationException | NoSuchMethodException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -207,7 +213,7 @@ public class JsonToIfc {
                         );
                     }
                     singletonObjects.put(globalId, ifcObject);
-                    ((IfcAbstractClass) ifcObject).setStepNumber(this.ifcBody.size()+1);
+                    ((IfcAbstractClass) ifcObject).setStepNumber(this.ifcBody.size() + 1);
                     this.ifcBody.put(this.ifcBody.size(), (IfcAbstractClass) ifcObject);
                 }
             }
@@ -229,11 +235,11 @@ public class JsonToIfc {
         // 1：实例化一个对象
         Object ifcObject;
         try {
-            ifcObject = container.get(ifcClassName.toUpperCase(Locale.ROOT))
-                .newInstance();
-            if (ifcObject instanceof IfcAbstractClass && !(ifcObject instanceof IfcDimensionalExponents)) {
+            ifcObject = container.get(ifcClassName.toUpperCase(Locale.ROOT)).newInstance();
+            if (ifcObject instanceof IfcAbstractClass
+                && !(ifcObject instanceof IfcDimensionalExponents)) {
                 IfcAbstractClass ifcAbstractClass = (IfcAbstractClass) ifcObject;
-                ifcAbstractClass.setStepNumber(this.ifcBody.size()+1);
+                ifcAbstractClass.setStepNumber(this.ifcBody.size() + 1);
                 this.ifcBody.put(this.ifcBody.size(), ifcAbstractClass);
             }
         } catch (Exception e) {
@@ -267,7 +273,8 @@ public class JsonToIfc {
                 } else if (String.class.isAssignableFrom(propertyValue.getClass())
                     || Integer.class.isAssignableFrom(propertyValue.getClass())
                     || Long.class.isAssignableFrom(propertyValue.getClass())
-                    || Double.class.isAssignableFrom(propertyValue.getClass())) {
+                    || Double.class.isAssignableFrom(propertyValue.getClass())
+                    || Boolean.class.isAssignableFrom(propertyValue.getClass())) {
                         // string
                         targetMethods.get(0)
                             .invoke(
@@ -322,14 +329,16 @@ public class JsonToIfc {
                     Class clazz = Class.forName(parameterType.getName());
                     ifcClass = Enum.valueOf(clazz, value);
                     continue;
-                } if (Objects.equals(method.getDeclaringClass().getName(), STRING.class.getName())) {
+                }
+                if (Objects.equals(method.getDeclaringClass().getName(), STRING.class.getName())) {
                     ifcClass = new STRING(value);
                     continue;
                 } /*if (Objects.equals(method.getDeclaringClass().getName(), BOOLEAN.class.getName())) {
                     ifcClass = new STRING(value);
                     continue;
-                }*/
-                ifcClass = parameterType.getDeclaredConstructor(STRING.class).newInstance(new STRING(value));
+                  }*/
+                ifcClass = parameterType.getDeclaredConstructor(STRING.class)
+                    .newInstance(new STRING(value));
             } catch (Exception e) {
                 e.printStackTrace();
                 throw new RuntimeException();
@@ -357,7 +366,6 @@ public class JsonToIfc {
         return value.stream().map(String::valueOf).collect(Collectors.toList());
     }
 
-
     /**
      * 解析json文件，生成ifc模型实体
      * @param jsonFile json文件
@@ -368,7 +376,7 @@ public class JsonToIfc {
         String preprocessorVersion = null, schemaIdentifier = null;
         JsonFactory jsonFactory = new MappingJsonFactory();
         // start parse
-        try(JsonParser jp = jsonFactory.createParser(jsonFile)) {
+        try (JsonParser jp = jsonFactory.createParser(jsonFile)) {
             if (jp.nextToken() != JsonToken.START_OBJECT) {
                 throw new SikongSphereParseException(TokenConstant.WARNING_JSON_ROOT_WRONG);
             }
@@ -380,8 +388,12 @@ public class JsonToIfc {
                     while (jp.nextToken() != JsonToken.END_ARRAY) {
                         JsonNode ifcComponentNode = jp.readValueAsTree();
                         // 按照官方建议，构件层级不会太深，所以这里不再继续深入。
-                        LinkedHashMap<String, Object> ifcComponent =
-                                new ObjectMapper().convertValue(ifcComponentNode, new TypeReference<LinkedHashMap<String,Object>>() {});
+                        LinkedHashMap<String, Object> ifcComponent = new ObjectMapper()
+                            .convertValue(
+                                ifcComponentNode,
+                                new TypeReference<LinkedHashMap<String, Object>>() {
+                                }
+                            );
                         this.fillIfcBodyEntity(ifcComponent);
                     }
                 }
@@ -396,14 +408,14 @@ public class JsonToIfc {
                     jp.skipChildren();
                 }
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             throw new SikongSphereParseException("ifcJson 解析失败！");
         }
         IfcHeader ifcHeader = new IfcHeader(
-                this.createFileName(ifcFilePath, preprocessorVersion),
-                this.createFileDescription(),
-                this.createFileSchema(schemaIdentifier)
+            this.createFileName(ifcFilePath, preprocessorVersion),
+            this.createFileDescription(),
+            this.createFileSchema(schemaIdentifier)
         );
         return new IfcFileModel(ifcHeader, new IfcBody(this.ifcBody));
     }

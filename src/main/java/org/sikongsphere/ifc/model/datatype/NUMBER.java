@@ -42,6 +42,11 @@ public class NUMBER extends IfcDataType {
         this.value = value;
     }
 
+    public void setValue(STRING value) {
+        this.value = DOUBLE.parseValue(value);
+        ;
+    }
+
     @Override
     public String toString() {
         String str = this.value.toString();

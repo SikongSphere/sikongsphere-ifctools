@@ -137,6 +137,7 @@ public class IfcOwnerHistory extends IfcAbstractClass {
     public void setCreationDate(IfcTimeStamp creationDate) {
         this.creationDate = creationDate;
     }
+
     public void setCreationDate(INTEGER creationDate) {
         this.creationDate = new IfcTimeStamp(creationDate);
     }

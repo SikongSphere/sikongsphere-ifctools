@@ -30,6 +30,7 @@ public class IfcLabel extends STRING implements IfcValue, IfcSimpleValue {
     public IfcLabel() {
         super();
     }
+
     /**
      * Construction Function
      * @param value

@@ -25,7 +25,7 @@ import org.sikongsphere.ifc.model.IfcDataType;
 public class INTEGER extends IfcDataType {
     public Integer value = 0;
 
-    public INTEGER(){}
+    public INTEGER() {}
 
     public INTEGER(Integer value) {
         this.value = value;

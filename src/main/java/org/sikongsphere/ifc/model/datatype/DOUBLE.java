@@ -10,7 +10,10 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.serializer.DOUBLESerializer;
+import org.sikongsphere.ifc.io.serializer.STRINGSerializer;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 import java.math.BigDecimal;
@@ -22,6 +25,7 @@ import java.math.BigDecimal;
  * @date 2022/11/1 13:27
  * @modified stan
  */
+@JsonSerialize(using = DOUBLESerializer.class)
 public class DOUBLE extends IfcDataType {
 
     private BigDecimal value = new BigDecimal("0.0");

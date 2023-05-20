@@ -10,11 +10,14 @@
 */
 package org.sikongsphere.ifc.model.schema.kernel.entity;
 
+import cn.hutool.core.collection.CollUtil;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
+import org.sikongsphere.ifc.common.exception.SikongSphereParseException;
+import org.sikongsphere.ifc.io.constant.TokenConstant;
 import org.sikongsphere.ifc.model.datatype.LIST;
 import org.sikongsphere.ifc.model.datatype.SET;
 import org.sikongsphere.ifc.model.schema.resource.geometry.entity.IfcRepresentationMap;
@@ -22,6 +25,9 @@ import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcLabel;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcText;
 import org.sikongsphere.ifc.model.schema.resource.utility.definedtype.IfcGloballyUniqueId;
 import org.sikongsphere.ifc.model.schema.resource.utility.entity.IfcOwnerHistory;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * IfcTypeProduct
@@ -66,6 +72,17 @@ public class IfcTypeProduct extends IfcTypeObject {
 
     public void setRepresentationMaps(LIST<IfcRepresentationMap> representationMaps) {
         this.representationMaps = representationMaps;
+    }
+
+    public void setRepresentationMaps(List<String> representationMaps) {
+        this.representationMaps = new LIST<>(
+            CollUtil.emptyIfNull(representationMaps).stream().map(v -> {
+                if ("0.0".equals(v)) {
+                    return new IfcRepresentationMap();
+                }
+                throw new SikongSphereParseException(TokenConstant.WARNING_IFC_JSON_PARSE_AILED);
+            }).collect(Collectors.toList())
+        );
     }
 
     public IfcLabel getTag() {

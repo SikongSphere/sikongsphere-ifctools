@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.property.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcAbstractValueField;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
@@ -32,8 +33,10 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 @IfcClass(type = IfcType.ENTITY, layer = IfcLayer.RESOURCE)
 public class IfcPropertyBoundedValue extends IfcSimpleProperty {
     @IfcOptionField
+    @IfcAbstractValueField
     private IfcValue upperBoundValue;
     @IfcOptionField
+    @IfcAbstractValueField
     private IfcValue lowerBoundValue;
     @IfcOptionField
     private IfcUnit unit;

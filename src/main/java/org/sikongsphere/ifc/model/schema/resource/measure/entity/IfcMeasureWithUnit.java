@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.measure.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcAbstractValueField;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
@@ -40,6 +41,7 @@ public class IfcMeasureWithUnit extends IfcAbstractClass
         IfcAppliedValueSelect,
         IfcUnit {
 
+    @IfcAbstractValueField
     private IfcValue valueComponent;
     private IfcUnit unitComponent;
 

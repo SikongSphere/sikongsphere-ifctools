@@ -27,7 +27,8 @@ import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
  */
 @IfcClass(layer = IfcLayer.RESOURCE, type = IfcType.DEFINED_TYPE, isStepElement = false)
 public class IfcText extends STRING implements IfcValue, IfcSimpleValue, IfcMetricValueSelect {
-    public IfcText(){}
+    public IfcText() {}
+
     /**
      * Construction Function
      */
