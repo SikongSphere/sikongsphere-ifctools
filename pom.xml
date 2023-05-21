@@ -113,6 +113,12 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.jyrkioraskari</groupId>
+            <artifactId>IFCtoLBD</artifactId>
+            <version>1.88</version>
+            <classifier>jar-with-dependencies</classifier>
+        </dependency>
     </dependencies>
 
     <build>
