@@ -50,6 +50,8 @@ public class IfcProductRepresentation extends IfcAbstractClass {
         this.representations = representations;
     }
 
+    public IfcProductRepresentation() {}
+
     public IfcLabel getName() {
         return name;
     }

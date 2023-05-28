@@ -55,6 +55,10 @@ public class STRING extends IfcDataType {
         this.value = value;
     }
 
+    public void setValue(STRING value) {
+        this.value = value.value;
+    }
+
     @Override
     public String toString() {
         return StringConstant.QUOTE + value + StringConstant.QUOTE;

@@ -114,6 +114,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.15</version>
+        </dependency>
+        <dependency>
             <groupId>io.github.jyrkioraskari</groupId>
             <artifactId>IFCtoLBD</artifactId>
             <version>1.88</version>

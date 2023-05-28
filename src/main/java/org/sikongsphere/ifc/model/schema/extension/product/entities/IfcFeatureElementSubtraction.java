@@ -55,6 +55,8 @@ public abstract class IfcFeatureElementSubtraction extends IfcFeatureElement {
         );
     }
 
+    public IfcFeatureElementSubtraction() {}
+
     public IfcRelVoidsElement getVoidsElements() {
         return voidsElements;
     }

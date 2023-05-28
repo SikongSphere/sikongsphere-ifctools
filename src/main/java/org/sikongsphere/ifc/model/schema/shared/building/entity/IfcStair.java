@@ -58,6 +58,8 @@ public class IfcStair extends IfcBuildingElement {
         this.shapeType = shapeType;
     }
 
+    public IfcStair() {}
+
     public IfcStairTypeEnum getShapeType() {
         return shapeType;
     }

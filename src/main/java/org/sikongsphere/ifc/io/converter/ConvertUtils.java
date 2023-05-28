@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.io.converter;
 
+import org.sikongsphere.ifc.common.annotation.IfcAbstractValueField;
 import org.sikongsphere.ifc.common.annotation.IfcDeriveParameter;
 import org.sikongsphere.ifc.common.annotation.IfcInverseParameter;
 import org.sikongsphere.ifc.common.constant.StringConstant;
@@ -19,6 +20,7 @@ import org.sikongsphere.ifc.model.IfcAbstractClass;
 import org.sikongsphere.ifc.model.fileelement.IfcFileModel;
 import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcDimensionalExponents;
 import org.sikongsphere.ifc.model.schema.resource.measure.entity.IfcSIUnit;
+import org.sikongsphere.ifc.model.schema.resource.measure.selectTypes.IfcValue;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -122,7 +124,10 @@ public class ConvertUtils {
      *
      * @return
      */
-    public static LinkedHashMap<Object, Object> jsonifyEntity(IfcAbstractClass entity) {
+    public static LinkedHashMap<Object, Object> jsonifyEntity(
+        Object entity,
+        Set<IfcValue> specialIfcValue
+    ) {
         LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
         map.put(StringConstant.TYPE, entity.getClass().getSimpleName());
 
@@ -130,7 +135,11 @@ public class ConvertUtils {
         for (Field field : fields) {
             field.setAccessible(true);
             try {
-                map.put(field.getName(), field.get(entity));
+                Object value = field.get(entity);
+                if (field.isAnnotationPresent(IfcAbstractValueField.class)) {
+                    specialIfcValue.add((IfcValue) value);
+                }
+                map.put(field.getName(), value);
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
@@ -248,5 +257,21 @@ public class ConvertUtils {
         }
         Method[] f = new Method[methodList.size()];
         return methodList.toArray(f);
+    }
+
+    /**
+     * 获取指定属性的指定入参的set函数
+     * @param clazz
+     * @param paramClass
+     * @return
+     */
+    public static Method getSetMethod(Class clazz, String propertySetMethodName, Class paramClass) {
+        while (clazz != null) {
+            try {
+                return clazz.getDeclaredMethod(propertySetMethodName, paramClass);
+            } catch (NoSuchMethodException ignore) {}
+            clazz = clazz.getSuperclass();
+        }
+        return null;
     }
 }

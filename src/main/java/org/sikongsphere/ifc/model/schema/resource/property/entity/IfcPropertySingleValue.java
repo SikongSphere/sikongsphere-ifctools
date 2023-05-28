@@ -10,6 +10,7 @@
 */
 package org.sikongsphere.ifc.model.schema.resource.property.entity;
 
+import org.sikongsphere.ifc.common.annotation.IfcAbstractValueField;
 import org.sikongsphere.ifc.common.annotation.IfcClass;
 import org.sikongsphere.ifc.common.annotation.IfcOptionField;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
@@ -34,6 +35,7 @@ import java.util.Locale;
 public class IfcPropertySingleValue extends IfcSimpleProperty {
 
     @IfcOptionField
+    @IfcAbstractValueField
     private IfcValue nominalValue;
 
     @IfcOptionField

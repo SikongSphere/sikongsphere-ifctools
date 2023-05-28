@@ -16,6 +16,7 @@ import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.enumeration.IfcLayer;
 import org.sikongsphere.ifc.common.enumeration.IfcType;
 import org.sikongsphere.ifc.model.IfcAbstractClass;
+import org.sikongsphere.ifc.model.datatype.INTEGER;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPersonAndOrganization;
 import org.sikongsphere.ifc.model.schema.resource.measure.definedType.IfcTimeStamp;
 import org.sikongsphere.ifc.model.schema.resource.utility.enumeration.IfcChangeActionEnum;
@@ -135,5 +136,9 @@ public class IfcOwnerHistory extends IfcAbstractClass {
 
     public void setCreationDate(IfcTimeStamp creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public void setCreationDate(INTEGER creationDate) {
+        this.creationDate = new IfcTimeStamp(creationDate);
     }
 }

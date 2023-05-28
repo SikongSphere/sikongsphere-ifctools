@@ -32,6 +32,8 @@ public class IfcTimeStamp extends INTEGER implements IfcDerivedMeasureValue {
         super(value);
     }
 
+    public IfcTimeStamp() {}
+
     public IfcTimeStamp(Long timestamp) {
         super(timestamp.intValue());
         this.timestamp = timestamp;

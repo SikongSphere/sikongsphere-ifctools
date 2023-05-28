@@ -38,10 +38,8 @@ public class IfcJsonTest {
     }
 
     @Test
-    public void json2ifc() throws IOException {
-        JsonToIfc jsonToIfc = new JsonToIfc(ifc2jsonfile);
-        jsonToIfc.setWriteToIfcPath(json2ifcfile);
-
-        jsonToIfc.writeToIfc();
+    public void json2ifc() {
+        JsonToIfc jsonToIfc = new JsonToIfc();
+        jsonToIfc.writeToIfc(ifc2jsonfile, json2ifcfile);
     }
 }

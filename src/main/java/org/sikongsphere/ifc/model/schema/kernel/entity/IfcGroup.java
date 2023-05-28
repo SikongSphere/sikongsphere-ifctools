@@ -42,6 +42,8 @@ public class IfcGroup extends IfcObject {
         super(globalId, ownerHistory, name, description, objectType);
     }
 
+    public IfcGroup() {}
+
     public IfcRelAssignsToGroup getIsGroupedBy() {
         return isGroupedBy;
     }

@@ -19,4 +19,8 @@ public class TokenConstant {
     public final static String WARNING_GLOBAL_ID = "globalID is required!";
     public final static String WARNING_UNKNOWN_CLASS = "unknown type: ";
     public final static String WARNING_INIT_FAIL = "class initial failed!";
+    public final static String WARNING_FILE_NOT_EXIST = "file does not exist!";
+    public final static String WARNING_JSON_ROOT_WRONG = "ifcJson root should be object!";
+    public final static String WARNING_IFC_JSON_PARSE_AILED = "ifcJson parse failed!";
+
 }

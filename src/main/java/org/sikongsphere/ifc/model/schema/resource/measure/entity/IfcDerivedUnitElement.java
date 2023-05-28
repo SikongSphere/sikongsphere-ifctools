@@ -34,6 +34,8 @@ public class IfcDerivedUnitElement extends IfcAbstractClass {
         this.exponent = exponent;
     }
 
+    public IfcDerivedUnitElement() {}
+
     public IfcDerivedUnitElement(IfcNamedUnit unit, Integer exponent) {
         this.unit = unit;
         this.exponent = new INTEGER(exponent);

@@ -10,14 +10,17 @@
 */
 package org.sikongsphere.ifc.model.datatype;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.sikongsphere.ifc.common.annotation.IfcParserConstructor;
 import org.sikongsphere.ifc.common.constant.StringConstant;
+import org.sikongsphere.ifc.io.serializer.BOOLEANSerializer;
 import org.sikongsphere.ifc.model.IfcDataType;
 
 /**
  * @author Wang Bohong
  * @date 2022/10/25 12:08
  */
+@JsonSerialize(using = BOOLEANSerializer.class)
 public class BOOLEAN extends IfcDataType {
     private boolean value;
 
@@ -39,6 +42,15 @@ public class BOOLEAN extends IfcDataType {
 
     public boolean isValue() {
         return value;
+    }
+
+    public void setValue(STRING value) {
+        String str = value.value;
+        if (str != null) {
+            if (str.contains("T")) {
+                this.value = true;
+            }
+        }
     }
 
     public void setValue(boolean value) {

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import org.sikongsphere.ifc.model.IfcDataType;
+import org.sikongsphere.ifc.model.IfcInterface;
 import org.sikongsphere.ifc.model.datatype.DOUBLE;
 import org.sikongsphere.ifc.model.datatype.LIST;
 
@@ -38,7 +39,7 @@ public class LISTSerializer extends JsonSerializer<LIST<IfcDataType>> {
         double[] doubles = new double[dataTypeList.size()];
 
         for (int i = 0; i < dataTypeList.size(); i++) {
-            IfcDataType dataType = dataTypeList.get(i);
+            IfcInterface dataType = dataTypeList.get(i);
             if (DOUBLE.class.isAssignableFrom(dataType.getClass())) {
                 BigDecimal value = ((DOUBLE) dataType).getValue();
                 doubles[i] = value.doubleValue();
