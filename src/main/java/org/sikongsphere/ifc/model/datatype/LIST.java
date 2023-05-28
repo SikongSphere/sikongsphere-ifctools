@@ -35,6 +35,12 @@ public class LIST<E> extends IfcDataType {
         this.objects = objects;
     }
 
+    public LIST(E... objects) {
+        for (E object : objects) {
+            add(object);
+        }
+    }
+
     public LIST() {}
 
     public void add(E object) {
