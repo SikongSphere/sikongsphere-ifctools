@@ -14,10 +14,13 @@ import org.junit.Test;
 import org.sikongsphere.ifc.model.schema.resource.actor.entity.IfcPerson;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcDoor;
 import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWall;
+import org.sikongsphere.ifc.model.schema.shared.building.entity.IfcWindow;
 import org.sikongsphere.ifc.sdk.create.factory.IfcDoorFactory;
 import org.sikongsphere.ifc.sdk.create.factory.IfcWallFactory;
+import org.sikongsphere.ifc.sdk.create.factory.IfcWindowFactory;
 import org.sikongsphere.ifc.sdk.create.order.IfcDoorOrder;
 import org.sikongsphere.ifc.sdk.create.order.IfcWallOrder;
+import org.sikongsphere.ifc.sdk.create.order.IfcWindowOrder;
 
 import java.util.UUID;
 
@@ -74,4 +77,24 @@ public class SDKDemo {
         assert thePerson.getMiddleName().get(0).value.equals("Da");
         assert thePerson.getGivenName().value.equals("Shuai");
     }
+
+    @Test
+    public void createWindow() {
+        IfcWindowOrder windowOrder = new IfcWindowOrder();
+        windowOrder.setGlobalId(UUID.randomUUID().toString());
+        windowOrder.setName("default window");
+        windowOrder.setDescription("一扇平平无奇的窗");
+        windowOrder.setObjectType("wooden window");
+        windowOrder.setOverallHeight(1.5);
+        windowOrder.setOverallWidth(0.9);
+        IfcWindowFactory windowFactory = new IfcWindowFactory();
+        IfcWindow ifcWindow = windowFactory.create(windowOrder);
+        IfcPerson thePerson = ifcWindow.getOwnerHistory().getLastModifyingUser().getThePerson();
+
+        assert ifcWindow.getName().value.equals("default window");
+        assert thePerson.getFamilyName().value.equals("Ma");
+        assert thePerson.getMiddleName().get(0).value.equals("Da");
+        assert thePerson.getGivenName().value.equals("Shuai");
+    }
+
 }
