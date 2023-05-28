@@ -118,6 +118,12 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.15</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.jyrkioraskari</groupId>
+            <artifactId>IFCtoLBD</artifactId>
+            <version>1.88</version>
+            <classifier>jar-with-dependencies</classifier>
+        </dependency>
     </dependencies>
 
     <build>
