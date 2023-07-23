@@ -17,5 +17,6 @@ package org.sikongsphere.ifc.common.enumeration;
 public enum IfcVersion {
     IFC_2X3,
     IFC_4X,
-    IFC_4X3
+    IFC_4X3,
+    IFC_4_ADD2_TC1
 }
