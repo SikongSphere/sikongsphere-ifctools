@@ -21,7 +21,7 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  * @author zaiyuan
  * @date 2023.07.23 22:19:45
  */
-@IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENTITY, version = IfcVersion.IFC_4_ADD2_TC1)
+@IfcClass(layer = IfcLayer.CORE, type = IfcType.ENTITY, version = IfcVersion.IFC_4_ADD2_TC1)
 public class IfcProcess {
 
 }
