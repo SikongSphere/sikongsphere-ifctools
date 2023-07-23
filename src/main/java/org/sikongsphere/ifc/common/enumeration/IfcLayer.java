@@ -20,5 +20,6 @@ public enum IfcLayer {
     CORE,
     RESOURCE,
     SHARED,
-    DOMAIN
+    DOMAIN,
+    EXTENSION
 }
