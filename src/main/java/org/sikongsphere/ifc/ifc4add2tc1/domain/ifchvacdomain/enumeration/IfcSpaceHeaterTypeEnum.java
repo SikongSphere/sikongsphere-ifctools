@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcSpaceHeaterTypeEnum {
+    /**
+      * A heat-distributing unit that operates with gravity-circulated air.
+      */
+    CONVECTOR,
+
+    /**
+      * A heat-distributing unit that operates with thermal radiation.
+      */
+    RADIATOR,
+
+    /**
+      * User-defined space heater type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined space heater type.
+      */
+    NOTDEFINED
 
 }

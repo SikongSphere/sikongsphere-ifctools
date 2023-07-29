@@ -27,5 +27,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcTimeSeriesDataTypeEnum {
+    /**
+      * The time series data is continuous.
+      */
+    CONTINUOUS,
+
+    /**
+      * The time series data is discrete.
+      */
+    DISCRETE,
+
+    /**
+      * The time series data is discrete binary.
+      */
+    DISCRETEBINARY,
+
+    /**
+      * The time series data is piecewise binary.
+      */
+    PIECEWISEBINARY,
+
+    /**
+      * The time series data is piecewise constant.
+      */
+    PIECEWISECONSTANT,
+
+    /**
+      * The time series data is piecewise continuous.
+      */
+    PIECEWISECONTINUOUS,
+
+    /**
+      * The time series data is not defined.
+      */
+    NOTDEFINED
 
 }

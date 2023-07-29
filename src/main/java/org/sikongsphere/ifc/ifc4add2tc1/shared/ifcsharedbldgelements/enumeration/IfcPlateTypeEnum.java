@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcPlateTypeEnum {
+    /**
+      * A planar element within a curtain wall, often consisting of a frame with fixed glazing.
+      */
+    CURTAIN_PANEL,
+
+    /**
+      * A planar, flat and thin element, comes usually as metal sheet, and is often used as an additonal part within an assembly.
+      */
+    SHEET,
+
+    /**
+      * User-defined linear element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined linear element.
+      */
+    NOTDEFINED
 
 }

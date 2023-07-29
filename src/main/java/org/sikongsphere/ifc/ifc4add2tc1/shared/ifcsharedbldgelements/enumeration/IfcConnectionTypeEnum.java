@@ -23,5 +23,21 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcConnectionTypeEnum {
+    /**
+      * Connection along the path of the connected element.
+      */
+    ATPATH,
+
+    /**
+      * Connection at the start of the connected element.
+      */
+    ATSTART,
+
+    /**
+      * Connection at the end of the connected element.
+      */
+    ATEND,
+
+    NOTDEFINED
 
 }

@@ -23,5 +23,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDoorPanelPositionEnum {
+    LEFT,
+
+    MIDDLE,
+
+    RIGHT,
+
+    NOTDEFINED
 
 }

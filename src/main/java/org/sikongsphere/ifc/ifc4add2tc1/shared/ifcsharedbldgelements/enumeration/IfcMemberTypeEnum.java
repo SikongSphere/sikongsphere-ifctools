@@ -23,5 +23,74 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcMemberTypeEnum {
+    /**
+      * A linear element (usually sloped) often used for bracing of a girder or truss.
+      */
+    BRACE,
+
+    /**
+      * Upper or lower longitudinal member of a truss, used horizontally or sloped.
+      */
+    CHORD,
+
+    /**
+      * A linear element (usually used horizontally) within a roof structure to connect rafters and posts.
+      */
+    COLLAR,
+
+    /**
+      * A linear element within a girder or truss with no further meaning.
+      */
+    MEMBER,
+
+    /**
+      * A linear element within a curtain wall system to connect two (or more) panels.
+      */
+    MULLION,
+
+    /**
+      * A linear continuous horizontal element in wall framing, such as a head piece or a sole plate.
+      */
+    PLATE,
+
+    /**
+      * A linear member (usually used vertically) within a roof structure to support purlins.
+      */
+    POST,
+
+    /**
+      * A linear element (usually used horizontally) within a roof structure to support rafters.
+      */
+    PURLIN,
+
+    /**
+      * A linear elements used to support roof slabs or roof covering, usually used with slope.
+      */
+    RAFTER,
+
+    /**
+      * A linear element used to support stair or ramp flights, usually used with slope.
+      */
+    STRINGER,
+
+    /**
+      * A linear element often used within a girder or truss.
+      */
+    STRUT,
+
+    /**
+      * Vertical element in wall framing.
+      */
+    STUD,
+
+    /**
+      * User-defined linear element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined linear element.
+      */
+    NOTDEFINED
 
 }

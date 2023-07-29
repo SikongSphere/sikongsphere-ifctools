@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcStructuralSurfaceMemberTypeEnum {
+    /**
+      * A member with capacity to carry out-of-plane loads, i.e. a plate.
+      */
+    BENDING_ELEMENT,
+
+    /**
+      * A member with capacity to carry in-plane loads, for example a shear wall.
+      */
+    MEMBRANE_ELEMENT,
+
+    /**
+      * A member with capacity to carry in-plane and out-of-plane loads, i.e. a combination of bending element and membrane element.
+      */
+    SHELL,
+
+    /**
+      * A specially defined member.
+      */
+    USERDEFINED,
+
+    /**
+      * A member without further categorization.
+      */
+    NOTDEFINED
 
 }

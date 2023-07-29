@@ -27,5 +27,68 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcTaskTypeEnum {
+    /**
+      * Attendance or waiting on other things happening.
+      */
+    ATTENDANCE,
+
+    /**
+      * Constructing or building something.
+      */
+    CONSTRUCTION,
+
+    /**
+      * Demolishing or breaking down something.
+      */
+    DEMOLITION,
+
+    /**
+      * Taking something apart carefully so that it can be recycled or reused.
+      */
+    DISMANTLE,
+
+    /**
+      * Disposing or getting rid of something.
+      */
+    DISPOSAL,
+
+    /**
+      * Installing something (equivalent to construction but more commonly used for engineering tasks).
+      */
+    INSTALLATION,
+
+    /**
+      * Transporation or delivery of something.
+      */
+    LOGISTIC,
+
+    /**
+      * Keeping something in good working order.
+      */
+    MAINTENANCE,
+
+    /**
+      * Moving things from one place to another.
+      */
+    MOVE,
+
+    /**
+      * A procedure undertaken to start up the operation an artifact.
+      */
+    OPERATION,
+
+    /**
+      * Removal of an item from use and taking it from its place of use.
+      */
+    REMOVAL,
+
+    /**
+      * Bringing something to an 'as-new' state.
+      */
+    RENOVATION,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

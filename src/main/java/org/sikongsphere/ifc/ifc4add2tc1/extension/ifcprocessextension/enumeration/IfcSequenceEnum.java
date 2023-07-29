@@ -27,5 +27,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcSequenceEnum {
+    /**
+      * The predecessor task must start before the successor task may start.
+      */
+    START_START,
+
+    /**
+      * The predecessor task must start before the successor task may finish.
+      */
+    START_FINISH,
+
+    /**
+      * The predecessor task must finish before the successor task may start.
+      */
+    FINISH_START,
+
+    /**
+      * The predecessor task must finish before the successor task may finish.
+      */
+    FINISH_FINISH,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

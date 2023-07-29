@@ -27,5 +27,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcGlobalOrLocalEnum {
+    /**
+      * The global project coordinate system is used.
+      */
+    GLOBAL_COORDS,
+
+    /**
+      * The local object coordinate system is used.
+      */
+    LOCAL_COORDS
 
 }

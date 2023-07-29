@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcTendonAnchorTypeEnum {
+    /**
+      * The anchor is an intermediate device which connects two tendons.
+      */
+    COUPLER,
+
+    /**
+      * The anchor fixes the end of a tendon.
+      */
+    FIXED_END,
+
+    /**
+      * The anchor is used or can be used to prestress the tendon.
+      */
+    TENSIONING_END,
+
+    /**
+      * The type of tendon anchor is user defined.
+      */
+    USERDEFINED,
+
+    /**
+      * The type of tendon anchor is not defined.
+      */
+    NOTDEFINED
 
 }

@@ -27,5 +27,59 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcElementAssemblyTypeEnum {
+    /**
+      * Assembled accessories or components.
+      */
+    ACCESSORY_ASSEMBLY,
+
+    /**
+      * A curved structure.
+      */
+    ARCH,
+
+    /**
+      * Interconnected beams, located in one (typically horizontal) plane.
+      */
+    BEAM_GRID,
+
+    /**
+      * A rigid frame with additional bracing members.
+      */
+    BRACED_FRAME,
+
+    /**
+      * A beam-like superstructure.
+      */
+    GIRDER,
+
+    /**
+      * Assembled reinforcement elements.
+      */
+    REINFORCEMENT_UNIT,
+
+    /**
+      * A structure built up of beams, columns, etc. with moment-resisting joints.
+      */
+    RIGID_FRAME,
+
+    /**
+      * Slabs, laid out in one plane.
+      */
+    SLAB_FIELD,
+
+    /**
+      * A structure built up of members with (quasi) pinned joint.
+      */
+    TRUSS,
+
+    /**
+      * User-defined element assembly.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined element assembly.
+      */
+    NOTDEFINED
 
 }

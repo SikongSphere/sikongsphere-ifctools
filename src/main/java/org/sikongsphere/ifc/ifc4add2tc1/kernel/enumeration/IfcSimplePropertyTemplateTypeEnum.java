@@ -23,5 +23,64 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcSimplePropertyTemplateTypeEnum {
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcPropertySingleValue.
+      */
+    P_SINGLEVALUE,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcPropertyEnumeratedValue.
+      */
+    P_ENUMERATEDVALUE,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcPropertyBoundedValue.
+      */
+    P_BOUNDEDVALUE,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcPropertyListValue.
+      */
+    P_LISTVALUE,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcPropertyTableValue.
+      */
+    P_TABLEVALUE,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcPropertyReferenceValue.
+      */
+    P_REFERENCEVALUE,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcQuantityLength.
+      */
+    Q_LENGTH,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcQuantityArea.
+      */
+    Q_AREA,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcQuantityVolume.
+      */
+    Q_VOLUME,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcQuantityCount.
+      */
+    Q_COUNT,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcQuantityWeight.
+      */
+    Q_WEIGHT,
+
+    /**
+      * The properties defined by this IfcPropertyTemplate are of type IfcQuantityTime.
+      */
+    Q_TIME
 
 }

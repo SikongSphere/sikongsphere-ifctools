@@ -27,5 +27,26 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcDataOriginEnum {
+    /**
+      * The origin of the time data is a measurement device.
+      */
+    MEASURED,
+
+    /**
+      * The time data are a prediction.
+      */
+    PREDICTED,
+
+    /**
+      * The origin of the time data is a simulation.
+      */
+    SIMULATED,
+
+    USERDEFINED,
+
+    /**
+      * The origin of the time data is undefined.
+      */
+    NOTDEFINED
 
 }

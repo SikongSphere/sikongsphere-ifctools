@@ -23,5 +23,64 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcSanitaryTerminalTypeEnum {
+    /**
+      * Sanitary appliance for immersion of the human body or parts of it.
+      */
+    BATH,
+
+    /**
+      * Waste water appliance for washing the excretory organs while sitting astride the bowl.
+      */
+    BIDET,
+
+    /**
+      * A water storage unit attached to a sanitary terminal that is fitted with a device, operated automatically or by the user, that discharges water to cleanse a water closet (toilet) pan, urinal or slop hopper.
+      */
+    CISTERN,
+
+    /**
+      * Installation or waste water appliance that emits a spray of water to wash the human body.
+      */
+    SHOWER,
+
+    /**
+      * Waste water appliance for receiving, retaining or disposing of domestic, culinary, laboratory or industrial process liquids.
+      */
+    SINK,
+
+    /**
+      * A sanitary terminal that provides a low pressure jet of water for a specific purpose.
+      */
+    SANITARYFOUNTAIN,
+
+    /**
+      * Soil appliance for the disposal of excrement.
+      */
+    TOILETPAN,
+
+    /**
+      * Soil appliance that receives urine and directs it to a waste outlet.
+      */
+    URINAL,
+
+    /**
+      * Waste water appliance for washing the upper parts of the body.
+      */
+    WASHHANDBASIN,
+
+    /**
+      * Hinged seat that fits on the top of a water closet (WC) pan. DEPRECATION  Enumerator shall not be used in IFC4.
+      */
+    WCSEAT,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

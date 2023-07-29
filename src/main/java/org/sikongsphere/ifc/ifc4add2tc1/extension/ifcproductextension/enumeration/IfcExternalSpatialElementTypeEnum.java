@@ -27,5 +27,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcExternalSpatialElementTypeEnum {
+    /**
+      * External air space around the building.
+      */
+    EXTERNAL,
+
+    /**
+      * External volume covered by earth around the building.
+      */
+    EXTERNAL_EARTH,
+
+    /**
+      * External volume covered with water around the building.
+      */
+    EXTERNAL_WATER,
+
+    /**
+      * Space occupied by a neightboring building.
+      */
+    EXTERNAL_FIRE,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

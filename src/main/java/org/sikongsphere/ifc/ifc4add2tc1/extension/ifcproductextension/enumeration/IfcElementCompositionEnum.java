@@ -27,5 +27,19 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcElementCompositionEnum {
+    /**
+      * A group or aggregation of similar elements.
+      */
+    COMPLEX,
+
+    /**
+      * An (undivided) element itself.
+      */
+    ELEMENT,
+
+    /**
+      * A subelement or part.
+      */
+    PARTIAL
 
 }

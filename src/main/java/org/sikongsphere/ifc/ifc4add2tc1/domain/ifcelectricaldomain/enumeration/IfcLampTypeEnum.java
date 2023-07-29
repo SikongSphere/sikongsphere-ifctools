@@ -23,5 +23,59 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcLampTypeEnum {
+    /**
+      * A fluorescent lamp having a compact form factor produced by shaping the tube.
+      */
+    COMPACTFLUORESCENT,
+
+    /**
+      * A typically tubular discharge lamp in which most of the light is emitted by one or several layers of phosphors excited by ultraviolet radiation from the discharge.
+      */
+    FLUORESCENT,
+
+    /**
+      * An incandescent lamp in which a tungsten filament is sealed into a compact transport envelope filled with an inert gas and a small amount of halogen such as iodine or bromine.
+      */
+    HALOGEN,
+
+    /**
+      * A discharge lamp in which most of the light is emitted by exciting mercury at high pressure.
+      */
+    HIGHPRESSUREMERCURY,
+
+    /**
+      * A discharge lamp in which most of the light is emitted by exciting sodium at high pressure.
+      */
+    HIGHPRESSURESODIUM,
+
+    /**
+      * A solid state lamp that uses light-emitting diodes as the source of light.
+      */
+    LED,
+
+    /**
+      * A discharge lamp in which most of the light is emitted by exciting a metal halide.
+      */
+    METALHALIDE,
+
+    /**
+      * A solid state lamp that uses light-emitting diodes as the source of light whose emissive electroluminescent layer is composed of a film of organic compounds.
+      */
+    OLED,
+
+    /**
+      * A lamp that emits light by passing an electrical current through a tungsten wire filament in a near vacuum.
+      */
+    TUNGSTENFILAMENT,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

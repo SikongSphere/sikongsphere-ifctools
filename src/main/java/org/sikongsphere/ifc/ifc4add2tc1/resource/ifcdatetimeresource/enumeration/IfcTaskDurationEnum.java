@@ -27,5 +27,19 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcTaskDurationEnum {
+    /**
+      * The time duration is based on elapsed time (24 hours per day, independent of calendar).
+      */
+    ELAPSEDTIME,
+
+    /**
+      * The time duration is based on work time (calendar-dependent).
+      */
+    WORKTIME,
+
+    /**
+      * The time duration is undefined.
+      */
+    NOTDEFINED
 
 }

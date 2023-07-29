@@ -23,5 +23,54 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDistributionChamberElementTypeEnum {
+    /**
+      * Space formed in the ground for the passage of pipes, cables, ducts.
+      */
+    FORMEDDUCT,
+
+    /**
+      * Chamber constructed on a drain, sewer or pipeline with a removable cover that permits visble inspection.
+      */
+    INSPECTIONCHAMBER,
+
+    /**
+      * Recess or chamber formed to permit access for inspection of substructure and services.
+      */
+    INSPECTIONPIT,
+
+    /**
+      * hamber constructed on a drain, sewer or pipeline with a removable cover that permits the entry of a person.
+      */
+    MANHOLE,
+
+    /**
+      * Chamber that houses a meter(s).
+      */
+    METERCHAMBER,
+
+    /**
+      * Recessed or small chamber into which liquid is drained to facilitate its collection for removal.
+      */
+    SUMP,
+
+    /**
+      * Excavated chamber, the length of which typically exceeds the width.
+      */
+    TRENCH,
+
+    /**
+      * Chamber that houses a valve(s).
+      */
+    VALVECHAMBER,
+
+    /**
+      * User-defined chamber type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined chamber type.
+      */
+    NOTDEFINED
 
 }

@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDistributionPortTypeEnum {
+    /**
+      * Connection to cable segment or fitting for distribution of electricity.
+      */
+    CABLE,
+
+    /**
+      * Connection to cable carrier segment or fitting for enclosing cables.
+      */
+    CABLECARRIER,
+
+    /**
+      * Connection to duct segment or fitting for distribution of air.
+      */
+    DUCT,
+
+    /**
+      * Connection to pipe segment or fitting for distribution of solid, liquid, or gas.
+      */
+    PIPE,
+
+    /**
+      * User-defined port type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined port type.
+      */
+    NOTDEFINED
 
 }

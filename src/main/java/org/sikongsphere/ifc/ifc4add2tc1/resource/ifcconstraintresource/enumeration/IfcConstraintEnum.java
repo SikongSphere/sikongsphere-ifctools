@@ -27,5 +27,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcConstraintEnum {
+    /**
+      * Qualifies a constraint such that it must be followed rigidly within or at the values set.
+      */
+    HARD,
+
+    /**
+      * Qualifies a constraint such that it should be followed within or at the values set.
+      */
+    SOFT,
+
+    /**
+      * Qualifies a constraint such that it is advised that it is followed within or at the values set.
+      */
+    ADVISORY,
+
+    /**
+      * A user-defined grade indicated by a separate attribute at the referencing entity.
+      */
+    USERDEFINED,
+
+    /**
+      * Grade has not been specified.
+      */
+    NOTDEFINED
 
 }

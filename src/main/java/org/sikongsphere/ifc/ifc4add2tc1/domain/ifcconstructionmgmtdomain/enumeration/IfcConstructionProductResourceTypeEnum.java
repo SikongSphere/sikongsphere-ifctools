@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcConstructionProductResourceTypeEnum {
+    /**
+      * Construction of assemblies for use as input to the building model or other assemblies.
+      */
+    ASSEMBLY,
+
+    /**
+      * Construction or placement of forms for placing materials such as concrete.
+      */
+    FORMWORK,
+
+    /**
+      * User-defined resource.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined resource.
+      */
+    NOTDEFINED
 
 }

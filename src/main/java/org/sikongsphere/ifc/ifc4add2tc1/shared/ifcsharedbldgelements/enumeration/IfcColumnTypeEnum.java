@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcColumnTypeEnum {
+    /**
+      * A standard member usually vertical and requiring resistance to vertical forces by compression but also sometimes to lateral forces.
+      */
+    COLUMN,
+
+    /**
+      * A column element embedded within a wall that can be required to be load bearing but may also only be used for decorative purposes.
+      */
+    PILASTER,
+
+    /**
+      * User-defined linear element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined linear element.
+      */
+    NOTDEFINED
 
 }

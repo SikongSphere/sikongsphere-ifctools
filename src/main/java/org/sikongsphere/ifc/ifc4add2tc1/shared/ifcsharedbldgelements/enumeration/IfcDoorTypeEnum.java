@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDoorTypeEnum {
+    /**
+      * A standard door usually within a wall opening, as a door panel in a curtain wall, or as a "free standing" door.
+      */
+    DOOR,
+
+    /**
+      * A gate is a point of entry to a property usually within an opening in a fence. Or as a "free standing" gate.
+      */
+    GATE,
+
+    /**
+      * A special door that lies horizonally in a slab opening. Often used for accessing cellar or attic.
+      */
+    TRAPDOOR,
+
+    /**
+      * User-defined linear beam element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined linear beam element.
+      */
+    NOTDEFINED
 
 }

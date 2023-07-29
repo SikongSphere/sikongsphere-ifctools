@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCableCarrierSegmentTypeEnum {
+    /**
+      * An open carrier segment on which cables are carried on a ladder structure.
+      */
+    CABLELADDERSEGMENT,
+
+    /**
+      * A (typically) open carrier segment onto which cables are laid.
+      */
+    CABLETRAYSEGMENT,
+
+    /**
+      * An enclosed carrier segment with one or more compartments into which cables are placed.
+      */
+    CABLETRUNKINGSEGMENT,
+
+    /**
+      * An enclosed tubular carrier segment through which cables are pulled.
+      */
+    CONDUITSEGMENT,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

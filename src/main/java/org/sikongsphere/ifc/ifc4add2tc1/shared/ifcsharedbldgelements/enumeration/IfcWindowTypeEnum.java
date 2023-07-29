@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcWindowTypeEnum {
+    /**
+      * A standard window usually within a wall opening, as a window panel in a curtain wall, or as a "free standing" window.
+      */
+    WINDOW,
+
+    /**
+      * A window within a sloped building element, usually a roof slab.
+      */
+    SKYLIGHT,
+
+    /**
+      * A special window that lies horizonally in a roof slab opening.
+      */
+    LIGHTDOME,
+
+    /**
+      * User-defined window element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined window element.
+      */
+    NOTDEFINED
 
 }

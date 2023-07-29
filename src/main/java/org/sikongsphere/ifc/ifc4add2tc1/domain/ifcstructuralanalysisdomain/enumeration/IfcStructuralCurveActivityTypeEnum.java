@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcStructuralCurveActivityTypeEnum {
+    /**
+      * The load has a constant value over its entire extent.
+      */
+    CONST,
+
+    /**
+      * The load value is linearly distributed over the load's extent.
+      */
+    LINEAR,
+
+    /**
+      * The load consists of several consecutive linear sections.
+      */
+    POLYGONAL,
+
+    /**
+      * The load consists of n consecutive sections of same length and is specified by n+1 load samples. The interpolation type over the segments is not defined by this distribution type but may be qualified in IfcObject.ObjectType based on additional agreements.
+      */
+    EQUIDISTANT,
+
+    /**
+      * The load value is distributed as a sinus half wave.
+      */
+    SINUS,
+
+    /**
+      * The load value is distributed as a half wave described by a symmetric quadratic parabola.
+      */
+    PARABOLA,
+
+    /**
+      * The load is specified as a series of discrete load points.
+      */
+    DISCRETE,
+
+    /**
+      * The load distribution is user-defined.
+      */
+    USERDEFINED,
+
+    /**
+      * The load distribution is undefined.
+      */
+    NOTDEFINED
 
 }

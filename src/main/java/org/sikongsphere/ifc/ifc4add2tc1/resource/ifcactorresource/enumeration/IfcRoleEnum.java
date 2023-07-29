@@ -27,5 +27,53 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcRoleEnum {
+    SUPPLIER,
+
+    MANUFACTURER,
+
+    CONTRACTOR,
+
+    SUBCONTRACTOR,
+
+    ARCHITECT,
+
+    STRUCTURALENGINEER,
+
+    COSTENGINEER,
+
+    CLIENT,
+
+    BUILDINGOWNER,
+
+    BUILDINGOPERATOR,
+
+    MECHANICALENGINEER,
+
+    ELECTRICALENGINEER,
+
+    PROJECTMANAGER,
+
+    FACILITIESMANAGER,
+
+    CIVILENGINEER,
+
+    COMMISSIONINGENGINEER,
+
+    ENGINEER,
+
+    OWNER,
+
+    CONSULTANT,
+
+    CONSTRUCTIONMANAGER,
+
+    FIELDCONSTRUCTIONMANAGER,
+
+    RESELLER,
+
+    /**
+      * User defined value to be provided.
+      */
+    USERDEFINED
 
 }

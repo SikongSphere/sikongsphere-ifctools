@@ -27,5 +27,20 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcWorkPlanTypeEnum {
+    /**
+      * A control in which actual items undertaken are indicated.
+      */
+    ACTUAL,
+
+    /**
+      * A control that is a baseline from which changes that are made later can be recognized.
+      */
+    BASELINE,
+
+    PLANNED,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

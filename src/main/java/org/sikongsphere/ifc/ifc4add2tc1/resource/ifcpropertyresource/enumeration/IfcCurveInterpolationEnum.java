@@ -27,5 +27,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcCurveInterpolationEnum {
+    /**
+      * Indicates that values between the defined values are to be found by linear interpolation.
+      */
+    LINEAR,
+
+    /**
+      * Indicates that values between the defined values are to be found by linear interpolation of the natural logarithm (base e) of the values.
+      */
+    LOG_LINEAR,
+
+    /**
+      * Indicates that values between the defined values are to be found by linear interpolation of the Briggs' logarithm (base 10) of the values.
+      */
+    LOG_LOG,
+
+    /**
+      * No interpolation information is provided
+      */
+    NOTDEFINED
 
 }

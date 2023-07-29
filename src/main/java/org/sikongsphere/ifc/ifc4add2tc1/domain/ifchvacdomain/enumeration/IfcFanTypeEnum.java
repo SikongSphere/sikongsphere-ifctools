@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcFanTypeEnum {
+    /**
+      * Air flows through the impeller radially using blades that are forward curved.
+      */
+    CENTRIFUGALFORWARDCURVED,
+
+    /**
+      * Air flows through the impeller radially using blades that are uncurved or slightly forward curved.
+      */
+    CENTRIFUGALRADIAL,
+
+    /**
+      * Air flows through the impeller radially using blades that are backward curved.
+      */
+    CENTRIFUGALBACKWARDINCLINEDCURVED,
+
+    /**
+      * Air flows through the impeller radially using blades that are airfoil shaped.
+      */
+    CENTRIFUGALAIRFOIL,
+
+    /**
+      * Air flows through the impeller axially with guide vanes and reduced running blade tip clearance.
+      */
+    TUBEAXIAL,
+
+    /**
+      * Air flows through the impeller axially with guide vanes and reduced running blade tip clearance.
+      */
+    VANEAXIAL,
+
+    /**
+      * Air flows through the impeller axially and small hub-to-tip ratio impeller mounted in an orifice plate or inlet ring.
+      */
+    PROPELLORAXIAL,
+
+    /**
+      * User-defined fan type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined fan type.
+      */
+    NOTDEFINED
 
 }

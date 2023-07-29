@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCableFittingTypeEnum {
+    /**
+      * A fitting that joins two cable segments of the same connector type (though potentially different gender).
+      */
+    CONNECTOR,
+
+    /**
+      * A fitting that begins a cable segment at a non-electrical element such as a grounding clamp attached to a pipe.
+      */
+    ENTRY,
+
+    /**
+      * A fitting that ends a cable segment at a non-electrical element such as a grounding clamp attached to a pipe or to the ground.
+      */
+    EXIT,
+
+    /**
+      * A fitting that joins three or more segments of arbitrary connector types for signal splitting or multiplexing.
+      */
+    JUNCTION,
+
+    /**
+      * A fitting that joins two cable segments of different connector types.
+      */
+    TRANSITION,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

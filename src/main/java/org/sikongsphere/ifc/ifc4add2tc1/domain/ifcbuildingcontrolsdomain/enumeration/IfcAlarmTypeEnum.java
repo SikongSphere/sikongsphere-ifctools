@@ -23,5 +23,44 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcAlarmTypeEnum {
+    /**
+      * An audible alarm.
+      */
+    BELL,
+
+    /**
+      * An alarm activation mechanism in which a protective glass has to be broken to enable a button to be pressed.
+      */
+    BREAKGLASSBUTTON,
+
+    /**
+      * A visual alarm.
+      */
+    LIGHT,
+
+    /**
+      * An alarm activation mechanism in which activation is achieved by a pulling action.
+      */
+    MANUALPULLBOX,
+
+    /**
+      * An audible alarm.
+      */
+    SIREN,
+
+    /**
+      * An audible alarm.
+      */
+    WHISTLE,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

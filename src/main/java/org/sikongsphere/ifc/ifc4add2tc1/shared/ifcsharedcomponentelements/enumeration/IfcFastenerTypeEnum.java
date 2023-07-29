@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcFastenerTypeEnum {
+    /**
+      * A fastening connection where glue is used to join together elements.
+      */
+    GLUE,
+
+    /**
+      * A composition of mineralic or other materials used to fill jointing gaps and possibly fulfilling a load carrying role.
+      */
+    MORTAR,
+
+    /**
+      * A weld seam between parts of metallic material or other suitable materials.
+      */
+    WELD,
+
+    /**
+      * User-defined fastener.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined fastener.
+      */
+    NOTDEFINED
 
 }

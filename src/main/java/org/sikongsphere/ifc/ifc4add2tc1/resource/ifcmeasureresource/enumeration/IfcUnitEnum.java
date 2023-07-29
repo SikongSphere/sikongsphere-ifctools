@@ -27,5 +27,67 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcUnitEnum {
+    ABSORBEDDOSEUNIT,
+
+    AMOUNTOFSUBSTANCEUNIT,
+
+    AREAUNIT,
+
+    DOSEEQUIVALENTUNIT,
+
+    ELECTRICCAPACITANCEUNIT,
+
+    ELECTRICCHARGEUNIT,
+
+    ELECTRICCONDUCTANCEUNIT,
+
+    ELECTRICCURRENTUNIT,
+
+    ELECTRICRESISTANCEUNIT,
+
+    ELECTRICVOLTAGEUNIT,
+
+    ENERGYUNIT,
+
+    FORCEUNIT,
+
+    FREQUENCYUNIT,
+
+    ILLUMINANCEUNIT,
+
+    INDUCTANCEUNIT,
+
+    LENGTHUNIT,
+
+    LUMINOUSFLUXUNIT,
+
+    LUMINOUSINTENSITYUNIT,
+
+    MAGNETICFLUXDENSITYUNIT,
+
+    MAGNETICFLUXUNIT,
+
+    MASSUNIT,
+
+    PLANEANGLEUNIT,
+
+    POWERUNIT,
+
+    PRESSUREUNIT,
+
+    RADIOACTIVITYUNIT,
+
+    SOLIDANGLEUNIT,
+
+    THERMODYNAMICTEMPERATUREUNIT,
+
+    TIMEUNIT,
+
+    VOLUMEUNIT,
+
+    /**
+      * User defined unit type. The type of unit is only implied by its name or the usage context.
+      */
+    USERDEFINED
 
 }

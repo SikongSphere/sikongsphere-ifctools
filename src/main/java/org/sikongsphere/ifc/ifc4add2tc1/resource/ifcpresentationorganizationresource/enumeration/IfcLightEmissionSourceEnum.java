@@ -27,5 +27,26 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcLightEmissionSourceEnum {
+    COMPACTFLUORESCENT,
+
+    FLUORESCENT,
+
+    HIGHPRESSUREMERCURY,
+
+    HIGHPRESSURESODIUM,
+
+    LIGHTEMITTINGDIODE,
+
+    LOWPRESSURESODIUM,
+
+    LOWVOLTAGEHALOGEN,
+
+    MAINVOLTAGEHALOGEN,
+
+    METALHALIDE,
+
+    TUNGSTENFILAMENT,
+
+    NOTDEFINED
 
 }

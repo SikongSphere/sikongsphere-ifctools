@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcBuildingElementProxyTypeEnum {
+    /**
+      * Not used - kept for upward compatibility.
+      */
+    COMPLEX,
+
+    /**
+      * Not used - kept for upward compatibility.
+      */
+    ELEMENT,
+
+    /**
+      * Not used - kept for upward compatibility.
+      */
+    PARTIAL,
+
+    /**
+      * The proxy denotes a provision for voids (an proposed opening not applied as void yet).
+      */
+    PROVISIONFORVOID,
+
+    /**
+      * The proxy denotes a provision for space (e.g. the space allocated as a provision for mechanical equipment or furniture).
+      */
+    PROVISIONFORSPACE,
+
+    /**
+      * User-defined building element proxy.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined building element proxy.
+      */
+    NOTDEFINED
 
 }

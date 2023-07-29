@@ -23,5 +23,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcAnalysisModelTypeEnum {
+    IN_PLANE_LOADING_2D,
+
+    OUT_PLANE_LOADING_2D,
+
+    LOADING_3D,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

@@ -27,5 +27,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcDirectionSenseEnum {
+    /**
+      * Direction defined to be positive.
+      */
+    POSITIVE,
+
+    /**
+      * Direction defined to be negative.
+      */
+    NEGATIVE
 
 }

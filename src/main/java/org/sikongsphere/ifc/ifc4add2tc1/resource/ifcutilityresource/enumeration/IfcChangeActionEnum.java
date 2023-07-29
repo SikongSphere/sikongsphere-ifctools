@@ -27,5 +27,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcChangeActionEnum {
+    /**
+      * Object has not been modified.
+      */
+    NOCHANGE,
+
+    /**
+      * A modification to the object has been made by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
+      */
+    MODIFIED,
+
+    /**
+      * The object has been created by the user and application defined by the OwningUser and OwningApplication respectively.
+      */
+    ADDED,
+
+    /**
+      * The object has been deleted by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
+      */
+    DELETED,
+
+    /**
+      * The change action is not known or has not been defined.
+      */
+    NOTDEFINED
 
 }

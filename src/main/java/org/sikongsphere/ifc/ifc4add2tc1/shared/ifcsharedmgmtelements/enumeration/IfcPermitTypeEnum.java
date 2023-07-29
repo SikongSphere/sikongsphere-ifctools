@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcPermitTypeEnum {
+    /**
+      * Enables access to an identified area.
+      */
+    ACCESS,
+
+    /**
+      * Enables work to proceed by getting regulatory permissions.
+      */
+    BUILDING,
+
+    /**
+      * Enables work to be carried out in an identified area.
+      */
+    WORK,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

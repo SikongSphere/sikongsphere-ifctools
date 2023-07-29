@@ -23,5 +23,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcSlabTypeEnum {
+    /**
+      * The slab is used to represent a floor slab.
+      */
+    FLOOR,
+
+    /**
+      * The slab is used to represent a roof slab (either flat or sloped).
+      */
+    ROOF,
+
+    /**
+      * The slab is used to represent a landing within a stair or ramp.
+      */
+    LANDING,
+
+    /**
+      * The slab is used to represent a floor slab against the ground (and thereby being a part of the foundation). Another name is mat foundation.
+      */
+    BASESLAB,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

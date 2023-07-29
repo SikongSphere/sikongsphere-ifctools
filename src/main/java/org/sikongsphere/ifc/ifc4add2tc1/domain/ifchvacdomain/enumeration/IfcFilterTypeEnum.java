@@ -23,5 +23,44 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcFilterTypeEnum {
+    /**
+      * A filter used to remove particulates from air.
+      */
+    AIRPARTICLEFILTER,
+
+    /**
+      * A filter used to remove particulates from compressed air.
+      */
+    COMPRESSEDAIRFILTER,
+
+    /**
+      * A filter used to remove odors from air.
+      */
+    ODORFILTER,
+
+    /**
+      * A filter used to remove particulates from oil.
+      */
+    OILFILTER,
+
+    /**
+      * A filter used to remove particulates from a fluid.
+      */
+    STRAINER,
+
+    /**
+      * A filter used to remove particulates from water.
+      */
+    WATERFILTER,
+
+    /**
+      * User-defined filter type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined filter type.
+      */
+    NOTDEFINED
 
 }

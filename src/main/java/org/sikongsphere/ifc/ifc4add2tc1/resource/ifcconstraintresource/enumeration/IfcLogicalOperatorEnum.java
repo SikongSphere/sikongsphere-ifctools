@@ -27,5 +27,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcLogicalOperatorEnum {
+    /**
+      * Defines a relationship between operands whereby the result is true if all operands are true, and false if at least one operand is false.
+      */
+    LOGICALAND,
+
+    /**
+      * Defines a relationship between operands whereby the result is true if at least one operand is true, and false if all operands are false.
+      */
+    LOGICALOR,
+
+    /**
+      * Defines a relationship between operands whereby the result is true if exactly one operand is true (exclusive or).
+      */
+    LOGICALXOR,
+
+    /**
+      * Defines a relationship between operands whereby the result is true if at least one operand is false, and false if all operands are true.
+      */
+    LOGICALNOTAND,
+
+    /**
+      * Defines a relationship between operands whereby the result is true if all operands are false, and false if at least one operand is true.
+      */
+    LOGICALNOTOR
 
 }

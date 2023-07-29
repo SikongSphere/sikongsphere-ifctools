@@ -27,5 +27,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcSectionTypeEnum {
+    /**
+      * The section is uniform in longitudinal direction.
+      */
+    UNIFORM,
+
+    /**
+      * The section is tapered in longitudinal direction.
+      */
+    TAPERED
 
 }

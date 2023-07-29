@@ -23,5 +23,54 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcConstructionEquipmentResourceTypeEnum {
+    /**
+      * Removal or destruction of building elements.
+      */
+    DEMOLISHING,
+
+    /**
+      * Excavating, filling, or contouring earth.
+      */
+    EARTHMOVING,
+
+    /**
+      * Lifting, positioning, and placing elements.
+      */
+    ERECTING,
+
+    /**
+      * Temporary heat to support construction.
+      */
+    HEATING,
+
+    /**
+      * Temporary lighting to support construction.
+      */
+    LIGHTING,
+
+    /**
+      * Roads or walkways such as asphalt or concrete.
+      */
+    PAVING,
+
+    /**
+      * Installing materials through pumps.
+      */
+    PUMPING,
+
+    /**
+      * Transporting products or materials.
+      */
+    TRANSPORTING,
+
+    /**
+      * User-defined resource.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined resource.
+      */
+    NOTDEFINED
 
 }

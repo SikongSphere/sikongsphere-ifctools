@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcControllerTypeEnum {
+    /**
+      * Output increases or decreases at a constant or accelerating rate.
+      */
+    FLOATING,
+
+    /**
+      * Output is programmable such as Discrete Digital Control (DDC).
+      */
+    PROGRAMMABLE,
+
+    /**
+      * Output is proportional to the control error and optionally time integral and derivative.
+      */
+    PROPORTIONAL,
+
+    /**
+      * Output is discrete value, can be one of three or more values.
+      */
+    MULTIPOSITION,
+
+    /**
+      * Output can be either on or off.
+      */
+    TWOPOSITION,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

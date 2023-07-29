@@ -27,5 +27,51 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcSpatialZoneTypeEnum {
+    /**
+      * The spatial zone is used to represent a construction zone for the production process.
+      */
+    CONSTRUCTION,
+
+    /**
+      * The spatial zone is used to represent a fire safety zone, or fire compartment.
+      */
+    FIRESAFETY,
+
+    /**
+      * The spatial zone is used to represent a lighting zone; a daylight zone, or an artificial lighting zone.
+      */
+    LIGHTING,
+
+    /**
+      * The spatial zone is used to represent a zone of particular occupancy.
+      */
+    OCCUPANCY,
+
+    /**
+      * The spatial zone is used to represent a zone for security planning and maintainance work.
+      */
+    SECURITY,
+
+    /**
+      * The spatial zone is used to represent a thermal zone.
+      */
+    THERMAL,
+
+    TRANSPORT,
+
+    /**
+      * The spatial zone is used to represent a ventilation zone.
+      */
+    VENTILATION,
+
+    /**
+      * User defined type spatial zone.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type spatial zone.
+      */
+    NOTDEFINED
 
 }

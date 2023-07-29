@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCooledBeamTypeEnum {
+    /**
+      * An active or ventilated cooled beam provides cooling (and heating) but can also function as an air terminal in a ventilation system.
+      */
+    ACTIVE,
+
+    /**
+      * A passive or static cooled beam provides cooling (and heating) to a room or zone.
+      */
+    PASSIVE,
+
+    /**
+      * User-defined cooled beam type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined cooled beam type.
+      */
+    NOTDEFINED
 
 }

@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcMedicalDeviceTypeEnum {
+    /**
+      * Device that provides purified medical air, composed of an air compressor and air treatment line.
+      */
+    AIRSTATION,
+
+    /**
+      * Device that feeds air to an oxygen generator, composed of an air compressor, air treatment line, and an air receiver.
+      */
+    FEEDAIRUNIT,
+
+    /**
+      * Device that generates oxygen from air.
+      */
+    OXYGENGENERATOR,
+
+    /**
+      * Device that combines a feed air unit, oxygen generator, and backup oxygen cylinders.
+      */
+    OXYGENPLANT,
+
+    /**
+      * Device that provides suction, composed of a vacuum pump and bacterial filtration line.
+      */
+    VACUUMSTATION,
+
+    /**
+      * User-defined medical device type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined medical device type.
+      */
+    NOTDEFINED
 
 }

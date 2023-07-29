@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDiscreteAccessoryTypeEnum {
+    /**
+      * An accessory consisting of a steel plate, shear stud connectors or welded-on rebar which is embedded into the surface of a concrete element so that other elements can be welded or bolted onto it later.
+      */
+    ANCHORPLATE,
+
+    /**
+      * An L-shaped or similarly shaped accessory attached in a corner between elements to hold them together or to carry a secondary element.
+      */
+    BRACKET,
+
+    /**
+      * A column shoe or a beam shoe (beam hanger) used to support or secure an element.
+      */
+    SHOE,
+
+    /**
+      * User-defined accessory.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined accessory.
+      */
+    NOTDEFINED
 
 }

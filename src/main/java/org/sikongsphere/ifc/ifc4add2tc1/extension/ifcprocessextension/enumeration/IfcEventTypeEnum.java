@@ -27,5 +27,23 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcEventTypeEnum {
+    /**
+      * An initiating event of a process.
+      */
+    STARTEVENT,
+
+    /**
+      * A terminating event of a process.
+      */
+    ENDEVENT,
+
+    /**
+      * An event that occurs at an intermediate stage of a process.
+      */
+    INTERMEDIATEEVENT,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }
