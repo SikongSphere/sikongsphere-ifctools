@@ -27,5 +27,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcProjectionElementTypeEnum {
+    /**
+      * User-defined projection element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined projection element.
+      */
+    NOTDEFINED
 
 }

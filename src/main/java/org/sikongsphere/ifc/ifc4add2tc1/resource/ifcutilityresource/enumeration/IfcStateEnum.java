@@ -27,5 +27,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcStateEnum {
+    /**
+      * Object is in a Read-Write state. It may be modified by an application.
+      */
+    READWRITE,
+
+    /**
+      * Object is in a Read-Only state. It may be viewed but not modified by an application.
+      */
+    READONLY,
+
+    /**
+      * Object is in a Locked state. It may not be accessed by an application.
+      */
+    LOCKED,
+
+    /**
+      * Object is in a Read-Write-Locked state. It may not be accessed by an application.
+      */
+    READWRITELOCKED,
+
+    /**
+      * Object is in a Read-Only-Locked state. It may not be accessed by an application.
+      */
+    READONLYLOCKED
 
 }

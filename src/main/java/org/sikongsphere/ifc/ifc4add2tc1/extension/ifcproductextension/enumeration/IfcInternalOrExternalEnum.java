@@ -27,5 +27,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcInternalOrExternalEnum {
+    /**
+      * The space boundary faces a physical or virtual element where there is an internal space on the other side.
+      */
+    INTERNAL,
+
+    /**
+      * The space boundary faces a physical or virtual element where there is an external space on the other side.
+      */
+    EXTERNAL,
+
+    /**
+      * The space boundary faces a physical or virtual element where there is earth (or terrain) on the other side.
+      */
+    EXTERNAL_EARTH,
+
+    /**
+      * The space boundary faces a physical or virtual element where there is water (water component of terrain) on the other side.
+      */
+    EXTERNAL_WATER,
+
+    /**
+      * The space boundary faces a physical or virtual element where there is another building on the other side.
+      */
+    EXTERNAL_FIRE,
+
+    /**
+      * No information available.
+      */
+    NOTDEFINED
 
 }

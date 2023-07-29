@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcFlowDirectionEnum {
+    /**
+      * A flow source, where a substance flows out of the connection.
+      */
+    SOURCE,
+
+    /**
+      * A flow sink, where a substance flows into the connection.
+      */
+    SINK,
+
+    /**
+      * Both a source and sink, where a substance flows both into and out of the connection simultaneously.
+      */
+    SOURCEANDSINK,
+
+    /**
+      * Undefined flow direction.
+      */
+    NOTDEFINED
 
 }

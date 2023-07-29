@@ -23,5 +23,44 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcPileTypeEnum {
+    /**
+      * A bore pile.
+      */
+    BORED,
+
+    /**
+      * A rammed, vibrated, or otherwise driven pile.
+      */
+    DRIVEN,
+
+    /**
+      * An injected pile-like construction.
+      */
+    JETGROUTING,
+
+    /**
+      * A cohesion pile.
+      */
+    COHESION,
+
+    /**
+      * A friction pile.
+      */
+    FRICTION,
+
+    /**
+      * A support pile.
+      */
+    SUPPORT,
+
+    /**
+      * The type of pile function is user defined.
+      */
+    USERDEFINED,
+
+    /**
+      * The type of pile function is not defined.
+      */
+    NOTDEFINED
 
 }

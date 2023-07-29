@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCondenserTypeEnum {
+    /**
+      * A condenser in which heat is transferred to an air-stream.
+      */
+    AIRCOOLED,
+
+    /**
+      * A condenser that is cooled evaporatively.
+      */
+    EVAPORATIVECOOLED,
+
+    /**
+      * Water-cooled condenser with unspecified operation.
+      */
+    WATERCOOLED,
+
+    /**
+      * Water-cooled condenser with plates brazed together to form an assembly of separate channels.
+      */
+    WATERCOOLEDBRAZEDPLATE,
+
+    /**
+      * Water-cooled condenser with cooling water circulated through one or more continuous or assembled coils contained within the shell.
+      */
+    WATERCOOLEDSHELLCOIL,
+
+    /**
+      * Water-cooled condenser with cooling water circulated through one or more tubes contained within the shell.
+      */
+    WATERCOOLEDSHELLTUBE,
+
+    /**
+      * Water-cooled condenser consisting of one or more assemblies of two tubes, one within the other.
+      */
+    WATERCOOLEDTUBEINTUBE,
+
+    /**
+      * User-defined condenser type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined condenser type.
+      */
+    NOTDEFINED
 
 }

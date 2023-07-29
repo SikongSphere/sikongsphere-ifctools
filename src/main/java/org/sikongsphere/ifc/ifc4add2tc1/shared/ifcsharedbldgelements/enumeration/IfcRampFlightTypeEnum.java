@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcRampFlightTypeEnum {
+    /**
+      * A ramp flight with a straight walking line.
+      */
+    STRAIGHT,
+
+    /**
+      * A ramp flight with a circular or elliptic walking line.
+      */
+    SPIRAL,
+
+    /**
+      * User-defined ramp flight.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined ramp flight.
+      */
+    NOTDEFINED
 
 }

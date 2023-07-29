@@ -27,5 +27,40 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcProcedureTypeEnum {
+    /**
+      * A caution that should be taken note of as a procedure or when carrying out a procedure.
+      */
+    ADVICE_CAUTION,
+
+    /**
+      * Additional information or advice that should be taken note of as a procedure or when carrying out a procedure.
+      */
+    ADVICE_NOTE,
+
+    /**
+      * A warning of potential danger that should be taken note of as a procedure or when carrying out a procedure.
+      */
+    ADVICE_WARNING,
+
+    /**
+      * A procedure undertaken to calibrate an artifact.
+      */
+    CALIBRATION,
+
+    DIAGNOSTIC,
+
+    /**
+      * A procedure undertaken to shutdown the operation an artifact.
+      */
+    SHUTDOWN,
+
+    /**
+      * A procedure undertaken to start up the operation an artifact.
+      */
+    STARTUP,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

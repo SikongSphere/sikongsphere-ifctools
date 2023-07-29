@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcBuildingElementPartTypeEnum {
+    /**
+      * The part provides thermal insulation, for example as insulation layer between wall panels in sandwich walls or as infill in stud walls.
+      */
+    INSULATION,
+
+    /**
+      * The part is a precast panel, usually as an internal or external layer in a sandwich wall panel.
+      */
+    PRECASTPANEL,
+
+    /**
+      * User-defined accessory.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined accessory.
+      */
+    NOTDEFINED
 
 }

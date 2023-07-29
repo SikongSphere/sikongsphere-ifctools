@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcAirTerminalBoxTypeEnum {
+    /**
+      * Terminal box does not include a means to reset the volume automatically to an outside signal such as thermostat.
+      */
+    CONSTANTFLOW,
+
+    /**
+      * Terminal box includes a means to reset the volume automatically to a different control point in response to an outside signal such as thermostat: air-flow rate depends on supply pressure.
+      */
+    VARIABLEFLOWPRESSUREDEPENDANT,
+
+    /**
+      * Terminal box includes a means to reset the volume automatically to a different control point in response to an outside signal such as thermostat: air-flow rate is independant of supply pressure.
+      */
+    VARIABLEFLOWPRESSUREINDEPENDANT,
+
+    /**
+      * User-defined terminal box.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined terminal box.
+      */
+    NOTDEFINED
 
 }

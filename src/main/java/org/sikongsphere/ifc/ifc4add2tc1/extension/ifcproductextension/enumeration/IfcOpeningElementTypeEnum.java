@@ -27,5 +27,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcOpeningElementTypeEnum {
+    /**
+      * An opening as subtraction feature that cuts through the element it voids. It thereby creates a hole. An opening in addiion have a particular meaning for either providing a void for doors or windows, or an opening to permit flow of air and passing of light.
+      */
+    OPENING,
+
+    /**
+      * An opening as subtraction feature that does not cut through the element it voids. It creates a niche or similar voiding pattern.
+      */
+    RECESS,
+
+    /**
+      * User-defined opening element.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined opening element.
+      */
+    NOTDEFINED
 
 }

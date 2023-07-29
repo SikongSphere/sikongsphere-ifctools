@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcVibrationIsolatorTypeEnum {
+    /**
+      * Compression type vibration isolator.
+      */
+    COMPRESSION,
+
+    /**
+      * Spring type vibration isolator.
+      */
+    SPRING,
+
+    /**
+      * User-defined vibration isolator type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined vibration isolator type.
+      */
+    NOTDEFINED
 
 }

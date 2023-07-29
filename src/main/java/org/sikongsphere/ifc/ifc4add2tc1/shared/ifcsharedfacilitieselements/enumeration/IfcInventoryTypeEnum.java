@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcInventoryTypeEnum {
+    /**
+      * A collection of asset instances of type IfcAsset.
+      */
+    ASSETINVENTORY,
+
+    /**
+      * A collection of space instances of type IfcSpace.
+      */
+    SPACEINVENTORY,
+
+    /**
+      * A collection of furniture instances of type IfcFurnishingElement.
+      */
+    FURNITUREINVENTORY,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

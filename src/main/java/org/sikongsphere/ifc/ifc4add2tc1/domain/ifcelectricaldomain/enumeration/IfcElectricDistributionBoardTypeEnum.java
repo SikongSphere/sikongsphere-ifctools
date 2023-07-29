@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcElectricDistributionBoardTypeEnum {
+    /**
+      * A distribution point on the incoming electrical supply, typically in domestic premises, at which protective devices are located.
+      */
+    CONSUMERUNIT,
+
+    /**
+      * A distribution point at which connections are made for distribution of electrical circuits usually through protective devices.
+      */
+    DISTRIBUTIONBOARD,
+
+    /**
+      * A distribution point at which starting and control devices for major plant items are located.
+      */
+    MOTORCONTROLCENTRE,
+
+    /**
+      * A distribution point at which switching devices are located.
+      */
+    SWITCHBOARD,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

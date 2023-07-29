@@ -23,5 +23,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcReinforcingMeshTypeEnum {
+    /**
+      * The type of mesh is user defined.
+      */
+    USERDEFINED,
+
+    /**
+      * The type of mesh is not defined.
+      */
+    NOTDEFINED
 
 }

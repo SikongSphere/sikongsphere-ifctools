@@ -27,5 +27,26 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcDocumentStatusEnum {
+    /**
+      * Document is a draft.
+      */
+    DRAFT,
+
+    /**
+      * Document is a final draft.
+      */
+    FINALDRAFT,
+
+    /**
+      * Document is final.
+      */
+    FINAL,
+
+    /**
+      * Document has undergone revision.
+      */
+    REVISION,
+
+    NOTDEFINED
 
 }

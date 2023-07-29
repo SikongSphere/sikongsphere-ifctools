@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcElectricTimeControlTypeEnum {
+    /**
+      * A control that causes action to occur at set times.
+      */
+    TIMECLOCK,
+
+    /**
+      * A control that causes action to occur following a set duration.
+      */
+    TIMEDELAY,
+
+    /**
+      * Electromagnetically operated contactor for making or breaking a control circuit.
+      */
+    RELAY,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

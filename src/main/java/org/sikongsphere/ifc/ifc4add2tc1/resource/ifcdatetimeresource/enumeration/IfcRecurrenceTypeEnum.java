@@ -27,5 +27,44 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcRecurrenceTypeEnum {
+    /**
+      * Interval, Occurrences
+      */
+    DAILY,
+
+    /**
+      * WeekdayComponent, Interval, Occurrences
+      */
+    WEEKLY,
+
+    /**
+      * DayComponent, Interval, Occurrences
+      */
+    MONTHLY_BY_DAY_OF_MONTH,
+
+    /**
+      * WeekdayComponent, Position, Interval, Occurrences
+      */
+    MONTHLY_BY_POSITION,
+
+    /**
+      * nterval, Occurrences
+      */
+    BY_DAY_COUNT,
+
+    /**
+      * WeekdayComponent, Interval, Occurrences
+      */
+    BY_WEEKDAY_COUNT,
+
+    /**
+      * DayComponent, MonthComponent, Interval, Occurrences
+      */
+    YEARLY_BY_DAY_OF_MONTH,
+
+    /**
+      * WeekdayComponent, MonthComponent, Position, Interval, Occurrences
+      */
+    YEARLY_BY_POSITION
 
 }

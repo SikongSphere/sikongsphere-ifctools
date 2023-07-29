@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcRailingTypeEnum {
+    /**
+      * A type of railing designed to serve as an optional structural support for loads applied by human occupants (at hand height). Generally located adjacent to ramps and stairs. Generally floor or wall mounted.
+      */
+    HANDRAIL,
+
+    /**
+      * A type of railing designed to guard human occupants from falling off a stair, ramp or landing where there is a vertical drop at the edge of such floors/landings.
+      */
+    GUARDRAIL,
+
+    /**
+      * Similar to the definitions of a guardrail except the location is at the edge of a floor, rather then a stair or ramp. Examples are balustrates at roof-tops or balconies.
+      */
+    BALUSTRADE,
+
+    /**
+      * User-defined railing element, a term to identify the user type is given by the attribute IfcRailing.ObjectType.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined railing element, no type information available.
+      */
+    NOTDEFINED
 
 }

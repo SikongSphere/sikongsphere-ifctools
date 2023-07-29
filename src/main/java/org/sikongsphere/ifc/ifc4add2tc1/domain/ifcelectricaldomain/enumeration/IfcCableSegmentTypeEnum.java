@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCableSegmentTypeEnum {
+    /**
+      * Electrical conductor that makes a common connection between several electrical circuits. Properties of a busbar are the same as those of a cable segment and are captured by the cable segment property set.
+      */
+    BUSBARSEGMENT,
+
+    /**
+      * Cable with a specific purpose to lead electric current within a circuit or any other electric construction. Includes all types of electric cables, mainly several core segments or conductor segments wrapped together.
+      */
+    CABLESEGMENT,
+
+    /**
+      * A single linear element within a cable or an exposed wire (such as for grounding) with the specific purpose to lead electric current, data, or a telecommunications signal.
+      */
+    CONDUCTORSEGMENT,
+
+    /**
+      * A self contained element of a cable that comprises one or more conductors and sheathing.The core of one lead is normally single wired or multiwired which are intertwined.
+      */
+    CORESEGMENT,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

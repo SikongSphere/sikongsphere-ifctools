@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCrewResourceTypeEnum {
+    /**
+      * A composition of resources performing administration work in an office.
+      */
+    OFFICE,
+
+    /**
+      * A composition of resources performing production work on a construction site.
+      */
+    SITE,
+
+    /**
+      * User-defined resource.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined resource.
+      */
+    NOTDEFINED
 
 }

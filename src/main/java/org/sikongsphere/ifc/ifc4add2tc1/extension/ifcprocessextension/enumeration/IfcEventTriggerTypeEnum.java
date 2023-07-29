@@ -27,5 +27,28 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcEventTriggerTypeEnum {
+    /**
+      * An event trigger that is a rule or constraint.
+      */
+    EVENTRULE,
+
+    /**
+      * An event trigger that is a message or set of information.
+      */
+    EVENTMESSAGE,
+
+    /**
+      * An event trigger that is at, or occurs after, a particular point in or period of time.
+      */
+    EVENTTIME,
+
+    /**
+      * An event trigger that is a complex combination of things.
+      */
+    EVENTCOMPLEX,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

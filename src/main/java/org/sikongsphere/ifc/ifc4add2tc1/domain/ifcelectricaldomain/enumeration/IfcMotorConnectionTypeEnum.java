@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcMotorConnectionTypeEnum {
+    /**
+      * An indirect connection made through the medium of a shaped, flexible continuous loop.
+      */
+    BELTDRIVE,
+
+    /**
+      * An indirect connection made through the medium of the viscosity of a fluid.
+      */
+    COUPLING,
+
+    /**
+      * A direct, physical connection made between the motor and the driven device.
+      */
+    DIRECTDRIVE,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

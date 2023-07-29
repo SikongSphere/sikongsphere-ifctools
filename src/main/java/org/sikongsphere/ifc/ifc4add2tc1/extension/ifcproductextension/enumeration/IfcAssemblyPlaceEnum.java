@@ -27,5 +27,16 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcAssemblyPlaceEnum {
+    /**
+      * This assembly is assembled at site.
+      */
+    SITE,
+
+    /**
+      * This assembly is assembled in a factory.
+      */
+    FACTORY,
+
+    NOTDEFINED
 
 }

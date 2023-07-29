@@ -23,5 +23,58 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcActionSourceTypeEnum {
+    DEAD_LOAD_G,
+
+    COMPLETION_G1,
+
+    LIVE_LOAD_Q,
+
+    SNOW_S,
+
+    WIND_W,
+
+    PRESTRESSING_P,
+
+    SETTLEMENT_U,
+
+    TEMPERATURE_T,
+
+    EARTHQUAKE_E,
+
+    FIRE,
+
+    IMPULSE,
+
+    IMPACT,
+
+    TRANSPORT,
+
+    ERECTION,
+
+    PROPPING,
+
+    SYSTEM_IMPERFECTION,
+
+    SHRINKAGE,
+
+    CREEP,
+
+    LACK_OF_FIT,
+
+    BUOYANCY,
+
+    ICE,
+
+    CURRENT,
+
+    WAVE,
+
+    RAIN,
+
+    BRAKES,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

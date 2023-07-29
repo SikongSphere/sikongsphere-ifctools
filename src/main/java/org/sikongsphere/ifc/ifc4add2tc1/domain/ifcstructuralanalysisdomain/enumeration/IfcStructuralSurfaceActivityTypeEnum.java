@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcStructuralSurfaceActivityTypeEnum {
+    /**
+      * The load has a constant value over its entire extent.
+      */
+    CONST,
+
+    /**
+      * The load value is bilinearly distributed over the load's extent.
+      */
+    BILINEAR,
+
+    /**
+      * The load is specified as a series of discrete load points.
+      */
+    DISCRETE,
+
+    /**
+      * The load is specified by a series of iso-curves (level sets), i.e. curves at which the load value is constant. These curves run perpendicularly to the load gradient.
+      */
+    ISOCONTOUR,
+
+    /**
+      * The load distribution is user-defined.
+      */
+    USERDEFINED,
+
+    /**
+      * The load distribution is undefined.
+      */
+    NOTDEFINED
 
 }

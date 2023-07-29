@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcPipeSegmentTypeEnum {
+    /**
+      * A covered channel or large pipe that forms a watercourse below ground level, usually under a road or railway.
+      */
+    CULVERT,
+
+    /**
+      * A flexible segment is a continuous non-linear segment of pipe that can be deformed and change the direction of flow.
+      */
+    FLEXIBLESEGMENT,
+
+    /**
+      * A rigid segment is continuous linear segment of pipe that cannot be deformed.
+      */
+    RIGIDSEGMENT,
+
+    /**
+      * A gutter segment is a continuous open-channel segment of pipe.
+      */
+    GUTTER,
+
+    /**
+      * A type of rigid segment that is typically shorter and used for providing connectivity within a piping network.
+      */
+    SPOOL,
+
+    /**
+      * User-defined segment.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined segment.
+      */
+    NOTDEFINED
 
 }

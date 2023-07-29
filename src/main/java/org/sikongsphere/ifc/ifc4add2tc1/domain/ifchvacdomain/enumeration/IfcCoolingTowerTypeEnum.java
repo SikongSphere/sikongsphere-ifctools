@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCoolingTowerTypeEnum {
+    /**
+      * Air flow is produced naturally.
+      */
+    NATURALDRAFT,
+
+    /**
+      * Air flow is produced by a mechanical device, typically one or more fans, located on the air outlet side of the cooling tower.
+      */
+    MECHANICALINDUCEDDRAFT,
+
+    /**
+      * Air flow is produced by a mechanical device, typically one or more fans, located on the inlet air side of the cooling tower.
+      */
+    MECHANICALFORCEDDRAFT,
+
+    /**
+      * User-defined cooling tower type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined cooling tower type.
+      */
+    NOTDEFINED
 
 }

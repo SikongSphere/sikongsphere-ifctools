@@ -23,5 +23,32 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcWindowPanelOperationEnum {
+    SIDEHUNGRIGHTHAND,
+
+    SIDEHUNGLEFTHAND,
+
+    TILTANDTURNRIGHTHAND,
+
+    TILTANDTURNLEFTHAND,
+
+    TOPHUNG,
+
+    BOTTOMHUNG,
+
+    PIVOTHORIZONTAL,
+
+    PIVOTVERTICAL,
+
+    SLIDINGHORIZONTAL,
+
+    SLIDINGVERTICAL,
+
+    REMOVABLECASEMENT,
+
+    FIXEDCASEMENT,
+
+    OTHEROPERATION,
+
+    NOTDEFINED
 
 }

@@ -27,5 +27,23 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcWorkCalendarTypeEnum {
+    /**
+      * Belongs to the first shift.
+      */
+    FIRSTSHIFT,
+
+    /**
+      * Belongs to the second shift.
+      */
+    SECONDSHIFT,
+
+    /**
+      * Belongs to the third shift.
+      */
+    THIRDSHIFT,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

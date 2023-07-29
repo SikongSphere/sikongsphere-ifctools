@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcLoadGroupTypeEnum {
+    /**
+      * Groups instances of subtypes of IfcStructuralAction. It shall be used as a container for loads grouped together for specific purposes, such as loads which are part of a special load pattern.
+      */
+    LOAD_GROUP,
+
+    /**
+      * Groups LOAD_GROUPs and instances of subtypes of IfcStructuralAction. It should be used as a container for loads with the same origin.
+      */
+    LOAD_CASE,
+
+    /**
+      * An intermediate level between LOAD_CASE and LOAD_COMBINATION. This level is obsolete and deprecated. Before the introduction of IfcRelAssignsToGroupByFactor, the purpose of this level was to provide a factor with which one or more LOAD_CASEs occur in a LOAD_COMBINATION.
+      */
+    LOAD_COMBINATION,
+
+    /**
+      * A grouping level which does not follow the standard hierarchy of load group types.
+      */
+    USERDEFINED,
+
+    /**
+      * The grouping level is not yet known.
+      */
+    NOTDEFINED
 
 }

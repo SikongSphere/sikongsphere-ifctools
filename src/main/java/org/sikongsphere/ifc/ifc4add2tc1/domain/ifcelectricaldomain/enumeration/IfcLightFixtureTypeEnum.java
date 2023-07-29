@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcLightFixtureTypeEnum {
+    /**
+      * A light fixture that is considered to have negligible area and that emit light with approximately equal intensity in all directions. A light fixture containing a tungsten, halogen or similar bulb is an example of a point source.
+      */
+    POINTSOURCE,
+
+    /**
+      * A light fixture that is considered to have a length or surface area from which it emits light in a direction. A light fixture containing one or more fluorescent lamps is an example of a direction source.
+      */
+    DIRECTIONSOURCE,
+
+    /**
+      * A light fixture having specific purpose of directing occupants in an emergency, such as an illuminated exit sign or emergency flood light.
+      */
+    SECURITYLIGHTING,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

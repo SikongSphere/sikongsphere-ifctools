@@ -23,5 +23,44 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcEvaporatorTypeEnum {
+    /**
+      * Direct-expansion evaporator.
+      */
+    DIRECTEXPANSION,
+
+    /**
+      * Direct-expansion evaporator where a refrigerant evaporates inside a series of baffles that channel the fluid throughout the shell side.
+      */
+    DIRECTEXPANSIONSHELLANDTUBE,
+
+    /**
+      * Direct-expansion evaporator where a refrigerant evaporates inside one or more pairs of coaxial tubes.
+      */
+    DIRECTEXPANSIONTUBEINTUBE,
+
+    /**
+      * Direct-expansion evaporator where a refrigerant evaporates inside plates brazed or welded together to make up an assembly of separate channels.
+      */
+    DIRECTEXPANSIONBRAZEDPLATE,
+
+    /**
+      * Evaporator in which refrigerant evaporates outside tubes.
+      */
+    FLOODEDSHELLANDTUBE,
+
+    /**
+      * Evaporator in which refrigerant evaporates inside a simple coiled tube immersed in the fluid to be cooled.
+      */
+    SHELLANDCOIL,
+
+    /**
+      * User-defined evaporator type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined evaporator type.
+      */
+    NOTDEFINED
 
 }

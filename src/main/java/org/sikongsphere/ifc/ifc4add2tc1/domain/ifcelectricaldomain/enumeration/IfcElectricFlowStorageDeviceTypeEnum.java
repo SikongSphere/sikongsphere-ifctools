@@ -23,5 +23,36 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcElectricFlowStorageDeviceTypeEnum {
+    /**
+      * A device for storing energy in chemical form so that it can be released as electrical energy.
+      */
+    BATTERY,
+
+    /**
+      * A device that stores electrical energy when an external power supply is present using the electrical property of capacitance.
+      */
+    CAPACITORBANK,
+
+    /**
+      * A device that constantly injects currents that precisely correspond to the harmonic components drawn by the load.
+      */
+    HARMONICFILTER,
+
+    INDUCTORBANK,
+
+    /**
+      * A device that provides a time limited alternative source of power supply in the event of failure of the main supply.
+      */
+    UPS,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

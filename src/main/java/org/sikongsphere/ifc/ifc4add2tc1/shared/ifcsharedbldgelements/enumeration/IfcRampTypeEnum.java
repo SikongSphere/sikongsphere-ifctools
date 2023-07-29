@@ -23,5 +23,41 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcRampTypeEnum {
+    /**
+      * A ramp - which is a sloping floor, walk, or roadway - connecting two levels.The straight ramp consists of one straight flight without turns or winders.
+      */
+    STRAIGHT_RUN_RAMP,
+
+    /**
+      * A straight ramp consisting of two straight flights without turns but with onelanding.
+      */
+    TWO_STRAIGHT_RUN_RAMP,
+
+    /**
+      * A ramp making a 90° turn, consisting of two straight flights connected bya quarterspace landing. The direction of the turn is determined by the walking line.
+      */
+    QUARTER_TURN_RAMP,
+
+    /**
+      * A ramp making a 180° turn, consisting of three straight flights connectedby two quarterspace landings. The direction of the turn is determined by the walking line.
+      */
+    TWO_QUARTER_TURN_RAMP,
+
+    /**
+      * A ramp making a 180° turn, consisting of two straight flights connectedby a halfspace landing. The orientation of the turn is determined by the walking line.
+      */
+    HALF_TURN_RAMP,
+
+    /**
+      * A ramp constructed around a circular or elliptical well without newels andlandings.
+      */
+    SPIRAL_RAMP,
+
+    /**
+      * Free form ramp (user defined operation type).
+      */
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

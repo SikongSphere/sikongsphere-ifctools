@@ -23,5 +23,22 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDoorStyleConstructionEnum {
+    ALUMINIUM,
+
+    HIGH_GRADE_STEEL,
+
+    STEEL,
+
+    WOOD,
+
+    ALUMINIUM_WOOD,
+
+    ALUMINIUM_PLASTIC,
+
+    PLASTIC,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

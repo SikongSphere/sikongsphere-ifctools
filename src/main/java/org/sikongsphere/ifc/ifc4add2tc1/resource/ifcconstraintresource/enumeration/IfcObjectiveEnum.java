@@ -27,5 +27,63 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcObjectiveEnum {
+    /**
+      * A constraint whose objective is to ensure satisfaction of a code compliance provision.
+      */
+    CODECOMPLIANCE,
+
+    /**
+      * A constraint whose objective is to identify an agreement that code compliance requirements (the waiver) will not be enforced.
+      */
+    CODEWAIVER,
+
+    /**
+      * A constraint whose objective is to ensure satisfaction of a design intent provision.
+      */
+    DESIGNINTENT,
+
+    /**
+      * A constraint whose objective is to synchronize data with an external source such as a file
+      */
+    EXTERNAL,
+
+    /**
+      * A constraint whose objective is to ensure satisfaction of a health and safety provision.
+      */
+    HEALTHANDSAFETY,
+
+    /**
+      * A constraint whose objective is to resolve a conflict such as merging data from multiple sources.
+      */
+    MERGECONFLICT,
+
+    /**
+      * A constraint whose objective is to ensure data conforms to a model view definition.
+      */
+    MODELVIEW,
+
+    /**
+      * A constraint whose objective is to calculate a value based on other referenced values.
+      */
+    PARAMETER,
+
+    /**
+      * A constraint whose objective is to ensure satisfaction of a project requirement provision.
+      */
+    REQUIREMENT,
+
+    /**
+      * A constraint whose objective is to ensure satisfaction of a specification provision.
+      */
+    SPECIFICATION,
+
+    /**
+      * A constraint whose objective is to indicate a limiting value beyond which the condition of an object requires a particular form of attention.
+      */
+    TRIGGERCONDITION,
+
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

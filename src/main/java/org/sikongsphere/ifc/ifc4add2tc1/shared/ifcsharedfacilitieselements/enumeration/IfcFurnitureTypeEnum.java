@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcFurnitureTypeEnum {
+    /**
+      * Furniture for seating a single person.
+      */
+    CHAIR,
+
+    /**
+      * Furniture with a countertop for multiple people.
+      */
+    TABLE,
+
+    /**
+      * Furniture with a countertop and optional drawers for a single person.
+      */
+    DESK,
+
+    /**
+      * Furniture for sleeping.
+      */
+    BED,
+
+    /**
+      * Furniture with sliding drawers for storing files.
+      */
+    FILECABINET,
+
+    /**
+      * Furniture for storing books or other items.
+      */
+    SHELF,
+
+    /**
+      * Furniture for seating multiple people.
+      */
+    SOFA,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

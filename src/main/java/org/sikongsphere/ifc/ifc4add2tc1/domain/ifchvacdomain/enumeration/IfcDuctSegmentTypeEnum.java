@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDuctSegmentTypeEnum {
+    /**
+      * A rigid segment is a continuous linear segment of duct that cannot be deformed.
+      */
+    RIGIDSEGMENT,
+
+    /**
+      * A flexible segment is a continuous non-linear segment of duct that can be deformed and change the direction of flow.
+      */
+    FLEXIBLESEGMENT,
+
+    /**
+      * User-defined segment.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined segment.
+      */
+    NOTDEFINED
 
 }

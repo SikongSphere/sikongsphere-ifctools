@@ -23,5 +23,56 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcWindowTypePartitioningEnum {
+    /**
+      * Window with one panel.
+      */
+    SINGLE_PANEL,
+
+    /**
+      * Window with two panels. The configuration of the panels is vertically.
+      */
+    DOUBLE_PANEL_VERTICAL,
+
+    /**
+      * Window with two panels. The configuration of the panels is horizontally.
+      */
+    DOUBLE_PANEL_HORIZONTAL,
+
+    /**
+      * Window with three panels. The configuration of the panels is vertically.
+      */
+    TRIPLE_PANEL_VERTICAL,
+
+    /**
+      * Window with three panels. The configuration of two panels is vertically and thethird one is horizontally at the bottom.
+      */
+    TRIPLE_PANEL_BOTTOM,
+
+    /**
+      * Window with three panels. The configuration of two panels is vertically and thethird one is horizontally at the top.
+      */
+    TRIPLE_PANEL_TOP,
+
+    /**
+      * Window with three panels. The configuration of two panels is horizontally and thethird one is vertically at the left hand side.
+      */
+    TRIPLE_PANEL_LEFT,
+
+    /**
+      * Window with three panels. The configuration of two panels is horizontally and thethird one is vertically at the right hand side.
+      */
+    TRIPLE_PANEL_RIGHT,
+
+    /**
+      * Window with three panels. The configuration of the panels is horizontally.
+      */
+    TRIPLE_PANEL_HORIZONTAL,
+
+    /**
+      * User defined operation type.
+      */
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

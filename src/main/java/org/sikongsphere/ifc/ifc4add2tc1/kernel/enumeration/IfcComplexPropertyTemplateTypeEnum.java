@@ -23,5 +23,11 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.CORE, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcComplexPropertyTemplateTypeEnum {
+    /**
+      * the properties defined by this IfcComplexPropertyTemplate are of type IfcComplexProperty.
+      */
+    P_COMPLEX,
+
+    Q_COMPLEX
 
 }

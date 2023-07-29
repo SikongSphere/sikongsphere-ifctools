@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcInterceptorTypeEnum {
+    /**
+      * Removes larger liquid drops or larger solid particles.
+      */
+    CYCLONIC,
+
+    /**
+      * Chamber, on the line of a drain or discharge pipe, that prevents grease passing into a drainage system.
+      */
+    GREASE,
+
+    /**
+      * One or more chambers arranged to prevent the ingress of oil to a drain or sewer that retains the oil for later removal.
+      */
+    OIL,
+
+    /**
+      * Two or more chambers with inlet and outlet pipes arranged to allow petrol/gasoline collected on the surface of water drained into them to evaporate through ventilating pipes.
+      */
+    PETROL,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

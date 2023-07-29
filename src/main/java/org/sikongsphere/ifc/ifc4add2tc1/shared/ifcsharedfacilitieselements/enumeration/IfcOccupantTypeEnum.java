@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcOccupantTypeEnum {
+    /**
+      * Actor receiving the assignment of a property agreement from an assignor.
+      */
+    ASSIGNEE,
+
+    /**
+      * Actor assigning a property agreement to an assignor.
+      */
+    ASSIGNOR,
+
+    /**
+      * Actor receiving the lease of a property from a lessor.
+      */
+    LESSEE,
+
+    /**
+      * Actor leasing a property to a lessee.
+      */
+    LESSOR,
+
+    /**
+      * Actor participating in a property agreement on behalf of an owner, lessor or assignor.
+      */
+    LETTINGAGENT,
+
+    /**
+      * Actor that owns a property.
+      */
+    OWNER,
+
+    /**
+      * Actor renting the use of a property fro a period of time.
+      */
+    TENANT,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

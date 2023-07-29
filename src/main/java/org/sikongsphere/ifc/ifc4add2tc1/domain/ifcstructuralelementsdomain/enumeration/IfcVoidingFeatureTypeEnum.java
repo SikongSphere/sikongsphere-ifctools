@@ -23,5 +23,44 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcVoidingFeatureTypeEnum {
+    /**
+      * An internal cutout (creating an opening) or external cutout (creating a recess) of arbitrary shape. The edges between cutting planes may be overcut or undercut, i.e. rounded.
+      */
+    CUTOUT,
+
+    /**
+      * An external cutout of with a mostly rectangular cutting profile. The edges between cutting planes may be overcut or undercut, i.e. rounded.
+      */
+    NOTCH,
+
+    /**
+      * A circular or slotted or threaded hole, typically but not necessarily of smaller dimension than what would be considered a cutout.
+      */
+    HOLE,
+
+    /**
+      * A skewed plane end cut, removing material across the entire profile of the voided element.
+      */
+    MITER,
+
+    /**
+      * A skewed plane end cut, removing material only across a part of the profile of the voided element.
+      */
+    CHAMFER,
+
+    /**
+      * A shape modification along an edge of the element with the edge length as the predominant dimension of the feature, and feature profile dimensions which are typically much smaller than the edge length. Can for example be a chamfer edge (differentiated from a chamfer by its ratio of dimensions and thus usually manufactured differently), rounded edge (a convex edge feature), or fillet edge (a concave edge feature).
+      */
+    EDGE,
+
+    /**
+      * A user-defined type of voiding feature.
+      */
+    USERDEFINED,
+
+    /**
+      * An undefined type of voiding feature.
+      */
+    NOTDEFINED
 
 }

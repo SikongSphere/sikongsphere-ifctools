@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcOutletTypeEnum {
+    /**
+      * An outlet used for an audio or visual device.
+      */
+    AUDIOVISUALOUTLET,
+
+    /**
+      * An outlet used for connecting communications equipment.
+      */
+    COMMUNICATIONSOUTLET,
+
+    /**
+      * An outlet used for connecting electrical devices requiring power.
+      */
+    POWEROUTLET,
+
+    /**
+      * An outlet used for connecting data communications equipment.
+      */
+    DATAOUTLET,
+
+    /**
+      * An outlet used for connecting telephone communications equipment.
+      */
+    TELEPHONEOUTLET,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.<
+      */
+    NOTDEFINED
 
 }

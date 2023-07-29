@@ -23,5 +23,19 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcTubeBundleTypeEnum {
+    /**
+      * Finned tube bundle type.
+      */
+    FINNED,
+
+    /**
+      * User-defined tube bundle type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined tube bundle type.
+      */
+    NOTDEFINED
 
 }

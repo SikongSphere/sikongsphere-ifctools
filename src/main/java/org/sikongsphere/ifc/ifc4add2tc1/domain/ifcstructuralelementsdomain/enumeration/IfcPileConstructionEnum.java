@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcPileConstructionEnum {
+    /**
+      * Piles and piers that are excavated and poured in place.
+      */
+    CAST_IN_PLACE,
+
+    /**
+      * iles that are a mix of components, such as a steel outer casing which is driven into the ground with a cast-in-place concrete core.
+      */
+    COMPOSITE,
+
+    /**
+      * Piles that are entirely of precast concrete (possibly with some steel or other fixtures).
+      */
+    PRECAST_CONCRETE,
+
+    /**
+      * Prefabricated piles made entirely out of steel. It will also include steel sheet piles where these are not part of another construction element.
+      */
+    PREFAB_STEEL,
+
+    /**
+      * Special types of pile construction which meet specific local requirements.
+      */
+    USERDEFINED,
+
+    /**
+      * The type of pile construction is not defined.
+      */
+    NOTDEFINED
 
 }

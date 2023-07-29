@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcStairFlightTypeEnum {
+    /**
+      * A stair flight with a straight walking line.
+      */
+    STRAIGHT,
+
+    /**
+      * A stair flight with a walking line including straight and curved sections.
+      */
+    WINDER,
+
+    /**
+      * A stair flight with a circular or elliptic walking line.
+      */
+    SPIRAL,
+
+    /**
+      * A stair flight with a curved walking line.
+      */
+    CURVED,
+
+    /**
+      * A stair flight with a free form walking line (and outer boundaries).
+      */
+    FREEFORM,
+
+    /**
+      * User-defined stair flight.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined stair flight.
+      */
+    NOTDEFINED
 
 }

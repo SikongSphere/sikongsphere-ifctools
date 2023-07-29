@@ -27,5 +27,14 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcReinforcingBarSurfaceEnum {
+    /**
+      * The reinforcing bar surface is plain.
+      */
+    PLAIN,
+
+    /**
+      * The reinforcing bar surface is textured (ribbed).
+      */
+    TEXTURED
 
 }

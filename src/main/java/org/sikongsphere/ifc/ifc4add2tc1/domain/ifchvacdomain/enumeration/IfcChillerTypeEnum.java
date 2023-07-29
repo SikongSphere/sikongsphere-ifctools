@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcChillerTypeEnum {
+    /**
+      * Air cooled chiller.
+      */
+    AIRCOOLED,
+
+    /**
+      * Water cooled chiller.
+      */
+    WATERCOOLED,
+
+    /**
+      * Heat recovery chiller.
+      */
+    HEATRECOVERY,
+
+    /**
+      * User-defined chiller type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined chiller type.
+      */
+    NOTDEFINED
 
 }

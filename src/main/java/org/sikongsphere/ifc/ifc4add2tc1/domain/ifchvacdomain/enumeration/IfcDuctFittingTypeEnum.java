@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcDuctFittingTypeEnum {
+    /**
+      * A fitting with typically two ports used to change the direction of flow between connected elements.
+      */
+    BEND,
+
+    /**
+      * Connector fitting, typically used to join two ports together within a flow distribution system (e.g., a coupling used to join two duct segments).
+      */
+    CONNECTOR,
+
+    /**
+      * Entry fitting, typically unconnected at one port and connected to a flow distribution system at the other (e.g., an outside air duct system intake opening).
+      */
+    ENTRY,
+
+    /**
+      * Exit fitting, typically unconnected at one port and connected to a flow distribution system at the other (e.g., an exhaust air discharge opening).
+      */
+    EXIT,
+
+    /**
+      * A fitting with typically more than two ports used to redistribute flow among the ports and/or to change the direction of flow between connected elements (e.g, tee, cross, wye, etc.).
+      */
+    JUNCTION,
+
+    /**
+      * A fitting with typically two ports used to obstruct or restrict flow between the connected elements (e.g., screen, perforated plate, etc.).
+      */
+    OBSTRUCTION,
+
+    /**
+      * A fitting with typically two ports having different shapes or sizes. Can also be used to change the direction of flow between connected elements.
+      */
+    TRANSITION,
+
+    /**
+      * User-defined fitting.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined fitting.
+      */
+    NOTDEFINED
 
 }

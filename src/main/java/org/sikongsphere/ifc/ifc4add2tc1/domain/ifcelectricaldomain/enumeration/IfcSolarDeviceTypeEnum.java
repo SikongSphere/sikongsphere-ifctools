@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcSolarDeviceTypeEnum {
+    /**
+      * A device that converts solar radiation into thermal energy (heating water, etc.).
+      */
+    SOLARCOLLECTOR,
+
+    /**
+      * A device that converts solar radiation into electric current.
+      */
+    SOLARPANEL,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

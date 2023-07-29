@@ -23,5 +23,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcStackTerminalTypeEnum {
+    /**
+      * Guard cage, typically wire mesh, at the top of the stack preventing access by birds.
+      */
+    BIRDCAGE,
+
+    /**
+      * A cowling placed at the top of a stack to eliminate downdraft.
+      */
+    COWL,
+
+    /**
+      * A box placed at the top of a rainwater downpipe to catch rainwater from guttering.
+      */
+    RAINWATERHOPPER,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

@@ -23,5 +23,103 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcLaborResourceTypeEnum {
+    /**
+      * Coordination of work.
+      */
+    ADMINISTRATION,
+
+    /**
+      * Rough carpentry including framing.
+      */
+    CARPENTRY,
+
+    /**
+      * Removal of dust and debris.
+      */
+    CLEANING,
+
+    CONCRETE,
+
+    /**
+      * Gypsum wallboard placement and taping.
+      */
+    DRYWALL,
+
+    /**
+      * Electrical fixtures, equipment, and cables.
+      */
+    ELECTRIC,
+
+    /**
+      * Finish carpentry including custom cabinetry.
+      */
+    FINISHING,
+
+    FLOORING,
+
+    /**
+      * General labour not requiring specific skill.
+      */
+    GENERAL,
+
+    /**
+      * Heating and ventilation fixtures, equipment, and ducts.
+      */
+    HVAC,
+
+    /**
+      * Grass, plants, trees, or irrigation.
+      */
+    LANDSCAPING,
+
+    /**
+      * Laying bricks or blocks with mortar.
+      */
+    MASONRY,
+
+    /**
+      * Applying decorative coatings or coverings.
+      */
+    PAINTING,
+
+    /**
+      * Asphalt or concrete roads and walkways.
+      */
+    PAVING,
+
+    /**
+      * Plumbing fixtures, equipment, and pipes.
+      */
+    PLUMBING,
+
+    /**
+      * Membranes, shingles, tile, or other roofing.
+      */
+    ROOFING,
+
+    /**
+      * Excavating, filling, or contouring earth.
+      */
+    SITEGRADING,
+
+    /**
+      * Erecting and attaching steel elements.
+      */
+    STEELWORK,
+
+    /**
+      * Determining positions, distances, and angles.
+      */
+    SURVEYING,
+
+    /**
+      * User-defined resource.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined resource.
+      */
+    NOTDEFINED
 
 }

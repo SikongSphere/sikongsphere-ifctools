@@ -23,5 +23,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCurtainWallTypeEnum {
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

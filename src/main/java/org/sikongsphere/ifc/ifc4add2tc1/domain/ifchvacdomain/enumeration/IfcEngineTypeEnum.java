@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcEngineTypeEnum {
+    /**
+      * Combustion is external.
+      */
+    EXTERNALCOMBUSTION,
+
+    /**
+      * Combustion is internal.
+      */
+    INTERNALCOMBUSTION,
+
+    /**
+      * User-defined engine type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined engine type.
+      */
+    NOTDEFINED
 
 }

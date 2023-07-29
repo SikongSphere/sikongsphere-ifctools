@@ -27,5 +27,8 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcPerformanceHistoryTypeEnum {
+    USERDEFINED,
+
+    NOTDEFINED
 
 }

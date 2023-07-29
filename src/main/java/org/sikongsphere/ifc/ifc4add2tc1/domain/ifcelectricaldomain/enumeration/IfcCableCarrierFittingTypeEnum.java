@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCableCarrierFittingTypeEnum {
+    /**
+      * A fitting that changes the route of the cable carrier.
+      */
+    BEND,
+
+    /**
+      * A fitting at which two branches are taken from the main route of the cable carrier simultaneously.
+      */
+    CROSS,
+
+    /**
+      * A fitting that changes the physical size of the main route of the cable carrier.
+      */
+    REDUCER,
+
+    /**
+      * A fitting at which a branch is taken from the main route of the cable carrier.
+      */
+    TEE,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

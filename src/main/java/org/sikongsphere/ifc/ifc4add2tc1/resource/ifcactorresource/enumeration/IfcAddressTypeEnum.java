@@ -27,5 +27,29 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcAddressTypeEnum {
+    /**
+      * An office address.
+      */
+    OFFICE,
+
+    /**
+      * A site address.
+      */
+    SITE,
+
+    /**
+      * A home address.
+      */
+    HOME,
+
+    /**
+      * A postal distribution point address.
+      */
+    DISTRIBUTIONPOINT,
+
+    /**
+      * A user defined address type to be provided.
+      */
+    USERDEFINED
 
 }

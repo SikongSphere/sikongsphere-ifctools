@@ -27,5 +27,54 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcReinforcingBarRoleEnum {
+    /**
+      * The reinforcing bar is a main bar.
+      */
+    MAIN,
+
+    /**
+      * The reinforcing bar is a shear bar.
+      */
+    SHEAR,
+
+    /**
+      * The reinforcing bar is a ligature (link, stirrup).
+      */
+    LIGATURE,
+
+    /**
+      * The reinforcing bar is a stud.
+      */
+    STUD,
+
+    /**
+      * Punching reinforcement.
+      */
+    PUNCHING,
+
+    /**
+      * Edge reinforcement.
+      */
+    EDGE,
+
+    /**
+      * Ring reinforcement.
+      */
+    RING,
+
+    /**
+      * Anchoring reinforcement.
+      */
+    ANCHORING,
+
+    /**
+      * The type of reinforcement is user defined.
+      */
+    USERDEFINED,
+
+    /**
+      * The type of reinforcement is not defined.
+      */
+    NOTDEFINED
 
 }

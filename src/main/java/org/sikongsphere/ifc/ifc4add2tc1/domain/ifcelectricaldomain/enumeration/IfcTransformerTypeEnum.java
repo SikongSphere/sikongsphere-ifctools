@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcTransformerTypeEnum {
+    /**
+      * A transformer that changes the current between circuits.
+      */
+    CURRENT,
+
+    /**
+      * A transformer that changes the frequency between circuits.
+      */
+    FREQUENCY,
+
+    /**
+      * A transformer that converts from direct current (DC) to alternating current (AC).
+      */
+    INVERTER,
+
+    /**
+      * A transformer that converts from alternating current (AC) to direct current (DC).
+      */
+    RECTIFIER,
+
+    /**
+      * A transformer that changes the voltage between circuits.
+      */
+    VOLTAGE,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

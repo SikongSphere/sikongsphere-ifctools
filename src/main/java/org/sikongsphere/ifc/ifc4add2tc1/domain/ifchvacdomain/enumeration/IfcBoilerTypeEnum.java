@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcBoilerTypeEnum {
+    /**
+      * Water boiler.
+      */
+    WATER,
+
+    /**
+      * Steam boiler.
+      */
+    STEAM,
+
+    /**
+      * User-defined Boiler type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined Boiler type.
+      */
+    NOTDEFINED
 
 }

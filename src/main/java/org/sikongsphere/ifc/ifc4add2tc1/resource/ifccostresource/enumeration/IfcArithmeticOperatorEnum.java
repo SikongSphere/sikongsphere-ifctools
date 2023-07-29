@@ -27,5 +27,12 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcArithmeticOperatorEnum {
+    ADD,
+
+    DIVIDE,
+
+    MULTIPLY,
+
+    SUBTRACT
 
 }

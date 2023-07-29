@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcProtectiveDeviceTrippingUnitTypeEnum {
+    /**
+      * A tripping unit activated by electronic action.
+      */
+    ELECTRONIC,
+
+    /**
+      * A tripping unit activated by electromagnetic action.
+      */
+    ELECTROMAGNETIC,
+
+    /**
+      * A tripping unit activated by residual current detection.
+      */
+    RESIDUALCURRENT,
+
+    /**
+      * A tripping unit activated by thermal action.
+      */
+    THERMAL,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }

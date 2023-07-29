@@ -23,5 +23,39 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcStructuralCurveMemberTypeEnum {
+    /**
+      * A member with capacity to carry transverse and axial loads, i.e. a beam. Its actual joints may be rigid or pinned. Typically used in rigid frames.
+      */
+    RIGID_JOINED_MEMBER,
+
+    /**
+      * A member with capacity to carry axial loads only, i.e. a link. Typically used in trusses.
+      */
+    PIN_JOINED_MEMBER,
+
+    /**
+      * A tension member which is able to carry transverse loads only under large deflection.
+      */
+    CABLE,
+
+    /**
+      * A member without compressional stiffness.
+      */
+    TENSION_MEMBER,
+
+    /**
+      * A member without tensional stiffness.
+      */
+    COMPRESSION_MEMBER,
+
+    /**
+      * A specially defined member.
+      */
+    USERDEFINED,
+
+    /**
+      * A member without further categorization.
+      */
+    NOTDEFINED
 
 }

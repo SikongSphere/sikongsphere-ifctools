@@ -27,5 +27,19 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
     version = IfcVersion.IFC_4_ADD2_TC1
 )
 public enum IfcPhysicalOrVirtualEnum {
+    /**
+      * The space boundary is provided physically (by a physical element).
+      */
+    PHYSICAL,
+
+    /**
+      * The space boundary is provided virtually (by a logical divider that has no physical manifestation).
+      */
+    VIRTUAL,
+
+    /**
+      * No information available.
+      */
+    NOTDEFINED
 
 }

@@ -23,5 +23,79 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.SHARED, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcRoofTypeEnum {
+    /**
+      * A roof having no slope, or one with only a slight pitch so as to drainrainwater.
+      */
+    FLAT_ROOF,
+
+    /**
+      * A roof having a single slope.
+      */
+    SHED_ROOF,
+
+    /**
+      * A roof sloping downward in two parts from a central ridge, so as to form agable at each end.
+      */
+    GABLE_ROOF,
+
+    /**
+      * A roof having sloping ends and sides meeting at an inclined projectingangle.
+      */
+    HIP_ROOF,
+
+    /**
+      * A roof having a hipped end truncating a gable.
+      */
+    HIPPED_GABLE_ROOF,
+
+    /**
+      * A roof sloping downward in two parts from a central ridge, so as to form agable at each end.
+      */
+    GAMBREL_ROOF,
+
+    /**
+      * A roof having on each side a steeper lower part and a shallower upperpart.
+      */
+    MANSARD_ROOF,
+
+    /**
+      * A roof or ceiling having a semicylindrical form.
+      */
+    BARREL_ROOF,
+
+    /**
+      * A gable roof in the form of a broad Gothic arch, with gently sloping convexsurfaces.
+      */
+    RAINBOW_ROOF,
+
+    /**
+      * A roof having two slopes, each descending inward from the eaves.
+      */
+    BUTTERFLY_ROOF,
+
+    /**
+      * A pyramidal hip roof.
+      */
+    PAVILION_ROOF,
+
+    /**
+      * A hemispherical hip roof.
+      */
+    DOME_ROOF,
+
+    /**
+      * Free form roof.
+      */
+    FREEFORM,
+
+    /**
+      * No specification given.
+      */
+    USERDEFINED,
+
+    /**
+      * No specification given.
+      */
+    NOTDEFINED
 
 }

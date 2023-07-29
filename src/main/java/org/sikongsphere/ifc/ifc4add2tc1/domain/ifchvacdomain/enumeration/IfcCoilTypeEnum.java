@@ -23,5 +23,49 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcCoilTypeEnum {
+    /**
+      * Cooling coil using a refrigerant to cool the air stream directly.
+      */
+    DXCOOLINGCOIL,
+
+    /**
+      * Heating coil using electricity as a heating source.
+      */
+    ELECTRICHEATINGCOIL,
+
+    /**
+      * Heating coil using gas as a heating source.
+      */
+    GASHEATINGCOIL,
+
+    /**
+      * Cooling or Heating coil that uses a hydronic fluid as a cooling or heating source.
+      */
+    HYDRONICCOIL,
+
+    /**
+      * Heating coil using steam as heating source.
+      */
+    STEAMHEATINGCOIL,
+
+    /**
+      * Cooling coil using chilled water. HYDRONICCOIL supercedes this enumerator.
+      */
+    WATERCOOLINGCOIL,
+
+    /**
+      * Heating coil using hot water as a heating source. HYDRONICCOIL supercedes this enumerator.
+      */
+    WATERHEATINGCOIL,
+
+    /**
+      * User-defined coil type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined coil type.
+      */
+    NOTDEFINED
 
 }

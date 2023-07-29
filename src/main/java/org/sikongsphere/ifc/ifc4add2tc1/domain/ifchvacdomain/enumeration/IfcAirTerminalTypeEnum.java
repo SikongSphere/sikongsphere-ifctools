@@ -23,5 +23,34 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcAirTerminalTypeEnum {
+    /**
+      * An outlet discharging supply air in various directions and planes.
+      */
+    DIFFUSER,
+
+    /**
+      * A covering for any area through which air passes.
+      */
+    GRILLE,
+
+    /**
+      * A rectilinear louvre.
+      */
+    LOUVRE,
+
+    /**
+      * A grille typically equipped with a damper or control valve.
+      */
+    REGISTER,
+
+    /**
+      * User-defined air terminal type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined air terminal type.
+      */
+    NOTDEFINED
 
 }

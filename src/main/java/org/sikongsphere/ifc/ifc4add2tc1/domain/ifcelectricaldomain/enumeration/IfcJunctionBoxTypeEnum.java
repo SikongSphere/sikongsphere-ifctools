@@ -23,5 +23,24 @@ import org.sikongsphere.ifc.common.enumeration.IfcVersion;
  */
 @IfcClass(layer = IfcLayer.DOMAIN, type = IfcType.ENUMERATION, version = IfcVersion.IFC_4_ADD2_TC1)
 public enum IfcJunctionBoxTypeEnum {
+    /**
+      * Contains cables, outlets, and/or switches for communications use.
+      */
+    DATA,
+
+    /**
+      * Contains cables, outlets, and/or switches for electrical power.
+      */
+    POWER,
+
+    /**
+      * User-defined type.
+      */
+    USERDEFINED,
+
+    /**
+      * Undefined type.
+      */
+    NOTDEFINED
 
 }
